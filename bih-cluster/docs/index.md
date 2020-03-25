@@ -2,12 +2,10 @@
 
 This is the documentation of the BIH high-performance compute clusters, namely:
 
-- hpc-4-research (med-login{1,2}.bihealth.org, in BIH research network)
-- hpc-4-clinic (cln-login{1,2}.bihealth.org, in Charite network)
+- **hpc4research** (med-login{1,2}.bihealth.org, in BIH research network)
+- **hpc4clinic** (cln-login{1,2}.bihealth.org, in Charite network)
 
 This documentation is maintained bih BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Usage Acknowledgement
 
