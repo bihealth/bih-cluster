@@ -1,17 +1,19 @@
-# Welcome to MkDocs
+# BIH HPC Documentation
+
+This is the documentation of the BIH high-performance compute clusters, namely:
+
+- hpc-4-research (med-login{1,2}.bihealth.org, in BIH research network)
+- hpc-4-clinic (cln-login{1,2}.bihealth.org, in Charite network)
+
+This documentation is maintained bih BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## Usage Acknowledgement
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research cluster of the Berlin Institute of Health"*.
+- Please add your publications using the cluster to [this list](miscellaneous/publication-list).
 
-## Project layout
+## Maintenance
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+[See here](admin/maintenance-windows) for status/progress and the next planned maintenance windows. We will notify you one or two weeks in advance of any maintenance (except for emergencies).
