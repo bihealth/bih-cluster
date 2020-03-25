@@ -7,6 +7,10 @@ This is the documentation of the BIH high-performance compute clusters, namely:
 
 This documentation is maintained bih BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
 
+## Getting Started
+
+- [For the Impatient](getting-started/for-the-impatient)
+
 ## Usage Acknowledgement
 
 - Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research cluster of the Berlin Institute of Health"*.
