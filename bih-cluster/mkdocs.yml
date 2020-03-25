@@ -1,2 +1,7 @@
 site_name: BIH HPC Docs
 theme: readthedocs
+repo_url: https://github.com/holtgrewe/bih-cluster-test/
+edit_uri: 'edit/master/bih-cluster/docs/'
+site_author: BIH HPC IT
+site_description: Public documentation of the BIH HPC infrastructure.
+copyright: 2016-2020, BIH HPC IT
