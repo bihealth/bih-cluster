@@ -1,7 +1,71 @@
+# Project information
 site_name: BIH HPC Docs
-theme: readthedocs
+site_description: Public documentation of the BIH HPC infrastructure.
+site_author: BIH HPC IT
+site_url: https://bihealth.github.io/bih-cluster
+
+# Repository
+repo_name: BIH HPC Docs
 repo_url: https://github.com/holtgrewe/bih-cluster-test/
 edit_uri: 'edit/master/bih-cluster/docs/'
-site_author: BIH HPC IT
-site_description: Public documentation of the BIH HPC infrastructure.
+
+# Copyright
 copyright: 2016-2020, BIH HPC IT
+
+# Theming, Configuration
+theme: material
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# # Page tree
+# nav:
+#   - Material: index.md
+#   - Getting started: getting-started.md
+#   - Extensions:
+#     - Admonition: extensions/admonition.md
+#     - CodeHilite: extensions/codehilite.md
+#     - Footnotes: extensions/footnotes.md
+#     - Metadata: extensions/metadata.md
+#     - Permalinks: extensions/permalinks.md
+#     - PyMdown: extensions/pymdown.md
+#   - Plugins:
+#     - Minify HTML: plugins/minify-html.md
+#     - Revision date: plugins/revision-date.md
+#     - Search: plugins/search.md
+#   - Specimen: specimen.md
+#   - Customization: customization.md
+#   - Compliance with GDPR: compliance.md
+#   - Release notes: release-notes.md
+#   - Author's notes: authors-notes.md
+#   - Contributing: contributing.md
+#   - License: license.md
