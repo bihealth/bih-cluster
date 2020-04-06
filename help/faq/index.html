@@ -1,0 +1,1633 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
+      
+      
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/help/faq/">
+      
+      
+        <meta name="author" content="BIH HPC IT">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Frequently Asked Questions - BIH HPC Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#frequently-asked-questions" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://bihealth.github.io/bih-cluster" title="BIH HPC Docs" aria-label="BIH HPC Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              BIH HPC Docs
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Frequently Asked Questions
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/holtgrewe/bih-cluster-test/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    BIH HPC Docs
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://bihealth.github.io/bih-cluster" title="BIH HPC Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    BIH HPC Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/holtgrewe/bih-cluster-test/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    BIH HPC Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Administrative
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Administrative
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../admin/getting-access/" title="Getting Access" class="md-nav__link">
+      Getting Access
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
+      Resource Registration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
+      Maintenance etc.
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Getting Help
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Getting Help
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helpdesk/" title="HPC Helpdesk" class="md-nav__link">
+      HPC Helpdesk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../good-tickets/" title="Good Tickets" class="md-nav__link">
+      Good Tickets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Frequently Asked Questions
+      </label>
+    
+    <a href="./" title="Frequently Asked Questions" class="md-nav__link md-nav__link--active">
+      Frequently Asked Questions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-website" class="md-nav__link">
+    What is this Website?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-can-i-get-help" class="md-nav__link">
+    Where can I get help?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id-like-to-learn-more-about-slurm" class="md-nav__link">
+    I'd like to learn more about Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation" class="md-nav__link">
+    What is the difference between MAX and BIH cluster? What is their relation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this" class="md-nav__link">
+    My SSH sessions break with "packet_write_wait: Connection to XXX : Broken pipe". How can I fix this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-job-terminated-before-being-done-what-happened" class="md-nav__link">
+    My job terminated before being done. What happened?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-create-a-new-project" class="md-nav__link">
+    How can I create a new project?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-a-problem-with-my-ssh-key-help" class="md-nav__link">
+    I have a problem with my SSH key, help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-a-problem-with-logging-into-the-cluster-help" class="md-nav__link">
+    I have a problem with logging into the cluster, help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-cannot-create-pngs-in-r" class="md-nav__link">
+    I cannot create PNGs in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-dont-get-scheduled" class="md-nav__link">
+    My jobs don't get scheduled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-dont-run-in-the-partition-i-expect" class="md-nav__link">
+    My jobs don't run in the partition I expect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-get-killed-after-four-hours" class="md-nav__link">
+    My jobs get killed after four hours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster" class="md-nav__link">
+    How can I mount a network volume from elsewhere on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster" class="md-nav__link">
+    Why can I not mount a network volume from elsewhere on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-then-access-the-files-from-my-workstationserver" class="md-nav__link">
+    How can I then access the files from my workstation/server?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-circumvent-invalid-instruction-signal-4-errors" class="md-nav__link">
+    How can I circumvent "invalid instruction" (signal 4) errors?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-should-my-miniconda-install-go" class="md-nav__link">
+    Where should my (Mini)conda install go?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-problems-connecting-to-the-gpu-node-whats-wrong" class="md-nav__link">
+    I have problems connecting to the GPU node! What's wrong?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster" class="md-nav__link">
+    How can I access graphical user interfaces (such as for Matlab) on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-log-into-a-node-outside-of-the-scheduler" class="md-nav__link">
+    How can I log into a node outside of the scheduler?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Manual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Manual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../manual/for-the-impatient/" title="For the Impatient" class="md-nav__link">
+      For the Impatient
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../manual/architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../manual/job-scheduler/" title="Job Scheduler" class="md-nav__link">
+      Job Scheduler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../manual/storage/" title="Storage Volumes" class="md-nav__link">
+      Storage Volumes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Connecting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Connecting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/generate-key/" title="Generate Keys" class="md-nav__link">
+      Generate Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/submit-key/" title="Submit Keys" class="md-nav__link">
+      Submit Keys
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/" title="Configure Client" class="md-nav__link">
+      Configure Client
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
+      From External
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Slurm Scheduler
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Slurm Scheduler
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
+      Slurm Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+      Slurm Cheat Sheet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
+      Migrating to Slurm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+      Slurm Job Scripts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+      Snakemake with Slurm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+      Slurm Rosetta Stone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
+      X11 Forwarding
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Best Practice
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Best Practice
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
+      Project Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+      Software Craftmanship
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+      Using Screen/Tmux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+      ~/.bashrc Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
+      Temporary Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
+      Custom Environment Modules
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Cubit Static Data
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Cubit Static Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
+      Annotations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
+      Application Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
+      Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
+      Exomes and Panels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
+      Exon Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
+      Precomputed Indexes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
+      Reference Sequences
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      How-To
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        How-To
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+      Contribute to Docs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
+      High-Memory Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
+      GPU Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
+      OpenMPI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
+      Scientific Software
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
+      Cell Ranger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
+      Keras
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
+      Matlab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
+      Tensorflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
+      File Exchange
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
+      Publication List
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
+      External Guides
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
+      Misc. Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
+      SSH Basics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-website" class="md-nav__link">
+    What is this Website?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-can-i-get-help" class="md-nav__link">
+    Where can I get help?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id-like-to-learn-more-about-slurm" class="md-nav__link">
+    I'd like to learn more about Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation" class="md-nav__link">
+    What is the difference between MAX and BIH cluster? What is their relation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this" class="md-nav__link">
+    My SSH sessions break with "packet_write_wait: Connection to XXX : Broken pipe". How can I fix this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-job-terminated-before-being-done-what-happened" class="md-nav__link">
+    My job terminated before being done. What happened?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-create-a-new-project" class="md-nav__link">
+    How can I create a new project?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-a-problem-with-my-ssh-key-help" class="md-nav__link">
+    I have a problem with my SSH key, help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-a-problem-with-logging-into-the-cluster-help" class="md-nav__link">
+    I have a problem with logging into the cluster, help!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-cannot-create-pngs-in-r" class="md-nav__link">
+    I cannot create PNGs in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-dont-get-scheduled" class="md-nav__link">
+    My jobs don't get scheduled
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-dont-run-in-the-partition-i-expect" class="md-nav__link">
+    My jobs don't run in the partition I expect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-jobs-get-killed-after-four-hours" class="md-nav__link">
+    My jobs get killed after four hours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster" class="md-nav__link">
+    How can I mount a network volume from elsewhere on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster" class="md-nav__link">
+    Why can I not mount a network volume from elsewhere on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-then-access-the-files-from-my-workstationserver" class="md-nav__link">
+    How can I then access the files from my workstation/server?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-circumvent-invalid-instruction-signal-4-errors" class="md-nav__link">
+    How can I circumvent "invalid instruction" (signal 4) errors?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-should-my-miniconda-install-go" class="md-nav__link">
+    Where should my (Mini)conda install go?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-have-problems-connecting-to-the-gpu-node-whats-wrong" class="md-nav__link">
+    I have problems connecting to the GPU node! What's wrong?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster" class="md-nav__link">
+    How can I access graphical user interfaces (such as for Matlab) on the cluster?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-log-into-a-node-outside-of-the-scheduler" class="md-nav__link">
+    How can I log into a node outside of the scheduler?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/holtgrewe/bih-cluster-test/edit/master/bih-cluster/docs/help/faq.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-this-website">What is this Website?<a class="headerlink" href="#what-is-this-website" title="Permanent link">&para;</a></h2>
+<p>This is the BIH cluster documentation that was created and is maintained by BIH Core Unit Bioinformatics (CUBI) and BIH HPC IT with contributions by BIH HPC Users.
+The aim is to gather the information for using the cluster efficiently and helping common issues andproblems.</p>
+<h2 id="where-can-i-get-help">Where can I get help?<a class="headerlink" href="#where-can-i-get-help" title="Permanent link">&para;</a></h2>
+<ul>
+<li>First, contact <a href="mailto:bih-cluster@charite.de">bih-cluster@charite.de</a> with your question.
+  Here, administrators, CUBI, and other users alike are subscribed and can answer your question.</li>
+<li>For problems while connecting and logging in, please contact <a href="mailto:helpdesk@mdc-berlin.de">helpdesk@mdc-berlin.de</a> or <a href="mailto:helpdesk@charite.de">helpdesk@charite.de</a>.</li>
+<li>For problems with BIH HPC please contact [<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>].</li>
+</ul>
+<h2 id="id-like-to-learn-more-about-slurm">I'd like to learn more about Slurm<a class="headerlink" href="#id-like-to-learn-more-about-slurm" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Some documentation is available on this website, e.g., start at <a href="/slurm/quickstart">Slurm Quickstart</a>.</li>
+</ul>
+<h2 id="what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation">What is the difference between MAX and BIH cluster? What is their relation?<a class="headerlink" href="#what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation" title="Permanent link">&para;</a></h2>
+<p><strong>Administrativa</strong></p>
+<ul>
+<li>The BIH cluster is the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by MDC IT.
+  MDC IT performs the administration for the BIH and the BIH cluster uses the authentication (user/password/groups) infrastructure of the MDC.
+  Thus you have to get an MDC account for using the BIH cluster.
+  Systems support can be requested from <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#109;&#100;&#99;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;">&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#109;&#100;&#99;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;</a> as for the MAX cluster.</li>
+<li>The MAX cluster is the cluster of the Max Delbrueck Center (MDC) in Buch.
+  This cluster is used by the researchers at MDC and integrates a lot of infrastructure of the MDC.</li>
+</ul>
+<p>Request for both systems are handled separately, depending on the user's affiliation with research/service groups.</p>
+<p><strong>Hardware and Systems</strong></p>
+<ul>
+<li>Both clusters consist of similar hardware for the compute nodes and both feature a DDN system at different number of nodes and different storage volume.</li>
+<li>Both clusters run CentOS but at potentially different version.</li>
+<li>BIH HPC uses the Slurm workload manager whereas MAX uses Univa Grid Engine.</li>
+<li>The BIH cluster has a significantly faster internal network (40GB/s optical).</li>
+</ul>
+<p><strong>Bioinformatics Software</strong></p>
+<ul>
+<li>On the BIH cluster, users can install their own bioinformatics software in their user directory.</li>
+<li>On the MAX cluster, users can also install their own software or use <a href="http://bioinformatics.mdc-berlin.de/resources.html#other-it-services">software provided by Altuna Akalin's group at MDC</a>.</li>
+</ul>
+<h2 id="my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this">My SSH sessions break with "<code>packet_write_wait: Connection to XXX : Broken pipe</code>". How can I fix this?<a class="headerlink" href="#my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this" title="Permanent link">&para;</a></h2>
+<p>Try to put the following line at the top of your <code>~/.ssh/config</code>.</p>
+<div class="codehilite"><pre><span></span><code>ServerAliveInterval 30
+</code></pre></div>
+
+<p>This will make <code>ssh</code> send an empty network package to the server.
+This will prevent network hardware from thinking your connection is unused/broken and terminating it.</p>
+<p>If the problem persists, please report it to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</p>
+<h2 id="my-job-terminated-before-being-done-what-happened">My job terminated before being done. What happened?<a class="headerlink" href="#my-job-terminated-before-being-done-what-happened" title="Permanent link">&para;</a></h2>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> TODO: this needs to be updated to Slurm.</p>
+<h2 id="how-can-i-create-a-new-project">How can I create a new project?<a class="headerlink" href="#how-can-i-create-a-new-project" title="Permanent link">&para;</a></h2>
+<p>You can create a project if you are either a group leader of an AG or a delegate of an AG.</p>
+<p>In this case, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> and request a new project.</p>
+<h2 id="i-have-a-problem-with-my-ssh-key-help">I have a problem with my SSH key, help!<a class="headerlink" href="#i-have-a-problem-with-my-ssh-key-help" title="Permanent link">&para;</a></h2>
+<p>Please contact <a href="mailto:helpdesk@mdc-berlin.de">MDC Helpdesk</a> for help.
+CUBI is also only a user on the BIH cluster and has no access to the user, password, or SSH keys registries.</p>
+<h2 id="i-have-a-problem-with-logging-into-the-cluster-help">I have a problem with logging into the cluster, help!<a class="headerlink" href="#i-have-a-problem-with-logging-into-the-cluster-help" title="Permanent link">&para;</a></h2>
+<p>See <a href="#i-have-a-problem-with-my-ssh-key-help">"I have a problem with my SSH key, help!"</a></p>
+<h2 id="i-cannot-create-pngs-in-r">I cannot create PNGs in R<a class="headerlink" href="#i-cannot-create-pngs-in-r" title="Permanent link">&para;</a></h2>
+<p>For using the <code>png</code> method, you need to have an X11 session running.
+This might be the case if you logged into a cluster node using <code>qrsh</code> if configured correctly but is not the case if you submitted a bash job.
+The solution is to use <code>xvfb-run</code> (xvfb = X11 virtual frame-buffer).</p>
+<p>Here is the content of an example script:</p>
+<div class="codehilite"><pre><span></span><code>$ cat img.R 
+#!/usr/bin/env Rscript
+
+png(&#39;cars.png&#39;)
+cars &lt;- c(1, 3, 6, 4, 9)
+plot(cars)
+dev.off()
+</code></pre></div>
+
+<p>Here, it fails without X11:</p>
+<div class="codehilite"><pre><span></span><code>$ ./img.R 
+Error in .External2(C_X11, paste(&quot;png::&quot;, filename, sep = &quot;&quot;), g$width,  : 
+  unable to start device PNG
+Calls: png
+In addition: Warning message:
+In png(&quot;cars.png&quot;) : unable to open connection to X11 display &#39;&#39;
+Execution halted
+</code></pre></div>
+
+<p>Here, it works with  <code>xvfb-run</code>:</p>
+<div class="codehilite"><pre><span></span><code>$ xvfb-run ./img.R 
+null device 
+          1 
+$ ls
+cars.png  foo.png  img.R  Rplots.pdf
+</code></pre></div>
+
+<h2 id="my-jobs-dont-get-scheduled">My jobs don't get scheduled<a class="headerlink" href="#my-jobs-dont-get-scheduled" title="Permanent link">&para;</a></h2>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> TODO: this has to be updated to Slurm.</p>
+<h2 id="my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect<a class="headerlink" href="#my-jobs-dont-run-in-the-partition-i-expect" title="Permanent link">&para;</a></h2>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> TODO: this has to be updated to Slurm.</p>
+<h2 id="my-jobs-get-killed-after-four-hours">My jobs get killed after four hours<a class="headerlink" href="#my-jobs-get-killed-after-four-hours" title="Permanent link">&para;</a></h2>
+<p>This is probably answered by the answer to <a href="#my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect</a>.</p>
+<h2 id="how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster">How can I mount a network volume from elsewhere on the cluster?<a class="headerlink" href="#how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster" title="Permanent link">&para;</a></h2>
+<p>You cannot.
+Also see the <a href="/manual/for-the-impatient">For the Impatient</a> section of the manual.</p>
+<h2 id="why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster">Why can I not mount a network volume from elsewhere on the cluster?<a class="headerlink" href="#why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster" title="Permanent link">&para;</a></h2>
+<p>For performance and stability reasons.
+Network volumes are notorious for degrading performance, depending on the used protocol, even stability.</p>
+<h2 id="how-can-i-then-access-the-files-from-my-workstationserver">How can I then access the files from my workstation/server?<a class="headerlink" href="#how-can-i-then-access-the-files-from-my-workstationserver" title="Permanent link">&para;</a></h2>
+<p>You can transfer files to the cluster through Rsync over SSH or through SFTP to the <code>med-transfer1</code> or <code>med-transfer2</code> node.</p>
+<p><strong>Do not transfer files through the login nodes.</strong>
+Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.</p>
+<h2 id="how-can-i-circumvent-invalid-instruction-signal-4-errors">How can I circumvent "invalid instruction" (signal 4) errors?<a class="headerlink" href="#how-can-i-circumvent-invalid-instruction-signal-4-errors" title="Permanent link">&para;</a></h2>
+<p>Make sure that software is compiled with "sandy bridge" optimizations and no later one.
+E.g., use the <code>-march=sandybridge</code> argument to the GCC/LLVM compiler executables.</p>
+<p>If you absolutely need it, there are some boxes with more recent processors in the cluster (e.g., Haswell architecture).
+Look at the <code>/proc/cpuinfo</code> files for details.</p>
+<h2 id="where-should-my-miniconda-install-go">Where should my (Mini)conda install go?<a class="headerlink" href="#where-should-my-miniconda-install-go" title="Permanent link">&para;</a></h2>
+<p>As conda installations are big and contain many files, they should go into your <code>work</code> directory.
+<strong>E.g., <code>/fast/users/$USER/work/miniconda</code> is appropriate.</strong></p>
+<h2 id="i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?<a class="headerlink" href="#i-have-problems-connecting-to-the-gpu-node-whats-wrong" title="Permanent link">&para;</a></h2>
+<p>Please check whether there might be other jobs waiting in front of you!</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> TODO: this has to be updated to Slurm</p>
+<h2 id="how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">How can I access graphical user interfaces (such as for Matlab) on the cluster?<a class="headerlink" href="#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster" title="Permanent link">&para;</a></h2>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> TODO: this has to be updated to Slurm</p>
+<ol>
+<li>First of all, you will need an X(11) server on your local machine (see <a href="https://en.wikipedia.org/wiki/X_Window_System">Wikipedia: X Window System</a>.
+  This server offers a "graphical surface" that the programs on the cluster can then paint on.</li>
+<li>You need to make sure that the programs running on the cluster can access this graphical surface.<ul>
+<li>Generally, you need to connect to the login nodes with X forwarding.
+  Refer to the manual of your SSH client on how to do this (<code>-X</code> for Linux/Mac <code>ssh</code></li>
+<li>As you should not run compute-intensive programs on the login node, connect to a cluster node with X forwarding.
+  With SGE, this is done using <code>qlogin</code> (instead of <code>qrsh</code>).</li>
+</ul>
+</li>
+</ol>
+<p>Also see:</p>
+<ul>
+<li><a href="https://gitlab.com/bihealth/bih_cluster/wikis/Manual-Connecting-Connecting-X11-Windows">Running graphical(X11) applications on Windows</a></li>
+<li><a href="Manual-Connecting-Connecting-X11-Linux">Running graphical(X11) applications on Linux</a></li>
+</ul>
+<h2 id="how-can-i-log-into-a-node-outside-of-the-scheduler">How can I log into a node outside of the scheduler?<a class="headerlink" href="#how-can-i-log-into-a-node-outside-of-the-scheduler" title="Permanent link">&para;</a></h2>
+<p>This is sometimes useful, e.g., for monitoring the CPU/GPU usage of your job interactively.</p>
+<div class="admonition warning">
+<p class="admonition-title">No Computation Outside of Slurm</p>
+<p>Do <strong>not</strong> perform any computation outside of the scheduler as (1) this breaks the purpose of the scheduling system and (2) administration is not aware and might kill you jobs.</p>
+</div>
+<p>The answer is simple, just SSH into this node.</p>
+<div class="codehilite"><pre><span></span><code>med-login1:~$ ssh med0XXX
+</code></pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../good-tickets/" title="Good Tickets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Good Tickets
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../manual/for-the-impatient/" title="For the Impatient" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                For the Impatient
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2016-2020, BIH HPC IT
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
