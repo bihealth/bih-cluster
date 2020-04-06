@@ -41,7 +41,7 @@ rule default:
 rule mkresult:
     output: "the-result.txt"
     shell: r"sleep 1m; touch the-result.txt"
-EOF 
+EOF
 host:snake-slurm$ snakemake --cores=1
 [...]
 host:snake-slurm$ ls
@@ -49,7 +49,7 @@ Snakefile  the-result.txt
 host:snake-slurm$ rm the-result.txt
 ```
 
-## Snakemake and :tada: SLURM
+## Snakemake and :tada: Slurm
 
 It's really simple:
 
@@ -96,5 +96,12 @@ host:~$ squeue  -u holtgrem_c
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                325     debug snakejob holtgrem  R       0:47      1 med0127
 ```
+
+## Limitations
+
+The DRMAA interface to Slurm has a few limitations:
+
+- memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes),
+- running time has to be given as `hh:mm`.
 
 ... that's all, folks!
