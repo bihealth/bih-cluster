@@ -26,7 +26,7 @@ This is shown by the following picture:
 The differences include:
 
 - The directly reachable login nodes are not meant for computation!
-  Use `sqrun` to go to a compute node.
+  Use `srun` to go to a compute node.
 - Every time you type `srun` to go to a compute node you might end up on a different host.
 - Most directories on the nodes are not shared, including `/tmp`.
 - The `/fast` directory is shared throughout the cluster which contains your home, group home, and project directories.

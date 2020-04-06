@@ -47,25 +47,65 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-# # Page tree
-# nav:
-#   - Material: index.md
-#   - Getting started: getting-started.md
-#   - Extensions:
-#     - Admonition: extensions/admonition.md
-#     - CodeHilite: extensions/codehilite.md
-#     - Footnotes: extensions/footnotes.md
-#     - Metadata: extensions/metadata.md
-#     - Permalinks: extensions/permalinks.md
-#     - PyMdown: extensions/pymdown.md
-#   - Plugins:
-#     - Minify HTML: plugins/minify-html.md
-#     - Revision date: plugins/revision-date.md
-#     - Search: plugins/search.md
-#   - Specimen: specimen.md
-#   - Customization: customization.md
-#   - Compliance with GDPR: compliance.md
-#   - Release notes: release-notes.md
-#   - Author's notes: authors-notes.md
-#   - Contributing: contributing.md
-#   - License: license.md
+# Page tree
+nav:
+  - index.md
+  - "Administrative":
+    - "Getting Access": admin/getting-access.md
+    - "Resource Registration": admin/resource-registration.md
+    - "Maintenance etc.": admin/maintenance.md
+  - "Getting Help":
+    - "HPC Helpdesk": help/helpdesk.md
+    - "Good Tickets": help/good-tickets.md
+    - "Frequently Asked Questions": help/faq.md
+  - "Manual":
+    - "For the Impatient": manual/for-the-impatient.md
+    - "Architecture": manual/architecture.md
+    - "Job Scheduler": manual/job-scheduler.md
+    - "Storage Volumes": manual/storage.md
+  - "Connecting":
+    - "Generate Keys": connecting/generate-key.md
+    - "Submit Keys": connecting/submit-key.md
+    - "Configure Client": connecting/configure-ssh.md
+    - "From External": connecting/from-external.md
+  - "Slurm Scheduler":
+    - slurm/quickstart.md
+    - slurm/cheat-sheet.md
+    - slurm/migrating.md
+    - slurm/job-scripts.md
+    - slurm/snakemake.md
+    - slurm/rosetta-stone.md
+    - "X11 Forwarding": slurm/x11.md
+  - "Best Practice":
+    - "Project Structure": best-practice/project-structure.md
+    - "Software Craftmanship": best-practice/software-craftmanship.md
+    - "Using Screen/Tmux": best-practice/screen-tmux.md
+    - "~/.bashrc Guide": best-practice/bashrc-guide.md
+    - "Temporary Files": best-practice/temp-files.md
+    - "Custom Environment Modules": best-practice/env-modules.md
+  - "Cubit Static Data":
+    - "Overview": cubit/index.md
+    - "Annotations": cubit/annotations.md
+    - "Application Support": cubit/app-support.md
+    - "Databases": cubit/databases.md
+    - "Exomes and Panels": cubit/exomes-panels.md
+    - "Exon Lists": cubit/exon-lists.md
+    - "Precomputed Indexes": cubit/index-files.md
+    - "Reference Sequences": cubit/references.md
+  - "How-To":
+    - "Contribute to Docs": how-to/misc/contribute.md
+    - "High-Memory Nodes": how-to/connect/high-memory.md
+    - "GPU Nodes": how-to/connect/gpu-nodes.md
+    - "OpenMPI": how-to/software/openmpi.md
+    - "Scientific Software": how-to/software/scientific-software.md
+    - "Cell Ranger": how-to/software/cell-ranger.md
+    - "Jupyter": how-to/software/jupyter.md
+    - "Keras": how-to/software/keras.md
+    - "Matlab": how-to/software/matlab.md
+    - "Tensorflow": how-to/software/tensorflow.md
+    - "File Exchange": how-to/service/file-exchange.md
+  - "Miscellaneous":
+    - "Publication List": misc/publication-list.md
+    - "External Guides": misc/external-resources.md
+    - "Misc. Tips": misc/tips.md
+    - "SSH Basics": misc/ssh-basics.md

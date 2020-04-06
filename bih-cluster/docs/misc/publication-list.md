@@ -12,7 +12,7 @@ It has been used to support the publications listed below.
 
 Ehmke, N.; Cusmano-Ozog, K.; Koenig, R.; Holtgrewe, M.; Nur, B.; Mihci, E.; Babcock, H.; Gonzaga-Jauregui, C.; Overton, J. D.; Xiao, J.; et al. Biallelic Variants in KYNU Cause a Multisystemic Syndrome with Hand Hyperphalangism. *Bone* 2020, 115219. https://doi.org/10.1016/j.bone.2019.115219.
 
-### 2019 
+### 2019
 
 Boeddrich A., Babila J.T., Wiglenda T., Diez L., Jacob M., Nietfeld W., Huska M.R., Haenig C., Groenke N., Buntru A., Blanc E., Meier J.C., Vannoni E., Erck C., Friedrich B., Martens H., Neuendorf N., Schnoegl S., Wolfer DP., Loos M., Beule D., Andrade-Navarro M.A., Wanker E.E. (2019).
 "The Anti-amyloid Compound DO1 Decreases Plaque Pathology and Neuroinflammation-Related Expression Changes in 5xFAD Transgenic Mice."
