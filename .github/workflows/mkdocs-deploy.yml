@@ -1,4 +1,4 @@
-name: github pages
+name: "mkdocs: deploy to gh-pages"
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -17,20 +17,13 @@ jobs:
           python-version: '3.6'
           architecture: 'x64'
 
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -r ./requirements.txt
+          python3 -m pip install pipenv
+          pipenv --python python3.6
+          pipenv install
 
-      - run: cd bih-cluster && mkdocs build
+      - run: cd bih-cluster && pipenv run mkdocs build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
