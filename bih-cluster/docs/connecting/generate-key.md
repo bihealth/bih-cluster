@@ -1,0 +1,71 @@
+# Generating SSH Keys
+
+Before you can use SSH, you need to generate a public/private key pair.
+The steps differ between [Linux/Mac](#on-linuxmac) and [Windows](#on-windows).
+
+## On Linux/Mac
+
+- You might already have one, check whether the file `~/.ssh/id_rsa.pub` is present.
+- Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):
+  ```shell
+  host:~$ ssh-keygen -t rsa -C "your_email@example.com"
+  ```
+- Use the default location for your key
+- Enter the passphrase twice to encrypt your key
+
+The whole session should look something like this:
+
+```shell
+host:~$ ssh-keygen -t rsa -C "your_email@example.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/USER/.ssh/id_rsa): 
+Created directory '/home/USER/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again: 
+Your identification has been saved in /home/USER/.ssh/id_rsa.
+Your public key has been saved in /home/USER/.ssh/id_rsa.pub.
+The key fingerprint is:
+55:dd:8f:88:84:1b:b6:f0:19:d3:fb:19:8e:7a:9e:7d your_email@example.com
+The key's randomart image is:
++--[ RSA 2048]----+
+|         o  .. . |
+|      . * o.  . .|
+|       + O.o . ..|
+|        =.o o . .|
+|        S  + o   |
+|          . +    |
+|         .       |
+|        . .o  E  |
+|         oo ..   |
+```
+
+The file content of `~/.ssh/id_rsa.pub` should look something like this):
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809QK7hV6RCG13VcyPTIHSQePycfcUv5q1Jdy28MpacL/nv1UR/o35xPBn2HkgB4OqnKtt86soCGMd9/YzQP5lY7V60kPBJbrXDApeqf+H1GALsFNQM6MCwicdE6zTqE1mzWVdhGymZR28hGJbV9H4snMDDc0tW4i3FHGrDdmb7wHM9THMx6OcCrnNyA9Sh2OyBH4MwItKfuqEg2rc56D7WAQ2JcmPQZTlBAYeFL/dYYKcXmbffEpXTbYh+7O0o9RAJ7T3uOUj/2IbSnsgg6fyw0Kotcg8iHAPvb61bZGPOEWZb your_email@example.com
+```
+
+**Submit Your Key**
+
+As a next step you need to submit the SSH key use these links as:
+
+- [:hospital: Charite user](/connecting/submit-charite)
+- [:microscope: MDC user](/connecting/submit-mdc)
+
+## On Windows
+
+We recommend to use the program MobaXterm on Windows ([here is how to install it](moba-xterm)).
+
+!!! hint "Alternative SSH Clients for Windows"
+    - Another popular option is [PuTTy](https://www.putty.org/) but many users have problems configuring it correctly with SSH keys.
+    - On Windows 10, you can also install [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10), e.g., together with [WSL Terminal](https://github.com/mskyaxl/wsl-terminal).
+      This is not for the faint of heart (but great if you're a Unix head).
+
+After installing MobaXterm, you will use the MobaKeyGen tool
+
+**Submit Your Key**
+
+As a next step you need to submit the SSH key use these links as:
+
+- [:hospital: Charite user](/connecting/submit-charite)
+- [:microscope: MDC user](/connecting/submit-mdc)
