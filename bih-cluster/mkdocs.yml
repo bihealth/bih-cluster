@@ -14,6 +14,7 @@ copyright: 2016-2020, BIH HPC IT
 
 # Theming, Configuration
 theme: material
+# strict: true
 
 # Extensions
 markdown_extensions:
