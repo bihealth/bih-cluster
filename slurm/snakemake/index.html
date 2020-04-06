@@ -614,7 +614,14 @@
       
         <li class="md-nav__item">
   <a href="#snakemake-and-slurm" class="md-nav__link">
-    Snakemake and  SLURM
+    Snakemake and  Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
   </a>
   
 </li>
@@ -1146,7 +1153,14 @@
       
         <li class="md-nav__item">
   <a href="#snakemake-and-slurm" class="md-nav__link">
-    Snakemake and  SLURM
+    Snakemake and  Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
   </a>
   
 </li>
@@ -1205,7 +1219,7 @@ rule default:
 rule mkresult:
     output: <span class="s2">&quot;the-result.txt&quot;</span>
     shell: r<span class="s2">&quot;sleep 1m; touch the-result.txt&quot;</span>
-EOF 
+EOF
 host:snake-slurm$ snakemake --cores<span class="o">=</span><span class="m">1</span>
 <span class="o">[</span>...<span class="o">]</span>
 host:snake-slurm$ ls
@@ -1213,7 +1227,7 @@ Snakefile  the-result.txt
 host:snake-slurm$ rm the-result.txt
 </code></pre></div>
 
-<h2 id="snakemake-and-slurm">Snakemake and <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /> SLURM<a class="headerlink" href="#snakemake-and-slurm" title="Permanent link">&para;</a></h2>
+<h2 id="snakemake-and-slurm">Snakemake and <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /> Slurm<a class="headerlink" href="#snakemake-and-slurm" title="Permanent link">&para;</a></h2>
 <p>It's really simple:</p>
 <ol>
 <li>unset the <code>DRMA_LIBRARY_PATH</code> variable (that might be set and point to the SGE DRMAA library); you could set it to <code>/usr/lib64/libdrmaa.so</code> but that would not be necessary, consider all mentions of it from <code>~/.bashrc</code>.</li>
@@ -1257,6 +1271,12 @@ Complete log: /fast/home/users/holtgrem_c/snake-slurm/.snakemake/log/2020-03-25T
                <span class="m">325</span>     debug snakejob holtgrem  R       <span class="m">0</span>:47      <span class="m">1</span> med0127
 </code></pre></div>
 
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<p>The DRMAA interface to Slurm has a few limitations:</p>
+<ul>
+<li>memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes),</li>
+<li>running time has to be given as <code>hh:mm</code>.</li>
+</ul>
 <p>... that's all, folks!</p>
                 
                   
