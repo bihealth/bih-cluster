@@ -1,0 +1,25 @@
+name: "mkdocs: check"
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  check:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.6'
+          architecture: 'x64'
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install pipenv
+          pipenv --python python3.6
+          pipenv install
+
+      - run: cd bih-cluster && pipenv run mkdocs build
