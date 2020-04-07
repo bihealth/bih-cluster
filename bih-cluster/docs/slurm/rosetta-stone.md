@@ -21,7 +21,10 @@ The table below shows some SGE commands and their Slurm equivalents.
 | node list | `qhost` | `sinfo -N` OR `scontrol show nodes` |
 | cluster status | `qhost -q` | `sinfo` |
 | show node resources | N/A | `sinfo "%n %G"` |
-| **job specification** | **SGE** | **SLURM** |
+
+
+| Job Specification | SGE | Slurm |
+|:-----------------:|-----|-------|
 | script directive marker | `#$` | `#SBATCH` |
 | (run in queue) | `-q queue` | `-p queue` |
 | allocated nodes | N/A | `-N min[-max]` |

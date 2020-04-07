@@ -6,7 +6,8 @@ Connecting to a node with GPUs is easy.
 You simply request a GPU using the `-p gpu --gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
 This will place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
-> **Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](Manual-Useful-Tips-Frequently-Asked-Questions#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
+!!! hint
+    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
 
 ## Prequisites
 

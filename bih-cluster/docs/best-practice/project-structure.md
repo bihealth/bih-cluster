@@ -40,7 +40,10 @@ These scripts rather fall into the "configuration" category and should then live
 
 - Your data should go into a location separate from your scripts and configuration.
 - Ideally, the raw input data is separated from the work and output files such that you can make these files and directories read-only and don't accidentally damage these files.
-- **You really should keep temporary files in a temporary directory, set the environment variable `TMPDIR` appropriately and automatically clean them up (see [Useful Tips: Temporary Files](Manual-Useful-Tips-Temporary-Files))**
+
+!!! warning "Temporary files"
+
+    You really should keep temporary files in a temporary directory, set the environment variable `TMPDIR` appropriately and automatically clean them up (see [Useful Tips: Temporary Files](../best-practice/temp-files))**
 
 ## Best Practices in Practice
 

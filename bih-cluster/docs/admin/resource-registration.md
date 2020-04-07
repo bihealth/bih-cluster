@@ -17,7 +17,8 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
 
 ## GPU Nodes
 
-> **Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](Manual-Useful-Tips-Frequently-Asked-Questions#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
+!!! hint
+    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
 
 1. If you want to use the GPU node, please send an email to hpc-gatekeeper@bihealth.de with the following information:
     - For how long do you want to have access?
@@ -25,14 +26,15 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
     - How frequently do you need the GPU node, for how long at a time?
     - Do you plan to do more interactive work (e.g., using `ipython`) or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](How-To-Connect-to-GPU-Nodes)
+3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](../how-to/connect/gpu-nodes)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
 ## High-Memory Nodes
 
-Note that the purpose of the high memory nodes is to run jobs that don't run on the remainder of the cluster.
-As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to fit on the (plenty) cluster nodes and these don't have to run on the (few and sparse) high memory nodes.
+!!! note
+    Note that the purpose of the high memory nodes is to run jobs that don't run on the remainder of the cluster.
+    As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to fit on the (plenty) cluster nodes and these don't have to run on the (few and sparse) high memory nodes.
 
 1. If you want to use the high memory nodes, please send an email to hpc-gatekeeper@bihealth.de with the following information:
     - For how long do you want to have access?
@@ -41,7 +43,7 @@ As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to f
     - Do you plan to do more interactive work (e.g., using `ipython`) or using batch jobs?
     - What kind of work do you plan to do (e.g., assembly, running R scripts that don't run on the usual nodes)
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Connect to High-Memory Node](How-To-Connect-to-High-Memory-Nodes)
+3. Use the high-memory node by following the instructions [How-To: Connect to High-Memory Node](../how-to/connect/high-memory)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
@@ -50,11 +52,11 @@ As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to f
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
     While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-    Further, you can [easily install it yourself using Conda](Manual-Software-Management-Software-Installation-with-Conda).
+    Further, you can [easily install it yourself using Conda](../best-practice/software-installation-with-conda).
 
 
 !!! question "Want to use the Matlab GUI?"
-    Make sure you understand X forwarding as outline [in this FAQ entry](Manual-Useful-Tips-Frequently-Asked-Questions#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
+    Make sure you understand X forwarding as outline [in this FAQ entry](../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
 
 1. If you want to use the Matlab nodes, please send an email to hpc-gatekeeper@bihealth.de with the following information:
     - For how long do you want to have access?
@@ -62,7 +64,7 @@ As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to f
     - How frequently do you need the nodes, for how long at a time?
     - Do you plan to do more interactive work or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Use Matlab](How-To-Use-Matlab)
+3. Use the high-memory node by following the instructions [How-To: Use Matlab](../how-to/software/matlab)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
@@ -82,6 +84,6 @@ Access to this partition has to be explicitely granted as with the other resourc
     - How frequently do you need the nodes, for how long at a time?
     - Do you plan to do more interactive work or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Use the Critical Partition](How-To-Use-Critical-Partition)
+3. Use the high-memory node by following the instructions [How-To: Use the Critical Partition](../how-to/connect/high-memory)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.

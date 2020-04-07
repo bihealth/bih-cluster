@@ -53,11 +53,11 @@ host:snake-slurm$ rm the-result.txt
 
 It's really simple:
 
-0. unset the `DRMA_LIBRARY_PATH` variable (that might be set and point to the SGE DRMAA library); you could set it to `/usr/lib64/libdrmaa.so` but that would not be necessary, consider all mentions of it from `~/.bashrc`.
+0. unset the `DRMAA_LIBRARY_PATH` variable (that might be set and point to the SGE DRMAA library); you could set it to `/usr/lib64/libdrmaa.so` but that would not be necessary, consider all mentions of it from `~/.bashrc`.
 1. Use `snakemake --drmaa " [params]"` and use SLURM syntax here.
 
 ```bash
-host:snake-slurm$ unset unset DRMAA_LIBRARY_PATH
+host:snake-slurm$ unset DRMAA_LIBRARY_PATH
 host:snake-slurm$snakemake --drmaa " -t 05:00" --jobs 2
 Building DAG of jobs...
 Using shell: /usr/bin/bash

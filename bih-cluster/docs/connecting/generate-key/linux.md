@@ -1,9 +1,4 @@
-# Generating SSH Keys
-
-Before you can use SSH, you need to generate a public/private key pair.
-The steps differ between [Linux/Mac](#on-linuxmac) and [Windows](#on-windows).
-
-## On Linux/Mac
+# Generating an SSH Key in Linux
 
 - You might already have one, check whether the file `~/.ssh/id_rsa.pub` is present.
 - Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):
@@ -45,27 +40,9 @@ The file content of `~/.ssh/id_rsa.pub` should look something like this):
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809QK7hV6RCG13VcyPTIHSQePycfcUv5q1Jdy28MpacL/nv1UR/o35xPBn2HkgB4OqnKtt86soCGMd9/YzQP5lY7V60kPBJbrXDApeqf+H1GALsFNQM6MCwicdE6zTqE1mzWVdhGymZR28hGJbV9H4snMDDc0tW4i3FHGrDdmb7wHM9THMx6OcCrnNyA9Sh2OyBH4MwItKfuqEg2rc56D7WAQ2JcmPQZTlBAYeFL/dYYKcXmbffEpXTbYh+7O0o9RAJ7T3uOUj/2IbSnsgg6fyw0Kotcg8iHAPvb61bZGPOEWZb your_email@example.com
 ```
 
-**Submit Your Key**
+## Submit Your Key
 
 As a next step you need to submit the SSH key use these links as:
 
-- [:hospital: Charite user](/connecting/submit-charite)
-- [:microscope: MDC user](/connecting/submit-mdc)
-
-## On Windows
-
-We recommend to use the program MobaXterm on Windows ([here is how to install it](moba-xterm)).
-
-!!! hint "Alternative SSH Clients for Windows"
-    - Another popular option is [PuTTy](https://www.putty.org/) but many users have problems configuring it correctly with SSH keys.
-    - On Windows 10, you can also install [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10), e.g., together with [WSL Terminal](https://github.com/mskyaxl/wsl-terminal).
-      This is not for the faint of heart (but great if you're a Unix head).
-
-After installing MobaXterm, you will use the MobaKeyGen tool
-
-**Submit Your Key**
-
-As a next step you need to submit the SSH key use these links as:
-
-- [:hospital: Charite user](/connecting/submit-charite)
-- [:microscope: MDC user](/connecting/submit-mdc)
+- [:hospital: Charite user](../submit-key/charite)
+- [:microscope: MDC user](../submit-key/mdc)

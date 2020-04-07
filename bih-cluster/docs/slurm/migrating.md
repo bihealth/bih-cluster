@@ -5,7 +5,7 @@ This page describes (an updated) list of steps that are commonly needed to migra
 ## Summary
 
 - Use `#SBATCH` instead of `#$` in your job scripts for resource definitions.
-- Update your resource requirements parameters from SGE to Slurm using the [Slurm Rosetta Stone](/slurm/rosetta-stone.md).
+- Update your resource requirements parameters from SGE to Slurm using the [Slurm Rosetta Stone](rosetta-stone.md).
 - Unset environment variable `DRMAA_LIBRARY_PATH` and remove from your `~/.bashrc`, job scripts, etc.
 
 These steps are explained in detail below.
@@ -30,7 +30,7 @@ You now use
 
 Of course, the Slurm scheduler parameters differ from the SGE ones.
 So you also have to use Slurm syntax instead of SGE syntax (e.g., swich from `-N` to `-J/--job-name` as show in the previous section).
-The page [Slurm Rosetta Stone](/slurm/rosetta-stone.md) provides you with a translation table.
+The page [Slurm Rosetta Stone](rosetta-stone.md) provides you with a translation table.
 
 ## Getting Rid of `DRMAA_LIBRARY_PATH`
 

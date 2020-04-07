@@ -58,16 +58,35 @@ nav:
     - "HPC Helpdesk": help/helpdesk.md
     - "Good Tickets": help/good-tickets.md
     - "Frequently Asked Questions": help/faq.md
-  - "Manual":
-    - "For the Impatient": manual/for-the-impatient.md
-    - "Architecture": manual/architecture.md
-    - "Job Scheduler": manual/job-scheduler.md
-    - "Storage Volumes": manual/storage.md
+  - "Overview":
+    - "For the Impatient": overview/for-the-impatient.md
+    - "Architecture": overview/architecture.md
+    - "Job Scheduler": overview/job-scheduler.md
+    - "Nodes and Volumes": overview/storage.md
   - "Connecting":
-    - "Generate Keys": connecting/generate-key.md
-    - "Submit Keys": connecting/submit-key.md
-    - "Configure Client": connecting/configure-ssh.md
+    - "Generate Keys":
+      - "Linux": connecting/generate-key/linux.md
+      - "Windows": connecting/generate-key/windows.md
+    - "Submit Keys":
+      - "Charite": connecting/submit-key/charite.md
+      - "MDC": connecting/submit-key/mdc.md
+    - "Configure Client":
+      - "Pre-Requisites": connecting/configure-ssh/prerequisites.md
+      - "Linux": connecting/configure-ssh/linux.md
+      - "Windows": connecting/configure-ssh/windows.md
+      - "Connection Problems": connecting/configure-ssh/connection-problems.md
     - "From External": connecting/from-external.md
+    - "Windows SSH Client": connecting/ssh-client-windows.md
+  - "First Steps":
+    - "Episode 0": first-steps/episode-0.md
+    - "Episode 1": first-steps/episode-1.md
+    - "Episode 2": first-steps/episode-2.md
+    - "Episode 3": first-steps/episode-3.md
+    - "Episode 4": first-steps/episode-4.md
+  - "Storage":
+    - "Accessing Snapshots": storage/accessing-snapshots.md
+    - "Querying Storage": storage/querying-storage.md
+    - "Storage Locations": storage/storage-locations.md
   - "Slurm Scheduler":
     - slurm/quickstart.md
     - slurm/cheat-sheet.md
@@ -83,7 +102,7 @@ nav:
     - "~/.bashrc Guide": best-practice/bashrc-guide.md
     - "Temporary Files": best-practice/temp-files.md
     - "Custom Environment Modules": best-practice/env-modules.md
-  - "Cubit Static Data":
+  - "Static Data":
     - "Overview": cubit/index.md
     - "Annotations": cubit/annotations.md
     - "Application Support": cubit/app-support.md
@@ -93,17 +112,21 @@ nav:
     - "Precomputed Indexes": cubit/index-files.md
     - "Reference Sequences": cubit/references.md
   - "How-To":
-    - "Contribute to Docs": how-to/misc/contribute.md
-    - "High-Memory Nodes": how-to/connect/high-memory.md
-    - "GPU Nodes": how-to/connect/gpu-nodes.md
-    - "OpenMPI": how-to/software/openmpi.md
-    - "Scientific Software": how-to/software/scientific-software.md
-    - "Cell Ranger": how-to/software/cell-ranger.md
-    - "Jupyter": how-to/software/jupyter.md
-    - "Keras": how-to/software/keras.md
-    - "Matlab": how-to/software/matlab.md
-    - "Tensorflow": how-to/software/tensorflow.md
-    - "File Exchange": how-to/service/file-exchange.md
+    - "Connect":
+      - "High-Memory Nodes": how-to/connect/high-memory.md
+      - "GPU Nodes": how-to/connect/gpu-nodes.md
+    - "Software":
+      - "OpenMPI": how-to/software/openmpi.md
+      - "Scientific Software": how-to/software/scientific-software.md
+      - "Cell Ranger": how-to/software/cell-ranger.md
+      - "Jupyter": how-to/software/jupyter.md
+      - "Keras": how-to/software/keras.md
+      - "Matlab": how-to/software/matlab.md
+      - "Tensorflow": how-to/software/tensorflow.md
+    - "Service":
+      - "File Exchange": how-to/service/file-exchange.md
+    - "Miscellaneous":
+      - "Contribute to Docs": how-to/misc/contribute.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md

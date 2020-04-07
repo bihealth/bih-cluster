@@ -1,10 +1,11 @@
 # Slurm Quickstart
 
-**Create an interactive bash session** (`srun` will run bash in real-time, `-pty` makes `stdout` and `stderr` to your current session).
+**Create an interactive bash session** (`srun` will run bash in real-time, `--pty` makes `stdout` and `stderr` to your current session).
 
 ```bash
 med-login1:~$ srun --pty bash
 med0740:~$ echo "Hello World"
+Hello World
 med0740:~$ exit
 med-login1:~$
 ```
@@ -46,7 +47,7 @@ In [2]: exit
 med-login1:~$
 ```
 
-**Allocate 4 cores (default is 1 core), and a **total** of 4GB of RAM per node** (alternatively use `--mem-per-cpu` to set RAM per CPU); `sbatch` accepts the same argument.
+**Allocate 4 cores (default is 1 core), and a total of 4GB of RAM per node** (alternatively use `--mem-per-cpu` to set RAM per CPU); `sbatch` accepts the same argument.
 
 ```bash
 med-login1:~$ srun --cpus-per-task=4 --mem=4G --pty bash

@@ -11,7 +11,7 @@ $ man squeue
 # etc...
 ```
 
-interactive sessions
+**interactive sessions**
 
 ```bash
 med-login1:~$ srun --pty bash
@@ -19,7 +19,7 @@ med0740:~$ echo "Hello World"
 med0740:~$ exit
 ```
 
-batch submission
+**batch submission**
 
 ```bash
 med-login1:~$ sbatch script.sh
@@ -84,9 +84,10 @@ $ sinfo -o "%20N  %10c  %10m  %25f  %10G "
 $ sinfo -o "%N %G"
 ```
 
-**listing job details
+**listing job details**
+
 ```
-$ # scontrol show job 225
+$ scontrol show job 225
 JobId=225 JobName=bash
    UserId=XXX(135001) GroupId=XXX(30069) MCS_label=N/A
    Priority=4294901580 Nice=0 Account=(null) QOS=normal

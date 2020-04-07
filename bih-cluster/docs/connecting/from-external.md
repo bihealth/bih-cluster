@@ -18,12 +18,12 @@ The options differ depending on your home organization and are described in deta
 !!! tip "SSH Key Gotchas"
 
     You should use separate SSH key pairs for your workstation, laptop, home computer etc.
-    As a reminder, you will have to [register the SSH keys](/connect/submit-key) with your home IT organization.
+    As a reminder, you will have to register the SSH keys with your home IT organization ([MDC](../submit-key/mdc) or [Charite](../submit-key/charite)).
     When using gateway nodes, please make sure to use SSH key agents and agent forwarding (`ssh` flag "`-A`").
 
 ## For MDC Users
 
-The general prerequisite is to [register the SSH keys](/connect/submit-key) with MDC IT via "persdb".
+The general prerequisite is to [register the SSH keys](submit-key/mdc.md) with MDC IT via "persdb".
 
 ### MDC Gateway Node
 
@@ -54,7 +54,7 @@ host:~$ ssh -l user_m med-login1.bihealth.org
 
 ## For Charite Users
 
-The general prerequisite is to [register the SSH keys](/connect/submit-key) with Charite IT via [zugang.charite.de](https://zugang.charite.de).
+The general prerequisite is to [register the SSH keys](submit-key/charite.md) with Charite IT via [zugang.charite.de](https://zugang.charite.de).
 
 You will then have to apply for (1) general VPN access and (2) extended VPN access to BIH HPC.
 Finally, you will be able to connect to BIH HPC from VPN.
@@ -84,8 +84,8 @@ Here, you connect to a virtual desktop computer which is in the Charite network.
 From there, you can connect to the BIH HPC system.
 
 You need to apply for extended VPN access to be able to access the BIH VDI.
-The form, partly pre-filled, can be found [here](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf).
+The form can be found [here](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf).
 It is important to tick **Dienst(e)**, enter **HTTPS** and as target `view.bihealth.org`.
 Please write to [bih-it-team@bihealth.de](bih-it-team@bihealth.de) with the request to access the [BIH VDI](https://view.bihealth.org).
 
-When the access has been set up, follow the instructions on [client configuration](/connect/configure-ssh) for Windows, after logging in to the [BIH VDI](https://view.bihealth.org).
+When the access has been set up, follow the instructions on [client configuration](../configure-ssh/windows) for Windows, after logging in to the [BIH VDI](https://view.bihealth.org).

@@ -14,7 +14,7 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## I'd like to learn more about Slurm
 
-- Some documentation is available on this website, e.g., start at [Slurm Quickstart](/slurm/quickstart).
+- Some documentation is available on this website, e.g., start at [Slurm Quickstart](../slurm/quickstart).
 
 ## What is the difference between MAX and BIH cluster? What is their relation?
 
@@ -128,7 +128,7 @@ This is probably answered by the answer to [My jobs don't run in the partition I
 ## How can I mount a network volume from elsewhere on the cluster?
 
 You cannot.
-Also see the [For the Impatient](/manual/for-the-impatient) section of the manual.
+Also see the [For the Impatient](../overview/for-the-impatient) section of the manual.
 
 ## Why can I not mount a network volume from elsewhere on the cluster?
 
@@ -175,8 +175,8 @@ Please check whether there might be other jobs waiting in front of you!
 
 Also see:
 
-- [Running graphical(X11) applications on Windows](https://gitlab.com/bihealth/bih_cluster/wikis/Manual-Connecting-Connecting-X11-Windows)
-- [Running graphical(X11) applications on Linux](Manual-Connecting-Connecting-X11-Linux)
+- [Running graphical(X11) applications on Windows](../connecting/configure-ssh/windows.md#x11)
+- [Running graphical(X11) applications on Linux](../connecting/configure-ssh/linux.md#x11)
 
 ## How can I log into a node outside of the scheduler?
 

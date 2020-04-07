@@ -1,0 +1,112 @@
+# First Steps: Episode 1
+
+|Episode|Topic|
+|---|---|
+| 0 | [How can I install the tools?](episode-0) |
+| **1** | **How can I use the static data?** |
+| 2 | [How can I distribute my jobs on the cluster (`qsub`)?](episode-2.md) |
+| 3 | [How can I organize my jobs with Snakemake?](episode-3.md) |
+| 4 | [How can I combine Snakemake and `qsub`?](episode-4.md) |
+
+This is part one of the "First Steps" BIH Cluster Tutorial.
+Here we will build a small pipeline with alignment and variant calling.
+The premise is that you have the tools installed as described in [Episode 0](episode-0.md).
+
+## Tutorial Input Files
+
+We will provide you with some example FASTQ files, but you can use your own if you like.
+You can find the data here:
+
+- `/fast/projects/cubit/work/tutorial/input/test_R1.fq.gz`
+- `/fast/projects/cubit/work/tutorial/input/test_R2.fq.gz`
+
+## Creating a Project Directory
+
+First, you should create a folder where the output of this tutorial will go.
+It would be good to have it in your `work` directory in `/fast/users/$USER`, because it is faster and there is more space available.
+
+```terminal
+(first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode1
+(first-steps) $ pushd /fast/users/$USER/work/tutorial/episode1
+
+:exclamation: :exclamation: :exclamation: :exclamation: :exclamation: :exclamation:
+
+```
+- Note well that you have a quota of 1 GB in your home directory at `/fast/users/$USER`.
+  The reason for this is that nightly snapshots and backups are created for this directory which are precious resources.
+- This limit does not apply to your work directory at `/fast/users/$USER/work`.
+  The limits are much higher here but no snapshots or backups are available.
+- There is no limit on your scratch directory at `/fast/users/$USER/scratch`.
+  However, **files placed here are automatically removed after 4 weeks.**
+  This is only appropriate for files during download or temporary files.
+
+:exclamation: :exclamation: :exclamation: :exclamation: :exclamation: :exclamation:
+
+## Creating a Directory for Temporary Files
+
+In general it is advisable to have a proper temporary directory available.
+You can create one in your `~/scratch` folder and make it available to the system.
+
+```terminal
+(first-steps) $ export TMPDIR=/fast/users/$USER/scratch/tmp
+(first-steps) $ mkdir -p $TMPDIR
+```
+
+## Using the Cubit Static Data
+
+The static data is located in `/fast/projects/cubit/current/static_data`.
+For our small example, the required reference genome and index can be found at:
+
+- `/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta`
+- `/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta`
+
+## Aligning the Reads
+
+Let's align our data:
+
+```terminal
+(first-steps) $ bwa mem -t 8 \
+    -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
+    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
+    /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
+| samtools view -b - \
+| samtools sort -O BAM -T $TMPDIR -o aln.bam
+
+(first-steps) $ samtools index aln.bam
+```
+
+## Perform Structural Variant Calling
+
+And do the structural variant calling:
+
+```terminal
+(first-steps) $ delly call \
+    -g /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    aln.bam
+```
+
+Note that delly will not find any variants.
+
+## Small Variant Calling (SNV, indel)
+
+And now for the SNP calling (this step will take ~ 20 minutes):
+
+```terminal
+(first-steps) $ gatk-launch HaplotypeCaller \ # or gatk HaplotypeCaller \
+    -R /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    -I aln.bam \
+    -ploidy 2 \
+    -O test.GATK.vcf
+```
+
+## Outlook: More Programs and Static Data
+
+So this is it!
+We used the tools that we installed previously, accessed the reference data and ran a simple alignment and variant calling pipeline.
+You can access a list of all static data through this wiki, follow this link to the [Static Data](../cubit/index.md).
+You can also have a peek via:
+
+```terminal
+(first-steps) $ tree -L 3 /fast/projects/cubit/current/static_data | less
+```
