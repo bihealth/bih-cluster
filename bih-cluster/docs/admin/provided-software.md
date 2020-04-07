@@ -10,7 +10,7 @@ Currently, this includes:
 - GCC v7.2.0
 - CMake v3.11.0
 - LLVM v6.0.0
-- OpenMPI v3.1.0
+- OpenMPI v4.0.3
 
 On the GPU node, this also includes several NVIDIA CUDA versions.
 
@@ -20,7 +20,7 @@ To see the available software, use `module avail` on the compute nodes (this wil
 $ module avail
 --------------------- /opt/local/modules ---------------------
 cmake/3.11.0-0  llvm/6.0.0-0
-gcc/7.2.0-0     openmpi/3.1.0-0
+gcc/7.2.0-0     openmpi/4.0.3-0
 ```
 
 To load software, use `module load`.

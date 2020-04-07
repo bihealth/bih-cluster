@@ -1,5 +1,9 @@
 # How-To: Run Jupyter
 
+!!! todo "Not yet updated to Slurm"
+
+    TODO: This still needs to be updated to Slurm.
+
 ## What is Jupyter
 
 [Project Jupyter](http://jupyter.org/) is a networking protocol for interactive computing that allows the user to write and execute code for a high number of different programming languages. The most used client is Jupyter Notebook that can be encountered in various form all over the web. Its basic principle is a document consisting of different cells, each of which contains either code (executed in place) or documentation (written in markdown). This allows one to handily describe the processed workflow.

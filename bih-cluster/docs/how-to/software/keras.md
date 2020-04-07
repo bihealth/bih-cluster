@@ -1,6 +1,8 @@
 # How-To: Run Keras (Multi-GPU)
 
-**NOTE: this has not been updated to Slurm yet TODO**
+!!! todo "Not yet updated to Slurm"
+
+    TODO: This still needs to be updated to Slurm.
 
 Because the GPU node `med0405` has two GPU units we can train a model by using both GPUs in parallel. This How-To gives an example with Keras 2.2.4 together and tensorflow. Finally soem hints how you can submit a job on the cluster.
 

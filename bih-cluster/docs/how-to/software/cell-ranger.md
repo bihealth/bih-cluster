@@ -1,5 +1,9 @@
 # How-To: Run CellRanger
 
+!!! todo "Not yet updated to Slurm"
+
+    TODO: This still needs to be updated to Slurm.
+
 # what is Cell Ranger?
 from the official [website](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger):
 "Cell Ranger is a set of analysis pipelines that process Chromium single-cell RNA-seq output to align reads, generate feature-barcode matrices and perform clustering and gene expression analysis"

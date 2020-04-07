@@ -79,7 +79,7 @@ meg-login2$ module
 -bash: module: command not found
 ```
 
-Simply use `qrsh` to get to one of the compute nodes.
+Use `srun --ptty bash -i` to get to one of the compute nodes.
 
 ## Auto-loading a set of Modules
 
@@ -98,9 +98,6 @@ case "${HOSTNAME}" in
         # Define path for temporary directories, don't forget to cleanup!
         # Also, this will only work after /fast is available.
         export TMPDIR=/fast/users/$USER/scratch/tmp
-
-        # Make DRMAA library from central installation available
-        export DRMAA_LIBRARY_PATH=/opt/sge/lib/lx-amd64/libdrmaa.so
         ;;
 esac
 ```

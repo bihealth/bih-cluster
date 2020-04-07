@@ -80,7 +80,8 @@ On the cluster, the following brings you to a cluster node where you can
 compute as much as the node can chew.
 
 ```
-med-login<X> $ qrsh
+med-login1:~$ srun --ptty bash -i
+med0124:~$
 ```
 
 ## Connecting with another computer/laptop

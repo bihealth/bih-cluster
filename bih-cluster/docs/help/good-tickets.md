@@ -33,7 +33,6 @@ There is more specific questions for common issues given below.
 
 - Please give us the directory that you run things in.
 - Please send us the submission script that you have problems with.
-- If the job was submitted, SGE will give you a job ID.
+- If the job was submitted, Slurm  will give you a job ID.
   We will need this ID.
-- Please send us the output of `qstat -j` or `qacct -j` of your job.
-- Please do not delete your failed job as jobs in error state still provide more information than deleted jobs.
+- Please send us the output of `scontrol show job <jobid>` or `sacct --long -j <jobid>` of your job.

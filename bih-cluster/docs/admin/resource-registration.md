@@ -69,7 +69,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
 !!! info "Requesting Licenses"
-    Before using matlab, you have to request a license by passing `-l license_matlab_r2016b=1` to your `qrsh`, `qlogin` or `qsub` job.
+    Before using matlab, you have to request a license by passing `-L matlab_r2016b` to your `srun` or `sbatch`job.
     Failure to do so can lead to other user's jobs crashing because license are not available.
     Violations of this rule can lead to HPC administration killing your jobs.
 
