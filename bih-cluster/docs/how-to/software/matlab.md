@@ -1,4 +1,4 @@
-# How-To: Use MATLAB
+# How-To: Use Matlab
 
 !!! todo "Matlab is not fully integrated yet"
     We also need to finalize installation and then document the compiler version
@@ -13,20 +13,31 @@
 
 ## Pre-requisites
 
-You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access to the MATLAB licenses.
+You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access to the Latlab licenses.
 Register on [User Self Organisation MATLAB](../../admin/resource-registration.md#matlab-licenses) after registering with hpc-gatekeeper.
 
 Afterwards, you can connect to the High-Memory using the `license_matlab_r2016b` resource (see below).
 
 ## How-To Use
 
-BIH has a license of MATLAB R2016b for **16 seats** and various licensed packages (see below).
-It is installed on all of the compute nodes:
+BIH has a license of Matlab R2016b for **16 seats** and various licensed packages (see below).
+To display the available licenses:
+
+```bash
+login-1:~$ scontrol show lic
+LicenseName=matlab_r2016b
+    Total=16 Used=0 Free=16 Remote=no
+```
+
+Matlab is installed on all of the compute nodes:
 
 ```console
 # The following is VITAL so the scheduler allocates a license to your session.
-$ qrsh -l license_matlab_r2016b=1
-$ module avail
+login-1:~$ srun -L matlab_r2016b:1 --pty bash -i
+med0127:~$ scontrol show lic
+LicenseName=matlab_r2016b
+    Total=16 Used=1 Free=15 Remote=no
+med0127:~$ module avail
 ----------------- /usr/share/Modules/modulefiles -----------------
 dot         module-info null
 module-git  modules     use.own
@@ -34,10 +45,10 @@ module-git  modules     use.own
 ----------------------- /opt/local/modules -----------------------
 cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0
 gcc/7.2.0-0     matlab/r2016b-0
-$ module load matlab/r2016b-0 
+med0127:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
     Start matlab with GUI (requires X forwarding (ssh -X)): matlab
-$ matlab -nosplash -nodisplay -nojvm
+med0127:~$ matlab -nosplash -nodisplay -nojvm
                                                < M A T L A B (R) >
                                      Copyright 1984-2016 The MathWorks, Inc.
                                      R2016b (9.1.0.441655) 64-bit (glnxa64)
@@ -75,17 +86,17 @@ Wavelet Toolbox                                       Version 4.17        (R2016
 ## Running MATLAB UI
 
 For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., `ssh -X med-login1` from the Linux command line).
-Then, make sure `qlogin` for connecting to a node with X11 forwarding enabled.
+Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11` for connecting to a node with X11 forwarding enabled.
 
 ```bash
-your-client $ ssh -X med-login1
+client:~$ ssh -X med-login1
 [...]
-med-login1 $ qlogin -l license_matlab_r2016b=1
+med-login1:~ $ srun -L matlab_r2016b:1 --pty --x11
 [...]
-med0203 $ module load matlab/r2016b-0
+med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
     Start matlab with GUI (requires X forwarding (ssh -X)): matlab
-med0203 $ matlab
+med0203:~$ matlab
 [UI will start]
 ```
 
@@ -95,21 +106,13 @@ Also see [this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-inte
 
 ## See Available Matlab Licenses
 
-You can use `qstat -F license_matlab_r2016b` to see the currently available MATLAB license.
+You can use `scontrol show lic` to see the currently available MATLAB license.
 E.g., here I am running an interactive shell in which I have requested 1 of the 16 MATLAB licenses, so 15 more remain.
 
 ```
-$ qstat -F license_matlab_r2016b  | head
-queuename                      qtype resv/used/tot. load_avg arch          states
----------------------------------------------------------------------------------
-all.q@med0104                  BP    0/9/32         15.93    lx-amd64      
-	gc:license_matlab_r2016b=15
----------------------------------------------------------------------------------
-all.q@med0105                  BP    0/24/32        18.28    lx-amd64      
-	gc:license_matlab_r2016b=15
----------------------------------------------------------------------------------
-all.q@med0106                  BP    0/8/32         24.56    lx-amd64      
-	gc:license_matlab_r2016b=15
+$ scontrol show lic
+LicenseName=matlab_r2016b
+    Total=16 Used=1 Free=15 Remote=no
 ```
 
 ## A Working Example
@@ -118,17 +121,43 @@ Get a checkout of our MATLAB example.
 Then, look around at the contents of this repository.
 
 ```console
-$ git clone https://gitlab.com/bihealth/matlab_example.git
-$ cat job_script.sh
-[...]
+med-login1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
+med-login1:~$ cd bih-cluster-matlab-example
+med-login1:~$ cat job_script.sh
+#!/bin/bash
+
+# Logging goes to directory sge_log
+#SBATCH -o slurm_log/%x-%J.log
+# Keep current environment variables
+#SBATCH --export=ALL
+# Name of the script
+#SBATCH --job-name MATLAB-example
+# Allocate 4GB of RAM per core
+#SBATCH --mem 4G
+# Maximal running time of 2 hours
+#SBATCH --time 02:00:00
+# Allocate one Matlab license
+#SBATCH -L matlab_r2016b:1
+
+module load matlab/r2016b-0
+
+matlab -r example
 $ cat example.m
-[...]
+% Example Hello World script for Matlab.
+
+disp('Hello world!')
+disp('Thinking...')
+
+pause(10)
+
+disp(sprintf('The square root of 2 is = %f', sqrt(2)))
+exit
 ```
 
 For submitting the script, you can do the following
 
 ```console
-$ qsub job_script.sh
+med-login1:~$ sbatch job_script.sh
 ```
 
 This will submit a job with one Matlab license requested.
@@ -137,6 +166,6 @@ If you were to submit 17 of these jobs, then at least one of them would have to 
 
 !!! warning "Matlab License Server"
     Note that there is a Matlab license server running on the server that will check whether 16 or less Matlab sessions are currently running.
-    If a Matlab session is running but this is not made known to the scheduler via `-l license_matlab_r2016b=1` then this can lead to scripts crashing as not enough licenses are available.
+    If a Matlab session is running but this is not made known to the scheduler via `-L matlab_r2016b` then this can lead to scripts crashing as not enough licenses are available.
     If this happens to you, double-check that you have specified the license requirements correctly and notify hpc-helpdesk@bihealth.de in case of any problems.
     We will try to sort out the situation then.
