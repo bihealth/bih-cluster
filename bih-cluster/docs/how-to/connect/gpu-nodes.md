@@ -7,7 +7,7 @@ You simply request a GPU using the `-p gpu --gres=gpu:tesla:COUNT` argument to `
 This will place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
 !!! hint
-    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
+    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
 
 ## Prequisites
 

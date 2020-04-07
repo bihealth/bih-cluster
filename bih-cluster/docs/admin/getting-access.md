@@ -1,5 +1,10 @@
 # Getting Access
 
+!!! tip "Get Access"
+    1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
+    2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
+    3. **Connect.** `ssh -l <user>_<c or m>@med-login1.bihealth.org`
+
 Access to the BIH HPC is based on work groups (also known as labs, units).
 Each group is headed by a leader (also known as principle investigator/PI).
 Data can also be managed in **project** which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.

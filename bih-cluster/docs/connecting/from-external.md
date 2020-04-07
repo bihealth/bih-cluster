@@ -43,7 +43,7 @@ user@sl-it-p-ssh1:~$ ssh -l user_m med-login1.bihealth.org
 ### MDC VPN
 
 You can find the instructions for getting MDC VPN access [here in the MDC intranet](https://www.mdc-berlin.info/anleitungen) below the "VPN" heading.
-Please contact helpdesk@mdc-berlin.de for getting VPN access.
+Please contact [helpdesk@mdc-berlin.de](mailto:helpdesk@mdc-berlin.de) for getting VPN access.
 
 Install the VPN client and then start it.
 Once VPN has been activated you can SSH to the HPC just as from your workstation.
@@ -68,7 +68,7 @@ The form can be found in the [Charite Intranet](https://intranet.charite.de/file
 
 You can find [Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) in the Charite intranet.
 Fill it out and ship it in addition to the general VPN access form from above.
-[Charite Helpdesk](helpdesk@charite.de) can help you with any questions.
+[Charite Helpdesk](mailto:helpdesk@charite.de) can help you with any questions.
 
 Once you have been granted VPN access, start the client and connect to VPN.
 You will then be able to connect from your client in the VPN just as you do from your workstation.
@@ -86,6 +86,6 @@ From there, you can connect to the BIH HPC system.
 You need to apply for extended VPN access to be able to access the BIH VDI.
 The form can be found [here](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf).
 It is important to tick **Dienst(e)**, enter **HTTPS** and as target `view.bihealth.org`.
-Please write to [bih-it-team@bihealth.de](bih-it-team@bihealth.de) with the request to access the [BIH VDI](https://view.bihealth.org).
+Please write to [helpdesk@charite.de](mailto:helpdesk@charite.de) with the request to access the [BIH VDI](https://view.bihealth.org).
 
 When the access has been set up, follow the instructions on [client configuration](../configure-ssh/windows) for Windows, after logging in to the [BIH VDI](https://view.bihealth.org).
