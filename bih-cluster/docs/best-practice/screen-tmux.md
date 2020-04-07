@@ -3,8 +3,9 @@
 The program `screen` allows you to detach your session from your current login session.
 So in case you get disconnected your screen session will stay alive.
 
-- :exclamation: You have to reconnect to screen on the machine that you started it.
-  We thus recommend starting it only on the login nodes and **not** on a compute node.
+!!! hint
+    You have to reconnect to screen on the machine that you started it.
+    We thus recommend starting it only on the login nodes and **not** on a compute node.
 
 ## Start and terminat a screen session
 
@@ -74,7 +75,7 @@ $ exit
 Here is a sensible screen configuration.
 Save it as `~/.screenrc`.
 
-- [screenrc](files/screenrc)
+- **TODO** [screenrc](files/screenrc)
 
 ## Fix a broken screen session
 

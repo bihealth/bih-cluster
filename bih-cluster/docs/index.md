@@ -41,9 +41,9 @@ See [Maintenance](admin/maintenance) for a detailed list of current, planned, an
 You will need to perform some configuration steps after you have been registered with the cluster (via email to hpc-gatekeeper@bihealth.de by a group leader/PI).
 Here are the most important points:
 
-1. [Generating SSH Keys :key:](connecting/generate-key).
-2. [Submitting the key :arrow_up: to Charite or to MDC](connecting/submit-key).
-3. [Configuring your SSH client :wrench: on Linux and Mac or Windows](connecting/configure-ssh).
+1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux) or [Windows](connecting/generate-key/windows).
+2. [Submitting the key :arrow_up: to Charite](connecting/submit-key/charite) or [to MDC](connecting/submit-key/mdc).
+3. [Configuring your SSH client :wrench: on Linux and Mac](connecting/configure-ssh/linux) or [Windows](connecting/configure-ssh/windows).
 4. Bonus: [Connecting from external networks :flying_saucer:](connecting/from-external).
 
 There are various other topics covered in the "Connecting" section that might be of interest to you.
@@ -53,8 +53,8 @@ There are various other topics covered in the "Connecting" section that might be
 To get started, the following is a good reading order after your first successful connection to the cluster.
 
 1. [Getting Help](help/helpdesk) (and [Writing Good Tickets](help/good-tickets)).
-2. [Manual For the Impatient](manual/for-the-impatient).
-3. [The Cluster Tutorial: First Steps](tutorial/first-steps-episode-0).
+2. [For the Impatient](overview/for-the-impatient).
+3. [The Cluster Tutorial: First Steps](first-steps/episode-0).
 
 Then, continue reading through the manual.
 

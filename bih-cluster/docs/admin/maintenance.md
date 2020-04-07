@@ -11,7 +11,7 @@ There currently is no maintenance planned.
 We will switch to the [Slurm](https://slurm.schedmd.com/) workload scheduler (from the legacy SGE).
 The main reason is that Slurm allows for better scheduling of GPUs (and has loads of improvements over SGE), but the syntax is a bit different.
 Currently, our documentation is in an transient state.
-We are currently extending our [Slurm-specific documentation](Slurm-Overview).
+We are currently extending our [Slurm-specific documentation](slurm/quickstart).
 
 - **March 7, 2020 (test stage)**:
   Slurm will provide 16 CPU and 3 GPU nodes (with 4 Tesla V100 each), and two high memory nodes, the remaining nodes are available in SGE.
@@ -30,8 +30,8 @@ We are currently extending our [Slurm-specific documentation](Slurm-Overview).
 SSH Key Management has switched to using Charite and MDC ActiveDirectory servers.
 **You need to upload all keys by the end of April 2020.**
 
-- [MDC Key Upload](Manual-Connecting-Submitting-an-SSH-Key-to-MDC)
-- [Charite Key Upload](Manual-Connecting-Submitting-an-SSH-Key-to-Charite)
+- [MDC Key Upload](connecting/submit-key/mdc)
+- [Charite Key Upload](connecting/submit-key/charite)
 
 **Schedule**
 

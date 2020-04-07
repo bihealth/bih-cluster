@@ -6,10 +6,10 @@ The static data directory contains a sub-directory for the genomes, the precompu
 The top-level directory structure is as follows:
 
 * `static_data/`
-    * [`annotations`](/cubit/annotations.md)
-    * [`app_support`](/cubit/app-support.md)
-    * [`db`](/cubit/databases.md)
-    * [`exome_panel`](/cubit/exomes-panels.md)
-    * [`exon_list`](/cubit/exon-lists.md)
-    * [`precomputed`](/cubit/index-files.md)
-    * [`reference`](/cubit/references.md)
+    * [`annotations`](annotations.md)
+    * [`app_support`](app-support.md)
+    * [`db`](databases.md)
+    * [`exome_panel`](exomes-panels.md)
+    * [`exon_list`](exon-lists.md)
+    * [`precomputed`](index-files.md)
+    * [`reference`](references.md)

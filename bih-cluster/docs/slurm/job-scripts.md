@@ -32,7 +32,7 @@ date
 EOF
 ```
 
-Also see the [SLURM Rosetta Stone](Slurm-Rosetta-Stone) for more options.
+Also see the [SLURM Rosetta Stone](rosetta-stone.md) for more options.
 
 **Submit, Look at Queue & Result**
 

@@ -6,15 +6,15 @@
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
     While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-    Further, you can [easily install it yourself using Conda](Manual-Software-Management-Software-Installation-with-Conda).
+    Further, you can [easily install it yourself using Conda](../../best-practice/software-installation-with-conda).
 
 !!! question "Want to use the Matlab GUI?"
-    Make sure you understand X forwarding as outline [in this FAQ entry](Manual-Useful-Tips-Frequently-Asked-Questions#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
+    Make sure you understand X forwarding as outline [in this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
 
-## Prequisites
+## Pre-requisites
 
 You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access to the MATLAB licenses.
-Register on [User Self Organisation MATLAB](User-Self-Organisation/Matlab) after registering with hpc-gatekeeper.
+Register on [User Self Organisation MATLAB](../../admin/resource-registration.md#matlab-licenses) after registering with hpc-gatekeeper.
 
 Afterwards, you can connect to the High-Memory using the `license_matlab_r2016b` resource (see below).
 
@@ -91,7 +91,7 @@ med0203 $ matlab
 
 For forcing starting in text mode can be done (as said after `module load`): `matlab -nosplash -nodisplay -nojvm`.
 
-Also see [this FAQ entry](Manual-Useful-Tips-Frequently-Asked-Questions#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
+Also see [this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
 
 ## See Available Matlab Licenses
 

@@ -65,7 +65,7 @@ These systems support you by
 
 [Snakemake](https://snakemake.readthedocs.org) is a popular workflow management system widely used in Bioinformatics.
 A minimal approach is using [Makefiles](https://bsmith89.github.io/make-bml/).
-If you really cannot help using Scripts, see [our notes](Manual-Job-Management-Control-Job-Script-Submission) on how to do this in a cooperative manner.
+If you really cannot help using Scripts, see **TODO** [our notes](Manual-Job-Management-Control-Job-Script-Submission) on how to do this in a cooperative manner.
 These notes also contain a description of using `qmake` for parallel job submission.
 
 ## Understand Bash and Shell Exit Codes

@@ -11,8 +11,8 @@ However, it is quite well-documented and easy to install for scientific software
 
 ## Related Documents
 
-- [How to Build Run OpenMPI Programs](How-To-Build-Run-OpenMPI-Programs)
-- [User Self-Organisation: MPI Queues](User-Self-Organisation-MPI-Queues)
+- **TODO** How to Build Run OpenMPI Programs
+- **TODO** User Self-Organisation: MPI Queues
 
 ## Steps for Installing Scientific Software
 
@@ -28,7 +28,9 @@ Many scientific software packages will have more dependencies.
 If the dependencies are available as CentOS Core or EPEL packages (such as zlib), HPC IT administration can install them.
 However, otherwise you will have to install them on their own.
 
-- **Important:** Do not perform the compilation on the login nodes but go to a compute node instead :exclamation_mark:
+!!! warning
+
+    Do not perform the compilation on the login nodes but go to a compute node instead.
 
 ## Downloading and Extracting Software
 
@@ -265,7 +267,7 @@ $ module load gcc/7.2.0-0 openmpi/3.1.0-0 gromacs-mpi/2018.3
 ## Launching Gromacs
 
 Something along the lines of the following job script should be appropriate.
-See [How to Build Run OpenMPI Programs](How-To-Build-Run-OpenMPI-Programs) for more information and make sure to register for the MPI queues before using them (cf. [User Self-Organisation: MPI Queues](User-Self-Organisation-MPI-Queues)).
+See **TODO** How to Build Run OpenMPI Programs for more information and make sure to register for the MPI queues before using them (cf. **TODO** User Self-Organisation: MPI Queues).
 
 ```bash
 #!/bin/bash

@@ -120,7 +120,7 @@ Typically, you'll create an interactive session on a compute node using the `sru
 
 While not recommended, you can perform computations (such as using BWA) in the interactive session.
 However, when the connection is interrupted, your computation process will be stopped.
-It is therefore recommended you submit jobs using the `sbatch` command (or [use screen](Manual-Useful-Tips-Working-with-Screen)).
+It is therefore recommended you submit jobs using the `sbatch` command (or [use screen or tmux](../best-practice/screen-tmux)).
 
 ### Inspecting Jobs and the Cluster
 

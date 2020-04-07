@@ -47,7 +47,7 @@ This partition is for long-running tasks.
 
 This partition is for time-critical jobs with deadlines.
 For access to it you have to first ask [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de).
-See [Resource Registration: Critical Partition](/admin/resource-registration/#critical-partition) for details.
+See [Resource Registration: Critical Partition](../admin/resource-registration.md#critical-partition) for details.
 
 As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
 However, do not use this queue without arranging with hpc-gatekeeper as killing jobs will be used as the *ultima ratio* in case of such policy violations.
@@ -65,7 +65,7 @@ The maximal running time is relatively high (14 days) to allow for longer traini
 Contact hpc-helpdesk@bihealth.de if you have longer running jobs that you really cannot make run any shorter for assistance.
 
 For access to it you have register [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
-See [Resource Registration: GPU Nodes](/admin/resource-registration/#gpu-nodes) for details.
+See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nodes) for details.
 
 * **maximal running time:** 14 days of maximal running time
 * **partition name:** `gpu`
@@ -78,7 +78,7 @@ The maximal running time is relatively high (14 days) to allow for longer jobs.
 Contact hpc-helpdesk@bihealth.de if you have longer running jobs that you really cannot make run any shorter for assistance.
 
 For access to it you have register [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
-See [Resource Registration: GPU Nodes](/admin/resource-registration/#high-memory-nodes) for details.
+See [Resource Registration: GPU Nodes](../admin/resource-registration.md#high-memory-nodes) for details.
 
 * **maximal running time:** 14 days of maximal running time
 * **partition name:** `highmem`
