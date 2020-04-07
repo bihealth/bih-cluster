@@ -1,5 +1,9 @@
 # How-To: Install Custom Scientific Software
 
+!!! warning "Slurm Migration Missing"
+
+    TODO: this has not been migrated to Slurm yet.
+
 This page gives an end-to-end example how to build and install [Gromacs](http://www.gromacs.org/) as an example for managing complex scientific software installs in user land.
 You don't have to learn or understand the specifics of Gromacs.
 We use it as an example as there are some actual users on the BIH cluster.
@@ -11,8 +15,7 @@ However, it is quite well-documented and easy to install for scientific software
 
 ## Related Documents
 
-- **TODO** How to Build Run OpenMPI Programs
-- **TODO** User Self-Organisation: MPI Queues
+- [How-To: Build and Run OpenMPI Programs](openmpi)
 
 ## Steps for Installing Scientific Software
 
@@ -267,7 +270,7 @@ $ module load gcc/7.2.0-0 openmpi/3.1.0-0 gromacs-mpi/2018.3
 ## Launching Gromacs
 
 Something along the lines of the following job script should be appropriate.
-See **TODO** How to Build Run OpenMPI Programs for more information and make sure to register for the MPI queues before using them (cf. **TODO** User Self-Organisation: MPI Queues).
+See [How-To: Build and Run OpenMPI Programs](openmpi) for more information.
 
 ```bash
 #!/bin/bash
