@@ -13,7 +13,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/connecting/generate-key/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/connecting/submit-key/charite/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>Generate Keys - BIH HPC Docs</title>
+        <title>Charite - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#generating-ssh-keys" tabindex="0" class="md-skip">
+      <a href="#submitting-an-ssh-key-to-charite" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Generate Keys
+                Charite
               
             </span>
           
@@ -220,7 +220,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -251,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/getting-access/" title="Getting Access" class="md-nav__link">
+    <a href="../../../admin/getting-access/" title="Getting Access" class="md-nav__link">
       Getting Access
     </a>
   </li>
@@ -263,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
+    <a href="../../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
       Resource Registration
     </a>
   </li>
@@ -275,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
+    <a href="../../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
       Maintenance etc.
     </a>
   </li>
@@ -311,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
+    <a href="../../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
       HPC Helpdesk
     </a>
   </li>
@@ -323,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
+    <a href="../../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
       Good Tickets
     </a>
   </li>
@@ -335,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
+    <a href="../../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
       Frequently Asked Questions
     </a>
   </li>
@@ -356,11 +356,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Manual
+      Overview
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Manual
+        Overview
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -371,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../manual/for-the-impatient/" title="For the Impatient" class="md-nav__link">
+    <a href="../../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
       For the Impatient
     </a>
   </li>
@@ -383,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../manual/architecture/" title="Architecture" class="md-nav__link">
+    <a href="../../../overview/architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -395,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../manual/job-scheduler/" title="Job Scheduler" class="md-nav__link">
+    <a href="../../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
       Job Scheduler
     </a>
   </li>
@@ -407,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../manual/storage/" title="Storage Volumes" class="md-nav__link">
-      Storage Volumes
+    <a href="../../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
+      Nodes and Volumes
     </a>
   </li>
 
@@ -443,6 +443,75 @@
           
           
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Generate Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Generate Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../generate-key/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../generate-key/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" checked>
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Submit Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Submit Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
   
 
 
@@ -454,11 +523,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Generate Keys
+        Charite
       </label>
     
-    <a href="./" title="Generate Keys" class="md-nav__link md-nav__link--active">
-      Generate Keys
+    <a href="./" title="Charite" class="md-nav__link md-nav__link--active">
+      Charite
     </a>
     
       
@@ -472,15 +541,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-linuxmac" class="md-nav__link">
-    On Linux/Mac
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#on-windows" class="md-nav__link">
-    On Windows
+  <a href="#charite-zugangsportal" class="md-nav__link">
+    Charite Zugangsportal
   </a>
   
 </li>
@@ -502,9 +564,14 @@
 
 
   <li class="md-nav__item">
-    <a href="../submit-key/" title="Submit Keys" class="md-nav__link">
-      Submit Keys
+    <a href="../mdc/" title="MDC" class="md-nav__link">
+      MDC
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -513,9 +580,28 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../configure-ssh/" title="Configure Client" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
       Configure Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Configure Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+      Pre-Requisites
     </a>
   </li>
 
@@ -526,8 +612,61 @@
 
 
   <li class="md-nav__item">
-    <a href="../from-external/" title="From External" class="md-nav__link">
+    <a href="../../configure-ssh/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-ssh/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+      Connection Problems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../from-external/" title="From External" class="md-nav__link">
       From External
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+      Windows SSH Client
     </a>
   </li>
 
@@ -547,11 +686,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Slurm Scheduler
+      First Steps
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        Slurm Scheduler
+        First Steps
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -562,8 +701,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
-      Slurm Quickstart
+    <a href="../../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+      Episode 0
     </a>
   </li>
 
@@ -574,8 +713,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
-      Slurm Cheat Sheet
+    <a href="../../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+      Episode 1
     </a>
   </li>
 
@@ -586,8 +725,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
+    <a href="../../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+      Episode 2
     </a>
   </li>
 
@@ -598,8 +737,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
-      Slurm Job Scripts
+    <a href="../../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+      Episode 3
     </a>
   </li>
 
@@ -610,32 +749,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
-      Snakemake with Slurm
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
-      Slurm Rosetta Stone
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
-      X11 Forwarding
+    <a href="../../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+      Episode 4
     </a>
   </li>
 
@@ -655,11 +770,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
-      Best Practice
+      Storage
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
-        Best Practice
+        Storage
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -670,8 +785,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
-      Project Structure
+    <a href="../../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+      Accessing Snapshots
     </a>
   </li>
 
@@ -682,8 +797,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
-      Software Craftmanship
+    <a href="../../../storage/querying-storage/" title="Querying Storage" class="md-nav__link">
+      Querying Storage
     </a>
   </li>
 
@@ -694,44 +809,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
-      Using Screen/Tmux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
-      ~/.bashrc Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
-      Temporary Files
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
-      Custom Environment Modules
+    <a href="../../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
+      Storage Locations
     </a>
   </li>
 
@@ -751,11 +830,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      Cubit Static Data
+      Slurm Scheduler
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        Cubit Static Data
+        Slurm Scheduler
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -766,8 +845,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/" title="Overview" class="md-nav__link">
-      Overview
+    <a href="../../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
+      Slurm Quickstart
     </a>
   </li>
 
@@ -778,8 +857,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
-      Annotations
+    <a href="../../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+      Slurm Cheat Sheet
     </a>
   </li>
 
@@ -790,8 +869,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
-      Application Support
+    <a href="../../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
+      Migrating to Slurm
     </a>
   </li>
 
@@ -802,8 +881,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
-      Databases
+    <a href="../../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+      Slurm Job Scripts
     </a>
   </li>
 
@@ -814,8 +893,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
-      Exomes and Panels
+    <a href="../../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+      Snakemake with Slurm
     </a>
   </li>
 
@@ -826,8 +905,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
-      Exon Lists
+    <a href="../../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+      Slurm Rosetta Stone
     </a>
   </li>
 
@@ -838,20 +917,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
-      Precomputed Indexes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
-      Reference Sequences
+    <a href="../../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
+      X11 Forwarding
     </a>
   </li>
 
@@ -871,11 +938,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
-      How-To
+      Best Practice
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
-        How-To
+        Best Practice
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -886,8 +953,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
-      Contribute to Docs
+    <a href="../../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
+      Project Structure
     </a>
   </li>
 
@@ -898,8 +965,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
-      High-Memory Nodes
+    <a href="../../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+      Software Craftmanship
     </a>
   </li>
 
@@ -910,8 +977,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
-      GPU Nodes
+    <a href="../../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+      Using Screen/Tmux
     </a>
   </li>
 
@@ -922,8 +989,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
-      OpenMPI
+    <a href="../../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+      ~/.bashrc Guide
     </a>
   </li>
 
@@ -934,8 +1001,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
-      Scientific Software
+    <a href="../../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
+      Temporary Files
     </a>
   </li>
 
@@ -946,68 +1013,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
-      Cell Ranger
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
-      Jupyter
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
-      Keras
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
-      Matlab
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
-      Tensorflow
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
-      File Exchange
+    <a href="../../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
+      Custom Environment Modules
     </a>
   </li>
 
@@ -1027,10 +1034,341 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
-      Miscellaneous
+      Static Data
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-10">
+        Static Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/annotations/" title="Annotations" class="md-nav__link">
+      Annotations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/app-support/" title="Application Support" class="md-nav__link">
+      Application Support
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/databases/" title="Databases" class="md-nav__link">
+      Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
+      Exomes and Panels
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
+      Exon Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
+      Precomputed Indexes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../cubit/references/" title="Reference Sequences" class="md-nav__link">
+      Reference Sequences
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      How-To
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        How-To
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-1" type="checkbox" id="nav-11-1">
+    
+    <label class="md-nav__link" for="nav-11-1">
+      Connect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-1">
+        Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
+      High-Memory Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
+      GPU Nodes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
+    
+    <label class="md-nav__link" for="nav-11-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
+      OpenMPI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
+      Scientific Software
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
+      Cell Ranger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
+      Jupyter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/keras/" title="Keras" class="md-nav__link">
+      Keras
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
+      Matlab
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
+      Tensorflow
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
+    
+    <label class="md-nav__link" for="nav-11-3">
+      Service
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-3">
+        Service
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
+      File Exchange
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-4">
         Miscellaneous
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1042,7 +1380,48 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
+    <a href="../../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+      Contribute to Docs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/publication-list/" title="Publication List" class="md-nav__link">
       Publication List
     </a>
   </li>
@@ -1054,7 +1433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
+    <a href="../../../misc/external-resources/" title="External Guides" class="md-nav__link">
       External Guides
     </a>
   </li>
@@ -1066,7 +1445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
+    <a href="../../../misc/tips/" title="Misc. Tips" class="md-nav__link">
       Misc. Tips
     </a>
   </li>
@@ -1078,7 +1457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
+    <a href="../../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
       SSH Basics
     </a>
   </li>
@@ -1110,15 +1489,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#on-linuxmac" class="md-nav__link">
-    On Linux/Mac
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#on-windows" class="md-nav__link">
-    On Windows
+  <a href="#charite-zugangsportal" class="md-nav__link">
+    Charite Zugangsportal
   </a>
   
 </li>
@@ -1139,72 +1511,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/connecting/generate-key.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/connecting/submit-key/charite.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="generating-ssh-keys">Generating SSH Keys<a class="headerlink" href="#generating-ssh-keys" title="Permanent link">&para;</a></h1>
-<p>Before you can use SSH, you need to generate a public/private key pair.
-The steps differ between <a href="#on-linuxmac">Linux/Mac</a> and <a href="#on-windows">Windows</a>.</p>
-<h2 id="on-linuxmac">On Linux/Mac<a class="headerlink" href="#on-linuxmac" title="Permanent link">&para;</a></h2>
-<ul>
-<li>You might already have one, check whether the file <code>~/.ssh/id_rsa.pub</code> is present.</li>
-<li>Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):
-  <div class="codehilite"><pre><span></span><code>host:~$ ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
-</code></pre></div></li>
-<li>Use the default location for your key</li>
-<li>Enter the passphrase twice to encrypt your key</li>
-</ul>
-<p>The whole session should look something like this:</p>
-<div class="codehilite"><pre><span></span><code>host:~$ ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
-Generating public/private rsa key pair.
-Enter file in which to save the key <span class="o">(</span>/home/USER/.ssh/id_rsa<span class="o">)</span>: 
-Created directory <span class="s1">&#39;/home/USER/.ssh&#39;</span>.
-Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>:
-Enter same passphrase again: 
-Your identification has been saved in /home/USER/.ssh/id_rsa.
-Your public key has been saved in /home/USER/.ssh/id_rsa.pub.
-The key fingerprint is:
-<span class="m">55</span>:dd:8f:88:84:1b:b6:f0:19:d3:fb:19:8e:7a:9e:7d your_email@example.com
-The key<span class="err">&#39;</span>s randomart image is:
-+--<span class="o">[</span> RSA <span class="m">2048</span><span class="o">]</span>----+
-<span class="p">|</span>         o  .. . <span class="p">|</span>
-<span class="p">|</span>      . * o.  . .<span class="p">|</span>
-<span class="p">|</span>       + O.o . ..<span class="p">|</span>
-<span class="p">|</span>        <span class="o">=</span>.o o . .<span class="p">|</span>
-<span class="p">|</span>        S  + o   <span class="p">|</span>
-<span class="p">|</span>          . +    <span class="p">|</span>
-<span class="p">|</span>         .       <span class="p">|</span>
-<span class="p">|</span>        . .o  E  <span class="p">|</span>
-<span class="p">|</span>         oo ..   <span class="p">|</span>
-</code></pre></div>
-
-<p>The file content of <code>~/.ssh/id_rsa.pub</code> should look something like this):</p>
-<div class="codehilite"><pre><span></span><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809QK7hV6RCG13VcyPTIHSQePycfcUv5q1Jdy28MpacL/nv1UR/o35xPBn2HkgB4OqnKtt86soCGMd9/YzQP5lY7V60kPBJbrXDApeqf+H1GALsFNQM6MCwicdE6zTqE1mzWVdhGymZR28hGJbV9H4snMDDc0tW4i3FHGrDdmb7wHM9THMx6OcCrnNyA9Sh2OyBH4MwItKfuqEg2rc56D7WAQ2JcmPQZTlBAYeFL/dYYKcXmbffEpXTbYh+7O0o9RAJ7T3uOUj/2IbSnsgg6fyw0Kotcg8iHAPvb61bZGPOEWZb your_email@example.com
-</code></pre></div>
-
-<p><strong>Submit Your Key</strong></p>
-<p>As a next step you need to submit the SSH key use these links as:</p>
-<ul>
-<li><a href="/connecting/submit-charite"><img alt="🏥" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3e5.svg" title=":hospital:" /> Charite user</a></li>
-<li><a href="/connecting/submit-mdc"><img alt="🔬" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f52c.svg" title=":microscope:" /> MDC user</a></li>
-</ul>
-<h2 id="on-windows">On Windows<a class="headerlink" href="#on-windows" title="Permanent link">&para;</a></h2>
-<p>We recommend to use the program MobaXterm on Windows (<a href="moba-xterm">here is how to install it</a>).</p>
-<div class="admonition hint">
-<p class="admonition-title">Alternative SSH Clients for Windows</p>
-<ul>
-<li>Another popular option is <a href="https://www.putty.org/">PuTTy</a> but many users have problems configuring it correctly with SSH keys.</li>
-<li>On Windows 10, you can also install <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>, e.g., together with <a href="https://github.com/mskyaxl/wsl-terminal">WSL Terminal</a>.
-  This is not for the faint of heart (but great if you're a Unix head).</li>
-</ul>
-</div>
-<p>After installing MobaXterm, you will use the MobaKeyGen tool</p>
-<p><strong>Submit Your Key</strong></p>
-<p>As a next step you need to submit the SSH key use these links as:</p>
-<ul>
-<li><a href="/connecting/submit-charite"><img alt="🏥" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3e5.svg" title=":hospital:" /> Charite user</a></li>
-<li><a href="/connecting/submit-mdc"><img alt="🔬" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f52c.svg" title=":microscope:" /> MDC user</a></li>
-</ul>
+                <h1 id="submitting-an-ssh-key-to-charite">Submitting an SSH Key to Charite<a class="headerlink" href="#submitting-an-ssh-key-to-charite" title="Permanent link">&para;</a></h1>
+<p>As of February 2020, SSH key submission <strong>not accepted via email</strong> anymore.
+Instead, use the process outline here.</p>
+<p>For any help, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> (as this site is maintained by Charite GB IT).</p>
+<h3 id="charite-zugangsportal">Charite Zugangsportal<a class="headerlink" href="#charite-zugangsportal" title="Permanent link">&para;</a></h3>
+<p>Key are submitted in the Charite Zugangsportal.
+As of Feb 4, you have to use the "test" version for this.</p>
+<p>Go to <a href="https://zugang-test.charite.de">zugang-test.charite.de</a> and login.</p>
+<p><img alt="" src="../figures/zugang_charite_de_login.png" /></p>
+<p>Follow through the login page until you reach the main menu (it's tedious but we belive in you ;)
+Click the "SSH Keys" button.</p>
+<p><img alt="" src="../figures/zugang_charite_de_menu.png" /></p>
+<p>Paste your SSH key (starting with <code>ssh-rsa</code>) and ending with the label (usually your email, e.g., <code>john.doe@charite.de</code>) into the box (1) and press append (2). By default, the key can be found in the file <code>~/.ssh/id_rsa.pub</code> in Linux. If you generated the key in Windows, please paste the copied key from the text box.
+Repeat as necessary.
+Optionally, go back to the main menu (3) when done.</p>
+<p>If you have generated your SSH key with PuTTy, you must right click on the ppk-file, then choose "Edit with PuTTYgen" in the right click menu. Enter your passphrase. Then copy the SSH key out of the upper box (already highlighted in blue).</p>
+<p><img alt="" src="../figures/zugang_charite_de_ssh_keys.png" /></p>
+<p>Once your key has been added, it will take a few minutes for the changes to go live.</p>
                 
                   
                 
@@ -1226,7 +1553,7 @@ The key<span class="err">&#39;</span>s randomart image is:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../manual/storage/" title="Storage Volumes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../generate-key/windows/" title="Windows" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1235,19 +1562,19 @@ The key<span class="err">&#39;</span>s randomart image is:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Storage Volumes
+                Windows
               </span>
             </div>
           </a>
         
         
-          <a href="../submit-key/" title="Submit Keys" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mdc/" title="MDC" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Submit Keys
+                MDC
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1279,9 +1606,9 @@ The key<span class="err">&#39;</span>s randomart image is:
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
     
   </body>

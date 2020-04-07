@@ -13,7 +13,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/manual/for-the-impatient/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/querying-storage/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -42,7 +42,7 @@
     
     
       
-        <title>For the Impatient - BIH HPC Docs</title>
+        <title>Querying Storage - BIH HPC Docs</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#for-the-impatient" tabindex="0" class="md-skip">
+      <a href="#query-for-user-data-and-file-usage" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                For the Impatient
+                Querying Storage
               
             </span>
           
@@ -350,19 +350,17 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Manual
+      Overview
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Manual
+        Overview
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -371,124 +369,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        For the Impatient
-      </label>
-    
-    <a href="./" title="For the Impatient" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
       For the Impatient
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cluster-hardware-and-scheduling" class="md-nav__link">
-    Cluster Hardware and Scheduling
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#differences-between-workstations-and-clusters" class="md-nav__link">
-    Differences Between Workstations and Clusters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-the-cluster-is-and-is-not" class="md-nav__link">
-    What the Cluster Is and Is NOT
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locations-on-the-cluster" class="md-nav__link">
-    Locations on the Cluster
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporary-directories" class="md-nav__link">
-    Temporary Directories
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-steps-on-the-cluster" class="md-nav__link">
-    First Steps on the Cluster
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-the-cluster" class="md-nav__link">
-    Connecting to the Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-compute-node-through-login-node" class="md-nav__link">
-    Connecting to Compute Node through Login Node
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submitting-jobs" class="md-nav__link">
-    Submitting Jobs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inspecting-jobs-and-the-cluster" class="md-nav__link">
-    Inspecting Jobs and the Cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -498,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../architecture/" title="Architecture" class="md-nav__link">
+    <a href="../../overview/architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -510,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../job-scheduler/" title="Job Scheduler" class="md-nav__link">
+    <a href="../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
       Job Scheduler
     </a>
   </li>
@@ -522,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../storage/" title="Storage Volumes" class="md-nav__link">
-      Storage Volumes
+    <a href="../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
+      Nodes and Volumes
     </a>
   </li>
 
@@ -557,9 +442,28 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../connecting/generate-key/" title="Generate Keys" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
       Generate Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Generate Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
+      Linux
     </a>
   </li>
 
@@ -570,8 +474,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/" title="Submit Keys" class="md-nav__link">
+    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
       Submit Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Submit Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
+      Charite
     </a>
   </li>
 
@@ -582,9 +522,86 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/" title="Configure Client" class="md-nav__link">
-      Configure Client
+    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
+      MDC
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Configure Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Configure Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+      Pre-Requisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+      Connection Problems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -596,6 +613,18 @@
   <li class="md-nav__item">
     <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
       From External
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+      Windows SSH Client
     </a>
   </li>
 
@@ -615,10 +644,204 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Slurm Scheduler
+      First Steps
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        First Steps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+      Episode 0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+      Episode 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+      Episode 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+      Episode 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+      Episode 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+      Accessing Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Querying Storage
+      </label>
+    
+    <a href="./" title="Querying Storage" class="md-nav__link md-nav__link--active">
+      Querying Storage
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#query-for-user-data-and-file-usage" class="md-nav__link">
+    Query for User Data and File Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-for-group-data-and-file-usage" class="md-nav__link">
+    Query for Group Data and File Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-for-project-data-and-file-usage" class="md-nav__link">
+    Query for Project Data and File Usage
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../storage-locations/" title="Storage Locations" class="md-nav__link">
+      Storage Locations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Slurm Scheduler
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
         Slurm Scheduler
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -720,13 +943,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-9">
       Best Practice
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-9">
         Best Practice
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -816,14 +1039,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-8">
-      Cubit Static Data
+    <label class="md-nav__link" for="nav-10">
+      Static Data
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Cubit Static Data
+      <label class="md-nav__title" for="nav-10">
+        Static Data
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -936,13 +1159,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-11">
       How-To
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-11">
         How-To
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -953,12 +1176,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
-      Contribute to Docs
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-1" type="checkbox" id="nav-11-1">
+    
+    <label class="md-nav__link" for="nav-11-1">
+      Connect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-1">
+        Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -983,6 +1213,30 @@
     </a>
   </li>
 
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
+    
+    <label class="md-nav__link" for="nav-11-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -1068,6 +1322,30 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
+    
+    <label class="md-nav__link" for="nav-11-3">
+      Service
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-3">
+        Service
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
@@ -1084,6 +1362,47 @@
     </nav>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-4">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+      Contribute to Docs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
@@ -1092,13 +1411,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-12">
       Miscellaneous
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-12">
         Miscellaneous
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1171,91 +1490,28 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cluster-hardware-and-scheduling" class="md-nav__link">
-    Cluster Hardware and Scheduling
+  <a href="#query-for-user-data-and-file-usage" class="md-nav__link">
+    Query for User Data and File Usage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#differences-between-workstations-and-clusters" class="md-nav__link">
-    Differences Between Workstations and Clusters
+  <a href="#query-for-group-data-and-file-usage" class="md-nav__link">
+    Query for Group Data and File Usage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-the-cluster-is-and-is-not" class="md-nav__link">
-    What the Cluster Is and Is NOT
+  <a href="#query-for-project-data-and-file-usage" class="md-nav__link">
+    Query for Project Data and File Usage
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locations-on-the-cluster" class="md-nav__link">
-    Locations on the Cluster
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#temporary-directories" class="md-nav__link">
-    Temporary Directories
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-steps-on-the-cluster" class="md-nav__link">
-    First Steps on the Cluster
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-the-cluster" class="md-nav__link">
-    Connecting to the Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting-to-compute-node-through-login-node" class="md-nav__link">
-    Connecting to Compute Node through Login Node
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#submitting-jobs" class="md-nav__link">
-    Submitting Jobs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inspecting-jobs-and-the-cluster" class="md-nav__link">
-    Inspecting Jobs and the Cluster
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1275,127 +1531,68 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/manual/for-the-impatient.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/storage/querying-storage.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="for-the-impatient">For the Impatient<a class="headerlink" href="#for-the-impatient" title="Permanent link">&para;</a></h1>
-<p>This document describes the fundamentals of using the BIH cluster.
-More detailed documentation is available in the rest of the Wiki.
-Start exploring from the <a href="home">Wiki home</a>.</p>
-<h2 id="cluster-hardware-and-scheduling">Cluster Hardware and Scheduling<a class="headerlink" href="#cluster-hardware-and-scheduling" title="Permanent link">&para;</a></h2>
-<p>The cluster consists of the following major components:</p>
-<ul>
-<li>2 login nodes for users <code>med-login1</code> and <code>med-login2</code> (for interactive sessions only),</li>
-<li>2 nodes for file transfers <code>med-transfer1</code> and <code>med-transfer2</code>,</li>
-<li>a scheduling system using SLURM (SGE is being phased out),</li>
-<li>approximately 200 general purpose compute nodes <code>med01XX</code>, <code>med02XX</code>, <code>med05XX</code>, <code>med06XX</code>, <code>med07XX</code>.</li>
-<li>a few high memory nodes <code>med040[1-4]</code>,</li>
-<li>4 nodes with 4 Tesla GPUs each (!) <code>med030[1-4]</code>,</li>
-<li>a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at <code>/fast</code>,</li>
-<li>a slower "classic" ZFS file system available through NFS with ~250 TB mounted at <code>/slow</code>.</li>
-</ul>
-<p>This is shown by the following picture:</p>
-<p><img alt="" src="figures/Cluster_Layout.png" /></p>
-<h2 id="differences-between-workstations-and-clusters">Differences Between Workstations and Clusters<a class="headerlink" href="#differences-between-workstations-and-clusters" title="Permanent link">&para;</a></h2>
-<p>The differences include:</p>
-<ul>
-<li>The directly reachable login nodes are not meant for computation!
-  Use <code>srun</code> to go to a compute node.</li>
-<li>Every time you type <code>srun</code> to go to a compute node you might end up on a different host.</li>
-<li>Most directories on the nodes are not shared, including <code>/tmp</code>.</li>
-<li>The <code>/fast</code> directory is shared throughout the cluster which contains your home, group home, and project directories.</li>
-<li>You will not get <code>root</code> or <code>sudo</code> permissions on the cluster.</li>
-<li>You should use <em>batch jobs</em> (<code>sbatch</code>) over calling programs interactively.</li>
-</ul>
-<h2 id="what-the-cluster-is-and-is-not">What the Cluster Is and Is NOT<a class="headerlink" href="#what-the-cluster-is-and-is-not" title="Permanent link">&para;</a></h2>
-<p>NB: the following might sound a bit harsh but is written with everyone's best intentions in mind (we actually like you, our user!)
-This addresses a lot of suboptimal (yet not dangerous, of course) points we observed in our users.</p>
-<p><strong>IT IS</strong></p>
-<ul>
-<li>It is scientific infrastructure just like a lab workbench or miscroscope.
-  It is there to be used for you and your science.
-  <strong>We trust you</strong> to behave in a collaboratively.
-  We will monitor usage, though, and call out offenders.</li>
-<li>With its ~200 nodes, ~6400 threads and fast parallel I/O, it is a powerful resource optimized for bioinformatics sequencing data analysis.</li>
-<li>A place for data move data at the beginning of your project.
-  By definition, every project has an end.
-  Being the place it is, your project data needs to leave the cluster at the end of the cluster.</li>
-<li>A collaborative resource with central administration managed by BIH HPC IT and supported via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a></li>
-</ul>
-<p><strong>IT IS NOT</strong></p>
-<ul>
-<li>A self-administrated workstation or servers.<ul>
-<li>You will not get <code>sudo</code>.</li>
-<li>We will not install software beyond those in broad use and available in CentOS Core or EPEL repositories.</li>
-<li>You can install software in your user/group/project directories, for example using Conda.</li>
-</ul>
-</li>
-<li>A place to store primary copies of your data.
-  You only get 1 GB of storage in your home for scripts, configuration, and documents.</li>
-<li>A safe place to store data.
-  Only your 1 GB of home is in snapshots and backup.
-  While data is stored on redundant disks, technical or administrative failure might eventually lead to data loss.
-  We do everything humanly possible to prevent this.
-  Despite this, it is your responsibility to keep important files in the snapshot/backup protected home, ideally even in copy (e.g., a git repository) elsewhere.
-  Also, keeping safe copies of primary data files, your published results, and the steps in between reproducible is your responsibility.</li>
-<li>A place to store data indefinitely.
-  The fast GPFS storage is expensive and "sparse" in a way.
-  The general workflow is: (1) copy data to cluster, (2) process it, creating intermediate and final results, (3) copy data elsewhere and remove it from the cluster</li>
-<li>Generally suitable for primary software development.
-  The I/O system might get overloaded and saving scripts might take some time.
-  We know of people who do this and it works for them.
-  Your mileage might vary.</li>
-</ul>
-<h2 id="locations-on-the-cluster">Locations on the Cluster<a class="headerlink" href="#locations-on-the-cluster" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Your home directory is located in <code>/fast/users/$USER</code>.
-  <strong>Your home is for scripts, source code, and configuration only.</strong>
-  <strong>Use your <code>work</code> directory for large files.</strong>
-  <strong>The quota in the <code>home</code> directory is 1 GB but we have nightly snapshots and backups thereof.</strong></li>
-<li>Your work directory is located in <code>/fast/users/$USER/work</code>.
-  This is where you should place large files.
-  Files in this location do not have snapshots or backups.</li>
-<li>The directory (actually a GPFS file set) <code>/fast/users/$USER/scratch</code> should be used for temporary data.
-  <strong>All data placed there will be removed after 4 weeks.</strong></li>
-<li>If you are part of an AG/lab working on the cluster, the group directory is in <code>/fast/groups/$AG</code>.</li>
-<li>Projects are located in <code>/fast/projects/$PROJECT</code>.</li>
-</ul>
-<h3 id="temporary-directories">Temporary Directories<a class="headerlink" href="#temporary-directories" title="Permanent link">&para;</a></h3>
-<p>Note that you also have access to <code>/tmp</code> on the individual nodes but the disk is <strong>slow</strong> and <strong>small</strong>.
-If you are processing large NGS data, we recommend you create <code>/fast/users/$USER/scratch/tmp</code> and set the environment variable <code>TMPDIR</code> to point there.
-However, for creating locks special Unix files such as sockets or fifos, <code>/tmp</code> is the right place.
-<strong>Note that files placed in your <code>scratch</code> directory will be removed automatically after 4 weeks.</strong>
-<strong>Do not place any valueable files in there.</strong></p>
-<h2 id="first-steps-on-the-cluster">First Steps on the Cluster<a class="headerlink" href="#first-steps-on-the-cluster" title="Permanent link">&para;</a></h2>
-<h3 id="connecting-to-the-cluster">Connecting to the Cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Permanent link">&para;</a></h3>
-<ul>
-<li>From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes <code>med-login{1,2}.bihealth.org</code>.<ul>
-<li>For Charite users, your name is <code>${USER}_c</code>, for MDC users, your account is <code>${USER}_m</code> where <code>$USER</code> is the login name of your primary location.</li>
-</ul>
-</li>
-<li>From the outside, <strong>for MDC users</strong>, the cluster is accessible via <code>ssh1.mdc-berlin.de</code> (you need to enable SSH key agent forwarding for this)<ul>
-<li>Note that you have to use your MDC user name (without any suffix <code>_m</code>) for connecting to this host.</li>
-<li>Also note that BIH HPC IT does not have control over <code>ssh1.mdc-berlin.de</code>.
-  <em>You have to contact MDC IT in case of any issues.</em></li>
-</ul>
-</li>
-<li>From the outside, <strong>for Charite</strong> users, there is no SSH hop node.
-  Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
-  You can use <a href="https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf">this form availble in Charite Intranet</a> for this.
-  Please refer to the Charite intranet or <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> for more information.</li>
-</ul>
-<h3 id="connecting-to-compute-node-through-login-node">Connecting to Compute Node through Login Node<a class="headerlink" href="#connecting-to-compute-node-through-login-node" title="Permanent link">&para;</a></h3>
-<p>After logging into the cluster, you are on the login node <code>med-login&lt;X&gt;</code> (<code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code>).
-When transferring files, use the <code>med-transfer1</code> or <code>med-transfer2</code> nodes.
-You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
-Typically, you'll create an interactive session on a compute node using the <code>srun</code> command.</p>
-<h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">&para;</a></h3>
-<p>While not recommended, you can perform computations (such as using BWA) in the interactive session.
-However, when the connection is interrupted, your computation process will be stopped.
-It is therefore recommended you submit jobs using the <code>sbatch</code> command (or <a href="Manual-Useful-Tips-Working-with-Screen">use screen</a>).</p>
-<h3 id="inspecting-jobs-and-the-cluster">Inspecting Jobs and the Cluster<a class="headerlink" href="#inspecting-jobs-and-the-cluster" title="Permanent link">&para;</a></h3>
-<p>You can inspect your currently running jobs with <code>squeue</code>, and kill them using <code>scancel</code>.
-You can inspect jobs that have finished with <code>sacct</code>, and see the cluster nodes using <code>sinfo</code>.</p>
+                  <h1>Querying Storage</h1>
+                
+                <p>As described elsewhere, all data in your user, group, and project volumes is subject to quotas.
+Again, note that in case you face a shortage of storage, do not hesitate to send a request for quota increase to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</p>
+<p>This page quickly shows how to query for the current usage of data volume and file counts for your user, group, and projects.</p>
+<h2 id="query-for-user-data-and-file-usage">Query for User Data and File Usage<a class="headerlink" href="#query-for-user-data-and-file-usage" title="Permanent link">&para;</a></h2>
+<p>The file <code>/etc/bashrc.gpfs-quota</code> contains some Bash functions that you can use for querying the quota usage.
+This file is automatically sourced in all of your Bash sessions.</p>
+<p>For querying your user's data and file usage, enter the following command:</p>
+<div class="codehilite"><pre><span></span><code># bih-gpfs-quota-user holtgrem_c
+</code></pre></div>
+
+<p>You will get a report as follows.
+As soon as usage reaches 90%, the data/file usage will be highlighted in yellow.
+If you pass 99%, the data/file usage will be highlighted in red.</p>
+<div class="codehilite"><pre><span></span><code>=================================
+Quota Report for: user holtgrem_c
+=================================
+
+                           DATA       quota       GR- FILES      quota       GR-
+ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
+------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
+users   holtgrem_c home     103M  10%  1.0G  1.5G   -  2.5k  25%   10k   12k   -
+users   holtgrem_c work     639G  62%  1.0T  1.1T   -  1.0M  52%  2.0M  2.2M   -
+users   holtgrem_c scratch   42G   0%  200T  220T   -  207k 0.1%  200M  220M   -
+[...]
+</code></pre></div>
+
+<h2 id="query-for-group-data-and-file-usage">Query for Group Data and File Usage<a class="headerlink" href="#query-for-group-data-and-file-usage" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code># bih-gpfs-report-quota group ag_someag
+=================================
+Quota Report for: group ag_someag
+=================================
+
+                           DATA       quota       GR- FILES      quota       GR-
+ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
+------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
+groups  ag_someag  home        0   0%  1.0G  1.5G   -     4   0%   10k   12k   -
+groups  ag_someag  work     349G  34%  1.0T  1.5T   -   302   0%  2.0M  2.2M   -
+groups  ag_someag  scratch     0   0%  200T  220T   -     1   0%  200M  220M   -
+
+[...]
+</code></pre></div>
+
+<h2 id="query-for-project-data-and-file-usage">Query for Project Data and File Usage<a class="headerlink" href="#query-for-project-data-and-file-usage" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code># bih-gpfs-report-quota project someproj
+==================================
+Quota Report for: project someproj
+==================================
+
+                           DATA       quota       GR- FILES      quota       GR-
+ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
+------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
+groups  someproj   home        0   0%  1.0G  1.5G   -     4   0%   10k   12k   -
+groups  someproj   work     349G  34%  1.0T  1.5T   -   302   0%  2.0M  2.2M   -
+groups  someproj   scratch     0   0%  200T  220T   -     1   0%  200M  220M   -
+
+[...]
+</code></pre></div>
                 
                   
                 
@@ -1417,7 +1614,7 @@ You can inspect jobs that have finished with <code>sacct</code>, and see the clu
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../help/faq/" title="Frequently Asked Questions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../accessing-snapshots/" title="Accessing Snapshots" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1426,19 +1623,19 @@ You can inspect jobs that have finished with <code>sacct</code>, and see the clu
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Frequently Asked Questions
+                Accessing Snapshots
               </span>
             </div>
           </a>
         
         
-          <a href="../architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../storage-locations/" title="Storage Locations" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Architecture
+                Storage Locations
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

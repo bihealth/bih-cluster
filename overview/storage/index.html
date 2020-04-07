@@ -13,7 +13,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/manual/job-scheduler/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/overview/storage/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Job Scheduler - BIH HPC Docs</title>
+        <title>Nodes and Volumes - BIH HPC Docs</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#job-scheduler" tabindex="0" class="md-skip">
+      <a href="#nodes-and-storage-volumes" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Job Scheduler
+                Nodes and Volumes
               
             </span>
           
@@ -358,11 +358,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      Manual
+      Overview
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Manual
+        Overview
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -395,6 +395,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../job-scheduler/" title="Job Scheduler" class="md-nav__link">
+      Job Scheduler
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -406,11 +418,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Job Scheduler
+        Nodes and Volumes
       </label>
     
-    <a href="./" title="Job Scheduler" class="md-nav__link md-nav__link--active">
-      Job Scheduler
+    <a href="./" title="Nodes and Volumes" class="md-nav__link md-nav__link--active">
+      Nodes and Volumes
     </a>
     
       
@@ -424,64 +436,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
-    Partitions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
-    debug
+  <a href="#cluster-layout" class="md-nav__link">
+    Cluster Layout
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#default" class="md-nav__link">
-    default
+      
+        <li class="md-nav__item">
+  <a href="#cluster-nodes" class="md-nav__link">
+    Cluster Nodes
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#medium" class="md-nav__link">
-    medium
+      
+        <li class="md-nav__item">
+  <a href="#cluster-volumes-and-locations" class="md-nav__link">
+    Cluster Volumes and Locations
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#long" class="md-nav__link">
-    long
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#critical" class="md-nav__link">
-    critical
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
-    gpu
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#highmem" class="md-nav__link">
-    highmem
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -493,18 +464,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../storage/" title="Storage Volumes" class="md-nav__link">
-      Storage Volumes
-    </a>
   </li>
 
         
@@ -537,9 +496,28 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../connecting/generate-key/" title="Generate Keys" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
       Generate Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Generate Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
+      Linux
     </a>
   </li>
 
@@ -550,8 +528,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/" title="Submit Keys" class="md-nav__link">
+    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
       Submit Keys
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Submit Keys
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
+      Charite
     </a>
   </li>
 
@@ -562,9 +576,86 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/" title="Configure Client" class="md-nav__link">
-      Configure Client
+    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
+      MDC
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Configure Client
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Configure Client
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+      Pre-Requisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+      Connection Problems
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -576,6 +667,18 @@
   <li class="md-nav__item">
     <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
       From External
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+      Windows SSH Client
     </a>
   </li>
 
@@ -595,10 +698,154 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
-      Slurm Scheduler
+      First Steps
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        First Steps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+      Episode 0
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+      Episode 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+      Episode 2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+      Episode 3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+      Episode 4
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+      Accessing Snapshots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/querying-storage/" title="Querying Storage" class="md-nav__link">
+      Querying Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
+      Storage Locations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Slurm Scheduler
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
         Slurm Scheduler
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -700,13 +947,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-9">
       Best Practice
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-9">
         Best Practice
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -796,14 +1043,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-8">
-      Cubit Static Data
+    <label class="md-nav__link" for="nav-10">
+      Static Data
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Cubit Static Data
+      <label class="md-nav__title" for="nav-10">
+        Static Data
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -916,13 +1163,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-11">
       How-To
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-11">
         How-To
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -933,12 +1180,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
-      Contribute to Docs
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-1" type="checkbox" id="nav-11-1">
+    
+    <label class="md-nav__link" for="nav-11-1">
+      Connect
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-1">
+        Connect
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -963,6 +1217,30 @@
     </a>
   </li>
 
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
+    
+    <label class="md-nav__link" for="nav-11-2">
+      Software
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-2">
+        Software
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -1048,6 +1326,30 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-3" type="checkbox" id="nav-11-3">
+    
+    <label class="md-nav__link" for="nav-11-3">
+      Service
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-3">
+        Service
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
@@ -1064,6 +1366,47 @@
     </nav>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+    
+    <label class="md-nav__link" for="nav-11-4">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-11-4">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+      Contribute to Docs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
@@ -1072,13 +1415,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-12">
       Miscellaneous
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-12">
         Miscellaneous
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1158,64 +1501,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#partitions" class="md-nav__link">
-    Partitions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#debug" class="md-nav__link">
-    debug
+  <a href="#cluster-layout" class="md-nav__link">
+    Cluster Layout
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#default" class="md-nav__link">
-    default
+      
+        <li class="md-nav__item">
+  <a href="#cluster-nodes" class="md-nav__link">
+    Cluster Nodes
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#medium" class="md-nav__link">
-    medium
+      
+        <li class="md-nav__item">
+  <a href="#cluster-volumes-and-locations" class="md-nav__link">
+    Cluster Volumes and Locations
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#long" class="md-nav__link">
-    long
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#critical" class="md-nav__link">
-    critical
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gpu" class="md-nav__link">
-    gpu
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#highmem" class="md-nav__link">
-    highmem
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1235,82 +1537,89 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/manual/job-scheduler.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/overview/storage.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="job-scheduler">Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">&para;</a></h1>
-<p>Once logged into the cluster through the login nodes, users use the Slurm scheduler for job submission.
-In Slurm nomenclature, the nodes are assigned to one or more <strong>partitions</strong> and jobs are then assigned to nodes according to the partition's configuration.</p>
-<div class="admonition note">
-<p class="admonition-title">Selecting Partitions</p>
-<p>Users should only select partitions explictely if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
-Otherwise, they should let Slurm decide about the optimal execution.</p>
+                <h1 id="nodes-and-storage-volumes">Nodes and Storage Volumes<a class="headerlink" href="#nodes-and-storage-volumes" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">No mounting <strong>on</strong> the cluster itself.</p>
+<p>For various technical and security-related reasons, it is not possible to mount anything on the cluster nodes by users.
+That is, it is not possible to get file server mounts on the cluster nodes.
+For mounting the cluster storage on your computer, see <a href="../../connecting/configure-ssh/linux/#file-system-mount-via-sshfs">Connecting: SSHFS Mounts</a>.</p>
 </div>
-<h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
-<p>The BIH HPC has the following partitions.</p>
-<h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
-<h3 id="default"><code>default</code><a class="headerlink" href="#default" title="Permanent link">&para;</a></h3>
-<p>This partition is for normal jobs running in less than 4 hours.
-The number of overall allows jobs by one user is high to reward users for chopping down their tasks into smaller parts and making them scheduler friendly.</p>
+<p>This document gives an overview of the nodes and volumes on the cluster.</p>
+<h2 id="cluster-layout">Cluster Layout<a class="headerlink" href="#cluster-layout" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="figures/Cluster_Layout.png" /></p>
+<h2 id="cluster-nodes">Cluster Nodes<a class="headerlink" href="#cluster-nodes" title="Permanent link">&para;</a></h2>
+<p>The following groups of nodes are available to cluster users.
+There are a number of nodes that are invisible to non-admin staff, hosting the queue master and monitoring tools and providing backup storage for key critical data, but these are not shown here.</p>
 <ul>
-<li><strong>maximal running time:</strong> 4 hours</li>
-<li><strong>maximal cores:</strong> &gt;6000 cores (all nodes, <strong>no limit</strong>)</li>
-<li><strong>priority:</strong> <strong><code>default</code></strong> &lt; <code>medium</code> &lt; <code>long</code> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>--time 04:00:00</code></li>
+<li><code>med-login1..3</code></li>
+<li>available as <code>med-login{1,2,3}.bihealth.org</code></li>
+<li>login nodes (IPs: <code>172.16.45.209</code>, <code>172.16.45.210</code>, <code>172.16.45.211</code>)</li>
+<li>do not perform any computation on these nodes!</li>
+<li>these nodes are not execution nodes</li>
+<li>each process may at most use 1GB of RAM to increase stability of the node</li>
+<li><code>med0101..0124,0127</code></li>
+<li>25 standard nodes</li>
+<li>Intel Xeon E5-2650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz, 16 cores x2 threading</li>
+<li>128 GB RAM</li>
+<li><code>med0133..0164</code></li>
+<li>32 standard nodes</li>
+<li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
+<li>192 GB RAM</li>
+<li><code>med0201..0264</code></li>
+<li>64 nodes with Infiniband interconnect</li>
+<li>Intel Xeon E5-2650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz, 16 cores x2 threading</li>
+<li>128 GB RAM</li>
+<li><code>med0401..0405</code> special purpose/high-memory machines</li>
+<li>Intel Xeon E5-4650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.40GHz, 40 cores x2 threading</li>
+<li><code>med0401</code> and <code>med0402</code><ul>
+<li>1 TB RAM</li>
 </ul>
-<h3 id="medium"><code>medium</code><a class="headerlink" href="#medium" title="Permanent link">&para;</a></h3>
-<p>This partition is for jobs running for multiple days.</p>
+</li>
+<li><code>med0403</code> and <code>med0404</code><ul>
+<li>500 GB RAM</li>
+</ul>
+</li>
+<li><code>med0405</code><ul>
+<li>2x "Tesla K20Xm" GPU accelleration cards (cluster resource <code>gpu</code>)</li>
+<li>access limited to explicit GPU users</li>
+</ul>
+</li>
+<li><code>med0601..0616</code></li>
+<li>16 nodes owned by CUBI</li>
+<li>Intel Xeon E5-2640 v3 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz</li>
+<li>192 GB RAM</li>
+<li><code>med0618..0633</code></li>
+<li>16 nodes owned by CUBI</li>
+<li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
+<li>192 GB RAM</li>
+<li><code>med0701..0764</code></li>
+<li>64 standard nodes</li>
+<li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
+<li>192 GB RAM</li>
+</ul>
+<p>If not noted anyway, currently no access restrictions apply per se.</p>
+<h2 id="cluster-volumes-and-locations">Cluster Volumes and Locations<a class="headerlink" href="#cluster-volumes-and-locations" title="Permanent link">&para;</a></h2>
+<p>The cluster has 2.1 PB of fast storage, currently available at <code>/fast</code>.
+The storage runs on a DDN appliance using the IBM GPFS file system and is designed for massively parallel access from an HPC system.
+In contrast to "single server" NFS systems, the system can provide large bandwidth to all cluster nodes in parallel as long as large data means relatively "few" files are read and written.
+The system is not designed for access to many small files. </p>
+<p>The <code>/fast</code> volume has the following directories:</p>
 <ul>
-<li><strong>maximal running time:</strong> 7 days</li>
-<li><strong>maximal cores:</strong> 128 cores/slots (4 nodes)</li>
-<li><strong>priority:</strong> <code>default</code> &lt; <strong><code>medium</code></strong> &lt; <code>long</code> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 7-00:00:00</code></li>
+<li><code>/fast/users/$USER</code> --
+  For a user's data, the default quota is set to 10GB (see below for the <code>scratch</code> sub directory with no quota).</li>
+<li><code>/fast/groups/$AG</code> --
+  For the data of a working group lab, there is no default quota.</li>
+<li><code>/fast/projects/$PROJECT</code>
+  For sharing data between users that are not in the same lab, there is no default quota.
+  <img alt="❗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2757.svg" title=":exclamation:" /> Projects can be used for giving subsets of a whole lab access to a certain data set to implement the data privacy concept "Datensparsamkeit".</li>
 </ul>
-<h3 id="long"><code>long</code><a class="headerlink" href="#long" title="Permanent link">&para;</a></h3>
-<p>This partition is for long-running tasks.</p>
-<ul>
-<li><strong>maximal running time:</strong> 28 days</li>
-<li><strong>maximal cores:</strong> 32 cores/slots (1 node)</li>
-<li><strong>project name:</strong> <code>long</code></li>
-<li><strong>queue name:</strong> <code>long.q</code></li>
-<li><strong>priority:</strong> <code>default</code> &lt; <code>medium</code> &lt; <strong><code>long</code></strong> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 28-00:00:00</code></li>
-</ul>
-<h3 id="critical"><code>critical</code><a class="headerlink" href="#critical" title="Permanent link">&para;</a></h3>
-<p>This partition is for time-critical jobs with deadlines.
-For access to it you have to first ask <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a>.
-See <a href="/admin/resource-registration/#critical-partition">Resource Registration: Critical Partition</a> for details.</p>
-<p>As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
-However, do not use this queue without arranging with hpc-gatekeeper as killing jobs will be used as the <em>ultima ratio</em> in case of such policy violations.</p>
-<ul>
-<li><strong>maximal running time:</strong> 7 days of maximal running time</li>
-<li><strong>maximal cores:</strong> 1536 cores/slots (48 nodes)</li>
-<li><strong>project name:</strong> <code>critical</code></li>
-<li><strong>priority:</strong> <code>default</code> &lt; <code>medium</code> &lt; <code>long</code> &lt; <strong><code>critical</code></strong> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 7-00:00:00</code></li>
-</ul>
-<h3 id="gpu"><code>gpu</code><a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
-<p>The GPU nodes are only part of the <code>gpu</code> partition so they are not blocked by normal compute jobs.
-The maximal running time is relatively high (14 days) to allow for longer training jobs.
-Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
-<p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
-See <a href="/admin/resource-registration/#gpu-nodes">Resource Registration: GPU Nodes</a> for details.</p>
-<ul>
-<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
-<li><strong>partition name:</strong> <code>gpu</code></li>
-<li><strong>argument string:</strong> select <code>$count</code> nodes: <code>-p gpu --gres=gpu:tesla:$count</code>, maximal running time: <code>-t 14-00:00:00</code></li>
-</ul>
-<h3 id="highmem"><code>highmem</code><a class="headerlink" href="#highmem" title="Permanent link">&para;</a></h3>
-<p>The high membory nodes are only part of the <code>highmem</code> partition so they are not blocked by normal compute jobs.
-The maximal running time is relatively high (14 days) to allow for longer jobs.
-Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
-<p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
-See <a href="/admin/resource-registration/#high-memory-nodes">Resource Registration: GPU Nodes</a> for details.</p>
-<ul>
-<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
-<li><strong>partition name:</strong> <code>highmem</code></li>
-<li><strong>argument string:</strong> <code>-p highmem</code>, maximal running time: <code>-t 14-00:00:00</code></li>
-</ul>
+<p>Inside each user, AG, and project directory, there is a <code>scratch</code> directory on which no quotas apply.
+This is implemented by making each user, AG, and project directory a distinct "GPFS file set".</p>
+<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> We recommend that you store temporary files and intermediary/ephemeral results in the <code>scratch</code> directory and important files elsewhere.</p>
+<p>Further, the cluster has 500 TB of slower memory mounted at <code>/slow</code> that is currently only used and available for mirroring Omics data and protecting them from accidental loss.</p>
                 
                   
                 
@@ -1332,7 +1641,7 @@ See <a href="/admin/resource-registration/#high-memory-nodes">Resource Registrat
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../job-scheduler/" title="Job Scheduler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1341,19 +1650,19 @@ See <a href="/admin/resource-registration/#high-memory-nodes">Resource Registrat
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Architecture
+                Job Scheduler
               </span>
             </div>
           </a>
         
         
-          <a href="../storage/" title="Storage Volumes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../connecting/generate-key/linux/" title="Linux" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Storage Volumes
+                Linux
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
