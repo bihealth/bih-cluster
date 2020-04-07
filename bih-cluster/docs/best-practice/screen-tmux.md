@@ -75,7 +75,7 @@ $ exit
 Here is a sensible screen configuration.
 Save it as `~/.screenrc`.
 
-- **TODO** [screenrc](files/screenrc)
+[screenrc](https://raw.githubusercontent.com/bihealth/bih-cluster/master/bih-cluster/docs/best-practice/files/screenrc)
 
 ## Fix a broken screen session
 
