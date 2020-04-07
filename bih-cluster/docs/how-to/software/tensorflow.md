@@ -1,5 +1,9 @@
 # How-To: Setup TensorFlow
 
+!!! todo "Not yet updated to Slurm"
+
+    TODO: This still needs to be updated to Slurm.
+
 TensorFlow is a package for deep learning with optional support for GPUs.
 You can find the original TensorFlow installation instructions [here](https://www.tensorflow.org/versions/r1.3/get_started/os_setup.html#download-and-setup).
 

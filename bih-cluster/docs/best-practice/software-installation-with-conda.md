@@ -20,15 +20,14 @@ See [System-near Software Provided by HPC Administration](#system-near-software-
 
 ## Premise
 
-When you logged into the cluster, please make sure that you also executed
-`qrsh` to log into a computation node and perform the software installation
-there.
+When you logged into the cluster, please make sure that you also executed `srun` to log into a computation node and perform the software installation there.
 
 ## Installing conda
 
-```terminal
-$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
+```bash
+med-login1:~$ srun --pty bash -i
+med0127:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+med0127:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
 ```
 
 This will install conda to `$HOME/work/miniconda`.
@@ -45,7 +44,7 @@ case "${HOSTNAME}" in
     med-login*)
         ;;
     *)
-        export PATH=$HOME/work/miniconda/bin:$PATH
+        export PATH=$HOME/work/miniconda/condabin:$PATH
         ;;
 esac
 ```
@@ -56,10 +55,10 @@ where you are not allowed to start any computations.
 To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
 
-```terminal
-$ conda config --add channels bioconda
-$ conda config --add channels default
-$ conda config --add channels conda-forge
+```bash
+med0127:~$ conda config --add channels bioconda
+med0127:~$ conda config --add channels default
+med0127:~$ conda config --add channels conda-forge
 ```
 
 You can also add channels to your liking.
@@ -68,8 +67,8 @@ You can also add channels to your liking.
 
 Installing packages with conda is straight forward:
 
-```terminal
-$ conda install <package>
+```bash
+med0127:~$ conda install <package>
 ```
 
 This will install a package into the conda root environment. We will explain
@@ -78,16 +77,16 @@ environments in detail in the next section.
 To search for a package, e.g. to find the correct name in conda or if it exists
 at all, issue the command:
 
-```terminal
-$ conda search <string>
+```bash
+med0127:~$ conda search <string>
 ```
 
 To choose a specific version (conda will install the latest version that is
 compatible with the current installed Python version), you can provide the
 version as follows:
 
-```terminal
-$ conda install <package>=<version>
+```bash
+med0127:~$ conda install <package>=<version>
 ```
 
 ## Creating an environment
@@ -103,19 +102,19 @@ environment, is is available in all other environments.
 
 To create a Python 2.7 environment and activate it, issue the following commands:
 
-```terminal
-$ conda create -n py27 python=2.7
-$ source activate py27
-(py27) $
+```bash
+med0127:~$ conda create -n py27 python=2.7
+med0127:~$ source activate py27
+(py27) med0127:~$
 ```
 
 From now on, conda will install packages into the `py27` environment when you issue
 the `install` command. To switch back to the root environment, simply deactivate the
 `py27` environment:
 
-```terminal
-(py27) $ source deactivate py27
-$
+```bash
+(py27) med0127:~$ source deactivate py27
+med0127:~$
 ```
 
 ## Recommended packages
@@ -131,9 +130,8 @@ into your root environment alongside with Snakemake and samtools. By default,
 conda starts with Python 3.6, but most packages are not adapted to that Python
 version yet.
 
-```terminal
-$ conda install python=3.5 snakemake drmaa samtools
+```bash
+med0127:~$ conda install python=3.5 snakemake drmaa samtools
 ```
 
 Please also read [this document](../slurm/snakemake.md#snakemake-and-slurm) on how to use Snakemake with DRMAA.
-

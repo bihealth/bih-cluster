@@ -31,6 +31,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
     - :hourglass: SGE scheduler end of life - June 31, 2020
     - :calendar: Head node migration -- ~May 31, 2020
     - :calendar: CentOS 8 migration -- summer 2020
+    - :calendar: `/fast` => `/data` -- autumn 2020
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 

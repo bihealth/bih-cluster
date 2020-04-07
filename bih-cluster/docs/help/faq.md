@@ -76,7 +76,7 @@ See ["I have a problem with my SSH key, help!"](#i-have-a-problem-with-my-ssh-ke
 ## I cannot create PNGs in R
 
 For using the `png` method, you need to have an X11 session running.
-This might be the case if you logged into a cluster node using `qrsh` if configured correctly but is not the case if you submitted a bash job.
+This might be the case if you logged into a cluster node using `srun --x11` if configured correctly but is not the case if you submitted a bash job.
 The solution is to use `xvfb-run` (xvfb = X11 virtual frame-buffer).
 
 Here is the content of an example script:
@@ -171,7 +171,7 @@ Please check whether there might be other jobs waiting in front of you!
     - Generally, you need to connect to the login nodes with X forwarding.
       Refer to the manual of your SSH client on how to do this (`-X` for Linux/Mac `ssh`
     - As you should not run compute-intensive programs on the login node, connect to a cluster node with X forwarding.
-      With SGE, this is done using `qlogin` (instead of `qrsh`).
+      With Slurm, this is done using `srun --pty --x11 bash -i` (instead of `srun --pty --x11 bash -i`).
 
 Also see:
 
