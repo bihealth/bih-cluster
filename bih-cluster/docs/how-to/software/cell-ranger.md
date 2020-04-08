@@ -74,5 +74,5 @@ create a script `run_cellranger.sh` with these contents (consult the [documentat
 and then submit the job via
 
 ```
-qsub -cwd -V -pe smp 1 -l h_vmem=4G -l h_rt=8:00:00 -P medium -m a -o cellranger.log run_cellranger.sh
+sbatch --ntasks=1 --mem-per-cpu=4G --time=8:00:00 -p medium -o cellranger.log run_cellranger.sh
 ```

@@ -79,7 +79,7 @@ meg-login2$ module
 -bash: module: command not found
 ```
 
-Use `srun --ptty bash -i` to get to one of the compute nodes.
+Use `srun --pty bash -i` to get to one of the compute nodes.
 
 ## Auto-loading a set of Modules
 

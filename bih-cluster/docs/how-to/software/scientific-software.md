@@ -307,8 +307,7 @@ module load gcc/4.7.0-0
 module load openmpi/4.0.3-0
 
 # Make custom environment modules known. Alternative, you can "module use"
-# them in the session you use for submitting the job and use "#$ -V" above
-# to make qsub inherit your environment variables.
+# them in the session you use for submitting the job.
 module use $HOME/local/modules
 module load gromacs-mpi/2018.3
 

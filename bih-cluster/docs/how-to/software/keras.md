@@ -22,13 +22,9 @@ except:
 
 That's it!
 
-# qsub
+!!! note "Using Slurm"
 
-If you submit a job to the GPU make sure that you use the `gpu` que and specify both GPUs. We can only allocate one CPU thread in the GPU queue (but more will be used anyway...)
-
-```
--P gpu -pe smp 1 -l gpu=2 h_vmem=100G
-```
+    Please read [here](../connect/gpu-nodes.md) on how to submit jobs to the GPU nodes.
 
 # Conda environment
 

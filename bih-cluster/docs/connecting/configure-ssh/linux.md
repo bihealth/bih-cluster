@@ -80,7 +80,7 @@ On the cluster, the following brings you to a cluster node where you can
 compute as much as the node can chew.
 
 ```
-med-login1:~$ srun --ptty bash -i
+med-login1:~$ srun --pty bash -i
 med0124:~$
 ```
 
