@@ -1699,7 +1699,7 @@ You should not run any computations there, so why would you need environment mod
 -bash: module: command not found
 </code></pre></div>
 
-<p>Simply use <code>qrsh</code> to get to one of the compute nodes.</p>
+<p>Use <code>srun --ptty bash -i</code> to get to one of the compute nodes.</p>
 <h2 id="auto-loading-a-set-of-modules">Auto-loading a set of Modules<a class="headerlink" href="#auto-loading-a-set-of-modules" title="Permanent link">&para;</a></h2>
 <p>You will certainly finding yourself using a set of programs regularly without it being part of the core cluster installation, e.g., SAMtools, or Python 3.
 Just putting the appropriate <code>module load</code> lines in your <code>~/.bashrc</code> will generate warnings when logging into the login node.
@@ -1714,9 +1714,6 @@ It is thus recommended to use the following snippet for loading modules automati
         <span class="c1"># Define path for temporary directories, don&#39;t forget to cleanup!</span>
         <span class="c1"># Also, this will only work after /fast is available.</span>
         <span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="nv">$USER</span>/scratch/tmp
-
-        <span class="c1"># Make DRMAA library from central installation available</span>
-        <span class="nb">export</span> <span class="nv">DRMAA_LIBRARY_PATH</span><span class="o">=</span>/opt/sge/lib/lx-amd64/libdrmaa.so
         <span class="p">;;</span>
 <span class="k">esac</span>
 </code></pre></div>

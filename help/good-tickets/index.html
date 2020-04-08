@@ -1591,10 +1591,9 @@
 <ul>
 <li>Please give us the directory that you run things in.</li>
 <li>Please send us the submission script that you have problems with.</li>
-<li>If the job was submitted, SGE will give you a job ID.
+<li>If the job was submitted, Slurm  will give you a job ID.
   We will need this ID.</li>
-<li>Please send us the output of <code>qstat -j</code> or <code>qacct -j</code> of your job.</li>
-<li>Please do not delete your failed job as jobs in error state still provide more information than deleted jobs.</li>
+<li>Please send us the output of <code>scontrol show job &lt;jobid&gt;</code> or <code>sacct --long -j &lt;jobid&gt;</code> of your job.</li>
 </ul>
                 
                   

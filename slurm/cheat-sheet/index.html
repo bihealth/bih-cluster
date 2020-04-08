@@ -1589,6 +1589,114 @@ JobId=225 JobName=bash
    TresPerNode=gpu:tesla:4
    MailUser=(null) MailType=NONE
 </code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>host:~$ squeue
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span> 
+              <span class="m">1177</span>    medium     bash jweiner_  R <span class="m">4</span>-21:52:24      <span class="m">1</span> med0127 
+              <span class="m">1192</span>    medium     bash jweiner_  R <span class="m">4</span>-07:08:40      <span class="m">1</span> med0127 
+              <span class="m">1209</span>   highmem     bash mkuhrin_  R <span class="m">2</span>-01:07:17      <span class="m">1</span> med0402 
+              <span class="m">1210</span>       gpu     bash hilberta  R <span class="m">1</span>-10:30:34      <span class="m">1</span> med0304 
+              <span class="m">1213</span>      long     bash schubacm  R <span class="m">1</span>-09:42:27      <span class="m">1</span> med0127 
+              <span class="m">2401</span>       gpu     bash ramkem_c  R <span class="m">1</span>-05:14:53      <span class="m">1</span> med0303 
+              <span class="m">2431</span>    medium ngs_mapp holtgrem  R <span class="m">1</span>-05:01:41      <span class="m">1</span> med0127 
+              <span class="m">2437</span>  critical snakejob holtgrem  R <span class="m">1</span>-05:01:34      <span class="m">1</span> med0135 
+              <span class="m">2733</span>     debug     bash schubacm  R    <span class="m">7</span>:36:42      <span class="m">1</span> med0127 
+              <span class="m">3029</span>  critical ngs_mapp holtgrem  R    <span class="m">5</span>:59:07      <span class="m">1</span> med0127 
+              <span class="m">3030</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0134 
+              <span class="m">3031</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0137 
+              <span class="m">3032</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0137 
+              <span class="m">3033</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0138 
+              <span class="m">3034</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0138 
+              <span class="m">3035</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0139 
+              <span class="m">3036</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0139 
+              <span class="m">3037</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0140 
+              <span class="m">3038</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0140 
+              <span class="m">3039</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0141 
+              <span class="m">3040</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0141 
+              <span class="m">3041</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0142 
+              <span class="m">3042</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0142 
+              <span class="m">3043</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0143 
+              <span class="m">3044</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0143 
+              <span class="m">3063</span>      long     bash schubacm  R    <span class="m">4</span>:12:37      <span class="m">1</span> med0127 
+              <span class="m">3066</span>      long     bash schubacm  R    <span class="m">4</span>:11:47      <span class="m">1</span> med0127 
+              <span class="m">3113</span>    medium ngs_mapp holtgrem  R    <span class="m">1</span>:52:33      <span class="m">1</span> med0708 
+              <span class="m">3118</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0133 
+              <span class="m">3119</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0703 
+              <span class="m">3126</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0706 
+              <span class="m">3127</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0144 
+              <span class="m">3128</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0144 
+              <span class="m">3133</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0147 
+              <span class="m">3134</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0147 
+              <span class="m">3135</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0148 
+              <span class="m">3136</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0148 
+              <span class="m">3138</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0104 
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>host:~$ squeue -o <span class="s2">&quot;%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b&quot;</span>
+     JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST<span class="o">(</span>R TRES_PER_NODE
+      <span class="m">1177</span> medium    bash                 jweiner_m   R <span class="m">4</span>-21:52:22      <span class="m">1</span> med0127    N/A
+      <span class="m">1192</span> medium    bash                 jweiner_m   R <span class="m">4</span>-07:08:38      <span class="m">1</span> med0127    N/A
+      <span class="m">1209</span> highmem   bash                 mkuhrin_m   R <span class="m">2</span>-01:07:15      <span class="m">1</span> med0402    N/A
+      <span class="m">1210</span> gpu       bash                 hilberta_c  R <span class="m">1</span>-10:30:32      <span class="m">1</span> med0304    gpu:tesla:4
+      <span class="m">1213</span> long      bash                 schubacm_c  R <span class="m">1</span>-09:42:25      <span class="m">1</span> med0127    N/A
+      <span class="m">2401</span> gpu       bash                 ramkem_c    R <span class="m">1</span>-05:14:51      <span class="m">1</span> med0303    gpu:tesla:1
+      <span class="m">2431</span> medium    ngs_mapping          holtgrem_c  R <span class="m">1</span>-05:01:39      <span class="m">1</span> med0127    N/A
+      <span class="m">2437</span> critical  snakejob.ngs_mapping holtgrem_c  R <span class="m">1</span>-05:01:32      <span class="m">1</span> med0135    N/A
+      <span class="m">2733</span> debug     bash                 schubacm_c  R    <span class="m">7</span>:36:40      <span class="m">1</span> med0127    N/A
+      <span class="m">3029</span> critical  ngs_mapping          holtgrem_c  R    <span class="m">5</span>:59:05      <span class="m">1</span> med0127    N/A
+      <span class="m">3030</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0134    N/A
+      <span class="m">3031</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0137    N/A
+      <span class="m">3032</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0137    N/A
+      <span class="m">3033</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0138    N/A
+      <span class="m">3034</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0138    N/A
+      <span class="m">3035</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0139    N/A
+      <span class="m">3036</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0139    N/A
+      <span class="m">3037</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0140    N/A
+      <span class="m">3038</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0140    N/A
+      <span class="m">3039</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0141    N/A
+      <span class="m">3040</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0141    N/A
+      <span class="m">3041</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0142    N/A
+      <span class="m">3042</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0142    N/A
+      <span class="m">3043</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0143    N/A
+      <span class="m">3044</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0143    N/A
+      <span class="m">3063</span> long      bash                 schubacm_c  R    <span class="m">4</span>:12:35      <span class="m">1</span> med0127    N/A
+      <span class="m">3066</span> long      bash                 schubacm_c  R    <span class="m">4</span>:11:45      <span class="m">1</span> med0127    N/A
+      <span class="m">3113</span> medium    ngs_mapping          holtgrem_c  R    <span class="m">1</span>:52:31      <span class="m">1</span> med0708    N/A
+      <span class="m">3118</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0133    N/A
+      <span class="m">3119</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0703    N/A
+      <span class="m">3126</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0706    N/A
+      <span class="m">3127</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0144    N/A
+      <span class="m">3128</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0144    N/A
+      <span class="m">3133</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0147    N/A
+      <span class="m">3134</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0147    N/A
+      <span class="m">3135</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0148    N/A
+      <span class="m">3136</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0148    N/A
+      <span class="m">3138</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0104    N/A
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>host:~$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
+debug*       up    <span class="m">8</span>:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
+debug*       up    <span class="m">8</span>:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
+debug*       up    <span class="m">8</span>:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
+debug*       up    <span class="m">8</span>:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
+medium       up <span class="m">7</span>-00:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
+medium       up <span class="m">7</span>-00:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
+medium       up <span class="m">7</span>-00:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
+medium       up <span class="m">7</span>-00:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
+long         up <span class="m">28</span>-00:00:0     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
+long         up <span class="m">28</span>-00:00:0      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
+long         up <span class="m">28</span>-00:00:0     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
+long         up <span class="m">28</span>-00:00:0    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
+critical     up <span class="m">7</span>-00:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
+critical     up <span class="m">7</span>-00:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
+critical     up <span class="m">7</span>-00:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
+critical     up <span class="m">7</span>-00:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
+highmem      up <span class="m">14</span>-00:00:0      <span class="m">1</span>    mix med0402 
+highmem      up <span class="m">14</span>-00:00:0      <span class="m">3</span>   idle med<span class="o">[</span><span class="m">0401</span>,0403-0404<span class="o">]</span> 
+gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span>    mix med<span class="o">[</span><span class="m">0303</span>-0304<span class="o">]</span> 
+gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span>   idle med<span class="o">[</span><span class="m">0301</span>-0302<span class="o">]</span> 
+</code></pre></div>
                 
                   
                 

@@ -1874,7 +1874,7 @@ CUBI is also only a user on the BIH cluster and has no access to the user, passw
 <p>See <a href="#i-have-a-problem-with-my-ssh-key-help">"I have a problem with my SSH key, help!"</a></p>
 <h2 id="i-cannot-create-pngs-in-r">I cannot create PNGs in R<a class="headerlink" href="#i-cannot-create-pngs-in-r" title="Permanent link">&para;</a></h2>
 <p>For using the <code>png</code> method, you need to have an X11 session running.
-This might be the case if you logged into a cluster node using <code>qrsh</code> if configured correctly but is not the case if you submitted a bash job.
+This might be the case if you logged into a cluster node using <code>srun --x11</code> if configured correctly but is not the case if you submitted a bash job.
 The solution is to use <code>xvfb-run</code> (xvfb = X11 virtual frame-buffer).</p>
 <p>Here is the content of an example script:</p>
 <div class="codehilite"><pre><span></span><code>$ cat img.R 
@@ -1940,7 +1940,7 @@ Look at the <code>/proc/cpuinfo</code> files for details.</p>
 <li>Generally, you need to connect to the login nodes with X forwarding.
   Refer to the manual of your SSH client on how to do this (<code>-X</code> for Linux/Mac <code>ssh</code></li>
 <li>As you should not run compute-intensive programs on the login node, connect to a cluster node with X forwarding.
-  With SGE, this is done using <code>qlogin</code> (instead of <code>qrsh</code>).</li>
+  With Slurm, this is done using <code>srun --pty --x11 bash -i</code> (instead of <code>srun --pty --x11 bash -i</code>).</li>
 </ul>
 </li>
 </ol>

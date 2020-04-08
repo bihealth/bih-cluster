@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#how-to-openmpi" tabindex="0" class="md-skip">
+      <a href="#how-to-build-and-run-openmpi-program" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -1230,9 +1230,59 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        OpenMPI
+      </label>
+    
     <a href="./" title="OpenMPI" class="md-nav__link md-nav__link--active">
       OpenMPI
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-openmpi-environment" class="md-nav__link">
+    Loading OpenMPI Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-example" class="md-nav__link">
+    Building the example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-openmpi-software" class="md-nav__link">
+    Running OpenMPI Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-hybrid-software-mpimultithreading" class="md-nav__link">
+    Running Hybrid Software (MPI+Multithreading)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1480,6 +1530,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#loading-openmpi-environment" class="md-nav__link">
+    Loading OpenMPI Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-example" class="md-nav__link">
+    Building the example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-openmpi-software" class="md-nav__link">
+    Running OpenMPI Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-hybrid-software-mpimultithreading" class="md-nav__link">
+    Running Hybrid Software (MPI+Multithreading)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1493,7 +1580,275 @@
                   <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/software/openmpi.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="how-to-openmpi">How-To: OpenMPI<a class="headerlink" href="#how-to-openmpi" title="Permanent link">&para;</a></h1>
+                <h1 id="how-to-build-and-run-openmpi-program">How-To: Build and Run OpenMPI Program<a class="headerlink" href="#how-to-build-and-run-openmpi-program" title="Permanent link">&para;</a></h1>
+<p>This article describes how to build an run an OpenMPI program.
+We will build a simple C program that uses the OpenMPI message passing interface and run it in parallel.
+You should be able to go from here with other languages and more complex programs.
+We will use a simple Makefile for building the software.</p>
+<h2 id="loading-openmpi-environment">Loading OpenMPI Environment<a class="headerlink" href="#loading-openmpi-environment" title="Permanent link">&para;</a></h2>
+<p>First, load the OpenMPI package.</p>
+<div class="codehilite"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+med0127:~$ module load openmpi/4.3.0-0
+</code></pre></div>
+
+<p>Then, check that the installation works</p>
+<div class="codehilite"><pre><span></span><code>med0127:~$ ompi_info <span class="p">|</span> head
+                 Package: Open MPI root@med0127 Distribution
+                Open MPI: <span class="m">4</span>.0.3
+  Open MPI repo revision: v4.0.3
+   Open MPI release date: Mar <span class="m">03</span>, <span class="m">2020</span>
+                Open RTE: <span class="m">4</span>.0.3
+  Open RTE repo revision: v4.0.3
+   Open RTE release date: Mar <span class="m">03</span>, <span class="m">2020</span>
+                    OPAL: <span class="m">4</span>.0.3
+      OPAL repo revision: v4.0.3
+       OPAL release date: Mar <span class="m">03</span>, <span class="m">2020</span>
+</code></pre></div>
+
+<h2 id="building-the-example">Building the example<a class="headerlink" href="#building-the-example" title="Permanent link">&para;</a></h2>
+<p>Next, clone the OpenMPI example project from Gitlab.</p>
+<div class="codehilite"><pre><span></span><code>med0127:~$ git clone git@github.com:bihealth/bih-cluster-openmpi-example.git
+med0127:~$ cd bih-cluster-openmpi-example/src
+</code></pre></div>
+
+<p><code>Makefile</code></p>
+<div class="codehilite"><pre><span></span><code><span class="nf">.PHONY</span><span class="o">:</span> <span class="n">default</span> <span class="n">clean</span>
+
+<span class="c"># configure compilers</span>
+<span class="nv">CC</span><span class="o">=</span>mpicc
+<span class="nv">CXX</span><span class="o">=</span>mpicxx
+<span class="c"># configure flags</span>
+<span class="nv">CCFLAGS</span> <span class="o">+=</span> <span class="k">$(</span>shell mpicc --showme:compile<span class="k">)</span>
+<span class="nv">LDFLAGS</span> <span class="o">+=</span> <span class="k">$(</span>shell mpicc --showme:link<span class="k">)</span>
+
+<span class="nf">default</span><span class="o">:</span> <span class="n">openmpi_example</span>
+
+<span class="nf">openmpi_example</span><span class="o">:</span> <span class="n">openmpi_example</span>.<span class="n">o</span>
+
+<span class="nf">clean</span><span class="o">:</span>
+    rm -f openmpi_example.o openmpi_example
+</code></pre></div>
+
+<p><code>openmpi_example.c</code></p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;mpi.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Initialize the MPI environment</span>
+    <span class="n">MPI_Init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="c1">// Get the number of processes</span>
+    <span class="kt">int</span> <span class="n">world_size</span><span class="p">;</span>
+    <span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">world_size</span><span class="p">);</span>
+
+    <span class="c1">// Get the rank of the process</span>
+    <span class="kt">int</span> <span class="n">world_rank</span><span class="p">;</span>
+    <span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">world_rank</span><span class="p">);</span>
+
+    <span class="c1">// Get the name of the processor</span>
+    <span class="kt">char</span> <span class="n">processor_name</span><span class="p">[</span><span class="n">MPI_MAX_PROCESSOR_NAME</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">name_len</span><span class="p">;</span>
+    <span class="n">MPI_Get_processor_name</span><span class="p">(</span><span class="n">processor_name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">name_len</span><span class="p">);</span>
+
+    <span class="c1">// Print off a hello world message</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world from processor %s, rank %d&quot;</span>
+           <span class="s">&quot; out of %d processors</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+           <span class="n">processor_name</span><span class="p">,</span> <span class="n">world_rank</span><span class="p">,</span> <span class="n">world_size</span><span class="p">);</span>
+
+    <span class="c1">// Finalize the MPI environment.</span>
+    <span class="n">MPI_Finalize</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><code>run_mpi.sh</code></p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Example job script for (single-threaded) MPI programs.</span>
+
+<span class="c1"># Generic arguments</span>
+
+<span class="c1"># Job name</span>
+<span class="c1">#SBATCH --job-name openmpi_example</span>
+<span class="c1"># Maximal running time of 10 min</span>
+<span class="c1">#SBATCH --time 00:10:00</span>
+<span class="c1"># Allocate 1GB of memory per node</span>
+<span class="c1">#SBATCH --mem 1G</span>
+<span class="c1"># Write logs to directory &quot;slurm_log&quot;</span>
+<span class="c1">#SBATCH -o slurm_log/slurm-%x-%J.log</span>
+
+<span class="c1"># MPI-specific parameters</span>
+
+<span class="c1"># Run 64 tasks (threads/on virtual cores)</span>
+<span class="c1">#SBATCH --nodes 64</span>
+
+<span class="c1"># Make sure to source the profile.d file (not available on head nodes).</span>
+/etc/profile.d/modules.sh
+
+<span class="c1"># Load the OpenMPI environment module to get the runtime environment.</span>
+module load openmpi/3.1.0-0
+
+<span class="c1"># Launch the program.</span>
+mpirun -np <span class="m">64</span> ./openmpi_example
+</code></pre></div>
+
+<p>The next step is building the software</p>
+<div class="codehilite"><pre><span></span><code>med0127:~$ make
+mpicc    -c -o openmpi_example.o openmpi_example.c
+mpicc -pthread -Wl,-rpath -Wl,/opt/local/openmpi-4.0.3-0/lib -Wl,--enable-new-dtags -L/opt/local/openmpi-4.0.3-0/lib -lmpi  openmpi_example.o   -o openmpi_example
+med0127:~$ ls -lh
+total 259K
+-rw-rw---- <span class="m">1</span> holtgrem_c hpc-ag-cubi  <span class="m">287</span> Apr  <span class="m">7</span> <span class="m">23</span>:29 Makefile
+-rwxrwx--- <span class="m">1</span> holtgrem_c hpc-ag-cubi <span class="m">8</span>.5K Apr  <span class="m">8</span> <span class="m">00</span>:15 openmpi_example
+-rw-rw---- <span class="m">1</span> holtgrem_c hpc-ag-cubi  <span class="m">760</span> Apr  <span class="m">7</span> <span class="m">23</span>:29 openmpi_example.c
+-rw-rw---- <span class="m">1</span> holtgrem_c hpc-ag-cubi <span class="m">2</span>.1K Apr  <span class="m">8</span> <span class="m">00</span>:15 openmpi_example.o
+-rwxrwx--- <span class="m">1</span> holtgrem_c hpc-ag-cubi <span class="m">1</span>.3K Apr  <span class="m">7</span> <span class="m">23</span>:29 run_hybrid.sh
+-rwxrwx--- <span class="m">1</span> holtgrem_c hpc-ag-cubi  <span class="m">663</span> Apr  <span class="m">7</span> <span class="m">23</span>:35 run_mpi.sh
+drwxrwx--- <span class="m">2</span> holtgrem_c hpc-ag-cubi <span class="m">4</span>.0K Apr  <span class="m">7</span> <span class="m">23</span>:29 sge_log
+</code></pre></div>
+
+<p>The software will run outside of the MPI environment -- but in a single process only, of course.</p>
+<div class="codehilite"><pre><span></span><code>med0127:~$ ./openmpi_example
+Hello world from processor med0127, rank <span class="m">0</span> out of <span class="m">1</span> processors
+</code></pre></div>
+
+<h2 id="running-openmpi-software">Running OpenMPI Software<a class="headerlink" href="#running-openmpi-software" title="Permanent link">&para;</a></h2>
+<p>All of the arguments are already in the <code>run_mpi.sh</code> script.</p>
+<div class="codehilite"><pre><span></span><code>med01247:~# sbatch run_mpi.sh
+</code></pre></div>
+
+<p>Explanation of the OpenMPI-specific arguments</p>
+<ul>
+<li><code>--ntasks 64</code>: run 64 processes in the MPI environment.</li>
+</ul>
+<p>Let's look at the slurm log file, e.g., in <code>slurm_log/slurm-openmpi_example-3181.log</code>.</p>
+<div class="codehilite"><pre><span></span><code>med0124:~$  cat slurm_log/slurm-openmpi_example-*.log
+Hello world from processor med0133, rank 6 out of 64 processors
+Hello world from processor med0133, rank 25 out of 64 processors
+Hello world from processor med0133, rank 1 out of 64 processors
+Hello world from processor med0133, rank 2 out of 64 processors
+Hello world from processor med0133, rank 3 out of 64 processors
+Hello world from processor med0133, rank 7 out of 64 processors
+Hello world from processor med0133, rank 9 out of 64 processors
+Hello world from processor med0133, rank 12 out of 64 processors
+Hello world from processor med0133, rank 13 out of 64 processors
+Hello world from processor med0133, rank 15 out of 64 processors
+Hello world from processor med0133, rank 16 out of 64 processors
+Hello world from processor med0133, rank 17 out of 64 processors
+Hello world from processor med0133, rank 18 out of 64 processors
+Hello world from processor med0133, rank 23 out of 64 processors
+Hello world from processor med0133, rank 24 out of 64 processors
+Hello world from processor med0133, rank 26 out of 64 processors
+Hello world from processor med0133, rank 27 out of 64 processors
+Hello world from processor med0133, rank 31 out of 64 processors
+Hello world from processor med0133, rank 0 out of 64 processors
+Hello world from processor med0133, rank 4 out of 64 processors
+Hello world from processor med0133, rank 5 out of 64 processors
+Hello world from processor med0133, rank 8 out of 64 processors
+Hello world from processor med0133, rank 10 out of 64 processors
+Hello world from processor med0133, rank 11 out of 64 processors
+Hello world from processor med0133, rank 14 out of 64 processors
+Hello world from processor med0133, rank 19 out of 64 processors
+Hello world from processor med0133, rank 20 out of 64 processors
+Hello world from processor med0133, rank 21 out of 64 processors
+Hello world from processor med0133, rank 22 out of 64 processors
+Hello world from processor med0133, rank 28 out of 64 processors
+Hello world from processor med0133, rank 29 out of 64 processors
+Hello world from processor med0133, rank 30 out of 64 processors
+Hello world from processor med0134, rank 32 out of 64 processors
+Hello world from processor med0134, rank 33 out of 64 processors
+Hello world from processor med0134, rank 34 out of 64 processors
+Hello world from processor med0134, rank 38 out of 64 processors
+Hello world from processor med0134, rank 39 out of 64 processors
+Hello world from processor med0134, rank 42 out of 64 processors
+Hello world from processor med0134, rank 44 out of 64 processors
+Hello world from processor med0134, rank 45 out of 64 processors
+Hello world from processor med0134, rank 46 out of 64 processors
+Hello world from processor med0134, rank 53 out of 64 processors
+Hello world from processor med0134, rank 54 out of 64 processors
+Hello world from processor med0134, rank 55 out of 64 processors
+Hello world from processor med0134, rank 60 out of 64 processors
+Hello world from processor med0134, rank 62 out of 64 processors
+Hello world from processor med0134, rank 35 out of 64 processors
+Hello world from processor med0134, rank 36 out of 64 processors
+Hello world from processor med0134, rank 37 out of 64 processors
+Hello world from processor med0134, rank 40 out of 64 processors
+Hello world from processor med0134, rank 41 out of 64 processors
+Hello world from processor med0134, rank 43 out of 64 processors
+Hello world from processor med0134, rank 47 out of 64 processors
+Hello world from processor med0134, rank 48 out of 64 processors
+Hello world from processor med0134, rank 49 out of 64 processors
+Hello world from processor med0134, rank 50 out of 64 processors
+Hello world from processor med0134, rank 51 out of 64 processors
+Hello world from processor med0134, rank 52 out of 64 processors
+Hello world from processor med0134, rank 56 out of 64 processors
+Hello world from processor med0134, rank 57 out of 64 processors
+Hello world from processor med0134, rank 59 out of 64 processors
+Hello world from processor med0134, rank 61 out of 64 processors
+Hello world from processor med0134, rank 63 out of 64 processors
+Hello world from processor med0134, rank 58 out of 64 processors
+</code></pre></div>
+
+<h2 id="running-hybrid-software-mpimultithreading">Running Hybrid Software (MPI+Multithreading)<a class="headerlink" href="#running-hybrid-software-mpimultithreading" title="Permanent link">&para;</a></h2>
+<p>In some cases, you want to mix multithreading (e.g., via OpenMP) with MPI to run one process with multiple threads that then can communicate via shared memory.
+Note that OpenMPI will let processes on the same node communicate via shared memory anyway, so this might not be necessary in all cases.</p>
+<p>The file <code>run_hybrid.sh</code> shows how to run an MPI job with 8 threads each.</p>
+<blockquote>
+<p><strong>Note well that memory is allocated on a per-slot (thus per-thread) base!</strong></p>
+</blockquote>
+<p><code>run_hybrid.sh</code></p>
+<div class="codehilite"><pre><span></span><code>#!/bin/bash
+
+# Example job script for multi-threaded MPI programs, sometimes
+# called &quot;hybrid&quot; MPI computing.
+
+# Generic arguments
+
+# Job name
+#SBATCH --job-name openmpi_example
+# Maximal running time of 10 min
+#SBATCH --time 00:10:00
+# Allocate 1GB of memory per node
+#SBATCH --mem 1G
+# Write logs to directory &quot;slurm_log&quot;
+#SBATCH -o slurm_log/slurm-%x-%J.log
+
+# MPI-specific parameters
+
+# Run 8 tasks (threads/on virtual cores)
+#SBATCH --ntasks 8
+# Allocate 4 CPUs per task (cores/threads)
+#SBATCH --cpus-per-task 4
+
+# Make sure to source the profile.d file (not available on head nodes).
+source /etc/profile.d/modules.sh
+
+# Load the OpenMPI environment module to get the runtime environment.
+module load openmpi/4.0.3-0
+
+# Launch the program.
+mpirun -n 8 ./openmpi_example
+</code></pre></div>
+
+<p>We changed the following</p>
+<ul>
+<li>run 8 tasks ("processes")</li>
+<li>allocate 4 threads each</li>
+</ul>
+<p>Let's look at the log output:</p>
+<div class="codehilite"><pre><span></span><code># cat slurm_log/slurm-openmpi_example-3193.log
+Hello world from processor med0133, rank 1 out of 8 processors
+Hello world from processor med0133, rank 3 out of 8 processors
+Hello world from processor med0133, rank 2 out of 8 processors
+Hello world from processor med0133, rank 6 out of 8 processors
+Hello world from processor med0133, rank 0 out of 8 processors
+Hello world from processor med0133, rank 4 out of 8 processors
+Hello world from processor med0133, rank 5 out of 8 processors
+Hello world from processor med0133, rank 7 out of 8 processors
+</code></pre></div>
+
+<p>Each process can now launch 4 threads (e.g., by defining <code>export OMP_NUM_THREADS=4</code> before the program call).</p>
                 
                   
                 

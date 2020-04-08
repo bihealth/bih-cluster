@@ -1663,6 +1663,10 @@
                 
                 
                 <h1 id="how-to-install-custom-scientific-software">How-To: Install Custom Scientific Software<a class="headerlink" href="#how-to-install-custom-scientific-software" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Slurm Migration Missing</p>
+<p>TODO: this has not been migrated to Slurm yet.</p>
+</div>
 <p>This page gives an end-to-end example how to build and install <a href="http://www.gromacs.org/">Gromacs</a> as an example for managing complex scientific software installs in user land.
 You don't have to learn or understand the specifics of Gromacs.
 We use it as an example as there are some actual users on the BIH cluster.
@@ -1672,8 +1676,7 @@ Quite some configuration is done on the command line and there is no current sof
 However, it is quite well-documented and easy to install for scientific software so there is a lot to be learned.</p>
 <h2 id="related-documents">Related Documents<a class="headerlink" href="#related-documents" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>TODO</strong> How to Build Run OpenMPI Programs</li>
-<li><strong>TODO</strong> User Self-Organisation: MPI Queues</li>
+<li><a href="openmpi">How-To: Build and Run OpenMPI Programs</a></li>
 </ul>
 <h2 id="steps-for-installing-scientific-software">Steps for Installing Scientific Software<a class="headerlink" href="#steps-for-installing-scientific-software" title="Permanent link">&para;</a></h2>
 <p>We will perform the following step:</p>
@@ -1896,7 +1899,7 @@ You can also place the module files anywhere, as long as the <code>module use</c
 
 <h2 id="launching-gromacs">Launching Gromacs<a class="headerlink" href="#launching-gromacs" title="Permanent link">&para;</a></h2>
 <p>Something along the lines of the following job script should be appropriate.
-See <strong>TODO</strong> How to Build Run OpenMPI Programs for more information and make sure to register for the MPI queues before using them (cf. <strong>TODO</strong> User Self-Organisation: MPI Queues).</p>
+See <a href="openmpi">How-To: Build and Run OpenMPI Programs</a> for more information.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Example job script for (single-threaded) MPI programs.</span>

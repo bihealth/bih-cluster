@@ -1658,7 +1658,7 @@ Further, you can <a href="../best-practice/software-installation-with-conda">eas
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Requesting Licenses</p>
-<p>Before using matlab, you have to request a license by passing <code>-l license_matlab_r2016b=1</code> to your <code>qrsh</code>, <code>qlogin</code> or <code>qsub</code> job.
+<p>Before using matlab, you have to request a license by passing <code>-L matlab_r2016b</code> to your <code>srun</code> or <code>sbatch</code>job.
 Failure to do so can lead to other user's jobs crashing because license are not available.
 Violations of this rule can lead to HPC administration killing your jobs.</p>
 </div>

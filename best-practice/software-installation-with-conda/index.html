@@ -1621,12 +1621,11 @@ Please find a list at the end of the document.</p>
 <p>Also note that some system-level software is managed through environment modules.
 See <a href="#system-near-software-provided-by-hpc-administration">System-near Software Provided by HPC Administration</a> below.</p>
 <h2 id="premise">Premise<a class="headerlink" href="#premise" title="Permanent link">&para;</a></h2>
-<p>When you logged into the cluster, please make sure that you also executed
-<code>qrsh</code> to log into a computation node and perform the software installation
-there.</p>
+<p>When you logged into the cluster, please make sure that you also executed <code>srun</code> to log into a computation node and perform the software installation there.</p>
 <h2 id="installing-conda">Installing conda<a class="headerlink" href="#installing-conda" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
+<div class="codehilite"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+med0127:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+med0127:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p <span class="nv">$HOME</span>/work/miniconda
 </code></pre></div>
 
 <p>This will install conda to <code>$HOME/work/miniconda</code>.
@@ -1639,7 +1638,7 @@ installation path + <code>/bin</code> and add it to your <code>$HOME/.bashrc</co
     med-login*<span class="o">)</span>
         <span class="p">;;</span>
     *<span class="o">)</span>
-        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/work/miniconda/bin:<span class="nv">$PATH</span>
+        <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/work/miniconda/condabin:<span class="nv">$PATH</span>
         <span class="p">;;</span>
 <span class="k">esac</span>
 </code></pre></div>
@@ -1648,28 +1647,28 @@ installation path + <code>/bin</code> and add it to your <code>$HOME/.bashrc</co
 where you are not allowed to start any computations.</p>
 <p>To make bioinformatics software available, we have to add the <code>bioconda</code> and
 some other channels to the conda configuration:</p>
-<div class="codehilite"><pre><span></span><code>$ conda config --add channels bioconda
-$ conda config --add channels default
-$ conda config --add channels conda-forge
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda config --add channels bioconda
+med0127:~$ conda config --add channels default
+med0127:~$ conda config --add channels conda-forge
 </code></pre></div>
 
 <p>You can also add channels to your liking.</p>
 <h2 id="installing-software-with-conda">Installing software with conda<a class="headerlink" href="#installing-software-with-conda" title="Permanent link">&para;</a></h2>
 <p>Installing packages with conda is straight forward:</p>
-<div class="codehilite"><pre><span></span><code>$ conda install &lt;package&gt;
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda install &lt;package&gt;
 </code></pre></div>
 
 <p>This will install a package into the conda root environment. We will explain
 environments in detail in the next section.</p>
 <p>To search for a package, e.g. to find the correct name in conda or if it exists
 at all, issue the command:</p>
-<div class="codehilite"><pre><span></span><code>$ conda search &lt;string&gt;
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda search &lt;string&gt;
 </code></pre></div>
 
 <p>To choose a specific version (conda will install the latest version that is
 compatible with the current installed Python version), you can provide the
 version as follows:</p>
-<div class="codehilite"><pre><span></span><code>$ conda install &lt;package&gt;=&lt;version&gt;
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda install &lt;package&gt;<span class="o">=</span>&lt;version&gt;
 </code></pre></div>
 
 <h2 id="creating-an-environment">Creating an environment<a class="headerlink" href="#creating-an-environment" title="Permanent link">&para;</a></h2>
@@ -1681,16 +1680,16 @@ conflicting packages will mostly struggle with the Python version.</p>
 that software that does not depend on Python and is installed in the root
 environment, is is available in all other environments.</p>
 <p>To create a Python 2.7 environment and activate it, issue the following commands:</p>
-<div class="codehilite"><pre><span></span><code>$ conda create -n py27 python=2.7
-$ source activate py27
-(py27) $
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda create -n py27 <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
+med0127:~$ <span class="nb">source</span> activate py27
+<span class="o">(</span>py27<span class="o">)</span> med0127:~$
 </code></pre></div>
 
 <p>From now on, conda will install packages into the <code>py27</code> environment when you issue
 the <code>install</code> command. To switch back to the root environment, simply deactivate the
 <code>py27</code> environment:</p>
-<div class="codehilite"><pre><span></span><code>(py27) $ source deactivate py27
-$
+<div class="codehilite"><pre><span></span><code><span class="o">(</span>py27<span class="o">)</span> med0127:~$ <span class="nb">source</span> deactivate py27
+med0127:~$
 </code></pre></div>
 
 <h2 id="recommended-packages">Recommended packages<a class="headerlink" href="#recommended-packages" title="Permanent link">&para;</a></h2>
@@ -1724,7 +1723,7 @@ $
 into your root environment alongside with Snakemake and samtools. By default,
 conda starts with Python 3.6, but most packages are not adapted to that Python
 version yet.</p>
-<div class="codehilite"><pre><span></span><code>$ conda install python=3.5 snakemake drmaa samtools
+<div class="codehilite"><pre><span></span><code>med0127:~$ conda install <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5 snakemake drmaa samtools
 </code></pre></div>
 
 <p>Please also read <a href="../../slurm/snakemake/#snakemake-and-slurm">this document</a> on how to use Snakemake with DRMAA.</p>

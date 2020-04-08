@@ -1594,7 +1594,7 @@
                   <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/software/matlab.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="how-to-use-matlab">How-To: Use MATLAB<a class="headerlink" href="#how-to-use-matlab" title="Permanent link">&para;</a></h1>
+                <h1 id="how-to-use-matlab">How-To: Use Matlab<a class="headerlink" href="#how-to-use-matlab" title="Permanent link">&para;</a></h1>
 <div class="admonition todo">
 <p class="admonition-title">Matlab is not fully integrated yet</p>
 <p>We also need to finalize installation and then document the compiler version</p>
@@ -1610,15 +1610,24 @@ Further, you can <a href="../../best-practice/software-installation-with-conda">
 <p>Make sure you understand X forwarding as outline <a href="../../../help/faq/#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">in this FAQ entry</a>.</p>
 </div>
 <h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h2>
-<p>You have to register with <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> for requesting access to the MATLAB licenses.
+<p>You have to register with <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> for requesting access to the Latlab licenses.
 Register on <a href="../../../admin/resource-registration/#matlab-licenses">User Self Organisation MATLAB</a> after registering with hpc-gatekeeper.</p>
 <p>Afterwards, you can connect to the High-Memory using the <code>license_matlab_r2016b</code> resource (see below).</p>
 <h2 id="how-to-use">How-To Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
-<p>BIH has a license of MATLAB R2016b for <strong>16 seats</strong> and various licensed packages (see below).
-It is installed on all of the compute nodes:</p>
+<p>BIH has a license of Matlab R2016b for <strong>16 seats</strong> and various licensed packages (see below).
+To display the available licenses:</p>
+<div class="codehilite"><pre><span></span><code>login-1:~$ scontrol show lic
+<span class="nv">LicenseName</span><span class="o">=</span>matlab_r2016b
+    <span class="nv">Total</span><span class="o">=</span><span class="m">16</span> <span class="nv">Used</span><span class="o">=</span><span class="m">0</span> <span class="nv">Free</span><span class="o">=</span><span class="m">16</span> <span class="nv">Remote</span><span class="o">=</span>no
+</code></pre></div>
+
+<p>Matlab is installed on all of the compute nodes:</p>
 <div class="codehilite"><pre><span></span><code><span class="gp">#</span> The following is VITAL so the scheduler allocates a license to your session.
-<span class="gp">$</span> qrsh -l <span class="nv">license_matlab_r2016b</span><span class="o">=</span><span class="m">1</span>
-<span class="gp">$</span> module avail
+<span class="gp">login-1:~$</span> srun -L matlab_r2016b:1 --pty bash -i
+<span class="gp">med0127:~$</span> scontrol show lic
+<span class="go">LicenseName=matlab_r2016b</span>
+<span class="go">    Total=16 Used=1 Free=15 Remote=no</span>
+<span class="gp">med0127:~$</span> module avail
 <span class="go">----------------- /usr/share/Modules/modulefiles -----------------</span>
 <span class="go">dot         module-info null</span>
 <span class="go">module-git  modules     use.own</span>
@@ -1626,10 +1635,10 @@ It is installed on all of the compute nodes:</p>
 <span class="go">----------------------- /opt/local/modules -----------------------</span>
 <span class="go">cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0</span>
 <span class="go">gcc/7.2.0-0     matlab/r2016b-0</span>
-<span class="gp">$</span> module load matlab/r2016b-0 
+<span class="gp">med0127:~$</span> module load matlab/r2016b-0
 <span class="go">Start matlab without GUI: matlab -nosplash -nodisplay -nojvm</span>
 <span class="go">    Start matlab with GUI (requires X forwarding (ssh -X)): matlab</span>
-<span class="gp">$</span> matlab -nosplash -nodisplay -nojvm
+<span class="gp">med0127:~$</span> matlab -nosplash -nodisplay -nojvm
 <span class="go">                                               &lt; M A T L A B (R) &gt;</span>
 <span class="go">                                     Copyright 1984-2016 The MathWorks, Inc.</span>
 <span class="go">                                     R2016b (9.1.0.441655) 64-bit (glnxa64)</span>
@@ -1666,48 +1675,66 @@ It is installed on all of the compute nodes:</p>
 
 <h2 id="running-matlab-ui">Running MATLAB UI<a class="headerlink" href="#running-matlab-ui" title="Permanent link">&para;</a></h2>
 <p>For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., <code>ssh -X med-login1</code> from the Linux command line).
-Then, make sure <code>qlogin</code> for connecting to a node with X11 forwarding enabled.</p>
-<div class="codehilite"><pre><span></span><code>your-client $ ssh -X med-login1
+Then, make sure to use <code>srun -L matlab_r2016b:1 --pty --x11</code> for connecting to a node with X11 forwarding enabled.</p>
+<div class="codehilite"><pre><span></span><code>client:~$ ssh -X med-login1
 <span class="o">[</span>...<span class="o">]</span>
-med-login1 $ qlogin -l <span class="nv">license_matlab_r2016b</span><span class="o">=</span><span class="m">1</span>
+med-login1:~ $ srun -L matlab_r2016b:1 --pty --x11
 <span class="o">[</span>...<span class="o">]</span>
-med0203 $ module load matlab/r2016b-0
+med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
     Start matlab with GUI <span class="o">(</span>requires X forwarding <span class="o">(</span>ssh -X<span class="o">))</span>: matlab
-med0203 $ matlab
+med0203:~$ matlab
 <span class="o">[</span>UI will start<span class="o">]</span>
 </code></pre></div>
 
 <p>For forcing starting in text mode can be done (as said after <code>module load</code>): <code>matlab -nosplash -nodisplay -nojvm</code>.</p>
 <p>Also see <a href="../../../help/faq/#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">this FAQ entry</a>.</p>
 <h2 id="see-available-matlab-licenses">See Available Matlab Licenses<a class="headerlink" href="#see-available-matlab-licenses" title="Permanent link">&para;</a></h2>
-<p>You can use <code>qstat -F license_matlab_r2016b</code> to see the currently available MATLAB license.
+<p>You can use <code>scontrol show lic</code> to see the currently available MATLAB license.
 E.g., here I am running an interactive shell in which I have requested 1 of the 16 MATLAB licenses, so 15 more remain.</p>
-<div class="codehilite"><pre><span></span><code>$ qstat -F license_matlab_r2016b  | head
-queuename                      qtype resv/used/tot. load_avg arch          states
----------------------------------------------------------------------------------
-all.q@med0104                  BP    0/9/32         15.93    lx-amd64      
-    gc:license_matlab_r2016b=15
----------------------------------------------------------------------------------
-all.q@med0105                  BP    0/24/32        18.28    lx-amd64      
-    gc:license_matlab_r2016b=15
----------------------------------------------------------------------------------
-all.q@med0106                  BP    0/8/32         24.56    lx-amd64      
-    gc:license_matlab_r2016b=15
+<div class="codehilite"><pre><span></span><code>$ scontrol show lic
+LicenseName=matlab_r2016b
+    Total=16 Used=1 Free=15 Remote=no
 </code></pre></div>
 
 <h2 id="a-working-example">A Working Example<a class="headerlink" href="#a-working-example" title="Permanent link">&para;</a></h2>
 <p>Get a checkout of our MATLAB example.
 Then, look around at the contents of this repository.</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span> git clone https://gitlab.com/bihealth/matlab_example.git
-<span class="gp">$</span> cat job_script.sh
-<span class="go">[...]</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">med-login1:~$</span> git clone https://github.com/bihealth/bih-cluster-matlab-example.git
+<span class="gp">med-login1:~$</span> <span class="nb">cd</span> bih-cluster-matlab-example
+<span class="gp">med-login1:~$</span> cat job_script.sh
+<span class="gp">#</span>!/bin/bash
+
+<span class="gp">#</span> Logging goes to directory sge_log
+<span class="gp">#</span>SBATCH -o slurm_log/%x-%J.log
+<span class="gp">#</span> Keep current environment variables
+<span class="gp">#</span>SBATCH --export<span class="o">=</span>ALL
+<span class="gp">#</span> Name of the script
+<span class="gp">#</span>SBATCH --job-name MATLAB-example
+<span class="gp">#</span> Allocate 4GB of RAM per core
+<span class="gp">#</span>SBATCH --mem 4G
+<span class="gp">#</span> Maximal running <span class="nb">time</span> of <span class="m">2</span> hours
+<span class="gp">#</span>SBATCH --time <span class="m">02</span>:00:00
+<span class="gp">#</span> Allocate one Matlab license
+<span class="gp">#</span>SBATCH -L matlab_r2016b:1
+
+<span class="go">module load matlab/r2016b-0</span>
+
+<span class="go">matlab -r example</span>
 <span class="gp">$</span> cat example.m
-<span class="go">[...]</span>
+<span class="gp">%</span> Example Hello World script <span class="k">for</span> Matlab.
+
+<span class="go">disp(&#39;Hello world!&#39;)</span>
+<span class="go">disp(&#39;Thinking...&#39;)</span>
+
+<span class="go">pause(10)</span>
+
+<span class="go">disp(sprintf(&#39;The square root of 2 is = %f&#39;, sqrt(2)))</span>
+<span class="go">exit</span>
 </code></pre></div>
 
 <p>For submitting the script, you can do the following</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span> qsub job_script.sh
+<div class="codehilite"><pre><span></span><code><span class="gp">med-login1:~$</span> sbatch job_script.sh
 </code></pre></div>
 
 <p>This will submit a job with one Matlab license requested.
@@ -1715,7 +1742,7 @@ If you were to submit 17 of these jobs, then at least one of them would have to 
 <div class="admonition warning">
 <p class="admonition-title">Matlab License Server</p>
 <p>Note that there is a Matlab license server running on the server that will check whether 16 or less Matlab sessions are currently running.
-If a Matlab session is running but this is not made known to the scheduler via <code>-l license_matlab_r2016b=1</code> then this can lead to scripts crashing as not enough licenses are available.
+If a Matlab session is running but this is not made known to the scheduler via <code>-L matlab_r2016b</code> then this can lead to scripts crashing as not enough licenses are available.
 If this happens to you, double-check that you have specified the license requirements correctly and notify <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> in case of any problems.
 We will try to sort out the situation then.</p>
 </div>

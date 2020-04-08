@@ -1723,7 +1723,8 @@ jail1 $ ssh -A -t -l &lt;USERNAME&gt; med-login&lt;X&gt;.bihealth.org
 </ul>
 <p>On the cluster, the following brings you to a cluster node where you can
 compute as much as the node can chew.</p>
-<div class="codehilite"><pre><span></span><code>med-login&lt;X&gt; $ qrsh
+<div class="codehilite"><pre><span></span><code>med-login1:~$ srun --ptty bash -i
+med0124:~$
 </code></pre></div>
 
 <h2 id="connecting-with-another-computerlaptop">Connecting with another computer/laptop<a class="headerlink" href="#connecting-with-another-computerlaptop" title="Permanent link">&para;</a></h2>

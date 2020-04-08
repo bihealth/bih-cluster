@@ -1449,9 +1449,99 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SSH Basics
+      </label>
+    
     <a href="./" title="SSH Basics" class="md-nav__link md-nav__link--active">
       SSH Basics
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ssh" class="md-nav__link">
+    What is SSH?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting" class="md-nav__link">
+    Connecting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-keys" class="md-nav__link">
+    SSH-Keys
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-ssh-keys-work" class="md-nav__link">
+    How do SSH-Keys work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passphrase" class="md-nav__link">
+    Passphrase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-agent" class="md-nav__link">
+    SSH-Agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1478,6 +1568,83 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ssh" class="md-nav__link">
+    What is SSH?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting" class="md-nav__link">
+    Connecting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-keys" class="md-nav__link">
+    SSH-Keys
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-ssh-keys-work" class="md-nav__link">
+    How do SSH-Keys work?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passphrase" class="md-nav__link">
+    Passphrase
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-agent" class="md-nav__link">
+    SSH-Agent
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1492,7 +1659,82 @@
                 
                 
                 <h1 id="ssh-basics">SSH Basics<a class="headerlink" href="#ssh-basics" title="Permanent link">&para;</a></h1>
-<p>TODO: Paste Brian's text here.</p>
+<p>This document gives an introduction to SSH for Non-Techies.</p>
+<h2 id="what-is-ssh">What is SSH?<a class="headerlink" href="#what-is-ssh" title="Permanent link">&para;</a></h2>
+<p>SSH stands for **S**ecure **Sh**ell. It is a software that allows to establish a user-connection to a remote UNIX/Linux machine over the network and remote-control it from your local work-station.</p>
+<p>Let's say you have an HPC cluster with hundreds of machines somewhere in a remote data-center and you want to connect to those machines to issue commands and run jobs. Then you would use SSH.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<p>Simply install your distributions <code>openssh-client</code> package. You should be able to find plenty of good tutorials online.
+On Windows you can consider using <a href="../connecting/ssh-client-windows">MobaXterm (recommended)</a> or <a href="https://www.putty.org/">Putty</a>.</p>
+<h3 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h3>
+<p>Let's call your local machine the client and the remote machine you want to connect to the server.</p>
+<p>You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also have received your user-account information stating your user-name, your password, etc.</p>
+<p>Follow the instructions below to establish a remote terminal-session.</p>
+<hr />
+<p><strong>If your are on Linux</strong></p>
+<p>Open a terminal and issue the following command while replacing all the <code>&lt;...&gt;</code> fields with the actual data:</p>
+<div class="codehilite"><pre><span></span><code># default port
+ssh &lt;username&gt;@&lt;hostname-or-ip-address&gt;
+
+# non-default port
+ssh &lt;username&gt;@&lt;hostname-or-ip-address&gt; -p &lt;port-number&gt;
+</code></pre></div>
+
+<p><strong>If you are on windows</strong></p>
+<p>Start <code>putty.exe</code>, go into the <code>Session</code> category and fill out the form, then click the <code>Connect</code> button.
+Putty also allows to save the connection information in different profiles so you don't have to memorize and retype all fields every time you want to connect.</p>
+<hr />
+<h2 id="ssh-keys">SSH-Keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h2>
+<p>When you connect to a remote machine via SSH, you will be prompted for your password.
+This will happen every single time you connect and can feel a bit repetitive at times, especially if you feel that your password is hard to memorize.
+For those who don't want to type in their password every single time they connect, an alternative way of authentication is available.
+Meet SSH-Keys.</p>
+<p>It is possible to create an SSH-Key that can be used as a replacement for the password.
+Instead if being prompted for a password, SSH will simply use the key to authenticate.</p>
+<p>You can generate a new key by issuing:</p>
+<div class="codehilite"><pre><span></span><code>client:~$ ssh-keygen -t rsa -b <span class="m">4096</span>
+
+<span class="c1"># 1. Choose file in which to save the key *(leave blank for default)*</span>
+<span class="c1"># 2. Choose a passphrase of at least five characters</span>
+</code></pre></div>
+
+<h3 id="how-do-ssh-keys-work">How do SSH-Keys work?<a class="headerlink" href="#how-do-ssh-keys-work" title="Permanent link">&para;</a></h3>
+<p>An SSH-Key consists of two files, a private-key-file and a public-key-file.
+The public key can then be installed on an arbitrary amount of remote machines.
+If a server with the public key receives a connection from a client with the correct private key, access is granted without having to type a password.</p>
+<h3 id="passphrase">Passphrase<a class="headerlink" href="#passphrase" title="Permanent link">&para;</a></h3>
+<p>The security problem with SSH keys is that anyone with access to the private key has full access to all machines that have the public key installed.
+Loosing the key or getting it compromised in another way imposes a serious security threat.
+Therefore, it is best to secure the private key with a passphrase.
+This passphrase is needed to unlock and use the private key.</p>
+<p>Once you have your key-pair generated, you can easily change the passphrase of that key by issuing:</p>
+<div class="codehilite"><pre><span></span><code>client:~$ ssh-keygen -p
+</code></pre></div>
+
+<h3 id="ssh-agent">SSH-Agent<a class="headerlink" href="#ssh-agent" title="Permanent link">&para;</a></h3>
+<p>In order to avoid having to type the passphrase of the key every time we want to use it, the key can be loaded into an SSH-Agent.</p>
+<p>For instance, if you have connected to a login-node via Putty and want to unlock your private key in order to be able to access cluster nodes, you cant configure the SSH-Agent.</p>
+<div class="codehilite"><pre><span></span><code>client:~$ <span class="nb">source</span> &lt;<span class="o">(</span>ssh-agent<span class="o">)</span>
+</code></pre></div>
+
+<p><em>(The above command will load the required environment variables of the SSH-Agent into your shell environment, effectively making the agent available for your consumption.)</em></p>
+<p>Next, you can load your private key:</p>
+<div class="codehilite"><pre><span></span><code>client:~$ ssh-add
+</code></pre></div>
+
+<p><em>(You will be prompted for the passphrase of the key)</em></p>
+<p>You can verify that the agent is running and your key is loaded by issuing:</p>
+<div class="codehilite"><pre><span></span><code>client:~$ ssh-add -l
+<span class="c1"># &#39;l&#39; as in list-all-loaded-keys</span>
+</code></pre></div>
+
+<p><em>(The command should print at least one key, showing the key-size, the hash of the key-fingerprint and the location of the file in the file-system.)</em></p>
+<p>Since all home-directories are shared across the entire cluster and you created your key-pair inside your home-directory, you public-key (which is also in your home-directory) is automatically installed on all other cluster nodes, immediately.
+Try connecting to any cluster node.
+It should not prompt your for a password.</p>
+<p>There is nothing you have to do to "unload" or "lock" the key-file.
+Simply disconnect.</p>
                 
                   
                 
