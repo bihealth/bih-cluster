@@ -30,9 +30,8 @@ mkdir -p $TMPDIR
 
 **Prepending this to your job scripts is also recommended as it will ensure that the temporary directory exists.**
 
-## `TMPDIR` and the SGE scheduler
+## `TMPDIR` and the scheduler
 
-In the current configuration, jobs submitted through `qsub` will have `TMPDIR` set to a sub directory in `/tmp` on the local machine that is automatically cleaned up after a job finishes.
 In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
 Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
 
