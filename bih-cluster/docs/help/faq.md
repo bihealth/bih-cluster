@@ -191,3 +191,7 @@ The answer is simple, just SSH into this node.
 ```bash
 med-login1:~$ ssh med0XXX
 ```
+
+## Snakemake DRMAA doesn't accept my Slurm parameters!?
+
+Yes. Unfortunately, [Slurm DRMAA differs slightly](../slurm/snakemake.md#limitations) from the original Slurm syntax.

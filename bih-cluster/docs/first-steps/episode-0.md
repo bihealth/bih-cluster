@@ -4,9 +4,9 @@
 |---|---|
 | **0** | **How can I install the tools?** |
 | 1 | [How can I use the static data?](episode-1.md) |
-| 2 | [How can I distribute my jobs on the cluster (`qsub`)?](episode-2.md) |
+| 2 | [How can I distribute my jobs on the cluster (Slurm)?](episode-2.md) |
 | 3 | [How can I organize my jobs with Snakemake?](episode-3.md) |
-| 4 | [How can I combine Snakemake and `qsub`?](episode-4.md) |
+| 4 | [How can I combine Snakemake and Slurm?](episode-4.md) |
 
 ## Prerequisites
 

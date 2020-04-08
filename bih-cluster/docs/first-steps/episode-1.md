@@ -4,9 +4,9 @@
 |---|---|
 | 0 | [How can I install the tools?](episode-0) |
 | **1** | **How can I use the static data?** |
-| 2 | [How can I distribute my jobs on the cluster (`qsub`)?](episode-2.md) |
+| 2 | [How can I distribute my jobs on the cluster (Slurm)?](episode-2.md) |
 | 3 | [How can I organize my jobs with Snakemake?](episode-3.md) |
-| 4 | [How can I combine Snakemake and `qsub`?](episode-4.md) |
+| 4 | [How can I combine Snakemake and Slurm?](episode-4.md) |
 
 This is part one of the "First Steps" BIH Cluster Tutorial.
 Here we will build a small pipeline with alignment and variant calling.
@@ -93,7 +93,7 @@ Note that delly will not find any variants.
 And now for the SNP calling (this step will take ~ 20 minutes):
 
 ```terminal
-(first-steps) $ gatk-launch HaplotypeCaller \ # or gatk HaplotypeCaller \
+(first-steps) $ gatk HaplotypeCaller \ # or gatk HaplotypeCaller \
     -R /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     -I aln.bam \
     -ploidy 2 \

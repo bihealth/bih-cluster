@@ -10,14 +10,16 @@ The table below shows some SGE commands and their Slurm equivalents.
 | User Command | SGE | Slurm |
 |:------------:|-----|-------|
 | remote login | `qrsh/qlogin` | `srun --pty bash` |
-| run interactively | N/A | `srun --tpy program` |
+| run interactively | N/A | `srun --pty program` |
 | submit job | `qsub script.sh` | `sbatch script.sh` |
 | delete job | `qdel job-id` | `scancel job-id` |
-| job status by job id | `qstat -u '*' [-j job-id]` | `squeue job-id` |
+| job status by job id | N/A | `squeue --job job-id` |
+| detailed job status | `qstat -u '*' -j job-id` | `sstat job-id` |
+| job status of your jobs | `qstat` | `squeue --me` |
 | job status by user | `qstat -u user` | `squeue -u user` |
 | hold job | `qhold job-id` | `scontrol hold job-id` |
 | release job | `qrls job-id` | `scontrol release job-id` |
-| queue list | `qconf -sql` | `sqeueue` |
+| queue list | `qconf -sql` | `scontrol show partitions` |
 | node list | `qhost` | `sinfo -N` OR `scontrol show nodes` |
 | cluster status | `qhost -q` | `sinfo` |
 | show node resources | N/A | `sinfo "%n %G"` |
