@@ -87,7 +87,7 @@ nav:
     - "Episode 4": first-steps/episode-4.md
   - "Storage":
     - "Accessing Snapshots": storage/accessing-snapshots.md
-    - "Querying Storage": storage/querying-storage.md
+    - "Querying Quotas": storage/querying-storage.md
     - "Storage Locations": storage/storage-locations.md
   - "Slurm Scheduler":
     - slurm/quickstart.md
