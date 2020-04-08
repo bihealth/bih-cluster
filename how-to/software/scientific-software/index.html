@@ -767,8 +767,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../storage/querying-storage/" title="Querying Storage" class="md-nav__link">
-      Querying Storage
+    <a href="../../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
+      Querying Quotas
     </a>
   </li>
 
@@ -1663,10 +1663,6 @@
                 
                 
                 <h1 id="how-to-install-custom-scientific-software">How-To: Install Custom Scientific Software<a class="headerlink" href="#how-to-install-custom-scientific-software" title="Permanent link">&para;</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Slurm Migration Missing</p>
-<p>TODO: this has not been migrated to Slurm yet.</p>
-</div>
 <p>This page gives an end-to-end example how to build and install <a href="http://www.gromacs.org/">Gromacs</a> as an example for managing complex scientific software installs in user land.
 You don't have to learn or understand the specifics of Gromacs.
 We use it as an example as there are some actual users on the BIH cluster.
@@ -1698,11 +1694,12 @@ However, otherwise you will have to install them on their own.</p>
 <p>This is best done in your <code>scratch</code> directory as we don't have to keep these files around for long.
 Note that the files in your <code>scratch</code> directory will automatically be removed after 4 weeks.
 You can also use your <code>work</code> directory here.</p>
-<div class="codehilite"><pre><span></span><code>$ mkdir $HOME/scratch/gromacs-install
-$ cd $HOME/scratch/gromacs-install
-$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
-$ tar xf http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
-$ ls gromacs-2018.3
+<div class="codehilite"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+med0127:~$ mkdir <span class="nv">$HOME</span>/scratch/gromacs-install
+med0127:~$ <span class="nb">cd</span> <span class="nv">$HOME</span>/scratch/gromacs-install
+med0127:~$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
+med0127:~$ tar xf gromacs-2018.3.tar.gz
+med0127:~$ ls gromacs-2018.3
 admin    cmake           COPYING          CTestConfig.cmake  INSTALL  scripts  src
 AUTHORS  CMakeLists.txt  CPackInit.cmake  docs               README   share    tests
 </code></pre></div>
@@ -1723,10 +1720,13 @@ We will install gromacs into <code>$HOME/work/software</code>, which is appropri
 Note that we install the software into your work directory as software installations are quite large and might go above your home quota.
 Also, software installations are usually not precious enough to waste resources on snapshots and backups.
 Also that we force Gromacs to use <code>AVX_256</code> for SIMD support (Intel <em>sandy bridge</em> architecture) to not get unsupported CPU instruction errors.</p>
-<div class="codehilite"><pre><span></span><code>$ module load gcc/7.2.0-0
-$ mkdir gromacs-2018.3-build-mpi
-$ <span class="nb">cd</span> gromacs-2018.3-build-mpi
-$ cmake ../gromacs-2018.3 <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ module load gcc/7.2.0-0 cmake/3.11.0-0
+med0127:~$ module list
+Currently Loaded Modulefiles:
+  <span class="m">1</span><span class="o">)</span> gcc/7.2.0-0      <span class="m">2</span><span class="o">)</span> cmake/3.11.0-0
+med0127:~$ mkdir gromacs-2018.3-build-nompi
+med0127:~$ <span class="nb">cd</span> gromacs-2018.3-build-nompi
+med0127:~$ cmake ../gromacs-2018.3 <span class="se">\</span>
     -DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON <span class="se">\</span>
     -DGMX_MPI<span class="o">=</span>OFF <span class="se">\</span>
     -DGMX_SIMD<span class="o">=</span>AVX_256 <span class="se">\</span>
@@ -1737,9 +1737,13 @@ $ cmake ../gromacs-2018.3 <span class="se">\</span>
 Note that we are also enabling the <code>openmpi</code> module.
 We will also need the precise version here so we can later load the correct libraries.
 Note that we install the software into the directory <code>gromacs-mpi</code> but switch off shared library building as recommended by the Gromacs documentation.</p>
-<div class="codehilite"><pre><span></span><code>$ mkdir gromacs-2018.3-build-nompi
-$ <span class="nb">cd</span> gromacs-2018.3-build-nompi
-$ cmake ../gromacs-2018.3 <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ module load openmpi/3.1.0-0
+med0127:~$ module list
+Currently Loaded Modulefiles:
+  <span class="m">1</span><span class="o">)</span> gcc/7.2.0-0       <span class="m">2</span><span class="o">)</span> cmake/3.11.0-0    <span class="m">3</span><span class="o">)</span> openmpi/4.0.3-0
+med0127:~$ mkdir gromacs-2018.3-build-mpi
+med0127:~$ <span class="nb">cd</span> gromacs-2018.3-build-mpi
+med0127:~$ cmake ../gromacs-2018.3 <span class="se">\</span>
     -DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON <span class="se">\</span>
     -DGMX_MPI<span class="o">=</span>ON <span class="se">\</span>
     -DGMX_SIMD<span class="o">=</span>AVX_256 <span class="se">\</span>
@@ -1752,31 +1756,32 @@ $ cmake ../gromacs-2018.3 <span class="se">\</span>
 <h2 id="perform-the-build-and-install-steps">Perform the Build and Install Steps<a class="headerlink" href="#perform-the-build-and-install-steps" title="Permanent link">&para;</a></h2>
 <p>This is simple, using <code>-j 32</code> allows us to build with 32 threads.
 If something goes wrong: meh, the "joys" of compilling C software.</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Getting Support for Building Software</p>
 <p>BIH HPC IT cannot provide support for compiling scientific software.
 Please contact the appropriate mailing lists or forums for your scientific software.
 You should only contact the BIH HPC IT helpdesk only if you are sure that the problem is with the BIH HPC cluster.
 You should try to resolve the issue on your own and with the developers of the software that you are trying to build/use.</p>
-</blockquote>
+</div>
 <p>For the no-MPI version:</p>
-<div class="codehilite"><pre><span></span><code>$ <span class="nb">cd</span> ../cd gromacs-2018.3-build-nompi
-$ make -j <span class="m">32</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ <span class="nb">cd</span> ../cd gromacs-2018.3-build-nompi
+med0127:~$ make -j <span class="m">32</span>
 <span class="o">[</span>...<span class="o">]</span>
-$ make install
+med0127:~$ make install
 </code></pre></div>
 
 <p>For the MPI version:</p>
-<div class="codehilite"><pre><span></span><code>$ <span class="nb">cd</span> ../cd gromacs-2018.3-build-mpi
-$ make -j <span class="m">32</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ <span class="nb">cd</span> ../cd gromacs-2018.3-build-mpi
+med0127:~$ make -j <span class="m">32</span>
 <span class="o">[</span>...<span class="o">]</span>
-$ make install
+med0127:~$ make install
 </code></pre></div>
 
 <h2 id="create-environment-modules-files">Create Environment Modules Files<a class="headerlink" href="#create-environment-modules-files" title="Permanent link">&para;</a></h2>
 <p>For Gromacs 2018.3, the following is appropriate.
 You should be able to use this as a template for your environment module files:</p>
-<div class="codehilite"><pre><span></span><code>$ mkdir <span class="nv">$HOME</span>/local/modules/gromacs
-$ cat &gt;<span class="nv">$HOME</span>/local/modules/gromacs/2018.3 &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ mkdir -p <span class="nv">$HOME</span>/local/modules/gromacs
+med0127:~$ cat &gt;<span class="nv">$HOME</span>/local/modules/gromacs/2018.3 &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="c1">#%Module</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
     puts stderr <span class="o">{</span>
@@ -1788,7 +1793,7 @@ proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="
 
 module-whatis <span class="o">{</span>Gromacs molecular simulation toolkit <span class="o">(</span>non-MPI<span class="o">)}</span>
 
-<span class="nb">set</span> root /fast/users/YOURUSER/work/gromacs-mpi/2018.3
+<span class="nb">set</span> root /fast/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
 prereq gcc/7.2.0-0
 
@@ -1803,8 +1808,8 @@ setenv          GMXRC                   <span class="nv">$root</span>/bin/GMXRC
 EOF
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>$ mkdir <span class="nv">$HOME</span>/local/modules/gromacs-mpi
-$ cat &gt;<span class="nv">$HOME</span>/local/modules/gromacs-mpi/2018.3 &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ mkdir -p <span class="nv">$HOME</span>/local/modules/gromacs-mpi
+med0127:~$ cat &gt;<span class="nv">$HOME</span>/local/modules/gromacs-mpi/2018.3 &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="c1">#%Module</span>
 proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="o">{</span>
     puts stderr <span class="o">{</span>
@@ -1816,9 +1821,9 @@ proc ModulesHelp <span class="o">{</span> <span class="o">}</span> <span class="
 
 module-whatis <span class="o">{</span>Gromacs molecular simulation toolkit <span class="o">(</span>MPI<span class="o">)}</span>
 
-<span class="nb">set</span> root /fast/users/YOURUSER/work/gromacs-mpi/2018.3
+<span class="nb">set</span> root /fast/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
-reqreq openmpi/3.1.0-0
+prereq openmpi/4.0.3-0
 prereq gcc/7.2.0-0
 
 conflict gromacs
@@ -1833,11 +1838,11 @@ EOF
 </code></pre></div>
 
 <p>With the next command, make your local modules files path known to the environemtn modules system.</p>
-<div class="codehilite"><pre><span></span><code>$ module use <span class="nv">$HOME</span>/local/modules
+<div class="codehilite"><pre><span></span><code>med0127:~$ module use <span class="nv">$HOME</span>/local/modules
 </code></pre></div>
 
 <p>You can verify the result:</p>
-<div class="codehilite"><pre><span></span><code>$ module avail
+<div class="codehilite"><pre><span></span><code>med0127:~$ module avail
 
 ------------------ /fast/users/YOURUSER/local/modules ------------------
 gromacs/2018.3     gromacs-mpi/2018.3
@@ -1848,19 +1853,20 @@ module-git  modules     use.own
 
 -------------------------- /opt/local/modules --------------------------
 cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0
-gcc/7.2.0-0     matlab/r2016b-0
+gcc/7.2.0-0     matlab/r2016b-0 openmpi/4.0.3-0
 </code></pre></div>
 
 <h3 id="interlude-convenient-module-use">Interlude: Convenient <code>module use</code><a class="headerlink" href="#interlude-convenient-module-use" title="Permanent link">&para;</a></h3>
 <p>You can add this to your <code>~/.bashrc</code> file to always execute the <code>module use</code> after login.
 Note that <code>module</code> is not available on the login or transfer nodes, the following should work fine:</p>
-<div class="codehilite"><pre><span></span><code>$ cat &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="codehilite"><pre><span></span><code>med0127:~$ cat &gt;&gt;~/.bashrc &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span> in
   med-login*<span class="p">|</span>med-transfer*<span class="o">)</span>
     <span class="p">;;</span>
   *<span class="o">)</span>
     module use <span class="nv">$HOME</span>/local/modules
     <span class="p">;;</span>
+<span class="k">esac</span>
 EOF
 </code></pre></div>
 
@@ -1890,16 +1896,16 @@ You can also place the module files anywhere, as long as the <code>module use</c
 </ul>
 <h3 id="going-on-with-gromacs">Going on with Gromacs<a class="headerlink" href="#going-on-with-gromacs" title="Permanent link">&para;</a></h3>
 <p>Every time you want to use Gromacs, you can now do</p>
-<div class="codehilite"><pre><span></span><code>$ module load gcc/7.2.0-0 gromacs/2018.3
+<div class="codehilite"><pre><span></span><code>med0127:~$ module load gcc/7.2.0-0 gromacs/2018.3
 </code></pre></div>
 
 <p>or, if you want to have the MPI version:</p>
-<div class="codehilite"><pre><span></span><code>$ module load gcc/7.2.0-0 openmpi/3.1.0-0 gromacs-mpi/2018.3
+<div class="codehilite"><pre><span></span><code>med0127:~$ module load gcc/7.2.0-0 openmpi/4.0.3-0 gromacs-mpi/2018.3
 </code></pre></div>
 
 <h2 id="launching-gromacs">Launching Gromacs<a class="headerlink" href="#launching-gromacs" title="Permanent link">&para;</a></h2>
 <p>Something along the lines of the following job script should be appropriate.
-See <a href="openmpi">How-To: Build and Run OpenMPI Programs</a> for more information.</p>
+See <a href="openmpi">How-To: Build Run OpenMPI Programs</a> for more information.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># Example job script for (single-threaded) MPI programs.</span>
@@ -1907,33 +1913,24 @@ See <a href="openmpi">How-To: Build and Run OpenMPI Programs</a> for more inform
 <span class="c1"># Generic arguments</span>
 
 <span class="c1"># Job name</span>
-<span class="c1">#$ -N gromacs</span>
-<span class="c1"># Stay in the current directory</span>
-<span class="c1">#$ -cwd</span>
-<span class="c1"># Merge stderr and stdout</span>
-<span class="c1">#$ -j y</span>
+<span class="c1">#SBATCH --job-name gromacs</span>
 <span class="c1"># Maximal running time of 10 min</span>
-<span class="c1">#$ -l h_rt=00:10:00</span>
-<span class="c1"># Allocate 1GB of memory **per slot/process**</span>
-<span class="c1">#$ -l h_vmem=1G</span>
-<span class="c1"># Write logs to directory &quot;sge_log&quot;</span>
-<span class="c1">#$ -o sge_log</span>
-<span class="c1"># Use bash as the shell (instead of the default &quot;/bin/sh&quot;)</span>
-<span class="c1">#$ -S /bin/bash</span>
+<span class="c1">#SBATCH --time 00:10:00</span>
+<span class="c1"># Allocate 1GB of memory per CPU</span>
+<span class="c1">#SBATCH --mem 1G</span>
+<span class="c1"># Write logs to directory &quot;slurm_log/&lt;name&gt;-&lt;job id&gt;.log&quot; (dir must exist)</span>
+<span class="c1">#SBATCH --output slurm_log/%x-%J.log</span>
 
 <span class="c1"># MPI-specific parameters</span>
 
-<span class="c1"># Use &quot;mpi&quot; project for getting access to the parallel environment</span>
-<span class="c1"># for running MPI programs.</span>
-<span class="c1">#$ -P mpi</span>
-
-<span class="c1"># Run in the &quot;mpi&quot; parallel environment for MPI-parallel programs</span>
-<span class="c1"># that don&#39;t use multi-threading within the individual processes.</span>
-<span class="c1">#$ -pe mpi.8 128</span>
+<span class="c1"># Launch on 8 nodes (== 8 tasks)</span>
+<span class="c1">#SBATCH --ntasks 8</span>
+<span class="c1"># Allocate 4 CPUs per task (== per node)</span>
+<span class="c1">#SBATCH --cpus-per-task 4</span>
 
 <span class="c1"># Load the OpenMPI and GCC environment module to get the runtime environment.</span>
 module load gcc/4.7.0-0
-module load openmpi/3.1.0-0
+module load openmpi/4.0.3-0
 
 <span class="c1"># Make custom environment modules known. Alternative, you can &quot;module use&quot;</span>
 <span class="c1"># them in the session you use for submitting the job and use &quot;#$ -V&quot; above</span>
@@ -1941,106 +1938,15 @@ module load openmpi/3.1.0-0
 module use <span class="nv">$HOME</span>/local/modules
 module load gromacs-mpi/2018.3
 
-<span class="c1"># Fix TMPDIR to TMP temporary directory assigned by SGE. This is</span>
-<span class="c1"># important so local communication does not go through the GPFS</span>
-<span class="c1"># file system /fast.</span>
-<span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$TMP</span>
-
-<span class="c1"># Launch the program.</span>
-<span class="c1">#</span>
-<span class="c1"># We will launch in total X instances of the program with &quot;-np X&quot; and at most</span>
-<span class="c1"># Y instances on each node with &quot;-npernode Y&quot;.  Gromacs will use Z threads</span>
-<span class="c1"># with OMP_NUM_THREADS=Z.</span>
-<span class="c1">#</span>
-<span class="c1"># With the following command line, we will run 8 threads per process on 16</span>
-<span class="c1"># nodes with one process per node.  Note that this *must* fit the parallel</span>
-<span class="c1"># execution environment we use above. &quot;-pe mpi.8 128&quot; means that we allocate</span>
-<span class="c1"># 8 threads per process, and 16 nodes * 8 threads are 128 slots.</span>
-<span class="c1">#</span>
-<span class="c1"># # export OMP_NUM_THREADS=8</span>
-<span class="c1"># # mpirun --mca oob tcp -npernode 1 -np 16 gmx_mpi mdrun -deffnm npt_1000</span>
-<span class="c1">#</span>
-<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">8</span>
-mpirun --mca oob tcp -npernode <span class="m">1</span> -np <span class="m">16</span> gmx_mpi mdrun -deffnm npt_1000
+<span class="c1"># Launch the program on 8 nodes and tell Gromacs to use 4 threads for each</span>
+<span class="c1"># invocation.</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span>
+mpirun -n <span class="m">8</span> gmx_mpi mdrun -deffnm npt_1000
 </code></pre></div>
 
-<h1 id="looking-at-your-jobs">Looking at Your Jobs<a class="headerlink" href="#looking-at-your-jobs" title="Permanent link">&para;</a></h1>
-<p>Note that <code>qstat -j JOBID</code> will only display the master process of your job.
-Use <code>qstat -f</code> to see all your jobs running on all nodes:</p>
-<div class="codehilite"><pre><span></span><code># qstat -f
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0113                  BP    0/8/640        0.41     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0114                  BP    0/8/640        0.58     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0119                  BP    0/8/640        1.00     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0141                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0156                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0205                  BP    0/8/640        0.37     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0206                  BP    0/8/640        0.44     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0218                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0236                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0237                  BP    0/0/640        10.92    lx-amd64      
----------------------------------------------------------------------------------
-mpi.q@med0241                  BP    0/0/640        2.96     lx-amd64      
----------------------------------------------------------------------------------
-mpi.q@med0242                  BP    0/8/640        1.22     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0602                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0603                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0604                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-mpi.q@med0605                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0727                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
----------------------------------------------------------------------------------
-mpi.q@med0752                  BP    0/8/640        0.99     lx-amd64      
- 735259 1.60000 gromacs    muraliks_c   r     09/17/2018 15:30:45     8        
----------------------------------------------------------------------------------
-[...]
+<div class="codehilite"><pre><span></span><code>med0127:~$ mkdir slurm_log
+med0127:~$ sbatch job_script.sh
+Submitted batch job <span class="m">3229</span>
 </code></pre></div>
                 
                   

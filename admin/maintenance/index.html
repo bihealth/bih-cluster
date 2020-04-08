@@ -778,8 +778,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/querying-storage/" title="Querying Storage" class="md-nav__link">
-      Querying Storage
+    <a href="../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
+      Querying Quotas
     </a>
   </li>
 
@@ -1549,6 +1549,18 @@ No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twe
 <li>All nodes will be upgraded to CentOS 8.</li>
 <li>This will be done in a rolling fashion over the course of 1 month.</li>
 <li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
+</ul>
+<h2 id="unification-of-mass-data-mounts">Unification of Mass Data Mounts<a class="headerlink" href="#unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>To harmonize the mount options with HPC 4 Clinic, the mount location of <code>/fast</code> must be changed to <code>/data/gpfs-1</code>.</li>
+<li>We will start by creating a symlink from <code>/data/gpfs-1</code> to <code>/fast</code>.</li>
+<li>To do this properly, a full reboot will be required.</li>
+<li>We will keep around a symlink from <code>/fast</code> to <code>/data/gpfs-1</code> for some time during a migration phase.</li>
 </ul>
 <h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="switch-update-location-flip-of-med-login2-and-med-transfer1">Switch update, Location Flip of med-login2 and med-transfer1<a class="headerlink" href="#switch-update-location-flip-of-med-login2-and-med-transfer1" title="Permanent link">&para;</a></h2>
