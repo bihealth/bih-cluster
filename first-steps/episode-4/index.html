@@ -1510,7 +1510,7 @@
 </tr>
 <tr>
 <td>2</td>
-<td><a href="../episode-2/">How can I distribute my jobs on the cluster (<code>qsub</code>)?</a></td>
+<td><a href="../episode-2/">How can I distribute my jobs on the cluster (Slurm)?</a></td>
 </tr>
 <tr>
 <td>3</td>
@@ -1518,14 +1518,14 @@
 </tr>
 <tr>
 <td><strong>4</strong></td>
-<td><strong>How can I combine Snakemake and <code>qsub</code>?</strong></td>
+<td><strong>How can I combine Snakemake and Slurm?</strong></td>
 </tr>
 </tbody>
 </table>
-<p>In the last episodes we learned about distributing a job among the cluster nodes using <code>qsub</code> and
+<p>In the last episodes we learned about distributing a job among the cluster nodes using <code>sbatch</code> and
 how to automate and parallelize our pipeline with Snakemake. We are lucky that those two
 powerful commands can be combined. What is the result? You will have an automated pipeline
-with Snakemake that uses <code>qsub</code> to distribute jobs among the cluster nodes instead of
+with Snakemake that uses <code>sbatch</code> to distribute jobs among the cluster nodes instead of
 running only the same node.</p>
 <p>The best thing is that we can reuse our <code>Snakefile</code> as it is and just write a wrapper script
 to call Snakemake. We run the script and the magic will start.</p>
@@ -1543,53 +1543,67 @@ to call Snakemake. We run the script and the magic will start.</p>
 <p>The <code>Snakefile</code> is already known to you but let me explain the wrapper script <code>submit_snakejob.sh</code>:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<span class="c1">#$ -V</span>
-<span class="c1">#$ -j y</span>
-<span class="c1">#$ -o logs</span>
-<span class="c1">#$ -r yes</span>
-<span class="c1">#$ -cwd</span>
-<span class="c1">#$ -S /bin/bash</span>
-<span class="c1">#$ -P control</span>
+<span class="c1"># Set a name for the job (-J or --job-name).</span>
+<span class="c1">#SBATCH --job-name=tutorial</span>
+
+<span class="c1"># Set the file to write the stdout and stderr to (if -e is not set; -o or --output).</span>
+<span class="c1">#SBATCH --output=logs/%x-%j.log</span>
+
+<span class="c1"># Set the number of cores (-n or --ntasks).</span>
+<span class="c1">#SBATCH --ntasks=2</span>
+
+<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem-per-cpu=100M</span>
+
+<span class="c1"># Set the partition to be used (-p or --partition).</span>
+<span class="c1">#SBATCH --partition=medium</span>
+
+<span class="c1"># Set the expected running time of your job (-t or --time).</span>
+<span class="c1"># Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS</span>
+<span class="c1">#SBATCH --time=30:00</span>
+
 
 <span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
-<span class="nb">export</span> <span class="nv">LOGDIR</span><span class="o">=</span>logs/<span class="si">${</span><span class="nv">JOB_ID</span><span class="si">}</span>
+<span class="nb">export</span> <span class="nv">LOGDIR</span><span class="o">=</span>logs/<span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span>-<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>
 mkdir -p <span class="nv">$LOGDIR</span>
+
+<span class="nb">unset</span> DRMAA_LIBRARY_PATH
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$($(</span>which conda<span class="k">)</span> shell.bash hook<span class="k">)</span><span class="s2">&quot;</span>
+conda activate first-steps
 
 <span class="nb">set</span> -x
 
+<span class="c1"># Note that Slurm DRMAA differs slightly from original Slurm syntax</span>
+<span class="c1"># --mem-per-cpu doesn&#39;t accept units and the default unit here is MB</span>
+<span class="c1"># -t only accepts HH:MM</span>
 snakemake <span class="se">\</span>
     --drmaa <span class="s2">&quot; \</span>
-<span class="s2">        -V \</span>
-<span class="s2">        -cwd \</span>
-<span class="s2">        -P medium \</span>
-<span class="s2">        -l h_vmem=5g \</span>
-<span class="s2">        -l h_rt=72:00:00 \</span>
-<span class="s2">        -pe smp 8 \</span>
-<span class="s2">        -j yes \</span>
-<span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/&quot;</span> <span class="se">\</span>
+<span class="s2">        -p medium \</span>
+<span class="s2">        -t 01:00 \</span>
+<span class="s2">        --mem-per-cpu=1000 \</span>
+<span class="s2">        -n 8 \</span>
+<span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/%j.log&quot;</span> <span class="se">\</span>
     -j <span class="m">2</span> <span class="se">\</span>
     -k <span class="se">\</span>
     -p
 </code></pre></div>
 
-<p>In the beginning you see the <code>#$</code> that introduces the parameters when you provide this script to <code>qsub</code>
-as described in the <a href="../episode-2/">second episode</a>. Please make sure that the log folder exists before starting the run!
+<p>In the beginning you see the <code>#SBATCH</code> that introduces the parameters when you provide this script to <code>sbatch</code>
+as described in the <a href="../episode-2/">second episode</a>. Please make sure that the <code>logs</code> folder exists before starting the run!
 We then set and export the <code>TMPDIR</code> and <code>LOGDIR</code> variables.
-Note that <code>LOGDIR</code> has a subfolder named <code>$JOB_ID</code> that will be created
+Note that <code>LOGDIR</code> has a subfolder named <code>$SLURM_JOB_NAME-$SLURM_JOB_ID</code> that will be created
 for you. Snakemake will store its logfiles for this very Snakemake run in this folder.
 The next new thing is <code>set -x</code>. This simply prints to the terminal every command that is executed within
 the script. This is useful for debugging.</p>
-<p>Finally, the Snakemake call takes place. With the <code>--drmaa</code> option we define how the jobs inside
-Snakemake should be started on the nodes. Please note that the <code>qsub</code> command does not appear here, but the argument string provided to the <code>--drmaa</code> option is the same as the parameters for <code>qsub</code>. The <code>drmaa</code> library provides more stable job distribution than using plain <code>qsub</code> in this scenario. Note that we don't write the parameter string to a bash file (which we don't have in this case). There are three new parameters that are defining the hardware requirements for
-our run and the project:</p>
+<p>Finally, the Snakemake call takes place. With the <code>--drmaa</code> option we define how the jobs inside Snakemake should be started on the nodes. Please note that the <code>sbatch</code> command does not appear here, but the argument string provided to the <code>--drmaa</code> option is the same as the parameters for <code>sbatch</code>, except for some minor differences as descrived above or <a href="../../slurm/snakemake/#limitations">here</a>. The <code>drmaa</code> library provides more stable job distribution than using plain <code>sbatch</code> in this scenario. Note that we don't write the parameter string to a bash file (which we don't have in this case). There are three new parameters that are defining the hardware requirements for our run and the project:</p>
 <ul>
-<li><code>-l h_vmem</code>: How much memory ONE job (=Snakemake rule) should get [Xg]</li>
-<li><code>-l h_rt</code>: How long a job (=Snakemake rule) is allowed to run [HH:MM:SS]</li>
-<li><code>-pe smp 8</code>: How many cores of a node a job (=Snakemake rule) should get [N]</li>
-<li><code>P medium</code>: The project name (this system was introduced in <a href="../episode-2/#job-queues">Episode 2</a> and is described <a href="../../overview/job-scheduler/">here</a>)</li>
+<li><code>--mem-per-cpu=X</code>: How much memory ONE job (=Snakemake rule) should get in Megabyte</li>
+<li><code>-t HH:MM</code>: How long a job (=Snakemake rule) is allowed to run</li>
+<li><code>-n X</code>: How many cores of a node a job (=Snakemake rule) should get</li>
+<li><code>-p medium</code>: The partition name (this system was introduced in <a href="../episode-2/#job-queues">Episode 2</a> and is described <a href="../../overview/job-scheduler/">here</a>)</li>
 </ul>
 <p>Note that the memory is not shared among the cores. This means the final memory on a node is defined by</p>
-<div class="codehilite"><pre><span></span><code>h_vmem=Xg * smp N
+<div class="codehilite"><pre><span></span><code>&lt;mem-per-cpu&gt; * &lt;n&gt;
 </code></pre></div>
 
 <p>So in our example the total memory requested on one node would be 40GB.</p>
@@ -1600,11 +1614,11 @@ our run and the project:</p>
 <li><code>-p</code>: Print out shell commands</li>
 </ul>
 <p>Finally, run the script:</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ qsub submit_snakejob.sh
+<div class="codehilite"><pre><span></span><code>(first-steps) $ sbatch submit_snakejob.sh
 </code></pre></div>
 
-<p>If you watch <code>qstat</code> now, you will see that the jobs are distributed to the system:</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ watch -n 60 qstat
+<p>If you watch <code>squeue --me</code> now, you will see that the jobs are distributed to the system:</p>
+<div class="codehilite"><pre><span></span><code>(first-steps) $ watch -n 60 squeue --me
 </code></pre></div>
 
 <p>Please refer to the Snakemake documentation for more details on using Snakemake, in particular <a href="http://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration">how to use the cluster configuration</a> on how to specify the resource requirements on a per-rule base.</p>

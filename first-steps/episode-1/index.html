@@ -1653,7 +1653,7 @@
 </tr>
 <tr>
 <td>2</td>
-<td><a href="../episode-2/">How can I distribute my jobs on the cluster (<code>qsub</code>)?</a></td>
+<td><a href="../episode-2/">How can I distribute my jobs on the cluster (Slurm)?</a></td>
 </tr>
 <tr>
 <td>3</td>
@@ -1661,7 +1661,7 @@
 </tr>
 <tr>
 <td>4</td>
-<td><a href="../episode-4/">How can I combine Snakemake and <code>qsub</code>?</a></td>
+<td><a href="../episode-4/">How can I combine Snakemake and Slurm?</a></td>
 </tr>
 </tbody>
 </table>
@@ -1728,7 +1728,7 @@ For our small example, the required reference genome and index can be found at:<
 <p>Note that delly will not find any variants.</p>
 <h2 id="small-variant-calling-snv-indel">Small Variant Calling (SNV, indel)<a class="headerlink" href="#small-variant-calling-snv-indel" title="Permanent link">&para;</a></h2>
 <p>And now for the SNP calling (this step will take ~ 20 minutes):</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ gatk-launch HaplotypeCaller \ # or gatk HaplotypeCaller \
+<div class="codehilite"><pre><span></span><code>(first-steps) $ gatk HaplotypeCaller \ # or gatk HaplotypeCaller \
     -R /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     -I aln.bam \
     -ploidy 2 \

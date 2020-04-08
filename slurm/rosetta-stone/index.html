@@ -1516,7 +1516,7 @@ Nowadays, the term is often used to label translation tables such as the one bel
 <tr>
 <td align="center">run interactively</td>
 <td>N/A</td>
-<td><code>srun --tpy program</code></td>
+<td><code>srun --pty program</code></td>
 </tr>
 <tr>
 <td align="center">submit job</td>
@@ -1530,8 +1530,18 @@ Nowadays, the term is often used to label translation tables such as the one bel
 </tr>
 <tr>
 <td align="center">job status by job id</td>
-<td><code>qstat -u '*' [-j job-id]</code></td>
-<td><code>squeue job-id</code></td>
+<td>N/A</td>
+<td><code>squeue --job job-id</code></td>
+</tr>
+<tr>
+<td align="center">detailed job status</td>
+<td><code>qstat -u '*' -j job-id</code></td>
+<td><code>sstat job-id</code></td>
+</tr>
+<tr>
+<td align="center">job status of your jobs</td>
+<td><code>qstat</code></td>
+<td><code>squeue --me</code></td>
 </tr>
 <tr>
 <td align="center">job status by user</td>
@@ -1551,7 +1561,7 @@ Nowadays, the term is often used to label translation tables such as the one bel
 <tr>
 <td align="center">queue list</td>
 <td><code>qconf -sql</code></td>
-<td><code>sqeueue</code></td>
+<td><code>scontrol show partitions</code></td>
 </tr>
 <tr>
 <td align="center">node list</td>

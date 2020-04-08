@@ -724,8 +724,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-qsub-command" class="md-nav__link">
-    The qsub Command
+  <a href="#the-sbatch-command" class="md-nav__link">
+    The sbatch Command
   </a>
   
 </li>
@@ -1525,8 +1525,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-qsub-command" class="md-nav__link">
-    The qsub Command
+  <a href="#the-sbatch-command" class="md-nav__link">
+    The sbatch Command
   </a>
   
 </li>
@@ -1583,7 +1583,7 @@
 </tr>
 <tr>
 <td><strong>2</strong></td>
-<td><strong>How can I distribute my jobs on the cluster (<code>qsub</code>)?</strong></td>
+<td><strong>How can I distribute my jobs on the cluster (Slurm)?</strong></td>
 </tr>
 <tr>
 <td>3</td>
@@ -1591,66 +1591,58 @@
 </tr>
 <tr>
 <td>4</td>
-<td><a href="../episode-4/">How can I combine Snakemake and <code>qsub</code>?</a></td>
+<td><a href="../episode-4/">How can I combine Snakemake and Slurm?</a></td>
 </tr>
 </tbody>
 </table>
 <p>Welcome to the second episode of our tutorial series!</p>
 <p>Once you are logged in to the cluster, you have the possibility to distribute your jobs to all the nodes that are available.
 But how can you do this easily?
-The key command to this magic is <code>qsub</code>.
+The key command to this magic is <code>sbatch</code>.
 This tutorial will show you how you can use this efficiently.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Before using <code>qsub</code>, make sure that you logged in using <code>qrsh</code> once you entered the login node via ssh, as described in <a href="../../connecting/configure-ssh/linux/">Connecting via SSH</a>.</p>
-</div>
-<h2 id="the-qsub-command">The <code>qsub</code> Command<a class="headerlink" href="#the-qsub-command" title="Permanent link">&para;</a></h2>
-<p>So what is <code>qsub</code> doing for you?</p>
-<p>You use the <code>qsub</code> command in front of the script you actually want to run.
-<code>qsub</code> then puts your job into the job queue.
+<h2 id="the-sbatch-command">The <code>sbatch</code> Command<a class="headerlink" href="#the-sbatch-command" title="Permanent link">&para;</a></h2>
+<p>So what is <code>sbatch</code> doing for you?</p>
+<p>You use the <code>sbatch</code> command in front of the script you actually want to run.
+<code>sbatch</code> then puts your job into the job queue.
 The job scheduler looks at the current status of the whole system and will assign the first job in the queue to a node that is free in terms of computational load.
 If all machines are busy, yours will wait.
 But your job will sooner or later get assigned to a free node.</p>
 <p>We strongly recommend using this process for starting your computationally intensive tasks because you will get the best performance for your job and the
 whole system won't be disturbed by jobs that are locally blocking nodes.
 Thus, everybody using the cluster benefits.</p>
-<p>You may have noticed that you run <code>qsub</code> with a script, not with regular commands.
-The reason is that <code>qsub</code> only accepts bash scripts.
-If you give <code>qsub</code> a normal shell command or binary, it won't work.
+<p>You may have noticed that you run <code>sbatch</code> with a script, not with regular commands.
+The reason is that <code>sbatch</code> only accepts bash scripts.
+If you give <code>sbatch</code> a normal shell command or binary, it won't work.
 This means that we have to put the command(s) we want to use in a bash script.
 A skeleton script can be found at <code>/fast/projects/cubit/work/tutorial/skeletons/submit_job.sh</code></p>
 <p>The content of the file:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<span class="c1"># Define the expected running time of your job.</span>
-<span class="c1">#$ -l h_rt=24:00:00</span>
+<span class="c1"># Set a name for the job (-J or --job-name).</span>
+<span class="c1">#SBATCH --job-name=tutorial</span>
 
-<span class="c1"># Define the project you want to enqueue your job to,</span>
-<span class="c1"># according to the expected running time.</span>
-<span class="c1">#$ -P medium</span>
+<span class="c1"># Set the file to write the stdout and stderr to (if -e is not set; -o or --output).</span>
+<span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
-<span class="c1"># Combine stderr and stdout log files into the stdout log file.</span>
-<span class="c1">#$ -j y</span>
+<span class="c1"># Set the number of cores (-n or --ntasks).</span>
+<span class="c1">#SBATCH --ntasks=2</span>
 
-<span class="c1"># Keep current environment variables.</span>
-<span class="c1">#$ -V</span>
+<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem-per-cpu=100M</span>
 
-<span class="c1"># Use current working directory as working directory of the job.</span>
-<span class="c1">#$ -cwd</span>
+<span class="c1"># Set the partition to be used (-p or --partition).</span>
+<span class="c1">#SBATCH --partition=medium</span>
 
-<span class="c1"># Set the log directory.</span>
-<span class="c1">#$ -o logs</span>
+<span class="c1"># Set the expected running time of your job (-t or --time).</span>
+<span class="c1"># Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS</span>
+<span class="c1">#SBATCH --time=30:00</span>
 
 <span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
 mkdir -p <span class="si">${</span><span class="nv">TMPDIR</span><span class="si">}</span>
 </code></pre></div>
 
-<p>The lines starting with <code>#$</code> are actually setting parameters for a <code>qsub</code> command, so <code>#$ -j y</code> is equal to <code>qsub -j y</code>.
-If the <code>logs</code> value in the <code>-o</code> parameter refers to an existing directory, <code>qsub</code> will create a logfile inside this directory.
-If it does not exist, <code>qsub</code> will create a file named <code>logs</code> and put the log content there.
-We recommend having the directory available before starting the job.
-We also emphasize the importance of the log files!
-They are the first place to look if anything goes wrong.</p>
+<p>The lines starting with <code>#SBATCH</code> are actually setting parameters for a <code>sbatch</code> command, so <code>#SBATCH --job-name=tutorial</code> is equal to <code>sbatch --job-name=tutorial</code>.
+Slurm will create a log file with a file name composed of the job name (<code>%x</code>) and the job ID (<code>%j</code>), e.g. <code>logs/tutorial-XXXX.log</code>. It will not automatically create the <code>logs</code> directory, we need to do this manually first. Here, we emphasize the importance of the log files! They are the first place to look if anything goes wrong.</p>
 <p>To start now with our tutorial, create a new tutorial directory with a log directory, e.g.,</p>
 <div class="codehilite"><pre><span></span><code>(first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode2/logs
 </code></pre></div>
@@ -1669,24 +1661,24 @@ We will learn how to do that in a later tutorial.
 Your file should look something like this:</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<span class="c1"># Define the expected running time of your job.</span>
-<span class="c1">#$ -l h_rt=24:00:00</span>
+<span class="c1"># Set a name for the job (-J or --job-name).</span>
+<span class="c1">#SBATCH --job-name=tutorial</span>
 
-<span class="c1"># Define the project you want to enqueue your job to,</span>
-<span class="c1"># according to the expected running time.</span>
-<span class="c1">#$ -P medium</span>
+<span class="c1"># Set the file to write the stdout and stderr to (if -e is not set; -o or --output).</span>
+<span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
-<span class="c1"># Combine stderr and stdout log files into stdout log file.</span>
-<span class="c1">#$ -j y</span>
+<span class="c1"># Set the number of cores (-n or --ntasks).</span>
+<span class="c1">#SBATCH --ntasks=2</span>
 
-<span class="c1"># Keep current environment variables.</span>
-<span class="c1">#$ -V</span>
+<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem-per-cpu=100M</span>
 
-<span class="c1"># Use current working directory as working directory of the job.</span>
-<span class="c1">#$ -cwd</span>
+<span class="c1"># Set the partition to be used (-p or --partition).</span>
+<span class="c1">#SBATCH --partition=medium</span>
 
-<span class="c1"># Set the log directory.</span>
-<span class="c1">#$ -o logs</span>
+<span class="c1"># Set the expected running time of your job (-t or --time).</span>
+<span class="c1"># Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS</span>
+<span class="c1">#SBATCH --time=30:00</span>
 
 <span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
 mkdir -p <span class="si">${</span><span class="nv">TMPDIR</span><span class="si">}</span>
@@ -1708,7 +1700,7 @@ delly call -g <span class="se">\</span>
     <span class="nv">$REF</span> <span class="se">\</span>
     aln.bam
 
-gatk-launch HaplotypeCaller <span class="se">\</span>
+gatk HaplotypeCaller <span class="se">\</span>
     -R <span class="nv">$REF</span> <span class="se">\</span>
     -I aln.bam <span class="se">\</span>
     -ploidy <span class="m">2</span> <span class="se">\</span>
@@ -1716,50 +1708,45 @@ gatk-launch HaplotypeCaller <span class="se">\</span>
 </code></pre></div>
 
 <p>Let's run it (make sure that you are in the <code>tutorial/episode2</code> directory!):</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ qsub submit_job.sh
+<div class="codehilite"><pre><span></span><code>(first-steps) $ sbatch submit_job.sh
 </code></pre></div>
 
-<p>And wait for the response which will tell you that your job was submitted and which job id number it was assigned. Note that <code>qsub</code> only tells you that the job has started, but nothing about finishing. You won't get any response at the terminal when the job finishes. It will take approximately 20 minutes to finish the job.</p>
+<p>And wait for the response which will tell you that your job was submitted and which job id number it was assigned. Note that <code>sbatch</code> only tells you that the job has started, but nothing about finishing. You won't get any response at the terminal when the job finishes. It will take approximately 20 minutes to finish the job.</p>
 <h2 id="monitoring-jobs">Monitoring Jobs<a class="headerlink" href="#monitoring-jobs" title="Permanent link">&para;</a></h2>
 <p>You'll probably want to see how your job is doing. You can get a list of your jobs using:</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ qstat
+<div class="codehilite"><pre><span></span><code>(first-steps) $ squeue --me
 </code></pre></div>
 
-<p>Note that logins are also considered as jobs, albeit "interactive" and not "batch" jobs.</p>
+<p>Note that logins are also considered as jobs.</p>
 <p>Identify your job by the <code>&lt;JOBID&gt;</code> (1<sup>st</sup> column) or the name of the script (3<sup>rd</sup> column).
-The most likely states you will see (4<sup>th</sup> column of the table):</p>
+The most likely states you will see (5<sup>th</sup> column of the table):</p>
 <ul>
-<li><code>qw</code> waiting to be submitted</li>
-<li><code>r</code> running</li>
-<li><code>Eqw</code> in error queue</li>
+<li><code>PD</code> pending, waiting to be submitted</li>
+<li><code>R</code> running</li>
 <li>disappeared, either because of an error or because it finished</li>
 </ul>
-<p>In the 8<sup>th</sup> column (queue) you can see that your job is very likely running on a different machine than the one you are on!</p>
-<p>Get more information about your jobs by either passing the job id when it is in the <code>r</code> or <code>Eqw</code> state:</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ qstat -j &lt;JOBID&gt;
+<p>In the 8<sup>th</sup> column you can see that your job is very likely running on a different machine than the one you are on!</p>
+<p>Get more information about your jobs by either passing the job id:</p>
+<div class="codehilite"><pre><span></span><code>(first-steps) $ sstat &lt;JOBID&gt;
 </code></pre></div>
 
-<p>Once a job is complete, you can use <code>qacct -j &lt;JOBID&gt;</code> to see information on your job.</p>
 <p>And of course, watch what the logs are telling you:</p>
-<div class="codehilite"><pre><span></span><code>(first-steps) $ tail -f logs/submit_job.sh.o&lt;JOBID&gt;
+<div class="codehilite"><pre><span></span><code>(first-steps) $ tail -f logs/tutorial-&lt;JOBID&gt;.log
 </code></pre></div>
 
-<p>There will be no notification when your job is done, so it is best to watch the <code>qstat</code> command.
-To watch the <code>qsub</code> command there is a linux command <code>watch</code> that you give a command to execute every few seconds.
+<p>There will be no notification when your job is done, so it is best to watch the <code>squeue</code> command.
+To watch the <code>sbatch</code> command there is a linux command <code>watch</code> that you give a command to execute every few seconds.
 This is useful for looking for changes in the output of a command. The seconds between two executions can be set with the <code>-n</code> option.
 <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> It is best to use <code>-n 60</code> to minimize unnecessary load on the file system:</p>
-<p><div class="codehilite"><pre><span></span><code>(first-steps) $ watch -n 60 qstat
+<p><div class="codehilite"><pre><span></span><code>(first-steps) $ watch -n 60 squeue --me
 </code></pre></div>
-If for some reason your job is hanging (eg. file_not_found situations), you can delete your job using <code>qdel</code> with your job-ID:
-<div class="codehilite"><pre><span></span><code>(first-steps) $ qdel &lt;job-ID&gt;
+If for some reason your job is hanging, you can delete your job using <code>qcancel</code> with your job-ID:
+<div class="codehilite"><pre><span></span><code>(first-steps) $ qcancel &lt;job-ID&gt;
 </code></pre></div></p>
 <h2 id="job-queues">Job Queues<a class="headerlink" href="#job-queues" title="Permanent link">&para;</a></h2>
-<p>You might have noticed that the job you submitted when you monitor it with <code>qstat</code>
-is running in the <code>medium.q</code> queue (in the 7<sup>th</sup> column named <code>queue</code> you will see something like <code>medium.q@med0...</code>).</p>
 <p>The cluster has a special way of organizing itself and by telling the cluster how long and with which priority you want your jobs to run, you can help it in this.
-There is a system set up on the cluster where you can enqueue your jobs to so-called <em>projects</em>. <em>projects</em> have different prioritites and are allowed for different running times.
-Those <em>projects</em> have queues assigned carrying the same name as the project, e.g. submitting a job to project <code>long</code> might end up in queue <code>long.q</code>, but not necessarily.
-To get to know why this is, what projects are available, and how to use them properly, we highly encourage you to read the <a href="../../overview/job-scheduler/">cluster queues wiki page</a>.</p>
+There is a system set up on the cluster where you can enqueue your jobs to so-called <em>partitions</em>. <em>partitions</em> have different prioritites and are allowed for different running times.
+To get to know what partitions are available, and how to use them properly, we highly encourage you to read the <a href="../../overview/job-scheduler/">cluster queues wiki page</a>.</p>
                 
                   
                 

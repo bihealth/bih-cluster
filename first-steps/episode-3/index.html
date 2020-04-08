@@ -1510,7 +1510,7 @@
 </tr>
 <tr>
 <td>2</td>
-<td><a href="../episode-2/">How can I distribute my jobs on the cluster (<code>qsub</code>)?</a></td>
+<td><a href="../episode-2/">How can I distribute my jobs on the cluster (Slurm)?</a></td>
 </tr>
 <tr>
 <td><strong>3</strong></td>
@@ -1518,16 +1518,16 @@
 </tr>
 <tr>
 <td>4</td>
-<td><a href="../episode-4/">How can I combine Snakemake and <code>qsub</code>?</a></td>
+<td><a href="../episode-4/">How can I combine Snakemake and Slurm?</a></td>
 </tr>
 </tbody>
 </table>
 <p>In this episode we will discuss how we can parallelize steps in a pipeline that are not dependent on each other.
 In the last episode we saw a case (the variant calling) that could have been potentially parallelized.</p>
-<p>We will take care of that today. Please note that we are not going to use the <code>qsub</code> command we learned
+<p>We will take care of that today. Please note that we are not going to use the <code>sbatch</code> command we learned
 earlier. Thus, this tutorial will run on the same node where you execute the script. We will introduce you to
 Snakemake, a tool with which we can model dependencies and run things in parallel. In the next
-tutorial we will learn how to submit the jobs with <code>qsub</code> and Snakemake combined.</p>
+tutorial we will learn how to submit the jobs with <code>sbatch</code> and Snakemake combined.</p>
 <p>For those who know <code>make</code> already, Snakemake will be familiar. You can think of Snakemake being a bunch
 of dedicated bash scripts that you can make dependent on each other. Snakemake will start the next
 script when a previous one finishes, and potentially it will run things in parallel if the dependencies allow.</p>
@@ -1579,12 +1579,12 @@ copy the skeleton:</p>
     <span class="nb">input</span><span class="p">:</span>
         <span class="s1">&#39;alignment/test.bam&#39;</span>
     <span class="n">output</span><span class="p">:</span>
-        <span class="n">touch</span><span class="p">(</span><span class="s1">&#39;structural_variants/test.vcf&#39;</span><span class="p">)</span>
+        <span class="s1">&#39;structural_variants/test.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
-<span class="sd">        delly call -g ${{REF}} {input}</span>
+<span class="sd">        delly call -o {output} -g ${{REF}} {input}</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
 <span class="n">rule</span> <span class="n">snps</span><span class="p">:</span>
@@ -1596,7 +1596,7 @@ copy the skeleton:</p>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
-<span class="sd">        gatk-launch HaplotypeCaller \</span>
+<span class="sd">        gatk HaplotypeCaller \</span>
 <span class="sd">            -R ${{REF}} \</span>
 <span class="sd">            -I {input} \</span>
 <span class="sd">            -ploidy 2 \</span>
@@ -1651,7 +1651,7 @@ which value this variable should have. Your <code>Snakefile</code> should look n
         <span class="s1">&#39;structural_variants/test.vcf&#39;</span>
 
 <span class="n">rule</span> <span class="n">alignment</span><span class="p">:</span>
-    <span class="nb">input</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span><span class="n">l</span>
         <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R1.fq.gz&#39;</span><span class="p">,</span>
         <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R2.fq.gz&#39;</span><span class="p">,</span>
     <span class="n">output</span><span class="p">:</span>
@@ -1678,12 +1678,12 @@ which value this variable should have. Your <code>Snakefile</code> should look n
     <span class="nb">input</span><span class="p">:</span>
         <span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam&#39;</span>
     <span class="n">output</span><span class="p">:</span>
-        <span class="n">touch</span><span class="p">(</span><span class="s1">&#39;structural_variants/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span><span class="p">)</span>
+        <span class="s1">&#39;structural_variants/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
-<span class="sd">        delly call -g ${{REF}} {input}</span>
+<span class="sd">        delly call -o {output} -g ${{REF}} {input}</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
 <span class="n">rule</span> <span class="n">snps</span><span class="p">:</span>
@@ -1695,7 +1695,7 @@ which value this variable should have. Your <code>Snakefile</code> should look n
         <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
-<span class="sd">        gatk-launch HaplotypeCaller \</span>
+<span class="sd">        gatk HaplotypeCaller \</span>
 <span class="sd">            -R ${{REF}} \</span>
 <span class="sd">            -I {input} \</span>
 <span class="sd">            -ploidy 2 \</span>
