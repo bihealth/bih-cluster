@@ -1699,7 +1699,7 @@ You should not run any computations there, so why would you need environment mod
 -bash: module: command not found
 </code></pre></div>
 
-<p>Use <code>srun --ptty bash -i</code> to get to one of the compute nodes.</p>
+<p>Use <code>srun --pty bash -i</code> to get to one of the compute nodes.</p>
 <h2 id="auto-loading-a-set-of-modules">Auto-loading a set of Modules<a class="headerlink" href="#auto-loading-a-set-of-modules" title="Permanent link">&para;</a></h2>
 <p>You will certainly finding yourself using a set of programs regularly without it being part of the core cluster installation, e.g., SAMtools, or Python 3.
 Just putting the appropriate <code>module load</code> lines in your <code>~/.bashrc</code> will generate warnings when logging into the login node.

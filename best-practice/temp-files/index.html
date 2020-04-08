@@ -1027,8 +1027,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tmpdir-and-the-sge-scheduler" class="md-nav__link">
-    TMPDIR and the SGE scheduler
+  <a href="#tmpdir-and-the-scheduler" class="md-nav__link">
+    TMPDIR and the scheduler
   </a>
   
     <nav class="md-nav">
@@ -1578,8 +1578,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tmpdir-and-the-sge-scheduler" class="md-nav__link">
-    TMPDIR and the SGE scheduler
+  <a href="#tmpdir-and-the-scheduler" class="md-nav__link">
+    TMPDIR and the scheduler
   </a>
   
     <nav class="md-nav">
@@ -1640,9 +1640,8 @@ mkdir -p <span class="nv">$TMPDIR</span>
 </code></pre></div>
 
 <p><strong>Prepending this to your job scripts is also recommended as it will ensure that the temporary directory exists.</strong></p>
-<h2 id="tmpdir-and-the-sge-scheduler"><code>TMPDIR</code> and the SGE scheduler<a class="headerlink" href="#tmpdir-and-the-sge-scheduler" title="Permanent link">&para;</a></h2>
-<p>In the current configuration, jobs submitted through <code>qsub</code> will have <code>TMPDIR</code> set to a sub directory in <code>/tmp</code> on the local machine that is automatically cleaned up after a job finishes.
-In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
+<h2 id="tmpdir-and-the-scheduler"><code>TMPDIR</code> and the scheduler<a class="headerlink" href="#tmpdir-and-the-scheduler" title="Permanent link">&para;</a></h2>
+<p>In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
 Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.</p>
 <div class="admonition imporant">
 <p class="admonition-title">SGE and TMPDIR</p>
