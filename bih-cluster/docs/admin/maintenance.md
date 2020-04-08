@@ -63,6 +63,18 @@ SSH Key Management has switched to using Charite and MDC ActiveDirectory servers
 - This will be done in a rolling fashion over the course of 1 month.
 - The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
 
+## Unification of Mass Data Mounts
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+- To harmonize the mount options with HPC 4 Clinic, the mount location of `/fast` must be changed to `/data/gpfs-1`.
+- We will start by creating a symlink from `/data/gpfs-1` to `/fast`.
+- To do this properly, a full reboot will be required.
+- We will keep around a symlink from `/fast` to `/data/gpfs-1` for some time during a migration phase.
+
 # Previous Maintenance Windows
 
 ## Switch update, Location Flip of med-login2 and med-transfer1
