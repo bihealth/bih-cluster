@@ -3,11 +3,24 @@
 **Create an interactive bash session** (`srun` will run bash in real-time, `--pty` makes `stdout` and `stderr` to your current session).
 
 ```bash
-med-login1:~$ srun --pty bash
+med-login1:~$ srun --pty bash -i
 med0740:~$ echo "Hello World"
 Hello World
 med0740:~$ exit
 med-login1:~$
+```
+
+**Pro-Tip:** Using Bash aliases for quick access.
+
+```
+med-login1:~$ alias slogin="srun --pty bash -i"
+med-login1:~$ slogin
+med0740:~$ exit
+med-login1:~$ cat >>~/.bashrc <<"EOF"
+# Useful aliases for logging in via Slurm
+alias slogin="srun --pty bash -i"
+alias slogin-x11="srun --pty --x11 bash -i"
+EOF
 ```
 
 **Create an interactive R session on the cluster** (assuming conda is active and the environment `my-r` is created, e.g., with `conda create -n my-r r`).
