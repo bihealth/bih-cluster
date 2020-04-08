@@ -101,7 +101,9 @@ host:~$ squeue  -u holtgrem_c
 
 The DRMAA interface to Slurm has a few limitations:
 
-- memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes),
+- memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes) and as a plain number without unit,
 - running time has to be given as `hh:mm`.
+
+A full list of supported parameters can be found [in the officical documentation](http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification).
 
 ... that's all, folks!

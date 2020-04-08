@@ -4,17 +4,17 @@
 |---|---|
 | 0 | [How can I install the tools?](episode-0.md) |
 | 1 | [How can I use the static data?](episode-1.md) |
-| 2 | [How can I distribute my jobs on the cluster (`qsub`)?](episode-2.md) |
+| 2 | [How can I distribute my jobs on the cluster (Slurm)?](episode-2.md) |
 | **3** | **How can I organize my jobs with Snakemake?** |
-| 4 | [How can I combine Snakemake and `qsub`?](episode-4.md) |
+| 4 | [How can I combine Snakemake and Slurm?](episode-4.md) |
 
 In this episode we will discuss how we can parallelize steps in a pipeline that are not dependent on each other.
 In the last episode we saw a case (the variant calling) that could have been potentially parallelized.
 
-We will take care of that today. Please note that we are not going to use the `qsub` command we learned
+We will take care of that today. Please note that we are not going to use the `sbatch` command we learned
 earlier. Thus, this tutorial will run on the same node where you execute the script. We will introduce you to
 Snakemake, a tool with which we can model dependencies and run things in parallel. In the next
-tutorial we will learn how to submit the jobs with `qsub` and Snakemake combined.
+tutorial we will learn how to submit the jobs with `sbatch` and Snakemake combined.
 
 For those who know `make` already, Snakemake will be familiar. You can think of Snakemake being a bunch
 of dedicated bash scripts that you can make dependent on each other. Snakemake will start the next
@@ -72,12 +72,12 @@ rule structural_variants:
     input:
         'alignment/test.bam'
     output:
-        touch('structural_variants/test.vcf')
+        'structural_variants/test.vcf'
     shell:
         r"""
         REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
-        delly call -g ${{REF}} {input}
+        delly call -o {output} -g ${{REF}} {input}
         """
 
 rule snps:
@@ -89,7 +89,7 @@ rule snps:
         r"""
         REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
-        gatk-launch HaplotypeCaller \
+        gatk HaplotypeCaller \
             -R ${{REF}} \
             -I {input} \
             -ploidy 2 \
@@ -146,7 +146,7 @@ rule all:
         'structural_variants/test.vcf'
 
 rule alignment:
-    input:
+    input:l
         '/fast/projects/cubit/work/tutorial/input/{id}_R1.fq.gz',
         '/fast/projects/cubit/work/tutorial/input/{id}_R2.fq.gz',
     output:
@@ -173,12 +173,12 @@ rule structural_variants:
     input:
         'alignment/{id}.bam'
     output:
-        touch('structural_variants/{id}.vcf')
+        'structural_variants/{id}.vcf'
     shell:
         r"""
         REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
-        delly call -g ${{REF}} {input}
+        delly call -o {output} -g ${{REF}} {input}
         """
 
 rule snps:
@@ -190,7 +190,7 @@ rule snps:
         r"""
         REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
-        gatk-launch HaplotypeCaller \
+        gatk HaplotypeCaller \
             -R ${{REF}} \
             -I {input} \
             -ploidy 2 \
