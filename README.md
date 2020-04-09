@@ -1,14 +1,8 @@
-# BIH HPC Wiki
-
-- :point_right: [Go here for the wiki](https://github.com/bihealth/bih-cluster/wiki)
-
-:construction: BELOW IS UNDER CONSTRUCTION :construction:
-
 # BIH HPC Cluster Documentation
 
-This documentation uses MkDocs and GitHub pages to build the documentation.  Maybe, some day it will replace the old Wiki.
+- You can find the built documentation here: https://bihealth.github.io/bih-cluster/
 
-## Getting Started
+## Building the Documentation Locally
 
 **Prerequisites**
 
