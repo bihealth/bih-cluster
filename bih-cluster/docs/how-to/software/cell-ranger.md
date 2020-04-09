@@ -1,9 +1,5 @@
 # How-To: Run CellRanger
 
-!!! todo "Not yet updated to Slurm"
-
-    TODO: This still needs to be updated to Slurm.
-
 # what is Cell Ranger?
 from the official [website](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger):
 "Cell Ranger is a set of analysis pipelines that process Chromium single-cell RNA-seq output to align reads, generate feature-barcode matrices and perform clustering and gene expression analysis"
@@ -24,7 +20,76 @@ tar -xzvf cellranger-3.0.2.tar.gz
 
 will be provided in `/fast/projects/cubit/current/static_data/app_support/cellranger`
 
-# cluster support
+# cluster support SLURM
+
+add a file `slurm.template` to `/fast/users/$USER/scratch/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
+
+```
+#!/usr/bin/env bash
+#
+# Copyright (c) 2016 10x Genomics, Inc. All rights reserved.
+#
+# =============================================================================
+# Setup Instructions
+# =============================================================================
+#
+# 1. Add any other necessary Slurm arguments such as partition (-p) or account
+#    (-A). If your system requires a walltime (-t), 24 hours (24:00:00) is
+#    sufficient.  We recommend you do not remove any arguments below or Martian
+#    may not run properly.
+#
+# 2. Change filename of slurm.template.example to slurm.template.
+#
+# =============================================================================
+# Template
+# =============================================================================
+#
+#SBATCH -J __MRO_JOB_NAME__
+#SBATCH --export=ALL
+#SBATCH --nodes=1 --ntasks-per-node=__MRO_THREADS__
+#SBATCH --signal=2
+#SBATCH --no-requeue
+#SBATCH --partition=critical
+#SBATCH --time=24:00:00
+### Alternatively: --ntasks=1 --cpus-per-task=__MRO_THREADS__
+###   Consult with your cluster administrators to find the combination that
+###   works best for single-node, multi-threaded applications on your system.
+#SBATCH --mem=__MRO_MEM_GB__G
+#SBATCH -o __MRO_STDOUT__
+#SBATCH -e __MRO_STDERR__
+
+__MRO_CMD__
+```
+
+# demultiplexing
+
+if that hasn't been done yet, you can use `cellranger mkfastq` (details to be added)
+
+# run the pipeline (`count`)
+
+create a script `run_cellranger.sh` with these contents (consult the [documentation](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count) for help:
+
+```
+#!/bin/bash
+
+/fast/users/$USER/scratch/cellranger-3.0.2/cellranger count \
+  --id=sample_id \
+  --transcriptome=/fast/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
+  --fastqs=/path/to/fastqs \
+  --sample=sample_name \
+  --expect-cells=n_cells \
+  --jobmode=slurm \
+  --maxjobs=100 \
+  --jobinterval=1000
+```
+
+and then submit the job via
+
+```
+sbatch --ntasks=1 --mem-per-cpu=4G --time=8:00:00 -p medium -o cellranger.log run_cellranger.sh
+```
+
+# cluster support SGE (outdated)
 
 add a file `sge.template` to `/fast/users/$USER/scratch/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
 
@@ -49,30 +114,8 @@ add a file `sge.template` to `/fast/users/$USER/scratch/cellranger-3.0.2/martian
 __MRO_CMD__
 ```
 
-# demultiplexing
-
-if that hasn't been done yet, you can use `cellranger mkfastq` (details to be added)
-
-# run the pipeline (`count`)
-
-create a script `run_cellranger.sh` with these contents (consult the [documentation](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count) for help:
+and submit the job via
 
 ```
-#!/bin/bash
-
-/fast/users/$USER/scratch/cellranger-3.0.2/cellranger count \
-  --id=sample_id \
-  --transcriptome=/fast/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
-  --fastqs=/path/to/fastqs \
-  --sample=sample_name \
-  --expect-cells=n_cells \
-  --jobmode=sge \
-  --maxjobs=100 \
-  --jobinterval=1000
-```
-
-and then submit the job via
-
-```
-sbatch --ntasks=1 --mem-per-cpu=4G --time=8:00:00 -p medium -o cellranger.log run_cellranger.sh
+ qsub -cwd -V -pe smp 1 -l h_vmem=8G -l h_rt=24:00:00 -P medium -m a -j y run_cellranger.sh
 ```
