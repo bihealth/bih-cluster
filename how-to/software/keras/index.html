@@ -1494,13 +1494,13 @@
                 
                 
                 <h1 id="how-to-run-keras-multi-gpu">How-To: Run Keras (Multi-GPU)<a class="headerlink" href="#how-to-run-keras-multi-gpu" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Not yet updated to Slurm</p>
-<p>TODO: This still needs to be updated to Slurm.</p>
+<p>Because the GPU nodes <code>med030[1-4]</code> has four GPU units we can train a model by using multiple GPUs in parallel. This How-To gives an example with Keras 2.2.4 together and tensorflow. Finally soem hints how you can submit a job on the cluster.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>With tensorflow &gt; 2.0 and newer keras version the (<code>multi_gpu_model</code>)[<a href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/multi_gpu_model">https://www.tensorflow.org/api_docs/python/tf/keras/utils/multi_gpu_model</a>] is depricate and you have to use the (<code>MirroredStrategy</code>)[<a href="https://www.tensorflow.org/api_docs/python/tf/distribute/MirroredStrategy">https://www.tensorflow.org/api_docs/python/tf/distribute/MirroredStrategy</a>]</p>
 </div>
-<p>Because the GPU node <code>med0405</code> has two GPU units we can train a model by using both GPUs in parallel. This How-To gives an example with Keras 2.2.4 together and tensorflow. Finally soem hints how you can submit a job on the cluster.</p>
 <h1 id="keras-code">Keras code<a class="headerlink" href="#keras-code" title="Permanent link">&para;</a></h1>
-<p>we need to import the <code>multi_gpu_model</code> model from <code>keras.utils</code> and have to pass our actual model (maybe sequential Keras model) into it. In general Keras automatically configures the number of available nodes (<code>gpus=None</code>). This seems not to work on our system. So we have to specify them <code>gpus=2</code>. We put this in a try catch environment that it will also work on CPUs. </p>
+<p>we need to import the <code>multi_gpu_model</code> model from <code>keras.utils</code> and have to pass our actual model (maybe sequential Keras model) into it. In general Keras automatically configures the number of available nodes (<code>gpus=None</code>). This seems not to work on our system. So we have to specify the numer of GPUs, e.g. two with <code>gpus=2</code>. We put this in a try catch environment that it will also work on CPUs. </p>
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">keras.utils</span> <span class="kn">import</span> <span class="n">multi_gpu_model</span>
 
 <span class="k">try</span><span class="p">:</span> 
@@ -1510,10 +1510,7 @@
 </code></pre></div>
 
 <p>That's it!</p>
-<div class="admonition note">
-<p class="admonition-title">Using Slurm</p>
 <p>Please read <a href="../../connect/gpu-nodes/">here</a> on how to submit jobs to the GPU nodes.</p>
-</div>
 <h1 id="conda-environment">Conda environment<a class="headerlink" href="#conda-environment" title="Permanent link">&para;</a></h1>
 <p>All this was tested with the following conda environment:</p>
 <div class="codehilite"><pre><span></span><code>name: cuda channels: 
