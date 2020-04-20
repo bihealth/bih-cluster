@@ -16,6 +16,7 @@ As we will not be able to capture all aspects, we will link out to other resourc
 - [Cheat Sheet](cheat-sheet.md) -- for quick reference
 - [Job Scripts](job-scripts.md) -- how to setup job scripts with Slurm
 - [and Snakemake](snakemake.md) -- how to use Snakemake with Slurm
+- [Format Strings in Slurm](format-strings.md) -- hints for migrating from SGE to Slurm
 - [X11 Forwarding](x11.md) -- X11 forwarding in Slurm (simple; short)
 - [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
 - [Migrating from SGE](migrating.md) -- hints for migrating from SGE to Slurm

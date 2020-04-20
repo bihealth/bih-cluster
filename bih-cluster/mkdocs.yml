@@ -90,9 +90,11 @@ nav:
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Locations": storage/storage-locations.md
   - "Slurm Scheduler":
+    - slurm/overview.md
     - slurm/quickstart.md
     - slurm/cheat-sheet.md
     - slurm/migrating.md
+    - "Format Strings": slurm/format-strings.md
     - slurm/job-scripts.md
     - slurm/snakemake.md
     - slurm/rosetta-stone.md
