@@ -714,6 +714,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instant-gratification" class="md-nav__link">
+    Instant Gratification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#preparation" class="md-nav__link">
     Preparation
   </a>
@@ -869,6 +876,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../slurm/overview/" title="Slurm Overview" class="md-nav__link">
+      Slurm Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
       Slurm Quickstart
     </a>
@@ -895,6 +914,18 @@
   <li class="md-nav__item">
     <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
       Migrating to Slurm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
+      Format Strings
     </a>
   </li>
 
@@ -1539,6 +1570,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#instant-gratification" class="md-nav__link">
+    Instant Gratification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#preparation" class="md-nav__link">
     Preparation
   </a>
@@ -1597,6 +1635,7 @@
 </table>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>This tutorial assumes familiarity with Linux/Unix operating systems.
+It also assumes that you have already connected to the cluster.
 We have collected some links to <a href="../../misc/external-resources/">tutorials and manuals on the internet</a>.</p>
 <h2 id="legend">Legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
 <p>Before we start with our first steps tutorial, we would like to
@@ -1605,6 +1644,17 @@ introduce the following convention that we use throughout the series:</p>
 </code></pre></div>
 
 <p>While file paths are highlighted like this: <code>/fast/projects/cubit/current</code>.</p>
+<h2 id="instant-gratification">Instant Gratification<a class="headerlink" href="#instant-gratification" title="Permanent link">&para;</a></h2>
+<p>After connecting to the cluster, you are located on a login node.
+To get to your first compute node, type <code>srun -p long --time 7-00 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days in the "long" partition.
+Typing <code>exit</code> will you bring back to the login node.</p>
+<div class="codehilite"><pre><span></span><code>$ srun -p long --time 7-00 --pty bash -i
+med0107 $ exit
+$
+</code></pre></div>
+
+<p>See?
+That was easy!</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>In preparation for our first steps tutorial series, we would like you to install the software for this tutorial.
 In general the users on the cluster will manage their own software with the help of conda.
