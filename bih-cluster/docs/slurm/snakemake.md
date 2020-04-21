@@ -34,7 +34,7 @@ We create a workflow and ensure that it works properly with multi-threaded Snake
 ```bash
 host:~$ mkdir -p snake-slurm
 host:~$ cd snake-slurm
-host:snake-slurm$ cat <<"EOF"
+host:snake-slurm$ cat >Snakefile <<"EOF"
 rule default:
     input: "the-result.txt"
 
