@@ -10,14 +10,6 @@ Access control list maintenance is done with audit-trails ("Revisionssicherheit"
 - [Jump to "From Linux"](#from-linux)
 - [Jump to "From Mac"](#from-mac)
 
-!!! danger "Too many wrong password failures will block your machine"
-
-    If you are entering your user/password incorrectly for more than 5 times in 10 minutes then your machine will be banned for one hour.
-    This means someone else that has the same IP address from the side of the file exchange server can get you blocked.
-    This can happen if you are in the same home or university network with NAT or if you are behind a proxy.
-    In this case you get a "connection refused" error.
-    In this case, try again in one hour.
-
 !!! important "Access from Charite Network"
 
     Access from the Charite network (IP ranges `141.x.x.x` and `10.x.x.x`) must connect through the Charite proxy (`http://proxy.charite.de:8080`).
@@ -176,3 +168,15 @@ For Mac, we recommend to also use `lftp` as described above in [From Linux](#fro
 You can find install instructions [here online](http://macappstore.org/lftp/).
 
 If you need to perform access through a graphical user interface on your Mac, please contact hpc-helpdesk@bihealth.org for support.
+
+## Security
+
+The file exchange server has the `fail2ban` software installed and configured (Charite, MDC, and BIH IPs are excluded from this).
+
+If you are entering your user/password incorrectly for more than 5 times in 10 minutes then your machine will be banned for one hour.
+This means someone else that has the same IP address from the side of the file exchange server can get you blocked.
+This can happen if you are in the same home or university network with NAT or if you are behind a proxy.
+In this case you get a "connection refused" error.
+In this case, try again in one hour.
+
+
