@@ -1462,6 +1462,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+      
       
       
       
@@ -1693,6 +1700,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+      
       
       
       
@@ -1723,14 +1737,6 @@ Access control list maintenance is done with audit-trails ("Revisionssicherheit"
 <li><a href="#from-linux">Jump to "From Linux"</a></li>
 <li><a href="#from-mac">Jump to "From Mac"</a></li>
 </ul>
-<div class="admonition danger">
-<p class="admonition-title">Too many wrong password failures will block your machine</p>
-<p>If you are entering your user/password incorrectly for more than 5 times in 10 minutes then your machine will be banned for one hour.
-This means someone else that has the same IP address from the side of the file exchange server can get you blocked.
-This can happen if you are in the same home or university network with NAT or if you are behind a proxy.
-In this case you get a "connection refused" error.
-In this case, try again in one hour.</p>
-</div>
 <div class="admonition important">
 <p class="admonition-title">Access from Charite Network</p>
 <p>Access from the Charite network (IP ranges <code>141.x.x.x</code> and <code>10.x.x.x</code>) must connect through the Charite proxy (<code>http://proxy.charite.de:8080</code>).
@@ -1856,6 +1862,13 @@ Alternatively, you can use the two-panel view of WinSCP to transfer files <a hre
 <p>For Mac, we recommend to also use <code>lftp</code> as described above in <a href="#from-linux">From Linux</a>.
 You can find install instructions <a href="http://macappstore.org/lftp/">here online</a>.</p>
 <p>If you need to perform access through a graphical user interface on your Mac, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;</a> for support.</p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>The file exchange server has the <code>fail2ban</code> software installed and configured (Charite, MDC, and BIH IPs are excluded from this).</p>
+<p>If you are entering your user/password incorrectly for more than 5 times in 10 minutes then your machine will be banned for one hour.
+This means someone else that has the same IP address from the side of the file exchange server can get you blocked.
+This can happen if you are in the same home or university network with NAT or if you are behind a proxy.
+In this case you get a "connection refused" error.
+In this case, try again in one hour.</p>
                 
                   
                 
