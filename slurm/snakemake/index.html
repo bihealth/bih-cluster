@@ -1644,7 +1644,7 @@ host:~$ conda activate snakemake-slurm
 <p>We create a workflow and ensure that it works properly with multi-threaded Snakemake (no cluster submission here!)</p>
 <div class="codehilite"><pre><span></span><code>host:~$ mkdir -p snake-slurm
 host:~$ <span class="nb">cd</span> snake-slurm
-host:snake-slurm$ cat &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+host:snake-slurm$ cat &gt;Snakefile &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 rule default:
     input: <span class="s2">&quot;the-result.txt&quot;</span>
 
