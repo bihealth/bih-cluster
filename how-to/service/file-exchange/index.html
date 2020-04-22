@@ -1381,30 +1381,84 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-access" class="md-nav__link">
-    System Access
+  <a href="#file-box-management" class="md-nav__link">
+    File Box Management
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#account-creation" class="md-nav__link">
-    Account Creation
+  <a href="#file-access" class="md-nav__link">
+    File Access
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-linux" class="md-nav__link">
+    From Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting" class="md-nav__link">
+    Connecting
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-upload" class="md-nav__link">
-    Data Upload
+        
+          <li class="md-nav__item">
+  <a href="#browsing-data" class="md-nav__link">
+    Browsing Data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-download" class="md-nav__link">
-    Data Download
+        
+          <li class="md-nav__item">
+  <a href="#downloading-data" class="md-nav__link">
+    Downloading Data
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-data" class="md-nav__link">
+    Uploading Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-windows" class="md-nav__link">
+    From Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting_1" class="md-nav__link">
+    Connecting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-mac" class="md-nav__link">
+    From Mac
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1558,30 +1612,84 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-access" class="md-nav__link">
-    System Access
+  <a href="#file-box-management" class="md-nav__link">
+    File Box Management
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#account-creation" class="md-nav__link">
-    Account Creation
+  <a href="#file-access" class="md-nav__link">
+    File Access
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-linux" class="md-nav__link">
+    From Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting" class="md-nav__link">
+    Connecting
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-upload" class="md-nav__link">
-    Data Upload
+        
+          <li class="md-nav__item">
+  <a href="#browsing-data" class="md-nav__link">
+    Browsing Data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-download" class="md-nav__link">
-    Data Download
+        
+          <li class="md-nav__item">
+  <a href="#downloading-data" class="md-nav__link">
+    Downloading Data
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uploading-data" class="md-nav__link">
+    Uploading Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-windows" class="md-nav__link">
+    From Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting_1" class="md-nav__link">
+    Connecting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-mac" class="md-nav__link">
+    From Mac
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1605,65 +1713,149 @@
                 
                 
                 <h1 id="how-to-use-file-exchange">How-To: Use File Exchange<a class="headerlink" href="#how-to-use-file-exchange" title="Permanent link">&para;</a></h1>
-<p>BIH HPC IT provides a file exchange server to be used by the BIH Omics facilities and their users.
+<p>BIH HPC IT provides a file exchange server to be used by the BIH core facilities and their users.
 The server is located in the BIH DMZ in Buch.
-Clients from BIH and MDC network have direct access and clients from the outside can be granted temporary access.</p>
-<h2 id="system-access">System Access<a class="headerlink" href="#system-access" title="Permanent link">&para;</a></h2>
-<p><img alt="❗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2757.svg" title=":exclamation:" />
-There are two caveats for accessing the server.
-<img alt="❗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2757.svg" title=":exclamation:" /></p>
-<ol>
-<li>Currently, <strong>access from the Charite network is not possible</strong>.
-   For transfering data to the Charite network, first copy it to the cluster and then copy it to your workstation via <code>scp</code> or <code>rsync</code> via <code>med-transfer1</code> or <code>med-transfer2</code>.</li>
-<li>The BIH cluster is behind a firewall.
-   You will only be able to open connections via FTPS to the machine from <code>med-transfer1.bihealth.org</code> and <code>med-transfer2</code>. <strong>Access from the login and compute nodes will not work</strong>.</li>
-</ol>
-<h2 id="account-creation">Account Creation<a class="headerlink" href="#account-creation" title="Permanent link">&para;</a></h2>
-<p>Accounts are created for each file exchange and are temporary, active for two weeks by default.
-Users from the omics core units can request accounts by sending an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.
-The process is as follows:</p>
-<ol>
-<li>Send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</li>
-<li>The request should have the following format:<ul>
-<li>Subject: File Exchange Account Creation</li>
-<li>Body: Answer the following questions:<ul>
-<li>What is the (1) name, (2) email address, and (3) organization of the recipient.</li>
-<li>Is the destination on the internal (BIH/Charite/MDC) networks or on the internet?</li>
-<li>How much data is roughly to be transferred?</li>
+Users authenticate using their Charite/BIH (<code>user@CHARITE</code>) or MDC accounts (<code>user@MDC-BERLIN</code>).
+File exchange is organized using "file boxes", directories created on the server to which selected users are granted access.
+Access control list maintenance is done with audit-trails ("Revisionssicherheit") and the file access itself is also logged to comply with data protection standards.</p>
+<ul>
+<li><a href="#from-windows">Jump to "From Windows"</a></li>
+<li><a href="#from-linux">Jump to "From Linux"</a></li>
+<li><a href="#from-mac">Jump to "From Mac"</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li>BIH HPC IT will create a temporary account with random password and send it to the requestor.</li>
-<li>You upload the files (e.g., via <code>lftp</code>, see below).</li>
-<li>For internal users, you send the user name and password to the data recipient who downloads the data (e.g., via <code>lftp</code>, see below).</li>
-<li>For external users, also IP address of the user should be provided, so it can be allowed on internal firewall.</li>
-</ol>
-<h2 id="data-upload">Data Upload<a class="headerlink" href="#data-upload" title="Permanent link">&para;</a></h2>
-<p>The server can be uploaded to via FTPS.
-E.g., using <code>lftp</code> on the <code>med-transfer1</code> node of the BIH cluster:</p>
-<div class="codehilite"><pre><span></span><code>~ # cd data-dir
-data-dir # lftp
-lftp: ~&gt; open -u USER,PASSWORD file-exchange.bihealth.org
-lftp USER@file-exchange.bihealth.org:~&gt; ls
-[connecting]
-lftp USER@file-exchange.bihealth.org:/&gt; mirror -R $&quot;YOURFLOWCELL&quot;
-`FILE NAME&#39; at 3676560 (0%) 751.8K/s eta:17h [Sending data/TLS]
-[...]
-lftp USER@file-exchange.bihealth.org:/&gt; quit
-data-dir #
+<div class="admonition danger">
+<p class="admonition-title">Too many wrong password failures will block your machine</p>
+<p>If you are entering your user/password incorrectly for more than 5 times in 10 minutes then your machine will be banned for one hour.
+This means someone else that has the same IP address from the side of the file exchange server can get you blocked.
+This can happen if you are in the same home or university network with NAT or if you are behind a proxy.
+In this case you get a "connection refused" error.
+In this case, try again in one hour.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Access from Charite Network</p>
+<p>Access from the Charite network (IP ranges <code>141.x.x.x</code> and <code>10.x.x.x</code>) must connect through the Charite proxy (<code>http://proxy.charite.de:8080</code>).
+Depending on the client software that you are using, you might have to configure the proxy.</p>
+</div>
+<h2 id="file-box-management">File Box Management<a class="headerlink" href="#file-box-management" title="Permanent link">&para;</a></h2>
+<p>File boxes are created by the core facilities (e.g., the genomics facilities at Charite and MDC).
+The facility members also organize the access control.
+Please talk to your core facility contact on file exchange.</p>
+<p>External users must obtain a Charite or MDC account first.
+Account creation is handled by the core facilities that the external user is a customer of.</p>
+<h2 id="file-access">File Access<a class="headerlink" href="#file-access" title="Permanent link">&para;</a></h2>
+<p>Generally, you will be given a URL to your file box similar to <code>https://file-exchange.bihealth.org/&lt;file-box-id&gt;</code>.
+The files are served over an encrypted connection using WebDAV (which uses HTTPS).</p>
+<p>The following describes how to access the files in the box from different platforms.</p>
+<h3 id="from-linux">From Linux<a class="headerlink" href="#from-linux" title="Permanent link">&para;</a></h3>
+<p>We describe how to access the files on the command line using the <code>lftp</code> program.
+The program is preinstalled on the BIH (and the MDC cluster) and you should be able to just install it with <code>yum install lftp</code> on CentOS/Red Hat or <code>apt-get install lftp</code> on Ubuntu/Debian.</p>
+<p>In case that you want to access the files using a graphical user interface, search Google for "WebDAV" and your operating system or desktop environment.
+File browsers such as Nautilus and Thunar have built-in WebDAV support.</p>
+<h4 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h4>
+<p>First, log into the machine that has <code>lftp</code> installed.
+The login nodes of the BIH cluster do not have it installed but all compute and file transfer nodes have it.
+Go to the data download location.</p>
+<div class="codehilite"><pre><span></span><code>host:~$ mkdir -p ~/scratch/download_dir
+host:~$ <span class="nb">cd</span> ~/scratch/download_dir
 </code></pre></div>
 
-<h2 id="data-download">Data Download<a class="headerlink" href="#data-download" title="Permanent link">&para;</a></h2>
-<p>E.g., you can download the data using <code>lftp</code> to the <code>med-transfer1</code> node of the BIH cluster via FTPS.</p>
-<div class="codehilite"><pre><span></span><code>~ # data data-dir
-data-dir # lftp
-lftp: ~&gt; open -u USER,PASSWORD file-exchange.bihealth.org
-lftp USER@file-exchange.bihealth.org:~&gt; mget *
-[...]
-lftp USER@file-exchange.bihealth.org:/&gt; quit
-data-dir #
+<p>Next, start <code>lftp</code>.
+You can open the connection using <code>open -u &lt;user&gt;@&lt;DOMAIN&gt; https://file-exchange.bihealth.org/&lt;file-box-id&gt;</code> where</p>
+<ul>
+<li><code>&lt;user&gt;</code> is your user name, e.g., <code>holtgrem</code>,</li>
+<li><code>&lt;domain&gt;</code> is either <code>MDC</code> or <code>CHARITE</code>, and</li>
+<li><code>&lt;file-box-id&gt;</code> the file box ID from the URL provided to you.</li>
+</ul>
+<p>When prompted, use your normal Charite/MDC password to login.</p>
+<div class="codehilite"><pre><span></span><code>host:download_dir$ lftp
+lftp :~&gt; open -u holtgrem@CHARITE https://file-exchange.bihealth.org/c62910b3-c1ba-49a5-81a6-a68f1f15aef6
+Password:
+<span class="nb">cd</span> ok, <span class="nv">cwd</span><span class="o">=</span>/c62910b3-c1ba-49a5-81a6-a68f1f15aef6
+lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt;
 </code></pre></div>
+
+<h4 id="browsing-data">Browsing Data<a class="headerlink" href="#browsing-data" title="Permanent link">&para;</a></h4>
+<p>You can find a full reference of <code>lftp</code> on the <a href="https://lftp.yar.ru/lftp-man.html">lftp man page</a>.
+You could also use <code>help COMMAND</code> on the lftp prompt.
+For example, to look at the files of the server for a bit...</p>
+<div class="codehilite"><pre><span></span><code>lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt; ls
+drwxr-xr-x  --  /
+drwxr-xr-x  --  dir
+-rw-r--r--  --  file1
+lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt; find
+./
+./dir/
+./dir/file2
+./file1
+</code></pre></div>
+
+<h4 id="downloading-data">Downloading Data<a class="headerlink" href="#downloading-data" title="Permanent link">&para;</a></h4>
+<p>To download all data use <code>mirror</code>, e.g. with <code>-P 4</code> to use four download threads.</p>
+<div class="codehilite"><pre><span></span><code>lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt; mirror .
+Total: <span class="m">2</span> directories, <span class="m">3</span> files, <span class="m">0</span> symlinks
+New: <span class="m">3</span> files, <span class="m">0</span> symlinks
+lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt; <span class="nb">exit</span>
+host:download_dir$ tree
+.
+├── dir
+│   └── file2
+├── file1
+└── file.txt
+
+<span class="m">1</span> directory, <span class="m">3</span> files
+</code></pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Ignoring <code>gnutls_record_recv</code> errors.</p>
+<p>A common error to see is <code>mirror: Fatal error: gnutls_record_recv: The TLS connection was non-properly terminated.</code>.
+You can just ignore this.</p>
+</div>
+<h4 id="uploading-data">Uploading Data<a class="headerlink" href="#uploading-data" title="Permanent link">&para;</a></h4>
+<p>To upload data, you can use <code>mirror -R .</code> which is essentially the "reverse" of the mirror command.</p>
+<div class="codehilite"><pre><span></span><code>lftp holtgrem@CHARITE@file-exchange.bihealth.org:/c62910b3-c1ba-49a5-81a6-a68f1f15aef6&gt; mirror -R
+mirror: Fatal error: gnutls_record_recv: The TLS connection was non-properly terminated.
+mirror: Fatal error: gnutls_record_recv: The TLS connection was non-properly terminated.
+mirror: Fatal error: gnutls_record_recv: The TLS connection was non-properly terminated.
+Total: <span class="m">2</span> directories, <span class="m">3</span> files, <span class="m">0</span> symlinks
+Modified: <span class="m">3</span> files, <span class="m">0</span> symlinks
+<span class="m">4</span> errors detected
+</code></pre></div>
+
+<h3 id="from-windows">From Windows<a class="headerlink" href="#from-windows" title="Permanent link">&para;</a></h3>
+<p>We recommend to use WinSCP for file transfer.</p>
+<ul>
+<li><strong>Pre-packaged WinSCP on Charite Workstations.</strong>
+  Charite IT has packaged WinSCP and you can install it using Matrix24 Empirum on Windows 10 <a href="https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/a-software-selbst-installieren.pdf">using these instructions in the Charite intranet</a>.</li>
+<li><strong>Installing WinSCP yourself.</strong>
+  You can obtain it from the <a href="https://winscp.net/eng/downloads.php">WinSCP Download Page</a>.
+  A "portable" version is available that comes as a ZIP archive that you just have to extract without an installer.</li>
+</ul>
+<h3 id="connecting_1">Connecting<a class="headerlink" href="#connecting_1" title="Permanent link">&para;</a></h3>
+<p>After starting WinSCP, you will see a window titled <code>Login</code>.
+Just paste the URL (e.g., <code>https://file-exchange.bihealth.org/c62910b3-c1ba-49a5-81a6-a68f1f15aef6/</code>) of the file box into the <code>Host name</code> entry field.
+In this case, the fields <code>File protocol</code> etc. will be filled automatically.
+Next, enter your user name as <code>user@CHARITE</code> or <code>user@MDC-BERLIN</code> (the capitalization of the part behind the <code>@</code> is important).
+The window should now look similar to the one below.</p>
+<p><img alt="The WinSCP Login Window" src="../figures/winscp-login.png" /></p>
+<div class="admonition important">
+<p class="admonition-title">Proxy Configuration on Charite Network</p>
+<p><strong>If you are on the Charite network then you have to configure the proxy.</strong>
+<strong>Otherwise, you have to skip this step.</strong></p>
+<p>Click <code>Advanced</code> and a window titled <code>Advanced Site Settings</code> will pop up.
+Here, select <code>Connection / Proxy</code> in the left side.
+Select <code>HTTP</code> for the <code>Proxy type</code>.
+Then, enter <code>proxy.charite.de</code> as the <code>Proxy host name</code> and set the <code>Port number</code> to <code>8080</code>.
+The window should nwo look as below.
+Then, click <code>OK</code> to apply the proxy settings.</p>
+<p><img alt="The WinSCP Advanced Site Settings Window" src="../figures/winscp-advanced.png" /></p>
+</div>
+<p>Finally, click <code>Login</code>.
+You can now transfer files between the file exchange server and your local computer using drag and drop between WinSCP and your local Windows File Explorer.
+Alternatively, you can use the two-panel view of WinSCP to transfer files <a href="https://winscp.net/eng/docs/guide_upload">as described here</a>.</p>
+<h3 id="from-mac">From Mac<a class="headerlink" href="#from-mac" title="Permanent link">&para;</a></h3>
+<p>For Mac, we recommend to also use <code>lftp</code> as described above in <a href="#from-linux">From Linux</a>.
+You can find install instructions <a href="http://macappstore.org/lftp/">here online</a>.</p>
+<p>If you need to perform access through a graphical user interface on your Mac, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;</a> for support.</p>
                 
                   
                 
