@@ -128,6 +128,7 @@ nav:
       - "Keras": how-to/software/keras.md
       - "Matlab": how-to/software/matlab.md
       - "Tensorflow": how-to/software/tensorflow.md
+      - "Singularity": how-to/software/singularity.md
     - "Service":
       - "File Exchange": how-to/service/file-exchange.md
     - "Miscellaneous":
