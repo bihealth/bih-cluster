@@ -13,7 +13,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/misc/ssh-basics/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/how-to/software/singularity/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>SSH Basics - BIH HPC Docs</title>
+        <title>Singularity - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#ssh-basics" tabindex="0" class="md-skip">
+      <a href="#using-singularity-with-docker-images" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                SSH Basics
+                Singularity
               
             </span>
           
@@ -220,7 +220,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -251,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/getting-access/" title="Getting Access" class="md-nav__link">
+    <a href="../../../admin/getting-access/" title="Getting Access" class="md-nav__link">
       Getting Access
     </a>
   </li>
@@ -263,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
+    <a href="../../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
       Resource Registration
     </a>
   </li>
@@ -275,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
+    <a href="../../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
       Maintenance etc.
     </a>
   </li>
@@ -287,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/provided-software/" title="Provided Software" class="md-nav__link">
+    <a href="../../../admin/provided-software/" title="Provided Software" class="md-nav__link">
       Provided Software
     </a>
   </li>
@@ -323,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
+    <a href="../../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
       HPC Helpdesk
     </a>
   </li>
@@ -335,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
+    <a href="../../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
       Good Tickets
     </a>
   </li>
@@ -347,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
+    <a href="../../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
       Frequently Asked Questions
     </a>
   </li>
@@ -383,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
+    <a href="../../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
       For the Impatient
     </a>
   </li>
@@ -395,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/architecture/" title="Architecture" class="md-nav__link">
+    <a href="../../../overview/architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -407,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
+    <a href="../../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
       Job Scheduler
     </a>
   </li>
@@ -419,7 +419,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
+    <a href="../../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
       Nodes and Volumes
     </a>
   </li>
@@ -474,7 +474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
+    <a href="../../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -486,7 +486,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
+    <a href="../../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -522,7 +522,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
+    <a href="../../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
       Charite
     </a>
   </li>
@@ -534,7 +534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
+    <a href="../../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
       MDC
     </a>
   </li>
@@ -570,7 +570,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
       Pre-Requisites
     </a>
   </li>
@@ -582,7 +582,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -594,7 +594,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -606,7 +606,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
       Connection Problems
     </a>
   </li>
@@ -623,7 +623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
+    <a href="../../../connecting/from-external/" title="From External" class="md-nav__link">
       From External
     </a>
   </li>
@@ -635,7 +635,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+    <a href="../../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
       Windows SSH Client
     </a>
   </li>
@@ -671,7 +671,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+    <a href="../../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
       Episode 0
     </a>
   </li>
@@ -683,7 +683,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+    <a href="../../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
       Episode 1
     </a>
   </li>
@@ -695,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+    <a href="../../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
       Episode 2
     </a>
   </li>
@@ -707,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+    <a href="../../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
       Episode 3
     </a>
   </li>
@@ -719,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+    <a href="../../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
       Episode 4
     </a>
   </li>
@@ -755,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+    <a href="../../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
       Accessing Snapshots
     </a>
   </li>
@@ -767,7 +767,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
+    <a href="../../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
       Querying Quotas
     </a>
   </li>
@@ -779,7 +779,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
+    <a href="../../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
       Storage Locations
     </a>
   </li>
@@ -815,7 +815,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/overview/" title="Slurm Overview" class="md-nav__link">
+    <a href="../../../slurm/overview/" title="Slurm Overview" class="md-nav__link">
       Slurm Overview
     </a>
   </li>
@@ -827,7 +827,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
+    <a href="../../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
       Slurm Quickstart
     </a>
   </li>
@@ -839,7 +839,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+    <a href="../../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
   </li>
@@ -851,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
+    <a href="../../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
       Migrating to Slurm
     </a>
   </li>
@@ -863,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
+    <a href="../../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
       Format Strings
     </a>
   </li>
@@ -875,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+    <a href="../../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
       Slurm Job Scripts
     </a>
   </li>
@@ -887,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+    <a href="../../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
       Snakemake with Slurm
     </a>
   </li>
@@ -899,7 +899,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+    <a href="../../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
       Slurm Rosetta Stone
     </a>
   </li>
@@ -911,7 +911,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
+    <a href="../../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
       X11 Forwarding
     </a>
   </li>
@@ -947,7 +947,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
+    <a href="../../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
       Project Structure
     </a>
   </li>
@@ -959,7 +959,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+    <a href="../../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
       Software Craftmanship
     </a>
   </li>
@@ -971,7 +971,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+    <a href="../../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
       Using Screen/Tmux
     </a>
   </li>
@@ -983,7 +983,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+    <a href="../../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
       ~/.bashrc Guide
     </a>
   </li>
@@ -995,7 +995,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
+    <a href="../../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
       Temporary Files
     </a>
   </li>
@@ -1007,7 +1007,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
+    <a href="../../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
       Custom Environment Modules
     </a>
   </li>
@@ -1019,7 +1019,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
+    <a href="../../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
       Install with Conda
     </a>
   </li>
@@ -1055,7 +1055,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/" title="Overview" class="md-nav__link">
+    <a href="../../../cubit/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1067,7 +1067,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
+    <a href="../../../cubit/annotations/" title="Annotations" class="md-nav__link">
       Annotations
     </a>
   </li>
@@ -1079,7 +1079,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
+    <a href="../../../cubit/app-support/" title="Application Support" class="md-nav__link">
       Application Support
     </a>
   </li>
@@ -1091,7 +1091,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
+    <a href="../../../cubit/databases/" title="Databases" class="md-nav__link">
       Databases
     </a>
   </li>
@@ -1103,7 +1103,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
+    <a href="../../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
       Exomes and Panels
     </a>
   </li>
@@ -1115,7 +1115,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
+    <a href="../../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
       Exon Lists
     </a>
   </li>
@@ -1127,7 +1127,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
+    <a href="../../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
       Precomputed Indexes
     </a>
   </li>
@@ -1139,7 +1139,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
+    <a href="../../../cubit/references/" title="Reference Sequences" class="md-nav__link">
       Reference Sequences
     </a>
   </li>
@@ -1154,10 +1154,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       How-To
@@ -1194,7 +1196,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
+    <a href="../../connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
       High-Memory Nodes
     </a>
   </li>
@@ -1206,7 +1208,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
+    <a href="../../connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
       GPU Nodes
     </a>
   </li>
@@ -1221,10 +1223,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11-2" type="checkbox" id="nav-11-2" checked>
     
     <label class="md-nav__link" for="nav-11-2">
       Software
@@ -1242,7 +1246,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
+    <a href="../openmpi/" title="OpenMPI" class="md-nav__link">
       OpenMPI
     </a>
   </li>
@@ -1254,7 +1258,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
+    <a href="../scientific-software/" title="Scientific Software" class="md-nav__link">
       Scientific Software
     </a>
   </li>
@@ -1266,7 +1270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
+    <a href="../cell-ranger/" title="Cell Ranger" class="md-nav__link">
       Cell Ranger
     </a>
   </li>
@@ -1278,7 +1282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
+    <a href="../jupyter/" title="Jupyter" class="md-nav__link">
       Jupyter
     </a>
   </li>
@@ -1290,7 +1294,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
+    <a href="../keras/" title="Keras" class="md-nav__link">
       Keras
     </a>
   </li>
@@ -1302,7 +1306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
+    <a href="../matlab/" title="Matlab" class="md-nav__link">
       Matlab
     </a>
   </li>
@@ -1314,7 +1318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
+    <a href="../tensorflow/" title="Tensorflow" class="md-nav__link">
       Tensorflow
     </a>
   </li>
@@ -1324,11 +1328,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/singularity/" title="Singularity" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Singularity
+      </label>
+    
+    <a href="./" title="Singularity" class="md-nav__link md-nav__link--active">
       Singularity
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quickstart" class="md-nav__link">
+    Quickstart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-caveats-and-notes" class="md-nav__link">
+    Some Caveats and Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencingproviding-docker-images" class="md-nav__link">
+    Referencing/Providing Docker Images
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-use-docker-images-via-docker-hub" class="md-nav__link">
+    Option 1: Use Docker Images via Docker Hub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-converting-docker-images" class="md-nav__link">
+    Option 2: Converting Docker Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conversion-compatibility" class="md-nav__link">
+    Conversion Compatibility
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1362,7 +1445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
+    <a href="../../service/file-exchange/" title="File Exchange" class="md-nav__link">
       File Exchange
     </a>
   </li>
@@ -1398,7 +1481,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+    <a href="../../misc/contribute/" title="Contribute to Docs" class="md-nav__link">
       Contribute to Docs
     </a>
   </li>
@@ -1418,12 +1501,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Miscellaneous
@@ -1441,7 +1522,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../publication-list/" title="Publication List" class="md-nav__link">
+    <a href="../../../misc/publication-list/" title="Publication List" class="md-nav__link">
       Publication List
     </a>
   </li>
@@ -1453,7 +1534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../external-resources/" title="External Guides" class="md-nav__link">
+    <a href="../../../misc/external-resources/" title="External Guides" class="md-nav__link">
       External Guides
     </a>
   </li>
@@ -1465,7 +1546,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tips/" title="Misc. Tips" class="md-nav__link">
+    <a href="../../../misc/tips/" title="Misc. Tips" class="md-nav__link">
       Misc. Tips
     </a>
   </li>
@@ -1475,110 +1556,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        SSH Basics
-      </label>
-    
-    <a href="./" title="SSH Basics" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
       SSH Basics
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-ssh" class="md-nav__link">
-    What is SSH?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#connecting" class="md-nav__link">
-    Connecting
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssh-keys" class="md-nav__link">
-    SSH-Keys
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-do-ssh-keys-work" class="md-nav__link">
-    How do SSH-Keys work?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passphrase" class="md-nav__link">
-    Passphrase
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-agent" class="md-nav__link">
-    SSH-Agent
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1608,30 +1590,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-ssh" class="md-nav__link">
-    What is SSH?
+  <a href="#quickstart" class="md-nav__link">
+    Quickstart
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+  <a href="#some-caveats-and-notes" class="md-nav__link">
+    Some Caveats and Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencingproviding-docker-images" class="md-nav__link">
+    Referencing/Providing Docker Images
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#option-1-use-docker-images-via-docker-hub" class="md-nav__link">
+    Option 1: Use Docker Images via Docker Hub
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#connecting" class="md-nav__link">
-    Connecting
+  <a href="#option-2-converting-docker-images" class="md-nav__link">
+    Option 2: Converting Docker Images
   </a>
   
 </li>
@@ -1642,36 +1631,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh-keys" class="md-nav__link">
-    SSH-Keys
+  <a href="#conversion-compatibility" class="md-nav__link">
+    Conversion Compatibility
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-do-ssh-keys-work" class="md-nav__link">
-    How do SSH-Keys work?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#passphrase" class="md-nav__link">
-    Passphrase
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh-agent" class="md-nav__link">
-    SSH-Agent
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1691,86 +1653,101 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/misc/ssh-basics.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/software/singularity.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ssh-basics">SSH Basics<a class="headerlink" href="#ssh-basics" title="Permanent link">&para;</a></h1>
-<p>This document gives an introduction to SSH for Non-Techies.</p>
-<h2 id="what-is-ssh">What is SSH?<a class="headerlink" href="#what-is-ssh" title="Permanent link">&para;</a></h2>
-<p>SSH stands for **S**ecure **Sh**ell. It is a software that allows to establish a user-connection to a remote UNIX/Linux machine over the network and remote-control it from your local work-station.</p>
-<p>Let's say you have an HPC cluster with hundreds of machines somewhere in a remote data-center and you want to connect to those machines to issue commands and run jobs. Then you would use SSH.</p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
-<p>Simply install your distributions <code>openssh-client</code> package. You should be able to find plenty of good tutorials online.
-On Windows you can consider using <a href="../connecting/ssh-client-windows">MobaXterm (recommended)</a> or <a href="https://www.putty.org/">Putty</a>.</p>
-<h3 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h3>
-<p>Let's call your local machine the client and the remote machine you want to connect to the server.</p>
-<p>You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also have received your user-account information stating your user-name, your password, etc.</p>
-<p>Follow the instructions below to establish a remote terminal-session.</p>
-<hr />
-<p><strong>If your are on Linux</strong></p>
-<p>Open a terminal and issue the following command while replacing all the <code>&lt;...&gt;</code> fields with the actual data:</p>
-<div class="codehilite"><pre><span></span><code># default port
-ssh &lt;username&gt;@&lt;hostname-or-ip-address&gt;
-
-# non-default port
-ssh &lt;username&gt;@&lt;hostname-or-ip-address&gt; -p &lt;port-number&gt;
+                <h1 id="using-singularity-with-docker-images">Using Singularity (with Docker Images)<a class="headerlink" href="#using-singularity-with-docker-images" title="Permanent link">&para;</a></h1>
+<p>Singularity (<a href="https://sylabs.io/docs/">https://sylabs.io/docs/</a>) is a popular alternative to docker, because it does not require to run as a privileged user.
+Singualrity can run Docker images out-of-the-box by converting them to the singularity image format.
+The following guide gives a quick dive into using docker images with singularity.</p>
+<h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Link ~/.singularity to ~/work/.singularity</p>
+<p>Because you only have a quota of 1 GB in your home directory, you should symlink <code>~/.singularity</code> to <code>~/work/.singularity</code>.</p>
+<div class="codehilite"><pre><span></span><code>host:~$ mkdir -p ~/work/.singularity <span class="o">&amp;&amp;</span> ln -sr ~/work/.singularity ~/.singularity
 </code></pre></div>
 
-<p><strong>If you are on windows</strong></p>
-<p>Start <code>putty.exe</code>, go into the <code>Session</code> category and fill out the form, then click the <code>Connect</code> button.
-Putty also allows to save the connection information in different profiles so you don't have to memorize and retype all fields every time you want to connect.</p>
-<hr />
-<h2 id="ssh-keys">SSH-Keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h2>
-<p>When you connect to a remote machine via SSH, you will be prompted for your password.
-This will happen every single time you connect and can feel a bit repetitive at times, especially if you feel that your password is hard to memorize.
-For those who don't want to type in their password every single time they connect, an alternative way of authentication is available.
-Meet SSH-Keys.</p>
-<p>It is possible to create an SSH-Key that can be used as a replacement for the password.
-Instead if being prompted for a password, SSH will simply use the key to authenticate.</p>
-<p>You can generate a new key by issuing:</p>
-<div class="codehilite"><pre><span></span><code>client:~$ ssh-keygen -t rsa -b <span class="m">4096</span>
-
-<span class="c1"># 1. Choose file in which to save the key *(leave blank for default)*</span>
-<span class="c1"># 2. Choose a passphrase of at least five characters</span>
+<p>In case you already have a singularity directory:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ mv ~/.singularity ~/work/.singularity <span class="o">&amp;&amp;</span> ln -sr ~/work/.singularity ~/.singularity
 </code></pre></div>
 
-<h3 id="how-do-ssh-keys-work">How do SSH-Keys work?<a class="headerlink" href="#how-do-ssh-keys-work" title="Permanent link">&para;</a></h3>
-<p>An SSH-Key consists of two files, a private-key-file and a public-key-file.
-The public key can then be installed on an arbitrary amount of remote machines.
-If a server with the public key receives a connection from a client with the correct private key, access is granted without having to type a password.</p>
-<h3 id="passphrase">Passphrase<a class="headerlink" href="#passphrase" title="Permanent link">&para;</a></h3>
-<p>The security problem with SSH keys is that anyone with access to the private key has full access to all machines that have the public key installed.
-Loosing the key or getting it compromised in another way imposes a serious security threat.
-Therefore, it is best to secure the private key with a passphrase.
-This passphrase is needed to unlock and use the private key.</p>
-<p>Once you have your key-pair generated, you can easily change the passphrase of that key by issuing:</p>
-<div class="codehilite"><pre><span></span><code>client:~$ ssh-keygen -p
+</div>
+<p>Run a bash in a docker image:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity bash docker://godlovedc/lolcow
 </code></pre></div>
 
-<h3 id="ssh-agent">SSH-Agent<a class="headerlink" href="#ssh-agent" title="Permanent link">&para;</a></h3>
-<p>In order to avoid having to type the passphrase of the key every time we want to use it, the key can be loaded into an SSH-Agent.</p>
-<p>For instance, if you have connected to a login-node via Putty and want to unlock your private key in order to be able to access cluster nodes, you cant configure the SSH-Agent.</p>
-<div class="codehilite"><pre><span></span><code>client:~$ <span class="nb">source</span> &lt;<span class="o">(</span>ssh-agent<span class="o">)</span>
+<p>Run a command in a docker image:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity <span class="nb">exec</span> docker://godlovedc/lolcow <span class="nb">echo</span> <span class="s2">&quot;hello, hello!&quot;</span>
 </code></pre></div>
 
-<p><em>(The above command will load the required environment variables of the SSH-Agent into your shell environment, effectively making the agent available for your consumption.)</em></p>
-<p>Next, you can load your private key:</p>
-<div class="codehilite"><pre><span></span><code>client:~$ ssh-add
+<p>Run a bash in a docker image, enable access to the cuda driver (--nv) and mount a path (--bind or -B):</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity bash --nv --bind /path_on_host/:/path_inside_container/ docker://godlovedc/lolcow
 </code></pre></div>
 
-<p><em>(You will be prompted for the passphrase of the key)</em></p>
-<p>You can verify that the agent is running and your key is loaded by issuing:</p>
-<div class="codehilite"><pre><span></span><code>client:~$ ssh-add -l
-<span class="c1"># &#39;l&#39; as in list-all-loaded-keys</span>
+<h2 id="some-caveats-and-notes">Some Caveats and Notes<a class="headerlink" href="#some-caveats-and-notes" title="Permanent link">&para;</a></h2>
+<p><strong>Caveats</strong></p>
+<ul>
+<li>The default singularity images format (.sif) is read-only.</li>
+<li>By default singularity mounts /home/$USER, /tmp, and $PWD in the container.</li>
+</ul>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Environment variables can be provided by setting them in the bash and adding the prefix <code>SINGULARITYENV_</code>:
+    <div class="codehilite"><pre><span></span><code>host:~$ <span class="nv">SINGULARITYENV_HELLO</span><span class="o">=</span><span class="m">123</span> singularity bash docker://godlovedc/lolcow <span class="nb">echo</span> <span class="nv">$HELLO</span>
+</code></pre></div></li>
+<li>Calling <code>singularity shell</code> or <code>singularity exec</code> uses as cwd the host callers cwd not the one set in the Dockerfile.
+  One can change this by setting <code>--pwd</code>.</li>
+</ul>
+<h2 id="referencingproviding-docker-images">Referencing/Providing Docker Images<a class="headerlink" href="#referencingproviding-docker-images" title="Permanent link">&para;</a></h2>
+<h3 id="option-1-use-docker-images-via-docker-hub">Option 1: Use Docker Images via Docker Hub<a class="headerlink" href="#option-1-use-docker-images-via-docker-hub" title="Permanent link">&para;</a></h3>
+<p>The easiest variant to run a docker image available via a docker hub is by specifying its url.
+This causes singularity to download the image and convert it to a singularity image:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity run docker://godlovedc/lolcow
 </code></pre></div>
 
-<p><em>(The command should print at least one key, showing the key-size, the hash of the key-fingerprint and the location of the file in the file-system.)</em></p>
-<p>Since all home-directories are shared across the entire cluster and you created your key-pair inside your home-directory, you public-key (which is also in your home-directory) is automatically installed on all other cluster nodes, immediately.
-Try connecting to any cluster node.
-It should not prompt your for a password.</p>
-<p>There is nothing you have to do to "unload" or "lock" the key-file.
-Simply disconnect.</p>
+<p>or to open a shell inside the image</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity bash docker://godlovedc/lolcow
+</code></pre></div>
+
+<p>Furthermore, similar to docker, one can pull (and convert) remote image with the following call:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity pull docker://godlovedc/lolcow
+</code></pre></div>
+
+<p>In case your registry requires authentication you can provide it via a prompt by adding the option <code>--docker-login</code>:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity pull --docker-login docker://ilumb/mylolcow
+</code></pre></div>
+
+<p>or by setting the following environment variables:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ <span class="nb">export</span> <span class="nv">SINGULARITY_DOCKER_USERNAME</span><span class="o">=</span>ilumb
+host:~$ <span class="nb">export</span> <span class="nv">SINGULARITY_DOCKER_PASSWORD</span><span class="o">=</span>&lt;redacted&gt;
+host:~$ singularity pull docker://ilumb/mylolcow
+</code></pre></div>
+
+<p>More details can be found <a href="https://sylabs.io/guides/3.5/user-guide/singularity_and_docker.html">in the Singularity documentation</a>.</p>
+<h3 id="option-2-converting-docker-images">Option 2: Converting Docker Images<a class="headerlink" href="#option-2-converting-docker-images" title="Permanent link">&para;</a></h3>
+<p>Another option is to convert your docker image into the Singularity image format.
+This can be easily done using the docker images provided by <a href="https://github.com/singularityhub/docker2singularity">docker2singularity</a>.</p>
+<p>To convert the docker image <code>docker_image_name</code> to the singularity image <code>singularity_image_name</code> one can use the following command line.
+The output image will be located in <code>output_directory_for_images</code>.</p>
+<div class="codehilite"><pre><span></span><code>host:~$ docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -t --rm quay.io/singularity/docker2singularity -v /output_directory_for_images/:/output --name singularity_image_name docker_image_name
+</code></pre></div>
+
+<p>The resulting image can then directly be used as image:</p>
+<div class="codehilite"><pre><span></span><code>host:~$ singularity bash singularity_image_name
+</code></pre></div>
+
+<h2 id="conversion-compatibility">Conversion Compatibility<a class="headerlink" href="#conversion-compatibility" title="Permanent link">&para;</a></h2>
+<p>Here are some tips for making Docker images compatible with Singularity taken from <a href="https://github.com/singularityhub/docker2singularity">docker2singulrity</a>:</p>
+<ul>
+<li>Define all environmental variables using the ENV instruction set. Do not rely on <code>~/.bashrc</code>, <code>~/.profile</code>, etc.</li>
+<li>Define an <code>ENTRYPOINT</code> instruction set pointing to the command line interface to your pipeline.</li>
+<li>Do not define <code>CMD</code> - rely only on <code>ENTRYPOINT</code>.</li>
+<li>You can interactively test the software inside the container by overriding the <code>ENTRYPOINT docker run -i -t --entrypoint /bin/bash bids/example</code>.</li>
+<li>Do not rely on being able to write anywhere other than the home folder and /scratch.
+  Make sure your container runs with the <code>--read-only --tmpfs /run --tmpfs /tmp parameters</code> (this emulates the read-only behavior of Singularity).</li>
+<li>Don't rely on having elevated user permissions.</li>
+<li>Don't use the <code>USER</code> instruction set.</li>
+</ul>
                 
                   
                 
@@ -1792,7 +1769,7 @@ Simply disconnect.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../tips/" title="Misc. Tips" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../tensorflow/" title="Tensorflow" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1801,11 +1778,25 @@ Simply disconnect.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Misc. Tips
+                Tensorflow
               </span>
             </div>
           </a>
         
+        
+          <a href="../../service/file-exchange/" title="File Exchange" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                File Exchange
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
@@ -1831,9 +1822,9 @@ Simply disconnect.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
       
     
   </body>
