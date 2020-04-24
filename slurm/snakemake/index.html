@@ -1720,6 +1720,7 @@ Complete log: /fast/home/users/holtgrem_c/snake-slurm/.snakemake/log/2020-03-25T
 <ul>
 <li>memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes) and as a plain number without unit,</li>
 <li>running time has to be given as <code>hh:mm</code>.</li>
+<li><code>--export</code> is not supported by drmaa yet. The default of SLURM is <code>--export=ALL</code> (similar to <code>-V</code> for SGE).</li>
 </ul>
 <p>A full list of supported parameters can be found <a href="http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification">in the officical documentation</a>.</p>
 <p>... that's all, folks!</p>
