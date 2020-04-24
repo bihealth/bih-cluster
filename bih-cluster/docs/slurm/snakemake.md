@@ -103,6 +103,7 @@ The DRMAA interface to Slurm has a few limitations:
 
 - memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes) and as a plain number without unit,
 - running time has to be given as `hh:mm`.
+- `--export` is not supported by drmaa yet. The default of SLURM is `--export=ALL` (similar to `-V` for SGE).
 
 A full list of supported parameters can be found [in the officical documentation](http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification).
 
