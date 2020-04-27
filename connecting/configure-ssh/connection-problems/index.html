@@ -651,8 +651,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#im-getting-a-passphrase-prompt" class="md-nav__link">
+    I'm getting a passPHRASE prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#i-can-connect-but-i-get-a-password-prompt" class="md-nav__link">
-    I can connect, but I get a password prompt
+    I can connect, but I get a passWORD prompt
   </a>
   
 </li>
@@ -1577,8 +1584,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#im-getting-a-passphrase-prompt" class="md-nav__link">
+    I'm getting a passPHRASE prompt
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#i-can-connect-but-i-get-a-password-prompt" class="md-nav__link">
-    I can connect, but I get a password prompt
+    I can connect, but I get a passWORD prompt
   </a>
   
 </li>
@@ -1633,7 +1647,20 @@ user@med-login1&#39;s password:
 please write to <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a>,
 always indicating the message you get and a detailed description of what you
 did.</p>
-<h2 id="i-can-connect-but-i-get-a-password-prompt">I can connect, but I get a password prompt<a class="headerlink" href="#i-can-connect-but-i-get-a-password-prompt" title="Permanent link">&para;</a></h2>
+<h2 id="im-getting-a-passphrase-prompt">I'm getting a passPHRASE prompt<a class="headerlink" href="#im-getting-a-passphrase-prompt" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>You&#39;re logging into BIH HPC cluster! (med-login1)
+
+ *** It looks like your account has access. ***
+
+ Login is based on **SSH keys only**, if you are getting a password prompt
+ then please contact hpc-helpdesk@bihealth.de for assistance.
+
+Enter passphrase for key &#39;/home/USER/.ssh/id_rsa&#39;:
+</code></pre></div>
+
+<p>Here you have to enter the <strong>passphrase that was used for encrypting your private key</strong>.
+Read <a href="/misc/ssh-basics/">SSH Basics</a> for further information of what is going on here.</p>
+<h2 id="i-can-connect-but-i-get-a-password-prompt">I can connect, but I get a passWORD prompt<a class="headerlink" href="#i-can-connect-but-i-get-a-password-prompt" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>You&#39;re logging into BIH HPC cluster! (med-login1)
 
  *** It looks like your account has access. ***
@@ -1644,6 +1671,10 @@ did.</p>
 user@med-login1&#39;s password:
 </code></pre></div>
 
+<div class="admonition important">
+<p class="admonition-title">This is diffeerent from passPHRASE prompt</p>
+<p>Please see <a href="#im-getting-a-passphrase-prompt">I'm getting a passPHRASE prompt</a> for more information.</p>
+</div>
 <p>When you encounter this message during a login attempt, there is an issue with
 your SSH key. In this case, please connect with increased verbosity to the
 cluster (<code>ssh -vvv ...</code>) and mail the output and a detailed description to

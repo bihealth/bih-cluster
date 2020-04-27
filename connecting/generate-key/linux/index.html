@@ -1583,6 +1583,14 @@
 <li>Use the default location for your key</li>
 <li>Enter the passphrase twice to encrypt your key</li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">What is your key's passphrase?</p>
+<p>You should set a passphrase when generating your private key.
+This passphrase is used for encrypting you private key to protect it against the private key file theft/being lost.
+When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
+Note that when being asked for the <strong>passphrase</strong> this does not occur on the cluster (and is thus unrelated to it) but on your local computer.</p>
+<p>Also see <a href="/misc/ssh-basics/">SSH Basics</a> for more information.</p>
+</div>
 <p>The whole session should look something like this:</p>
 <div class="codehilite"><pre><span></span><code>host:~$ ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
 Generating public/private rsa key pair.
