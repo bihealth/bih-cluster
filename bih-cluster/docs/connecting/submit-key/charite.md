@@ -10,7 +10,7 @@ For any help, please contact helpdesk@charite.de (as this site is maintained by 
 Key are submitted in the Charite Zugangsportal.
 As of Feb 4, you have to use the "test" version for this.
 
-Go to [zugang-test.charite.de](https://zugang-test.charite.de) and login.
+Go to [zugang.charite.de](https://zugang.charite.de) and login.
 
 ![](figures/zugang_charite_de_login.png)
 
