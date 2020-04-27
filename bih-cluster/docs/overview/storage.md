@@ -63,22 +63,18 @@ If not noted anyway, currently no access restrictions apply per se.
 The cluster has 2.1 PB of fast storage, currently available at `/fast`.
 The storage runs on a DDN appliance using the IBM GPFS file system and is designed for massively parallel access from an HPC system.
 In contrast to "single server" NFS systems, the system can provide large bandwidth to all cluster nodes in parallel as long as large data means relatively "few" files are read and written.
-The system is not designed for access to many small files. 
 
-The `/fast` volume has the following directories:
+The GPFS storage is split into three sections:
 
-- `/fast/users/$USER` --
-  For a user's data, the default quota is set to 10GB (see below for the `scratch` sub directory with no quota).
-- `/fast/groups/$AG` --
-  For the data of a working group lab, there is no default quota.
-- `/fast/projects/$PROJECT`
-  For sharing data between users that are not in the same lab, there is no default quota.
-  :exclamation: Projects can be used for giving subsets of a whole lab access to a certain data set to implement the data privacy concept "Datensparsamkeit".
+- `home` -- *small, persistent, and safe storage*, e.g., for documents and configuration files (default quota of 1GB).
+- `work` -- *larger and persistent storage*, e.g., for your large data files (default quota of 1TB).
+- `scratch` -- *large and non-persistent storage*, e.g., for temporary files, files are automatically deleted after 4 weeks (default quota of 100TB; deletion not implemented yet).)
 
-Inside each user, AG, and project directory, there is a `scratch` directory on which no quotas apply.
-This is implemented by making each user, AG, and project directory a distinct "GPFS file set".
+Each user, group, and project has one of the sections each, e.g., for users:
 
-:bulb: We recommend that you store temporary files and intermediary/ephemeral results in the `scratch` directory and important files elsewhere.
+- `/fast/users/$NAME`
+- `/fast/users/$NAME/work`
+- `/fast/users/$USER/scratch`
 
-Further, the cluster has 500 TB of slower memory mounted at `/slow` that is currently only used and available for mirroring Omics data and protecting them from accidental loss.
 
+See [Storage and Volumes: Locations](/storage/storage-locations/) for more informatin.
