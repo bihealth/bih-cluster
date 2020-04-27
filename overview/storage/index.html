@@ -1664,22 +1664,20 @@ There are a number of nodes that are invisible to non-admin staff, hosting the q
 <h2 id="cluster-volumes-and-locations">Cluster Volumes and Locations<a class="headerlink" href="#cluster-volumes-and-locations" title="Permanent link">&para;</a></h2>
 <p>The cluster has 2.1 PB of fast storage, currently available at <code>/fast</code>.
 The storage runs on a DDN appliance using the IBM GPFS file system and is designed for massively parallel access from an HPC system.
-In contrast to "single server" NFS systems, the system can provide large bandwidth to all cluster nodes in parallel as long as large data means relatively "few" files are read and written.
-The system is not designed for access to many small files. </p>
-<p>The <code>/fast</code> volume has the following directories:</p>
+In contrast to "single server" NFS systems, the system can provide large bandwidth to all cluster nodes in parallel as long as large data means relatively "few" files are read and written.</p>
+<p>The GPFS storage is split into three sections:</p>
 <ul>
-<li><code>/fast/users/$USER</code> --
-  For a user's data, the default quota is set to 10GB (see below for the <code>scratch</code> sub directory with no quota).</li>
-<li><code>/fast/groups/$AG</code> --
-  For the data of a working group lab, there is no default quota.</li>
-<li><code>/fast/projects/$PROJECT</code>
-  For sharing data between users that are not in the same lab, there is no default quota.
-  <img alt="❗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2757.svg" title=":exclamation:" /> Projects can be used for giving subsets of a whole lab access to a certain data set to implement the data privacy concept "Datensparsamkeit".</li>
+<li><code>home</code> -- <em>small, persistent, and safe storage</em>, e.g., for documents and configuration files (default quota of 1GB).</li>
+<li><code>work</code> -- <em>larger and persistent storage</em>, e.g., for your large data files (default quota of 1TB).</li>
+<li><code>scratch</code> -- <em>large and non-persistent storage</em>, e.g., for temporary files, files are automatically deleted after 4 weeks (default quota of 100TB; deletion not implemented yet).)</li>
 </ul>
-<p>Inside each user, AG, and project directory, there is a <code>scratch</code> directory on which no quotas apply.
-This is implemented by making each user, AG, and project directory a distinct "GPFS file set".</p>
-<p><img alt="💡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4a1.svg" title=":bulb:" /> We recommend that you store temporary files and intermediary/ephemeral results in the <code>scratch</code> directory and important files elsewhere.</p>
-<p>Further, the cluster has 500 TB of slower memory mounted at <code>/slow</code> that is currently only used and available for mirroring Omics data and protecting them from accidental loss.</p>
+<p>Each user, group, and project has one of the sections each, e.g., for users:</p>
+<ul>
+<li><code>/fast/users/$NAME</code></li>
+<li><code>/fast/users/$NAME/work</code></li>
+<li><code>/fast/users/$USER/scratch</code></li>
+</ul>
+<p>See <a href="/storage/storage-locations/">Storage and Volumes: Locations</a> for more informatin.</p>
                 
                   
                 
