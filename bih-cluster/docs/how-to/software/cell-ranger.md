@@ -49,7 +49,7 @@ add a file `slurm.template` to `/fast/users/$USER/scratch/cellranger-3.0.2/marti
 #SBATCH --nodes=1 --ntasks-per-node=__MRO_THREADS__
 #SBATCH --signal=2
 #SBATCH --no-requeue
-#SBATCH --partition=critical
+#SBATCH --partition=medium
 #SBATCH --time=24:00:00
 ### Alternatively: --ntasks=1 --cpus-per-task=__MRO_THREADS__
 ###   Consult with your cluster administrators to find the combination that
