@@ -907,6 +907,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-of-the-slurm-drmaa-library" class="md-nav__link">
+    Limitations of the Slurm DRMAA Library
+  </a>
+  
+</li>
+      
       
       
       
@@ -1595,6 +1602,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-of-the-slurm-drmaa-library" class="md-nav__link">
+    Limitations of the Slurm DRMAA Library
+  </a>
+  
+</li>
+      
       
       
       
@@ -1642,6 +1656,11 @@ The page <a href="../rosetta-stone/">Slurm Rosetta Stone</a> provides you with a
 You should remove the setting from your file.</p>
 <p>To check the results, you can use <code>echo $DRMAA_LIBRARY_PATH</code> in your shell.</p>
 <p>You can use <code>unset DRMAA_LIBRARY_PATH</code> to remove the environment variable from your current shell session.</p>
+<h2 id="limitations-of-the-slurm-drmaa-library">Limitations of the Slurm DRMAA Library<a class="headerlink" href="#limitations-of-the-slurm-drmaa-library" title="Permanent link">&para;</a></h2>
+<p>We are using an installation of the <a href="https://github.com/natefoo/slurm-drmaa#native-specification">natefoo Slurm DRMAA library fork</a>.
+The library does not implement all <code>srun</code>/<code>sbatch</code> arguments and syntax.
+Most notably, you can only specify resourc requirements as numbers in megabytes (without units) and running time as <code>hh:mm</code>.
+Note that you cannot specify the <code>--export</code> command and the behaviour will default to <code>--export=ALL</code>.</p>
                 
                   
                 
