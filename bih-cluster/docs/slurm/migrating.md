@@ -40,3 +40,10 @@ You should remove the setting from your file.
 To check the results, you can use `echo $DRMAA_LIBRARY_PATH` in your shell.
 
 You can use `unset DRMAA_LIBRARY_PATH` to remove the environment variable from your current shell session.
+
+## Limitations of the Slurm DRMAA Library
+
+We are using an installation of the [natefoo Slurm DRMAA library fork](https://github.com/natefoo/slurm-drmaa#native-specification).
+The library does not implement all `srun`/`sbatch` arguments and syntax.
+Most notably, you can only specify resourc requirements as numbers in megabytes (without units) and running time as `hh:mm`.
+Note that you cannot specify the `--export` command and the behaviour will default to `--export=ALL`.
