@@ -8,6 +8,15 @@
 - Use the default location for your key
 - Enter the passphrase twice to encrypt your key
 
+!!! important "What is your key's passphrase?"
+
+    You should set a passphrase when generating your private key.
+    This passphrase is used for encrypting you private key to protect it against the private key file theft/being lost.
+    When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
+    Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
+
+    Also see [SSH Basics](/misc/ssh-basics/) for more information.
+
 The whole session should look something like this:
 
 ```shell

@@ -37,7 +37,23 @@ please write to [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de),
 always indicating the message you get and a detailed description of what you
 did.
 
-## I can connect, but I get a password prompt
+## I'm getting a passPHRASE prompt
+
+```
+You're logging into BIH HPC cluster! (med-login1)
+
+ *** It looks like your account has access. ***
+
+ Login is based on **SSH keys only**, if you are getting a password prompt
+ then please contact hpc-helpdesk@bihealth.de for assistance.
+
+Enter passphrase for key '/home/USER/.ssh/id_rsa':
+```
+
+Here you have to enter the **passphrase that was used for encrypting your private key**.
+Read [SSH Basics](/misc/ssh-basics/) for further information of what is going on here.
+
+## I can connect, but I get a passWORD prompt
 
 ```
 You're logging into BIH HPC cluster! (med-login1)
@@ -49,6 +65,10 @@ You're logging into BIH HPC cluster! (med-login1)
 
 user@med-login1's password:
 ```
+
+!!! important "This is diffeerent from passPHRASE prompt"
+
+    Please see [I'm getting a passPHRASE prompt](#im-getting-a-passphrase-prompt) for more information.
 
 When you encounter this message during a login attempt, there is an issue with
 your SSH key. In this case, please connect with increased verbosity to the

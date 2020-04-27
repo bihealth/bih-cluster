@@ -30,16 +30,24 @@ however you want (the `.pub` is NOT automatically added). Note that in the
 whole cluster wiki we will use this file naming convention. Also note that the
 private key will be stored in Putty format (`.ppk`, this extension is added
 automatically).
-**Important** The gibberish in the textbox is your public key in the
-format how it has to be submitted to the MDC and Charite (links for this step
-below). Thus, copy this text and paste it to the SSH-key-submission-web-service
-of your institution.
+
+!!! important "What is your key's passphrase?"
+
+    You should set a passphrase when generating your private key.
+    This passphrase is used for encrypting you private key to protect it against the private key file theft/being lost.
+    When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
+    Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
+
+    Also see [SSH Basics](/misc/ssh-basics/) for more information.
+
+The gibberish in the textbox is your public key in the format how it has to be submitted to the MDC and Charite (links for this step below).
+Thus, copy this text and paste it to the SSH-key-submission-web-service of your institution.
 
 ![](figures/mobaxterm_keygen4.png)
 
-**Important** Store the private key additionally in the OpenSSH format. To do
-so, click `Conversions` and select `Export OpenSSH key`. To be consistent, give
-the file the same name as your `.ppk` private key file above (just without the
+Store the private key additionally in the OpenSSH format.
+To do so, click `Conversions` and select `Export OpenSSH key`.
+To be consistent, give the file the same name as your `.ppk` private key file above (just without the
 `.ppk`).
 
 ![](figures/mobaxterm_keygen5.png)

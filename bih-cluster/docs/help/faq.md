@@ -12,6 +12,10 @@ The aim is to gather the information for using the cluster efficiently and helpi
 - For problems while connecting and logging in, please contact [helpdesk@mdc-berlin.de](mailto:helpdesk@mdc-berlin.de) or [helpdesk@charite.de](mailto:helpdesk@charite.de).
 - For problems with BIH HPC please contact [hpc-helpdesk@bihealth.de].
 
+## I cannot connect to the cluster. What's wrong?
+
+Please see the section [Connection Problems](/connecting/configure-ssh/connection-problems).
+
 ## I'd like to learn more about Slurm
 
 - Some documentation is available on this website, e.g., start at [Slurm Quickstart](../slurm/quickstart).
