@@ -27,4 +27,11 @@ If you have generated your SSH key with PuTTy, you must right click on the ppk-f
 
 ![](figures/zugang_charite_de_ssh_keys.png)
 
+!!! important "Check if the key has been added"
+
+    After you clicked `append`, your key will be printed back to you (as shown in the blurred picture above).
+
+    **If your key is not printed back to you then adding the SSH key to zugang.charite.de was not successful.**
+    In this case please contact helpdesk@charite.de for assistance as they (Charite GB IT) maintains that system and it is out of our (BIH HPC IT) control.
+
 Once your key has been added, it will take a few minutes for the changes to go live.
