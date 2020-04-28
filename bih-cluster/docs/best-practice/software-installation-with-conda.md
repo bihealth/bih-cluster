@@ -40,7 +40,7 @@ To make it available upon login, extend and export the `$PATH` variable with the
 installation path + `/bin` and add it to your `$HOME/.bashrc`:
 
 ```bash
-case "$(hostname)" in
+case "${SLURMD_NODENAME-${HOSTNAME}}" in
     med-login*)
         ;;
     *)
