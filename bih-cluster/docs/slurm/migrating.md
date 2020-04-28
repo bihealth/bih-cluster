@@ -7,7 +7,7 @@ This page describes (an updated) list of steps that are commonly needed to migra
 - Use `#SBATCH` instead of `#$` in your job scripts for resource definitions.
 - Update your resource requirements parameters from SGE to Slurm using the [Slurm Rosetta Stone](rosetta-stone.md).
 - Unset environment variable `DRMAA_LIBRARY_PATH` and remove from your `~/.bashrc`, job scripts, etc.
-- Use `$(hostname)` instead of `$HOSTNAME` in your `~/.bashrc` file.
+- Use `${SLURMD_NODENAME-${HOSTNAME}}` instead of `$HOSTNAME` in your `~/.bashrc` file.
 
 These steps are explained in detail below.
 
@@ -52,4 +52,4 @@ Note that you cannot specify the `--export` command and the behaviour will defau
 ## `srun` does not re-run `~/.bashrc` on the login node
 
 This means that the value of `$HOSTNAME` will remain the one on the login node, for example.
-You can fix this by replacing `$HOSTNAME` by `$(hostname)` in your `~/.bashrc`.
+You can fix this by replacing `$HOSTNAME` by `${SLURMD_NODENAME-${HOSTNAME}}` in your `~/.bashrc`.
