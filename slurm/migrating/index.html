@@ -914,6 +914,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#srun-does-not-re-run-bashrc-on-the-login-node" class="md-nav__link">
+    srun does not re-run ~/.bashrc on the login node
+  </a>
+  
+</li>
+      
       
       
       
@@ -1609,6 +1616,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#srun-does-not-re-run-bashrc-on-the-login-node" class="md-nav__link">
+    srun does not re-run ~/.bashrc on the login node
+  </a>
+  
+</li>
+      
       
       
       
@@ -1635,6 +1649,7 @@
 <li>Use <code>#SBATCH</code> instead of <code>#$</code> in your job scripts for resource definitions.</li>
 <li>Update your resource requirements parameters from SGE to Slurm using the <a href="../rosetta-stone/">Slurm Rosetta Stone</a>.</li>
 <li>Unset environment variable <code>DRMAA_LIBRARY_PATH</code> and remove from your <code>~/.bashrc</code>, job scripts, etc.</li>
+<li>Use <code>$(hostname)</code> instead of <code>$HOSTNAME</code> in your <code>~/.bashrc</code> file.</li>
 </ul>
 <p>These steps are explained in detail below.</p>
 <h2 id="using-sbatch">Using <code>#SBATCH</code><a class="headerlink" href="#using-sbatch" title="Permanent link">&para;</a></h2>
@@ -1661,6 +1676,9 @@ You should remove the setting from your file.</p>
 The library does not implement all <code>srun</code>/<code>sbatch</code> arguments and syntax.
 Most notably, you can only specify resourc requirements as numbers in megabytes (without units) and running time as <code>hh:mm</code>.
 Note that you cannot specify the <code>--export</code> command and the behaviour will default to <code>--export=ALL</code>.</p>
+<h2 id="srun-does-not-re-run-bashrc-on-the-login-node"><code>srun</code> does not re-run <code>~/.bashrc</code> on the login node<a class="headerlink" href="#srun-does-not-re-run-bashrc-on-the-login-node" title="Permanent link">&para;</a></h2>
+<p>This means that the value of <code>$HOSTNAME</code> will remain the one on the login node, for example.
+You can fix this by replacing <code>$HOSTNAME</code> by <code>$(hostname)</code> in your <code>~/.bashrc</code>.</p>
                 
                   
                 
