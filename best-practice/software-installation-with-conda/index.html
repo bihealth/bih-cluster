@@ -1670,7 +1670,7 @@ Please note that the <code>$HOME</code> folder has limited space (an exception i
 <p>NB: <code>$HOME/scratch</code> is not appropriate as files placed there will be removed automatically after 4 weeks.</p>
 <p>To make it available upon login, extend and export the <code>$PATH</code> variable with the
 installation path + <code>/bin</code> and add it to your <code>$HOME/.bashrc</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">case</span> <span class="s2">&quot;</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span> in
+<div class="codehilite"><pre><span></span><code><span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURMD_NODENAME</span><span class="p">-</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}}</span><span class="s2">&quot;</span> in
     med-login*<span class="o">)</span>
         <span class="p">;;</span>
     *<span class="o">)</span>
