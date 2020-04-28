@@ -164,8 +164,22 @@ Alternatively, you can use the two-panel view of WinSCP to transfer files [as de
 
 ### From Mac
 
-For Mac, we recommend to also use `lftp` as described above in [From Linux](#from-linux).
+For Mac, we you can also use `lftp` as described above in [From Linux](#from-linux).
 You can find install instructions [here online](http://macappstore.org/lftp/).
+
+!!! important "Proxy Configuration on Charite Network"
+
+    **If you are on the Charite network then you must have configured the proxy appropriately.**
+    **Otherwise, you have to skip this step.**
+
+    You can find them in your `System Preference` in the `Network` section, in the `Advanced` tab of your network (e.g., `WiFi`).
+    ![The Mac Os X Proxy Setting](figures/mac-proxy-settings.png)
+
+If you want to use a graphical interface then we recommend the usage of [Cyberduck](https://cyberduck.io/).
+After starting the program, click `Open Connection` on the top left, then select `WebDAV (HTTPS)` and fill out the form as in the following way.
+Paste the file box URL into the server field and use your login name (`user@CHARITE` or `user@MDC-BERLIN`) with your usual password.
+
+![The Cyberduck Login Window](figures/cyberduck-connect.png)
 
 If you need to perform access through a graphical user interface on your Mac, please contact hpc-helpdesk@bihealth.org for support.
 
