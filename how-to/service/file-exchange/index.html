@@ -1871,8 +1871,19 @@ Then, click <code>OK</code> to apply the proxy settings.</p>
 You can now transfer files between the file exchange server and your local computer using drag and drop between WinSCP and your local Windows File Explorer.
 Alternatively, you can use the two-panel view of WinSCP to transfer files <a href="https://winscp.net/eng/docs/guide_upload">as described here</a>.</p>
 <h3 id="from-mac">From Mac<a class="headerlink" href="#from-mac" title="Permanent link">&para;</a></h3>
-<p>For Mac, we recommend to also use <code>lftp</code> as described above in <a href="#from-linux">From Linux</a>.
+<p>For Mac, we you can also use <code>lftp</code> as described above in <a href="#from-linux">From Linux</a>.
 You can find install instructions <a href="http://macappstore.org/lftp/">here online</a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Proxy Configuration on Charite Network</p>
+<p><strong>If you are on the Charite network then you must have configured the proxy appropriately.</strong>
+<strong>Otherwise, you have to skip this step.</strong></p>
+<p>You can find them in your <code>System Preference</code> in the <code>Network</code> section, in the <code>Advanced</code> tab of your network (e.g., <code>WiFi</code>).
+<img alt="The Mac Os X Proxy Setting" src="../figures/mac-proxy-settings.png" /></p>
+</div>
+<p>If you want to use a graphical interface then we recommend the usage of <a href="https://cyberduck.io/">Cyberduck</a>.
+After starting the program, click <code>Open Connection</code> on the top left, then select <code>WebDAV (HTTPS)</code> and fill out the form as in the following way.
+Paste the file box URL into the server field and use your login name (<code>user@CHARITE</code> or <code>user@MDC-BERLIN</code>) with your usual password.</p>
+<p><img alt="The Cyberduck Login Window" src="../figures/cyberduck-connect.png" /></p>
 <p>If you need to perform access through a graphical user interface on your Mac, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#111;&#114;&#103;</a> for support.</p>
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <p>The file exchange server has the <code>fail2ban</code> software installed and configured (Charite, MDC, and BIH IPs are excluded from this).</p>
