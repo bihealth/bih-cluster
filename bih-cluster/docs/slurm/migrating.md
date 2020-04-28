@@ -7,6 +7,7 @@ This page describes (an updated) list of steps that are commonly needed to migra
 - Use `#SBATCH` instead of `#$` in your job scripts for resource definitions.
 - Update your resource requirements parameters from SGE to Slurm using the [Slurm Rosetta Stone](rosetta-stone.md).
 - Unset environment variable `DRMAA_LIBRARY_PATH` and remove from your `~/.bashrc`, job scripts, etc.
+- Use `$(hostname)` instead of `$HOSTNAME` in your `~/.bashrc` file.
 
 These steps are explained in detail below.
 
@@ -47,3 +48,8 @@ We are using an installation of the [natefoo Slurm DRMAA library fork](https://g
 The library does not implement all `srun`/`sbatch` arguments and syntax.
 Most notably, you can only specify resourc requirements as numbers in megabytes (without units) and running time as `hh:mm`.
 Note that you cannot specify the `--export` command and the behaviour will default to `--export=ALL`.
+
+## `srun` does not re-run `~/.bashrc` on the login node
+
+This means that the value of `$HOSTNAME` will remain the one on the login node, for example.
+You can fix this by replacing `$HOSTNAME` by `$(hostname)` in your `~/.bashrc`.
