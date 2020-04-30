@@ -1330,6 +1330,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#losing-connection" class="md-nav__link">
+    Losing connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ending-a-session" class="md-nav__link">
     Ending a Session
   </a>
@@ -1598,6 +1605,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#losing-connection" class="md-nav__link">
+    Losing connection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ending-a-session" class="md-nav__link">
     Ending a Session
   </a>
@@ -1639,11 +1653,16 @@
 med0xxx:~$ <span class="nb">source</span> activate jupyter
 </code></pre></div>
 
-<p>(Install Jupyter language kernel as needed, see the kernel list below)</p>
-<p>Now you can start the Jupyter server session (you may want to do this in a <code>screen</code> &amp; <code>qrsh</code> session)
+<p>(If you want to work in a language other than python, you can install more Jupyter language kernel, see the <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">kernel list</a>)</p>
+<p>Now you can start the Jupyter server session (you may want to do this in a <code>screen</code> &amp; <code>srun --pty bash -i</code> session as jupyter keeps running while you are doing computations)
 <div class="codehilite"><pre><span></span><code>med0xxx:~$ jupyter notebook --no-browser
 </code></pre></div></p>
-<p>By default, Jupyter will create an access token (a link) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via <code>jupyter notebook password</code>. If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding <code>--port=$PORT</code></p>
+<p>Check the port number (usually <code>8888</code>) in the on output and remember it for later:
+<div class="codehilite"><pre><span></span><code><span class="o">[</span>I <span class="m">23</span>:39:40.860 NotebookApp<span class="o">]</span> The Jupyter Notebook is running at:
+<span class="o">[</span>I <span class="m">23</span>:39:40.860 NotebookApp<span class="o">]</span> http://localhost:8888/
+</code></pre></div></p>
+<p>By default, Jupyter will create an access token (a link stated in the output) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via <code>jupyter notebook password</code>.
+If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding <code>--port=$PORT</code>.</p>
 <h2 id="connecting-to-the-running-session">Connecting to the Running Session<a class="headerlink" href="#connecting-to-the-running-session" title="Permanent link">&para;</a></h2>
 <p>This is slightly trickier as we have to create a SSH connection/tunnel via multiple hubs in between. The easiest is probably to configure your <code>.ssh/config</code> to automatically route your connection via the login-node (and MDC-jail if connecting from outside of the MDC network).</p>
 <p>You have to add (replace with your <code>$CLUSTER_USER</code> and <code>$MDC_USER</code>)</p>
@@ -1664,8 +1683,15 @@ med0xxx:~$ <span class="nb">source</span> activate jupyter
 <div class="codehilite"><pre><span></span><code>workstation:~$ ssh -N -f -L <span class="m">127</span>.0.0.1:8888:localhost:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> med0<span class="si">${</span><span class="nv">NODE</span><span class="si">}</span>
 </code></pre></div>
 
-<p>with the port of your server (usually <code>8888</code>) and the cluster node <code>qrsh</code> has send you to.</p>
+<p>with the port of your server (usually <code>8888</code>) and the cluster node <code>srun</code> has send you to.</p>
 <p>You should now be able to connect to the Jupyter server via <code>localhost:8888</code> in your webbrowser (see the note about token and password above) and start using Jupyter.</p>
+<h2 id="losing-connection">Losing connection<a class="headerlink" href="#losing-connection" title="Permanent link">&para;</a></h2>
+<p>It can and will happen that will lose connection, either due to network problems or due to shut-down of your computer.
+This is not a problem at all and you will not lose data, just reconnect to your session.
+If your notebooks are also losing connection (you will see a colorful remark in the top right corner), reconnect and click the colorful button.
+If this does not work, your work is still not lost as all cells that have been executed are automatically saved anyways.
+Copy all unexecuted cells (those are only saved periodically) and reload the browser page (after reconnecting) with <code>F5</code>.
+(you can also open a copy of the notebook in another tab, just be aware that there may be synchronisation problems)</p>
 <h2 id="ending-a-session">Ending a Session<a class="headerlink" href="#ending-a-session" title="Permanent link">&para;</a></h2>
 <p>There are two independent steps in ending a session:</p>
 <p><strong>Canceling the SSH tunnel</strong></p>
