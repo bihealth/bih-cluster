@@ -13,14 +13,21 @@ med0xxx:~$ conda create -n jupyter jupyter
 med0xxx:~$ source activate jupyter
 ```
 
-(Install Jupyter language kernel as needed, see the kernel list below)
+(If you want to work in a language other than python, you can install more Jupyter language kernel, see the [kernel list](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels))
 
-Now you can start the Jupyter server session (you may want to do this in a ```screen``` & ```qrsh``` session)
+Now you can start the Jupyter server session (you may want to do this in a ```screen``` & ```srun --pty bash -i``` session as jupyter keeps running while you are doing computations)
 ```bash
 med0xxx:~$ jupyter notebook --no-browser
 ```
 
-By default, Jupyter will create an access token (a link) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via `jupyter notebook password`. If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding `--port=$PORT`
+Check the port number (usually `8888`) in the on output and remember it for later:
+```bash
+[I 23:39:40.860 NotebookApp] The Jupyter Notebook is running at:
+[I 23:39:40.860 NotebookApp] http://localhost:8888/
+```
+
+By default, Jupyter will create an access token (a link stated in the output) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via `jupyter notebook password`.
+If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding `--port=$PORT`.
 
 ## Connecting to the Running Session
 
@@ -53,9 +60,19 @@ Now you setup a tunnel
 workstation:~$ ssh -N -f -L 127.0.0.1:8888:localhost:${PORT} med0${NODE}
 ```
 
-with the port of your server (usually `8888`) and the cluster node `qrsh` has send you to.
+with the port of your server (usually `8888`) and the cluster node `srun` has send you to.
+
 
 You should now be able to connect to the Jupyter server via `localhost:8888` in your webbrowser (see the note about token and password above) and start using Jupyter.
+
+## Losing connection
+
+It can and will happen that will lose connection, either due to network problems or due to shut-down of your computer.
+This is not a problem at all and you will not lose data, just reconnect to your session.
+If your notebooks are also losing connection (you will see a colorful remark in the top right corner), reconnect and click the colorful button.
+If this does not work, your work is still not lost as all cells that have been executed are automatically saved anyways.
+Copy all unexecuted cells (those are only saved periodically) and reload the browser page (after reconnecting) with `F5`.
+(you can also open a copy of the notebook in another tab, just be aware that there may be synchronisation problems)
 
 ## Ending a Session
 
