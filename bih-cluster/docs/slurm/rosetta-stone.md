@@ -44,6 +44,5 @@ The table below shows some SGE commands and their Slurm equivalents.
 | run exclusively | `-l exclusive` | `--exclusive` OR `--shared` |
 | allocate memory | `-l h_vmem=size` | `--mem=mem` OR `--mem-per-cpu=mem` |
 | wait for job | `-hold_jid jid` | `--depend state:job` |
-| run in queues | `-P project` | `--wckey=project` |
 | select target host | `-l hostname=host1\|host1` | `--nodelist=nodes` AND/OR `--exclude` |
 | allocate GPU | `-l gpu=1` | `--gres=gpu:tesla:count` |
