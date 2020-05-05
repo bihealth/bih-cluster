@@ -7,7 +7,18 @@ You simply request a GPU using the `-p gpu --gres=gpu:tesla:COUNT` argument to `
 This will place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
 !!! hint
-    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
+
+    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".
+
+!!! important "Please Limit Interactive GPU Usage"
+
+    While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
+    While your job is allocated, it blocks the **allocated** GPUs and other users cannot use them although you might not be actually using them.
+    Please prefer batch jobs for your GPU jobs over interactive jobs.
+    
+    Administration monitors the ratio of idling jobs on the and will restrict interactive GPU usage in the future if idling interactive jobs become a problem.
+    We might limit interactive GPU usage to very short time spans for testing (say 10 minutes or less) or block interactive GPU usage alltogether.
+    Please do not give a reason to do so.
 
 ## Prequisites
 
