@@ -1731,7 +1731,16 @@ You simply request a GPU using the <code>-p gpu --gres=gpu:tesla:COUNT</code> ar
 This will place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>".**</p>
+<p>Make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>".</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Please Limit Interactive GPU Usage</p>
+<p>While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
+While your job is allocated, it blocks the <strong>allocated</strong> GPUs and other users cannot use them although you might not be actually using them.
+Please prefer batch jobs for your GPU jobs over interactive jobs.</p>
+<p>Administration monitors the ratio of idling jobs on the and will restrict interactive GPU usage in the future if idling interactive jobs become a problem.
+We might limit interactive GPU usage to very short time spans for testing (say 10 minutes or less) or block interactive GPU usage alltogether.
+Please do not give a reason to do so.</p>
 </div>
 <h2 id="prequisites">Prequisites<a class="headerlink" href="#prequisites" title="Permanent link">&para;</a></h2>
 <p>You have to register with <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> for requesting access.
