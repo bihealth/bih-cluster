@@ -46,12 +46,15 @@ The `Snakefile` is already known to you but let me explain the wrapper script `s
 # Set the number of cores (-n or --ntasks).
 #SBATCH --ntasks=2
 
+# Force allocation of the two cores on ONE node.
+#SBATCH --nodes=1
+
 # Set the memory per CPU. Units can be given in T|G|M|K.
 #SBATCH --mem-per-cpu=100M
 
 # Set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
- 
+
 # Set the expected running time of your job (-t or --time).
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00
@@ -74,13 +77,13 @@ snakemake \
     --drmaa " \
         -p medium \
         -t 01:00 \
+        --nodes=1 \
         --mem-per-cpu=1000 \
         -n 8 \
         -o $LOGDIR/%j.log" \
     -j 2 \
     -k \
     -p
-    
 ```
 
 In the beginning you see the `#SBATCH` that introduces the parameters when you provide this script to `sbatch`
@@ -96,6 +99,7 @@ Finally, the Snakemake call takes place. With the `--drmaa` option we define how
 * `--mem-per-cpu=X`: How much memory ONE job (=Snakemake rule) should get in Megabyte
 * `-t HH:MM`: How long a job (=Snakemake rule) is allowed to run
 * `-n X`: How many cores of a node a job (=Snakemake rule) should get
+* `--nodes=1`: Force allocation of all cores on a single node.
 * `-p medium`: The partition name (this system was introduced in [Episode 2](episode-2.md#job-queues) and is described [here](../overview/job-scheduler.md))
 
 Note that the memory is not shared among the cores. This means the final memory on a node is defined by

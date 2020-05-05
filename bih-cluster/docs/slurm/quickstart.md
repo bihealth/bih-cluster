@@ -68,10 +68,10 @@ In [2]: exit
 med-login1:~$
 ```
 
-**Allocate 4 cores (default is 1 core), and a total of 4GB of RAM per node** (alternatively use `--mem-per-cpu` to set RAM per CPU); `sbatch` accepts the same argument.
+**Allocate 4 cores (default is 1 core), and a total of 4GB of RAM on one node** (alternatively use `--mem-per-cpu` to set RAM per CPU); `sbatch` accepts the same argument.
 
 ```bash
-med-login1:~$ srun --cpus-per-task=4 --mem=4G --pty bash
+med-login1:~$ srun --cpus-per-task=4 --nodes=1 --mem=4G --pty bash
 med0740:~$ export | grep SLURM_CPUS_ON_NODE
 4
 med0740:~$ your-parallel-script 4

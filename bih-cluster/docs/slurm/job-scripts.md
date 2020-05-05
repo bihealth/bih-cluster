@@ -8,6 +8,12 @@ These appear as comments to bash scripts.
 These lines are interpreted by `sbatch` in the same way as command line arguments.
 That is, when later submitting the script with `sbatch my-job.sh` you can either have the parameter to the `sbatch` call or in the file.
 
+!!! note "Multi-Node Allocation in Slurm"
+
+    Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
+    Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
+    Please use `--nodes=1` to force Slurm to allocate them on a single node.
+
 **Creating the Script**
 
 ```bash
@@ -18,6 +24,7 @@ host:example$ cat >my-job.sh <<"EOF"
 #SBATCH --output=output.txt
 #
 #SBATCH --ntasks=1
+#SBATCH --nodes=1
 #SBATCH --time=10:00
 #SBATCH --mem-per-cpu=100M
 

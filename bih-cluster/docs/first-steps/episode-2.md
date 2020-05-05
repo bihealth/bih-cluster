@@ -49,12 +49,15 @@ The content of the file:
 # Set the number of cores (-n or --ntasks).
 #SBATCH --ntasks=2
 
+# Force allocation of the two cores on ONE node.
+#SBATCH --nodes=1
+
 # Set the memory per CPU. Units can be given in T|G|M|K.
 #SBATCH --mem-per-cpu=100M
 
 # Set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
- 
+
 # Set the expected running time of your job (-t or --time).
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00
@@ -100,12 +103,15 @@ Your file should look something like this:
 # Set the number of cores (-n or --ntasks).
 #SBATCH --ntasks=2
 
+# Force allocation of the two cores on ONE node.
+#SBATCH --nodes=1
+
 # Set the memory per CPU. Units can be given in T|G|M|K.
 #SBATCH --mem-per-cpu=100M
 
 # Set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
- 
+
 # Set the expected running time of your job (-t or --time).
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00

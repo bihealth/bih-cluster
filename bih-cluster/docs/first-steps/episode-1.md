@@ -28,19 +28,17 @@ It would be good to have it in your `work` directory in `/fast/users/$USER`, bec
 ```terminal
 (first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode1
 (first-steps) $ pushd /fast/users/$USER/work/tutorial/episode1
-
-:exclamation: :exclamation: :exclamation: :exclamation: :exclamation: :exclamation:
-
 ```
-- Note well that you have a quota of 1 GB in your home directory at `/fast/users/$USER`.
-  The reason for this is that nightly snapshots and backups are created for this directory which are precious resources.
-- This limit does not apply to your work directory at `/fast/users/$USER/work`.
-  The limits are much higher here but no snapshots or backups are available.
-- There is no limit on your scratch directory at `/fast/users/$USER/scratch`.
-  However, **files placed here are automatically removed after 4 weeks.**
-  This is only appropriate for files during download or temporary files.
 
-:exclamation: :exclamation: :exclamation: :exclamation: :exclamation: :exclamation:
+!!! important "Quotas / File System limits"
+
+    - Note well that you have a quota of 1 GB in your home directory at `/fast/users/$USER`.
+      The reason for this is that nightly snapshots and backups are created for this directory which are precious resources.
+    - This limit does not apply to your work directory at `/fast/users/$USER/work`.
+      The limits are much higher here but no snapshots or backups are available.
+    - There is no limit on your scratch directory at `/fast/users/$USER/scratch`.
+      However, **files placed here are automatically removed after 4 weeks.**
+      This is only appropriate for files during download or temporary files.
 
 ## Creating a Directory for Temporary Files
 

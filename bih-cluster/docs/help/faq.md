@@ -264,3 +264,9 @@ med-login1:~$ ssh med0XXX
 ## Snakemake DRMAA doesn't accept my Slurm parameters!?
 
 Yes. Unfortunately, [Slurm DRMAA differs slightly](../slurm/snakemake.md#limitations) from the original Slurm syntax.
+
+## Why am I getting multiple nodes to my job?
+
+Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
+Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
+Please use `--nodes=1` to force Slurm to allocate them on a single node.
