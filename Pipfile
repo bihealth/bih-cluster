@@ -10,7 +10,8 @@ mkdocs = ">=1.0"
 mkdocs-material = "*"
 pygments = ">=2.4"
 markdown = ">=3.2"
-pymdown-extensions = "<7,>=6.3"
+pymdown-extensions = "*"
+mkdocs-git-revision-date-localized-plugin = "*"
 
 [requires]
 python_version = "3.6"

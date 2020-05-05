@@ -13,8 +13,14 @@ edit_uri: 'edit/master/bih-cluster/docs/'
 copyright: 2016-2020, BIH HPC IT
 
 # Theming, Configuration
-theme: material
+theme:
+  name: material
 strict: true
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized
 
 # Extensions
 markdown_extensions:

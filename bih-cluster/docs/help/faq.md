@@ -60,7 +60,16 @@ If the problem persists, please report it to hpc-helpdesk@bihealth.de.
 
 ## My job terminated before being done. What happened?
 
-:construction: TODO: this needs to be updated to Slurm.
+First of all, look into your job logs.
+In the case that the job was terminated by Slurm (e.g., because it ran too long), you will find a message at the bottom.
+
+Otherwise, you can use `sacct -j JOBID` to read the information that the job accounting system has recorded for your job.
+Use the `--long` flag to see all fields (and probably pipe it into `less` as: `sacct -j JOBID --long | less -S`).
+Things to look out for:
+
+- What is the exit code?
+- Is the highest recorded memory usage too high/higher than expected (field `MaxRSS`)?
+- Is the running time too long/longer than expected (field `Elapsed`)?
 
 ## How can I create a new project?
 
@@ -119,11 +128,53 @@ cars.png  foo.png  img.R  Rplots.pdf
 
 ## My jobs don't get scheduled
 
-:construction: TODO: this has to be updated to Slurm.
+You can use `scontrol show job JOBID` to get the details displayed about your jobs.
+In the example below, we can see that the job is in the `PENDING` state.
+The `Reason` field tells us that the job did not scheduled because the specified dependency was neverfulfilled.
+You can find a list of all job reason codes in the [Slurm `squeue` documentation](https://slurm.schedmd.com/squeue.html#lbAF).
+
+```bash hl_lines="4"
+JobId=863089 JobName=pipeline_job.sh
+   UserId=holtgrem_c(100131) GroupId=hpc-ag-cubi(5272) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=PENDING Reason=DependencyNeverSatisfied Dependency=afterok:863087(failed)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A
+   SubmitTime=2020-05-03T18:57:34 EligibleTime=Unknown
+   AccrueTime=Unknown
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-05-03T18:57:34
+   Partition=debug AllocNode:Sid=med-login1:28797
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=(null)
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
+   WorkDir=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
+   StdErr=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+   StdIn=/dev/null
+   StdOut=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+   Power=
+   MailUser=(null) MailType=NONE
+
+```
 
 ## My jobs don't run in the partition I expect
 
-:construction: TODO: this has to be updated to Slurm.
+You can see the partition that your job runs in with `squeue -j JOBID`:
+
+```bash
+med-login1:~$ squeue -j 877092
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            877092    medium snakejob holtgrem  R       0:05      1 med0626
+```
+
+See [Job Scheduler](/overview/job-scheduler/) for information about the partition's properties.
+To get your job to run in the `medium` partition, for example use the `--partition=medium` or `-p medium` arguments to your `srun` or `sbatch` commands.
 
 ## My jobs get killed after four hours
 
@@ -162,12 +213,26 @@ As conda installations are big and contain many files, they should go into your 
 ## I have problems connecting to the GPU node! What's wrong?
 
 Please check whether there might be other jobs waiting in front of you!
+The following `squeue` call will show the allocated GPUs of jobs in the `gpu` queue.
+This is done by specifying a format string and using the `%b` field.
 
-:construction: TODO: this has to be updated to Slurm
+```bash
+squeue -o "%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b" -p gpu
+     JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST(R TRES_PER_NODE
+    872571 gpu       bash                 user1       R   15:53:25      1 med0303    gpu:tesla:1
+    862261 gpu       bash                 user2       R 2-16:26:59      1 med0304    gpu:tesla:4
+    860771 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
+    860772 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
+    860773 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
+    860770 gpu       kidney.job           user3       R 4-03:23:08      1 med0301    gpu:tesla:1
+    860766 gpu       kidney.job           user3       R 4-03:23:11      1 med0303    gpu:tesla:1
+    860767 gpu       kidney.job           user3       R 4-03:23:11      1 med0301    gpu:tesla:1
+    860768 gpu       kidney.job           user3       R 4-03:23:11      1 med0301    gpu:tesla:1
+```
+
+In the example above, user1 has one job with one GPU running on med0303, user2 has one job running with 4 GPUs on med0304 and user3 has 7 jobs in total running of different machines with one GPU each.
 
 ## How can I access graphical user interfaces (such as for Matlab) on the cluster?
-
-:construction: TODO: this has to be updated to Slurm
 
 1. First of all, you will need an X(11) server on your local machine (see [Wikipedia: X Window System](https://en.wikipedia.org/wiki/X_Window_System).
   This server offers a "graphical surface" that the programs on the cluster can then paint on.
