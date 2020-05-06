@@ -19,6 +19,7 @@ There is a large number of Linux tutorials online including:
 - [Digital Ocean Tutorials](https://www.digitalocean.com/community/tutorials)
     - [Linux Basics](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-basics)
     - [Environment Variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps)
+- [Using Jupyter Notebooks to manage SLURM jobs](https://www.kth.se/blogs/pdc/2019/01/using-jupyter-notebooks-to-manage-slurm-jobs/)
 
 ## Internet Forums
 
