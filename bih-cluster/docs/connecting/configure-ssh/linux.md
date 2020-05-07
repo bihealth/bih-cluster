@@ -184,7 +184,7 @@ Host mdcjail
 Now, do
 
 ```
-# ssh mdcjail ssh -A -t -l MDC_USER med-login<X>
+# ssh mdcjail ssh -A -t -l MDC_USER med-login<X>.bihealth.org
 ```
 
 * `<X>` can be either `1` or `2`
