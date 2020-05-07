@@ -1697,7 +1697,7 @@ snakemake <span class="se">\</span>
 <span class="s2">        --nodes=1 \</span>
 <span class="s2">        --mem-per-cpu=1000 \</span>
 <span class="s2">        -n 8 \</span>
-<span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/%j.log&quot;</span> <span class="se">\</span>
+<span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/%x-%j.log&quot;</span> <span class="se">\</span>
     -j <span class="m">2</span> <span class="se">\</span>
     -k <span class="se">\</span>
     -p
@@ -1722,10 +1722,10 @@ the script. This is useful for debugging.</p>
 <div class="highlight"><pre><span></span><code>&lt;mem-per-cpu&gt; * &lt;n&gt;
 </code></pre></div>
 
-<p>So in our example the total memory requested on one node would be 40GB.</p>
+<p>So in our example the total memory requested on one node would be 8GB.</p>
 <p>The other parameters provided to Snakemake are:</p>
 <ul>
-<li><code>-j</code>: Use 2 cores for this Snakemake run</li>
+<li><code>-j</code>: Use 2 cores for this Snakemake run. In this scenario the parameter determines how many jobs will be submitted to SLURM at a time.</li>
 <li><code>-k</code>: Keep going if a job fails</li>
 <li><code>-p</code>: Print out shell commands</li>
 </ul>
