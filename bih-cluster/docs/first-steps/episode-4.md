@@ -80,7 +80,7 @@ snakemake \
         --nodes=1 \
         --mem-per-cpu=1000 \
         -n 8 \
-        -o $LOGDIR/%j.log" \
+        -o $LOGDIR/%x-%j.log" \
     -j 2 \
     -k \
     -p
@@ -108,11 +108,11 @@ Note that the memory is not shared among the cores. This means the final memory 
 <mem-per-cpu> * <n>
 ```
 
-So in our example the total memory requested on one node would be 40GB.
+So in our example the total memory requested on one node would be 8GB.
 
 The other parameters provided to Snakemake are:
 
-* `-j`: Use 2 cores for this Snakemake run
+* `-j`: Use 2 cores for this Snakemake run. In this scenario the parameter determines how many jobs will be submitted to SLURM at a time.
 * `-k`: Keep going if a job fails
 * `-p`: Print out shell commands
 
