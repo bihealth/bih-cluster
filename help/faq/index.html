@@ -525,6 +525,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-select-a-certain-cpu-architecture" class="md-nav__link">
+    How can I select a certain CPU architecture?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1954,6 +1961,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-select-a-certain-cpu-architecture" class="md-nav__link">
+    How can I select a certain CPU architecture?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2186,6 +2200,16 @@ This is done by specifying a format string and using the <code>%b</code> field.<
 <p>Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
 Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
 Please use <code>--nodes=1</code> to force Slurm to allocate them on a single node.</p>
+<h2 id="how-can-i-select-a-certain-cpu-architecture">How can I select a certain CPU architecture?<a class="headerlink" href="#how-can-i-select-a-certain-cpu-architecture" title="Permanent link">&para;</a></h2>
+<p>You can select the CPU architecture by using the <code>-C</code>/<code>--constraints</code> flag to <code>sbatch</code> and <code>srun</code>.
+The following are available (as detected by the Linux kernel):</p>
+<ul>
+<li><code>ivybridge</code> (96 nodes, plus 4 high-memory nodes)</li>
+<li><code>haswell</code> (16 nodes)</li>
+<li><code>broadwell</code> (112 nodes)</li>
+<li><code>skylake</code> (16 nodes, plus 4 GPU nodes)</li>
+</ul>
+<p>You can specify contraints with OR such as <code>--constraints=haswell|broadwell|skylake</code>.</p>
                 
                   
                     
@@ -2194,7 +2218,7 @@ Please use <code>--nodes=1</code> to force Slurm to allocate them on a single no
 <div class="md-source-date">
   <small>
     
-      Last update: May 6, 2020
+      Last update: May 7, 2020
     
   </small>
 </div>
