@@ -270,3 +270,15 @@ Yes. Unfortunately, [Slurm DRMAA differs slightly](../slurm/snakemake.md#limitat
 Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
 Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
 Please use `--nodes=1` to force Slurm to allocate them on a single node.
+
+## How can I select a certain CPU architecture?
+
+You can select the CPU architecture by using the `-C`/`--constraints` flag to `sbatch` and `srun`.
+The following are available (as detected by the Linux kernel):
+
+- `ivybridge` (96 nodes, plus 4 high-memory nodes)
+- `haswell` (16 nodes)
+- `broadwell` (112 nodes)
+- `skylake` (16 nodes, plus 4 GPU nodes)
+
+You can specify contraints with OR such as `--constraints=haswell|broadwell|skylake`.
