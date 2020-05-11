@@ -273,7 +273,7 @@ Please use `--nodes=1` to force Slurm to allocate them on a single node.
 
 ## How can I select a certain CPU architecture?
 
-You can select the CPU architecture by using the `-C`/`--constraints` flag to `sbatch` and `srun`.
+You can select the CPU architecture by using the `-C`/`--constraint` flag to `sbatch` and `srun`.
 The following are available (as detected by the Linux kernel):
 
 - `ivybridge` (96 nodes, plus 4 high-memory nodes)
