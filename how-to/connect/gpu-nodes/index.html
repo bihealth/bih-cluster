@@ -1801,9 +1801,9 @@ True
 
 <h2 id="bonus-2-is-the-gpu-running">Bonus <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/squidfunk/mkdocs-material/issues/2" title="GitHub Issue: squidfunk/mkdocs-material#2">#2</a>: Is the GPU running?<a class="headerlink" href="#bonus-2-is-the-gpu-running" title="Permanent link">&para;</a></h2>
 <p>To find out how active the GPU nodes actually are, you can connect to the nodes (without allocating a GPU you can do this even if the node is full) and then use <code>nvidia-smi</code>.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty --nodelist<span class="o">=</span>med0301 bash
+<div class="highlight"><pre><span></span><code>med-login1:~$ ssh med0301 bash
 med0301:~$ nvidia-smi
-Fri Mar  <span class="m">6</span> <span class="m">11</span>:10:08 <span class="m">2020</span>       
+Fri Mar  <span class="m">6</span> <span class="m">11</span>:10:08 <span class="m">2020</span>
 +-----------------------------------------------------------------------------+
 <span class="p">|</span> NVIDIA-SMI <span class="m">440</span>.33.01    Driver Version: <span class="m">440</span>.33.01    CUDA Version: <span class="m">10</span>.2     <span class="p">|</span>
 <span class="p">|</span>-------------------------------+----------------------+----------------------+
