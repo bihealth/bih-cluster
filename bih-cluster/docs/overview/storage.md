@@ -1,3 +1,7 @@
+!!! todo "update old GPUs"
+
+    TODO: Old GPUs are listed.
+
 # Nodes and Storage Volumes
 
 !!! info "No mounting **on** the cluster itself."
@@ -34,6 +38,8 @@ There are a number of nodes that are invisible to non-admin staff, hosting the q
   - 64 nodes with Infiniband interconnect
   - Intel Xeon E5-2650 v2 @2.60Ghz, 16 cores x2 threading
   - 128 GB RAM
+- `med0301..0304`
+    - 4 nodes with 4 Tesla V100 GPUs each
 - `med0401..0405` special purpose/high-memory machines
   - Intel Xeon E5-4650 v2 @2.40GHz, 40 cores x2 threading
   - `med0401` and `med0402`
