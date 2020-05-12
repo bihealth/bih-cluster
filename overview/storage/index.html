@@ -1680,7 +1680,11 @@
                   
                 
                 
-                <h1 id="nodes-and-storage-volumes">Nodes and Storage Volumes<a class="headerlink" href="#nodes-and-storage-volumes" title="Permanent link">&para;</a></h1>
+                <div class="admonition todo">
+<p class="admonition-title">update old GPUs</p>
+<p>TODO: Old GPUs are listed.</p>
+</div>
+<h1 id="nodes-and-storage-volumes">Nodes and Storage Volumes<a class="headerlink" href="#nodes-and-storage-volumes" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">No mounting <strong>on</strong> the cluster itself.</p>
 <p>For various technical and security-related reasons, it is not possible to mount anything on the cluster nodes by users.
@@ -1712,6 +1716,10 @@ There are a number of nodes that are invisible to non-admin staff, hosting the q
 <li>64 nodes with Infiniband interconnect</li>
 <li>Intel Xeon E5-2650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz, 16 cores x2 threading</li>
 <li>128 GB RAM</li>
+<li><code>med0301..0304</code><ul>
+<li>4 nodes with 4 Tesla V100 GPUs each</li>
+</ul>
+</li>
 <li><code>med0401..0405</code> special purpose/high-memory machines</li>
 <li>Intel Xeon E5-4650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.40GHz, 40 cores x2 threading</li>
 <li><code>med0401</code> and <code>med0402</code><ul>
@@ -1766,7 +1774,7 @@ In contrast to "single server" NFS systems, the system can provide large bandwid
 <div class="md-source-date">
   <small>
     
-      Last update: May 11, 2020
+      Last update: May 12, 2020
     
   </small>
 </div>
