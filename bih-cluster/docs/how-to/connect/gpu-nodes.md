@@ -97,9 +97,9 @@ med-login1:~$ squeue | egrep -iw 'JOBID|gpu'
 To find out how active the GPU nodes actually are, you can connect to the nodes (without allocating a GPU you can do this even if the node is full) and then use `nvidia-smi`.
 
 ```bash
-med-login1:~$ srun --pty --nodelist=med0301 bash
+med-login1:~$ ssh med0301 bash
 med0301:~$ nvidia-smi
-Fri Mar  6 11:10:08 2020       
+Fri Mar  6 11:10:08 2020
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |
 |-------------------------------+----------------------+----------------------+

@@ -24,7 +24,7 @@ med0401:~$
 You can also pick one of the hostnames:
 
 ```
-med-login1:~$ srun --nodelist=med0403 --pty -p highmem bash -i
+med-login1:~$ ssh med0403
 med0403:~$
 ```
 
