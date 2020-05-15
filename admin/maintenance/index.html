@@ -1638,18 +1638,24 @@ We are currently extending our <a href="slurm/quickstart">Slurm-specific documen
 <li><code>May 1, 2020:</code> Keys are now <strong>only</strong> taken from central MDC/Charite servers.
   <strong>You must upload your keys to central servers by then.</strong></li>
 </ul>
-<h2 id="head-node-migration-in-planning">Head Node Migration (in planning)<a class="headerlink" href="#head-node-migration-in-planning" title="Permanent link">&para;</a></h2>
+<h2 id="login-node-migration">Login Node Migration<a class="headerlink" href="#login-node-migration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
+<li>Further, they will be available as <code>login-1.research.hpc.bihealth.org</code> and <code>login-2...</code> instead of  <code>med-login{1,2}</code>.</li>
+<li>The aim is to improve stability and make everything easier to manage by administration.</li>
+</ul>
+<p><strong>Schedule</strong></p>
+<ul>
+<li><code>May 15, 2020:</code> Availability of the head nodes for testing.</li>
+<li><code>May 31, 2020:</code> (planned) New login nodes are the preferred connection method.</li>
+<li><code>June 15, 2020:</code> Old login nodes are switched off.</li>
+</ul>
+<h2 id="transfer-node-migration-in-planning">Transfer Node Migration (in planning)<a class="headerlink" href="#transfer-node-migration-in-planning" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
 No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
 </div>
-<ul>
-<li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
-<li>Further, they will be available as <code>{login,transfer}.research.hpc.bihealth.org</code> instead of  <code>med-login{1,2}</code> and <code>med-transfer{1,2}</code>.</li>
-<li>The aim is to improve stability and make everything easier to manage by administration.</li>
-<li>The planned grace period is 1 month.</li>
-</ul>
 <h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1774,7 +1780,7 @@ you encounter any unexpected behavior of the cluster during this time, please le
 <div class="md-source-date">
   <small>
     
-      Last update: May 12, 2020
+      Last update: May 15, 2020
     
   </small>
 </div>
