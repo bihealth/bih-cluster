@@ -40,17 +40,24 @@ SSH Key Management has switched to using Charite and MDC ActiveDirectory servers
 - `May 1, 2020:` Keys are now **only** taken from central MDC/Charite servers.
   **You must upload your keys to central servers by then.**
 
-## Head Node Migration (in planning)
+## Login Node Migration
+
+- The login nodes will be moved from physical machines to virtual machines in high-availability mode.
+- Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
+- The aim is to improve stability and make everything easier to manage by administration.
+
+**Schedule**
+
+- `May 15, 2020:` Availability of the head nodes for testing.
+- `May 31, 2020:` (planned) New login nodes are the preferred connection method.
+- `June 15, 2020:` Old login nodes are switched off.
+
+## Transfer Node Migration (in planning)
 
 !!! note
 
     :construction: This task is currently being planned.
     No schedule has been fixed yet. :construction:
-
-- The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-- Further, they will be available as `{login,transfer}.research.hpc.bihealth.org` instead of  `med-login{1,2}` and `med-transfer{1,2}`.
-- The aim is to improve stability and make everything easier to manage by administration.
-- The planned grace period is 1 month.
 
 ## CentOS 8 Migration (in planning)
 

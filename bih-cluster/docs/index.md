@@ -28,8 +28,8 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
     - :test_tube: GPU upgrade - testing
     - :test_tube: SLURM scheduler - testing
     - :test_tube: Documentation migration - April 15, 2020
+    - :test_tube: Head node migration -- June 15, 2020
     - :hourglass: SGE scheduler end of life - June 31, 2020
-    - :calendar: Head node migration -- ~May 31, 2020
     - :calendar: CentOS 8 migration -- summer 2020
     - :calendar: `/fast` => `/data` -- autumn 2020
 
