@@ -6,6 +6,19 @@ There currently is no maintenance planned.
 
 # Pending Changes
 
+## Network Maintenance: June 3, 2020
+
+On June 3, we need to perform a network maintenance at 8 am.
+
+If everything goes well, there might be a short delay in network packages and connections will survive.
+In this case, the maintenance will end 8:30 am.
+
+Otherwise, the maintenance will finish by noon.
+
+## Cluster Maintenance with Downtime: June 16
+
+We need to schedule a full cluster downtime on June 16.
+
 ## Slurm Migration
 
 We will switch to the [Slurm](https://slurm.schedmd.com/) workload scheduler (from the legacy SGE).
