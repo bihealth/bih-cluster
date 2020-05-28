@@ -1847,6 +1847,13 @@ The files are served over an encrypted connection using WebDAV (which uses HTTPS
 <h3 id="from-linux">From Linux<a class="headerlink" href="#from-linux" title="Permanent link">&para;</a></h3>
 <p>We describe how to access the files on the command line using the <code>lftp</code> program.
 The program is preinstalled on the BIH (and the MDC cluster) and you should be able to just install it with <code>yum install lftp</code> on CentOS/Red Hat or <code>apt-get install lftp</code> on Ubuntu/Debian.</p>
+<p>When using <code>lftp</code>, you have to add some configuration first:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cat &gt;&gt;~/.lftprc &quot;EOF&quot;</span>
+<span class="nb">set</span> ssl:verify-certificate no
+<span class="nb">set</span> ftp:ssl-force yes
+EOF
+</code></pre></div>
+
 <p>In case that you want to access the files using a graphical user interface, search Google for "WebDAV" and your operating system or desktop environment.
 File browsers such as Nautilus and Thunar have built-in WebDAV support.</p>
 <h4 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h4>
@@ -1980,7 +1987,7 @@ In this case, try again in one hour.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: May 27, 2020
+      Last update: May 28, 2020
     
   </small>
 </div>
