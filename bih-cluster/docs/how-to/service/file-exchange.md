@@ -36,6 +36,15 @@ The following describes how to access the files in the box from different platfo
 We describe how to access the files on the command line using the `lftp` program.
 The program is preinstalled on the BIH (and the MDC cluster) and you should be able to just install it with `yum install lftp` on CentOS/Red Hat or `apt-get install lftp` on Ubuntu/Debian.
 
+When using `lftp`, you have to add some configuration first:
+
+```bash
+# cat >>~/.lftprc "EOF"
+set ssl:verify-certificate no
+set ftp:ssl-force yes
+EOF
+```
+
 In case that you want to access the files using a graphical user interface, search Google for "WebDAV" and your operating system or desktop environment.
 File browsers such as Nautilus and Thunar have built-in WebDAV support.
 
