@@ -1848,7 +1848,7 @@ The files are served over an encrypted connection using WebDAV (which uses HTTPS
 <p>We describe how to access the files on the command line using the <code>lftp</code> program.
 The program is preinstalled on the BIH (and the MDC cluster) and you should be able to just install it with <code>yum install lftp</code> on CentOS/Red Hat or <code>apt-get install lftp</code> on Ubuntu/Debian.</p>
 <p>When using <code>lftp</code>, you have to add some configuration first:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cat &gt;&gt;~/.lftprc &quot;EOF&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># cat &gt;&gt;~/.lftprc &lt;&lt;&quot;EOF&quot;</span>
 <span class="nb">set</span> ssl:verify-certificate no
 <span class="nb">set</span> ftp:ssl-force yes
 EOF
