@@ -39,7 +39,7 @@ The program is preinstalled on the BIH (and the MDC cluster) and you should be a
 When using `lftp`, you have to add some configuration first:
 
 ```bash
-# cat >>~/.lftprc "EOF"
+# cat >>~/.lftprc <<"EOF"
 set ssl:verify-certificate no
 set ftp:ssl-force yes
 EOF
