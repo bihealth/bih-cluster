@@ -10,7 +10,7 @@ Install Jupyter on the cluster (via conda, by creating a custom environment)
 
 ```bash
 med0xxx:~$ conda create -n jupyter jupyter
-med0xxx:~$ source activate jupyter
+med0xxx:~$ conda activate jupyter
 ```
 
 (If you want to work in a language other than python, you can install more Jupyter language kernel, see the [kernel list](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels))
