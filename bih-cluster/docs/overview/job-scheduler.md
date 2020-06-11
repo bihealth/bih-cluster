@@ -7,11 +7,24 @@ In Slurm nomenclature, the nodes are assigned to one or more **partitions** and 
     Users should only select partitions explictely if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
     Otherwise, they should let Slurm decide about the optimal execution.
 
+!!! todo "MPI Partition"
+    We recently introduced an `mpi` partition that allows you to allocte more than one node.
+    We will update this soon.
+
 ## Partitions
 
 The BIH HPC has the following partitions.
 
+!!! important "Use `mpi` Partition for Multi-Node Jobs"
+    All partitions except for the `mpi` partition have the maximal number of availble nodes set to `1`.
+    This makes the system easier to use for single-node/multi-core apps as users don't have to specify `--min-nodes=1 --max-nodes=1`.
+    Simply use the `mpi` partition for multi-node jobs.
+
 ### `debug`
+
+!!! todo "debug/default partition"
+    Actually, the default partition is the "debug" partition for now.
+    We will rename things soon.
 
 ### `default`
 
@@ -83,3 +96,17 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#high-me
 * **maximal running time:** 14 days of maximal running time
 * **partition name:** `highmem`
 * **argument string:** `-p highmem`, maximal running time: `-t 14-00:00:00`
+
+### `mpi`
+
+You can submit multi-node jobs into the `mpi` partition.
+The maximal running time is relatively high (14 days) to allow for longer jobs.
+Don't abuse this.
+Contact hpc-helpdesk@bihealth.de if you have longer running jobs that you really cannot make run any shorter for assistance.
+
+For access to it you have register [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
+See [Resource Registration: GPU Nodes](../admin/resource-registration.md#high-memory-nodes) for details.
+
+* **maximal running time:** 14 days of maximal running time
+* **partition name:** `highmem`
+* **argument string:** `-p mpi`, maximal running time: `-t 14-00:00:00`
