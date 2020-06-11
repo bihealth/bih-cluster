@@ -480,6 +480,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mpi" class="md-nav__link">
+    mpi
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1737,6 +1744,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#mpi" class="md-nav__link">
+    mpi
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1770,9 +1784,25 @@ In Slurm nomenclature, the nodes are assigned to one or more <strong>partitions<
 <p>Users should only select partitions explictely if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
 Otherwise, they should let Slurm decide about the optimal execution.</p>
 </div>
+<div class="admonition todo">
+<p class="admonition-title">MPI Partition</p>
+<p>We recently introduced an <code>mpi</code> partition that allows you to allocte more than one node.
+We will update this soon.</p>
+</div>
 <h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
 <p>The BIH HPC has the following partitions.</p>
+<div class="admonition important">
+<p class="admonition-title">Use <code>mpi</code> Partition for Multi-Node Jobs</p>
+<p>All partitions except for the <code>mpi</code> partition have the maximal number of availble nodes set to <code>1</code>.
+This makes the system easier to use for single-node/multi-core apps as users don't have to specify <code>--min-nodes=1 --max-nodes=1</code>.
+Simply use the <code>mpi</code> partition for multi-node jobs.</p>
+</div>
 <h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
+<div class="admonition todo">
+<p class="admonition-title">debug/default partition</p>
+<p>Actually, the default partition is the "debug" partition for now.
+We will rename things soon.</p>
+</div>
 <h3 id="default"><code>default</code><a class="headerlink" href="#default" title="Permanent link">&para;</a></h3>
 <p>This partition is for normal jobs running in less than 4 hours.
 The number of overall allows jobs by one user is high to reward users for chopping down their tasks into smaller parts and making them scheduler friendly.</p>
@@ -1835,6 +1865,18 @@ See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Regi
 <li><strong>partition name:</strong> <code>highmem</code></li>
 <li><strong>argument string:</strong> <code>-p highmem</code>, maximal running time: <code>-t 14-00:00:00</code></li>
 </ul>
+<h3 id="mpi"><code>mpi</code><a class="headerlink" href="#mpi" title="Permanent link">&para;</a></h3>
+<p>You can submit multi-node jobs into the <code>mpi</code> partition.
+The maximal running time is relatively high (14 days) to allow for longer jobs.
+Don't abuse this.
+Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
+<p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
+See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Registration: GPU Nodes</a> for details.</p>
+<ul>
+<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
+<li><strong>partition name:</strong> <code>highmem</code></li>
+<li><strong>argument string:</strong> <code>-p mpi</code>, maximal running time: <code>-t 14-00:00:00</code></li>
+</ul>
                 
                   
                     
@@ -1843,7 +1885,7 @@ See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Regi
 <div class="md-source-date">
   <small>
     
-      Last update: May 28, 2020
+      Last update: June 11, 2020
     
   </small>
 </div>
