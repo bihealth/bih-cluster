@@ -3,8 +3,8 @@
 The "Slurm Scheduler" section assumes that you are already familiar with the HPC clusters in general, the BIH HPC in particular.
 For example, you have read the sections
 
-- Overview, starting with [For the Impatient](../overview/for-the-impatient), and
-- First Steps/Tutorial, starting with [Episode 0](../first-steps/episode-0).
+- Overview, starting with [For the Impatient](/overview/for-the-impatient), and
+- First Steps/Tutorial, starting with [Episode 0](/first-steps/episode-0).
 
 Thus, the intended audience has already used HPC clusters (or the BIH HPC) a bit and is familiar with the basics of Slurm.
 The subsections will walk you through the different aspects of using Slurm.
