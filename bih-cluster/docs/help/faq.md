@@ -281,6 +281,6 @@ The following are available (as detected by the Linux kernel):
 - `broadwell` (112 nodes)
 - `skylake` (16 nodes, plus 4 GPU nodes)
 
-You can specify contraints with OR such as `--constraints=haswell|broadwell|skylake`.
+You can specify contraints with OR such as `--constraint=haswell|broadwell|skylake`.
 You can see the assignment of architectures to nodes using the `sinfo -o "%8P %.5a %.10l %.6D %.6t %10f %N"` command.
 This will also display node partition, availability etc.
