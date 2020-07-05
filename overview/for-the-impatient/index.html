@@ -1811,7 +1811,7 @@ Start exploring from the <a href="home">Wiki home</a>.</p>
 <ul>
 <li>2 login nodes for users <code>med-login1</code> and <code>med-login2</code> (for interactive sessions only),</li>
 <li>2 nodes for file transfers <code>med-transfer1</code> and <code>med-transfer2</code>,</li>
-<li>a scheduling system using SLURM (SGE is being phased out),</li>
+<li>a scheduling system using Slurm,</li>
 <li>approximately 200 general purpose compute nodes <code>med01XX</code>, <code>med02XX</code>, <code>med05XX</code>, <code>med06XX</code>, <code>med07XX</code>.</li>
 <li>a few high memory nodes <code>med040[1-4]</code>,</li>
 <li>4 nodes with 4 Tesla GPUs each (!) <code>med030[1-4]</code>,</li>
@@ -1828,7 +1828,7 @@ Start exploring from the <a href="home">Wiki home</a>.</p>
 <li>Every time you type <code>srun</code> to go to a compute node you might end up on a different host.</li>
 <li>Most directories on the nodes are not shared, including <code>/tmp</code>.</li>
 <li>The <code>/fast</code> directory is shared throughout the cluster which contains your home, group home, and project directories.</li>
-<li>You will not get <code>root</code> or <code>sudo</code> permissions on the cluster.</li>
+<li><strong>You will not get <code>root</code> or <code>sudo</code> permissions on the cluster.</strong></li>
 <li>You should use <em>batch jobs</em> (<code>sbatch</code>) over calling programs interactively.</li>
 </ul>
 <h2 id="what-the-cluster-is-and-is-not">What the Cluster Is and Is NOT<a class="headerlink" href="#what-the-cluster-is-and-is-not" title="Permanent link">&para;</a></h2>
@@ -1840,10 +1840,10 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
   It is there to be used for you and your science.
   <strong>We trust you</strong> to behave in a collaboratively.
   We will monitor usage, though, and call out offenders.</li>
-<li>With its ~200 nodes, ~6400 threads and fast parallel I/O, it is a powerful resource optimized for bioinformatics sequencing data analysis.</li>
+<li>With its ~200 nodes, ~6400 threads and fast parallel I/O, it is a powerful resource for life science high performance computation, originally optimized at bioinformatics sequence processing.</li>
 <li>A place for data move data at the beginning of your project.
   By definition, every project has an end.
-  Being the place it is, your project data needs to leave the cluster at the end of the cluster.</li>
+  <strong>Your project data needs to leave the cluster at the end of the project.</strong></li>
 <li>A collaborative resource with central administration managed by BIH HPC IT and supported via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a></li>
 </ul>
 <p><strong>IT IS NOT</strong></p>
@@ -1884,8 +1884,23 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
 <li>If you are part of an AG/lab working on the cluster, the group directory is in <code>/fast/groups/$AG</code>.</li>
 <li>Projects are located in <code>/fast/projects/$PROJECT</code>.</li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">So-called dot files/directories filling up your home?</p>
+<p>Files and directories starting with a dot "<code>.</code>" are not shown with the "ls" command.
+May users run into problems with directories such as <code>$HOME/.local</code> but also non-dot directories such as <code>$HOME/R</code> filling up their storage.
+You should move such large directories to your work volume and only keep a symlink in your <code>$HOME</code>.</p>
+<p>Here is how you find large directories:</p>
+<div class="highlight"><pre><span></span><code>host:~$ du -shc ~/.??* ~/*
+</code></pre></div>
+
+<p>Here is how you move them to your work and replace them with a symlink:</p>
+<div class="highlight"><pre><span></span><code>host:~$ mv ~/.local ~/work/.local
+host:~$ ln -s ~/work/.local ~/.local
+</code></pre></div>
+
+</div>
 <h3 id="temporary-directories">Temporary Directories<a class="headerlink" href="#temporary-directories" title="Permanent link">&para;</a></h3>
-<p>Note that you also have access to <code>/tmp</code> on the individual nodes but the disk is <strong>slow</strong> and <strong>small</strong>.
+<p>Note that you also have access to <code>/tmp</code> on the individual nodes but the disk is <strong>small</strong> and might be a <strong>slow</strong> spinning disk.
 If you are processing large NGS data, we recommend you create <code>/fast/users/$USER/scratch/tmp</code> and set the environment variable <code>TMPDIR</code> to point there.
 However, for creating locks special Unix files such as sockets or fifos, <code>/tmp</code> is the right place.
 <strong>Note that files placed in your <code>scratch</code> directory will be removed automatically after 4 weeks.</strong>
