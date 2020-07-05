@@ -33,24 +33,3 @@ $ module load gcc/7.2.0-0
 $ which gcc
 /opt/local/gcc-7.2.0-0/bin/gcc
 ```
-
-## Deprecated Legacy Cubit Environment Modules
-
-Previuosly, cubit also contained (now unmaintained) programs available through environment modules. To get access to these, you can use the following command:
-
-```
-# module use /fast/projects/cubit/current/tools/easybuild/modules/all
-```
-
-You can also add the following line to your `~/.bashrc` to not type this every time after login:
-
-```
-case "${HOSTNAME}" in
-    med-login*|med-transfer*)
-        ;;
-    *)
-        module use /fast/projects/cubit/current/tools/easybuild/modules/all
-        ;;
-esac
-```
-
