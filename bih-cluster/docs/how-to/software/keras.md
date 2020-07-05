@@ -4,7 +4,8 @@
 Because the GPU nodes `med030[1-4]` has four GPU units we can train a model by using multiple GPUs in parallel. This How-To gives an example with Keras 2.2.4 together and tensorflow. Finally soem hints how you can submit a job on the cluster.
 
 !!! hint
-    With tensorflow > 2.0 and newer keras version the (`multi_gpu_model`)[https://www.tensorflow.org/api_docs/python/tf/keras/utils/multi_gpu_model] is depricate and you have to use the (`MirroredStrategy`)[https://www.tensorflow.org/api_docs/python/tf/distribute/MirroredStrategy]
+
+    With tensorflow > 2.0 and newer keras version the [`multi_gpu_model`](https://www.tensorflow.org/api_docs/python/tf/keras/utils/multi_gpu_model) is deprecated and you have to use the [`MirroredStrategy`](https://www.tensorflow.org/api_docs/python/tf/distribute/MirroredStrategy).
     
   
 # Keras code
