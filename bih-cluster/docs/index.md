@@ -25,14 +25,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :test_tube: GPU upgrade - testing
-    - :test_tube: SLURM scheduler - testing
-    - :test_tube: Documentation migration - April 15, 2020
-    - :test_tube: Head node migration -- July 2020
-    - :hourglass: SGE scheduler end of life - June 31, 2020
-    - :hourglass: network maintenance - June 3, 2020
-    - :hourglass: cluster maintenance (downtime) - June 16, 2020
-    - :calendar: CentOS 8 migration -- summer 2020
+    - :test_tube: Head node migration -- July/August 2020
     - :calendar: `/fast` => `/data` -- autumn 2020
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
