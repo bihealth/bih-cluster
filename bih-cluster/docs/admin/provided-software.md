@@ -12,7 +12,7 @@ Currently, this includes:
 - LLVM v6.0.0
 - OpenMPI v4.0.3
 
-On the GPU node, this also includes several NVIDIA CUDA versions.
+On the GPU node, this also includes a recent NVIDIA CUDA versions.
 
 To see the available software, use `module avail` on the compute nodes (this will not work on the login nodes):
 
