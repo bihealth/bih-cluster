@@ -24,3 +24,11 @@ The following topics are out of scope for the BIH HPC Helpdesk:
 
 - Generic Linux or programming questions (try [stackoverflow.com](http://stackoverflow.com)).
 - Managing users, groups, and projects on the clusters (use hpc-gatekeeper@bihealth.de).
+- Generic help with Snakemake or other workflow engines (See [Stackoverflow](https://stackoverflow.com/questions/tagged/snakemake) for getting help with Snakemake).
+- Help with bioinformatics or other scientific software.
+  Please contact the authors/communities of these software for help (also known as "upstream").
+  
+We're happy to see if we can help when there is a concrete problem with the software, e.g.,
+
+- something that breaks from one week to another without you changing anything and you assume a change on the cluster, or
+- you need a generic dependency that you cannot install via conda or on your own.
