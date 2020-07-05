@@ -8,7 +8,7 @@ In Slurm nomenclature, the nodes are assigned to one or more **partitions** and 
     Otherwise, they should let Slurm decide about the optimal execution.
 
 !!! todo "MPI Partition"
-    We recently introduced an `mpi` partition that allows you to allocte more than one node.
+    We recently introduced an `mpi` partition that allows you to allocate more than one node.
     We will update this soon.
 
 ## Partitions
