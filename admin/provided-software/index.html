@@ -265,42 +265,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Provided Software
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
     <a href="./" title="Provided Software" class="md-nav__link md-nav__link--active">
       Provided Software
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deprecated-legacy-cubit-environment-modules" class="md-nav__link">
-    Deprecated Legacy Cubit Environment Modules
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -1617,23 +1584,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#deprecated-legacy-cubit-environment-modules" class="md-nav__link">
-    Deprecated Legacy Cubit Environment Modules
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1680,21 +1630,6 @@ This will adjust the environment variables accordingly, in particular update <co
 $ module load gcc/7.2.0-0
 $ which gcc
 /opt/local/gcc-7.2.0-0/bin/gcc
-</code></pre></div>
-
-<h2 id="deprecated-legacy-cubit-environment-modules">Deprecated Legacy Cubit Environment Modules<a class="headerlink" href="#deprecated-legacy-cubit-environment-modules" title="Permanent link">&para;</a></h2>
-<p>Previuosly, cubit also contained (now unmaintained) programs available through environment modules. To get access to these, you can use the following command:</p>
-<div class="highlight"><pre><span></span><code># module use /fast/projects/cubit/current/tools/easybuild/modules/all
-</code></pre></div>
-
-<p>You can also add the following line to your <code>~/.bashrc</code> to not type this every time after login:</p>
-<div class="highlight"><pre><span></span><code>case &quot;${HOSTNAME}&quot; in
-    med-login*|med-transfer*)
-        ;;
-    *)
-        module use /fast/projects/cubit/current/tools/easybuild/modules/all
-        ;;
-esac
 </code></pre></div>
                 
                   
