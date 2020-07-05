@@ -10,7 +10,7 @@ The cluster consists of the following major components:
 
 - 2 login nodes for users `med-login1` and `med-login2` (for interactive sessions only),
 - 2 nodes for file transfers `med-transfer1` and `med-transfer2`,
-- a scheduling system using SLURM (SGE is being phased out),
+- a scheduling system using Slurm,
 - approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
 - a few high memory nodes `med040[1-4]`,
 - 4 nodes with 4 Tesla GPUs each (!) `med030[1-4]`,
@@ -30,7 +30,7 @@ The differences include:
 - Every time you type `srun` to go to a compute node you might end up on a different host.
 - Most directories on the nodes are not shared, including `/tmp`.
 - The `/fast` directory is shared throughout the cluster which contains your home, group home, and project directories.
-- You will not get `root` or `sudo` permissions on the cluster.
+- **You will not get `root` or `sudo` permissions on the cluster.**
 - You should use *batch jobs* (`sbatch`) over calling programs interactively.
 
 ## What the Cluster Is and Is NOT
@@ -44,10 +44,10 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
   It is there to be used for you and your science.
   **We trust you** to behave in a collaboratively.
   We will monitor usage, though, and call out offenders.
-- With its ~200 nodes, ~6400 threads and fast parallel I/O, it is a powerful resource optimized for bioinformatics sequencing data analysis.
+- With its ~200 nodes, ~6400 threads and fast parallel I/O, it is a powerful resource for life science high performance computation, originally optimized at bioinformatics sequence processing.
 - A place for data move data at the beginning of your project.
   By definition, every project has an end.
-  Being the place it is, your project data needs to leave the cluster at the end of the cluster.
+  **Your project data needs to leave the cluster at the end of the project.**
 - A collaborative resource with central administration managed by BIH HPC IT and supported via hpc-helpdesk@bihealth.de
 
 **IT IS NOT**
@@ -86,9 +86,28 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
 - If you are part of an AG/lab working on the cluster, the group directory is in `/fast/groups/$AG`.
 - Projects are located in `/fast/projects/$PROJECT`.
 
+!!! important "So-called dot files/directories filling up your home?"
+
+    Files and directories starting with a dot "`.`" are not shown with the "ls" command.
+    May users run into problems with directories such as `$HOME/.local` but also non-dot directories such as `$HOME/R` filling up their storage.
+    You should move such large directories to your work volume and only keep a symlink in your `$HOME`.
+
+    Here is how you find large directories:
+    
+    ```bash
+    host:~$ du -shc ~/.??* ~/*
+    ```
+    
+    Here is how you move them to your work and replace them with a symlink:
+    
+    ```bash
+    host:~$ mv ~/.local ~/work/.local
+    host:~$ ln -s ~/work/.local ~/.local
+    ```
+
 ### Temporary Directories
 
-Note that you also have access to `/tmp` on the individual nodes but the disk is **slow** and **small**.
+Note that you also have access to `/tmp` on the individual nodes but the disk is **small** and might be a **slow** spinning disk.
 If you are processing large NGS data, we recommend you create `/fast/users/$USER/scratch/tmp` and set the environment variable `TMPDIR` to point there.
 However, for creating locks special Unix files such as sockets or fifos, `/tmp` is the right place.
 **Note that files placed in your `scratch` directory will be removed automatically after 4 weeks.**
