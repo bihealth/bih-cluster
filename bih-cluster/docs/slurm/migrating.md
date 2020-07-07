@@ -1,6 +1,8 @@
 # Migrating to Slurm
 
-This page describes (an updated) list of steps that are commonly needed to migrate from SGE to Slurm.
+This page describes list of steps that are commonly needed to migrate from SGE to Slurm.
+
+:spider_web: This section is deprecated and will be removed soon.
 
 ## Summary
 
