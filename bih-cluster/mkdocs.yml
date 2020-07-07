@@ -16,6 +16,8 @@ copyright: 2016-2020, BIH HPC IT
 theme:
   name: material
 strict: true
+extra_css:
+  - css/extra.css
 
 # Plugins
 plugins:
@@ -24,6 +26,7 @@ plugins:
 
 # Extensions
 markdown_extensions:
+  - attr_list
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
       guess_lang: false
@@ -95,11 +98,20 @@ nav:
     - "Accessing Snapshots": storage/accessing-snapshots.md
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Locations": storage/storage-locations.md
-  - "Slurm Scheduler":
+  - "Cluster Scheduler":
     - slurm/overview.md
+    - slurm/background.md
     - slurm/quickstart.md
     - slurm/cheat-sheet.md
     - slurm/migrating.md
+    - "Slurm Commands":
+        - "srun": slurm/commands-srun.md
+        - "sbatch": slurm/commands-sbatch.md
+        - "scancel": slurm/commands-scancel.md
+        - "sinfo": slurm/commands-sinfo.md
+        - "squeue": slurm/commands-squeue.md
+        - "scontrol": slurm/commands-scontrol.md
+        - "sacct": slurm/commands-sacct.md
     - "Format Strings": slurm/format-strings.md
     - slurm/job-scripts.md
     - slurm/snakemake.md
