@@ -7,7 +7,7 @@ This means that the system needs to **join** multiple computers (*nodes*) to pro
 ```
 
     user 1         user 2          ...
-  
+
   .---. .---.    .---. .---.
   | J | | J |    | J | | J |
   | o | | o |    | o | | o |       ...
