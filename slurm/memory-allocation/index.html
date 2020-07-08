@@ -11,7 +11,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/cubit/exomes-panels/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/memory-allocation/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Exomes and Panels - BIH HPC Docs</title>
+        <title>Memory Allocation - BIH HPC Docs</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exomes-and-panels" class="md-skip">
+        <a href="#memory-allocation" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Exomes and Panels
+              Memory Allocation
             
           </span>
         </div>
@@ -812,10 +812,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Cluster Scheduler
@@ -839,7 +841,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/overview/" title="Scheduling Overview" class="md-nav__link">
+    <a href="../overview/" title="Scheduling Overview" class="md-nav__link">
       Scheduling Overview
     </a>
   </li>
@@ -851,7 +853,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/background/" title="Introduction to Scheduling" class="md-nav__link">
+    <a href="../background/" title="Introduction to Scheduling" class="md-nav__link">
       Introduction to Scheduling
     </a>
   </li>
@@ -863,7 +865,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
+    <a href="../quickstart/" title="Slurm Quickstart" class="md-nav__link">
       Slurm Quickstart
     </a>
   </li>
@@ -875,7 +877,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+    <a href="../cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
   </li>
@@ -887,7 +889,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+    <a href="../job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
       Slurm Job Scripts
     </a>
   </li>
@@ -897,11 +899,74 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../slurm/memory-allocation/" title="Memory Allocation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Memory Allocation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Memory Allocation" class="md-nav__link md-nav__link--active">
       Memory Allocation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-background" class="md-nav__link">
+    Technical Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interlude-memory-in-java" class="md-nav__link">
+    Interlude: Memory in Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-allocation-in-slurm" class="md-nav__link">
+    Memory Allocation in Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memorycpu-accounting-in-slurm" class="md-nav__link">
+    Memory/CPU Accounting in Slurm
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -936,7 +1001,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-srun/" title="srun" class="md-nav__link">
+    <a href="../commands-srun/" title="srun" class="md-nav__link">
       srun
     </a>
   </li>
@@ -948,7 +1013,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-sbatch/" title="sbatch" class="md-nav__link">
+    <a href="../commands-sbatch/" title="sbatch" class="md-nav__link">
       sbatch
     </a>
   </li>
@@ -960,7 +1025,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-scancel/" title="scancel" class="md-nav__link">
+    <a href="../commands-scancel/" title="scancel" class="md-nav__link">
       scancel
     </a>
   </li>
@@ -972,7 +1037,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-sinfo/" title="sinfo" class="md-nav__link">
+    <a href="../commands-sinfo/" title="sinfo" class="md-nav__link">
       sinfo
     </a>
   </li>
@@ -984,7 +1049,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-squeue/" title="squeue" class="md-nav__link">
+    <a href="../commands-squeue/" title="squeue" class="md-nav__link">
       squeue
     </a>
   </li>
@@ -996,7 +1061,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-scontrol/" title="scontrol" class="md-nav__link">
+    <a href="../commands-scontrol/" title="scontrol" class="md-nav__link">
       scontrol
     </a>
   </li>
@@ -1008,7 +1073,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/commands-sacct/" title="sacct" class="md-nav__link">
+    <a href="../commands-sacct/" title="sacct" class="md-nav__link">
       sacct
     </a>
   </li>
@@ -1020,7 +1085,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
+    <a href="../format-strings/" title="Format Strings" class="md-nav__link">
       Format Strings
     </a>
   </li>
@@ -1037,7 +1102,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+    <a href="../snakemake/" title="Snakemake with Slurm" class="md-nav__link">
       Snakemake with Slurm
     </a>
   </li>
@@ -1049,7 +1114,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
+    <a href="../x11/" title="X11 Forwarding" class="md-nav__link">
       X11 Forwarding
     </a>
   </li>
@@ -1061,7 +1126,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+    <a href="../rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
       Slurm Rosetta Stone
     </a>
   </li>
@@ -1073,7 +1138,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
+    <a href="../migrating/" title="Migrating to Slurm" class="md-nav__link">
       Migrating to Slurm
     </a>
   </li>
@@ -1202,12 +1267,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       Static Data
@@ -1231,7 +1294,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Overview" class="md-nav__link">
+    <a href="../../cubit/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1243,7 +1306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../annotations/" title="Annotations" class="md-nav__link">
+    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
       Annotations
     </a>
   </li>
@@ -1255,7 +1318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../app-support/" title="Application Support" class="md-nav__link">
+    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
       Application Support
     </a>
   </li>
@@ -1267,7 +1330,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../databases/" title="Databases" class="md-nav__link">
+    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
       Databases
     </a>
   </li>
@@ -1277,20 +1340,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Exomes and Panels" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
       Exomes and Panels
     </a>
-    
   </li>
 
         
@@ -1300,7 +1354,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../exon-lists/" title="Exon Lists" class="md-nav__link">
+    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
       Exon Lists
     </a>
   </li>
@@ -1312,7 +1366,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../index-files/" title="Precomputed Indexes" class="md-nav__link">
+    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
       Precomputed Indexes
     </a>
   </li>
@@ -1324,7 +1378,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../references/" title="Reference Sequences" class="md-nav__link">
+    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
       Reference Sequences
     </a>
   </li>
@@ -1724,6 +1778,44 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technical-background" class="md-nav__link">
+    Technical Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interlude-memory-in-java" class="md-nav__link">
+    Interlude: Memory in Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-allocation-in-slurm" class="md-nav__link">
+    Memory Allocation in Slurm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memorycpu-accounting-in-slurm" class="md-nav__link">
+    Memory/CPU Accounting in Slurm
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1734,7 +1826,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/cubit/exomes-panels.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/memory-allocation.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1742,27 +1834,206 @@
                   
                 
                 
-                <h1 id="exomes-and-panels">Exomes and Panels<a class="headerlink" href="#exomes-and-panels" title="Permanent link">&para;</a></h1>
-<p><strong>These exome panel data are proprietary and downloaded after registration.
-In case you want to use them, be sure you have access to them by creating
-an account at Agilent or Roche to not run into legal trouble.</strong></p>
-<div class="highlight"><pre><span></span><code>static_data/exome_panel
-├── Agilent
-│   ├── SureSelect_Human_All_Exon_V4
-│   │   ├── GRCh37
-│   │   └── hg19
-│   ├── SureSelect_Human_All_Exon_V5
-│   │   ├── GRCh37
-│   │   └── hg19
-│   ├── SureSelect_Human_All_Exon_V6
-│   │   ├── GRCh37
-│   │   └── hg19
-│   └── SureSelect_Mouse_All_Exon_V1
-│       ├── mm9
-│       └── NCBIM37
-└── Roche
-    └── SeqCap_EZ_MedExome
-        └── GRCh37
+                <h1 id="memory-allocation">Memory Allocation<a class="headerlink" href="#memory-allocation" title="Permanent link">&para;</a></h1>
+<p>Memory allocation is one of the topics that users find confusing most often.
+This section first gives some technical background and then explains how to implement this properly with Slurm on the BIH HPC.</p>
+<h2 id="technical-background">Technical Background<a class="headerlink" href="#technical-background" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Technical Background Summary</p>
+<ul>
+<li><strong>virtual memory</strong> is what your programs tells the operating system what it wants to use</li>
+<li><strong>resident set size</strong> is the amount of memory that your program <em>actually</em> uses</li>
+<li>most memory will reside on the <strong>heap</strong></li>
+</ul>
+</div>
+<p>Main memory used to be one of the most important topics when programming computers as computers had so little.
+There is the infamous quote "640KB ought ot be enough for anybody" wrongly attribute to Bill Gates which refers to the fact that early computers could only address that amount of memory and in MS DOS, one had to use special libraries for a program to use more memory.
+Today, computers are very fast and memory is plenty and people can (rightfully) forget about memory allocation ... as long as they don't use "much" memory by today's standards.</p>
+<p>The Linux operating system differentiates between the following types of memory:</p>
+<ul>
+<li><strong>virtual memory size (vsize)</strong>, the amount of memory that a process (virtually) allocates,</li>
+<li><strong>resident set size (rss)</strong>, the amount of memory actually used and that is currently in the computer's main memory,</li>
+<li>the <strong>swap memory usage</strong>, the amount of active memory that is not present in main memory but on the computer's disk,</li>
+<li>sometimes, the <strong>shared memory</strong> is also interesting, and</li>
+<li>it might be interesting to know about <strong>heap</strong> and <strong>stack</strong> size.</li>
+</ul>
+<p>Note that above we are talking about processes, not Slurm jobs yet.
+Let us look at this in detail:</p>
+<p>Each program uses some kind of memory management.
+For example, in C the <code>malloc</code>/<code>free</code> series of library commands allocate and free memory and in Java, R, and Python, memory allocation and release is done automatically using a concept called garbage collection.
+Each program starts out with a certain <strong>virtual memory size</strong>, that is the amount of memory it can address, say 128MB.
+When the program allocates memory, the memory allocation mechanism will look whether it has sufficient space left.
+If not, it will request an increase in virtual memory from the operating system, say to 256MB.
+If this fails then the program can try to handle this error, e.g., terminate gracefully, and many programs will just panic and stop.
+Otherwise, the program will get access to more memory and happily continue to run.</p>
+<p>However, programs can allocate humonguous amounts of virtual memory and only use a little.
+Memory is organized in pages (classically 4096 bytes but they can be larger using so-called "huge page" features).
+The operating system tracks which memory pages are actually used by a process.
+The total size of this is the <strong>resident set size</strong> and this is the amount of memory that is actually currently used by a program.
+Programs can also mark pages as unused again and thus free resident memory and also decrease their virtual memory.</p>
+<p>In some cases it is still interesting to use <strong>swap memory</strong>.
+Here, the contents of resident memory can be copied to the disk by the operating system.
+This process is completely transparent for the program; the memory is available at the original position in the <em>virtual memory</em>!
+However, accessing it will take some time as it is read from the disk.
+This way, it was possible for a computer with 4MB of RAM and a disk of 100MB to run programs that used 8MB.
+Of course, this was only really useable for programs running in the background and one could really feel the latency if a graphical program was swapped in (you would actually hear the hard drive working).
+Today, swap is only interesting if you want to put your computer into hibernation.
+Given the large main memory on the cluster node and their small hard drives (only used for loading the operating system), the BIH HPC has no swap memory.</p>
+<p>Most HPC users will also use <strong>shared memory</strong> implicitely.
+Whenever a program uses <code>fork</code> to create a subprocess (this is <em>not</em> a thread), the program can chose to "copy" its current address space.
+The second process now has access to the same memory than the parent process in a <em>copy-on-write</em> fashion.
+This allows to pre-load some database but also allows to re-use loaded library code used by the child process as well.
+Once the child writes to the copy-on-write memory of the parent, the memory page will be copied and attributed to the child.</p>
+<p>Two or more processes can share the same amount of memory explicitely which is mostly used for inter-process communication but the program Bowtie uses this for sharing the memory of indices.
+For example, the Python <code>multiprocessing</code> module will use this but also if you have two MPI processes running on the same host.</p>
+<p>Memory is also separated into segments, the most interesting ones are <strong>heap</strong> and <strong>stack</strong> memory.
+For compiled languages, memory can be allocated on either.
+For C, an <code>int x = 0</code> is allocated on the stack.
+Every time that you call a function, another <em>stack frame</em> is created with the stack-local variables.
+The stack thus mostly grows through function calls and your program and shrinks through returning from a function.
+The stack size is limited (by <code>ulimit -s</code>) and a too deep (e.g., infinite recursion) will crash your program.
+Again for C, <code>int * ptr = malloc(10 * sizeof(int));</code> will allocate memory for one integer pointer on the stack and memory for 10 integers on the heap.
+If the function returns, the pointer on the stack will be freed but for freeing the integer array, you'd have to do <code>free(ptr)</code>.
+If the memory is not freed then this constitutes a <em>memory leak</em> but that is another topic.</p>
+<p>Other relevant segments are <strong>code</strong> where the compile code lives and <strong>data</strong> where static data such as strings that are displayed to the user live.
+As a side node, for interpreted languages such as R or Python, the code and data segments will refer to the code and data of Python while the actual program text will be on the heap.</p>
+<h2 id="interlude-memory-in-java">Interlude: Memory in Java<a class="headerlink" href="#interlude-memory-in-java" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Memory in Java Summary</p>
+<ul>
+<li>set <code>-XX:MaxHeapSize=&lt;size&gt;</code> (e.g., <code>&lt;size&gt;=2G</code>) for your program and only tune the other parameters if needed</li>
+<li>also consider the amount of memory that Java needs for heap management in your Slurm allocations</li>
+</ul>
+</div>
+<p>Java's memory management provides for some interesting artifacts.
+When running simple Java programs, you will never run into this but if you need to use gigabytes of memory in Java then you will have to learn a bit about Java memory management.
+This is the case when running the GATK programs, for example.</p>
+<p>As different operating systems handle memory management slightly different, the Java virtual machine performs it own memory management to provide a consistent interface.
+The following three settings are important in governing memory usage of Java:</p>
+<ul>
+<li><code>-Xmx&lt;size&gt;</code>/<code>-XX:MaxHeapSize=&lt;size&gt;</code> -- the maximal <em>Java heap</em> size</li>
+<li><code>-Xms&lt;size&gt;</code>/<code>-XX:InitialHeapSize=&lt;size&gt;</code> -- the initial <em>Java heap</em> size</li>
+<li><code>-Xss&lt;size&gt;</code>/<code>-XX:ThreadStackSize=&lt;size&gt;</code> -- maximal stack size available to a Java thread (e.g., the main thread)</li>
+</ul>
+<p>Above, <code>&lt;size&gt;</code> is a memory specification, either in bytes or with a suffix, e.g., <code>80M</code>, or <code>1G</code>.</p>
+<p>On startup, Java will roughly do the following:</p>
+<ul>
+<li>Setup the core virtual machine, load libraries, etc. and allocate (vsize) consume (rss) memory on the <em>OS (operating system) heap</em>.</li>
+<li>Setup the <em>Java heap</em> allocate (vsize) and consume (rss) memory on the <em>OS heap</em>.
+  In particular, Java will need to setup data structures for the memory management of each individual object.</li>
+<li>Run the program where Java data and Java threads will lead to memory allocationg (vsize) and consuming (rss) of memory.</li>
+</ul>
+<p>Memory freed by the Java garbage collector can be re-used by other Java objects (rss remains the same) or be freed in the operating system (rss decreases).
+The Java VM program itself will also consume memory on the <em>OS stack</em> but that is negligible.</p>
+<p>Overall, the Java VM needs to store in main memory:</p>
+<ul>
+<li>The Java VM, program code, Java thread stacks etc. (very few memory).</li>
+<li>The <em>Java heap</em> (potentially a lot of memory).</li>
+<li>The <em>Java heap management</em> data structures (so-called "off-heap", but of course on the <em>OS heap</em>) (potentially also considerable memory).</li>
+</ul>
+<p>In the BIH HPC context, the following is recommended:</p>
+<ul>
+<li>Set the Java heap to an appropriate size (use trial-and-error to determin the correct size or look through internet forums).</li>
+<li>Only tune initial heap size in the case of performance issues (unlikely in batch processing).</li>
+<li>Only bump the stack size when problems occur.</li>
+<li>Consider the "off-heap" memory when performing Slurm allocations.</li>
+</ul>
+<h2 id="memory-allocation-in-slurm">Memory Allocation in Slurm<a class="headerlink" href="#memory-allocation-in-slurm" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Memory Allocation in Slurm Summary</p>
+<ul>
+<li>most user will simply use <code>--memory=&lt;size&gt;</code> (e.g., <code>&lt;size&gt;=3G</code>) to allocate memory per node</li>
+<li>both interactive <code>srun</code> and batch <code>sbatch</code> jobs are governed by Slurm memory allocation</li>
+<li>the sum of all memory of all processes started by your job may not go over the job reservation</li>
+<li>please don't over-allocate memory, see "Memory Accounting in Slurm" below for details</li>
+</ul>
+</div>
+<p>Our Slurm configuration uses Linux cgroups to enforce a maximum amount of resident memory.
+You simply specify it using <code>--memory=&lt;size&gt;</code> to your <code>srun</code> and <code>sbatch</code> command.</p>
+<p>In the (rare) case that you provide more flexible number of threads (Slurm tasks) or GPUs then you could also look into <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code>.
+The <a href="https://slurm.schedmd.com/sbatch.html">official Slurm sbatch</a> manual is quite helpful as is <code>man sbatch</code> on the cluster command line.</p>
+<p>Slurm (or rather Linux via cgroups) will track all memory started by all jobs by your process.
+If each process works independently (e.g., you put the output through a pipe <code>prog1 | prog2</code>) then the amount of memory consumed will at any given time be the sum of the RSS of both processes <em>at that time</em>.
+If you your program uses for <code>fork</code> which transfers memory in a copy-on-write fashion then of course, the shared memory is only counted once.
+Note that Python's multiprocessing is <strong>not</strong> using copy on write but the data will be explicitely copied and consume additional memory.
+Refer to the Scipy/Numpy/Pandas etc. documentation on how to achieve parallelism without copying data too much.</p>
+<p>The amount of virtual memory that your program can reserve is only "virtually" unlimited (pun not intended).
+However, in practice, the operating system will not like you allocating more than physically available.
+When you program attempts to allocate more memory than requested via Slurm, then you program will be killed.</p>
+<p>You can inspect the amount of memory available on each node in total with <code>sinfo --format "%.10P %.10l %.6D %.6m %N"</code> as shown below.</p>
+<div class="highlight"><pre><span></span><code>med-login1:~# sinfo --format <span class="s2">&quot;%.10P %.10l %.6D %.6m %N&quot;</span>
+ PARTITION  TIMELIMIT  NODES MEMORY NODELIST
+    debug*    <span class="m">8</span>:00:00    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
+    medium <span class="m">7</span>-00:00:00    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
+      long <span class="m">28</span>-00:00:0    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
+  critical <span class="m">7</span>-00:00:00    <span class="m">176</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0501-0516,0601-0632,0701-0764<span class="o">]</span>
+   highmem <span class="m">14</span>-00:00:0      <span class="m">4</span> <span class="m">515762</span> med<span class="o">[</span><span class="m">0401</span>-0404<span class="o">]</span>
+       gpu <span class="m">14</span>-00:00:0      <span class="m">4</span> <span class="m">385215</span> med<span class="o">[</span><span class="m">0301</span>-0304<span class="o">]</span>
+       mpi <span class="m">14</span>-00:00:0    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
+</code></pre></div>
+
+<h2 id="memorycpu-accounting-in-slurm">Memory/CPU Accounting in Slurm<a class="headerlink" href="#memorycpu-accounting-in-slurm" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Memory Accounting in Slurm Summary</p>
+<ul>
+<li>you can use Slurm accounting to find out about memory and also CPU usage of your program</li>
+<li>use <code>sacct -j JOBID --format=JobID,MaxRSS</code> to display the RSS usage of your program</li>
+<li>use <code>sacct -j JOBID --format=Elapsed,AllocCPUs,TotalCPU</code> to display information about CPU usage</li>
+<li>consider using the helpful script below to compute overallocated memory</li>
+</ul>
+</div>
+<p>While Slurm runs your job it collect information about your job such as the running time, exit status, and memory usage.
+This information is available through the <em>scheduling</em> system with its commands <code>squeue</code> and <code>scontrol</code> only while the job is pending execution, executing, or currently completing.
+After completion, the information is only available through the <strong>Slurm accounting</strong> system.</p>
+<p>You can query information about jobs, e.g., using <code>sacct</code>:</p>
+<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span>
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+<span class="m">1607166</span>      snakejob.+   critical                    <span class="m">16</span>  COMPLETED      <span class="m">0</span>:0
+<span class="m">1607166</span>.bat+      batch                               <span class="m">16</span>  COMPLETED      <span class="m">0</span>:0
+<span class="m">1607166</span>.ext+     extern                               <span class="m">16</span>  COMPLETED      <span class="m">0</span>:0
+</code></pre></div>
+
+<p>This shows that the job with ID <code>1607166</code> with a job ID starting with <code>snakejob.</code> has been run in the <code>critical</code> partition, been allocated 16 cores and had an exit code of <code>0:0</code>.
+For technical reasons, there is a <code>batch</code> and an <code>extern</code> sub step.
+Actually, Slurm allows to run various steps in one batch <a href="https://slurm.schedmd.com/job_launch.html">as documented in the Slurm documentation</a>.</p>
+<p>The <code>sacct</code> command has various command line parameters that you can see with <code>man sacct</code> or <a href="https://slurm.schedmd.com/sacct.html">in the Slurm documentation</a>.
+We can use <code>--brief</code>/<code>-b</code> to show only a brief summary.</p>
+<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --brief
+       JobID      State ExitCode
+------------ ---------- --------
+<span class="m">1607166</span>       COMPLETED      <span class="m">0</span>:0
+<span class="m">1607166</span>.bat+  COMPLETED      <span class="m">0</span>:0
+<span class="m">1607166</span>.ext+  COMPLETED      <span class="m">0</span>:0
+</code></pre></div>
+
+<p>Similarly, you can use <code>--long</code> to display extended information (see the manual for the displayed columns).
+Very long report lines can be piped into <code>less -S</code> for easier display.
+You can fine-tune the information to display with a format string to <code>--format</code></p>
+<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS
+       JobID   ReqMem     MaxRSS    Elapsed   TotalCPU  AllocCPUS
+------------ --------- ---------- ---------- ---------- ----------
+<span class="m">1607166</span>          60Gn              <span class="m">13</span>:07:31 <span class="m">7</span>-16:21:29         <span class="m">16</span>
+<span class="m">1607166</span>.bat+     60Gn   4314560K   <span class="m">13</span>:07:31 <span class="m">7</span>-16:21:29         <span class="m">16</span>
+<span class="m">1607166</span>.ext+     60Gn          <span class="m">0</span>   <span class="m">13</span>:07:31  <span class="m">00</span>:00.001         <span class="m">16</span>
+</code></pre></div>
+
+<p>From this command, we can read that we allocate 60GB memory of memory per node (suffix <code>n</code>) and the maximum RSS is reported to be 4.3GB.
+You can use this information to fine-tune your memory allocations.</p>
+<p>Further, the program ran for 13 hours and 7 minutes with allocated 16 CPU cores and consumed a total of 17 days, 16 hours, and 21 minutes of CPU time.
+Thus, a total of 10'061 CPU minutes were spent in 787 minutes wall-clock time.
+This yields an overall empirical degree of parallelism of about 10061 / 787 = 14 and a parallel efficiency of 14 / 16 = 88%.
+The discussion of parallel efficiency is a topic not covered here.</p>
+<p>However, you can use the awk script below to compute the empirical parallelism (<code>EmpPar</code>) and the parallel efficiency (<code>ParEff</code>).
+The script also displays the difference i requested and used RSS (<code>DiffRSS</code>).
+The script <a href="../assets/quick-sacct.awk">can be found here</a>.</p>
+<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS <span class="se">\</span>
+                <span class="p">|</span> awk -f quick-sacct.awk
+       JobID     ReqMem     MaxRSS    Elapsed   TotalCPU  AllocCPUS     EmpPar   ParEff  DiffMEM
+------------ ---------- ---------- ---------- ---------- ----------  --------- -------- --------
+<span class="m">1607166</span>            60Gn              <span class="m">13</span>:07:31 <span class="m">7</span>-16:21:29         <span class="m">16</span>      <span class="m">0</span>.00     <span class="m">0</span>.00        -
+<span class="m">1607166</span>.bat+       60Gn   4314560K   <span class="m">13</span>:07:31 <span class="m">7</span>-16:21:29         <span class="m">16</span>     <span class="m">14</span>.05     <span class="m">0</span>.88    <span class="m">55</span>.89
+<span class="m">1607166</span>.ext+       60Gn          <span class="m">0</span>   <span class="m">13</span>:07:31  <span class="m">00</span>:00.001         <span class="m">16</span>      <span class="m">0</span>.00     <span class="m">0</span>.00        -
 </code></pre></div>
                 
                   
@@ -1795,7 +2066,7 @@ an account at Agilent or Roche to not run into legal trouble.</strong></p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../databases/" title="Databases" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../job-scripts/" title="Slurm Job Scripts" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1804,19 +2075,19 @@ an account at Agilent or Roche to not run into legal trouble.</strong></p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Databases
+                Slurm Job Scripts
               </div>
             </div>
           </a>
         
         
-          <a href="../exon-lists/" title="Exon Lists" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../commands-srun/" title="srun" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Exon Lists
+                srun
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
