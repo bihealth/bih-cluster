@@ -15,7 +15,7 @@ For a quick introduction and hands-on examples, please see the manual sections
 - [Quickstart](quickstart.md) -- the most important Slurm commands, explained, with examples
 - [Cheat Sheet](cheat-sheet.md) -- for quick reference
 - [Job Scripts](job-scripts.md) -- how to setup job scripts with Slurm
-- [Slurm and Snakemake](snakemake.md) -- how to use Snakemake with Slurm
+- [Memory Allocation](memory-allocation.md) -- memory allocation (:warning: one of the most important concepts that is most often found confusing)
 - Introduction to Slurm Commands
     - [`srun`](commands-srun.md) -- running parallel jobs **now**
     - [`sbatch`](commands-sbatch.md) -- submission of batch jobs
@@ -24,7 +24,8 @@ For a quick introduction and hands-on examples, please see the manual sections
     - [`squeue`](commands-squeue.md) -- information about pending and running jbos
     - [`scontrol`](commands-scontrol.md) -- detailed information (and control)
     - [`sacct`](commands-sacct.md) -- access Slurm accounting information (pending, running, and past jobs)
-- [Format Strings in Slurm](format-strings.md) -- format strings allow to display extended information about Slurm scheduler objects
+    - [Format Strings in Slurm](format-strings.md) -- format strings allow to display extended information about Slurm scheduler objects
+- [Slurm and Snakemake](snakemake.md) -- how to use Snakemake with Slurm
 - [X11 Forwarding](x11.md) -- X11 forwarding in Slurm (simple; short)
 - [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
 - [Migrating from SGE](migrating.md) -- hints for migrating from SGE to Slurm (:spider_web: deprecated, will be removed)

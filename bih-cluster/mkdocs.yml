@@ -103,7 +103,8 @@ nav:
     - slurm/background.md
     - slurm/quickstart.md
     - slurm/cheat-sheet.md
-    - slurm/migrating.md
+    - slurm/job-scripts.md
+    - slurm/memory-allocation.md
     - "Slurm Commands":
         - "srun": slurm/commands-srun.md
         - "sbatch": slurm/commands-sbatch.md
@@ -112,11 +113,11 @@ nav:
         - "squeue": slurm/commands-squeue.md
         - "scontrol": slurm/commands-scontrol.md
         - "sacct": slurm/commands-sacct.md
-    - "Format Strings": slurm/format-strings.md
-    - slurm/job-scripts.md
+        - "Format Strings": slurm/format-strings.md
     - slurm/snakemake.md
-    - slurm/rosetta-stone.md
     - "X11 Forwarding": slurm/x11.md
+    - slurm/rosetta-stone.md
+    - slurm/migrating.md
   - "Best Practice":
     - "Project Structure": best-practice/project-structure.md
     - "Software Craftmanship": best-practice/software-craftmanship.md
