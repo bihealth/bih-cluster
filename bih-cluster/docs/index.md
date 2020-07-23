@@ -9,7 +9,7 @@ This documentation is maintained bih BIH HPC IT, BIH CUBI (Core Unit Bioinformat
 
 To get started, the following is a good reading order after your first successful connection to the cluster.
 
-1. [Getting Access](administrative/getting-access).
+1. [Getting Access](admin/getting-access). 
 2. [Getting Help](help/helpdesk) (and [Writing Good Tickets](help/good-tickets)).
 3. [For the Impatient](overview/for-the-impatient).
 4. [The Cluster Tutorial: First Steps](first-steps/episode-0).
