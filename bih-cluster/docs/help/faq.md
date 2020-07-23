@@ -160,8 +160,70 @@ JobId=863089 JobName=pipeline_job.sh
    StdOut=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
    Power=
    MailUser=(null) MailType=NONE
-
 ```
+
+For GPU jobs also see "My GPU jobs don't get scheduled".
+
+## My GPU jobs don't get scheduled
+
+There are only four GPU machines in the cluster (with four GPUs each, med0301 to med0304).
+Please inspect first the number of running jobs with GPU resource requests:
+
+```bash
+med-login1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep med03 | sort -k7,7
+   1902163 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
+   1902167 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
+   1902164 ONT-basecalling       R     1    2         8G          med0302   gpu:tesla:2
+   1902166 ONT-basecalling       R     1    2         8G          med0302   gpu:tesla:2
+   1902162 ONT-basecalling       R     1    2         8G          med0303   gpu:tesla:2
+   1902165 ONT-basecalling       R     1    2         8G          med0303   gpu:tesla:2
+   1785264 bash                  R     1    1         1G          med0304   gpu:tesla:2
+```
+
+This indicates that there are two free GPUs on med0304.
+
+Second, inspect the node states:
+
+```bash
+med-login1:~$ sinfo -n med030[1-4]
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
+debug*       up    8:00:00      0    n/a  
+medium       up 7-00:00:00      0    n/a  
+long         up 28-00:00:0      0    n/a  
+critical     up 7-00:00:00      0    n/a  
+highmem      up 14-00:00:0      0    n/a  
+gpu          up 14-00:00:0      1   drng med0304 
+gpu          up 14-00:00:0      3    mix med[0301-0303] 
+mpi          up 14-00:00:0      0    n/a  
+```
+
+This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
+med0304 is shown to be in "draining state".
+Let's look what's going on there.
+
+```bash hl_lines="10,18"
+med-login1:~$ scontrol show node med0304
+NodeName=med0304 Arch=x86_64 CoresPerSocket=16 
+   CPUAlloc=2 CPUTot=64 CPULoad=1.44
+   AvailableFeatures=skylake
+   ActiveFeatures=skylake
+   Gres=gpu:tesla:4(S:0-1)
+   NodeAddr=med0304 NodeHostName=med0304 Version=20.02.0
+   OS=Linux 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 
+   RealMemory=385215 AllocMem=1024 FreeMem=347881 Sockets=2 Boards=1
+   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+   Partitions=gpu 
+   BootTime=2020-06-30T20:33:36 SlurmdStartTime=2020-07-01T09:31:51
+   CfgTRES=cpu=64,mem=385215M,billing=64
+   AllocTRES=cpu=2,mem=1G
+   CapWatts=n/a
+   CurrentWatts=0 AveWatts=0
+   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+   Reason=deep power-off required for PSU [root@2020-07-17T13:21:02]
+```
+
+The "State" attribute indicates the node has jobs running but is currenlty being "drained" (accepts no new jobs).
+The "Reason" gives that it has been scheduled for power-off for maintenance of the power supply unit.
 
 ## My jobs don't run in the partition I expect
 
