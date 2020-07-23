@@ -451,6 +451,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-jobs-dont-run-in-the-partition-i-expect" class="md-nav__link">
+    My jobs don't run in the partition I expect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#my-jobs-get-killed-after-four-hours" class="md-nav__link">
     My jobs get killed after four hours
   </a>
@@ -2025,6 +2032,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-jobs-dont-run-in-the-partition-i-expect" class="md-nav__link">
+    My jobs don't run in the partition I expect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#my-jobs-get-killed-after-four-hours" class="md-nav__link">
     My jobs get killed after four hours
   </a>
@@ -2291,37 +2305,35 @@ mpi          up <span class="m">14</span>-00:00:0      <span class="m">0</span> 
 <p>This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
 med0304 is shown to be in "draining state".
 Let's look what's going on there.</p>
-<p>```bash hl_lines="10,18"
-med-login1:~$ scontrol show node med0304
-NodeName=med0304 Arch=x86_64 CoresPerSocket=16 
-   CPUAlloc=2 CPUTot=64 CPULoad=1.44
-   AvailableFeatures=skylake
-   ActiveFeatures=skylake
-   Gres=gpu:tesla:4(S:0-1)
-   NodeAddr=med0304 NodeHostName=med0304 Version=20.02.0
-   OS=Linux 3.10.0-1127.13.1.el7.x86_64 <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/squidfunk/mkdocs-material/issues/1" title="GitHub Issue: squidfunk/mkdocs-material#1">#1</a> SMP Tue Jun 23 15:46:38 UTC 2020 
-   RealMemory=385215 AllocMem=1024 FreeMem=347881 Sockets=2 Boards=1
-   State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
-   Partitions=gpu 
-   BootTime=2020-06-30T20:33:36 SlurmdStartTime=2020-07-01T09:31:51
-   CfgTRES=cpu=64,mem=385215M,billing=64
-   AllocTRES=cpu=2,mem=1G
-   CapWatts=n/a
-   CurrentWatts=0 AveWatts=0
-   ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
-   Reason=deep power-off required for PSU [root@2020-07-17T13:21:02]
-<div class="highlight"><pre><span></span><code>The &quot;State&quot; attribute indicates the node has jobs running but is currenlty being &quot;drained&quot; (accepts no new jobs).
-The &quot;Reason&quot; gives that it has been scheduled for power-off for maintenance of the power supply unit.
+<div class="highlight"><pre><span></span><code>med-login1:~$ scontrol show node med0304
+<span class="nv">NodeName</span><span class="o">=</span>med0304 <span class="nv">Arch</span><span class="o">=</span>x86_64 <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">16</span> 
+   <span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">2</span> <span class="nv">CPUTot</span><span class="o">=</span><span class="m">64</span> <span class="nv">CPULoad</span><span class="o">=</span><span class="m">1</span>.44
+   <span class="nv">AvailableFeatures</span><span class="o">=</span>skylake
+   <span class="nv">ActiveFeatures</span><span class="o">=</span>skylake
+   <span class="nv">Gres</span><span class="o">=</span>gpu:tesla:4<span class="o">(</span>S:0-1<span class="o">)</span>
+   <span class="nv">NodeAddr</span><span class="o">=</span>med0304 <span class="nv">NodeHostName</span><span class="o">=</span>med0304 <span class="nv">Version</span><span class="o">=</span><span class="m">20</span>.02.0
+   <span class="nv">OS</span><span class="o">=</span>Linux <span class="m">3</span>.10.0-1127.13.1.el7.x86_64 <span class="c1">#1 SMP Tue Jun 23 15:46:38 UTC 2020 </span>
+   <span class="nv">RealMemory</span><span class="o">=</span><span class="m">385215</span> <span class="nv">AllocMem</span><span class="o">=</span><span class="m">1024</span> <span class="nv">FreeMem</span><span class="o">=</span><span class="m">347881</span> <span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span> <span class="nv">Boards</span><span class="o">=</span><span class="m">1</span>
+<span class="hll">   <span class="nv">State</span><span class="o">=</span>MIXED+DRAIN <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">TmpDisk</span><span class="o">=</span><span class="m">0</span> <span class="nv">Weight</span><span class="o">=</span><span class="m">1</span> <span class="nv">Owner</span><span class="o">=</span>N/A <span class="nv">MCS_label</span><span class="o">=</span>N/A
+</span>   <span class="nv">Partitions</span><span class="o">=</span>gpu 
+   <span class="nv">BootTime</span><span class="o">=</span><span class="m">2020</span>-06-30T20:33:36 <span class="nv">SlurmdStartTime</span><span class="o">=</span><span class="m">2020</span>-07-01T09:31:51
+   <span class="nv">CfgTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">64</span>,mem<span class="o">=</span>385215M,billing<span class="o">=</span><span class="m">64</span>
+   <span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">2</span>,mem<span class="o">=</span>1G
+   <span class="nv">CapWatts</span><span class="o">=</span>n/a
+   <span class="nv">CurrentWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">AveWatts</span><span class="o">=</span><span class="m">0</span>
+   <span class="nv">ExtSensorsJoules</span><span class="o">=</span>n/s <span class="nv">ExtSensorsWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExtSensorsTemp</span><span class="o">=</span>n/s
+<span class="hll">   <span class="nv">Reason</span><span class="o">=</span>deep power-off required <span class="k">for</span> PSU <span class="o">[</span>root@2020-07-17T13:21:02<span class="o">]</span>
+</span></code></pre></div>
 
-## My jobs don&#39;t run in the partition I expect
+<p>The "State" attribute indicates the node has jobs running but is currenlty being "drained" (accepts no new jobs).
+The "Reason" gives that it has been scheduled for power-off for maintenance of the power supply unit.</p>
+<h2 id="my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect<a class="headerlink" href="#my-jobs-dont-run-in-the-partition-i-expect" title="Permanent link">&para;</a></h2>
+<p>You can see the partition that your job runs in with <code>squeue -j JOBID</code>:</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ squeue -j <span class="m">877092</span>
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+            <span class="m">877092</span>    medium snakejob holtgrem  R       <span class="m">0</span>:05      <span class="m">1</span> med0626
+</code></pre></div>
 
-You can see the partition that your job runs in with `squeue -j JOBID`:
-
-```bash
-med-login1:~$ squeue -j 877092
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            877092    medium snakejob holtgrem  R       0:05      1 med0626
-</code></pre></div></p>
 <p>See <a href="/overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties.
 To get your job to run in the <code>medium</code> partition, for example use the <code>--partition=medium</code> or <code>-p medium</code> arguments to your <code>srun</code> or <code>sbatch</code> commands.</p>
 <h2 id="my-jobs-get-killed-after-four-hours">My jobs get killed after four hours<a class="headerlink" href="#my-jobs-get-killed-after-four-hours" title="Permanent link">&para;</a></h2>
