@@ -201,7 +201,7 @@ This tells you that med0301 to med0303 have jobs running ("mix" indicates that t
 med0304 is shown to be in "draining state".
 Let's look what's going on there.
 
-```bash hl_lines="10,18"
+```bash hl_lines="10 18"
 med-login1:~$ scontrol show node med0304
 NodeName=med0304 Arch=x86_64 CoresPerSocket=16 
    CPUAlloc=2 CPUTot=64 CPULoad=1.44
