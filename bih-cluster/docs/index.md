@@ -1,13 +1,13 @@
 # Home
 
 This is the documentation of the BIH high-performance compute (HPC) cluster.
-This documentation is maintained bih BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
+This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
 
 :arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
 
 ## Getting Started
 
-To get started, the following is a good reading order after your first successful connection to the cluster.
+To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.
 
 1. [Getting Access](admin/getting-access). 
 2. [Getting Help](help/helpdesk) (and [Writing Good Tickets](help/good-tickets)).
@@ -46,14 +46,14 @@ There are various other topics covered in the "Connecting" section that might be
 
 The documentation is structured as follows:
 
-- **Administrative** provides information about administrative processes such as how to get access, register users, work groups, and projects.
-- **Getting Help** explains how you can obtain for using the BIH HPC.
-- **Overview** provides detailed information about the cluster setup.
+- **Administrative** information about administrative processes such as how to get access, register users, work groups, and projects.
+- **Getting Help** explains how you can obtain help in using the BIH HPC.
+- **Overview** detailed information about the cluster setup.
   This includes the description of the hardware, network, software, and policies.
-- **Connecting** provides technical help on performing connections to the cluster.
-- **First Steps** provides information for getting you started quickly.
-- **Slurm Scheduler** provides technical help on using the Slurm scheduler.
-- **Best Practice** provides guidelines on recommended usage of certain aspects of the system.
-- **Static Data** provides documentation about the static data (files) collection on the cluster.
-- **How-To** provides short(ish) solutions for specific technical problems.
-- **Miscellaneous** contains a growing list of pages not fitting anywhere else.
+- **Connecting** technical help on connecting to the cluster.
+- **First Steps** information for getting you started quickly.
+- **Slurm Scheduler** technical help on using the Slurm scheduler.
+- **Best Practice** guidelines on recommended usage of certain aspects of the system.
+- **Static Data** documentation about the static data (files) collection on the cluster.
+- **How-To** short(ish) solutions for specific technical problems.
+- **Miscellaneous** contains a growing list of pages that don't fit anywhere else.

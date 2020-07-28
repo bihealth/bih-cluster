@@ -1,6 +1,6 @@
 # Slurm Quickstart
 
-**Create an interactive bash session** (`srun` will run bash in real-time, `--pty` makes `stdout` and `stderr` to your current session).
+**Create an interactive bash session** (`srun` will run bash in real-time, `--pty` connects its `stdout` and `stderr` to your current session).
 
 ```bash
 med-login1:~$ srun --pty bash -i
@@ -74,7 +74,7 @@ med-login1:~$
 med-login1:~$ srun --cpus-per-task=4 --nodes=1 --mem=4G --pty bash
 med0740:~$ export | grep SLURM_CPUS_ON_NODE
 4
-med0740:~$ your-parallel-script 4
+med0740:~$ your-parallel-script --threads 4
 ```
 
 **Submit an R script to the cluster in batch mode** (`sbatch` schedules the job for later execution).
@@ -86,6 +86,8 @@ echo "Hello, I'm running on $(hostname) and it's $(date)"
 EOF
 med-login1:~$ sbatch job-script.sh
 Submitted batch job 7
+
+# Some time later:
 med-login1:~$ cat slurm-7.out
 Hello, I'm running on med0740 and it's Fri Mar  6 07:36:42 CET 2020
 med-login1:~$
