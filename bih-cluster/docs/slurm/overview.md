@@ -12,7 +12,7 @@ For a quick introduction and hands-on examples, please see the manual sections
 ## Annotated Contents
 
 - [Background on Scheduling](background.md) -- some background on scheduling and the terminology used
-- [Quickstart](quickstart.md) -- the most important Slurm commands, explained, with examples
+- [Quickstart](quickstart.md) -- explains the most important Slurm commands, with examples
 - [Cheat Sheet](cheat-sheet.md) -- for quick reference
 - [Job Scripts](job-scripts.md) -- how to setup job scripts with Slurm
 - [Memory Allocation](memory-allocation.md) -- memory allocation (:warning: one of the most important concepts that is most often found confusing)
@@ -32,15 +32,15 @@ For a quick introduction and hands-on examples, please see the manual sections
 
 ## A Word on "Elsewhere"
 
-Many facilities run Slurm clusters and have their documentation available on the internet and we will list some that we found useful below.
-However, beware that Slurm is a highly configurable and extensible system.
+Many other facilities run Slurm clusters and make their documentation available on the internet. We list some that we found useful below.
+However, be aware that Slurm is a highly configurable and extensible system.
 Other sites may have different configurations and plugins enabled than we have (or might even have written custom plugins that are not available at BIH).
 In any case, it's always useful to look "über den Tellerrand".
 
 - [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html) - the official guide from the Slurm creators.
-- [Slurm `man` Pages](https://slurm.schedmd.com/man_index.html) - web versions of `man <slurm command>`.
+- [Slurm `man` Pages](https://slurm.schedmd.com/man_index.html) - web versions of Unix manual (`man`) pages.
 - [TU Dresden Slurm Compendium](https://doc.zih.tu-dresden.de/hpc-wiki/bin/view/Compendium/Slurm) - nice documentation from the installation in Dresden.
-  Beware that their installation is highly customized, in particular partition selection is automatized for them (and it is not for us).
+  Note that their installation is highly customized, in particular, their partition selection is automated (but is not for us).
 - [Slurm at CECI](https://support.ceci-hpc.be/doc/_contents/QuickStart/SubmittingJobs/SlurmTutorial.html) - CECI is a HPC consortium from Belgium.
 - [Slurm at the Arctic University of Norway](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
 - [Slurm at Technical University of Denmark](https://wiki.fysik.dtu.dk/niflheim/SLURM) - if you want to get an insight in how this looks to administrator.
