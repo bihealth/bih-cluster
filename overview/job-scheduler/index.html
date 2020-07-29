@@ -1918,11 +1918,11 @@
                 
                 <h1 id="job-scheduler">Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">&para;</a></h1>
 <p>Once logged into the cluster through the login nodes, users use the Slurm scheduler for job submission.
-In Slurm nomenclature, the nodes are assigned to one or more <strong>partitions</strong> and jobs are then assigned to nodes according to the partition's configuration.</p>
+In Slurm nomenclature, cluster compute nodes are assigned to one or more <strong>partitions</strong>. Submitted jobs are assigned to nodes according to the partition's configuration.</p>
 <div class="admonition note">
 <p class="admonition-title">Selecting Partitions</p>
-<p>Users should only select partitions explictely if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
-Otherwise, they should let Slurm decide about the optimal execution.</p>
+<p>Users should only select partitions explicitly if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
+Otherwise, they should let Slurm decide on the optimal assignment.</p>
 </div>
 <div class="admonition todo">
 <p class="admonition-title">MPI Partition</p>
@@ -1933,8 +1933,8 @@ We will update this soon.</p>
 <p>The BIH HPC has the following partitions.</p>
 <div class="admonition important">
 <p class="admonition-title">Use <code>mpi</code> Partition for Multi-Node Jobs</p>
-<p>All partitions except for the <code>mpi</code> partition have the maximal number of availble nodes set to <code>1</code>.
-This makes the system easier to use for single-node/multi-core apps as users don't have to specify <code>--min-nodes=1 --max-nodes=1</code>.
+<p>All partitions except for <code>mpi</code> have their maximum number of available nodes set to <code>1</code>.
+This makes the system easier to use for single-node/multi-core programs as users don't have to specify <code>--min-nodes=1 --max-nodes=1</code>.
 Simply use the <code>mpi</code> partition for multi-node jobs.</p>
 </div>
 <h3 id="debug"><code>debug</code><a class="headerlink" href="#debug" title="Permanent link">&para;</a></h3>
@@ -1944,78 +1944,79 @@ Simply use the <code>mpi</code> partition for multi-node jobs.</p>
 We will rename things soon.</p>
 </div>
 <h3 id="default"><code>default</code><a class="headerlink" href="#default" title="Permanent link">&para;</a></h3>
-<p>This partition is for normal jobs running in less than 4 hours.
-The number of overall allows jobs by one user is high to reward users for chopping down their tasks into smaller parts and making them scheduler friendly.</p>
+<p>This partition is for normal jobs running for less than 4 hours.
+The number of overall jobs allowed per user is high to reward users for splitting their computational needs into smaller parts (this makes them easier for the scheduler to deal with).</p>
 <ul>
-<li><strong>maximal running time:</strong> 4 hours</li>
-<li><strong>maximal cores:</strong> &gt;6000 cores (all nodes, <strong>no limit</strong>)</li>
+<li><strong>maximum run time:</strong> 4 hours</li>
+<li><strong>maximum cores:</strong> &gt;6000 cores (all nodes, <strong>no limit</strong>)</li>
+<li><strong>partition name:</strong> <code>default</code></li>
 <li><strong>priority:</strong> <strong><code>default</code></strong> &lt; <code>medium</code> &lt; <code>long</code> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>--time 04:00:00</code></li>
+<li><strong>argument string:</strong> maximum run time: <code>--time 04:00:00</code></li>
 </ul>
 <h3 id="medium"><code>medium</code><a class="headerlink" href="#medium" title="Permanent link">&para;</a></h3>
 <p>This partition is for jobs running for multiple days.</p>
 <ul>
-<li><strong>maximal running time:</strong> 7 days</li>
-<li><strong>maximal cores:</strong> 128 cores/slots (4 nodes)</li>
+<li><strong>maximum run time:</strong> 7 days</li>
+<li><strong>maximum cores:</strong> 128 cores/slots (4 nodes)</li>
+<li><strong>partition name:</strong> <code>medium</code></li>
 <li><strong>priority:</strong> <code>default</code> &lt; <strong><code>medium</code></strong> &lt; <code>long</code> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 7-00:00:00</code></li>
+<li><strong>argument string:</strong> maximum run time: <code>--time 7-00:00:00</code></li>
 </ul>
 <h3 id="long"><code>long</code><a class="headerlink" href="#long" title="Permanent link">&para;</a></h3>
 <p>This partition is for long-running tasks.</p>
 <ul>
-<li><strong>maximal running time:</strong> 28 days</li>
-<li><strong>maximal cores:</strong> 32 cores/slots (1 node)</li>
-<li><strong>project name:</strong> <code>long</code></li>
-<li><strong>queue name:</strong> <code>long.q</code></li>
+<li><strong>maximum run time:</strong> 28 days</li>
+<li><strong>maximum cores:</strong> 32 cores/slots (1 node)</li>
+<li><strong>partition name:</strong> <code>long</code></li>
 <li><strong>priority:</strong> <code>default</code> &lt; <code>medium</code> &lt; <strong><code>long</code></strong> &lt; <code>critical</code> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 28-00:00:00</code></li>
+<li><strong>argument string:</strong> maximum run time: <code>--time 28-00:00:00</code></li>
 </ul>
 <h3 id="critical"><code>critical</code><a class="headerlink" href="#critical" title="Permanent link">&para;</a></h3>
 <p>This partition is for time-critical jobs with deadlines.
 For access to it you have to first ask <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a>.
 See <a href="../../admin/resource-registration/#critical-partition">Resource Registration: Critical Partition</a> for details.</p>
 <p>As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
-However, do not use this queue without arranging with hpc-gatekeeper as killing jobs will be used as the <em>ultima ratio</em> in case of such policy violations.</p>
+However, do not use this partition without arranging with hpc-gatekeeper as killing jobs will be used as the <em>ultima ratio</em> in case of such policy violations.</p>
 <ul>
-<li><strong>maximal running time:</strong> 7 days of maximal running time</li>
-<li><strong>maximal cores:</strong> 1536 cores/slots (48 nodes)</li>
-<li><strong>project name:</strong> <code>critical</code></li>
+<li><strong>maximum run time:</strong> 7 days</li>
+<li><strong>maximum cores:</strong> 1536 cores/slots (48 nodes)</li>
+<li><strong>partition name:</strong> <code>critical</code></li>
 <li><strong>priority:</strong> <code>default</code> &lt; <code>medium</code> &lt; <code>long</code> &lt; <strong><code>critical</code></strong> &lt; <code>mini</code></li>
-<li><strong>argument string:</strong> maximal running time: <code>-t 7-00:00:00</code></li>
+<li><strong>argument string:</strong> maximum run time: <code>--time 7-00:00:00</code></li>
 </ul>
 <h3 id="gpu"><code>gpu</code><a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
 <p>The GPU nodes are only part of the <code>gpu</code> partition so they are not blocked by normal compute jobs.
-The maximal running time is relatively high (14 days) to allow for longer training jobs.
-Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
+The maximum run time is relatively high (14 days) to allow for longer training jobs.
+Contact <a href="mailto:hpc-helpdesk@bihealth.de">hpc-helpdesk@bihealth.de</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
 <p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
 See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration: GPU Nodes</a> for details.</p>
 <ul>
-<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
+<li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>gpu</code></li>
-<li><strong>argument string:</strong> select <code>$count</code> nodes: <code>-p gpu --gres=gpu:tesla:$count</code>, maximal running time: <code>-t 14-00:00:00</code></li>
+<li><strong>argument string:</strong> select <code>$count</code> nodes: <code>-p gpu --gres=gpu:tesla:$count</code>, maximum run time: <code>--time 14-00:00:00</code></li>
 </ul>
 <h3 id="highmem"><code>highmem</code><a class="headerlink" href="#highmem" title="Permanent link">&para;</a></h3>
-<p>The high membory nodes are only part of the <code>highmem</code> partition so they are not blocked by normal compute jobs.
-The maximal running time is relatively high (14 days) to allow for longer jobs.
-Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
-<p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
+<p>The high memory nodes are only part of the <code>highmem</code> partition so they are not blocked by normal compute jobs.
+The maximum run time is relatively high (14 days) to allow for longer jobs.
+Contact <a href="mailto:hpc-helpdesk@bihealth.de">hpc-helpdesk@bihealth.de</a> for assistance if you have longer running jobs that you really cannot make run any shorter.</p>
+<p>For access you must first contact <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
 See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Registration: GPU Nodes</a> for details.</p>
 <ul>
-<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
+<li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>highmem</code></li>
-<li><strong>argument string:</strong> <code>-p highmem</code>, maximal running time: <code>-t 14-00:00:00</code></li>
+<li><strong>argument string:</strong> <code>-p highmem</code>, maximum run time: <code>--time 14-00:00:00</code></li>
 </ul>
 <h3 id="mpi"><code>mpi</code><a class="headerlink" href="#mpi" title="Permanent link">&para;</a></h3>
 <p>You can submit multi-node jobs into the <code>mpi</code> partition.
-The maximal running time is relatively high (14 days) to allow for longer jobs.
+The maximum run time is relatively high (14 days) to allow for longer jobs.
 Don't abuse this.
-Contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
-<p>For access to it you have register <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
-See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Registration: GPU Nodes</a> for details.</p>
+Contact <a href="mailto:hpc-helpdesk@bihealth.de">hpc-helpdesk@bihealth.de</a> for assistance if you have longer running jobs that you really cannot make run any shorter.</p>
+<p>For access you must first contact <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> (who will grant all requests).
+See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration: GPU Nodes</a> for details.</p>
 <ul>
-<li><strong>maximal running time:</strong> 14 days of maximal running time</li>
+<li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>highmem</code></li>
-<li><strong>argument string:</strong> <code>-p mpi</code>, maximal running time: <code>-t 14-00:00:00</code></li>
+<li><strong>argument string:</strong> <code>-p mpi</code>, maximum run time: <code>--time 14-00:00:00</code></li>
 </ul>
                 
                   
@@ -2025,7 +2026,7 @@ See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Regi
 <div class="md-source-date">
   <small>
     
-      Last update: July 28, 2020
+      Last update: July 29, 2020
     
   </small>
 </div>
