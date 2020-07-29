@@ -1849,9 +1849,9 @@
                 
                 
                 <h1 id="introduction-to-scheduling">Introduction to Scheduling<a class="headerlink" href="#introduction-to-scheduling" title="Permanent link">&para;</a></h1>
-<p>As explained elsewhere in more detail, an HPC cluster consists of multiple computers that are connected via network and work together.
-Multiple users can use the system to do their work.
-This means that the system needs to <strong>join</strong> multiple computers (<em>nodes</em>) to provide a coherent view on them and the same time <strong>partition</strong> the system to allow for multiple users working concurrently.</p>
+<p>As explained elsewhere in more detail, an HPC cluster consists of multiple computers connected via a network and working together.
+Multiple users can use the system simultaneously to do their work.
+This means that the system needs to <strong>join</strong> multiple computers (<em>nodes</em>) to provide a coherent view of them and the same time <strong>partition</strong> the system to allow multiple users to work concurrently.</p>
 <div class="highlight"><pre><span></span><code>    user 1         user 2          ...
 
   .---. .---.    .---. .---.
@@ -1871,15 +1871,15 @@ This means that the system needs to <strong>join</strong> multiple computers (<e
 </code></pre></div>
 
 <h2 id="interlude-partitioning-single-computers">Interlude: Partitioning Single Computers<a class="headerlink" href="#interlude-partitioning-single-computers" title="Permanent link">&para;</a></h2>
-<p>Overall, this partitioning is not so much different from how your workstation or laptop works.
+<p>Overall, this partitioning is not so different from how your workstation or laptop works.
 Most likely, your computer (or even your smartphone) has multiple processors (or cores).
-You can run multiple programs on the same computer and the fact that (a) there is more than one core and (b) there is more than one program running is opaque to the running programs (except if they explicitely communicate with each other).
-The programs can explicitely take advantage of the multiple processor cores
-The main difference is that you use your computer in an interactive fashion (you perform an action and expect an immediate reaction).</p>
-<p>Even with a single processor (and core), your computer manages to run more than program at the same time.
+You can run multiple programs on the same computer and the fact that (a) there is more than one core and (b) there is more than one program running is not known to the running programs (unless they explicitly communicate with each other).
+Different programs can explicitly take advantage of the multiple processor cores.
+The main difference is that you normally use your computer in an interactive fashion (you perform an action and expect an immediate reaction).</p>
+<p>Even with a single processor (and core), your computer manages to run more than one program at the same time.
 This is done with the so-called <em>time-slicing</em> approach where the operating system lets each programs run in turn for a short time (a few milliseconds).
-A program with a higher priority might get more time slices than one with a lower (e.g., your audio player has soft real-time requirements and you would hear artifacts if it is starved for compute resources).
-Your operating system protects each program from the next by creating an <em>address space</em> for each program.
+A program with a higher priority will get more time slices than one with a lower (e.g., your audio player has real-time requirements and you will hear artifacts if it is starved for compute resources).
+Your operating system protects programs from each other by creating an <em>address space</em> for each.
 When two programs are running, the value of the memory at any given position in one program is independent from the value in the other program.
 Your operating system offers explicit functionality for sharing certain memory areas that two programs can use to exchange data efficiently.</p>
 <p>Similarly, file permissions with Unix users/groups or Unix/Windows ACLs (access control lists) are used to isolate users from each other.
@@ -1887,7 +1887,7 @@ Programs can share data by accessing the same file if they can both access it.
 There are special files called <em>sockets</em> that allow for network-like inter-process communication but of course two programs on the same computer can also connect (virtually) via the computer network (no data will actually go through a cable).</p>
 <h2 id="interlude-resource-types">Interlude: Resource Types<a class="headerlink" href="#interlude-resource-types" title="Permanent link">&para;</a></h2>
 <p>As another diversion, let us consider how Unix manages its resources.
-This fact is important to understand how to request resources from the scheduler later on.</p>
+This is important to understand when requesting resources from the scheduler later on.</p>
 <p>First of all, a computer might offer a certain <strong>feature</strong> such as a specific hardware platform or special network connection.
 Examples for this on the BIH HPC are specific Intel processor generations such as <code>haswell</code> or the availability of Infiniband networking.
 You can request these with so-called constraints; they are not allocated to specific jobs.</p>
@@ -1895,44 +1895,44 @@ You can request these with so-called constraints; they are not allocated to spec
 The most important resources here are:</p>
 <ul>
 <li>computing resources (processors/CPUs (central progressing units) and cores, details are explained below),</li>
-<li>main memory / RAM, and</li>
+<li>main memory / RAM,</li>
 <li>special hardware such as GPUs, and</li>
 <li>(wall-clock) time that a job wants to run as an upper bound.</li>
 </ul>
-<p>Generally, once a resource has been allocated to a job, they are not available to another.
-This means if you allocating more resources to your job that you actually need (<em>overallocation</em>) then these resources are not available to other jobs (whether they are from you or other users).
+<p>Generally, once a resource has been allocated to one job, it is not available to another.
+This means if you allocating more resources to your job that you actually need (<em>overallocation</em>) then those resources are not available to other jobs (whether they are your jobs or those of other users).
 This will be explained further below.</p>
-<p>Another example for resource allocation are <em>licenses</em>.
+<p>Another example of resource allocation are <em>licenses</em>.
 The BIH HPC has a few Matlab 2016b licenses that users can request.
-As long as a license is allocated to one job, they are unavailable to another.</p>
+As long as a license is allocated to one job, it is unavailable to another.</p>
 <h2 id="nodes-sockets-processors-cores-threads">Nodes, Sockets, Processors, Cores, Threads<a class="headerlink" href="#nodes-sockets-processors-cores-threads" title="Permanent link">&para;</a></h2>
 <p>Regarding compute resources, Slurm differentiates between:</p>
 <ul>
 <li>nodes: a compute server,</li>
 <li>sockets: a socket in the compute server that hosts one physical processor,</li>
 <li>processor: a CPU or a <em>CPU core</em> in a multi-core computer (all CPUs in the BIH HPC are multi-core), and</li>
-<li>(hardware) threads: most Intel CPUs feature hardware threads (also known as "hyperthreading") where each each core looks like two cores.</li>
+<li>(hardware) threads: most Intel CPUs feature hardware threads (also known as "hyperthreading") where each core appears to be two cores.</li>
 </ul>
 <p>In most cases, you will use one compute node only.
-For using two nodes, you would have to use message passing, e.g., MPI, for processes on more than one node to communicate.
-Thus, you would mostly use single-threaded and multi-threaded processes or multiple processes on the same node.</p>
+When using more than one node, you will need to use some form of message passing, e.g., MPI, so processes on different nodes can communicate.
+On a single node you would mostly use single- or multi-threaded processes, or multiple processes.</p>
 <p><img alt="Slurm's Multiprocessing Definition" class="center" src="../figures/slurm-multicore.gif" /></p>
 <p><em class="center">Above: Slurm's nomenclature for sockets, processors, cores, and threads (from <a href="https://slurm.schedmd.com/mc_support.html#defs">Slurm Documentation</a>).</em></p>
 <p>Co-locating processes/threads on the same socket has certain implications that are mostly useful for numerical applications.
 We will not further go into detail here.
 Slurm provides many different features of ways to specify allocation of "pinning" to specific process locations.
 If you need this feature, we trust that you find sufficient explanation in the Slurm documentation.</p>
-<p>Usually, you would allocate multiple cores (which Slurm uses synonymously with processors) on a single node (allocation on a single node is the default).</p>
+<p>Usually, you would allocate multiple cores (a term Slurm uses synonymously with processors) on a single node (allocation on a single node is the default).</p>
 <h2 id="how-scheduling-works">How Scheduling Works<a class="headerlink" href="#how-scheduling-works" title="Permanent link">&para;</a></h2>
-<p>Slurm is an acronym for "Simple Linux Unix Resource Manager" and the word "scheduler" does not occur.
-Actually, one classically differentiate managing of resources and scheduling.
-The <strong>resource manager</strong> would allocate the user resources according to request for their job and ensure that there are no conflicts.
-In the case of no resources being available, the <strong>scheduler</strong> will put the user's job into a queue and then distribute compute sources to them as they become available.
-In the following, both is simplified as the term <em>scheduler</em>.</p>
-<p>Also, the interesting case occurs if there currently not enough resources available for at least two jobs that are submitted to the scheduler.
+<p>Slurm is an acronym for "Simple Linux Unix Resource Manager" (note that the word "scheduler" does not occur here).
+Actually, one classically differentiates between the managing of resources and the scheduling of jobs that use them.
+The <strong>resource manager</strong> allocates resources according to a user's request for a job and ensures that there are no conflicts.
+If the required resources are not available, the <strong>scheduler</strong> puts the user's job into a queue. Later, when then requested resources become available the scheduler assigns them to the job and runs it.
+In the following, both resource allocation and the running of the job are described as being done by the <em>scheduler</em>.</p>
+<p>The interesting case occurs when there are not enough resources available for at least two jobs submitted to the scheduler.
 The scheduler has to decide how to proceed.
-When simplifying to only scheduling cores, each job will request a number of cores and a number of cores.
-The scheduler will then generate a schedule that might look as follows.</p>
+Consider the simplified case of only scheduling cores. Each job will request a number of cores.
+The scheduler will then generate a scheduling plan that might look as follows.</p>
 <div class="highlight"><pre><span></span><code>core
   ^
 4 |   |---job2---|
@@ -1944,38 +1944,41 @@ The scheduler will then generate a schedule that might look as follows.</p>
             0    5    0
 </code></pre></div>
 
-<p><code>job1</code> has allocated one core and <code>job2</code> has allocated two cores.
-When a <code>job3</code> for one core is submitted at <em>t = 5</em> then it has to wait at least as long until <code>job1</code> is finished.
-If <code>job3</code> would allocate two or more cores, it would have to wait at least until <code>job2</code> has finished as well.</p>
+<p><code>job1</code> has been allocated one core and <code>job2</code> has been allocated two cores.
+When <code>job3</code>, requesting one core is submitted at <em>t = 5</em>, it has to wait at least as long until <code>job1</code> is finished.
+If <code>job3</code> requested two or more cores, it would have to wait at least until <code>job2</code> also finished.</p>
 <p>We can now ask several questions, including the following:</p>
 <ol>
-<li><em>What if a job runs shorter than the allocated time?</em>
+<li><em>What if a job runs for less than the allocated time?</em>
     -- In this case, resources become free and the scheduler will attempt to select the next job(s) to run.</li>
 <li><em>What if a job runs longer than the allocated time?</em>
-    -- In this case, the scheduler will send a <a href="https://en.wikipedia.org/wiki/Signal_(IPC)">Unix signal</a> to the process first.
-    The job will be given a bit more time and then it will be terminated.
+    -- In this case, the scheduler will send an informative <a href="https://en.wikipedia.org/wiki/Signal_(IPC)">Unix signal</a> to the process first.
+    The job will be given a bit more time and if it does not exit it will be forcibly terminated.
     You will find a note about this at the end of your job log file.</li>
 <li><em>What if multiple jobs compete for resources?</em>
-    -- The scheduler will prefer certain jobs over certain others using the <a href="https://slurm.schedmd.com/priority_multifactor.html">Slurm Multifactor Priority Plugin</a>.
-    In practice, small jobs will be preferred over large jobs, users with few used resources in the last month will be favored over heavy consumers, long-waiting jobs will be favored over recently submitted jobs, and many other factors.
-    You can use the <a href="https://slurm.schedmd.com/priority_multifactor.html#sprio">sprio utility</a> for inspecting the factors in real-time.</li>
+    -- The scheduler will prefer certain jobs over others using the <a href="https://slurm.schedmd.com/priority_multifactor.html">Slurm Multifactor Priority Plugin</a>.
+    In practice, small jobs will be preferred over large, users with few used resources in the last month will be favored over heavy consumers, long-waiting jobs will be favored over recently submitted jobs, and many other factors.
+    You can use the <a href="https://slurm.schedmd.com/priority_multifactor.html#sprio">sprio utility</a> to inspect these factors in real-time.</li>
 <li><em>How does the scheduler handle new requests?</em>
-    -- Generally, the scheduler will add new jobs into the waiting queue.
-    The scheduler runs priority and scheduler recomputations with different computational effort.
-    Slurm is configured to perform computationally simple schedule recomputations quite regularly and larger recomputations will be done more infrequently.</li>
+    -- Generally, the scheduler will add new jobs to the waiting queue.
+    The scheduler regularly adjusts its planning by recalculating job priorities.
+    Slurm is configured to perform computationally simple schedule recalculations quite often and larger recalculations more infrequently.</li>
 </ol>
 <p>Also see the <a href="https://slurm.schedmd.com/faq.html">Slurm Frequently Asked Questions</a>.</p>
-<p>Please note that even if all jobs were known from the beginning then scheduling is a so-called <em>NP-complete</em> problem and whole computer science journals and books are dedicated only to scheduling.
-Things get more complex in the case of online scheduling where jobs can appear at any time.
+<p>Please note that even if all jobs were known at the start of time, scheduling is still a so-called <em>NP-complete</em> problem. Entire computer science journals and books are dedicated only to scheduling.
+Things get more complex in the case of online scheduling, in which new jobs can appear at any time.
 In practice, Slurm does a fantastic job with its heuristics but it heavily relies on parameter tuning.
 HPC administration is constantly working on optimizing the scheduler settings.
-In the case that you observe inexplicable behaviour, please notify us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</p>
+Note that you can use the <code>--format</code> option to the <code>squeue</code> command to request that it shows you information
+about job scheduling (in particular, see the <code>%S</code> field, which will show you the expected start time for a job,
+assuming Slurm has calculated it). See <code>man squeue</code> for details.
+If you observe inexplicable behavior, please notify us at <code>hpc-helpdesk@bihealth.de</code>.</p>
 <h2 id="slurm-partitions">Slurm Partitions<a class="headerlink" href="#slurm-partitions" title="Permanent link">&para;</a></h2>
 <p>In Slurm, the nodes of a cluster are split into <strong>partitions</strong>.
 Nodes are assigned to one or more partition (see the <a href="../../overview/job-scheduler/">Job Scheduler</a> section for details).
-Jobs can also be assigned to one or more partitions and are executed in nodes of the given partition.</p>
-<p>In the BIH HPC, partitions are used to stratify jobs of certain running times and provide different quality of service (e.g., maximal number of CPU cores available to a user for jobs of a certain running time and size).
-The partitions <code>gpu</code> and <code>highmem</code> provide special hardware (the nodes are not assigned to other partitions) and the partition <code>mpi</code> allows MPI-parallelism and the allocation of jobs to more than one node.
+Jobs can also be assigned to one or more partitions and are executed on nodes of the given partition.</p>
+<p>In the BIH HPC, partitions are used to stratify jobs of certain running times and to provide different quality of service (e.g., maximal number of CPU cores available to a user for jobs of a certain running time and size).
+The partitions <code>gpu</code> and <code>highmem</code> provide special hardware (the nodes are not assigned to other partitions) and the <code>mpi</code> partition allows MPI-parallelism and the allocation of jobs to more than one node.
 The <a href="../../overview/job-scheduler/">Job Scheduler</a> provides further details.</p>
                 
                   
@@ -1985,7 +1988,7 @@ The <a href="../../overview/job-scheduler/">Job Scheduler</a> provides further d
 <div class="md-source-date">
   <small>
     
-      Last update: July 23, 2020
+      Last update: July 28, 2020
     
   </small>
 </div>

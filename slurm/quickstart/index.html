@@ -1743,7 +1743,7 @@
                 
                 
                 <h1 id="slurm-quickstart">Slurm Quickstart<a class="headerlink" href="#slurm-quickstart" title="Permanent link">&para;</a></h1>
-<p><strong>Create an interactive bash session</strong> (<code>srun</code> will run bash in real-time, <code>--pty</code> makes <code>stdout</code> and <code>stderr</code> to your current session).</p>
+<p><strong>Create an interactive bash session</strong> (<code>srun</code> will run bash in real-time, <code>--pty</code> connects its <code>stdout</code> and <code>stderr</code> to your current session).</p>
 <div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty bash -i
 med0740:~$ <span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span>
 Hello World
@@ -1805,7 +1805,7 @@ med-login1:~$
 <div class="highlight"><pre><span></span><code>med-login1:~$ srun --cpus-per-task<span class="o">=</span><span class="m">4</span> --nodes<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>4G --pty bash
 med0740:~$ <span class="nb">export</span> <span class="p">|</span> grep SLURM_CPUS_ON_NODE
 <span class="m">4</span>
-med0740:~$ your-parallel-script <span class="m">4</span>
+med0740:~$ your-parallel-script --threads <span class="m">4</span>
 </code></pre></div>
 
 <p><strong>Submit an R script to the cluster in batch mode</strong> (<code>sbatch</code> schedules the job for later execution).</p>
@@ -1815,6 +1815,8 @@ med0740:~$ your-parallel-script <span class="m">4</span>
 EOF
 med-login1:~$ sbatch job-script.sh
 Submitted batch job <span class="m">7</span>
+
+<span class="c1"># Some time later:</span>
 med-login1:~$ cat slurm-7.out
 Hello, I<span class="s1">&#39;m running on med0740 and it&#39;</span>s Fri Mar  <span class="m">6</span> <span class="m">07</span>:36:42 CET <span class="m">2020</span>
 med-login1:~$
@@ -1827,7 +1829,7 @@ med-login1:~$
 <div class="md-source-date">
   <small>
     
-      Last update: July 23, 2020
+      Last update: July 28, 2020
     
   </small>
 </div>

@@ -1841,18 +1841,18 @@ This section first gives some technical background and then explains how to impl
 <div class="admonition note">
 <p class="admonition-title">Technical Background Summary</p>
 <ul>
-<li><strong>virtual memory</strong> is what your programs tells the operating system what it wants to use</li>
+<li><strong>virtual memory</strong> is what your programs tells the operating system it wants to use</li>
 <li><strong>resident set size</strong> is the amount of memory that your program <em>actually</em> uses</li>
-<li>most memory will reside on the <strong>heap</strong></li>
+<li>most memory will be allocated on the <strong>heap</strong></li>
 </ul>
 </div>
-<p>Main memory used to be one of the most important topics when programming computers as computers had so little.
-There is the infamous quote "640KB ought ot be enough for anybody" wrongly attribute to Bill Gates which refers to the fact that early computers could only address that amount of memory and in MS DOS, one had to use special libraries for a program to use more memory.
-Today, computers are very fast and memory is plenty and people can (rightfully) forget about memory allocation ... as long as they don't use "much" memory by today's standards.</p>
+<p>Main memory used to be one of the most important topics when programming, as computers had so little.
+There is the infamous quote "640KB ought ot be enough for anybody" wrongly attribute to Bill Gates which refers to the fact that early computers could only address that amount of memory. In MS DOS, one had to use special libraries for a program to use more memory.
+Today, computers are very fast and memory is plentiful and people can (rightfully) forget about memory allocation ... as long as they don't use "much" memory by today's standards.</p>
 <p>The Linux operating system differentiates between the following types of memory:</p>
 <ul>
 <li><strong>virtual memory size (vsize)</strong>, the amount of memory that a process (virtually) allocates,</li>
-<li><strong>resident set size (rss)</strong>, the amount of memory actually used and that is currently in the computer's main memory,</li>
+<li><strong>resident set size (rss)</strong>, the amount of memory actually used and currently in the computer's main memory,</li>
 <li>the <strong>swap memory usage</strong>, the amount of active memory that is not present in main memory but on the computer's disk,</li>
 <li>sometimes, the <strong>shared memory</strong> is also interesting, and</li>
 <li>it might be interesting to know about <strong>heap</strong> and <strong>stack</strong> size.</li>
@@ -1860,43 +1860,43 @@ Today, computers are very fast and memory is plenty and people can (rightfully) 
 <p>Note that above we are talking about processes, not Slurm jobs yet.
 Let us look at this in detail:</p>
 <p>Each program uses some kind of memory management.
-For example, in C the <code>malloc</code>/<code>free</code> series of library commands allocate and free memory and in Java, R, and Python, memory allocation and release is done automatically using a concept called garbage collection.
-Each program starts out with a certain <strong>virtual memory size</strong>, that is the amount of memory it can address, say 128MB.
-When the program allocates memory, the memory allocation mechanism will look whether it has sufficient space left.
-If not, it will request an increase in virtual memory from the operating system, say to 256MB.
-If this fails then the program can try to handle this error, e.g., terminate gracefully, and many programs will just panic and stop.
+For example, in C the <code>malloc</code> and <code>free</code> functions manually allocate and free memory while in Java, R, and Python, memory allocation and release is done automatically using a concept called garbage collection.
+Each program starts with a certain <strong>virtual memory size</strong>, that is the amount of memory it can address, say 128MB.
+When the program allocates memory, the memory allocation mechanism will check whether it has sufficient space left.
+If not, it will request an increase in virtual memory from the operating system, e.g., to 256MB.
+If this fails then the program can try to handle the error, e.g., terminate gracefully, but many programs will just panic and stop.
 Otherwise, the program will get access to more memory and happily continue to run.</p>
 <p>However, programs can allocate humonguous amounts of virtual memory and only use a little.
-Memory is organized in pages (classically 4096 bytes but they can be larger using so-called "huge page" features).
+Memory is organized in "pages" (classically these are 4096 bytes each, but can be larger using so-called "huge page" features).
 The operating system tracks which memory pages are actually used by a process.
-The total size of this is the <strong>resident set size</strong> and this is the amount of memory that is actually currently used by a program.
-Programs can also mark pages as unused again and thus free resident memory and also decrease their virtual memory.</p>
+The total size of these pages is called the <strong>resident set size</strong>: the amount of memory that is actually currently used by a program.
+Programs can also mark pages as unused again, thus freeing resident memory and can also decrease their virtual memory.</p>
 <p>In some cases it is still interesting to use <strong>swap memory</strong>.
-Here, the contents of resident memory can be copied to the disk by the operating system.
-This process is completely transparent for the program; the memory is available at the original position in the <em>virtual memory</em>!
-However, accessing it will take some time as it is read from the disk.
-This way, it was possible for a computer with 4MB of RAM and a disk of 100MB to run programs that used 8MB.
-Of course, this was only really useable for programs running in the background and one could really feel the latency if a graphical program was swapped in (you would actually hear the hard drive working).
-Today, swap is only interesting if you want to put your computer into hibernation.
-Given the large main memory on the cluster node and their small hard drives (only used for loading the operating system), the BIH HPC has no swap memory.</p>
-<p>Most HPC users will also use <strong>shared memory</strong> implicitely.
-Whenever a program uses <code>fork</code> to create a subprocess (this is <em>not</em> a thread), the program can chose to "copy" its current address space.
-The second process now has access to the same memory than the parent process in a <em>copy-on-write</em> fashion.
-This allows to pre-load some database but also allows to re-use loaded library code used by the child process as well.
-Once the child writes to the copy-on-write memory of the parent, the memory page will be copied and attributed to the child.</p>
-<p>Two or more processes can share the same amount of memory explicitely which is mostly used for inter-process communication but the program Bowtie uses this for sharing the memory of indices.
-For example, the Python <code>multiprocessing</code> module will use this but also if you have two MPI processes running on the same host.</p>
+Here, the contents of resident memory are copied to disk by the operating system.
+This process is completely transparent to the program; the data remains available at the original positions in the <em>virtual memory</em>!
+However, accessing it will take some time as it must be read back into main memory from the disk.
+In this way, it was possible for a computer with 4MB of RAM and a disk of 100MB to run programs that used 8MB.
+Of course, this was only really useable for programs that ran in the background. One could really feel the latency if a graphical program was using swapped memory (you could actually hear the hard drive working).
+Today, swap storage is normally only relevant when put your computer into hibernation.
+Given the large main memory on the cluster nodes, their small local hard drives (just used for loading the operating system), and the extreme slowness involved in using swapped memory, the BIH HPC nodes have no swap memory allocated.</p>
+<p>Most HPC users will also use <strong>shared memory</strong>, at least implicitly.
+Whenever a program uses <code>fork</code> to create a subprocess (BTW, this is <em>not</em> a thread), the program can chose to "copy" its current address space.
+The second process then has access to the same memory than the parent process in a <em>copy-on-write</em> fashion.
+This allows, for example, pre-loading a database, and also allows the use of already loaded library code by the child process as well.
+If the child process writes to the copy-on-write memory of the parent, the relevant memory page will be copied and attributed to the child.</p>
+<p>Two or more processes can share the same memory explicitly. This is usually used for inter-process communication but the Bowtie program uses it for sharing the memory of indices.
+For example, the Python <code>multiprocessing</code> module will use this, including if you have two MPI processes running on the same host.</p>
 <p>Memory is also separated into segments, the most interesting ones are <strong>heap</strong> and <strong>stack</strong> memory.
 For compiled languages, memory can be allocated on either.
-For C, an <code>int x = 0</code> is allocated on the stack.
-Every time that you call a function, another <em>stack frame</em> is created with the stack-local variables.
-The stack thus mostly grows through function calls and your program and shrinks through returning from a function.
-The stack size is limited (by <code>ulimit -s</code>) and a too deep (e.g., infinite recursion) will crash your program.
-Again for C, <code>int * ptr = malloc(10 * sizeof(int));</code> will allocate memory for one integer pointer on the stack and memory for 10 integers on the heap.
-If the function returns, the pointer on the stack will be freed but for freeing the integer array, you'd have to do <code>free(ptr)</code>.
-If the memory is not freed then this constitutes a <em>memory leak</em> but that is another topic.</p>
-<p>Other relevant segments are <strong>code</strong> where the compile code lives and <strong>data</strong> where static data such as strings that are displayed to the user live.
-As a side node, for interpreted languages such as R or Python, the code and data segments will refer to the code and data of Python while the actual program text will be on the heap.</p>
+For C, an <code>int</code> variable will be allocated on the stack.
+Every time you call a function, a <em>stack frame</em> is created in memory to hold the local variables and other information for the duration of the function execution.
+The stack thus grows through function calls made by your program and shrinks when the functions return.
+The stack size for a process is limited (by <code>ulimit -s</code>) and a program that goes too deep (e.g., via infinite recursion) will be terminated by the operating system if it exceeds this limit.
+Again in C, <code>int * ptr = (int *)malloc(10 * sizeof(int));</code> will allocate memory for one variable (an integer pointer) on the stack and memory for 10 integers on the heap.
+When the function returns, the <code>ptr</code> variable on the stack will be freed but to free the array of integers, you'd have to call <code>free(ptr)</code>.
+If the memory is not freed then this constitutes a <em>memory leak</em>, but that is another topic.</p>
+<p>Other relevant segments are <strong>code</strong>, where the compiled code lives, and <strong>data</strong>, where static data such as strings displayed to the user are stored.
+As a side node, in interpreted languages such as R or Python, the code and data segments will refer to the code and data of Python while the actual program text will be on the heap.</p>
 <h2 id="interlude-memory-in-java">Interlude: Memory in Java<a class="headerlink" href="#interlude-memory-in-java" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Memory in Java Summary</p>
@@ -1907,8 +1907,8 @@ As a side node, for interpreted languages such as R or Python, the code and data
 </div>
 <p>Java's memory management provides for some interesting artifacts.
 When running simple Java programs, you will never run into this but if you need to use gigabytes of memory in Java then you will have to learn a bit about Java memory management.
-This is the case when running the GATK programs, for example.</p>
-<p>As different operating systems handle memory management slightly different, the Java virtual machine performs it own memory management to provide a consistent interface.
+This is the case when running <a href="https://gatk.broadinstitute.org/hc/en-us">GATK</a> programs, for example.</p>
+<p>As different operating systems handle memory management differently, the Java virtual machine does its own memory management to provide a consistent interface.
 The following three settings are important in governing memory usage of Java:</p>
 <ul>
 <li><code>-Xmx&lt;size&gt;</code>/<code>-XX:MaxHeapSize=&lt;size&gt;</code> -- the maximal <em>Java heap</em> size</li>
@@ -1916,27 +1916,27 @@ The following three settings are important in governing memory usage of Java:</p
 <li><code>-Xss&lt;size&gt;</code>/<code>-XX:ThreadStackSize=&lt;size&gt;</code> -- maximal stack size available to a Java thread (e.g., the main thread)</li>
 </ul>
 <p>Above, <code>&lt;size&gt;</code> is a memory specification, either in bytes or with a suffix, e.g., <code>80M</code>, or <code>1G</code>.</p>
-<p>On startup, Java will roughly do the following:</p>
+<p>On startup, Java does roughly the following:</p>
 <ul>
 <li>Setup the core virtual machine, load libraries, etc. and allocate (vsize) consume (rss) memory on the <em>OS (operating system) heap</em>.</li>
 <li>Setup the <em>Java heap</em> allocate (vsize) and consume (rss) memory on the <em>OS heap</em>.
   In particular, Java will need to setup data structures for the memory management of each individual object.</li>
-<li>Run the program where Java data and Java threads will lead to memory allocationg (vsize) and consuming (rss) of memory.</li>
+<li>Run the program where Java data and Java threads will lead to memory allocation (vsize) and consumption (rss) of memory.</li>
 </ul>
 <p>Memory freed by the Java garbage collector can be re-used by other Java objects (rss remains the same) or be freed in the operating system (rss decreases).
 The Java VM program itself will also consume memory on the <em>OS stack</em> but that is negligible.</p>
 <p>Overall, the Java VM needs to store in main memory:</p>
 <ul>
-<li>The Java VM, program code, Java thread stacks etc. (very few memory).</li>
+<li>The Java VM, program code, Java thread stacks etc. (very little memory).</li>
 <li>The <em>Java heap</em> (potentially a lot of memory).</li>
 <li>The <em>Java heap management</em> data structures (so-called "off-heap", but of course on the <em>OS heap</em>) (potentially also considerable memory).</li>
 </ul>
-<p>In the BIH HPC context, the following is recommended:</p>
+<p>In the BIH HPC context, the following is recommended to:</p>
 <ul>
-<li>Set the Java heap to an appropriate size (use trial-and-error to determin the correct size or look through internet forums).</li>
+<li>Set the Java heap to an appropriate size (use trial-and-error to determine the correct size or look through internet forums).</li>
 <li>Only tune initial heap size in the case of performance issues (unlikely in batch processing).</li>
 <li>Only bump the stack size when problems occur.</li>
-<li>Consider the "off-heap" memory when performing Slurm allocations.</li>
+<li>Consider "off-heap" memory when performing Slurm allocations.</li>
 </ul>
 <h2 id="memory-allocation-in-slurm">Memory Allocation in Slurm<a class="headerlink" href="#memory-allocation-in-slurm" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
@@ -1944,24 +1944,24 @@ The Java VM program itself will also consume memory on the <em>OS stack</em> but
 <ul>
 <li>most user will simply use <code>--memory=&lt;size&gt;</code> (e.g., <code>&lt;size&gt;=3G</code>) to allocate memory per node</li>
 <li>both interactive <code>srun</code> and batch <code>sbatch</code> jobs are governed by Slurm memory allocation</li>
-<li>the sum of all memory of all processes started by your job may not go over the job reservation</li>
+<li>the sum of all memory of all processes started by your job may not exceed the job reservation.</li>
 <li>please don't over-allocate memory, see "Memory Accounting in Slurm" below for details</li>
 </ul>
 </div>
 <p>Our Slurm configuration uses Linux cgroups to enforce a maximum amount of resident memory.
-You simply specify it using <code>--memory=&lt;size&gt;</code> to your <code>srun</code> and <code>sbatch</code> command.</p>
-<p>In the (rare) case that you provide more flexible number of threads (Slurm tasks) or GPUs then you could also look into <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code>.
-The <a href="https://slurm.schedmd.com/sbatch.html">official Slurm sbatch</a> manual is quite helpful as is <code>man sbatch</code> on the cluster command line.</p>
+You simply specify it using <code>--memory=&lt;size&gt;</code> in your <code>srun</code> and <code>sbatch</code> command.</p>
+<p>In the (rare) case that you provide more flexible number of threads (Slurm tasks) or GPUs, you could also look into <code>--mem-per-cpu</code> and <code>--mem-per-gpu</code>.
+The <a href="https://slurm.schedmd.com/sbatch.html">official Slurm sbatch</a> manual is quite helpful, as is <code>man sbatch</code> on the cluster command line.</p>
 <p>Slurm (or rather Linux via cgroups) will track all memory started by all jobs by your process.
 If each process works independently (e.g., you put the output through a pipe <code>prog1 | prog2</code>) then the amount of memory consumed will at any given time be the sum of the RSS of both processes <em>at that time</em>.
-If you your program uses for <code>fork</code> which transfers memory in a copy-on-write fashion then of course, the shared memory is only counted once.
-Note that Python's multiprocessing is <strong>not</strong> using copy on write but the data will be explicitely copied and consume additional memory.
-Refer to the Scipy/Numpy/Pandas etc. documentation on how to achieve parallelism without copying data too much.</p>
+If your program uses <code>fork</code>, which uses memory in a copy-on-write fashion, the shared memory is of course only counted once.
+Note that Python's multiprocessing does <strong>not</strong> use copy on write: its data will be explicitly copied and consume additional memory.
+Refer to the Scipy/Numpy/Pandas etc. documentation on how to achieve parallelism without copying too much data.</p>
 <p>The amount of virtual memory that your program can reserve is only "virtually" unlimited (pun not intended).
 However, in practice, the operating system will not like you allocating more than physically available.
-When you program attempts to allocate more memory than requested via Slurm, then you program will be killed.</p>
-<p>You can inspect the amount of memory available on each node in total with <code>sinfo --format "%.10P %.10l %.6D %.6m %N"</code> as shown below.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~# sinfo --format <span class="s2">&quot;%.10P %.10l %.6D %.6m %N&quot;</span>
+If your program attempts to allocate more memory than requested via Slurm, your program will be killed.</p>
+<p>You can inspect the amount of memory available on each node in total with <code>sinfo --format "%.10P %.10l %.6D %.6m %N"</code>, as shown below.</p>
+<div class="highlight"><pre><span></span><code>$ sinfo --format <span class="s2">&quot;%.10P %.10l %.6D %.6m %N&quot;</span>
  PARTITION  TIMELIMIT  NODES MEMORY NODELIST
     debug*    <span class="m">8</span>:00:00    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
     medium <span class="m">7</span>-00:00:00    <span class="m">240</span> <span class="m">128722</span> med<span class="o">[</span><span class="m">0101</span>-0164,0201-0264,0501-0516,0601-0632,0701-0764<span class="o">]</span>
@@ -1976,17 +1976,17 @@ When you program attempts to allocate more memory than requested via Slurm, then
 <div class="admonition note">
 <p class="admonition-title">Memory Accounting in Slurm Summary</p>
 <ul>
-<li>you can use Slurm accounting to find out about memory and also CPU usage of your program</li>
+<li>you can use Slurm accounting to see memory and CPU usage of your program</li>
 <li>use <code>sacct -j JOBID --format=JobID,MaxRSS</code> to display the RSS usage of your program</li>
 <li>use <code>sacct -j JOBID --format=Elapsed,AllocCPUs,TotalCPU</code> to display information about CPU usage</li>
 <li>consider using the helpful script below to compute overallocated memory</li>
 </ul>
 </div>
-<p>While Slurm runs your job it collect information about your job such as the running time, exit status, and memory usage.
-This information is available through the <em>scheduling</em> system with its commands <code>squeue</code> and <code>scontrol</code> only while the job is pending execution, executing, or currently completing.
-After completion, the information is only available through the <strong>Slurm accounting</strong> system.</p>
+<p>While Slurm runs your job, it collects information about the job such as the running time, exit status, and memory usage.
+This information is available through the <em>scheduling</em> system via the <code>squeue</code> and <code>scontrol</code> commands, but only while the job is pending execution, executing, or currently completing.
+After job completion, the information is only available through the <strong>Slurm accounting</strong> system.</p>
 <p>You can query information about jobs, e.g., using <code>sacct</code>:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span>
+<div class="highlight"><pre><span></span><code>$ sacct -j <span class="m">1607166</span>
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
 <span class="m">1607166</span>      snakejob.+   critical                    <span class="m">16</span>  COMPLETED      <span class="m">0</span>:0
@@ -1996,10 +1996,10 @@ After completion, the information is only available through the <strong>Slurm ac
 
 <p>This shows that the job with ID <code>1607166</code> with a job ID starting with <code>snakejob.</code> has been run in the <code>critical</code> partition, been allocated 16 cores and had an exit code of <code>0:0</code>.
 For technical reasons, there is a <code>batch</code> and an <code>extern</code> sub step.
-Actually, Slurm allows to run various steps in one batch <a href="https://slurm.schedmd.com/job_launch.html">as documented in the Slurm documentation</a>.</p>
-<p>The <code>sacct</code> command has various command line parameters that you can see with <code>man sacct</code> or <a href="https://slurm.schedmd.com/sacct.html">in the Slurm documentation</a>.
+Actually, Slurm makes it possible to run various steps in one batch <a href="https://slurm.schedmd.com/job_launch.html">as documented in the Slurm documentation</a>.</p>
+<p>The <code>sacct</code> command has various command-line options that you can read about via <code>man sacct</code> or <a href="https://slurm.schedmd.com/sacct.html">in the Slurm documentation</a>.
 We can use <code>--brief</code>/<code>-b</code> to show only a brief summary.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --brief
+<div class="highlight"><pre><span></span><code>$ sacct -j <span class="m">1607166</span> --brief
        JobID      State ExitCode
 ------------ ---------- --------
 <span class="m">1607166</span>       COMPLETED      <span class="m">0</span>:0
@@ -2009,8 +2009,8 @@ We can use <code>--brief</code>/<code>-b</code> to show only a brief summary.</p
 
 <p>Similarly, you can use <code>--long</code> to display extended information (see the manual for the displayed columns).
 Very long report lines can be piped into <code>less -S</code> for easier display.
-You can fine-tune the information to display with a format string to <code>--format</code></p>
-<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS
+You can fine-tune the information to display with a format string to <code>--format</code>:</p>
+<div class="highlight"><pre><span></span><code>$ sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS
        JobID   ReqMem     MaxRSS    Elapsed   TotalCPU  AllocCPUS
 ------------ --------- ---------- ---------- ---------- ----------
 <span class="m">1607166</span>          60Gn              <span class="m">13</span>:07:31 <span class="m">7</span>-16:21:29         <span class="m">16</span>
@@ -2018,16 +2018,16 @@ You can fine-tune the information to display with a format string to <code>--for
 <span class="m">1607166</span>.ext+     60Gn          <span class="m">0</span>   <span class="m">13</span>:07:31  <span class="m">00</span>:00.001         <span class="m">16</span>
 </code></pre></div>
 
-<p>From this command, we can read that we allocate 60GB memory of memory per node (suffix <code>n</code>) and the maximum RSS is reported to be 4.3GB.
+<p>From this command, we can read that we allocate 60GB memory of memory per node (suffix <code>n</code>) and the maximum RSS is reported as 4.3GB.
 You can use this information to fine-tune your memory allocations.</p>
-<p>Further, the program ran for 13 hours and 7 minutes with allocated 16 CPU cores and consumed a total of 17 days, 16 hours, and 21 minutes of CPU time.
-Thus, a total of 10'061 CPU minutes were spent in 787 minutes wall-clock time.
-This yields an overall empirical degree of parallelism of about 10061 / 787 = 14 and a parallel efficiency of 14 / 16 = 88%.
+<p>Further, the program ran for 13 hours and 7 minutes with allocated 16 CPU cores and consumed a total of 7 days, 16 hours, and 21 minutes of CPU time.
+Thus, a total of 10,061 CPU minutes were spent in 787 minutes wall-clock time.
+This yields an overall empirical degree of parallelism of about 10061 / 787 = 14, and a parallel efficiency of 14 / 16 = 88%.
 The discussion of parallel efficiency is a topic not covered here.</p>
-<p>However, you can use the awk script below to compute the empirical parallelism (<code>EmpPar</code>) and the parallel efficiency (<code>ParEff</code>).
-The script also displays the difference i requested and used RSS (<code>DiffRSS</code>).
+<p>However, you can use the <code>awk</code> script below to compute the empirical parallelism (<code>EmpPar</code>) and the parallel efficiency (<code>ParEff</code>).
+The script also displays the difference I requested, and used RSS (<code>DiffRSS</code>).
 The script <a href="../assets/quick-sacct.awk">can be found here</a>.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~# sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS <span class="se">\</span>
+<div class="highlight"><pre><span></span><code>$ sacct -j <span class="m">1607166</span> --format<span class="o">=</span>JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS <span class="se">\</span>
                 <span class="p">|</span> awk -f quick-sacct.awk
        JobID     ReqMem     MaxRSS    Elapsed   TotalCPU  AllocCPUS     EmpPar   ParEff  DiffMEM
 ------------ ---------- ---------- ---------- ---------- ----------  --------- -------- --------
@@ -2043,7 +2043,7 @@ The script <a href="../assets/quick-sacct.awk">can be found here</a>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: July 23, 2020
+      Last update: July 28, 2020
     
   </small>
 </div>
