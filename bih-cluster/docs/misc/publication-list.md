@@ -12,6 +12,12 @@ It has been used to support the publications listed below.
 
 Ehmke, N.; Cusmano-Ozog, K.; Koenig, R.; Holtgrewe, M.; Nur, B.; Mihci, E.; Babcock, H.; Gonzaga-Jauregui, C.; Overton, J. D.; Xiao, J.; et al. Biallelic Variants in KYNU Cause a Multisystemic Syndrome with Hand Hyperphalangism. *Bone* 2020, 115219. https://doi.org/10.1016/j.bone.2019.115219.
 
+Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.,Schroeder S., Rasche A., Muth D., Drexler J.F., Heni A.C., Eibner G.J., Page R.A., Jones T.C., MüllerM.A., Sommer S., Glebe D., and Drosten C. (2020).  
+"Mammalian deltavirus without hepadnavirus coinfection in the neotropical rodent *Proechimys semispinosus*."
+*Proceedings of the National Academy of Sciences*
+2020 Jul 28;117(30):17977-17983.
+[doi: 10.1073/pnas.2006750117](https://doi.org/10.1073/pnas.2006750117).
+
 ### 2019
 
 Boeddrich A., Babila J.T., Wiglenda T., Diez L., Jacob M., Nietfeld W., Huska M.R., Haenig C., Groenke N., Buntru A., Blanc E., Meier J.C., Vannoni E., Erck C., Friedrich B., Martens H., Neuendorf N., Schnoegl S., Wolfer DP., Loos M., Beule D., Andrade-Navarro M.A., Wanker E.E. (2019).
