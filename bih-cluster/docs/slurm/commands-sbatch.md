@@ -1,4 +1,4 @@
-# Slurm Command: `sinfo`
+# Slurm Command: `sbatch`
 
 The `srun` command allows you to put a job into the scheduler's queue to be executed at a later time.
 
