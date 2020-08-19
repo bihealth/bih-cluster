@@ -14,7 +14,7 @@ Data can also be managed in **project** which allow cross-group collaboration bu
 # Charite Users
 host:~$ ssh -l user_c med-login1.bihealth.org
 # MDC Users
-host:~$ ssh -l user_m med-login1.hpc.bihealth.org
+host:~$ ssh -l user_m med-login1.bihealth.org
 ```
 
 !!! important "Accounts and Email Adresses"
