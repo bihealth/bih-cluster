@@ -12,9 +12,9 @@ Data can also be managed in **project** which allow cross-group collaboration bu
 
 ```bash
 # Charite Users
-host:~$ ssh -l user_c login.research.hpc.bihealth.org
+host:~$ ssh -l user_c med-login1.bihealth.org
 # MDC Users
-host:~$ ssh -l user_m login.research.hpc.bihealth.org
+host:~$ ssh -l user_m med-login1.hpc.bihealth.org
 ```
 
 !!! important "Accounts and Email Adresses"
