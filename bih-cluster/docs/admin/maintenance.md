@@ -2,9 +2,59 @@ This page documents the current and known upcoming maintenance windows.
 
 # Next Maintenance Window
 
-There currently is no maintenance planned.
+## Slurm Scheduler Updates: September 8, 2020
+
+- To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.
+- If everything runs well, this will finish after 30minutes (8:30 am).
+- Planned Scheduler Changes:
+    - Introduce `interactive` partition that allows small interactive jobs to be scheduled immediately.
+    - Make Slurm scheduler and accounting run more robustly.
 
 # Pending Changes
+
+## Login Node Migration
+
+- The login nodes will be moved from physical machines to virtual machines in high-availability mode.
+- Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
+- The aim is to improve stability and make everything easier to manage by administration.
+
+**Schedule**
+
+- `May 15, 2020:` Availability of the head nodes for testing.
+- `September 31, 2020:` (planned) New login nodes are the preferred connection method.
+- `Maybe 2021?` Old login nodes are switched off.
+
+## Transfer Node Migration (in planning)
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+## CentOS 8 Migration (in planning)
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+- All nodes will be upgraded to CentOS 8.
+- This will be done in a rolling fashion over the course of 1 month.
+- The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
+
+## Unification of Mass Data Mounts
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+- To harmonize the mount options with HPC 4 Clinic, the mount location of `/fast` must be changed to `/data/gpfs-1`.
+- We will start by creating a symlink from `/data/gpfs-1` to `/fast`.
+- To do this properly, a full reboot will be required.
+- We will keep around a symlink from `/fast` to `/data/gpfs-1` for some time during a migration phase.
+
+# Previous Maintenance Windows
 
 ## Network Maintenance: June 3, 2020
 
@@ -52,50 +102,6 @@ SSH Key Management has switched to using Charite and MDC ActiveDirectory servers
   *You do not need to contact us any more to update your keys (we cannot accelerate the process at MDC).*
 - `May 1, 2020:` Keys are now **only** taken from central MDC/Charite servers.
   **You must upload your keys to central servers by then.**
-
-## Login Node Migration
-
-- The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-- Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
-- The aim is to improve stability and make everything easier to manage by administration.
-
-**Schedule**
-
-- `May 15, 2020:` Availability of the head nodes for testing.
-- `May 31, 2020:` (planned) New login nodes are the preferred connection method.
-- `June 15, 2020:` Old login nodes are switched off.
-
-## Transfer Node Migration (in planning)
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
-
-## CentOS 8 Migration (in planning)
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
-
-- All nodes will be upgraded to CentOS 8.
-- This will be done in a rolling fashion over the course of 1 month.
-- The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
-
-## Unification of Mass Data Mounts
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
-
-- To harmonize the mount options with HPC 4 Clinic, the mount location of `/fast` must be changed to `/data/gpfs-1`.
-- We will start by creating a symlink from `/data/gpfs-1` to `/fast`.
-- To do this properly, a full reboot will be required.
-- We will keep around a symlink from `/fast` to `/data/gpfs-1` for some time during a migration phase.
-
-# Previous Maintenance Windows
 
 ## Switch update, Location Flip of med-login2 and med-transfer1
 
