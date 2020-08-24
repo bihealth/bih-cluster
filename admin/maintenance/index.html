@@ -255,9 +255,42 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Maintenance etc.
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
     <a href="./" title="Maintenance etc." class="md-nav__link md-nav__link--active">
       Maintenance etc.
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-scheduler-updates-september-8-2020" class="md-nav__link">
+    Slurm Scheduler Updates: September 8, 2020
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1724,6 +1757,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-scheduler-updates-september-8-2020" class="md-nav__link">
+    Slurm Scheduler Updates: September 8, 2020
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1744,8 +1794,59 @@
                 
                 <p>This page documents the current and known upcoming maintenance windows.</p>
 <h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
-<p>There currently is no maintenance planned.</p>
+<h2 id="slurm-scheduler-updates-september-8-2020">Slurm Scheduler Updates: September 8, 2020<a class="headerlink" href="#slurm-scheduler-updates-september-8-2020" title="Permanent link">&para;</a></h2>
+<ul>
+<li>To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.</li>
+<li>If everything runs well, this will finish after 30minutes (8:30 am).</li>
+<li>Planned Scheduler Changes:<ul>
+<li>Introduce <code>interactive</code> partition that allows small interactive jobs to be scheduled immediately.</li>
+<li>Make Slurm scheduler and accounting run more robustly.</li>
+</ul>
+</li>
+</ul>
 <h1 id="pending-changes">Pending Changes<a class="headerlink" href="#pending-changes" title="Permanent link">&para;</a></h1>
+<h2 id="login-node-migration">Login Node Migration<a class="headerlink" href="#login-node-migration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
+<li>Further, they will be available as <code>login-1.research.hpc.bihealth.org</code> and <code>login-2...</code> instead of  <code>med-login{1,2}</code>.</li>
+<li>The aim is to improve stability and make everything easier to manage by administration.</li>
+</ul>
+<p><strong>Schedule</strong></p>
+<ul>
+<li><code>May 15, 2020:</code> Availability of the head nodes for testing.</li>
+<li><code>September 31, 2020:</code> (planned) New login nodes are the preferred connection method.</li>
+<li><code>Maybe 2021?</code> Old login nodes are switched off.</li>
+</ul>
+<h2 id="transfer-node-migration-in-planning">Transfer Node Migration (in planning)<a class="headerlink" href="#transfer-node-migration-in-planning" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>All nodes will be upgraded to CentOS 8.</li>
+<li>This will be done in a rolling fashion over the course of 1 month.</li>
+<li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
+</ul>
+<h2 id="unification-of-mass-data-mounts">Unification of Mass Data Mounts<a class="headerlink" href="#unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>To harmonize the mount options with HPC 4 Clinic, the mount location of <code>/fast</code> must be changed to <code>/data/gpfs-1</code>.</li>
+<li>We will start by creating a symlink from <code>/data/gpfs-1</code> to <code>/fast</code>.</li>
+<li>To do this properly, a full reboot will be required.</li>
+<li>We will keep around a symlink from <code>/fast</code> to <code>/data/gpfs-1</code> for some time during a migration phase.</li>
+</ul>
+<h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="network-maintenance-june-3-2020">Network Maintenance: June 3, 2020<a class="headerlink" href="#network-maintenance-june-3-2020" title="Permanent link">&para;</a></h2>
 <p>On June 3, we need to perform a network maintenance at 8 am.</p>
 <p>If everything goes well, there might be a short delay in network packages and connections will survive.
@@ -1785,48 +1886,6 @@ We are currently extending our <a href="slurm/quickstart">Slurm-specific documen
 <li><code>May 1, 2020:</code> Keys are now <strong>only</strong> taken from central MDC/Charite servers.
   <strong>You must upload your keys to central servers by then.</strong></li>
 </ul>
-<h2 id="login-node-migration">Login Node Migration<a class="headerlink" href="#login-node-migration" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
-<li>Further, they will be available as <code>login-1.research.hpc.bihealth.org</code> and <code>login-2...</code> instead of  <code>med-login{1,2}</code>.</li>
-<li>The aim is to improve stability and make everything easier to manage by administration.</li>
-</ul>
-<p><strong>Schedule</strong></p>
-<ul>
-<li><code>May 15, 2020:</code> Availability of the head nodes for testing.</li>
-<li><code>May 31, 2020:</code> (planned) New login nodes are the preferred connection method.</li>
-<li><code>June 15, 2020:</code> Old login nodes are switched off.</li>
-</ul>
-<h2 id="transfer-node-migration-in-planning">Transfer Node Migration (in planning)<a class="headerlink" href="#transfer-node-migration-in-planning" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
-No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
-</div>
-<h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
-No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
-</div>
-<ul>
-<li>All nodes will be upgraded to CentOS 8.</li>
-<li>This will be done in a rolling fashion over the course of 1 month.</li>
-<li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
-</ul>
-<h2 id="unification-of-mass-data-mounts">Unification of Mass Data Mounts<a class="headerlink" href="#unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
-No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
-</div>
-<ul>
-<li>To harmonize the mount options with HPC 4 Clinic, the mount location of <code>/fast</code> must be changed to <code>/data/gpfs-1</code>.</li>
-<li>We will start by creating a symlink from <code>/data/gpfs-1</code> to <code>/fast</code>.</li>
-<li>To do this properly, a full reboot will be required.</li>
-<li>We will keep around a symlink from <code>/fast</code> to <code>/data/gpfs-1</code> for some time during a migration phase.</li>
-</ul>
-<h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="switch-update-location-flip-of-med-login2-and-med-transfer1">Switch update, Location Flip of med-login2 and med-transfer1<a class="headerlink" href="#switch-update-location-flip-of-med-login2-and-med-transfer1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Monday, February 23, 9am-15am.</li>
