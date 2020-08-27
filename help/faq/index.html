@@ -541,6 +541,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#help-im-getting-a-quota-warning-email" class="md-nav__link">
+    Help, I'm getting a Quota Warning Email!
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2122,6 +2129,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#help-im-getting-a-quota-warning-email" class="md-nav__link">
+    Help, I'm getting a Quota Warning Email!
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2419,6 +2433,28 @@ The following are available (as detected by the Linux kernel):</p>
 <p>You can specify contraints with OR such as <code>--constraint=haswell|broadwell|skylake</code>.
 You can see the assignment of architectures to nodes using the <code>sinfo -o "%8P %.5a %.10l %.6D %.6t %10f %N"</code> command.
 This will also display node partition, availability etc.</p>
+<h2 id="help-im-getting-a-quota-warning-email">Help, I'm getting a Quota Warning Email!<a class="headerlink" href="#help-im-getting-a-quota-warning-email" title="Permanent link">&para;</a></h2>
+<p>No worries!</p>
+<p>As documented in the <a href="../storage/storage-locations">Storage Locations</a> section, each user/project/group has three storage volumes:
+A small <code>home</code>, a larger <code>work</code> and a large (but temporary) <code>scratch</code>.
+There are limits on the size of these volumes.
+You get a nightly warning email in case you are over the soft limit and you will not be able to write any more data if you get above the hard limit.
+When you login to the login nodes, the quotas and current usage is displayed to you.</p>
+<p>Please note that not all files will be displayed when using <code>ls</code>.
+You have to add the <code>-a</code> parameter to also show files and directory starting with a dot.
+Often, users are confused if these dot directories take up all of their <code>home</code> quota.</p>
+<p>Use the following command to list <strong>all</strong> files and directories in your home:</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ ls -la ~/
+</code></pre></div>
+
+<p>You can use the following command to see how space each item takes up, including the hidden directories</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ du -shc ~/.* ~/* --exclude<span class="o">=</span>.. --exclude<span class="o">=</span>.
+</code></pre></div>
+
+<p>In the case that, e.g., the <code>.cpan</code> directory is large, you can move it to <code>work</code> and create a symlink in its original place.</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ mv ~/.cpan ~/work/.cpan
+med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
+</code></pre></div>
                 
                   
                     
@@ -2427,7 +2463,7 @@ This will also display node partition, availability etc.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: August 24, 2020
+      Last update: August 27, 2020
     
   </small>
 </div>
