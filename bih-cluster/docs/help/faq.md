@@ -346,3 +346,36 @@ The following are available (as detected by the Linux kernel):
 You can specify contraints with OR such as `--constraint=haswell|broadwell|skylake`.
 You can see the assignment of architectures to nodes using the `sinfo -o "%8P %.5a %.10l %.6D %.6t %10f %N"` command.
 This will also display node partition, availability etc.
+
+## Help, I'm getting a Quota Warning Email!
+
+No worries!
+
+As documented in the [Storage Locations](../storage/storage-locations) section, each user/project/group has three storage volumes:
+A small `home`, a larger `work` and a large (but temporary) `scratch`.
+There are limits on the size of these volumes.
+You get a nightly warning email in case you are over the soft limit and you will not be able to write any more data if you get above the hard limit.
+When you login to the login nodes, the quotas and current usage is displayed to you.
+
+Please note that not all files will be displayed when using `ls`.
+You have to add the `-a` parameter to also show files and directory starting with a dot.
+Often, users are confused if these dot directories take up all of their `home` quota.
+
+Use the following command to list **all** files and directories in your home:
+
+```bash
+med-login1:~$ ls -la ~/
+```
+
+You can use the following command to see how space each item takes up, including the hidden directories
+
+```bash
+med-login1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
+```
+
+In the case that, e.g., the `.cpan` directory is large, you can move it to `work` and create a symlink in its original place.
+
+```bash
+med-login1:~$ mv ~/.cpan ~/work/.cpan
+med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
+```
