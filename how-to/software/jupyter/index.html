@@ -1899,6 +1899,13 @@ If you are running multiple server on one or more nodes, one can separate them b
 <p>to your <code>~/.ssh/config</code></p>
 <p>(If you have a newer version (7.2+) of SSH installed, you can also use <code>ProxyJump $CLUSTER_USER@med-login2.bihealth.org</code> instead of <code>ProxyCommand ...</code>)</p>
 <p>See whether this works via i.e. <code>ssh med0110</code></p>
+<div class="admonition info">
+<p class="admonition-title">SSH Key Forwarding</p>
+<p>Please note that only the login nodes query the central user databases ("Active Directory Servers") for keys.
+The compute nodes themselves are not reachable directly from the outside and use the usual <code>~/.ssh/authorized_keys</code> file.
+This means that you will have to append the content of <sub>/.ssh/id_rsa.pub<code>from the source host (your workstation/laptop) to</code></sub>/.ssh/authorized_keys` on the cluster.</p>
+<p>If you fail to do this then you will be able to login to med-login1/med-login2 but you will get a password prompt for the compute nodes (i.e., med0XXX).</p>
+</div>
 <p>Now you setup a tunnel</p>
 <div class="highlight"><pre><span></span><code>workstation:~$ ssh -N -f -L <span class="m">127</span>.0.0.1:8888:localhost:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span> med0<span class="si">${</span><span class="nv">NODE</span><span class="si">}</span>
 </code></pre></div>
@@ -1954,7 +1961,7 @@ user        58  0.0  0.0  41116  1024 tty1     S    15:42   0:00 grep --color=au
 <div class="md-source-date">
   <small>
     
-      Last update: August 27, 2020
+      Last update: August 29, 2020
     
   </small>
 </div>
