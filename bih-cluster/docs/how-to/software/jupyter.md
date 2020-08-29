@@ -54,7 +54,13 @@ to your ```~/.ssh/config```
 
 See whether this works via i.e. `ssh med0110`
 
-Known issue: If you successfully login to the login-node (med-login2.bihealth.org) but get a password prompt at the med0* node (Ex. med0110 here) then the login node did not allow [agentForwarding](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/#your-system-must-allow-ssh-agent-forwarding). A workaround for this is to copy contents of your local workstation's public ssh key from `~/.ssh/id_rsa.pub`  to the `~/.ssh/authorized_keys` file on the BIH cluster. This solution works on both windows and ubuntu clients.
+!!! info "SSH Key Forwarding"
+
+    Please note that only the login nodes query the central user databases ("Active Directory Servers") for keys.
+    The compute nodes themselves are not reachable directly from the outside and use the usual `~/.ssh/authorized_keys` file.
+    This means that you will have to append the content of ~/.ssh/id_rsa.pub` from the source host (your workstation/laptop) to `~/.ssh/authorized_keys` on the cluster.
+    
+    If you fail to do this then you will be able to login to med-login1/med-login2 but you will get a password prompt for the compute nodes (i.e., med0XXX).
 
 Now you setup a tunnel
 
