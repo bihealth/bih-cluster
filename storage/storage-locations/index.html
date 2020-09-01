@@ -2049,20 +2049,30 @@ Each user, group, and project has a central folder for their files to be stored.
 This iteration was made necessary by problems with second iteration which worked well for about two years but is now reaching its limits.</p>
 <h2 id="organizational-entities">Organizational Entities<a class="headerlink" href="#organizational-entities" title="Permanent link">&para;</a></h2>
 <p>There are the following three entities on the cluster:</p>
-<p>(a) normal user accounts ("natural people")
-(b) groups <em>(Arbeitsgruppen)</em> with on leader and an optional delegate
-&copy; projects with one owner and an optional delegate.</p>
+<ol>
+<li>normal user accounts ("natural people")</li>
+<li>groups <em>(Arbeitsgruppen)</em> with on leader and an optional delegate</li>
+<li>projects with one owner and an optional delegate.</li>
+</ol>
 <p>Their purpose is described in the document "User and Group Management".</p>
 <h2 id="storagedata-tiers">Storage/Data Tiers<a class="headerlink" href="#storagedata-tiers" title="Permanent link">&para;</a></h2>
 <p>The files fall into one of three categories:</p>
-<p>(i) <strong>Home</strong> data are programs and scripts of which there is relatively few but which is long-lived and very important.
-    Loss of home data requires to redo manual work (like programming).</p>
-<p>(ii) <strong>Work</strong> data is data of potential large size and has a medium life time and important.
-     Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
-     Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.</p>
-<p>(iii) <strong>Scratch</strong> data is data that is temporary by nature and has a short life-time only.
-      Examples are temporary files (e.g., unsorted BAM files).
-      Scratch data is created to be removed eventually.</p>
+<ol>
+<li>
+<p><strong>Home</strong> data are programs and scripts of which there is relatively few but which is long-lived and very important.
+   Loss of home data requires to redo manual work (like programming).</p>
+</li>
+<li>
+<p><strong>Work</strong> data is data of potential large size and has a medium life time and important.
+   Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
+   Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.</p>
+</li>
+<li>
+<p><strong>Scratch</strong> data is data that is temporary by nature and has a short life-time only.
+   Examples are temporary files (e.g., unsorted BAM files).
+   Scratch data is created to be removed eventually.</p>
+</li>
+</ol>
 <h2 id="snapshots-backups-archive">Snapshots, Backups, Archive<a class="headerlink" href="#snapshots-backups-archive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -2149,7 +2159,7 @@ Quotas are implemented on the file-set level.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: August 29, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

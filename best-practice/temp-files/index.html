@@ -1898,15 +1898,10 @@ mkdir -p <span class="nv">$TMPDIR</span>
 <p><strong>Prepending this to your job scripts is also recommended as it will ensure that the temporary directory exists.</strong></p>
 <h2 id="tmpdir-and-the-scheduler"><code>TMPDIR</code> and the scheduler<a class="headerlink" href="#tmpdir-and-the-scheduler" title="Permanent link">&para;</a></h2>
 <p>In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
-Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.</p>
-<div class="admonition imporant">
-<p class="admonition-title">SGE and TMPDIR</p>
-<p>Note that the SGE scheduler will override any value given to <code>TMPDIR</code> from the outside. If you want to override <code>TMPDIR</code> you have to do this within your job script.</p>
-</div>
-<p>For smaller I/O volumes, it is probably sensible to just use <code>TMPDIR</code> from the scheduler.
-For larger ones, you probably want to fall back to <code>/fast/users/$USER/scratch/tmp</code>.
-However, this is then not auto-cleaned any more.
-Here is how you get this behaviour.</p>
+Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
+Please note that by default, Slurm will not change your environment variables.
+This includes the environment variable <code>TMPDIR</code>.</p>
+<p>To automatically clean up temporary directories, use the following tip.</p>
 <h3 id="use-bash-trapcs">Use Bash Trapcs<a class="headerlink" href="#use-bash-trapcs" title="Permanent link">&para;</a></h3>
 <p>You can use the following code at the top of your job script to set <code>TMPDIR</code> to the location in your home directory and get the directory automatically cleaned when the job is done (regardless of successful or erroneous completion):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># First, point TMPDIR to the scratch in your home as mktemp will use thi</span>
@@ -1924,7 +1919,7 @@ Here is how you get this behaviour.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: August 29, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

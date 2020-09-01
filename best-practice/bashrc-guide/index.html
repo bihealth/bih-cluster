@@ -1743,6 +1743,34 @@
                 
                 
                 <h1 id="bashrc-guide"><code>~/.bashrc</code> Guide<a class="headerlink" href="#bashrc-guide" title="Permanent link">&para;</a></h1>
+<p>You can find the current default content of newly created user homes in <code>/etc/skel.bih</code>:</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ head /etc/skel.bih/.bash*
+<span class="o">==</span>&gt; /etc/skel.bih/.bash_logout &lt;<span class="o">==</span>
+<span class="c1"># ~/.bash_logout</span>
+
+<span class="o">==</span>&gt; /etc/skel.bih/.bash_profile &lt;<span class="o">==</span>
+<span class="c1"># .bash_profile</span>
+
+<span class="c1"># Get the aliases and functions</span>
+<span class="k">if</span> <span class="o">[</span> -f ~/.bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . ~/.bashrc
+<span class="k">fi</span>
+
+<span class="c1"># User specific environment and startup programs</span>
+
+<span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.local/bin:<span class="nv">$HOME</span>/bin
+
+<span class="o">==</span>&gt; /etc/skel.bih/.bashrc &lt;<span class="o">==</span>
+<span class="c1"># .bashrc</span>
+
+<span class="c1"># Source global definitions</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . /etc/bashrc
+<span class="k">fi</span>
+
+<span class="c1"># Uncomment the following line if you don&#39;t like systemctl&#39;s auto-paging feature:</span>
+<span class="c1"># export SYSTEMD_PAGER=</span>
+</code></pre></div>
                 
                   
                     
@@ -1751,7 +1779,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: August 29, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

@@ -548,6 +548,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-modules-dont-work-and-i-get-module-command-not-found" class="md-nav__link">
+    Environment modules don't work and I get "module: command not found"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-my-bashrc-look-like" class="md-nav__link">
+    What should my ~/.bashrc look like?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2136,6 +2150,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#environment-modules-dont-work-and-i-get-module-command-not-found" class="md-nav__link">
+    Environment modules don't work and I get "module: command not found"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-should-my-bashrc-look-like" class="md-nav__link">
+    What should my ~/.bashrc look like?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2455,6 +2483,53 @@ Often, users are confused if these dot directories take up all of their <code>ho
 <div class="highlight"><pre><span></span><code>med-login1:~$ mv ~/.cpan ~/work/.cpan
 med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
 </code></pre></div>
+
+<h2 id="environment-modules-dont-work-and-i-get-module-command-not-found">Environment modules don't work and I get "module: command not found"<a class="headerlink" href="#environment-modules-dont-work-and-i-get-module-command-not-found" title="Permanent link">&para;</a></h2>
+<p>First of all, ensure that you are on a compute node and not on one of the login nodes.
+One common reason is that the system-wide Bash configuration has not been loaded, try to execute <code>source /etc/bashrc</code> and then re-try using <code>module</code>.
+In the case that the problem persists, please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</p>
+<h2 id="what-should-my-bashrc-look-like">What should my ~/.bashrc look like?<a class="headerlink" href="#what-should-my-bashrc-look-like" title="Permanent link">&para;</a></h2>
+<p>All users get their home directory setup using a skelleton files.
+These file names start with a dot <code>.</code> and are hidden when you type <code>ls</code>, you have to type <code>ls -a</code> to see them.
+You can find the current skelleton in <code>/etc/skel.bih</code> and inspect the content of the Bash related files as follows:</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ head /etc/skel.bih/.bash*
+<span class="o">==</span>&gt; /etc/skel.bih/.bash_logout &lt;<span class="o">==</span>
+<span class="c1"># ~/.bash_logout</span>
+
+<span class="o">==</span>&gt; /etc/skel.bih/.bash_profile &lt;<span class="o">==</span>
+<span class="c1"># .bash_profile</span>
+
+<span class="c1"># Get the aliases and functions</span>
+<span class="k">if</span> <span class="o">[</span> -f ~/.bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . ~/.bashrc
+<span class="k">fi</span>
+
+<span class="c1"># User specific environment and startup programs</span>
+
+<span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.local/bin:<span class="nv">$HOME</span>/bin
+
+<span class="o">==</span>&gt; /etc/skel.bih/.bashrc &lt;<span class="o">==</span>
+<span class="c1"># .bashrc</span>
+
+<span class="c1"># Source global definitions</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        . /etc/bashrc
+<span class="k">fi</span>
+
+<span class="c1"># Uncomment the following line if you don&#39;t like systemctl&#39;s auto-paging feature:</span>
+<span class="c1"># export SYSTEMD_PAGER=</span>
+</code></pre></div>
+
+<p>There actually are a couple of more files by default.
+The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ tree -a /etc/skel.bih/
+/etc/skel.bih/
+├── .bash_logout
+├── .bash_profile
+├── .bashrc
+├── .screenrc
+└── .vimrc
+</code></pre></div>
                 
                   
                     
@@ -2463,7 +2538,7 @@ med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
 <div class="md-source-date">
   <small>
     
-      Last update: August 29, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

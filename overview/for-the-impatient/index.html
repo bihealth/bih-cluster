@@ -1943,9 +1943,7 @@
                 
                 
                 <h1 id="for-the-impatient">For the Impatient<a class="headerlink" href="#for-the-impatient" title="Permanent link">&para;</a></h1>
-<p>This document describes the fundamentals of using the BIH cluster.
-More detailed documentation is available in the rest of the Wiki.
-Start exploring from the <a href="home">Wiki home</a>.</p>
+<p>This document describes the fundamentals of using the BIH cluster in a very terse manner.</p>
 <h2 id="cluster-hardware-and-scheduling">Cluster Hardware and Scheduling<a class="headerlink" href="#cluster-hardware-and-scheduling" title="Permanent link">&para;</a></h2>
 <p>The cluster consists of the following major components:</p>
 <ul>
@@ -1969,7 +1967,7 @@ Start exploring from the <a href="home">Wiki home</a>.</p>
 <li>Most directories on the nodes are not shared, including <code>/tmp</code>.</li>
 <li>The <code>/fast</code> directory is shared throughout the cluster which contains your home, group home, and project directories.</li>
 <li><strong>You will not get <code>root</code> or <code>sudo</code> permissions on the cluster.</strong></li>
-<li>You should use <em>batch jobs</em> (<code>sbatch</code>) over calling programs interactively.</li>
+<li>You should prefer <em>batch jobs</em> (<code>sbatch</code>) over calling programs interactively.</li>
 </ul>
 <h2 id="what-the-cluster-is-and-is-not">What the Cluster Is and Is NOT<a class="headerlink" href="#what-the-cluster-is-and-is-not" title="Permanent link">&para;</a></h2>
 <p>NB: the following might sound a bit harsh but is written with everyone's best intentions in mind (we actually like you, our user!)
@@ -2030,14 +2028,15 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
 May users run into problems with directories such as <code>$HOME/.local</code> but also non-dot directories such as <code>$HOME/R</code> filling up their storage.
 You should move such large directories to your work volume and only keep a symlink in your <code>$HOME</code>.</p>
 <p>Here is how you find large directories:</p>
-<div class="highlight"><pre><span></span><code>host:~$ du -shc ~/.??* ~/*
+<div class="highlight"><pre><span></span><code>host:~$ du -shc ~/.* ~/* --exclude<span class="o">=</span>.. --exclude<span class="o">=</span>.
 </code></pre></div>
 
-<p>Here is how you move them to your work and replace them with a symlink:</p>
+<p>Here is how you move them to your work and replace them with a symlink, e.g., for <code>~/.local</code>:</p>
 <div class="highlight"><pre><span></span><code>host:~$ mv ~/.local ~/work/.local
 host:~$ ln -s ~/work/.local ~/.local
 </code></pre></div>
 
+<p>Also see the <a href="../../help/faq/#help-im-getting-a-quota-warning-email">related FAQ entry</a>.</p>
 </div>
 <h3 id="temporary-directories">Temporary Directories<a class="headerlink" href="#temporary-directories" title="Permanent link">&para;</a></h3>
 <p>Note that you also have access to <code>/tmp</code> on the individual nodes but the disk is <strong>small</strong> and might be a <strong>slow</strong> spinning disk.
@@ -2071,7 +2070,8 @@ Typically, you'll create an interactive session on a compute node using the <cod
 <h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">&para;</a></h3>
 <p>While not recommended, you can perform computations (such as using BWA) in the interactive session.
 However, when the connection is interrupted, your computation process will be stopped.
-It is therefore recommended you submit jobs using the <code>sbatch</code> command (or <a href="../best-practice/screen-tmux">use screen or tmux</a>).</p>
+It is therefore recommended you submit jobs using the <code>sbatch</code> command (or <a href="../../best-practice/screen-tmux">use screen or tmux</a>).</p>
+<p>Details on how to use Slurm <code>srun</code>, <code>sbatch</code>, and and other commands can be found in the <a href="../../slurm/overview">Cluster Scheduler</a> section.</p>
 <h3 id="inspecting-jobs-and-the-cluster">Inspecting Jobs and the Cluster<a class="headerlink" href="#inspecting-jobs-and-the-cluster" title="Permanent link">&para;</a></h3>
 <p>You can inspect your currently running jobs with <code>squeue</code>, and kill them using <code>scancel</code>.
 You can inspect jobs that have finished with <code>sacct</code>, and see the cluster nodes using <code>sinfo</code>.</p>
@@ -2083,7 +2083,7 @@ You can inspect jobs that have finished with <code>sacct</code>, and see the clu
 <div class="md-source-date">
   <small>
     
-      Last update: August 29, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>
