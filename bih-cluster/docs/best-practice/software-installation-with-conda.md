@@ -89,6 +89,9 @@ version as follows:
 med0127:~$ conda install <package>=<version>
 ```
 
+Please note that new conda installs may ship with a recently update Python version and not all packages might have been adapted.
+E.g., if you find out that some packages don't work after starting out/upgrading to Python 3.8, simply try to downgrade Python to 3.7 with `conda install python=3.7`.
+
 ## Creating an environment
 
 Conda lets you create environments, such that you can test things in a different
@@ -117,21 +120,4 @@ the `install` command. To switch back to the root environment, simply deactivate
 med0127:~$
 ```
 
-## Recommended packages
-
-| Program   | Version  | package           |
-|---        |---       |---                |
-| Python    | 3.5      | `python=3.5`      |
-| snakemake | latest   | `snakemake drmaa` |
-| samtools  | latest   | `samtools`        |
-
-To get you going, issue the following command. This will install Python 3.5
-into your root environment alongside with Snakemake and samtools. By default,
-conda starts with Python 3.6, but most packages are not adapted to that Python
-version yet.
-
-```bash
-med0127:~$ conda install python=3.5 snakemake drmaa samtools
-```
-
-Please also read [this document](../slurm/snakemake.md#snakemake-and-slurm) on how to use Snakemake with DRMAA.
+But of course, as Python 2.7 is not supported any more by the Python Software Foundation, you should switch over to Python 3 already!

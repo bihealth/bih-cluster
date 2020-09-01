@@ -32,3 +32,4 @@ We're happy to see if we can help when there is a concrete problem with the soft
 
 - something that breaks from one week to another without you changing anything and you assume a change on the cluster, or
 - you need a generic dependency that you cannot install via conda or on your own.
+  Please read the section [Administration-Provided Software](../../admin/provided-software/) to learn about the kinds of software that we will install and the kinds that we will not.

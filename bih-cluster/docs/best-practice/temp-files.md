@@ -34,14 +34,10 @@ mkdir -p $TMPDIR
 
 In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
 Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
+Please note that by default, Slurm will not change your environment variables.
+This includes the environment variable `TMPDIR`.
 
-!!! imporant "SGE and TMPDIR"
-    Note that the SGE scheduler will override any value given to `TMPDIR` from the outside. If you want to override `TMPDIR` you have to do this within your job script.
-
-For smaller I/O volumes, it is probably sensible to just use `TMPDIR` from the scheduler.
-For larger ones, you probably want to fall back to `/fast/users/$USER/scratch/tmp`.
-However, this is then not auto-cleaned any more.
-Here is how you get this behaviour.
+To automatically clean up temporary directories, use the following tip.
 
 ### Use Bash Trapcs
 

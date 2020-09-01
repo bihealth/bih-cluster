@@ -45,9 +45,9 @@ This iteration was made necessary by problems with second iteration which worked
 
 There are the following three entities on the cluster:
 
-(a) normal user accounts ("natural people")
-(b) groups *(Arbeitsgruppen)* with on leader and an optional delegate
-(c) projects with one owner and an optional delegate.
+1. normal user accounts ("natural people")
+2. groups *(Arbeitsgruppen)* with on leader and an optional delegate
+3. projects with one owner and an optional delegate.
 
 Their purpose is described in the document "User and Group Management".
 
@@ -55,16 +55,16 @@ Their purpose is described in the document "User and Group Management".
 
 The files fall into one of three categories:
 
-(i) **Home** data are programs and scripts of which there is relatively few but which is long-lived and very important.
-    Loss of home data requires to redo manual work (like programming).
+1. **Home** data are programs and scripts of which there is relatively few but which is long-lived and very important.
+   Loss of home data requires to redo manual work (like programming).
 
-(ii) **Work** data is data of potential large size and has a medium life time and important.
-     Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
-     Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.
+2. **Work** data is data of potential large size and has a medium life time and important.
+   Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
+   Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.
 
-(iii) **Scratch** data is data that is temporary by nature and has a short life-time only.
-      Examples are temporary files (e.g., unsorted BAM files).
-      Scratch data is created to be removed eventually.
+3. **Scratch** data is data that is temporary by nature and has a short life-time only.
+   Examples are temporary files (e.g., unsorted BAM files).
+   Scratch data is created to be removed eventually.
 
 ## Snapshots, Backups, Archive
 

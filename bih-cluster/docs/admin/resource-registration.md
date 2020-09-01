@@ -18,7 +18,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
 ## GPU Nodes
 
 !!! hint
-    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
+    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".**
 
 1. If you want to use the GPU node, please send an email to hpc-gatekeeper@bihealth.de with the following information:
     - For how long do you want to have access?
@@ -26,7 +26,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
     - How frequently do you need the GPU node, for how long at a time?
     - Do you plan to do more interactive work (e.g., using `ipython`) or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](../how-to/connect/gpu-nodes)
+3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](../../how-to/connect/gpu-nodes)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 

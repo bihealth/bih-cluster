@@ -379,3 +379,57 @@ In the case that, e.g., the `.cpan` directory is large, you can move it to `work
 med-login1:~$ mv ~/.cpan ~/work/.cpan
 med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
 ```
+
+## Environment modules don't work and I get "module: command not found"
+
+First of all, ensure that you are on a compute node and not on one of the login nodes.
+One common reason is that the system-wide Bash configuration has not been loaded, try to execute `source /etc/bashrc` and then re-try using `module`.
+In the case that the problem persists, please contact hpc-helpdesk@bihealth.de.
+
+## What should my ~/.bashrc look like?
+
+All users get their home directory setup using a skelleton files.
+These file names start with a dot `.` and are hidden when you type `ls`, you have to type `ls -a` to see them.
+You can find the current skelleton in `/etc/skel.bih` and inspect the content of the Bash related files as follows:
+
+```bash
+med-login1:~$ head /etc/skel.bih/.bash*
+==> /etc/skel.bih/.bash_logout <==
+# ~/.bash_logout
+
+==> /etc/skel.bih/.bash_profile <==
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+==> /etc/skel.bih/.bashrc <==
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+```
+
+There actually are a couple of more files by default.
+The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!
+
+```bash
+med-login1:~$ tree -a /etc/skel.bih/
+/etc/skel.bih/
+├── .bash_logout
+├── .bash_profile
+├── .bashrc
+├── .screenrc
+└── .vimrc
+```

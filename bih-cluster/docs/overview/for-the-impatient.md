@@ -1,8 +1,6 @@
 # For the Impatient
 
-This document describes the fundamentals of using the BIH cluster.
-More detailed documentation is available in the rest of the Wiki.
-Start exploring from the [Wiki home](home).
+This document describes the fundamentals of using the BIH cluster in a very terse manner.
 
 ## Cluster Hardware and Scheduling
 
@@ -31,7 +29,7 @@ The differences include:
 - Most directories on the nodes are not shared, including `/tmp`.
 - The `/fast` directory is shared throughout the cluster which contains your home, group home, and project directories.
 - **You will not get `root` or `sudo` permissions on the cluster.**
-- You should use *batch jobs* (`sbatch`) over calling programs interactively.
+- You should prefer *batch jobs* (`sbatch`) over calling programs interactively.
 
 ## What the Cluster Is and Is NOT
 
@@ -95,15 +93,17 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
     Here is how you find large directories:
     
     ```bash
-    host:~$ du -shc ~/.??* ~/*
+    host:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
     ```
     
-    Here is how you move them to your work and replace them with a symlink:
+    Here is how you move them to your work and replace them with a symlink, e.g., for `~/.local`:
     
     ```bash
     host:~$ mv ~/.local ~/work/.local
     host:~$ ln -s ~/work/.local ~/.local
     ```
+
+    Also see the [related FAQ entry](../../help/faq/#help-im-getting-a-quota-warning-email).
 
 ### Temporary Directories
 
@@ -139,7 +139,9 @@ Typically, you'll create an interactive session on a compute node using the `sru
 
 While not recommended, you can perform computations (such as using BWA) in the interactive session.
 However, when the connection is interrupted, your computation process will be stopped.
-It is therefore recommended you submit jobs using the `sbatch` command (or [use screen or tmux](../best-practice/screen-tmux)).
+It is therefore recommended you submit jobs using the `sbatch` command (or [use screen or tmux](../../best-practice/screen-tmux)).
+
+Details on how to use Slurm `srun`, `sbatch`, and and other commands can be found in the [Cluster Scheduler](../../slurm/overview) section.
 
 ### Inspecting Jobs and the Cluster
 
