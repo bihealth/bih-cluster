@@ -24,7 +24,7 @@ You can override this routing by explicitely assigning a partition (but this is 
 
 ### `debug`
 
-This partition is for short jobs that should be executed quickly, e.g., for tests.
+This partition is for very short jobs that should be executed quickly, e.g., for tests.
 The job running time is limited to one hour and at most 128 cores can be used per user but the jobs are submitted with highest priority.
 
 * **maximum run time:** 1 hour
@@ -32,14 +32,14 @@ The job running time is limited to one hour and at most 128 cores can be used pe
 * **partition name:** `debug`
 * **argument string:** maximum run time: `--time 01:00:00`
 
-### `small`
+### `short`
 
 This partition is for jobs running only few hours.
-The priority of small jobs is high and many cores can be used at once to reward users for splitting their jobs into smaller parts.
+The priority of short jobs is high and many cores can be used at once to reward users for splitting their jobs into smaller parts.
 
 * **maximum run time:** 4 hours
 * **maximum cores:** 2000 cores
-* **partition name:** `small`
+* **partition name:** `short`
 * **argument string:** maximum run time: `--time 04:00:00`
 
 ### `medium`
@@ -55,7 +55,7 @@ Users can only allocate the equivalent of 4 nodes.
 ### `long`
 
 This partition is for long-running tasks.
-Only one node can be reserved for so long to discourage really long-running jobs and encourage users for splitting their jobs into smaller aprts.
+Only one node can be reserved for so long to discourage really long-running jobs and encourage users for splitting their jobs into smaller parts.
 
 * **maximum run time:** 28 days
 * **maximum cores:** 32 cores/slots (1 node)
