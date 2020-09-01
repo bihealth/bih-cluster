@@ -3,22 +3,21 @@
 The cluster has four nodes with four Tesla V100 GPUs each: `med030[1-4]`.
 
 Connecting to a node with GPUs is easy.
-You simply request a GPU using the `-p gpu --gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
-This will place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
+You simply request a GPU using the `--gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
+This will automatically place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
 !!! hint
 
     Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".
 
-!!! important "Please Limit Interactive GPU Usage"
+!!! important "Interactive Use of GPU Nodes is Discouraged"
 
     While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
     While your job is allocated, it blocks the **allocated** GPUs and other users cannot use them although you might not be actually using them.
     Please prefer batch jobs for your GPU jobs over interactive jobs.
-    
-    Administration monitors the ratio of idling jobs on the and will restrict interactive GPU usage in the future if idling interactive jobs become a problem.
-    We might limit interactive GPU usage to very short time spans for testing (say 10 minutes or less) or block interactive GPU usage alltogether.
-    Please do not give a reason to do so.
+
+    Further, interactive GPU jobs are currently limited to 24 hours.
+    We will monitor the situation and adjust that limit to optimize GPU usage and usability.
 
 ## Prequisites
 
@@ -54,11 +53,11 @@ The following dry run shows these environment variables (and that they are not a
 
 ```bash
 med-login1:~$ export | grep CUDA_VISIBLE_DEVICES
-med-login1:~$ srun -p gpu --gres=gpu:tesla:1 --pty bash
+med-login1:~$ srun --gres=gpu:tesla:1 --pty bash
 med0303:~$ export | grep CUDA_VISIBLE_DEVICES
 declare -x CUDA_VISIBLE_DEVICES="0"
 med0303:~$ exit
-med-login1:~$ srun -p gpu --gres=gpu:tesla:2 --pty bash
+med-login1:~$ srun --gres=gpu:tesla:2 --pty bash
 med0303:~$ export | grep CUDA_VISIBLE_DEVICES
 declare -x CUDA_VISIBLE_DEVICES="0,1"
 ```
@@ -70,7 +69,7 @@ Note that any two jobs are isolated using Linux cgroups ("container" technology 
 Now to the somewhat boring part where we show that CUDA actually works.
 
 ```bash
-med-login1:~$ srun -p gpu --gres=gpu:tesla:1 --pty bash
+med-login1:~$ srun --gres=gpu:tesla:1 --pty bash
 med0301:~$ nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
@@ -130,8 +129,8 @@ Fri Mar  6 11:10:08 2020
 
 ## Fair Share / Fair Use
 
-**Note that allocating a GPU makes it unavailble for everyone else.**
-**There is currently no restriction in place on the GPU nodes, so please behave nicely and cooperatively.**
+**Note that allocating a GPU makes it unavailable for everyone else.**
+**There is currently no technical restriction in place on the GPU nodes, so please behave nicely and cooperatively.**
 If you see someone blocking the GPU nodes for long time, then first find out who it is.
 You can type `getent passwd USER_NAME` on any cluster node to see the email address (and work phone number if added) of the user.
 Send a friendly email to the other user, most likely they blocked the node accidentally.
