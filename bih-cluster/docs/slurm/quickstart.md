@@ -10,11 +10,12 @@ med0740:~$ exit
 med-login1:~$
 ```
 
-Note you probably want to **specify the long partition and a longer running time for your interactive jobs**.
+Note you probably want to **longer running time for your interactive jobs**.
 This way, your jobs can run for up to 28 days.
+This will make your job be routed automatically into the `long` partition as it is the only one that can fit your job.
 
 ```bash
-med-login1:~$ srun --pty --partition long --time 28-00 bash -i
+med-login1:~$ srun --pty --time 28-00 bash -i
 med0740:~$
 ```
 

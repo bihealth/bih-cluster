@@ -235,8 +235,8 @@ med-login1:~$ squeue -j 877092
             877092    medium snakejob holtgrem  R       0:05      1 med0626
 ```
 
-See [Job Scheduler](/overview/job-scheduler/) for information about the partition's properties.
-To get your job to run in the `medium` partition, for example use the `--partition=medium` or `-p medium` arguments to your `srun` or `sbatch` commands.
+See [Job Scheduler](/overview/job-scheduler/) for information about the partition's properties and how jbos are routed to partitions.
+You can force jobs to run in a particular partition by specifying the `--partition` parameter, e.g., by adding `--partition=medium` or `-p medium` to your `srun` and `sbatch` calls.
 
 ## My jobs get killed after four hours
 
