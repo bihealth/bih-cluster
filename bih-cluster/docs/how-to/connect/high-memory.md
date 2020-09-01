@@ -5,6 +5,7 @@
 You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access.
 
 Afterwards, you can connect to the High-Memory using the `highmem` SLURM partition (see below).
+Jobs allocating more than 200GB of RAM will be routed automatically to the `highmem` nodes.
 
 ## How-To
 
@@ -16,15 +17,17 @@ PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 highmem      up 14-00:00:0      3   idle med040[1-4] 
 ```
 
-To connect to one of them, use the below command from login node:
+To connect to one of them, simply allocate more than 200GB of RAM in your job.
+
 ```
-med-login1:~$ srun --pty -p highmem bash -i
+med-login1:~$ srun --pty --memory=300GB bash -i
 med0401:~$
 ```
+
 You can also pick one of the hostnames:
 
 ```
-med-login1:~$ ssh med0403
+med-login1:~$ srun --pty --memory=300GB --nodelist=med0403 bash -i
 med0403:~$
 ```
 
