@@ -28,7 +28,7 @@ While file paths are highlighted like this: `/fast/projects/cubit/current`.
 ## Instant Gratification
 
 After connecting to the cluster, you are located on a login node.
-To get to your first compute node, type `srun -p long --time 7-00 --pty bash -i` which will launch an interactive Bash session on a free remote node running up to 7 days in the "long" partition.
+To get to your first compute node, type `srun --time 7-00 --pty bash -i` which will launch an interactive Bash session on a free remote node running up to 7 days.
 Typing `exit` will you bring back to the login node.
 
 ```terminal

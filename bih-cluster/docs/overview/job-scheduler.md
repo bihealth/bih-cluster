@@ -1,78 +1,70 @@
 # Job Scheduler
 
 Once logged into the cluster through the login nodes, users use the Slurm scheduler for job submission.
-In Slurm nomenclature, cluster compute nodes are assigned to one or more **partitions**. Submitted jobs are assigned to nodes according to the partition's configuration.
-
-!!! note "Selecting Partitions"
-    Users should only select partitions explicitly if they need special resources such as GPUs, high-memory nodes, Infiniband, or the critical partition.
-    Otherwise, they should let Slurm decide on the optimal assignment.
-
-!!! todo "MPI Partition"
-    We recently introduced an `mpi` partition that allows you to allocate more than one node.
-    We will update this soon.
+In Slurm nomenclature, cluster compute nodes are assigned to one or more **partitions**.
+Submitted jobs are assigned to nodes according to the partition's configuration.
 
 ## Partitions
 
-The BIH HPC has the following partitions.
+The BIH HPC has the partitions described below.
+The cluster focuses on life science applications and not "classic HPC" with numerical computations using MPI.
+Thus, all partitions except for `mpi` only allow to reserve resources on one node.
+This makes the cluster easier to use as users don't have to explicitely specify this limit when submitting their jobs.
 
-!!! important "Use `mpi` Partition for Multi-Node Jobs"
-    All partitions except for `mpi` have their maximum number of available nodes set to `1`.
-    This makes the system easier to use for single-node/multi-core programs as users don't have to specify `--min-nodes=1 --max-nodes=1`.
-    Simply use the `mpi` partition for multi-node jobs.
+### `standard`
+
+Jobs are submitted to the `standard` partition by default.
+From the, the scheduler will route the jobs to their actual partition using the routing rule set described below.
+You can override this routing by explicitely assigning a partition (but this is discouraged).
+
+1. Jobs requesting a GPU resources are routed to the `gpu` queue.
+2. Else, jobs requesting more than 200 GB of RAM are routed to the `highmem` queue.
+3. Else, jobs are assigned to the partitions `debug`, `short`, `medium`, and `long` long depending on their configured maximal running time.
+   The partitions are evaluated in the order given above and the first fitting partition will be used.
 
 ### `debug`
 
-!!! todo "debug/default partition"
-    Actually, the default partition is the "debug" partition for now.
-    We will rename things soon.
+This partition is for short jobs that should be executed quickly, e.g., for tests.
+The job running time is limited to one hour and at most 128 cores can be used per user but the jobs are submitted with highest priority.
 
-### `default`
+* **maximum run time:** 1 hour
+* **maximum cores:** 128 cores per user
+* **partition name:** `debug`
+* **argument string:** maximum run time: `--time 01:00:00`
 
-This partition is for normal jobs running for less than 4 hours.
-The number of overall jobs allowed per user is high to reward users for splitting their computational needs into smaller parts (this makes them easier for the scheduler to deal with).
+### `small`
+
+This partition is for jobs running only few hours.
+The priority of small jobs is high and many cores can be used at once to reward users for splitting their jobs into smaller parts.
 
 * **maximum run time:** 4 hours
-* **maximum cores:** >6000 cores (all nodes, **no limit**)
-* **partition name:** `default`
-* **priority:** **`default`** < `medium` < `long` < `critical` < `mini`
+* **maximum cores:** 2000 cores
+* **partition name:** `small`
 * **argument string:** maximum run time: `--time 04:00:00`
 
 ### `medium`
 
 This partition is for jobs running for multiple days.
+Users can only allocate the equivalent of 4 nodes.
 
 * **maximum run time:** 7 days
 * **maximum cores:** 128 cores/slots (4 nodes)
 * **partition name:** `medium`
-* **priority:** `default` < **`medium`** < `long` < `critical` < `mini`
 * **argument string:** maximum run time: `--time 7-00:00:00`
 
 ### `long`
 
 This partition is for long-running tasks.
+Only one node can be reserved for so long to discourage really long-running jobs and encourage users for splitting their jobs into smaller aprts.
 
 * **maximum run time:** 28 days
 * **maximum cores:** 32 cores/slots (1 node)
 * **partition name:** `long`
-* **priority:** `default` < `medium` < **`long`** < `critical` < `mini`
 * **argument string:** maximum run time: `--time 28-00:00:00`
 
-### `critical`
-
-This partition is for time-critical jobs with deadlines.
-For access to it you have to first ask [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de).
-See [Resource Registration: Critical Partition](../admin/resource-registration.md#critical-partition) for details.
-
-As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
-However, do not use this partition without arranging with hpc-gatekeeper as killing jobs will be used as the *ultima ratio* in case of such policy violations.
-
-* **maximum run time:** 7 days
-* **maximum cores:** 1536 cores/slots (48 nodes)
-* **partition name:** `critical`
-* **priority:** `default` < `medium` < `long` < **`critical`** < `mini`
-* **argument string:** maximum run time: `--time 7-00:00:00`
-
 ### `gpu`
+
+Jobs requesting GPU resources are automatically assigned to the `gpu` partition.
 
 The GPU nodes are only part of the `gpu` partition so they are not blocked by normal compute jobs.
 The maximum run time is relatively high (14 days) to allow for longer training jobs.
@@ -83,9 +75,11 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nod
 
 * **maximum run time:** 14 days
 * **partition name:** `gpu`
-* **argument string:** select `$count` nodes: `-p gpu --gres=gpu:tesla:$count`, maximum run time: `--time 14-00:00:00`
+* **argument string:** select `$count` GPUs: `-p gpu --gres=gpu:tesla:$count`, maximum run time: `--time 14-00:00:00`
 
 ### `highmem`
+
+Jobs requesting more than 200 GB of RAM are automatically routed to the `highmem` partition.
 
 The high memory nodes are only part of the `highmem` partition so they are not blocked by normal compute jobs.
 The maximum run time is relatively high (14 days) to allow for longer jobs.
@@ -100,6 +94,9 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#high-me
 
 ### `mpi`
 
+Jobs are not routed automatically to the `mpi` partition but you have to explitely request the partition.
+This is the only partition in which more than one node can be allocated to a job.
+
 You can submit multi-node jobs into the `mpi` partition.
 The maximum run time is relatively high (14 days) to allow for longer jobs.
 Don't abuse this.
@@ -111,3 +108,19 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nod
 * **maximum run time:** 14 days
 * **partition name:** `highmem`
 * **argument string:** `-p mpi`, maximum run time: `--time 14-00:00:00`
+
+### `critical`
+
+Jobs are not routed into `critial` automatically, and the partition has to be selected manually.
+
+This partition is for time-critical jobs with deadlines.
+For access to it you have to first ask [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de).
+See [Resource Registration: Critical Partition](../admin/resource-registration.md#critical-partition) for details.
+
+As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
+However, do not use this partition without arranging with hpc-gatekeeper as killing jobs will be used as the *ultima ratio* in case of such policy violations.
+
+* **maximum run time:** 7 days
+* **maximum cores:** 2000 cores/slots (48 nodes)
+* **partition name:** `critical`
+* **argument string:** maximum run time: `--time 7-00:00:00`

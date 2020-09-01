@@ -55,7 +55,7 @@ The content of the file:
 # Set the memory per CPU. Units can be given in T|G|M|K.
 #SBATCH --mem-per-cpu=100M
 
-# Set the partition to be used (-p or --partition).
+# Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
 
 # Set the expected running time of your job (-t or --time).
@@ -109,7 +109,7 @@ Your file should look something like this:
 # Set the memory per CPU. Units can be given in T|G|M|K.
 #SBATCH --mem-per-cpu=100M
 
-# Set the partition to be used (-p or --partition).
+# Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
 
 # Set the expected running time of your job (-t or --time).

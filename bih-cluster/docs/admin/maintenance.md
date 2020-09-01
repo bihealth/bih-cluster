@@ -7,7 +7,7 @@ This page documents the current and known upcoming maintenance windows.
 - To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.
 - If everything runs well, this will finish after 30minutes (8:30 am).
 - Planned Scheduler Changes:
-    - Introduce `interactive` partition that allows small interactive jobs to be scheduled immediately.
+    - Introduce automatic routing of jobs to partitions.
     - Make Slurm scheduler and accounting run more robustly.
 
 # Pending Changes
