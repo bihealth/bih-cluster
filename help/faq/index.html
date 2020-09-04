@@ -2242,7 +2242,7 @@ Please look at the end of the last line in your log file.</p>
 <p>This indicates that you need to need to adjust the <code>--time</code> limit to your <code>sbatch</code> command.</p>
 <p>Otherwise, you can use <code>sacct -j JOBID</code> to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by <code>CANCELED</code>) by the Slurm job scheduler looks like this (ignore the <code>COMPLETED</code> step that is just some post-job step added by Slurm automatically).</p>
-<div class="highlight"><pre><span></span><code>sacct -j _JOBID_
+<div class="highlight"><pre><span></span><code># sacct -j _JOBID_
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
 _JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
@@ -2257,6 +2257,17 @@ Things to look out for:</p>
 <li>Is the highest recorded memory usage too high/higher than expected (field <code>MaxRSS</code>)?</li>
 <li>Is the running time too long/longer than expected (field <code>Elapsed</code>)?</li>
 </ul>
+<p>Note that <code>--long</code> does not show all fields.
+For example, the following tells us that the given job was above its elapsed time which caused it to be killed.</p>
+<div class="highlight"><pre><span></span><code># sacct -j _JOBID_ --format Timelimit,Elapsed
+ Timelimit    Elapsed
+---------- ----------
+  01:00:00   01:00:12
+             01:00:13
+             01:00:12 
+</code></pre></div>
+
+<p>Use <code>man sacct</code>, <code>sacct --helpformat</code>, or see the <a href="https://slurm.schedmd.com/sacct.html">Slurm Documentation</a> for options for the <code>--format</code> field of <code>sacct</code>.</p>
 <h2 id="how-can-i-create-a-new-project">How can I create a new project?<a class="headerlink" href="#how-can-i-create-a-new-project" title="Permanent link">&para;</a></h2>
 <p>You can create a project if you are either a group leader of an AG or a delegate of an AG.</p>
 <p>In this case, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> and request a new project.</p>
