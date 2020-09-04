@@ -2234,9 +2234,23 @@ This will prevent network hardware from thinking your connection is unused/broke
 <p>If the problem persists, please report it to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</p>
 <h2 id="my-job-terminated-before-being-done-what-happened">My job terminated before being done. What happened?<a class="headerlink" href="#my-job-terminated-before-being-done-what-happened" title="Permanent link">&para;</a></h2>
 <p>First of all, look into your job logs.
-In the case that the job was terminated by Slurm (e.g., because it ran too long), you will find a message at the bottom.</p>
+In the case that the job was terminated by Slurm (e.g., because it ran too long), you will find a message like this at the bottom.
+Please look at the end of the last line in your log file.</p>
+<div class="highlight"><pre><span></span><code>slurmstepd: error: *** JOB &lt;your job id&gt; ON med0xxx CANCELLED AT 2020-09-02T21:01:12 DUE TO TIME LIMIT ***
+</code></pre></div>
+
+<p>This indicates that you need to need to adjust the <code>--time</code> limit to your <code>sbatch</code> command.</p>
 <p>Otherwise, you can use <code>sacct -j JOBID</code> to read the information that the job accounting system has recorded for your job.
-Use the <code>--long</code> flag to see all fields (and probably pipe it into <code>less</code> as: <code>sacct -j JOBID --long | less -S</code>).
+A job that was canceled (indicated by <code>CANCELED</code>) by the Slurm job scheduler looks like this (ignore the <code>COMPLETED</code> step that is just some post-job step added by Slurm automatically).</p>
+<div class="highlight"><pre><span></span><code>sacct -j _JOBID_
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
+_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15 
+_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0 
+</code></pre></div>
+
+<p>Use the <code>--long</code> flag to see all fields (and probably pipe it into <code>less</code> as: <code>sacct -j JOBID --long | less -S</code>).
 Things to look out for:</p>
 <ul>
 <li>What is the exit code?</li>
@@ -2538,7 +2552,7 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 <div class="md-source-date">
   <small>
     
-      Last update: September 1, 2020
+      Last update: September 4, 2020
     
   </small>
 </div>
