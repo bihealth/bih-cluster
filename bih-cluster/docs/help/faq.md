@@ -61,9 +61,27 @@ If the problem persists, please report it to hpc-helpdesk@bihealth.de.
 ## My job terminated before being done. What happened?
 
 First of all, look into your job logs.
-In the case that the job was terminated by Slurm (e.g., because it ran too long), you will find a message at the bottom.
+In the case that the job was terminated by Slurm (e.g., because it ran too long), you will find a message like this at the bottom.
+Please look at the end of the last line in your log file.
+
+```
+slurmstepd: error: *** JOB <your job id> ON med0xxx CANCELLED AT 2020-09-02T21:01:12 DUE TO TIME LIMIT ***
+```
+
+This indicates that you need to need to adjust the `--time` limit to your `sbatch` command.
 
 Otherwise, you can use `sacct -j JOBID` to read the information that the job accounting system has recorded for your job.
+A job that was canceled (indicated by `CANCELED`) by the Slurm job scheduler looks like this (ignore the `COMPLETED` step that is just some post-job step added by Slurm automatically).
+
+```
+sacct -j _JOBID_
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
+_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15 
+_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0 
+```
+
 Use the `--long` flag to see all fields (and probably pipe it into `less` as: `sacct -j JOBID --long | less -S`).
 Things to look out for:
 
