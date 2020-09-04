@@ -74,7 +74,7 @@ Otherwise, you can use `sacct -j JOBID` to read the information that the job acc
 A job that was canceled (indicated by `CANCELED`) by the Slurm job scheduler looks like this (ignore the `COMPLETED` step that is just some post-job step added by Slurm automatically).
 
 ```
-sacct -j _JOBID_
+# sacct -j _JOBID_
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
 ------------ ---------- ---------- ---------- ---------- ---------- -------- 
 _JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
@@ -88,6 +88,20 @@ Things to look out for:
 - What is the exit code?
 - Is the highest recorded memory usage too high/higher than expected (field `MaxRSS`)?
 - Is the running time too long/longer than expected (field `Elapsed`)?
+
+Note that `--long` does not show all fields.
+For example, the following tells us that the given job was above its elapsed time which caused it to be killed.
+
+```
+# sacct -j _JOBID_ --format Timelimit,Elapsed
+ Timelimit    Elapsed
+---------- ----------
+  01:00:00   01:00:12
+             01:00:13
+             01:00:12 
+```
+
+Use `man sacct`, `sacct --helpformat`, or see the [Slurm Documentation](https://slurm.schedmd.com/sacct.html) for options for the `--format` field of `sacct`.
 
 ## How can I create a new project?
 
