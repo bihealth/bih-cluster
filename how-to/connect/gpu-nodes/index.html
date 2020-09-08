@@ -1867,20 +1867,19 @@
                 <h1 id="how-to-connect-to-gpu-nodes">How-To: Connect to GPU Nodes<a class="headerlink" href="#how-to-connect-to-gpu-nodes" title="Permanent link">&para;</a></h1>
 <p>The cluster has four nodes with four Tesla V100 GPUs each: <code>med030[1-4]</code>.</p>
 <p>Connecting to a node with GPUs is easy.
-You simply request a GPU using the <code>-p gpu --gres=gpu:tesla:COUNT</code> argument to <code>srun</code> and <code>batch</code>.
-This will place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
+You simply request a GPU using the <code>--gres=gpu:tesla:COUNT</code> argument to <code>srun</code> and <code>batch</code>.
+This will automatically place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>".</p>
 </div>
 <div class="admonition important">
-<p class="admonition-title">Please Limit Interactive GPU Usage</p>
+<p class="admonition-title">Interactive Use of GPU Nodes is Discouraged</p>
 <p>While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
 While your job is allocated, it blocks the <strong>allocated</strong> GPUs and other users cannot use them although you might not be actually using them.
 Please prefer batch jobs for your GPU jobs over interactive jobs.</p>
-<p>Administration monitors the ratio of idling jobs on the and will restrict interactive GPU usage in the future if idling interactive jobs become a problem.
-We might limit interactive GPU usage to very short time spans for testing (say 10 minutes or less) or block interactive GPU usage alltogether.
-Please do not give a reason to do so.</p>
+<p>Further, interactive GPU jobs are currently limited to 24 hours.
+We will monitor the situation and adjust that limit to optimize GPU usage and usability.</p>
 </div>
 <h2 id="prequisites">Prequisites<a class="headerlink" href="#prequisites" title="Permanent link">&para;</a></h2>
 <p>You have to register with <a href="mailto:hpc-gatekeeper@bihealth.de">hpc-gatekeeper@bihealth.de</a> for requesting access.
@@ -1907,11 +1906,11 @@ We're only warming up!</p>
 The Slurm schedule will properly allocate GPUs for you and setup the environment variable that tell CUDA which devices are available.
 The following dry run shows these environment variables (and that they are not available on the login node).</p>
 <div class="highlight"><pre><span></span><code>med-login1:~$ <span class="nb">export</span> <span class="p">|</span> grep CUDA_VISIBLE_DEVICES
-med-login1:~$ srun -p gpu --gres<span class="o">=</span>gpu:tesla:1 --pty bash
+med-login1:~$ srun --gres<span class="o">=</span>gpu:tesla:1 --pty bash
 med0303:~$ <span class="nb">export</span> <span class="p">|</span> grep CUDA_VISIBLE_DEVICES
 <span class="nb">declare</span> -x <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
 med0303:~$ <span class="nb">exit</span>
-med-login1:~$ srun -p gpu --gres<span class="o">=</span>gpu:tesla:2 --pty bash
+med-login1:~$ srun --gres<span class="o">=</span>gpu:tesla:2 --pty bash
 med0303:~$ <span class="nb">export</span> <span class="p">|</span> grep CUDA_VISIBLE_DEVICES
 <span class="nb">declare</span> -x <span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="s2">&quot;0,1&quot;</span>
 </code></pre></div>
@@ -1920,7 +1919,7 @@ med0303:~$ <span class="nb">export</span> <span class="p">|</span> grep CUDA_VIS
 If we were to open two concurrent connections (e.g., in a <code>screen</code>) to the same node when allocating one GPU each, the allocated GPUs would be non-overlapping.
 Note that any two jobs are isolated using Linux cgroups ("container" technology 🚀) so you cannot accidentally use a GPU of another job.</p>
 <p>Now to the somewhat boring part where we show that CUDA actually works.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun -p gpu --gres<span class="o">=</span>gpu:tesla:1 --pty bash
+<div class="highlight"><pre><span></span><code>med-login1:~$ srun --gres<span class="o">=</span>gpu:tesla:1 --pty bash
 med0301:~$ nvcc --version
 nvcc: NVIDIA <span class="o">(</span>R<span class="o">)</span> Cuda compiler driver
 Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2005</span>-2019 NVIDIA Corporation
@@ -1973,8 +1972,8 @@ Fri Mar  <span class="m">6</span> <span class="m">11</span>:10:08 <span class="m
 </code></pre></div>
 
 <h2 id="fair-share-fair-use">Fair Share / Fair Use<a class="headerlink" href="#fair-share-fair-use" title="Permanent link">&para;</a></h2>
-<p><strong>Note that allocating a GPU makes it unavailble for everyone else.</strong>
-<strong>There is currently no restriction in place on the GPU nodes, so please behave nicely and cooperatively.</strong>
+<p><strong>Note that allocating a GPU makes it unavailable for everyone else.</strong>
+<strong>There is currently no technical restriction in place on the GPU nodes, so please behave nicely and cooperatively.</strong>
 If you see someone blocking the GPU nodes for long time, then first find out who it is.
 You can type <code>getent passwd USER_NAME</code> on any cluster node to see the email address (and work phone number if added) of the user.
 Send a friendly email to the other user, most likely they blocked the node accidentally.
@@ -1987,7 +1986,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
 <div class="md-source-date">
   <small>
     
-      Last update: September 4, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

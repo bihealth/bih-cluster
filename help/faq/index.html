@@ -2401,8 +2401,8 @@ The "Reason" gives that it has been scheduled for power-off for maintenance of t
             <span class="m">877092</span>    medium snakejob holtgrem  R       <span class="m">0</span>:05      <span class="m">1</span> med0626
 </code></pre></div>
 
-<p>See <a href="/overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties.
-To get your job to run in the <code>medium</code> partition, for example use the <code>--partition=medium</code> or <code>-p medium</code> arguments to your <code>srun</code> or <code>sbatch</code> commands.</p>
+<p>See <a href="/overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties and how jbos are routed to partitions.
+You can force jobs to run in a particular partition by specifying the <code>--partition</code> parameter, e.g., by adding <code>--partition=medium</code> or <code>-p medium</code> to your <code>srun</code> and <code>sbatch</code> calls.</p>
 <h2 id="my-jobs-get-killed-after-four-hours">My jobs get killed after four hours<a class="headerlink" href="#my-jobs-get-killed-after-four-hours" title="Permanent link">&para;</a></h2>
 <p>This is probably answered by the answer to <a href="#my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect</a>.</p>
 <h2 id="how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster">How can I mount a network volume from elsewhere on the cluster?<a class="headerlink" href="#how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster" title="Permanent link">&para;</a></h2>
@@ -2563,7 +2563,7 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 <div class="md-source-date">
   <small>
     
-      Last update: September 4, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

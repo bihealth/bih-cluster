@@ -1820,11 +1820,7 @@
                   
                 
                 
-                <div class="admonition todo">
-<p class="admonition-title">update old GPUs</p>
-<p>TODO: Old GPUs are listed.</p>
-</div>
-<h1 id="nodes-and-storage-volumes">Nodes and Storage Volumes<a class="headerlink" href="#nodes-and-storage-volumes" title="Permanent link">&para;</a></h1>
+                <h1 id="nodes-and-storage-volumes">Nodes and Storage Volumes<a class="headerlink" href="#nodes-and-storage-volumes" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">No mounting <strong>on</strong> the cluster itself.</p>
 <p>For various technical and security-related reasons, it is not possible to mount anything on the cluster nodes by users.
@@ -1838,29 +1834,35 @@ For mounting the cluster storage on your computer, see <a href="../../connecting
 <p>The following groups of nodes are available to cluster users.
 There are a number of nodes that are invisible to non-admin staff, hosting the queue master and monitoring tools and providing backup storage for key critical data, but these are not shown here.</p>
 <ul>
-<li><code>med-login1..3</code></li>
+<li><code>med-login1..3</code><ul>
 <li>available as <code>med-login{1,2,3}.bihealth.org</code></li>
 <li>login nodes (IPs: <code>172.16.45.209</code>, <code>172.16.45.210</code>, <code>172.16.45.211</code>)</li>
 <li>do not perform any computation on these nodes!</li>
 <li>these nodes are not execution nodes</li>
 <li>each process may at most use 1GB of RAM to increase stability of the node</li>
-<li><code>med0101..0124,0127</code></li>
+</ul>
+</li>
+<li><code>med0101..0124,0127</code><ul>
 <li>25 standard nodes</li>
 <li>Intel Xeon E5-2650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz, 16 cores x2 threading</li>
 <li>128 GB RAM</li>
-<li><code>med0133..0164</code></li>
+</ul>
+</li>
+<li><code>med0133..0164</code><ul>
 <li>32 standard nodes</li>
 <li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
 <li>192 GB RAM</li>
-<li><code>med0201..0264</code></li>
+</ul>
+</li>
+<li><code>med0201..0264</code><ul>
 <li>64 nodes with Infiniband interconnect</li>
 <li>Intel Xeon E5-2650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz, 16 cores x2 threading</li>
 <li>128 GB RAM</li>
-<li><code>med0301..0304</code><ul>
-<li>4 nodes with 4 Tesla V100 GPUs each</li>
 </ul>
 </li>
-<li><code>med0401..0405</code> special purpose/high-memory machines</li>
+<li><code>med0301..0304</code></li>
+<li>4 nodes with 4 Tesla V100 GPUs each</li>
+<li><code>med0401..0405</code> special purpose/high-memory machines<ul>
 <li>Intel Xeon E5-4650 v2 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.40GHz, 40 cores x2 threading</li>
 <li><code>med0401</code> and <code>med0402</code><ul>
 <li>1 TB RAM</li>
@@ -1875,18 +1877,26 @@ There are a number of nodes that are invisible to non-admin staff, hosting the q
 <li>access limited to explicit GPU users</li>
 </ul>
 </li>
-<li><code>med0601..0616</code></li>
+</ul>
+</li>
+<li><code>med0601..0616</code><ul>
 <li>16 nodes owned by CUBI</li>
 <li>Intel Xeon E5-2640 v3 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/2" title="GitHub User: 2">@2</a>.60Ghz</li>
 <li>192 GB RAM</li>
-<li><code>med0618..0633</code></li>
+</ul>
+</li>
+<li><code>med0618..0633</code><ul>
 <li>16 nodes owned by CUBI</li>
 <li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
 <li>192 GB RAM</li>
-<li><code>med0701..0764</code></li>
+</ul>
+</li>
+<li><code>med0701..0764</code><ul>
 <li>64 standard nodes</li>
 <li>Intel Xeon E5-2667 v4 <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/3" title="GitHub User: 3">@3</a>.20GHz, 16 cores x 2 threading</li>
 <li>192 GB RAM</li>
+</ul>
+</li>
 </ul>
 <p>If not noted anyway, currently no access restrictions apply per se.</p>
 <h2 id="cluster-volumes-and-locations">Cluster Volumes and Locations<a class="headerlink" href="#cluster-volumes-and-locations" title="Permanent link">&para;</a></h2>
@@ -1914,7 +1924,7 @@ In contrast to "single server" NFS systems, the system can provide large bandwid
 <div class="md-source-date">
   <small>
     
-      Last update: September 4, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>

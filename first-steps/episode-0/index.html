@@ -1878,7 +1878,7 @@ introduce the following convention that we use throughout the series:</p>
 <p>While file paths are highlighted like this: <code>/fast/projects/cubit/current</code>.</p>
 <h2 id="instant-gratification">Instant Gratification<a class="headerlink" href="#instant-gratification" title="Permanent link">&para;</a></h2>
 <p>After connecting to the cluster, you are located on a login node.
-To get to your first compute node, type <code>srun -p long --time 7-00 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days in the "long" partition.
+To get to your first compute node, type <code>srun --time 7-00 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days.
 Typing <code>exit</code> will you bring back to the login node.</p>
 <div class="highlight"><pre><span></span><code>$ srun -p long --time 7-00 --pty bash -i
 med0107 $ exit
@@ -1910,7 +1910,7 @@ $ source activate first-steps
 <div class="md-source-date">
   <small>
     
-      Last update: September 4, 2020
+      Last update: September 1, 2020
     
   </small>
 </div>
