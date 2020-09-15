@@ -118,6 +118,15 @@ nav:
     - "X11 Forwarding": slurm/x11.md
     - slurm/rosetta-stone.md
     - slurm/migrating.md
+  - "OOD Portal":
+      - "Overview": ood/overview.md
+      - "Login & Logout": ood/login-logout.md
+      - "noVNC": ood/novnc.md
+      - "Desktops": ood/desktop.md
+      - "Jupyter": ood/jupyter.md
+      - "RStudio Server": ood/rstudio.md
+      - "MATLAB": ood/matlab.md
+      - "MaxQuant": ood/maxquant.md
   - "Best Practice":
     - "Project Structure": best-practice/project-structure.md
     - "Software Craftmanship": best-practice/software-craftmanship.md
