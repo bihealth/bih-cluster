@@ -11,7 +11,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/commands-srun/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/commands-sattach/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -21,7 +21,7 @@
     
     
       
-        <title>srun - BIH HPC Docs</title>
+        <title>sattach - BIH HPC Docs</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-command-srun" class="md-skip">
+        <a href="#slurm-command-sattach" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              srun
+              sattach
             
           </span>
         </div>
@@ -938,6 +938,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../commands-srun/" title="srun" class="md-nav__link">
+      srun
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../commands-sbatch/" title="sbatch" class="md-nav__link">
+      sbatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -949,14 +973,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        srun
+        sattach
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="srun" class="md-nav__link md-nav__link--active">
-      srun
+    <a href="./" title="sattach" class="md-nav__link md-nav__link--active">
+      sattach
     </a>
     
       
@@ -981,41 +1005,10 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../commands-sbatch/" title="sbatch" class="md-nav__link">
-      sbatch
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../commands-sattach/" title="sattach" class="md-nav__link">
-      sattach
-    </a>
   </li>
 
         
@@ -1817,13 +1810,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1836,7 +1822,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/commands-srun.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/commands-sattach.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1844,43 +1830,30 @@
                   
                 
                 
-                <h1 id="slurm-command-srun">Slurm Command: <code>srun</code><a class="headerlink" href="#slurm-command-srun" title="Permanent link">&para;</a></h1>
-<p>The <code>srun</code> command allows you to run a command <strong>now</strong>.</p>
+                <h1 id="slurm-command-sattach">Slurm Command: <code>sattach</code><a class="headerlink" href="#slurm-command-sattach" title="Permanent link">&para;</a></h1>
+<p>The <code>sattach</code> command allows you to connect the standard input, output, and error streams to your current terminals ession.</p>
 <div class="admonition info">
 <p class="admonition-title">Representative Example</p>
-<div class="highlight"><pre><span></span><code>med-login:~$ srun --pty bash -i
-med0201:~$
+<div class="highlight"><pre><span></span><code>med-login:~$ sattach <span class="m">12345</span>.0
+<span class="o">[</span>...output of your job...<span class="o">]</span>
+med0211:~$ <span class="o">[</span>Ctrl-C<span class="o">]</span>
+med-login:~$
 </code></pre></div>
 
 </div>
-<p>The command will perform a resource allocation with the scheduler (and wait until it has allocated the requested resources) first.
-Most importantly, you can specify the <code>--pty</code> argument which will connect the current terminal's standard output, error, and input to your current one.
-This allows you to run interactive jobs such as shells with <code>srun --pty bash -i</code>.</p>
+<p>Press <code>Ctrl-C</code> to detach from the current session.
+Please note that you will have to give the job ID as well as step step ID.
+For most cases, simply append <code>".0"</code> to your job ID.</p>
 <div class="admonition info">
-<p class="admonition-title">Slurm Documentation: srun</p>
-<p>Please also see the official <a href="https://slurm.schedmd.com/srun.html">Slurm documentation on srun</a>.</p>
+<p class="admonition-title">Slurm Documentation: sattach</p>
+<p>Please also see the official <a href="https://slurm.schedmd.com/sbatch.html">Slurm documentation on srun</a>.</p>
 </div>
 <h2 id="important-arguments">Important Arguments<a class="headerlink" href="#important-arguments" title="Permanent link">&para;</a></h2>
-<p>Also see all important arguments of the <a href="../commands-sbatch/"><code>sbatch</code></a> command.</p>
 <ul>
 <li><code>--pty</code>
-  -- Connect current terminal to the job's stdoud/stderr/stdin.</li>
-<li><code>--x11</code>
-  -- Setup X11 forwarding.</li>
-<li><code>--immediate</code>
-  -- Immediately terminate if the resources to run the job are not available, do not wait.</li>
-<li><code>--test-only</code>
-  -- Don't run anything, but only estimate when the job would be scheduled.</li>
-</ul>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>This is the primary entry point for creating interactive shell sessions on the cluster.</li>
-<li>As with all jobs allocated by Slurm, interactive sessions executed with <code>srun</code> are governed by resource allocations, in particular:<ul>
-<li><code>srun</code> jobs have a maximal running time set,</li>
-<li><code>srun</code> jobs have a maximal memory and number of cores set, and</li>
-<li>also see <a href="../commands-scontrol/"><code>scontrol show job JOBID</code></a>.</li>
-</ul>
-</li>
+    -- Execute task zero in pseudo terminal.</li>
+<li><code>--verbose</code>
+    -- Increase verbosity of <code>sattach</code>.</li>
 </ul>
                 
                   
@@ -1913,7 +1886,7 @@ This allows you to run interactive jobs such as shells with <code>srun --pty bas
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../memory-allocation/" title="Memory Allocation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../commands-sbatch/" title="sbatch" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1922,19 +1895,19 @@ This allows you to run interactive jobs such as shells with <code>srun --pty bas
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Memory Allocation
+                sbatch
               </div>
             </div>
           </a>
         
         
-          <a href="../commands-sbatch/" title="sbatch" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../commands-scancel/" title="scancel" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                sbatch
+                scancel
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

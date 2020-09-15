@@ -11,21 +11,21 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/commands-srun/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/how-to/misc/debug-at-hpc/">
       
       
         <meta name="author" content="BIH HPC IT">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.5">
     
     
       
-        <title>srun - BIH HPC Docs</title>
+        <title>Debug @HPC - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df84b5fe.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.df84b5fe.min.css">
       
       
     
@@ -39,7 +39,7 @@
     
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     
       
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-command-srun" class="md-skip">
+        <a href="#how-to-debug-software-on-hpc-systems" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              srun
+              Debug @HPC
             
           </span>
         </div>
@@ -184,7 +184,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -221,7 +221,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/getting-access/" title="Getting Access" class="md-nav__link">
+    <a href="../../../admin/getting-access/" title="Getting Access" class="md-nav__link">
       Getting Access
     </a>
   </li>
@@ -233,7 +233,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
+    <a href="../../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
       Resource Registration
     </a>
   </li>
@@ -245,7 +245,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
+    <a href="../../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
       Maintenance etc.
     </a>
   </li>
@@ -257,7 +257,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../admin/provided-software/" title="Provided Software" class="md-nav__link">
+    <a href="../../../admin/provided-software/" title="Provided Software" class="md-nav__link">
       Provided Software
     </a>
   </li>
@@ -299,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
+    <a href="../../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
       HPC Helpdesk
     </a>
   </li>
@@ -311,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
+    <a href="../../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
       Good Tickets
     </a>
   </li>
@@ -323,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
+    <a href="../../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
       Frequently Asked Questions
     </a>
   </li>
@@ -365,7 +365,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
+    <a href="../../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
       For the Impatient
     </a>
   </li>
@@ -377,7 +377,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/architecture/" title="Architecture" class="md-nav__link">
+    <a href="../../../overview/architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -389,7 +389,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
+    <a href="../../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
       Job Scheduler
     </a>
   </li>
@@ -401,7 +401,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
+    <a href="../../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
       Nodes and Volumes
     </a>
   </li>
@@ -468,7 +468,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
+    <a href="../../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -480,7 +480,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
+    <a href="../../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -522,7 +522,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
+    <a href="../../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
       Charite
     </a>
   </li>
@@ -534,7 +534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
+    <a href="../../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
       MDC
     </a>
   </li>
@@ -576,7 +576,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
       Pre-Requisites
     </a>
   </li>
@@ -588,7 +588,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -600,7 +600,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -612,7 +612,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+    <a href="../../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
       Connection Problems
     </a>
   </li>
@@ -629,7 +629,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
+    <a href="../../../connecting/from-external/" title="From External" class="md-nav__link">
       From External
     </a>
   </li>
@@ -641,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+    <a href="../../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
       Windows SSH Client
     </a>
   </li>
@@ -683,7 +683,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+    <a href="../../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
       Episode 0
     </a>
   </li>
@@ -695,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+    <a href="../../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
       Episode 1
     </a>
   </li>
@@ -707,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+    <a href="../../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
       Episode 2
     </a>
   </li>
@@ -719,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+    <a href="../../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
       Episode 3
     </a>
   </li>
@@ -731,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+    <a href="../../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
       Episode 4
     </a>
   </li>
@@ -773,7 +773,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+    <a href="../../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
       Accessing Snapshots
     </a>
   </li>
@@ -785,7 +785,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
+    <a href="../../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
       Querying Quotas
     </a>
   </li>
@@ -797,7 +797,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
+    <a href="../../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
       Storage Locations
     </a>
   </li>
@@ -812,12 +812,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       Cluster Scheduler
@@ -841,7 +839,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../overview/" title="Scheduling Overview" class="md-nav__link">
+    <a href="../../../slurm/overview/" title="Scheduling Overview" class="md-nav__link">
       Scheduling Overview
     </a>
   </li>
@@ -853,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../background/" title="Introduction to Scheduling" class="md-nav__link">
+    <a href="../../../slurm/background/" title="Introduction to Scheduling" class="md-nav__link">
       Introduction to Scheduling
     </a>
   </li>
@@ -865,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../quickstart/" title="Slurm Quickstart" class="md-nav__link">
+    <a href="../../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
       Slurm Quickstart
     </a>
   </li>
@@ -877,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+    <a href="../../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
   </li>
@@ -889,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+    <a href="../../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
       Slurm Job Scripts
     </a>
   </li>
@@ -901,7 +899,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../memory-allocation/" title="Memory Allocation" class="md-nav__link">
+    <a href="../../../slurm/memory-allocation/" title="Memory Allocation" class="md-nav__link">
       Memory Allocation
     </a>
   </li>
@@ -911,12 +909,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-7" type="checkbox" id="nav-8-7" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-7" type="checkbox" id="nav-8-7">
     
     <label class="md-nav__link" for="nav-8-7">
       Slurm Commands
@@ -938,60 +934,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        srun
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="srun" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../slurm/commands-srun/" title="srun" class="md-nav__link">
       srun
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
-    Important Arguments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1001,7 +948,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-sbatch/" title="sbatch" class="md-nav__link">
+    <a href="../../../slurm/commands-sbatch/" title="sbatch" class="md-nav__link">
       sbatch
     </a>
   </li>
@@ -1013,7 +960,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-sattach/" title="sattach" class="md-nav__link">
+    <a href="../../../slurm/commands-sattach/" title="sattach" class="md-nav__link">
       sattach
     </a>
   </li>
@@ -1025,7 +972,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-scancel/" title="scancel" class="md-nav__link">
+    <a href="../../../slurm/commands-scancel/" title="scancel" class="md-nav__link">
       scancel
     </a>
   </li>
@@ -1037,7 +984,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-sinfo/" title="sinfo" class="md-nav__link">
+    <a href="../../../slurm/commands-sinfo/" title="sinfo" class="md-nav__link">
       sinfo
     </a>
   </li>
@@ -1049,7 +996,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-squeue/" title="squeue" class="md-nav__link">
+    <a href="../../../slurm/commands-squeue/" title="squeue" class="md-nav__link">
       squeue
     </a>
   </li>
@@ -1061,7 +1008,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-scontrol/" title="scontrol" class="md-nav__link">
+    <a href="../../../slurm/commands-scontrol/" title="scontrol" class="md-nav__link">
       scontrol
     </a>
   </li>
@@ -1073,7 +1020,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../commands-sacct/" title="sacct" class="md-nav__link">
+    <a href="../../../slurm/commands-sacct/" title="sacct" class="md-nav__link">
       sacct
     </a>
   </li>
@@ -1085,7 +1032,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../format-strings/" title="Format Strings" class="md-nav__link">
+    <a href="../../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
       Format Strings
     </a>
   </li>
@@ -1102,7 +1049,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+    <a href="../../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
       Snakemake with Slurm
     </a>
   </li>
@@ -1114,7 +1061,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../x11/" title="X11 Forwarding" class="md-nav__link">
+    <a href="../../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
       X11 Forwarding
     </a>
   </li>
@@ -1126,7 +1073,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+    <a href="../../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
       Slurm Rosetta Stone
     </a>
   </li>
@@ -1138,7 +1085,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../migrating/" title="Migrating to Slurm" class="md-nav__link">
+    <a href="../../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
       Migrating to Slurm
     </a>
   </li>
@@ -1180,7 +1127,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
+    <a href="../../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
       Project Structure
     </a>
   </li>
@@ -1192,7 +1139,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+    <a href="../../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
       Software Craftmanship
     </a>
   </li>
@@ -1204,7 +1151,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+    <a href="../../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
       Using Screen/Tmux
     </a>
   </li>
@@ -1216,7 +1163,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+    <a href="../../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
       ~/.bashrc Guide
     </a>
   </li>
@@ -1228,7 +1175,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
+    <a href="../../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
       Temporary Files
     </a>
   </li>
@@ -1240,7 +1187,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
+    <a href="../../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
       Custom Environment Modules
     </a>
   </li>
@@ -1252,7 +1199,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
+    <a href="../../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
       Install with Conda
     </a>
   </li>
@@ -1294,7 +1241,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/" title="Overview" class="md-nav__link">
+    <a href="../../../cubit/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1306,7 +1253,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
+    <a href="../../../cubit/annotations/" title="Annotations" class="md-nav__link">
       Annotations
     </a>
   </li>
@@ -1318,7 +1265,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
+    <a href="../../../cubit/app-support/" title="Application Support" class="md-nav__link">
       Application Support
     </a>
   </li>
@@ -1330,7 +1277,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
+    <a href="../../../cubit/databases/" title="Databases" class="md-nav__link">
       Databases
     </a>
   </li>
@@ -1342,7 +1289,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
+    <a href="../../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
       Exomes and Panels
     </a>
   </li>
@@ -1354,7 +1301,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
+    <a href="../../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
       Exon Lists
     </a>
   </li>
@@ -1366,7 +1313,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
+    <a href="../../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
       Precomputed Indexes
     </a>
   </li>
@@ -1378,7 +1325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
+    <a href="../../../cubit/references/" title="Reference Sequences" class="md-nav__link">
       Reference Sequences
     </a>
   </li>
@@ -1393,10 +1340,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
     
     <label class="md-nav__link" for="nav-11">
       How-To
@@ -1445,7 +1394,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
+    <a href="../../connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
       High-Memory Nodes
     </a>
   </li>
@@ -1457,7 +1406,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
+    <a href="../../connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
       GPU Nodes
     </a>
   </li>
@@ -1499,7 +1448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
+    <a href="../../software/openmpi/" title="OpenMPI" class="md-nav__link">
       OpenMPI
     </a>
   </li>
@@ -1511,7 +1460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
+    <a href="../../software/scientific-software/" title="Scientific Software" class="md-nav__link">
       Scientific Software
     </a>
   </li>
@@ -1523,7 +1472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
+    <a href="../../software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
       Cell Ranger
     </a>
   </li>
@@ -1535,7 +1484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
+    <a href="../../software/jupyter/" title="Jupyter" class="md-nav__link">
       Jupyter
     </a>
   </li>
@@ -1547,7 +1496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
+    <a href="../../software/keras/" title="Keras" class="md-nav__link">
       Keras
     </a>
   </li>
@@ -1559,7 +1508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
+    <a href="../../software/matlab/" title="Matlab" class="md-nav__link">
       Matlab
     </a>
   </li>
@@ -1571,7 +1520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
+    <a href="../../software/tensorflow/" title="Tensorflow" class="md-nav__link">
       Tensorflow
     </a>
   </li>
@@ -1583,7 +1532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/software/singularity/" title="Singularity" class="md-nav__link">
+    <a href="../../software/singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -1625,7 +1574,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
+    <a href="../../service/file-exchange/" title="File Exchange" class="md-nav__link">
       File Exchange
     </a>
   </li>
@@ -1640,10 +1589,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-4" type="checkbox" id="nav-11-4" checked>
     
     <label class="md-nav__link" for="nav-11-4">
       Miscellaneous
@@ -1667,7 +1618,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/misc/debug-software/" title="Debug Software" class="md-nav__link">
+    <a href="../debug-software/" title="Debug Software" class="md-nav__link">
       Debug Software
     </a>
   </li>
@@ -1677,11 +1628,95 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/debug-at-hpc/" title="Debug @HPC" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Debug @HPC
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Debug @HPC" class="md-nav__link md-nav__link--active">
       Debug @HPC
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-1-run-it-interactively" class="md-nav__link">
+    Attempt 1: Run it interactively!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-2-inspect-the-logs" class="md-nav__link">
+    Attempt 2: Inspect the logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-3-increase-loggingprinting" class="md-nav__link">
+    Attempt 3: Increase logging/printing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-4-use-sattach" class="md-nav__link">
+    Attempt 4: Use sattach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-5-inspect-program-activity" class="md-nav__link">
+    Attempt 5: Inspect Program Activity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-6-use-debuggers" class="md-nav__link">
+    Attempt 6: Use Debuggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dont-despair" class="md-nav__link">
+    Don't Despair
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1691,7 +1726,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+    <a href="../contribute/" title="Contribute to Docs" class="md-nav__link">
       Contribute to Docs
     </a>
   </li>
@@ -1738,7 +1773,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
+    <a href="../../../misc/publication-list/" title="Publication List" class="md-nav__link">
       Publication List
     </a>
   </li>
@@ -1750,7 +1785,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
+    <a href="../../../misc/external-resources/" title="External Guides" class="md-nav__link">
       External Guides
     </a>
   </li>
@@ -1762,7 +1797,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
+    <a href="../../../misc/tips/" title="Misc. Tips" class="md-nav__link">
       Misc. Tips
     </a>
   </li>
@@ -1774,7 +1809,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
+    <a href="../../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
       SSH Basics
     </a>
   </li>
@@ -1811,15 +1846,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
-    Important Arguments
+  <a href="#attempt-1-run-it-interactively" class="md-nav__link">
+    Attempt 1: Run it interactively!
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
+  <a href="#attempt-2-inspect-the-logs" class="md-nav__link">
+    Attempt 2: Inspect the logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-3-increase-loggingprinting" class="md-nav__link">
+    Attempt 3: Increase logging/printing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-4-use-sattach" class="md-nav__link">
+    Attempt 4: Use sattach
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-5-inspect-program-activity" class="md-nav__link">
+    Attempt 5: Inspect Program Activity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attempt-6-use-debuggers" class="md-nav__link">
+    Attempt 6: Use Debuggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dont-despair" class="md-nav__link">
+    Don't Despair
   </a>
   
 </li>
@@ -1836,7 +1906,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/commands-srun.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/misc/debug-at-hpc.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1844,43 +1914,68 @@
                   
                 
                 
-                <h1 id="slurm-command-srun">Slurm Command: <code>srun</code><a class="headerlink" href="#slurm-command-srun" title="Permanent link">&para;</a></h1>
-<p>The <code>srun</code> command allows you to run a command <strong>now</strong>.</p>
+                <h1 id="how-to-debug-software-on-hpc-systems">How-To: Debug Software on HPC Systems<a class="headerlink" href="#how-to-debug-software-on-hpc-systems" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
-<p class="admonition-title">Representative Example</p>
-<div class="highlight"><pre><span></span><code>med-login:~$ srun --pty bash -i
-med0201:~$
+<p class="admonition-title">Please Contribute!</p>
+<p>This guide is far from complete.
+Please feel free to contribute, e.g., refer to <a href="../contribute">How-To: Contribute to this Document</a>.</p>
+</div>
+<p>Please make sure that you have read <a href="../debug-software">How-To: Debug Software</a> as a general primer.</p>
+<p>As debugging is hard enough already, it makes one wonder how to do this on the HPC system in batch mode.
+Here is a list of pointers.</p>
+<h2 id="attempt-1-run-it-interactively">Attempt 1: Run it interactively!<a class="headerlink" href="#attempt-1-run-it-interactively" title="Permanent link">&para;</a></h2>
+<p>First of all, you can of course get an interactive session using <code>srun --pty bash -i</code> and then run your program interactively.
+Make sure to allocate appropriate memory and cores for your purpose.
+You might also want to first start a <code>screen</code> or <code>tmux</code> session on the login node such that network interruptions to the login node don't harm your hard debugging work!</p>
+<p>Does the program work correctly if you do this?
+If yes, and it only fails when run in batch mode, consider the following behaviour of the scheduler.</p>
+<p>The scheduler takes your resource requirements and tries to find a free slot.
+Once it has found a free slot, it will attempt to run the program.
+This mainly differs in running it interactively in standard input, output, and error streams.</p>
+<ul>
+<li>By default, stdin is connected to <code>/dev/null</code> such that no input is read.
+  You can change this with the <code>--input=</code> flag to specify a file.</li>
+<li>By default stdout and stderr are joint and written to the file specified as <code>--output=</code>.
+  You can use certain wildcards to make the output (but also the input files) depend on things like the job ID or job name.</li>
+<li>Please note that the <strong>directory name to the output file</strong> but exist before the job is launched.
+  It is <strong>not</strong> sufficient to <code>mkdir</code> it in the job script itself.</li>
+</ul>
+<p>Please refer to the <a href="https://slurm.schedmd.com/sbatch.html">sbatch documentation</a> for details.</p>
+<p>If your program fails without leaving any log file or any other trace, make sure that the path to the output file exists.
+To the best of the author's knowledge, there is no way to tell apart a crash because this does not exist and a program failure (except maybe for the running time of 0 seconds and memory usage of 0 bytes).</p>
+<h2 id="attempt-2-inspect-the-logs">Attempt 2: Inspect the logs<a class="headerlink" href="#attempt-2-inspect-the-logs" title="Permanent link">&para;</a></h2>
+<p>Do you see any exception in your log files?
+If not, continue.</p>
+<p>If your job is canceled by <code>scancel</code> or stopped because it exhausted it maximal running time or allocated resources then you will find a note in the last line of your error output log (usually folded into the standard output).
+Please note that if the previous output line did not include a line ending, the message might be at the very end of the last line.</p>
+<p>The message will look similar to:</p>
+<div class="highlight"><pre><span></span><code>slurmstepd: error: *** JOB &lt;your job id&gt; ON med0xxx CANCELLED AT 2020-09-02T21:01:12 DUE TO TIME LIMIT ***
 </code></pre></div>
 
-</div>
-<p>The command will perform a resource allocation with the scheduler (and wait until it has allocated the requested resources) first.
-Most importantly, you can specify the <code>--pty</code> argument which will connect the current terminal's standard output, error, and input to your current one.
-This allows you to run interactive jobs such as shells with <code>srun --pty bash -i</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Slurm Documentation: srun</p>
-<p>Please also see the official <a href="https://slurm.schedmd.com/srun.html">Slurm documentation on srun</a>.</p>
-</div>
-<h2 id="important-arguments">Important Arguments<a class="headerlink" href="#important-arguments" title="Permanent link">&para;</a></h2>
-<p>Also see all important arguments of the <a href="../commands-sbatch/"><code>sbatch</code></a> command.</p>
+<h2 id="attempt-3-increase-loggingprinting">Attempt 3: Increase logging/printing<a class="headerlink" href="#attempt-3-increase-loggingprinting" title="Permanent link">&para;</a></h2>
+<p>Ideally, you can add one or more <code>--verbose</code>/<code>-v</code> flags to your program to increase verbosity.
+See how far your program gets, see where it fails.
+This attempt will be greatly helped by reproducible running on a minimal working example.</p>
+<h2 id="attempt-4-use-sattach">Attempt 4: Use <code>sattach</code><a class="headerlink" href="#attempt-4-use-sattach" title="Permanent link">&para;</a></h2>
+<p>You can use <a href="../../slurm/command-sattach"><code>sattach</code></a> for attaching your terminal to your running job.
+This way, you can perform an interactive inspection of the commands.</p>
+<p>You can combine this with one of the next attempst of using debuggers to e.g., get an <code>pdb</code> debugger at an important position of your program.
+However, please note that <code>pdb</code> and <code>ipdb</code> will stop the program's execution if the standard input stream is at end of file (which <code>/dev/null</code> is and this is used by default in <code>sbatch</code> jobs).</p>
+<h2 id="attempt-5-inspect-program-activity">Attempt 5: Inspect Program Activity<a class="headerlink" href="#attempt-5-inspect-program-activity" title="Permanent link">&para;</a></h2>
+<p>Log into the node that your program runs on either using <code>srun --pty --nodelist=NODE</code> or using <code>ssh</code>.
+Please note that you should never perform computational intensive things when logging into the node directly.
+You can then use all activity inspection tips from <a href="../debug-software">How-To: Debug Software</a>.</p>
+<h2 id="attempt-6-use-debuggers">Attempt 6: Use Debuggers<a class="headerlink" href="#attempt-6-use-debuggers" title="Permanent link">&para;</a></h2>
+<p>After having logged into the node running your program, you can of course also attach to the program with <code>gdb -p PID</code> or <code>cgdb -p PID</code>.</p>
+<h2 id="dont-despair">Don't Despair<a class="headerlink" href="#dont-despair" title="Permanent link">&para;</a></h2>
+<p>Here are some final remarks:</p>
 <ul>
-<li><code>--pty</code>
-  -- Connect current terminal to the job's stdoud/stderr/stdin.</li>
-<li><code>--x11</code>
-  -- Setup X11 forwarding.</li>
-<li><code>--immediate</code>
-  -- Immediately terminate if the resources to run the job are not available, do not wait.</li>
-<li><code>--test-only</code>
-  -- Don't run anything, but only estimate when the job would be scheduled.</li>
-</ul>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>This is the primary entry point for creating interactive shell sessions on the cluster.</li>
-<li>As with all jobs allocated by Slurm, interactive sessions executed with <code>srun</code> are governed by resource allocations, in particular:<ul>
-<li><code>srun</code> jobs have a maximal running time set,</li>
-<li><code>srun</code> jobs have a maximal memory and number of cores set, and</li>
-<li>also see <a href="../commands-scontrol/"><code>scontrol show job JOBID</code></a>.</li>
-</ul>
-</li>
+<li>Don't despair!</li>
+<li>The longer you search for the problem, the more fundamental it is.
+  Chances are that you are just overlooking something obvious which is actually easy to fix.</li>
+<li>Keep old log files!</li>
+<li>Really, really, make sure that your program runs deterministically.
+  You will save yourself a world of pain.</li>
 </ul>
                 
                   
@@ -1913,7 +2008,7 @@ This allows you to run interactive jobs such as shells with <code>srun --pty bas
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../memory-allocation/" title="Memory Allocation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../debug-software/" title="Debug Software" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1922,19 +2017,19 @@ This allows you to run interactive jobs such as shells with <code>srun --pty bas
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Memory Allocation
+                Debug Software
               </div>
             </div>
           </a>
         
         
-          <a href="../commands-sbatch/" title="sbatch" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../contribute/" title="Contribute to Docs" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                sbatch
+                Contribute to Docs
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -1965,15 +2060,15 @@ This allows you to run interactive jobs such as shells with <code>srun --pty bas
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
