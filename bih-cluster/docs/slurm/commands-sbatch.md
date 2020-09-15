@@ -1,6 +1,6 @@
 # Slurm Command: `sbatch`
 
-The `srun` command allows you to put a job into the scheduler's queue to be executed at a later time.
+The `sbatch` command allows you to put a job into the scheduler's queue to be executed at a later time.
 
 !!! info "Representative Example"
 
@@ -13,9 +13,9 @@ The `srun` command allows you to put a job into the scheduler's queue to be exec
 
 The command will create a batch job and add it to the queue to be executed at a later point in time.
 
-!!! info "Slurm Documentation: srun"
+!!! info "Slurm Documentation: sbatch"
 
-    Please also see the official [Slurm documentation on srun](https://slurm.schedmd.com/srun.html).
+    Please also see the official [Slurm documentation on srun](https://slurm.schedmd.com/sbatch.html).
 
 ## Important Arguments
 

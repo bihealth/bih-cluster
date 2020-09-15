@@ -465,3 +465,11 @@ med-login1:~$ tree -a /etc/skel.bih/
 ├── .screenrc
 └── .vimrc
 ```
+
+## My program crashes! What should I do?
+
+Have a look at our [How-To: Debug Software](../../how-to-/debug-software) and [How-To: Debug Software on HPC Systems](../../how-to-/debug-at-hpc) guides!
+
+**But it works on my workstation!**
+
+Yes, please also refer to these guides on possible approaches to find the problem.

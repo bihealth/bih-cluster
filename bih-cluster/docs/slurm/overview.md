@@ -9,6 +9,8 @@ For a quick introduction and hands-on examples, please see the manual sections
 - Overview, starting with [For the Impatient](/overview/for-the-impatient), and
 - First Steps/Tutorial, starting with [Episode 0](/first-steps/episode-0).
 
+Also, make sure that you are aware of our [How-To: Debug Software](../../how-to-/debug-software) and [How-To: Debug Software on HPC Systems](../../how-to-/debug-at-hpc) guides in the case that something goes wrong.
+
 ## Annotated Contents
 
 - [Background on Scheduling](background.md) -- some background on scheduling and the terminology used

@@ -108,6 +108,7 @@ nav:
     - "Slurm Commands":
         - "srun": slurm/commands-srun.md
         - "sbatch": slurm/commands-sbatch.md
+        - "sattach": slurm/commands-sattach.md
         - "scancel": slurm/commands-scancel.md
         - "sinfo": slurm/commands-sinfo.md
         - "squeue": slurm/commands-squeue.md
@@ -151,6 +152,8 @@ nav:
     - "Service":
       - "File Exchange": how-to/service/file-exchange.md
     - "Miscellaneous":
+      - "Debug Software": how-to/misc/debug-software.md
+      - "Debug @HPC": how-to/misc/debug-at-hpc.md
       - "Contribute to Docs": how-to/misc/contribute.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md

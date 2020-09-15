@@ -25,7 +25,6 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :calendar: Slurm scheduler maintenance - September 8, 2020
     - :test_tube: Head node migration -- autumn 2020
     - :calendar: `/fast` => `/data` -- autumn 2020
 
