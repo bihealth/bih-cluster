@@ -12,6 +12,10 @@ It has been used to support the publications listed below.
 
 Ehmke, N.; Cusmano-Ozog, K.; Koenig, R.; Holtgrewe, M.; Nur, B.; Mihci, E.; Babcock, H.; Gonzaga-Jauregui, C.; Overton, J. D.; Xiao, J.; et al. Biallelic Variants in KYNU Cause a Multisystemic Syndrome with Hand Hyperphalangism. *Bone* 2020, 115219. https://doi.org/10.1016/j.bone.2019.115219.
 
+Niehus, S.; Jónsson, H.; Schönberger, J.; Björnsson, E.; Beyter, D.; Eggertsson, H.P.; Sulem, P.; Stefánsson, K.; Halldórsson, B.V.; Kehr, B. PopDel identifies medium-size deletions jointly in tens of thousands of genomes.
+*bioRxiv* 2020, 10.1101/740225
+[doi: https://doi.org/10.1101/740225](https://doi.org/10.1101/740225)
+
 Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.,Schroeder S., Rasche A., Muth D., Drexler J.F., Heni A.C., Eibner G.J., Page R.A., Jones T.C., MüllerM.A., Sommer S., Glebe D., and Drosten C. (2020).  
 "Mammalian deltavirus without hepadnavirus coinfection in the neotropical rodent *Proechimys semispinosus*."
 *Proceedings of the National Academy of Sciences*
