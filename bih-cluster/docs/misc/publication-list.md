@@ -10,11 +10,23 @@ It has been used to support the publications listed below.
 
 ### 2020
 
-Ehmke, N.; Cusmano-Ozog, K.; Koenig, R.; Holtgrewe, M.; Nur, B.; Mihci, E.; Babcock, H.; Gonzaga-Jauregui, C.; Overton, J. D.; Xiao, J.; et al. Biallelic Variants in KYNU Cause a Multisystemic Syndrome with Hand Hyperphalangism. *Bone* 2020, 115219. https://doi.org/10.1016/j.bone.2019.115219.
+Kleinert, P., Martin, B., & Kircher, M. (2020).
+"HemoMIPs—Automated analysis and result reporting pipeline for targeted sequencing data."
+*PLOS Computational Biology*,
+16(6), e1007956.
+[doi:  10.1371/journal.pcbi.1007956](https://doi.org/10.1371/journal.pcbi.1007956)
+
+Ehmke, N.; Cusmano-Ozog, K.; Koenig, R.; Holtgrewe, M.; Nur, B.; Mihci, E.; Babcock, H.; Gonzaga-Jauregui, C.; Overton, J. D.; Xiao, J.; et al. Biallelic Variants in KYNU Cause a Multisystemic Syndrome with Hand Hyperphalangism. *Bone* 2020, 115219.
+[doi: 10.1016/j.bone.2019.115219](https://doi.org/10.1016/j.bone.2019.115219).
 
 Niehus, S.; Jónsson, H.; Schönberger, J.; Björnsson, E.; Beyter, D.; Eggertsson, H.P.; Sulem, P.; Stefánsson, K.; Halldórsson, B.V.; Kehr, B. PopDel identifies medium-size deletions jointly in tens of thousands of genomes.
 *bioRxiv* 2020, 10.1101/740225
-[doi: https://doi.org/10.1101/740225](https://doi.org/10.1101/740225)
+[doi: 10.1101/740225](https://doi.org/10.1101/740225)
+
+Gordon, M. G., Inoue, F., Martin, B., Schubach, M., Agarwal, V., Whalen, S., ... & Kreimer, A. (2020).
+"lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements."
+*Nature Protocols*, 15(8), 2387-2412.
+[doi: 10.1038/s41596-020-0333-5](https://doi.org/10.1038/s41596-020-0333-5)
 
 Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.,Schroeder S., Rasche A., Muth D., Drexler J.F., Heni A.C., Eibner G.J., Page R.A., Jones T.C., MüllerM.A., Sommer S., Glebe D., and Drosten C. (2020).  
 "Mammalian deltavirus without hepadnavirus coinfection in the neotropical rodent *Proechimys semispinosus*."
@@ -23,6 +35,17 @@ Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.
 [doi: 10.1073/pnas.2006750117](https://doi.org/10.1073/pnas.2006750117).
 
 ### 2019
+
+Kircher, M., Xiong, C., Martin, B. et al.
+"Saturation mutagenesis of twenty disease-associated regulatory elements at single base-pair resolution."
+*Nat Commun*
+10, 3583 (2019).
+[doi: 10.1038/s41467-019-11526-w](https://doi.org/10.1038/s41467-019-11526-w)
+
+Stefanovski L, Triebkorn P, Spiegler A, Diaz-Cortes M-A, Solodkin A, Jirsa V, McIntosh RA and Ritter P (2019).
+"Linking Molecular Pathways and Large-Scale Computational Modeling to Assess Candidate Disease Mechanisms and Pharmacodynamics in Alzheimer's Disease."
+*Front. Comput. Neurosci.*. 13:54.
+[doi: 10.3389/fncom.2019.00054](https://doi.org/10.3389/fncom.2019.00054)
 
 Boeddrich A., Babila J.T., Wiglenda T., Diez L., Jacob M., Nietfeld W., Huska M.R., Haenig C., Groenke N., Buntru A., Blanc E., Meier J.C., Vannoni E., Erck C., Friedrich B., Martens H., Neuendorf N., Schnoegl S., Wolfer DP., Loos M., Beule D., Andrade-Navarro M.A., Wanker E.E. (2019).
 "The Anti-amyloid Compound DO1 Decreases Plaque Pathology and Neuroinflammation-Related Expression Changes in 5xFAD Transgenic Mice."
@@ -54,6 +77,7 @@ Marklewitz M., Dutari L.C., Paraskevopoulou S., Page R.A., Loaiza J.R., Junglen 
 [doi: 10.1099/jgv.0.001260](https://doi.org/10.1099/jgv.0.001260)
 
 Quade,A., Thiel,A., Kurth,I., Holtgrewe,M., Elbracht,M., Beule,D., Eggermann,K., Scholl,U.I. and Häusler,M. (2019) Paroxysmal tonic upgaze: A heterogeneous clinical condition responsive to carbonic anhydrase inhibition. European Journal of Paediatric Neurology, [10.1016/j.ejpn.2019.11.002](https://doi.org/10.1016/j.ejpn.2019.11.002).
+
 ### 2018
 
 Blanc, E., Holtgrewe, M., Dhamodaran, A., Messerschmidt, C., Willimsky, G., Blankenstein, T., Beule, D. (2018).
