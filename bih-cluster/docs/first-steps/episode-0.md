@@ -54,7 +54,7 @@ software that we need during the tutorial. Run the following commands:
 
 ```terminal
 $ conda create -n first-steps python=3 snakemake drmaa bwa delly samtools gatk4
-$ source activate first-steps
+$ conda activate first-steps
 (first-steps) $
 ```
 
