@@ -119,7 +119,7 @@ Your file should look something like this:
 export TMPDIR=/fast/users/${USER}/scratch/tmp
 mkdir -p ${TMPDIR}
 
-BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta
+BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
 REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
 bwa mem -t 8 \
