@@ -1998,13 +1998,13 @@ You can create one in your <code>~/scratch</code> folder and make it available t
 For our small example, the required reference genome and index can be found at:</p>
 <ul>
 <li><code>/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</code></li>
-<li><code>/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta</code></li>
+<li><code>/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</code></li>
 </ul>
 <h2 id="aligning-the-reads">Aligning the Reads<a class="headerlink" href="#aligning-the-reads" title="Permanent link">&para;</a></h2>
 <p>Let's align our data:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ bwa mem -t 8 \
     -R &quot;@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01&quot; \
-    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
     /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
 | samtools view -b - \
@@ -2045,7 +2045,7 @@ You can also have a peek via:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: September 16, 2020
+      Last update: September 24, 2020
     
   </small>
 </div>
