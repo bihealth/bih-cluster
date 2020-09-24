@@ -56,7 +56,7 @@ The static data is located in `/fast/projects/cubit/current/static_data`.
 For our small example, the required reference genome and index can be found at:
 
 - `/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta`
-- `/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta`
+- `/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta`
 
 ## Aligning the Reads
 
@@ -65,7 +65,7 @@ Let's align our data:
 ```terminal
 (first-steps) $ bwa mem -t 8 \
     -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
-    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.15/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
     /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
 | samtools view -b - \
