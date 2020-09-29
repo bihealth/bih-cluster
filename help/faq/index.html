@@ -569,6 +569,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#which-cuda-version-is-installed" class="md-nav__link">
+    Which CUDA version is installed?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2214,6 +2221,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#which-cuda-version-is-installed" class="md-nav__link">
+    Which CUDA version is installed?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2610,6 +2624,13 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 <p>Have a look at our <a href="../../how-to-/debug-software">How-To: Debug Software</a> and <a href="../../how-to-/debug-at-hpc">How-To: Debug Software on HPC Systems</a> guides!</p>
 <p><strong>But it works on my workstation!</strong></p>
 <p>Yes, please also refer to these guides on possible approaches to find the problem.</p>
+<h2 id="which-cuda-version-is-installed">Which CUDA version is installed?<a class="headerlink" href="#which-cuda-version-is-installed" title="Permanent link">&para;</a></h2>
+<p>For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)</p>
+<div class="highlight"><pre><span></span><code>med-login1:~$ ssh med0301
+med0301:~$ yum list installed <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep cuda.x86_64
+cuda.x86_64                               <span class="m">10</span>.2.89-1                  @local-cuda
+nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.el7          @local-cuda
+</code></pre></div>
                 
                   
                     
@@ -2618,7 +2639,7 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 <div class="md-source-date">
   <small>
     
-      Last update: September 24, 2020
+      Last update: September 29, 2020
     
   </small>
 </div>
