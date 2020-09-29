@@ -484,3 +484,10 @@ med0301:~$ yum list installed 2>/dev/null | grep cuda.x86_64
 cuda.x86_64                               10.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
 ```
+
+## Can I use Docker on the Cluster?
+
+No, as Docker essentially gives you access as the root user.
+
+However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
+Also see [Using Singularity (with Docker Images)](../../how-to/software/singularity).
