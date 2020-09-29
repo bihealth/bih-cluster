@@ -473,3 +473,14 @@ Have a look at our [How-To: Debug Software](../../how-to-/debug-software) and [H
 **But it works on my workstation!**
 
 Yes, please also refer to these guides on possible approaches to find the problem.
+
+## Which CUDA version is installed?
+
+For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)
+
+```bash
+med-login1:~$ ssh med0301
+med0301:~$ yum list installed 2>/dev/null | grep cuda.x86_64
+cuda.x86_64                               10.2.89-1                  @local-cuda
+nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
+```
