@@ -576,6 +576,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#can-i-use-docker-on-the-cluster" class="md-nav__link">
+    Can I use Docker on the Cluster?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2228,6 +2235,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#can-i-use-docker-on-the-cluster" class="md-nav__link">
+    Can I use Docker on the Cluster?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2631,6 +2645,11 @@ med0301:~$ yum list installed <span class="m">2</span>&gt;/dev/null <span class=
 cuda.x86_64                               <span class="m">10</span>.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.el7          @local-cuda
 </code></pre></div>
+
+<h2 id="can-i-use-docker-on-the-cluster">Can I use Docker on the Cluster?<a class="headerlink" href="#can-i-use-docker-on-the-cluster" title="Permanent link">&para;</a></h2>
+<p>No, as Docker essentially gives you access as the root user.</p>
+<p>However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
+Also see <a href="../../how-to/software/singularity">Using Singularity (with Docker Images)</a>.</p>
                 
                   
                     
