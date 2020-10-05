@@ -14,7 +14,7 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## I cannot connect to the cluster. What's wrong?
 
-Please see the section [Connection Problems](/connecting/configure-ssh/connection-problems).
+Please see the section [Connection Problems](../../connecting/configure-ssh/connection-problems).
 
 ## I'd like to learn more about Slurm
 
