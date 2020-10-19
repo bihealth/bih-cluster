@@ -583,6 +583,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc" class="md-nav__link">
+    How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-copy-data-between-the-charite-network-and-bih-hpc" class="md-nav__link">
+    How can I copy data between the Charite Network and BIH HPC?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2242,6 +2256,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc" class="md-nav__link">
+    How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-i-copy-data-between-the-charite-network-and-bih-hpc" class="md-nav__link">
+    How can I copy data between the Charite Network and BIH HPC?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2650,6 +2678,19 @@ nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.e
 <p>No, as Docker essentially gives you access as the root user.</p>
 <p>However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
 Also see <a href="../../how-to/software/singularity">Using Singularity (with Docker Images)</a>.</p>
+<h2 id="how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc">How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?<a class="headerlink" href="#how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc" title="Permanent link">&para;</a></h2>
+<p>The MAX cluster is the HPC system of the MDC.
+It is located in the MDC network.
+The BIH HPC is located in the BIH network.</p>
+<p>In general, connections can only be initiated from the MDC network to the BIH network.
+The reverse does not work.
+In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
+E.g., use <code>rsync -avP some/path user_m@med-transfer1.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_m@med-transfer1.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+<h2 id="how-can-i-copy-data-between-the-charite-network-and-bih-hpc">How can I copy data between the Charite Network and BIH HPC?<a class="headerlink" href="#how-can-i-copy-data-between-the-charite-network-and-bih-hpc" title="Permanent link">&para;</a></h2>
+<p>In general, connections can only be initiated from the Charite network to the BIH network.
+The reverse does not work.
+In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
+E.g., use <code>rsync -avP some/path user_c@med-transfer1.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@med-transfer1.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
                 
                   
                     
@@ -2658,7 +2699,7 @@ Also see <a href="../../how-to/software/singularity">Using Singularity (with Doc
 <div class="md-source-date">
   <small>
     
-      Last update: October 5, 2020
+      Last update: October 19, 2020
     
   </small>
 </div>
