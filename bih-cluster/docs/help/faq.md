@@ -491,3 +491,21 @@ No, as Docker essentially gives you access as the root user.
 
 However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
 Also see [Using Singularity (with Docker Images)](../../how-to/software/singularity).
+
+## How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?
+
+The MAX cluster is the HPC system of the MDC.
+It is located in the MDC network.
+The BIH HPC is located in the BIH network.
+
+In general, connections can only be initiated from the MDC network to the BIH network.
+The reverse does not work.
+In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
+E.g., use `rsync -avP some/path user_m@med-transfer1.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@med-transfer1.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+
+## How can I copy data between the Charite Network and BIH HPC?
+
+In general, connections can only be initiated from the Charite network to the BIH network.
+The reverse does not work.
+In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
+E.g., use `rsync -avP some/path user_c@med-transfer1.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@med-transfer1.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
