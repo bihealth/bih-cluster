@@ -2,7 +2,7 @@
 
 |Episode|Topic|
 |---|---|
-| 0 | [How can I install the tools?](episode-0) |
+| 0 | [How can I install the tools?](episode-0.md) |
 | **1** | **How can I use the static data?** |
 | 2 | [How can I distribute my jobs on the cluster (Slurm)?](episode-2.md) |
 | 3 | [How can I organize my jobs with Snakemake?](episode-3.md) |
