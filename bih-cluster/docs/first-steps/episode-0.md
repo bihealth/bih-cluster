@@ -32,8 +32,7 @@ To get to your first compute node, type `srun --time 7-00 --mem=8G --ntasks=8 --
 
 ```terminal
 $ srun -p long --time 7-00 --mem=8G --ntasks=8 --pty bash -i
-med0107
-$ exit
+med0107 $ exit
 $
 ```
 
