@@ -10,7 +10,12 @@
 
 This is part one of the "First Steps" BIH Cluster Tutorial.
 Here we will build a small pipeline with alignment and variant calling.
-The premise is that you have the tools installed as described in [Episode 0](episode-0.md).
+The premise is that you have the tools installed as described in [Episode 0](episode-0.md). For this episode, please make sure that you
+are on a compute node. As a reminder, the command to access a compute node with the required resources is
+
+```
+$ srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i
+```
 
 ## Tutorial Input Files
 
@@ -91,7 +96,7 @@ Note that delly will not find any variants.
 And now for the SNP calling (this step will take ~ 20 minutes):
 
 ```terminal
-(first-steps) $ gatk HaplotypeCaller \ # or gatk HaplotypeCaller \
+(first-steps) $ gatk HaplotypeCaller \
     -R /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     -I aln.bam \
     -ploidy 2 \

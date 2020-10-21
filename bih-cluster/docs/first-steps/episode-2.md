@@ -47,13 +47,13 @@ The content of the file:
 #SBATCH --output=logs/%x-%j.log
 
 # Set the number of cores (-n or --ntasks).
-#SBATCH --ntasks=2
+#SBATCH --ntasks=8
 
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1
 
-# Set the memory per CPU. Units can be given in T|G|M|K.
-#SBATCH --mem-per-cpu=100M
+# Set the total memory. Units can be given in T|G|M|K.
+#SBATCH --mem=8G
 
 # Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
@@ -101,13 +101,13 @@ Your file should look something like this:
 #SBATCH --output=logs/%x-%j.log
 
 # Set the number of cores (-n or --ntasks).
-#SBATCH --ntasks=2
+#SBATCH --ntasks=8
 
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1
 
-# Set the memory per CPU. Units can be given in T|G|M|K.
-#SBATCH --mem-per-cpu=100M
+# Set the total memory. Units can be given in T|G|M|K.
+#SBATCH --mem=8G
 
 # Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
@@ -182,7 +182,7 @@ And of course, watch what the logs are telling you:
 (first-steps) $ tail -f logs/tutorial-<JOBID>.log
 ```
 
-There will be no notification when your job is done, so it is best to watch the `squeue` command.
+There will be no notification when your job is done, so it is best to watch the `squeue --me` command.
 To watch the `sbatch` command there is a linux command `watch` that you give a command to execute every few seconds.
 This is useful for looking for changes in the output of a command. The seconds between two executions can be set with the `-n` option.
 :warning: It is best to use `-n 60` to minimize unnecessary load on the file system:

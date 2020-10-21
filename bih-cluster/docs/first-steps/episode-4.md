@@ -49,8 +49,8 @@ The `Snakefile` is already known to you but let me explain the wrapper script `s
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1
 
-# Set the memory per CPU. Units can be given in T|G|M|K.
-#SBATCH --mem-per-cpu=100M
+# Set the total memory. Units can be given in T|G|M|K.
+#SBATCH --mem=1G
 
 # Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=medium
@@ -78,7 +78,7 @@ snakemake \
         -p medium \
         -t 01:00 \
         --nodes=1 \
-        --mem-per-cpu=1000 \
+        --mem=8192 \
         -n 8 \
         -o $LOGDIR/%x-%j.log" \
     -j 2 \
@@ -96,7 +96,7 @@ the script. This is useful for debugging.
 
 Finally, the Snakemake call takes place. With the `--drmaa` option we define how the jobs inside Snakemake should be started on the nodes. Please note that the `sbatch` command does not appear here, but the argument string provided to the `--drmaa` option is the same as the parameters for `sbatch`, except for some minor differences as descrived above or [here](../slurm/snakemake.md#limitations). The `drmaa` library provides more stable job distribution than using plain `sbatch` in this scenario. Note that we don't write the parameter string to a bash file (which we don't have in this case). There are three new parameters that are defining the hardware requirements for our run and the project:
 
-* `--mem-per-cpu=X`: How much memory ONE job (=Snakemake rule) should get in Megabyte
+* `--mem=X`: How much memory ONE job (=Snakemake rule) should get in Megabyte
 * `-t HH:MM`: How long a job (=Snakemake rule) is allowed to run
 * `-n X`: How many cores of a node a job (=Snakemake rule) should get
 * `--nodes=1`: Force allocation of all cores on a single node.
