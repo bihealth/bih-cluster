@@ -1842,8 +1842,8 @@ to call Snakemake. We run the script and the magic will start.</p>
 <span class="c1"># Force allocation of the two cores on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>
 
-<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
-<span class="c1">#SBATCH --mem-per-cpu=100M</span>
+<span class="c1"># Set the total memory. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem=1G</span>
 
 <span class="c1"># Optionally, set the partition to be used (-p or --partition).</span>
 <span class="c1">#SBATCH --partition=medium</span>
@@ -1871,7 +1871,7 @@ snakemake <span class="se">\</span>
 <span class="s2">        -p medium \</span>
 <span class="s2">        -t 01:00 \</span>
 <span class="s2">        --nodes=1 \</span>
-<span class="s2">        --mem-per-cpu=1000 \</span>
+<span class="s2">        --mem=8192 \</span>
 <span class="s2">        -n 8 \</span>
 <span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/%x-%j.log&quot;</span> <span class="se">\</span>
     -j <span class="m">2</span> <span class="se">\</span>
@@ -1888,7 +1888,7 @@ The next new thing is <code>set -x</code>. This simply prints to the terminal ev
 the script. This is useful for debugging.</p>
 <p>Finally, the Snakemake call takes place. With the <code>--drmaa</code> option we define how the jobs inside Snakemake should be started on the nodes. Please note that the <code>sbatch</code> command does not appear here, but the argument string provided to the <code>--drmaa</code> option is the same as the parameters for <code>sbatch</code>, except for some minor differences as descrived above or <a href="../../slurm/snakemake/#limitations">here</a>. The <code>drmaa</code> library provides more stable job distribution than using plain <code>sbatch</code> in this scenario. Note that we don't write the parameter string to a bash file (which we don't have in this case). There are three new parameters that are defining the hardware requirements for our run and the project:</p>
 <ul>
-<li><code>--mem-per-cpu=X</code>: How much memory ONE job (=Snakemake rule) should get in Megabyte</li>
+<li><code>--mem=X</code>: How much memory ONE job (=Snakemake rule) should get in Megabyte</li>
 <li><code>-t HH:MM</code>: How long a job (=Snakemake rule) is allowed to run</li>
 <li><code>-n X</code>: How many cores of a node a job (=Snakemake rule) should get</li>
 <li><code>--nodes=1</code>: Force allocation of all cores on a single node.</li>

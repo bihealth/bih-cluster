@@ -1917,13 +1917,13 @@ A skeleton script can be found at <code>/fast/projects/cubit/work/tutorial/skele
 <span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
 <span class="c1"># Set the number of cores (-n or --ntasks).</span>
-<span class="c1">#SBATCH --ntasks=2</span>
+<span class="c1">#SBATCH --ntasks=8</span>
 
 <span class="c1"># Force allocation of the two cores on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>
 
-<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
-<span class="c1">#SBATCH --mem-per-cpu=100M</span>
+<span class="c1"># Set the total memory. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem=8G</span>
 
 <span class="c1"># Optionally, set the partition to be used (-p or --partition).</span>
 <span class="c1">#SBATCH --partition=medium</span>
@@ -1963,13 +1963,13 @@ Your file should look something like this:</p>
 <span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
 <span class="c1"># Set the number of cores (-n or --ntasks).</span>
-<span class="c1">#SBATCH --ntasks=2</span>
+<span class="c1">#SBATCH --ntasks=8</span>
 
 <span class="c1"># Force allocation of the two cores on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>
 
-<span class="c1"># Set the memory per CPU. Units can be given in T|G|M|K.</span>
-<span class="c1">#SBATCH --mem-per-cpu=100M</span>
+<span class="c1"># Set the total memory. Units can be given in T|G|M|K.</span>
+<span class="c1">#SBATCH --mem=8G</span>
 
 <span class="c1"># Optionally, set the partition to be used (-p or --partition).</span>
 <span class="c1">#SBATCH --partition=medium</span>
@@ -2032,7 +2032,7 @@ The most likely states you will see (5<sup>th</sup> column of the table):</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ tail -f logs/tutorial-&lt;JOBID&gt;.log
 </code></pre></div>
 
-<p>There will be no notification when your job is done, so it is best to watch the <code>squeue</code> command.
+<p>There will be no notification when your job is done, so it is best to watch the <code>squeue --me</code> command.
 To watch the <code>sbatch</code> command there is a linux command <code>watch</code> that you give a command to execute every few seconds.
 This is useful for looking for changes in the output of a command. The seconds between two executions can be set with the <code>-n</code> option.
 <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> It is best to use <code>-n 60</code> to minimize unnecessary load on the file system:</p>
