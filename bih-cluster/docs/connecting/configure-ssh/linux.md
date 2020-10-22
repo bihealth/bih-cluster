@@ -109,7 +109,7 @@ $ ssh-add  id_rsa
 ## File System mount via sshfs
 
 ```
-$ sshfs -o follow_symlinks -l <USERNAME>@med-transfer<X>.bihealth.org:/ <MOUNTPOINT>
+$ sshfs -l <USERNAME>@med-transfer<X>.bihealth.org:/ <MOUNTPOINT>
 ```
 
 * `<X>` can be either `1` or `2`
