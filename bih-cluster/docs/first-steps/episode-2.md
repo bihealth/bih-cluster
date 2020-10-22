@@ -190,9 +190,9 @@ This is useful for looking for changes in the output of a command. The seconds b
 ```terminal
 (first-steps) $ watch -n 60 squeue --me
 ```
-If for some reason your job is hanging, you can delete your job using `qcancel` with your job-ID:
+If for some reason your job is hanging, you can delete your job using `scancel` with your job-ID:
 ```terminal
-(first-steps) $ qcancel <job-ID>
+(first-steps) $ scancel <job-ID>
 ```
 
 ## Job Queues
