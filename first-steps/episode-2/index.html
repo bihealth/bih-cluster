@@ -2038,8 +2038,8 @@ This is useful for looking for changes in the output of a command. The seconds b
 <img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> It is best to use <code>-n 60</code> to minimize unnecessary load on the file system:</p>
 <p><div class="highlight"><pre><span></span><code>(first-steps) $ watch -n 60 squeue --me
 </code></pre></div>
-If for some reason your job is hanging, you can delete your job using <code>qcancel</code> with your job-ID:
-<div class="highlight"><pre><span></span><code>(first-steps) $ qcancel &lt;job-ID&gt;
+If for some reason your job is hanging, you can delete your job using <code>scancel</code> with your job-ID:
+<div class="highlight"><pre><span></span><code>(first-steps) $ scancel &lt;job-ID&gt;
 </code></pre></div></p>
 <h2 id="job-queues">Job Queues<a class="headerlink" href="#job-queues" title="Permanent link">&para;</a></h2>
 <p>The cluster has a special way of organizing itself and by telling the cluster how long and with which priority you want your jobs to run, you can help it in this.
@@ -2053,7 +2053,7 @@ To get to know what partitions are available, and how to use them properly, we h
 <div class="md-source-date">
   <small>
     
-      Last update: October 21, 2020
+      Last update: October 22, 2020
     
   </small>
 </div>
