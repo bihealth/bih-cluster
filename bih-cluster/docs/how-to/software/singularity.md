@@ -1,7 +1,7 @@
 # Using Singularity (with Docker Images)
 
 Singularity (https://sylabs.io/docs/) is a popular alternative to docker, because it does not require to run as a privileged user.
-Singualrity can run Docker images out-of-the-box by converting them to the singularity image format.
+Singularity can run Docker images out-of-the-box by converting them to the singularity image format.
 The following guide gives a quick dive into using docker images with singularity.
 
 ## Quickstart
