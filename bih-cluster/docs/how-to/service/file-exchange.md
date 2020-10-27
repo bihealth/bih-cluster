@@ -1,5 +1,10 @@
 # How-To: Use File Exchange
 
+!!! important "Obtaining File Boxes"
+
+    At the moment, file boxes are only available to members of core facilities (e.g., genomics, bioinformatics, or metabolomics) for exchanging files for their collaboration partners.
+    Currently, HPC users **cannot** use the file box mechanism on their own.
+
 BIH HPC IT provides a file exchange server to be used by the BIH core facilities and their users.
 The server is located in the BIH DMZ in Buch.
 Users authenticate using their Charite/BIH (`user@CHARITE`) or MDC accounts (`user@MDC-BERLIN`).
