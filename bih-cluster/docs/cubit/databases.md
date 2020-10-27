@@ -13,6 +13,8 @@ files. We provide the following databases:
 | dbSNP    | b144    | GRCh38           |
 | dbSNP    | b147    | GRCh37           |
 | dbSNP    | b147    | GRCh38           |
+| dbSNP    | b150    | GRCh37           |
+| dbSNP    | b150    | GRCh38           |
 | DGV      | 2015-07-23 | GRCh37        |
 | ExAC     | release0.3 | GRCh37/hg19   |
 | ExAC     | release0.3.1 | GRCh37/hg19 |
