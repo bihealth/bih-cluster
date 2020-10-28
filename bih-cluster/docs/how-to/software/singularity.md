@@ -4,6 +4,13 @@ Singularity (https://sylabs.io/docs/) is a popular alternative to docker, becaus
 Singularity can run Docker images out-of-the-box by converting them to the singularity image format.
 The following guide gives a quick dive into using docker images with singularity.
 
+!!! important "Build on your workstation, run on the HPC"
+
+    Building images using Singularity requires root privileges.
+    We cannot give you these permissions on the BIH HPC.
+    Thus, you will have to build the images on your local workstation (or anywhere where you have root access).
+    You can then run the built images on the BIH HPC.
+
 ## Quickstart
 
 !!! important "Link ~/.singularity to ~/work/.singularity"
