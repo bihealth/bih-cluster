@@ -1916,6 +1916,13 @@
 <p>Singularity (<a href="https://sylabs.io/docs/">https://sylabs.io/docs/</a>) is a popular alternative to docker, because it does not require to run as a privileged user.
 Singularity can run Docker images out-of-the-box by converting them to the singularity image format.
 The following guide gives a quick dive into using docker images with singularity.</p>
+<div class="admonition important">
+<p class="admonition-title">Build on your workstation, run on the HPC</p>
+<p>Building images using Singularity requires root privileges.
+We cannot give you these permissions on the BIH HPC.
+Thus, you will have to build the images on your local workstation (or anywhere where you have root access).
+You can then run the built images on the BIH HPC.</p>
+</div>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Link ~/.singularity to ~/work/.singularity</p>
@@ -2012,7 +2019,7 @@ The output image will be located in <code>output_directory_for_images</code>.</p
 <div class="md-source-date">
   <small>
     
-      Last update: October 27, 2020
+      Last update: October 28, 2020
     
   </small>
 </div>
