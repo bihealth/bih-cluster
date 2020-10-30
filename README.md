@@ -1,6 +1,8 @@
 # BIH HPC Cluster Documentation
 
-- You can find the built documentation here: https://bihealth.github.io/bih-cluster/
+You can find the built documentation here:
+
+- https://docs.hpc.bihealth.org
 
 ## Building the Documentation Locally
 
