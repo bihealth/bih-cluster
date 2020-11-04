@@ -160,3 +160,4 @@ nav:
     - "External Guides": misc/external-resources.md
     - "Misc. Tips": misc/tips.md
     - "SSH Basics": misc/ssh-basics.md
+    - "OnDemand Portal": "misc/ondemand-portal.md"
