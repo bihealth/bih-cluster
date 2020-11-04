@@ -11,7 +11,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/best-practice/temp-files/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/misc/ondemand-portal/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Temporary Files - BIH HPC Docs</title>
+        <title>OnDemand Portal - BIH HPC Docs</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#temporary-files" class="md-skip">
+        <a href="#the-open-ondemand-portal" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Temporary Files
+              OnDemand Portal
             
           </span>
         </div>
@@ -1100,12 +1100,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       Best Practice
@@ -1129,7 +1127,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../project-structure/" title="Project Structure" class="md-nav__link">
+    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
       Project Structure
     </a>
   </li>
@@ -1141,7 +1139,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
       Software Craftmanship
     </a>
   </li>
@@ -1153,7 +1151,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
       Using Screen/Tmux
     </a>
   </li>
@@ -1165,7 +1163,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
       ~/.bashrc Guide
     </a>
   </li>
@@ -1175,93 +1173,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Temporary Files
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Temporary Files" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
       Temporary Files
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#environment-variable-tmpdir" class="md-nav__link">
-    Environment Variable TMPDIR
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#temporary-directories-on-the-bih-cluster" class="md-nav__link">
-    Temporary Directories on the BIH Cluster
-  </a>
-  
-    <nav class="md-nav" aria-label="Temporary Directories on the BIH Cluster">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#best-practice-use-fastusersuserscratchtmp" class="md-nav__link">
-    Best Practice:  Use /fast/users/$USER/scratch/tmp
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tmpdir-and-the-scheduler" class="md-nav__link">
-    TMPDIR and the scheduler
-  </a>
-  
-    <nav class="md-nav" aria-label="TMPDIR and the scheduler">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-bash-trapcs" class="md-nav__link">
-    Use Bash Trapcs
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1271,7 +1187,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../env-modules/" title="Custom Environment Modules" class="md-nav__link">
+    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
       Custom Environment Modules
     </a>
   </li>
@@ -1283,7 +1199,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
+    <a href="../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
       Install with Conda
     </a>
   </li>
@@ -1742,10 +1658,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       Miscellaneous
@@ -1769,7 +1687,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
+    <a href="../publication-list/" title="Publication List" class="md-nav__link">
       Publication List
     </a>
   </li>
@@ -1781,7 +1699,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
+    <a href="../external-resources/" title="External Guides" class="md-nav__link">
       External Guides
     </a>
   </li>
@@ -1793,7 +1711,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
+    <a href="../tips/" title="Misc. Tips" class="md-nav__link">
       Misc. Tips
     </a>
   </li>
@@ -1805,7 +1723,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
+    <a href="../ssh-basics/" title="SSH Basics" class="md-nav__link">
       SSH Basics
     </a>
   </li>
@@ -1815,11 +1733,81 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../misc/ondemand-portal/" title="OnDemand Portal" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        OnDemand Portal
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="OnDemand Portal" class="md-nav__link md-nav__link--active">
       OnDemand Portal
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-into-the-portal" class="md-nav__link">
+    Logging into the Portal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portal-dashboard" class="md-nav__link">
+    Portal Dashboard
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-sessions" class="md-nav__link">
+    Interactive Sessions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-directories" class="md-nav__link">
+    Session Directories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1854,49 +1842,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#environment-variable-tmpdir" class="md-nav__link">
-    Environment Variable TMPDIR
+  <a href="#background" class="md-nav__link">
+    Background
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#temporary-directories-on-the-bih-cluster" class="md-nav__link">
-    Temporary Directories on the BIH Cluster
+  <a href="#logging-into-the-portal" class="md-nav__link">
+    Logging into the Portal
   </a>
-  
-    <nav class="md-nav" aria-label="Temporary Directories on the BIH Cluster">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#best-practice-use-fastusersuserscratchtmp" class="md-nav__link">
-    Best Practice:  Use /fast/users/$USER/scratch/tmp
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tmpdir-and-the-scheduler" class="md-nav__link">
-    TMPDIR and the scheduler
-  </a>
-  
-    <nav class="md-nav" aria-label="TMPDIR and the scheduler">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#use-bash-trapcs" class="md-nav__link">
-    Use Bash Trapcs
+  <a href="#portal-dashboard" class="md-nav__link">
+    Portal Dashboard
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-sessions" class="md-nav__link">
+    Interactive Sessions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-directories" class="md-nav__link">
+    Session Directories
+  </a>
   
 </li>
       
@@ -1912,7 +1888,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/best-practice/temp-files.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/misc/ondemand-portal.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1920,45 +1896,121 @@
                   
                 
                 
-                <h1 id="temporary-files">Temporary Files<a class="headerlink" href="#temporary-files" title="Permanent link">&para;</a></h1>
-<p>Often, it is necessary to use temporary files, i.e., write something out in the  middle of your program, read it in again later, and then discard these files.
-For example, <code>samtools sort</code> has to write out chunks of sorted read alignments for allowing to sort files larger than main memory.</p>
-<h2 id="environment-variable-tmpdir">Environment Variable <code>TMPDIR</code><a class="headerlink" href="#environment-variable-tmpdir" title="Permanent link">&para;</a></h2>
-<p>Traditionally, in Unix, the environment variables <code>TMPDIR</code> is used for storing the location of the temporary directory.
-When undefined, usually <code>/tmp</code> is used.</p>
-<h2 id="temporary-directories-on-the-bih-cluster">Temporary Directories on the BIH Cluster<a class="headerlink" href="#temporary-directories-on-the-bih-cluster" title="Permanent link">&para;</a></h2>
-<p>Generally, there are two locations where you could put temporary files:</p>
-<ul>
-<li><code>/fast/users/$USER/scratch/tmp</code> -- inside your scratch folder on the fast GPFS file system; this location is available from all cluster nodes</li>
-<li><code>/tmp</code> -- on the local node's temporary folder; this location is only available on the node itself</li>
-</ul>
-<h3 id="best-practice-use-fastusersuserscratchtmp">Best Practice:  Use <code>/fast/users/$USER/scratch/tmp</code><a class="headerlink" href="#best-practice-use-fastusersuserscratchtmp" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Use GPFS-based TMPDIR</p>
-<p>Generally setup your environment to use <code>/fast/users/$USER/scratch/tmp</code> as filling the local disk of a node with forgotten files can cause a lot of problems.</p>
+                <h1 id="the-open-ondemand-portal">The Open OnDemand Portal<a class="headerlink" href="#the-open-ondemand-portal" title="Permanent link">&para;</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Status / Stability</p>
+<p><img alt="🧪" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f9ea.svg" title=":test_tube:" /> OnDemand Support is <strong>EXPERIMENTAL</strong> on the BIH HPC.</p>
+<p>In case of any questions, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> but please understand that we cannot provide comprehensive support for it as of now.</p>
 </div>
-<p>Ideally, you append the following to your <code>~/.bashrc</code> to use <code>/fast/users/$USER/scratch/tmp</code> as the temporary directory.
-This will also create the directory if it does not exist.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="nv">$USER</span>/scratch/tmp
-mkdir -p <span class="nv">$TMPDIR</span>
+<p>To allow for better interactive works, BIH HPC administration has setup an  <a href="https://openondemand.org/">Open OnDemand (OOD)</a> portal web server.</p>
+<ul>
+<li><a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a></li>
+</ul>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>OOD allows you to access cluster resources using a web-based graphical interface in addition to traditional SSH connections.
+You can then connect to jobs running graphical applications either to virtual desktops (such as Matlab) or to web apps (such as Jupyter and RStudio Server).</p>
+<p>The following figure illustrates this.</p>
+<p><img alt="" class="center" src="../figures/ondemand-overview.png" style="width:60%;" /></p>
+<p>The primary way to the cluster continues to be SSH which has several advantages.
+By the nature of the cluster being based on Linux servers, it will offer more features through the "native" access and through its lower complexity, it will offer higher stability.
+However, we all like to have the option of a graphical interface, at least for time to time <img alt="📺" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4fa.svg" title=":tv:" />.</p>
+<p>The main features are:</p>
+<ul>
+<li><strong>Easy web-based access to Jupyter and RStudio Server on the cluster.</strong></li>
+<li>Generally lower the entry barrier of using the HPC system.</li>
+</ul>
+<h2 id="logging-into-the-portal">Logging into the Portal<a class="headerlink" href="#logging-into-the-portal" title="Permanent link">&para;</a></h2>
+<p>The first prerequisite is to have a cluster account already (see <a href="/admin/getting-access/">Getting Access</a>).
+Once you have done your first SSH connection to the cluster successfully you can start using the portal.
+For this you perform the following steps:</p>
+<ol>
+<li>
+<p>Go to <a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a> - you will be redirected to the login page shown below.
+   If you have an account with Charite (ends in <code>_m</code>) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.</p>
+<p><img alt="" class="center" src="../figures/ondemand-hpc-sso.png" style="width:30%;" />
+2. Login with your home organization's SSO system.
+   Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.</p>
+<div class="admonition help">
+<p class="admonition-title">Clicked the Wrong Login Button?</p>
+<p>If you clicked the wrong button then please clear your cookies to force a logout of the system.</p>
+</div>
+</li>
+</ol>
+<h2 id="portal-dashboard">Portal Dashboard<a class="headerlink" href="#portal-dashboard" title="Permanent link">&para;</a></h2>
+<p>You will then be redirected to the dashboard screen.</p>
+<p><img alt="" class="center" src="../figures/ondemand-dashboard.png" style="width:60%;" /></p>
+<p>Here you have access to the following actions.
+We will not go into detail of all of them and expect them to be self-explanatory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please note that when using the portal then you are acting as your HPC user.
+Use standard best practice.
+Consider carefully what you do as you would from the command line (e.g., don't use the portal to browse the web from the cluster).</p>
+</div>
+<ul>
+<li><strong>Files</strong> - access a file browser</li>
+<li><strong>Jobs</strong> - list your jobs or start a new one</li>
+<li><strong>Clusters</strong> - shell access in your browser</li>
+<li><strong>Interactive Apps</strong><ul>
+<li><strong>Mate and Xfce Desktops</strong> - start virtual desktops on the HPC.</li>
+<li><strong>Matlab</strong> - run a virtual desktop that has Matlab installed.</li>
+<li><strong>MaxQuant</strong> - run a virtual desktop that has MaxQuant installed</li>
+<li><strong>Jupyter</strong> - run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels</li>
+<li><strong>RStudio Server</strong> - run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels</li>
+</ul>
+</li>
+<li><strong>My Interactive Sessions</strong> - see details of your currently running interactive sessions</li>
+<li><strong>Help</strong> - contains the <strong>Restart Web Server</strong> component. Try this if the portal acts weird before contacting the helpdesk.</li>
+<li><strong>Log Out</strong> - log out of the system.</li>
+</ul>
+<h2 id="interactive-sessions">Interactive Sessions<a class="headerlink" href="#interactive-sessions" title="Permanent link">&para;</a></h2>
+<p>The interactive session list is the most interesting one so we will explain it in a bit more detail.</p>
+<p><img alt="" class="center" src="../figures/ondemand-my-sessions.png" style="width:90%;" /></p>
+<p>Each running interactive session is listed.
+For each, the following links are available:</p>
+<ul>
+<li><strong>Host</strong> - click on the host name to open a shell to the given cluster node</li>
+<li><strong>Session ID</strong> - open the session directory (also see below).</li>
+<li><strong>Connect to</strong> button - this will open the app in your browser (opens a new tab).</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Don't hit reload in your apps</p>
+<p>Please note that the portal will use the authentication mechanisms of the apps to ensure that nobody except for you can connect to the session.
+This means that hitting the browsers "reload" button in your app will most likely not work.</p>
+<p>Just go back to the interactive session list and click on the "connect" button.</p>
+</div>
+<h2 id="session-directories">Session Directories<a class="headerlink" href="#session-directories" title="Permanent link">&para;</a></h2>
+<p>The portal software will create a folder <code>ondemand</code> in your home directory.
+Inside, it will create session directories for each started interactive job.
+For technical reasons, these folders have very long names, for example:</p>
+<ul>
+<li><code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-server/output/e40e03b3-11ca-458a-855b-98e6f148c99a/</code></li>
+</ul>
+<p>This follows the pattern:</p>
+<ul>
+<li><code>$HOME/${application name}/output/${job UUID}</code></li>
+</ul>
+<p>The job identifier used is <strong>not</strong> the Slurm job ID but an identifier internal to OnDemand.
+Inside this directory you will find log files and a number of scripts that are used to start your job.</p>
+<p>If you need to debug any interactive job, start here.
+Also, the helpdesk will need the path to this folder to help you with interactive jobs.</p>
+<p>You can find the name of the latest output folder with the following command:</p>
+<div class="highlight"><pre><span></span><code>$ ls -lhtr <span class="nv">$HOME</span>/<span class="si">${</span><span class="nv">application</span><span class="p"> name</span><span class="si">}</span>/output <span class="p">|</span> tail -n <span class="m">1</span>
 </code></pre></div>
 
-<p><strong>Prepending this to your job scripts is also recommended as it will ensure that the temporary directory exists.</strong></p>
-<h2 id="tmpdir-and-the-scheduler"><code>TMPDIR</code> and the scheduler<a class="headerlink" href="#tmpdir-and-the-scheduler" title="Permanent link">&para;</a></h2>
-<p>In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
-Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
-Please note that by default, Slurm will not change your environment variables.
-This includes the environment variable <code>TMPDIR</code>.</p>
-<p>To automatically clean up temporary directories, use the following tip.</p>
-<h3 id="use-bash-trapcs">Use Bash Trapcs<a class="headerlink" href="#use-bash-trapcs" title="Permanent link">&para;</a></h3>
-<p>You can use the following code at the top of your job script to set <code>TMPDIR</code> to the location in your home directory and get the directory automatically cleaned when the job is done (regardless of successful or erroneous completion):</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># First, point TMPDIR to the scratch in your home as mktemp will use thi</span>
-<span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/scratch/tmp
-<span class="c1"># Second, create another unique temporary directory within this directory</span>
-<span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span><span class="k">$(</span>mktemp -d<span class="k">)</span>
-<span class="c1"># Finally, setup the cleanup trap</span>
-<span class="nb">trap</span> <span class="s2">&quot;rm -rf </span><span class="nv">$TMPDIR</span><span class="s2">&quot;</span> EXIT
+<p>For example, for RStudio Server:</p>
+<div class="highlight"><pre><span></span><code>$ ls -lhtr <span class="nv">$HOME</span>/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-server/output <span class="p">|</span> tail -n <span class="m">1</span>
 </code></pre></div>
+
+<div class="admonition important">
+<p class="admonition-title">Prevent Home From Filling Up</p>
+<p>You should probably move <code>~/ondemand</code> to your work volume with the following:</p>
+<div class="highlight"><pre><span></span><code>$ mv ~/ondemand ~/work/ondemand
+$ ln -sr ~/work/ondemand ~/ondemand
+</code></pre></div>
+
+<p>Also, clear out <code>~/work/ondemand/*</code> from time to time but take care that you don't remove the directory of any running job.</p>
+</div>
                 
                   
                     
@@ -1990,7 +2042,7 @@ This includes the environment variable <code>TMPDIR</code>.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../bashrc-guide/" title="~/.bashrc Guide" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ssh-basics/" title="SSH Basics" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1999,25 +2051,11 @@ This includes the environment variable <code>TMPDIR</code>.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ~/.bashrc Guide
+                SSH Basics
               </div>
             </div>
           </a>
         
-        
-          <a href="../env-modules/" title="Custom Environment Modules" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Custom Environment Modules
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
