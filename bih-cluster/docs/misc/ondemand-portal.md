@@ -48,6 +48,12 @@ For this you perform the following steps:
 
 ## Portal Dashboard
 
+!!! help "Problems with Open OnDemand?"
+
+    First try to log out and login again.
+    Next, try to clear all cookies for the domain `portal.research.hpc.bihealth.org`.
+    Finally, try the `Help > Restart Web Server` link to restart the per-user nginx (PUN) server.
+
 You will then be redirected to the dashboard screen.
 
 ![](figures/ondemand-dashboard.png){: style="width:60%;" .center}
