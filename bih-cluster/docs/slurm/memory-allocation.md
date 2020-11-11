@@ -139,6 +139,12 @@ The amount of virtual memory that your program can reserve is only "virtually" u
 However, in practice, the operating system will not like you allocating more than physically available.
 If your program attempts to allocate more memory than requested via Slurm, your program will be killed.
 
+This is reported to you in the Slurm job output log as something like:
+
+```
+slurmstepd: error: Detected 1 oom-kill event(s) in step <JOB ID>.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+```
+
 You can inspect the amount of memory available on each node in total with `sinfo --format "%.10P %.10l %.6D %.6m %N"`, as shown below.
 
 ```bash
