@@ -2008,6 +2008,10 @@ Refer to the Scipy/Numpy/Pandas etc. documentation on how to achieve parallelism
 <p>The amount of virtual memory that your program can reserve is only "virtually" unlimited (pun not intended).
 However, in practice, the operating system will not like you allocating more than physically available.
 If your program attempts to allocate more memory than requested via Slurm, your program will be killed.</p>
+<p>This is reported to you in the Slurm job output log as something like:</p>
+<div class="highlight"><pre><span></span><code>slurmstepd: error: Detected 1 oom-kill event(s) in step &lt;JOB ID&gt;.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+</code></pre></div>
+
 <p>You can inspect the amount of memory available on each node in total with <code>sinfo --format "%.10P %.10l %.6D %.6m %N"</code>, as shown below.</p>
 <div class="highlight"><pre><span></span><code>$ sinfo --format <span class="s2">&quot;%.10P %.10l %.6D %.6m %N&quot;</span>
  PARTITION  TIMELIMIT  NODES MEMORY NODELIST
@@ -2091,7 +2095,7 @@ The script <a href="../assets/quick-sacct.awk">can be found here</a>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: November 5, 2020
+      Last update: November 11, 2020
     
   </small>
 </div>
