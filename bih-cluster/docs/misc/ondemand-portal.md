@@ -2,9 +2,8 @@
 
 !!! important "Status / Stability"
 
-    :test_tube: OnDemand Support is **EXPERIMENTAL** on the BIH HPC.
-
-    In case of any questions, please send an email to hpc-helpdesk@bihealth.de but please understand that we cannot provide comprehensive support for it as of now.
+    OnDemand Support is currently in **beta** phase on the BIH HPC.
+    In case of any issues, please send an email to hpc-helpdesk@bihealth.de.
 
 To allow for better interactive works, BIH HPC administration has setup an  [Open OnDemand (OOD)](https://openondemand.org/) portal web server.
 
@@ -14,7 +13,6 @@ To allow for better interactive works, BIH HPC administration has setup an  [Ope
 
 OOD allows you to access cluster resources using a web-based graphical interface in addition to traditional SSH connections.
 You can then connect to jobs running graphical applications either to virtual desktops (such as Matlab) or to web apps (such as Jupyter and RStudio Server).
-
 
 The following figure illustrates this.
 
@@ -68,6 +66,7 @@ We will not go into detail of all of them and expect them to be self-explanatory
     Consider carefully what you do as you would from the command line (e.g., don't use the portal to browse the web from the cluster).
 
 - **Files** - access a file browser
+    - **Quotas** - display quota information.
 - **Jobs** - list your jobs or start a new one
 - **Clusters** - shell access in your browser
 - **Interactive Apps**
@@ -77,7 +76,10 @@ We will not go into detail of all of them and expect them to be self-explanatory
     - **Jupyter** - run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels
     - **RStudio Server** - run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels
 - **My Interactive Sessions** - see details of your currently running interactive sessions
-- **Help** - contains the **Restart Web Server** component. Try this if the portal acts weird before contacting the helpdesk.
+- **Help**
+    - **Online Documentation** - links to this documentation.
+    - **Contact Support** - links ot the "Getting Help" page in this documentation.
+    - **Restart Web Server** component. Try this if the portal acts weird before contacting the helpdesk. OnDemand runs a web server per user, so this does not affect any other user.
 - **Log Out** - log out of the system.
 
 ## Interactive Sessions
