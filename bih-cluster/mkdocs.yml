@@ -119,6 +119,10 @@ nav:
     - "X11 Forwarding": slurm/x11.md
     - slurm/rosetta-stone.md
     - slurm/migrating.md
+  - "OnDemand Portal":
+    - "Overview": ondemand/overview.md
+    - "Interactive Sessions": ondemand/interactive.md
+    - "Quotas": ondemand/quotas.md
   - "Best Practice":
     - "Project Structure": best-practice/project-structure.md
     - "Software Craftmanship": best-practice/software-craftmanship.md
@@ -160,4 +164,3 @@ nav:
     - "External Guides": misc/external-resources.md
     - "Misc. Tips": misc/tips.md
     - "SSH Basics": misc/ssh-basics.md
-    - "OnDemand Portal": "misc/ondemand-portal.md"
