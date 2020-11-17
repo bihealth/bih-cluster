@@ -20,7 +20,7 @@ The following figure illustrates this.
 
 The primary way to the cluster continues to be SSH which has several advantages.
 By the nature of the cluster being based on Linux servers, it will offer more features through the "native" access and through its lower complexity, it will offer higher stability.
-However, we all like to have the option of a graphical interface, at least for time to time :tv:.
+However, we all like to have the option of a graphical interface, at least from time to time :tv:.
 
 The main features are:
 
@@ -29,12 +29,12 @@ The main features are:
 
 ## Logging into the Portal
 
-The first prerequisite is to have a cluster account already (see [Getting Access](/admin/getting-access/)).
+The first prerequisite is to have a cluster account already (see [Getting Access](../admin/getting-access/)).
 Once you have done your first SSH connection to the cluster successfully you can start using the portal.
 For this you perform the following steps:
 
 1. Go to https://portal.research.hpc.bihealth.org - you will be redirected to the login page shown below.
-   If you have an account with Charite (ends in `_m`) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
+   If you have an account with Charite (ends in `_c`) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
 
     ![](figures/ondemand-hpc-sso.png){: style="width:30%;" .center}
 2. Login with your home organization's SSO system.
@@ -65,19 +65,23 @@ We will not go into detail of all of them and expect them to be self-explanatory
     Use standard best practice.
     Consider carefully what you do as you would from the command line (e.g., don't use the portal to browse the web from the cluster).
 
-- **Files** - access a file browser
-    - **Quotas** - display quota information.
-- **Jobs** - list your jobs or start a new one
-- **Clusters** - shell access in your browser
-- **Interactive Apps**
-    - **Mate and Xfce Desktops** - start virtual desktops on the HPC.
-    - **Matlab** - run a virtual desktop that has Matlab installed.
-    - **MaxQuant** - run a virtual desktop that has MaxQuant installed
-    - **Jupyter** - run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels
-    - **RStudio Server** - run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels
-- **My Interactive Sessions** - see details of your currently running interactive sessions
+- **Files**
+    - **Home Directory** - Access a file browser.
+    - [**Quotas**](../quotas) - Display quota information.
+- **Jobs**
+    - **Active Jobs** - List your jobs.
+    - **Job Composer** - Start a new job.
+- **Clusters**
+    - **Shell Access** - Shell access in your browser.
+- [**Interactive Apps**](../interactive)
+    - **Mate and Xfce Desktops** - Start virtual desktops on the HPC.
+    - **Matlab** - Run a virtual desktop that has Matlab installed.
+    - **MaxQuant** - Run a virtual desktop that has MaxQuant installed.
+    - **Jupyter** - Run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
+    - **RStudio Server** - Run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
+- [**My Interactive Sessions**](../interactive) - See details of your currently running interactive sessions.
 - **Help**
-    - **Online Documentation** - links to this documentation.
-    - **Contact Support** - links ot the "Getting Help" page in this documentation.
-    - **Restart Web Server** component. Try this if the portal acts weird before contacting the helpdesk. OnDemand runs a web server per user, so this does not affect any other user.
-- **Log Out** - log out of the system.
+    - **Contact Support** - Links ot the "Getting Help" page in this documentation.
+    - **Online Documentation** - Links to this documentation.
+    - **Restart Web Server** - Try this if the portal acts weird before contacting the helpdesk. OnDemand runs a web server per user, so this does not affect any other user.
+- **Log Out** - Log out of the system.

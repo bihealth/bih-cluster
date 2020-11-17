@@ -1,17 +1,22 @@
 # OnDemand: Interactive Sessions
 
-TODO: update/adjust/make read flow better
-
-The interactive session list is the most interesting one so we will explain it in a bit more detail.
+Interactive sessions allow you to start and manage selected apps. Depending
+on the app they run as servers or GUIs. Selecting `My Interactive Sessions`
+in the top menu will direct you to the overview of currently running sessions.
+The left-hand panel provides a short cut to start a new session of one of the
+provided apps.
 
 ![](figures/ondemand-my-sessions.png){: style="width:90%;" .center}
 
-Each running interactive session is listed.
-For each, the following links are available:
+Each running interactive session is listed. Each card corresponds to one session.
+The title of each card provides the name, allocated resources and the current status.
+Furthermore, detailed information and links are available:
 
-- **Host** - click on the host name to open a shell to the given cluster node
-- **Session ID** - open the session directory (also see below).
-- **Connect to** button - this will open the app in your browser (opens a new tab).
+- **Host**: Provides the name of the node the session is running on. Click on the host name to open a shell to the given cluster node.
+- **Time remaining**: Time until session till terminate.
+- **Session ID**: Click to open the session directory in the interactive file browser (see below).
+- **Connect to**: This will open the app in your browser (opens a new tab).
+- **Delete**: Terminate the session.
 
 !!! important "Don't hit reload in your apps"
 
@@ -60,3 +65,33 @@ $ ls -lhtr $HOME/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-s
     ```
 
     Also, clear out `~/work/ondemand/*` from time to time but take care that you don't remove the directory of any running job.
+    
+
+## Example: RStudio Session
+
+This description of starting an RStudio session is a showcase for starting other interactive apps as well.
+
+To start the session, please go to `Interactive Apps` in the top menu bar and select `RStudio Server` or click `RStudio Server` in the left-hand panel.
+
+![](figures/ondemand-interactive-rstudio-config.png){: style="width:90%;" .center}
+
+Allocate appropriate resources and click `Launch`.
+
+An info card for the RStudio Server will be added to `My Interactive Sessions`, and during start,
+it will change its state from `Queued` to `Starting` to `Running`. Depending on the app, resources allocated and
+current cluster usage, this will take a couple of seconds.
+
+
+![](figures/ondemand-interactive-rstudio-queued.png){: style="width:90%;" .center}
+
+
+![](figures/ondemand-interactive-rstudio-starting.png){: style="width:90%;" .center}
+
+
+![](figures/ondemand-interactive-rstudio-running.png){: style="width:90%;" .center}
+
+
+When in the final state (`Running`), one can directly connect to the RStudio Server
+to get an interactive session by clicking `Connect to RStudio Server`:
+
+![](figures/ondemand-interactive-rstudio-session.png){: style="width:90%;" .center}
