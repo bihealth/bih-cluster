@@ -2070,8 +2070,9 @@ You can fine-tune the information to display with a format string to <code>--for
 <span class="m">1607166</span>.ext+     60Gn          <span class="m">0</span>   <span class="m">13</span>:07:31  <span class="m">00</span>:00.001         <span class="m">16</span>
 </code></pre></div>
 
-<p>From this command, we can read that we allocate 60GB memory of memory per node (suffix <code>n</code>) and the maximum RSS is reported as 4.3GB.
-You can use this information to fine-tune your memory allocations.</p>
+<p>From this command, we can read that we allocate 60GB memory of memory per node (suffix <code>n</code>, here <code>Gn</code> for gigabytes per node) and the maximum RSS is reported as 4.3GB.
+You can use this information to fine-tune your memory allocations.
+As a side-remark, a suffic <code>c</code> indicates the memory per core (e.g., that could be<code>60Gc</code>)</p>
 <p>Further, the program ran for 13 hours and 7 minutes with allocated 16 CPU cores and consumed a total of 7 days, 16 hours, and 21 minutes of CPU time.
 Thus, a total of 10,061 CPU minutes were spent in 787 minutes wall-clock time.
 This yields an overall empirical degree of parallelism of about 10061 / 787 = 14, and a parallel efficiency of 14 / 16 = 88%.
@@ -2095,7 +2096,7 @@ The script <a href="../assets/quick-sacct.awk">can be found here</a>.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: November 11, 2020
+      Last update: November 17, 2020
     
   </small>
 </div>
