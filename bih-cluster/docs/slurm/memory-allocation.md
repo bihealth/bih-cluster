@@ -212,8 +212,9 @@ $ sacct -j 1607166 --format=JobID,ReqMem,MaxRSS,Elapsed,TotalCPU,AllocCPUS
 1607166.ext+     60Gn          0   13:07:31  00:00.001         16
 ```
 
-From this command, we can read that we allocate 60GB memory of memory per node (suffix `n`) and the maximum RSS is reported as 4.3GB.
+From this command, we can read that we allocate 60GB memory of memory per node (suffix `n`, here `Gn` for gigabytes per node) and the maximum RSS is reported as 4.3GB.
 You can use this information to fine-tune your memory allocations.
+As a side-remark, a suffic `c` indicates the memory per core (e.g., that could be`60Gc`)
 
 Further, the program ran for 13 hours and 7 minutes with allocated 16 CPU cores and consumed a total of 7 days, 16 hours, and 21 minutes of CPU time.
 Thus, a total of 10,061 CPU minutes were spent in 787 minutes wall-clock time.
