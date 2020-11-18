@@ -9,7 +9,7 @@ This page documents the current and known upcoming maintenance windows.
 - Exchange GPFS Controller
     - We need to exchange a central piece of hardware in the storage system.
     - We do not expect a downtime, only a degradation of service.
-    - **Access to the GPFS will be degrateded**
+    - **Access to the GPFS will be degraded**
 - Slurm Scheduler
     - Upgrade to the latest and greatest version.
     - Restructure scheduler installation to ease rolling upgrades without future downtimes.
