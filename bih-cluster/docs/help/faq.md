@@ -383,7 +383,7 @@ This will also display node partition, availability etc.
 
 No worries!
 
-As documented in the [Storage Locations](../storage/storage-locations) section, each user/project/group has three storage volumes:
+As documented in the [Storage Locations](/storage/storage-locations) section, each user/project/group has three storage volumes:
 A small `home`, a larger `work` and a large (but temporary) `scratch`.
 There are limits on the size of these volumes.
 You get a nightly warning email in case you are over the soft limit and you will not be able to write any more data if you get above the hard limit.
