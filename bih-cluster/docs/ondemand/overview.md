@@ -65,6 +65,21 @@ For this you perform the following steps:
 
     If you clicked the wrong button then please clear your cookies to force a logout of the system.
 
+## Prepare OnDemand Folder
+
+The `ondemand` folder is automatically created in your home directory, and the
+OnDemand service searches for this folder in your home directory, i.e. it has
+to stay there. But as the quota in the home directory is very limited, you can
+easily hit the hard quota which might prevent you from working on the cluster.
+
+To prevent this, move the `~/ondemand` folder to the `~/work` folder and create
+a symlink for the now dislocated `~/ondemand` folder:
+
+```
+med-login1:~$ mv ~/ondemand ~/work/ondemand
+med-login1:~$ ln -sr ~/work/ondemand ~/ondemand
+```
+
 ## Portal Dashboard
 
 !!! help "Problems with Open OnDemand?"
