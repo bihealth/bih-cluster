@@ -2,13 +2,23 @@ This page documents the current and known upcoming maintenance windows.
 
 # Next Maintenance Window
 
-## Slurm Scheduler Updates: September 8, 2020
+## HPC 4 Research: Miscellaneous Maintenances, December 1, 2020
 
-- To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.
-- If everything runs well, this will finish after 30minutes (8:30 am).
-- Planned Scheduler Changes:
-    - Introduce automatic routing of jobs to partitions.
-    - Make Slurm scheduler and accounting run more robustly.
+**Time**: 6am-12am
+
+- Exchange GPFS Controller
+    - We need to exchange a central piece of hardware in the storage system.
+    - We do not expect a downtime, only a degradation of service.
+    - **Access to the GPFS will be degrateded**
+- Slurm Scheduler
+    - Upgrade to the latest and greatest version.
+    - Restructure scheduler installation to ease rolling upgrades without future downtimes.
+    - Archival of old accounting information to improve schedule performance.
+    - **Slurm will be unavailable.**
+- Re-Mounting of GPFS
+    - The `/fast` file system will be re-mounted to `/data/gpfs-1`.
+    - `/fast` becomes a symbolic link to `/data` on all of the cluster.
+    - **GPFS access will disappear for some time.
 
 # Pending Changes
 
@@ -55,6 +65,14 @@ This page documents the current and known upcoming maintenance windows.
 - We will keep around a symlink from `/fast` to `/data/gpfs-1` for some time during a migration phase.
 
 # Previous Maintenance Windows
+
+## Slurm Scheduler Updates: September 8, 2020
+
+- To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.
+- If everything runs well, this will finish after 30minutes (8:30 am).
+- Planned Scheduler Changes:
+    - Introduce automatic routing of jobs to partitions.
+    - Make Slurm scheduler and accounting run more robustly.
 
 ## Network Maintenance: June 3, 2020
 

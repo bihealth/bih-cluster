@@ -1,15 +1,45 @@
 # Home
 
-This is the documentation of the BIH high-performance compute (HPC) cluster.
+This is the documentation of the BIH high-performance compute (HPC) clusters:
+
+- **HPC 4 Research** -- for basic and translational research,
+- **HPC 4 Clinic** -- for translational, clinical research within the Charite firewall.
+
 This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
 
 :arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
+
+:arrow_down: Use tabs such as the one below to switch betweeen HPC 4 Research and HPC 4 Clinic info :arrow_down:.
+
+=== "HPC 4 Research"
+
+    - Web Access: https://portal.research.hpc.bihealth.org
+    - SSH-Based Access:
+
+        ```bash
+        # Interactive Login as Charite/MDC user
+        ssh -l user_c login-1.research.hpc.bihealth.org  # OR login-2...
+        ssh -l user_m login-1.research.hpc.bihealth.org  # OR login-2...
+        # File Transfer as Charite/MDC user
+        sftp user_c@med-transfer1.bihealth.org  # OR med-transfer2...
+        sftp user_m@med-transfer1.bihealth.org  # OR med-transfer2...
+        ```
+
+=== "HPC 4 Clinic"
+
+    - Web Access: https://portal.clinic.hpc.bihealth.org
+    - SSH-Based Access:
+
+        ```bash
+        # Interactive Login as Charite user
+        ssh -l user login-1.research.hpc.bihealth.org  # OR login-2...
+        ```
 
 ## Getting Started
 
 To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.
 
-1. [Getting Access](admin/getting-access). 
+1. [Getting Access](admin/getting-access).
 2. [Getting Help](help/helpdesk) (and [Writing Good Tickets](help/good-tickets)).
 3. [For the Impatient](overview/for-the-impatient).
 4. [The Cluster Tutorial: First Steps](first-steps/episode-0).
@@ -25,8 +55,10 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :test_tube: Head node migration -- autumn 2020
-    - :calendar: `/fast` => `/data` -- autumn 2020
+    - :test_tube: Head node migration -- December 1, 2020
+    - :calendar: `/fast` => `/data` -- December 1, 2020
+    - :calendar: Slurm upgrade -- December 1, 2020
+    - :wrench: GPFS controller replacement -- December 1, 2020
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 

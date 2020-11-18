@@ -6,8 +6,19 @@
     In case of any issues, please send an email to hpc-helpdesk@bihealth.de.
 
 To allow for better interactive works, BIH HPC administration has setup an  [Open OnDemand (OOD)](https://openondemand.org/) portal web server.
+There is a separate portal for HPC 4 Clinic and Research each.
 
-- https://portal.research.hpc.bihealth.org
+=== "HPC 4 Research"
+
+    You can find the OnDemand Portal for HPC 4 Research at:
+
+    - [:globe_with_meridians: https://portal.research.hpc.bihealth.org](https://portal.research.hpc.bihealth.org)
+
+=== "HPC 4 Clinic"
+
+    You can find the OnDemand Portal for HPC 4 Clinic at:
+
+    - [:globe_with_meridians: https://portal.clinic.hpc.bihealth.org](https://portal.clinic.hpc.bihealth.org)
 
 ## Background
 
@@ -33,16 +44,26 @@ The first prerequisite is to have a cluster account already (see [Getting Access
 Once you have done your first SSH connection to the cluster successfully you can start using the portal.
 For this you perform the following steps:
 
-1. Go to https://portal.research.hpc.bihealth.org - you will be redirected to the login page shown below.
-   If you have an account with Charite (ends in `_c`) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
+=== "HPC 4 Research"
 
-    ![](figures/ondemand-hpc-sso.png){: style="width:30%;" .center}
-2. Login with your home organization's SSO system.
-   Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.
+    1. Go to https://portal.research.hpc.bihealth.org - you will be redirected to the login page shown below.
+       If you have an account with Charite (ends in `_c`) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
+       ![](figures/ondemand-hpc-sso.png){: style="width:30%;" .center}
+    2. Login with your home organization's SSO system.
+       Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.
 
-    !!! help "Clicked the Wrong Login Button?"
+=== "HPC 4 Clinic"
 
-        If you clicked the wrong button then please clear your cookies to force a logout of the system.
+    1. Go to https://portal.clinic.hpc.bihealth.org - you will be redirected to the login page shown below.
+       **You will need an account with Charite to use HPC 4 Clinic.**
+       Subsequently, you will only be able to sign into HPC 4 Clinic using the "Charité - Universitätmedizin Berlin" button.
+       ![](figures/ondemand-hpc-sso.png){: style="width:30%;" .center}
+    2. Login with your Charite login (e.g., with your charite email and your Charite password or `user@CHARITE` and your Charite password).
+       Please note that depending on whether you are accessing the system via the wired network at Charite or via VPN the SSO might look differently.
+
+!!! help "Clicked the Wrong Login Button?"
+
+    If you clicked the wrong button then please clear your cookies to force a logout of the system.
 
 ## Portal Dashboard
 
@@ -67,7 +88,7 @@ We will not go into detail of all of them and expect them to be self-explanatory
 
 - **Files**
     - **Home Directory** - Access a file browser.
-    - [**Quotas**](../quotas) - Display quota information.
+    - [**Quotas**](../quotas) - Display quota information (only available on HPC 4 Research).
 - **Jobs**
     - **Active Jobs** - List your jobs.
     - **Job Composer** - Start a new job.

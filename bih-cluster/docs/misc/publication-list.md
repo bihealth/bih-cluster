@@ -28,7 +28,7 @@ Gordon, M. G., Inoue, F., Martin, B., Schubach, M., Agarwal, V., Whalen, S., ...
 *Nature Protocols*, 15(8), 2387-2412.
 [doi: 10.1038/s41596-020-0333-5](https://doi.org/10.1038/s41596-020-0333-5)
 
-Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.,Schroeder S., Rasche A., Muth D., Drexler J.F., Heni A.C., Eibner G.J., Page R.A., Jones T.C., MüllerM.A., Sommer S., Glebe D., and Drosten C. (2020).  
+Paraskevopoulou S., Pirzer F., Goldmann N., Schmid J., Corman V.M., Gottula L.T.,Schroeder S., Rasche A., Muth D., Drexler J.F., Heni A.C., Eibner G.J., Page R.A., Jones T.C., MüllerM.A., Sommer S., Glebe D., and Drosten C. (2020).
 "Mammalian deltavirus without hepadnavirus coinfection in the neotropical rodent *Proechimys semispinosus*."
 *Proceedings of the National Academy of Sciences*
 2020 Jul 28;117(30):17977-17983.
