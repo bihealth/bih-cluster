@@ -1,5 +1,14 @@
 # How-To: Run Jupyter
 
+!!! info "SSH Tunnels Considered Harmful"
+
+    **Please use our [Open OnDemand Portal](/ondemand/overview/) for running Jupyter notebooks!**
+
+    The information below is still accurate.
+    However, many users find it tricky to get SSH tunnels working correctly.
+    A considerable number of parts is involved and you have to get each step 100% correct.
+    Helpdesk cannot support you in problems with SSH tunnels that are caused by incorrect usage.
+
 ## What is Jupyter
 
 [Project Jupyter](http://jupyter.org/) is a networking protocol for interactive computing that allows the user to write and execute code for a high number of different programming languages. The most used client is Jupyter Notebook that can be encountered in various form all over the web. Its basic principle is a document consisting of different cells, each of which contains either code (executed in place) or documentation (written in markdown). This allows one to handily describe the processed workflow.

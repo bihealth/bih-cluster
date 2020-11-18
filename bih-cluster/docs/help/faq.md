@@ -22,12 +22,12 @@ Please see the section [Connection Problems](../../connecting/configure-ssh/conn
 
 ## What is the difference between MAX and BIH cluster? What is their relation?
 
+## What is the difference between MAX and BIH clusters? What is their relation?
+
 **Administrativa**
 
-- The BIH cluster is the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by MDC IT.
-  MDC IT performs the administration for the BIH and the BIH cluster uses the authentication (user/password/groups) infrastructure of the MDC.
-  Thus you have to get an MDC account for using the BIH cluster.
-  Systems support can be requested from helpdesk@mdc-berlin.de as for the MAX cluster.
+- The BIH clusters are the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by BIH HPC IT.
+  The cluster is open for users of both BIH/Charite and MDC.
 - The MAX cluster is the cluster of the Max Delbrueck Center (MDC) in Buch.
   This cluster is used by the researchers at MDC and integrates a lot of infrastructure of the MDC.
 
@@ -42,7 +42,7 @@ Request for both systems are handled separately, depending on the user's affilia
 
 **Bioinformatics Software**
 
-- On the BIH cluster, users can install their own bioinformatics software in their user directory.
+- On the BIH cluster, users can install their own (bioinformatics) software in their user directory.
 - On the MAX cluster, users can also install their own software or use [software provided by Altuna Akalin's group at MDC](http://bioinformatics.mdc-berlin.de/resources.html#other-it-services).
 
 ## My SSH sessions break with "`packet_write_wait: Connection to XXX : Broken pipe`". How can I fix this?

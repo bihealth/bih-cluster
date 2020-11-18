@@ -11,6 +11,9 @@ The following guide gives a quick dive into using docker images with singularity
     Thus, you will have to build the images on your local workstation (or anywhere where you have root access).
     You can then run the built images on the BIH HPC.
 
+    This is also true for the `--writeable` flag.
+    Apparently it needs root permissions which you don't have on the cluster.
+
 ## Quickstart
 
 !!! important "Link ~/.singularity to ~/work/.singularity"

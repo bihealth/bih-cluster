@@ -1,5 +1,9 @@
 # Accessing Snapshots and Backups
 
+!!! info "HPC 4 Research Only"
+
+    The following information is only valid for HPC 4 Research.
+
 By now you have probably read that your home directory has strict quotas in place.
 You pay this price in usability by the fact that snapshots and backups exist.
 

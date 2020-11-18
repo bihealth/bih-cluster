@@ -3,6 +3,7 @@
 This page describes how to write a good help request ticket.
 
 1. Write a descriptive summary.
+    - Which cluster are you on? HPC 4 Research or HPC 4 Clinic?
     - Put in a short summary into the Subject.
     - Expand on this in a first paragraph.
       Try to answer the following questions:

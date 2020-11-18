@@ -1,19 +1,35 @@
 # Cluster Architecture
 
-BIH HPC IT provides acess to a high-performance compute (HPC) cluster system.
+BIH HPC IT provides acess to high-performance compute (HPC) cluster systems.
 A cluster system bundles a high number of nodes and in the case of HPC, the focus is on performance (with contrast to high availability clusters).
 
-The BIH HPC system consists of the following hardware:
+## HPC 4 Research
 
-- approx. 256 nodes (from three generations),
-- 4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),
-- 4 GPU nodes (with 4 Tesla GPUs each), and
-- a high-perfomance parallel GPFS files system.
+=== "HPC 4 Research"
 
-## Network Interconnect
+    ### Cluster Hardware
 
-- All nodes are connected with 2x10GbE,
-- 32 nodes provide Infiniband interconnect (lower latency, but MPI library required).
+    - approx. 256 nodes (from three generations),
+    - 4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),
+    - 4 GPU nodes (with 4 Tesla GPUs each), and
+    - a high-perfomance parallel GPFS files system.
+
+    ### Network Interconnect
+
+    - All nodes are connected with 2x10GbE,
+    - 32 nodes provide Infiniband interconnect (lower latency, but MPI library required).
+
+=== "HPC 4 Clinic"
+
+    ### Cluster Hardware
+
+    - 24 general purpose nodes,
+    - 3 GPU nodes (with 4 Tesla GPUs each), and
+    - a scale-out NAS system based on Isilon
+
+    ### Network Interconnect
+
+    - All nodes are connected with 25GbE.
 
 ## Cluster Management
 
@@ -25,13 +41,14 @@ Users don't connect to nodes directly but rather create interactive or batch job
   These are submitted to the cluster and then assigned to compute hosts by the job scheduler.
   Users can configure the scheduler to send them an email upon completion.
   Users can submit many batch jobs at the same time and the scheduler will execute them once the cluster offers sufficient resources.
+- **Web-based access** can be achieved using the [OnDemand Portal](/ondemand/overview/)
 
 ## Head vs. Compute Nodes
 
 As common with HPC systems, users cannot directly access the compute nodes but rather connect to so-called *head nodes*.
 The BIH HPC system provides the following head nodes:
 
-- `med-login1` and `med-login2` that accept SSH connections and are meant for **low intensity**, interactive work such as editing files, running screen/tmux sessions, and logging into the compute nodes.
+- `login-1` and `login-2` that accept SSH connections and are meant for **low intensity**, interactive work such as editing files, running screen/tmux sessions, and logging into the compute nodes.
   Users should run **no computational tasks** and **no large-scale data transfer** on these nodes.
 - `med-transfer1` and `med-transfer2` also accept SSH connections.
   Users should **run all large-scale data transfer through these nodes.**

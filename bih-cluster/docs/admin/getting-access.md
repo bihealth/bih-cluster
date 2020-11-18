@@ -1,25 +1,59 @@
 # Getting Access
 
-!!! tip "Get Access"
-    1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
-    2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
-    3. **Connect.** `ssh -l <user>_<c or m>@med-login1.bihealth.org`
+=== "HPC 4 Research"
 
-Access to the BIH HPC is based on work groups (also known as labs, units).
+    !!! tip "Get Access"
+
+        A Charite or MDC account is required for accessing HPC 4 Research.
+
+        1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
+        2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
+        3. **Connect.** `ssh -l <user>_<c or m>@login-1.research.bihealth.org`
+
+=== "HPC 4 Clinic"
+
+    !!! tip "Get Access"
+
+        For using HPC 4 Clinic, a Charite account is required.
+
+        1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
+        2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
+        3. **Connect.** `ssh -l <user>_<c or m>@login-1.clinic.bihealth.org`
+
+Access to the BIH HPC clusters is based on work groups (also known as labs, units).
 Each group is headed by a leader (also known as principle investigator/PI).
 Data can also be managed in **project** which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.
 
 
-```bash
-# Charite Users
-host:~$ ssh -l user_c med-login1.bihealth.org
-# MDC Users
-host:~$ ssh -l user_m med-login1.bihealth.org
-```
+=== "HPC 4 Research"
 
-!!! important "Accounts and Email Adresses"
-    - All users on the cluster must already have an account with either Charite/BIH or MDC.
-    - Please only use email addresses from the institutions Charite, BIH, MDC.
+    HPC 4 Research is available for Charite, MDC, and BIH networks.
+
+    ```bash
+    # Charite Users
+    host:~$ ssh -l user_c login-1.research.hpc.bihealth.org
+    # MDC Users
+    host:~$ ssh -l user_m login-1.research.hpc.bihealth.org
+    ```
+
+    !!! important "Accounts and Email Adresses"
+
+        - All users on the cluster must already have an account with either Charite/BIH or MDC.
+        - Please only use email addresses from the institutions Charite, BIH, MDC.
+
+=== "HPC 4 Clinic"
+
+    HPC 4 Clinic is only from the Charite network.
+
+    ```bash
+    host:~$ ssh -l user login-1.clinic.hpc.bihealth.org
+    ```
+
+    !!! important "Accounts and Email Adresses"
+
+        - All users on the cluster must already have an account either Charite/BIH.
+        - You must use your Charite/BIH email address.
+
 
 ## Work Groups
 
@@ -39,6 +73,7 @@ Example values are given in curly braces.
 ```
 # Group "ag-doe"
 
+Cluster: {HPC 4 Clinic or HPC 4 Research}
 Group leader/PI: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
@@ -53,6 +88,7 @@ Users for each member:
 
 # User 1
 
+- cluster: {HPC 4 Clinic or HPC 4 Research}
 - first name: John
 - last name: Doe
 - affiliation: Charite, Department of Oncology
@@ -99,6 +135,7 @@ Example values are given in curly braces.
 ```
 # Project "doe-dbgap-rna"
 
+Cluster: {HPC 4 Research}
 Project owner: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}

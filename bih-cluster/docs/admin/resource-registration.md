@@ -1,6 +1,6 @@
 # Resource Registration
 
-This page describes the necessary registration steps for accessing special resources on the cluster, such as:
+This page describes the necessary registration steps for accessing special resources on the clusters, such as:
 
 - GPU nodes,
 - high-memory nodes,
@@ -32,6 +32,8 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
 
 ## High-Memory Nodes
 
+**These are only available in HPC 4 Research.**
+
 !!! note
     Note that the purpose of the high memory nodes is to run jobs that don't run on the remainder of the cluster.
     As the normal cluster nodes have 126-189GB of RAM each, we expect many jobs to fit on the (plenty) cluster nodes and these don't have to run on the (few and sparse) high memory nodes.
@@ -48,6 +50,11 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
 ## Matlab Licenses
+
+!!! todo "Matlab on OnDemand Portal"
+
+    You can also use the graphical version of Matlab using the OnDemand Portal.
+    A documentation for this is forthcoming (TODO).
 
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.

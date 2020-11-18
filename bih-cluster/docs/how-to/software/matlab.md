@@ -11,6 +11,8 @@
 !!! question "Want to use the Matlab GUI?"
     Make sure you understand X forwarding as outline [in this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
 
+    You can also use [Open OnDemand Portal](/ondemand/overview/) to run Matlab.
+
 ## Pre-requisites
 
 You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access to the Latlab licenses.

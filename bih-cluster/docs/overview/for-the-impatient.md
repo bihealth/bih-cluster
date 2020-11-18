@@ -1,23 +1,53 @@
 # For the Impatient
 
-This document describes the fundamentals of using the BIH cluster in a very terse manner.
+This document describes the fundamentals of using the BIH clusters in a very terse manner.
+
+## HPC 4 Research vs. HPC 4 Clinic
+
+BIH HPC IT operates two clusters: HPC 4 Research and HPC 4 Clinic.
+
+**HPC 4 Research** is the older and larger of both.
+It is located in the BIH data center in Buch and connected via the BIH research networks.
+Connections can be made from Charite, MDC, and BIH networks.
+The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](/admin/getting-access/).
+The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
+
+**HPC 4 Clinic** is the more recent and smaller cluster.
+It is located in the Charite data center on the Charite Campus Virchowklinikum and connected only to the Charite network ("Kernnetz").
+Connections can only be made from Charite networks.
+The cluster is open for users with a Charite account after [getting access through the gatekeeper proces](/admin/getting-access/).
+The system has also been designed to be suitable for the processing of human genetics data but is located within the hospital physical walls and network firewalls.
+It is thus also suitable for the processing of data from clinical context.
+Administration provides a system with state of the art IT security, users are responsible to obtain proper data privacy and ethics votes.
 
 ## Cluster Hardware and Scheduling
 
-The cluster consists of the following major components:
+=== "HPC 4 Research"
 
-- 2 login nodes for users `med-login1` and `med-login2` (for interactive sessions only),
-- 2 nodes for file transfers `med-transfer1` and `med-transfer2`,
-- a scheduling system using Slurm,
-- approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
-- a few high memory nodes `med040[1-4]`,
-- 4 nodes with 4 Tesla GPUs each (!) `med030[1-4]`,
-- a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
-- a slower "classic" ZFS file system available through NFS with ~250 TB mounted at `/slow`.
+    The cluster consists of the following major components:
 
-This is shown by the following picture:
+    - 2 login nodes for users `med-login1` and `med-login2` (for interactive sessions only),
+    - 2 nodes for file transfers `med-transfer1` and `med-transfer2`,
+    - a scheduling system using Slurm,
+    - approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
+    - a few high memory nodes `med040[1-4]`,
+    - 4 nodes with 4 Tesla GPUs each (!) `med030[1-4]`,
+    - a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
+    - a slower "classic" ZFS file system available through NFS with ~250 TB mounted at `/slow`.
 
-![](figures/Cluster_Layout.png)
+    This is shown by the following picture:
+
+    ![](figures/Cluster_Layout.png)
+
+=== "HPC 4 Clinic"
+
+    The cluster consists of the following major components:
+
+    - 2 login nodes for users `login-1.clinic.hpc.bihealth.org` (and `login-2`).
+    - a scheduling system using Slurm,
+    - 24 general purpose compute nodes `cc-node0[00-23]`
+    - 3 nodes with 4 Tesla GPUs each (!) `cc-node02[4-6]`
+    - an Isilon scale-out NAS system mounted at `/data/isilon-1` with ~1.2PB of space (~100TB on SSDs).
 
 ## Differences Between Workstations and Clusters
 
@@ -91,13 +121,13 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
     You should move such large directories to your work volume and only keep a symlink in your `$HOME`.
 
     Here is how you find large directories:
-    
+
     ```bash
     host:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
     ```
-    
+
     Here is how you move them to your work and replace them with a symlink, e.g., for `~/.local`:
-    
+
     ```bash
     host:~$ mv ~/.local ~/work/.local
     host:~$ ln -s ~/work/.local ~/.local
@@ -117,6 +147,8 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
 
 ### Connecting to the Cluster
 
+=== "HPC 4 Research"
+
 - From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `med-login{1,2}.bihealth.org`.
     - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
 - From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
@@ -127,11 +159,18 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
   Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
   You can use [this form availble in Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf) for this.
   Please refer to the Charite intranet or helpdesk@charite.de for more information.
+- Also consider using the [OnDemand Portal](/ondemand/overview) at https://portal.research.hpc.bihealth.org.
+
+=== "HPC 4 Clinic"
+
+- You have to login from the Charite network with your charite account to `login-{1,2}.clinic.hpc.bihealth.org`.
+- Access from VPN is currently not possible.
+- Also consider using the [OnDemand Portal](/ondemand/overview) at https://portal.clinic.hpc.bihealth.org.
 
 ### Connecting to Compute Node through Login Node
 
-After logging into the cluster, you are on the login node `med-login<X>` (`<X>` can be either `1` or `2`).
-When transferring files, use the `med-transfer1` or `med-transfer2` nodes.
+After logging into the cluster, you are on the login node `<cluster>-login<X>` (`<cluster>` is either `res` for HPC 4 Research and `cln` for HPC 4 Clinic; `<X>` can be either `1` or `2`).
+When transferring files, use the `med-transfer1` or `med-transfer2` nodes (HPC 4 Research only).
 You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
 Typically, you'll create an interactive session on a compute node using the `srun` command.
 

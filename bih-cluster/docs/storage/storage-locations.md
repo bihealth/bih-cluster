@@ -1,5 +1,9 @@
 # Storage and Volumes: Locations
 
+!!! info "HPC 4 Research Only"
+
+    The following information is only valid for HPC 4 Research.
+
 On the BIH HPC cluster, there are three kinds of entities: users, groups (*Arbeitsgruppen*), and projects.
 Each user, group, and project has a central folder for their files to be stored.
 
