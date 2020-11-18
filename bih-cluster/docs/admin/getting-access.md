@@ -109,7 +109,7 @@ Users for each member:
 - Work groups on the cluster must have an owner (its leader, principal investigator, etc.)
 - Group ownership implies control but also accountability for their work group and members.
 - Through the delegate mechanism, control can be delegated to up to one person (e.g., post-doc in the lab).
-- Users can be members of one work group only.
+- **Users can be members of one work group only.**
   For multi-group collaborations, please use the project mechanism described below.
 
 ## Projects
