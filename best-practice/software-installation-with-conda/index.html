@@ -2017,6 +2017,22 @@ version as follows:</p>
 
 <p>Please note that new conda installs may ship with a recently update Python version and not all packages might have been adapted.
 E.g., if you find out that some packages don't work after starting out/upgrading to Python 3.8, simply try to downgrade Python to 3.7 with <code>conda install python=3.7</code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>As resolving the dependency tree of an installation candidate can take a lot of
+time in Conda, especially when you are installing software from an <code>environment.yaml</code>
+file, an alternative resolver has been presented that you can use to install
+software into your Conda environment. The time savings are immense and an
+installation that took more than an hour can be resolved in seconds.</p>
+<p>Simply run</p>
+<div class="highlight"><pre><span></span><code>med0127:~$ conda install mamba
+</code></pre></div>
+
+<p>With that, you can install software into your environment using the same syntax as for Conda:</p>
+<div class="highlight"><pre><span></span><code>med0127:~$ mamba install &lt;package&gt;
+</code></pre></div>
+
+</div>
 <h2 id="creating-an-environment">Creating an environment<a class="headerlink" href="#creating-an-environment" title="Permanent link">&para;</a></h2>
 <p>Conda lets you create environments, such that you can test things in a different
 environment or group your software. Another common use case is to have different
@@ -2047,7 +2063,7 @@ med0127:~$
 <div class="md-source-date">
   <small>
     
-      Last update: November 19, 2020
+      Last update: November 20, 2020
     
   </small>
 </div>
