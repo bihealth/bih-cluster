@@ -12,13 +12,18 @@ Connections can be made from Charite, MDC, and BIH networks.
 The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](/admin/getting-access/).
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
 
-**HPC 4 Clinic** is the more recent and smaller cluster.
+**HPC 4 Clinic** (BETA) is the more recent and smaller cluster.
 It is located in the Charite data center on the Charite Campus Virchowklinikum and connected only to the Charite network ("Kernnetz").
 Connections can only be made from Charite networks.
 The cluster is open for users with a Charite account after [getting access through the gatekeeper proces](/admin/getting-access/).
 The system has also been designed to be suitable for the processing of human genetics data but is located within the hospital physical walls and network firewalls.
 It is thus also suitable for the processing of data from clinical context.
 Administration provides a system with state of the art IT security, users are responsible to obtain proper data privacy and ethics votes.
+
+!!! important "HPC 4 Clinic is in Beta Status
+
+    Do not use for production purposes or with critical data during beta test!
+    We will notify you when the HPC 4 Clinic cluster becomes stable.
 
 ## Cluster Hardware and Scheduling
 
