@@ -92,6 +92,25 @@ med0127:~$ conda install <package>=<version>
 Please note that new conda installs may ship with a recently update Python version and not all packages might have been adapted.
 E.g., if you find out that some packages don't work after starting out/upgrading to Python 3.8, simply try to downgrade Python to 3.7 with `conda install python=3.7`.
 
+!!! hint
+    As resolving the dependency tree of an installation candidate can take a lot of
+    time in Conda, especially when you are installing software from an `environment.yaml`
+    file, an alternative resolver has been presented that you can use to install
+    software into your Conda environment. The time savings are immense and an
+    installation that took more than an hour can be resolved in seconds.
+
+    Simply run
+
+    ```bash
+    med0127:~$ conda install mamba
+    ```
+
+    With that, you can install software into your environment using the same syntax as for Conda:
+
+    ```bash
+    med0127:~$ mamba install <package>
+    ```
+
 ## Creating an environment
 
 Conda lets you create environments, such that you can test things in a different
