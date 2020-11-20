@@ -27,6 +27,8 @@ This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformati
 
 === "HPC 4 Clinic"
 
+    !!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!
+
     - Web Access: https://portal.clinic.hpc.bihealth.org
     - SSH-Based Access:
 
