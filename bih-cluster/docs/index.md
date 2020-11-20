@@ -4,6 +4,7 @@ This is the documentation of the BIH high-performance compute (HPC) clusters:
 
 - **HPC 4 Research** -- for basic and translational research,
 - **HPC 4 Clinic** -- for translational, clinical research within the Charite firewall.
+  (Beta test - do not use for production purposes or with critical data yet).
 
 This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
 
