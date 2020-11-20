@@ -16,6 +16,8 @@ There is a separate portal for HPC 4 Clinic and Research each.
 
 === "HPC 4 Clinic"
 
+    !!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!
+
     You can find the OnDemand Portal for HPC 4 Clinic at:
 
     - [:globe_with_meridians: https://portal.clinic.hpc.bihealth.org](https://portal.clinic.hpc.bihealth.org)
@@ -53,6 +55,8 @@ For this you perform the following steps:
        Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.
 
 === "HPC 4 Clinic"
+
+    !!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!
 
     1. Go to https://portal.clinic.hpc.bihealth.org - you will be redirected to the login page shown below.
        **You will need an account with Charite to use HPC 4 Clinic.**
