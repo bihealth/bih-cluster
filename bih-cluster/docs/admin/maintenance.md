@@ -19,7 +19,7 @@ This page documents the current and known upcoming maintenance windows.
     - The `/fast` file system will be re-mounted to `/data/gpfs-1`.
     - `/fast` becomes a symbolic link to `/data` on all of the cluster.
     - **GPFS access will disappear for some time.
-- Login Node Migration
+- Login & Transfer Node Migration
     - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
     - Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
     - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
