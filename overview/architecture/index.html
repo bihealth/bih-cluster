@@ -2052,18 +2052,18 @@ The BIH HPC system provides the following head nodes:</p>
 <ul>
 <li><code>login-1</code> and <code>login-2</code> that accept SSH connections and are meant for <strong>low intensity</strong>, interactive work such as editing files, running screen/tmux sessions, and logging into the compute nodes.
   Users should run <strong>no computational tasks</strong> and <strong>no large-scale data transfer</strong> on these nodes.</li>
-<li><code>med-transfer1</code> and <code>med-transfer2</code> also accept SSH connections.
+<li><code>transfer-1</code> and <code>transfer-2</code> also accept SSH connections.
   Users should <strong>run all large-scale data transfer through these nodes.</strong></li>
 </ul>
 <h2 id="common-use-case">Common Use Case<a class="headerlink" href="#common-use-case" title="Permanent link">&para;</a></h2>
 <p>After registration and client configurations, users with typically connect to the HPC system through the login nodes:</p>
-<div class="highlight"><pre><span></span><code>local:~$ ssh -l jdoe_c med-login1.bihealth.org
-med-login1:~$
+<div class="highlight"><pre><span></span><code>local:~$ ssh -l jdoe_c login-1.research.hpc.bihealth.org
+res-login-1:~$
 </code></pre></div>
 
 <p>Subsequently, they might submit batch jobs to the cluster for execution through the Slurm scheduling system or open interactive sessions:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ sbatch job_script.sh
-med-login1:~$ srun --pty bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ sbatch job_script.sh
+res-login-1:~$ srun --pty bash -i
 med0104:~$
 </code></pre></div>
                 

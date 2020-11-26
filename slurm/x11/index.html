@@ -1846,11 +1846,11 @@
                 
                 <h1 id="slurm-and-x11">Slurm and X11<a class="headerlink" href="#slurm-and-x11" title="Permanent link">&para;</a></h1>
 <p>Make sure to connect to the login node with X11 forwarding.</p>
-<div class="highlight"><pre><span></span><code>host:~$ ssh -X -l user_c med-login1.bihealth.org
+<div class="highlight"><pre><span></span><code>host:~$ ssh -X -l user_c login-1.research.hpc.bihealth.org
 </code></pre></div>
 
 <p>Once connected to the login node, pass the <code>--x11</code> flag.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty --x11 xterm
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty --x11 xterm
 </code></pre></div>
                 
                   

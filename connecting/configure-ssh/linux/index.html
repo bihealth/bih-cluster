@@ -2044,16 +2044,31 @@ please use:</p>
 </code></pre></div>
 
 <h2 id="connect-to-the-cluster">Connect to the cluster<a class="headerlink" href="#connect-to-the-cluster" title="Permanent link">&para;</a></h2>
-<p>If you are within <strong>CUBI</strong>, <strong>Charite</strong> or the <strong>MDC</strong>, then one of the
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
+<p>If you are within <strong>BIH</strong>, <strong>Charite</strong> or the <strong>MDC</strong>, then one of the
 following commands should work now (<code>&lt;USERNAME&gt;</code> is the
 <a href="../prerequisites/#what-is-my-username">cluster username</a>). This will connect you to the login node.</p>
-<div class="highlight"><pre><span></span><code># ssh -A -t -l &lt;USERNAME&gt; med-login&lt;X&gt;.bihealth.org
+<div class="highlight"><pre><span></span><code># ssh -A -t -l &lt;USERNAME&gt; login-1.research.hpc.bihealth.org
 </code></pre></div>
 
 <ul>
 <li><code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code></li>
-<li>Use <code>med-login&lt;X&gt;</code> instead of <code>med-transfer&lt;X&gt;.bihealth.org</code> for file transfers!</li>
+<li>Use <code>login-transfer-&lt;X&gt;</code> instead of <code>login-1&lt;X&gt;.research.hpc.bihealth.org</code> for file transfers!</li>
 </ul>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
+<p>You have to be in the Charite network for the connection to work to HPC 4 Clinic.
+<code>&lt;USERNAME&gt;</code> is the <a href="../prerequisites/#what-is-my-username">cluster username</a>).
+This will connect you to the login node.</p>
+<div class="highlight"><pre><span></span><code># ssh -A -t -l &lt;USERNAME&gt; login-1.clinic.hpc.bihealth.org
+</code></pre></div>
+
+<ul>
+<li><code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code></li>
+<li>There currently is no transfer node for HPC 4 Clinic.</li>
+</ul>
+</div>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not perform any computation on the login nodes</p>
@@ -2073,7 +2088,7 @@ Note that for logging into the jail, the <code>&lt;MDC_USER&gt;</code> is requir
 <p>Connect to the hop-node:</p>
 <div class="highlight"><pre><span></span><code>$ ssh -A -t -l &lt;MDC_USER&gt; ssh1.mdc-berlin.de
 ...
-jail1 $ ssh -A -t -l &lt;USERNAME&gt; med-login&lt;X&gt;.bihealth.org
+jail1 $ ssh -A -t -l &lt;USERNAME&gt; login-&lt;X&gt;.research.hpc.bihealth.org
 </code></pre></div>
 
 <ul>
@@ -2081,7 +2096,7 @@ jail1 $ ssh -A -t -l &lt;USERNAME&gt; med-login&lt;X&gt;.bihealth.org
 </ul>
 <p>On the cluster, the following brings you to a cluster node where you can
 compute as much as the node can chew.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty bash -i
 med0124:~$
 </code></pre></div>
 
@@ -2106,12 +2121,13 @@ $ ssh-add  id_rsa
 </code></pre></div>
 
 <h2 id="file-system-mount-via-sshfs">File System mount via sshfs<a class="headerlink" href="#file-system-mount-via-sshfs" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ sshfs -l &lt;USERNAME&gt;@med-transfer&lt;X&gt;.bihealth.org:/ &lt;MOUNTPOINT&gt;
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ sshfs -l &lt;USERNAME&gt;@transfer-&lt;X&gt;.research.hp.bihealth.org:/ &lt;MOUNTPOINT&gt;
 </code></pre></div>
 
 <ul>
 <li><code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code></li>
-<li><code>med-transfer&lt;X&gt;:/</code> follows the structure <code>&lt;host&gt;:&lt;directory&gt;</code>; in our case it refers to the cluster root folder but can be any path available to you on the cluster and gives the folder that will be mounted.</li>
+<li><code>transfer-&lt;X&gt;:/</code> follows the structure <code>&lt;host&gt;:&lt;directory&gt;</code>; in our case it refers to the cluster root folder but can be any path available to you on the cluster and gives the folder that will be mounted.</li>
 <li><code>&lt;MOUNTPOINT&gt;</code> must be an empty but existing and readable directory on your
 local computer</li>
 </ul>
@@ -2120,29 +2136,27 @@ local computer</li>
 </code></pre></div>
 The last command is optional and unlinks any pre-existing links to older versions of sshfs.
 Now you can run
-<div class="highlight"><pre><span></span><code>$ sshfs -o follow_symlinks &lt;USERNAME&gt;@med-transfer&lt;X&gt;.bihealth.org:&lt;directory_relative_to_Cluster_root&gt; &lt;MOUNTPOINT&gt; -o volname=&lt;BIH-FOLDER&gt; -o allow_other,noapplexattr,noappledouble
+<div class="highlight"><pre><span></span><code>$ sshfs -o follow_symlinks &lt;USERNAME&gt;@transfer-1&lt;X&gt;.research.bihealth.org:&lt;directory_relative_to_Cluster_root&gt; &lt;MOUNTPOINT&gt; -o volname=&lt;BIH-FOLDER&gt; -o allow_other,noapplexattr,noappledouble
 </code></pre></div></p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">HPC 4 Clinic</label><div class="tabbed-content">
+<p>Do not mount anything on HPC 4 Clinic via SSHFS!</p>
+</div>
+</div>
 <h2 id="configure-ssh-client">Configure SSH Client<a class="headerlink" href="#configure-ssh-client" title="Permanent link">&para;</a></h2>
 <p>Add the following lines to your <code>~/.ssh/config</code> file for more comfortable access to the cluster.
 Replace <code>MDC_USER_NAME</code> with your MDC user name.</p>
 <div class="highlight"><pre><span></span><code>Host bihcluster
     ForwardAgent yes
     ForwardX11 yes
-    HostName med-login1.bihealth.org
+    HostName login-1.research.hpc.bihealth.org
     User MDC_USER_NAME
     RequestTTY yes
 
 Host bihcluster2
     ForwardAgent yes
     ForwardX11 yes
-    HostName med-login2.bihealth.org
-    User MDC_USER_NAME
-    RequestTTY yes
-
-Host bihcluster3
-    ForwardAgent yes
-    ForwardX11 yes
-    HostName med-login3.bihealth.org
+    HostName login-1.hpc.bihealth.org.bihealth.org
     User MDC_USER_NAME
     RequestTTY yes
 </code></pre></div>
@@ -2168,7 +2182,7 @@ If you are located anywhere else, you can use the following <code>~/.ssh/config<
 </code></pre></div>
 
 <p>Now, do</p>
-<div class="highlight"><pre><span></span><code># ssh mdcjail ssh -A -t -l MDC_USER med-login&lt;X&gt;.bihealth.org
+<div class="highlight"><pre><span></span><code># ssh mdcjail ssh -A -t -l MDC_USER login-&lt;X&gt;.research.hpc.bihealth.org
 </code></pre></div>
 
 <ul>
@@ -2180,7 +2194,7 @@ If you are located anywhere else, you can use the following <code>~/.ssh/config<
 <p>Please note that running more complex Java applications, such as IGV may be not very efficient because of the connection speed. In most cases you can run them on your local workstation by <a href="#file-system-mount-via-sshfs">mounting them via SSHFS</a>.</p>
 </div>
 <p>Connect to one of the login nodes using X11 forwarding:</p>
-<div class="highlight"><pre><span></span><code># ssh -X -C -A -t -l &lt;USERNAME&gt; med-login&lt;X&gt;.bihealth.org
+<div class="highlight"><pre><span></span><code># ssh -X -C -A -t -l &lt;USERNAME&gt; login-&lt;X&gt;.research.hpc.bihealth.org
 </code></pre></div>
 
 <ul>

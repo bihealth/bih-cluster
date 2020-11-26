@@ -2530,7 +2530,7 @@ You can find a list of all job reason codes in the <a href="https://slurm.schedm
 <h2 id="my-gpu-jobs-dont-get-scheduled">My GPU jobs don't get scheduled<a class="headerlink" href="#my-gpu-jobs-dont-get-scheduled" title="Permanent link">&para;</a></h2>
 <p>There are only four GPU machines in the cluster (with four GPUs each, med0301 to med0304).
 Please inspect first the number of running jobs with GPU resource requests:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ squeue -o <span class="s2">&quot;%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b&quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="p">|</span> grep med03 <span class="p">|</span> sort -k7,7
+<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -o <span class="s2">&quot;%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b&quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="p">|</span> grep med03 <span class="p">|</span> sort -k7,7
    <span class="m">1902163</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0301   gpu:tesla:2
    <span class="m">1902167</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0301   gpu:tesla:2
    <span class="m">1902164</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0302   gpu:tesla:2
@@ -2542,7 +2542,7 @@ Please inspect first the number of running jobs with GPU resource requests:</p>
 
 <p>This indicates that there are two free GPUs on med0304.</p>
 <p>Second, inspect the node states:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ sinfo -n med030<span class="o">[</span><span class="m">1</span>-4<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$ sinfo -n med030<span class="o">[</span><span class="m">1</span>-4<span class="o">]</span>
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
 debug*       up    <span class="m">8</span>:00:00      <span class="m">0</span>    n/a  
 medium       up <span class="m">7</span>-00:00:00      <span class="m">0</span>    n/a  
@@ -2557,7 +2557,7 @@ mpi          up <span class="m">14</span>-00:00:0      <span class="m">0</span> 
 <p>This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
 med0304 is shown to be in "draining state".
 Let's look what's going on there.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ scontrol show node med0304
+<div class="highlight"><pre><span></span><code>res-login-1:~$ scontrol show node med0304
 <span class="nv">NodeName</span><span class="o">=</span>med0304 <span class="nv">Arch</span><span class="o">=</span>x86_64 <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">16</span> 
    <span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">2</span> <span class="nv">CPUTot</span><span class="o">=</span><span class="m">64</span> <span class="nv">CPULoad</span><span class="o">=</span><span class="m">1</span>.44
    <span class="nv">AvailableFeatures</span><span class="o">=</span>skylake
@@ -2581,7 +2581,7 @@ Let's look what's going on there.</p>
 The "Reason" gives that it has been scheduled for power-off for maintenance of the power supply unit.</p>
 <h2 id="my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect<a class="headerlink" href="#my-jobs-dont-run-in-the-partition-i-expect" title="Permanent link">&para;</a></h2>
 <p>You can see the partition that your job runs in with <code>squeue -j JOBID</code>:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ squeue -j <span class="m">877092</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -j <span class="m">877092</span>
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
             <span class="m">877092</span>    medium snakejob holtgrem  R       <span class="m">0</span>:05      <span class="m">1</span> med0626
 </code></pre></div>
@@ -2597,7 +2597,14 @@ Also see the <a href="../overview/for-the-impatient">For the Impatient</a> secti
 <p>For performance and stability reasons.
 Network volumes are notorious for degrading performance, depending on the used protocol, even stability.</p>
 <h2 id="how-can-i-then-access-the-files-from-my-workstationserver">How can I then access the files from my workstation/server?<a class="headerlink" href="#how-can-i-then-access-the-files-from-my-workstationserver" title="Permanent link">&para;</a></h2>
-<p>You can transfer files to the cluster through Rsync over SSH or through SFTP to the <code>med-transfer1</code> or <code>med-transfer2</code> node.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
+<p>You can transfer files to the cluster through Rsync over SSH or through SFTP to the <code>transfer-1</code> or <code>transfer-2</code> node.</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
+<p>We are currently working on a solution to this.
+Please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> in case of any questions.</p>
+</div>
+</div>
 <p><strong>Do not transfer files through the login nodes.</strong>
 Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.</p>
 <h2 id="how-can-i-circumvent-invalid-instruction-signal-4-errors">How can I circumvent "invalid instruction" (signal 4) errors?<a class="headerlink" href="#how-can-i-circumvent-invalid-instruction-signal-4-errors" title="Permanent link">&para;</a></h2>
@@ -2650,7 +2657,7 @@ This is done by specifying a format string and using the <code>%b</code> field.<
 <p>Do <strong>not</strong> perform any computation outside of the scheduler as (1) this breaks the purpose of the scheduling system and (2) administration is not aware and might kill you jobs.</p>
 </div>
 <p>The answer is simple, just SSH into this node.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ ssh med0XXX
+<div class="highlight"><pre><span></span><code>res-login-1:~$ ssh med0XXX
 </code></pre></div>
 
 <h2 id="snakemake-drmaa-doesnt-accept-my-slurm-parameters">Snakemake DRMAA doesn't accept my Slurm parameters!?<a class="headerlink" href="#snakemake-drmaa-doesnt-accept-my-slurm-parameters" title="Permanent link">&para;</a></h2>
@@ -2682,16 +2689,16 @@ When you login to the login nodes, the quotas and current usage is displayed to 
 You have to add the <code>-a</code> parameter to also show files and directory starting with a dot.
 Often, users are confused if these dot directories take up all of their <code>home</code> quota.</p>
 <p>Use the following command to list <strong>all</strong> files and directories in your home:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ ls -la ~/
+<div class="highlight"><pre><span></span><code>res-login-1:~$ ls -la ~/
 </code></pre></div>
 
 <p>You can use the following command to see how space each item takes up, including the hidden directories</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ du -shc ~/.* ~/* --exclude<span class="o">=</span>.. --exclude<span class="o">=</span>.
+<div class="highlight"><pre><span></span><code>res-login-1:~$ du -shc ~/.* ~/* --exclude<span class="o">=</span>.. --exclude<span class="o">=</span>.
 </code></pre></div>
 
 <p>In the case that, e.g., the <code>.cpan</code> directory is large, you can move it to <code>work</code> and create a symlink in its original place.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ mv ~/.cpan ~/work/.cpan
-med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
+<div class="highlight"><pre><span></span><code>res-login-1:~$ mv ~/.cpan ~/work/.cpan
+res-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
 </code></pre></div>
 
 <h2 id="environment-modules-dont-work-and-i-get-module-command-not-found">Environment modules don't work and I get "module: command not found"<a class="headerlink" href="#environment-modules-dont-work-and-i-get-module-command-not-found" title="Permanent link">&para;</a></h2>
@@ -2702,7 +2709,7 @@ In the case that the problem persists, please contact <a href="&#109;&#97;&#105;
 <p>All users get their home directory setup using a skelleton files.
 These file names start with a dot <code>.</code> and are hidden when you type <code>ls</code>, you have to type <code>ls -a</code> to see them.
 You can find the current skelleton in <code>/etc/skel.bih</code> and inspect the content of the Bash related files as follows:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ head /etc/skel.bih/.bash*
+<div class="highlight"><pre><span></span><code>res-login-1:~$ head /etc/skel.bih/.bash*
 <span class="o">==</span>&gt; /etc/skel.bih/.bash_logout &lt;<span class="o">==</span>
 <span class="c1"># ~/.bash_logout</span>
 
@@ -2732,7 +2739,7 @@ You can find the current skelleton in <code>/etc/skel.bih</code> and inspect the
 
 <p>There actually are a couple of more files by default.
 The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ tree -a /etc/skel.bih/
+<div class="highlight"><pre><span></span><code>res-login-1:~$ tree -a /etc/skel.bih/
 /etc/skel.bih/
 ├── .bash_logout
 ├── .bash_profile
@@ -2747,7 +2754,7 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 <p>Yes, please also refer to these guides on possible approaches to find the problem.</p>
 <h2 id="which-cuda-version-is-installed">Which CUDA version is installed?<a class="headerlink" href="#which-cuda-version-is-installed" title="Permanent link">&para;</a></h2>
 <p>For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ ssh med0301
+<div class="highlight"><pre><span></span><code>res-login-1:~$ ssh med0301
 med0301:~$ yum list installed <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep cuda.x86_64
 cuda.x86_64                               <span class="m">10</span>.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.el7          @local-cuda
@@ -2764,12 +2771,12 @@ The BIH HPC is located in the BIH network.</p>
 <p>In general, connections can only be initiated from the MDC network to the BIH network.
 The reverse does not work.
 In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
-E.g., use <code>rsync -avP some/path user_m@med-transfer1.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_m@med-transfer1.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+E.g., use <code>rsync -avP some/path user_m@transfer-1.research.hpc.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_m@transfer-1.research.hpc.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
 <h2 id="how-can-i-copy-data-between-the-charite-network-and-bih-hpc">How can I copy data between the Charite Network and BIH HPC?<a class="headerlink" href="#how-can-i-copy-data-between-the-charite-network-and-bih-hpc" title="Permanent link">&para;</a></h2>
 <p>In general, connections can only be initiated from the Charite network to the BIH network.
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
-E.g., use <code>rsync -avP some/path user_c@med-transfer1.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@med-transfer1.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+E.g., use <code>rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
                 
                   
                     

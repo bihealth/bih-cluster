@@ -2084,8 +2084,8 @@ We will notify you when the HPC 4 Clinic cluster becomes stable.
 <div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <p>The cluster consists of the following major components:</p>
 <ul>
-<li>2 login nodes for users <code>med-login1</code> and <code>med-login2</code> (for interactive sessions only),</li>
-<li>2 nodes for file transfers <code>med-transfer1</code> and <code>med-transfer2</code>,</li>
+<li>2 login nodes for users <code>transfer-1</code> and <code>transfer-2</code> (for interactive sessions only),</li>
+<li>2 nodes for file transfers <code>transfer-1</code> and <code>transfer-2</code>,</li>
 <li>a scheduling system using Slurm,</li>
 <li>approximately 200 general purpose compute nodes <code>med01XX</code>, <code>med02XX</code>, <code>med05XX</code>, <code>med06XX</code>, <code>med07XX</code>.</li>
 <li>a few high memory nodes <code>med040[1-4]</code>,</li>
@@ -2198,7 +2198,7 @@ However, for creating locks special Unix files such as sockets or fifos, <code>/
 <div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content"></div>
 </div>
 <ul>
-<li>From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes <code>med-login{1,2}.bihealth.org</code>.<ul>
+<li>From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes <code>login-{1,2}.research.hpc.bihealth.org</code>.<ul>
 <li>For Charite users, your name is <code>${USER}_c</code>, for MDC users, your account is <code>${USER}_m</code> where <code>$USER</code> is the login name of your primary location.</li>
 </ul>
 </li>
@@ -2223,7 +2223,7 @@ However, for creating locks special Unix files such as sockets or fifos, <code>/
 </ul>
 <h3 id="connecting-to-compute-node-through-login-node">Connecting to Compute Node through Login Node<a class="headerlink" href="#connecting-to-compute-node-through-login-node" title="Permanent link">&para;</a></h3>
 <p>After logging into the cluster, you are on the login node <code>&lt;cluster&gt;-login&lt;X&gt;</code> (<code>&lt;cluster&gt;</code> is either <code>res</code> for HPC 4 Research and <code>cln</code> for HPC 4 Clinic; <code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code>).
-When transferring files, use the <code>med-transfer1</code> or <code>med-transfer2</code> nodes (HPC 4 Research only).
+When transferring files, use the <code>transfer-1</code> or <code>transfer-2</code> nodes (HPC 4 Research only).
 You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
 Typically, you'll create an interactive session on a compute node using the <code>srun</code> command.</p>
 <h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">&para;</a></h3>

@@ -2052,7 +2052,7 @@ However, otherwise you will have to install them on their own.</p>
 <p>This is best done in your <code>scratch</code> directory as we don't have to keep these files around for long.
 Note that the files in your <code>scratch</code> directory will automatically be removed after 4 weeks.
 You can also use your <code>work</code> directory here.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty bash -i
 med0127:~$ mkdir <span class="nv">$HOME</span>/scratch/gromacs-install
 med0127:~$ <span class="nb">cd</span> <span class="nv">$HOME</span>/scratch/gromacs-install
 med0127:~$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
@@ -2219,7 +2219,7 @@ gcc/7.2.0-0     matlab/r2016b-0 openmpi/4.0.3-0
 Note that <code>module</code> is not available on the login or transfer nodes, the following should work fine:</p>
 <div class="highlight"><pre><span></span><code>med0127:~$ cat &gt;&gt;~/.bashrc &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span> in
-  med-login*<span class="p">|</span>med-transfer*<span class="o">)</span>
+  login-*<span class="p">|</span>transfer-*<span class="o">)</span>
     <span class="p">;;</span>
   *<span class="o">)</span>
     module use <span class="nv">$HOME</span>/local/modules

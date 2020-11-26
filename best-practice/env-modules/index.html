@@ -2063,7 +2063,7 @@ You should not run any computations there, so why would you need environment mod
 Just putting the appropriate <code>module load</code> lines in your <code>~/.bashrc</code> will generate warnings when logging into the login node.
 It is thus recommended to use the following snippet for loading modules automatically on logging into a compute node:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span> in
-    med-login*<span class="o">)</span>
+    login-*<span class="o">)</span>
         <span class="p">;;</span>
     *<span class="o">)</span>
         <span class="c1"># load Python3 environment module</span>

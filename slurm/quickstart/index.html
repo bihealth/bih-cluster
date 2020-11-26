@@ -1846,25 +1846,25 @@
                 
                 <h1 id="slurm-quickstart">Slurm Quickstart<a class="headerlink" href="#slurm-quickstart" title="Permanent link">&para;</a></h1>
 <p><strong>Create an interactive bash session</strong> (<code>srun</code> will run bash in real-time, <code>--pty</code> connects its <code>stdout</code> and <code>stderr</code> to your current session).</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty bash -i
 med0740:~$ <span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span>
 Hello World
 med0740:~$ <span class="nb">exit</span>
-med-login1:~$
+res-login-1:~$
 </code></pre></div>
 
 <p>Note you probably want to <strong>longer running time for your interactive jobs</strong>.
 This way, your jobs can run for up to 28 days.
 This will make your job be routed automatically into the <code>long</code> partition as it is the only one that can fit your job.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty --time <span class="m">28</span>-00 bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty --time <span class="m">28</span>-00 bash -i
 med0740:~$
 </code></pre></div>
 
 <p><strong>Pro-Tip:</strong> Using Bash aliases for quick access.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ alias slogin=&quot;srun --pty bash -i&quot;
-med-login1:~$ slogin
+<div class="highlight"><pre><span></span><code>res-login-1:~$ alias slogin=&quot;srun --pty bash -i&quot;
+res-login-1:~$ slogin
 med0740:~$ exit
-med-login1:~$ cat &gt;&gt;~/.bashrc &lt;&lt;&quot;EOF&quot;
+res-login-1:~$ cat &gt;&gt;~/.bashrc &lt;&lt;&quot;EOF&quot;
 # Useful aliases for logging in via Slurm
 alias slogin=&quot;srun --pty bash -i&quot;
 alias slogin-x11=&quot;srun --pty --x11 bash -i&quot;
@@ -1872,8 +1872,8 @@ EOF
 </code></pre></div>
 
 <p><strong>Create an interactive R session on the cluster</strong> (assuming conda is active and the environment <code>my-r</code> is created, e.g., with <code>conda create -n my-r r</code>).</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ conda activate my-r
-med-login1:~$ srun --pty R
+<div class="highlight"><pre><span></span><code>res-login-1:~$ conda activate my-r
+res-login-1:~$ srun --pty R
 R version <span class="m">3</span>.6.2 <span class="o">(</span><span class="m">2019</span>-12-12<span class="o">)</span> -- <span class="s2">&quot;Dark and Stormy Night&quot;</span>
 Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2019</span> The R Foundation <span class="k">for</span> Statistical Computing
 <span class="o">[</span>...<span class="o">]</span>
@@ -1887,12 +1887,12 @@ Type <span class="s1">&#39;q()&#39;</span> to quit R.
 <span class="s2">&quot;med0740&quot;</span>
 &gt; q<span class="o">()</span>
 Save workspace image? <span class="o">[</span>y/n/c<span class="o">]</span>:
-med-login1:~$
+res-login-1:~$
 </code></pre></div>
 
 <p><strong>Create an interactive iPython session</strong> on the cluster (assuming conda is active and the environment <code>my-python</code> is created, e.g., with <code>conda create -n my-python python=3 ipython</code>).</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ conda activate my-python
-med-login1:~$ srun --pty ipython
+<div class="highlight"><pre><span></span><code>res-login-1:~$ conda activate my-python
+res-login-1:~$ srun --pty ipython
 Python <span class="m">3</span>.8.2 <span class="p">|</span> packaged by conda-forge <span class="p">|</span> <span class="o">(</span>default, Mar  <span class="m">5</span> <span class="m">2020</span>, <span class="m">17</span>:11:00<span class="o">)</span>
 Type <span class="s1">&#39;copyright&#39;</span>, <span class="s1">&#39;credits&#39;</span> or <span class="s1">&#39;license&#39;</span> <span class="k">for</span> more information
 IPython <span class="m">7</span>.13.0 -- An enhanced Interactive Python. Type <span class="s1">&#39;?&#39;</span> <span class="k">for</span> help.
@@ -1901,28 +1901,28 @@ In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: imp
 Out<span class="o">[</span><span class="m">1</span><span class="o">]</span>: <span class="s1">&#39;med0740&#39;</span>
 
 In <span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="nb">exit</span>
-med-login1:~$
+res-login-1:~$
 </code></pre></div>
 
 <p><strong>Allocate 4 cores (default is 1 core), and a total of 4GB of RAM on one node</strong> (alternatively use <code>--mem-per-cpu</code> to set RAM per CPU); <code>sbatch</code> accepts the same argument.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --cpus-per-task<span class="o">=</span><span class="m">4</span> --nodes<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>4G --pty bash
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --cpus-per-task<span class="o">=</span><span class="m">4</span> --nodes<span class="o">=</span><span class="m">1</span> --mem<span class="o">=</span>4G --pty bash
 med0740:~$ <span class="nb">export</span> <span class="p">|</span> grep SLURM_CPUS_ON_NODE
 <span class="m">4</span>
 med0740:~$ your-parallel-script --threads <span class="m">4</span>
 </code></pre></div>
 
 <p><strong>Submit an R script to the cluster in batch mode</strong> (<code>sbatch</code> schedules the job for later execution).</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ cat &gt;job-script.sh &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$ cat &gt;job-script.sh &lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="c1">#!/bin/bash</span>
 <span class="nb">echo</span> <span class="s2">&quot;Hello, I&#39;m running on </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> and it&#39;s </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
 EOF
-med-login1:~$ sbatch job-script.sh
+res-login-1:~$ sbatch job-script.sh
 Submitted batch job <span class="m">7</span>
 
 <span class="c1"># Some time later:</span>
-med-login1:~$ cat slurm-7.out
+res-login-1:~$ cat slurm-7.out
 Hello, I<span class="s1">&#39;m running on med0740 and it&#39;</span>s Fri Mar  <span class="m">6</span> <span class="m">07</span>:36:42 CET <span class="m">2020</span>
-med-login1:~$
+res-login-1:~$
 </code></pre></div>
                 
                   

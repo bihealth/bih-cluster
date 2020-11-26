@@ -1973,7 +1973,7 @@ Some remarks here:</p>
 <li><code>%#&lt;char&gt;</code> displays the value represented by <code>&lt;char&gt;</code> padded with spaces to the max length of the value represented by <code>&lt;char&gt;</code> (this is a "virtual" value, used internally only, you cannot use this and you will have to place an integer here).</li>
 </ul>
 <p>For example, to create a grouped display with reasons for being down use:</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ sinfo -o <span class="s2">&quot;%10P %.5a %.10l %.16F  %40N %E&quot;</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$ sinfo -o <span class="s2">&quot;%10P %.5a %.10l %.16F  %40N %E&quot;</span>
 PARTITION  AVAIL  TIMELIMIT   NODES<span class="o">(</span>A/I/O/T<span class="o">)</span>  NODELIST                                 REASON
 debug*        up    <span class="m">8</span>:00:00        <span class="m">0</span>/0/16/16  med<span class="o">[</span><span class="m">0703</span>-0710,0740-0742,0744-0745,0749,0 bogus node
 debug*        up    <span class="m">8</span>:00:00      <span class="m">18</span>/98/0/116  med<span class="o">[</span><span class="m">0104</span>-0124,0127,0133-0148,0151-0164,0 none
@@ -1989,7 +1989,7 @@ gpu           up <span class="m">14</span>-00:00:0          <span class="m">3</s
 
 <h2 id="tuning-squeue-output">Tuning <code>squeue</code> Output<a class="headerlink" href="#tuning-squeue-output" title="Permanent link">&para;</a></h2>
 <p>The standard squeue output might yield the following</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ squeue <span class="p">|</span> head
+<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue <span class="p">|</span> head
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
               <span class="m">3149</span>    medium variant_ holtgrem PD       <span class="m">0</span>:00      <span class="m">1</span> <span class="o">(</span>Dependency<span class="o">)</span>
               <span class="m">1177</span>    medium     bash jweiner_  R <span class="m">6</span>-03:32:41      <span class="m">1</span> med0127
@@ -2010,7 +2010,7 @@ gpu           up <span class="m">14</span>-00:00:0          <span class="m">3</s
 
 <p>This looks a bit wasteful.
 Let's cut down on the padding of the job ID and expand on the job name and remove some right paddings.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ squeue -o <span class="s2">&quot;%.6i %9P %30j %.10u %.2t %.10M %.6D %R %b&quot;</span> <span class="p">|</span> head
+<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -o <span class="s2">&quot;%.6i %9P %30j %.10u %.2t %.10M %.6D %R %b&quot;</span> <span class="p">|</span> head
  JOBID PARTITION NAME                                 USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
   <span class="m">3149</span> medium    variant_calling                holtgrem_c PD       <span class="m">0</span>:00      <span class="m">1</span> <span class="o">(</span>Dependency<span class="o">)</span>
   <span class="m">1177</span> medium    bash                            jweiner_m  R <span class="m">6</span>-03:35:55      <span class="m">1</span> med0127
@@ -2025,7 +2025,7 @@ Let's cut down on the padding of the job ID and expand on the job name and remov
 
 <h3 id="displaying-resources">Displaying Resources<a class="headerlink" href="#displaying-resources" title="Permanent link">&para;</a></h3>
 <p>Now display how many of our internal projects still exist.</p>
-<div class="highlight"><pre><span></span><code>med-login1:~$ squeue -o <span class="s2">&quot;%.6i %9P %30j %.10u %.2t %.10M %.6D %10R %s&quot;</span> <span class="p">|</span> head
+<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -o <span class="s2">&quot;%.6i %9P %30j %.10u %.2t %.10M %.6D %10R %s&quot;</span> <span class="p">|</span> head
 </code></pre></div>
 
 <p>The next steps are (TODO):</p>

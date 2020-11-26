@@ -1967,7 +1967,7 @@ See <a href="#system-near-software-provided-by-hpc-administration">System-near S
 <h2 id="premise">Premise<a class="headerlink" href="#premise" title="Permanent link">&para;</a></h2>
 <p>When you logged into the cluster, please make sure that you also executed <code>srun</code> to log into a computation node and perform the software installation there.</p>
 <h2 id="installing-conda">Installing conda<a class="headerlink" href="#installing-conda" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>med-login1:~$ srun --pty bash -i
+<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty bash -i
 med0127:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0127:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p <span class="nv">$HOME</span>/work/miniconda
 </code></pre></div>
@@ -1979,7 +1979,7 @@ Please note that the <code>$HOME</code> folder has limited space (an exception i
 <p>To make it available upon login, extend and export the <code>$PATH</code> variable with the
 installation path + <code>/bin</code> and add it to your <code>$HOME/.bashrc</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">case</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURMD_NODENAME</span><span class="p">-</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}}</span><span class="s2">&quot;</span> in
-    med-login*<span class="o">)</span>
+    login-*<span class="o">)</span>
         <span class="p">;;</span>
     *<span class="o">)</span>
         <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/work/miniconda/condabin:<span class="nv">$PATH</span>

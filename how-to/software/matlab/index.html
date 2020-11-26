@@ -2033,11 +2033,11 @@ To display the available licenses:</p>
 </code></pre></div>
 
 <h2 id="running-matlab-ui">Running MATLAB UI<a class="headerlink" href="#running-matlab-ui" title="Permanent link">&para;</a></h2>
-<p>For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., <code>ssh -X med-login1</code> from the Linux command line).
+<p>For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., <code>ssh -X login-1.research.hpc.bihealth.org</code> from the Linux command line).
 Then, make sure to use <code>srun -L matlab_r2016b:1 --pty --x11</code> for connecting to a node with X11 forwarding enabled.</p>
-<div class="highlight"><pre><span></span><code>client:~$ ssh -X med-login1
+<div class="highlight"><pre><span></span><code>client:~$ ssh -X login-1.research.hpc.bihealth.org
 <span class="o">[</span>...<span class="o">]</span>
-med-login1:~ $ srun -L matlab_r2016b:1 --pty --x11
+res-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11
 <span class="o">[</span>...<span class="o">]</span>
 med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
@@ -2059,9 +2059,9 @@ LicenseName=matlab_r2016b
 <h2 id="a-working-example">A Working Example<a class="headerlink" href="#a-working-example" title="Permanent link">&para;</a></h2>
 <p>Get a checkout of our MATLAB example.
 Then, look around at the contents of this repository.</p>
-<div class="highlight"><pre><span></span><code><span class="gp">med-login1:~$</span> git clone https://github.com/bihealth/bih-cluster-matlab-example.git
-<span class="gp">med-login1:~$</span> <span class="nb">cd</span> bih-cluster-matlab-example
-<span class="gp">med-login1:~$</span> cat job_script.sh
+<div class="highlight"><pre><span></span><code><span class="gp">res-login-1:~$</span> git clone https://github.com/bihealth/bih-cluster-matlab-example.git
+<span class="gp">res-login-1:~$</span> <span class="nb">cd</span> bih-cluster-matlab-example
+<span class="gp">res-login-1:~$</span> cat job_script.sh
 <span class="gp">#</span>!/bin/bash
 
 <span class="gp">#</span> Logging goes to directory sge_log
@@ -2093,7 +2093,7 @@ Then, look around at the contents of this repository.</p>
 </code></pre></div>
 
 <p>For submitting the script, you can do the following</p>
-<div class="highlight"><pre><span></span><code><span class="gp">med-login1:~$</span> sbatch job_script.sh
+<div class="highlight"><pre><span></span><code><span class="gp">res-login-1:~$</span> sbatch job_script.sh
 </code></pre></div>
 
 <p>This will submit a job with one Matlab license requested.
