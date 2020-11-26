@@ -19,27 +19,11 @@ This page documents the current and known upcoming maintenance windows.
     - The `/fast` file system will be re-mounted to `/data/gpfs-1`.
     - `/fast` becomes a symbolic link to `/data` on all of the cluster.
     - **GPFS access will disappear for some time.
-
-# Pending Changes
-
-## Login Node Migration
-
-- The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-- Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
-- The aim is to improve stability and make everything easier to manage by administration.
-
-**Schedule**
-
-- `May 15, 2020:` Availability of the head nodes for testing.
-- `September 31, 2020:` (planned) New login nodes are the preferred connection method.
-- `Maybe 2021?` Old login nodes are switched off.
-
-## Transfer Node Migration (in planning)
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
+- Login Node Migration
+    - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
+    - Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
+    - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
+    - The aim is to improve stability and make everything easier to manage by administration.
 
 ## CentOS 8 Migration (in planning)
 
