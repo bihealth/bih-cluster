@@ -87,13 +87,13 @@ Wavelet Toolbox                                       Version 4.17        (R2016
 
 ## Running MATLAB UI
 
-For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., `ssh -X med-login1` from the Linux command line).
+For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., `ssh -X login-1.research.hpc.bihealth.org` from the Linux command line).
 Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11` for connecting to a node with X11 forwarding enabled.
 
 ```bash
-client:~$ ssh -X med-login1
+client:~$ ssh -X login-1.research.hpc.bihealth.org
 [...]
-med-login1:~ $ srun -L matlab_r2016b:1 --pty --x11
+res-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11
 [...]
 med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
@@ -123,9 +123,9 @@ Get a checkout of our MATLAB example.
 Then, look around at the contents of this repository.
 
 ```console
-med-login1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
-med-login1:~$ cd bih-cluster-matlab-example
-med-login1:~$ cat job_script.sh
+res-login-1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
+res-login-1:~$ cd bih-cluster-matlab-example
+res-login-1:~$ cat job_script.sh
 #!/bin/bash
 
 # Logging goes to directory sge_log
@@ -159,7 +159,7 @@ exit
 For submitting the script, you can do the following
 
 ```console
-med-login1:~$ sbatch job_script.sh
+res-login-1:~$ sbatch job_script.sh
 ```
 
 This will submit a job with one Matlab license requested.

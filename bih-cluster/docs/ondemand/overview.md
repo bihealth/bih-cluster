@@ -80,8 +80,8 @@ To prevent this, move the `~/ondemand` folder to the `~/work` folder and create
 a symlink for the now dislocated `~/ondemand` folder:
 
 ```
-med-login1:~$ mv ~/ondemand ~/work/ondemand
-med-login1:~$ ln -sr ~/work/ondemand ~/ondemand
+res-login-1:~$ mv ~/ondemand ~/work/ondemand
+res-login-1:~$ ln -sr ~/work/ondemand ~/ondemand
 ```
 
 ## Portal Dashboard

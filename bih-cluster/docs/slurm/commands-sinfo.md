@@ -5,7 +5,7 @@ The `sinfo` command allows you to query the current cluster status.
 !!! info "Representative Example"
 
     ```bash
-    med-login1:~$ sinfo
+    res-login-1:~$ sinfo
     PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
     [...]
     medium       up 7-00:00:00     10 drain* med[0101-0103,0125-0126,0128-0132]

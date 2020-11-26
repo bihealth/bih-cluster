@@ -5,8 +5,8 @@ Terminate a running Slurm job.
 !!! info "Representative Example"
 
     ```bash
-    med-login1:~$ scancel 1703828
-    med-login1:~$
+    res-login-1:~$ scancel 1703828
+    res-login-1:~$
     ```
 
 This command allows to terminate one or more running jobs (of course, non-superusers can only terminate their own jobs).

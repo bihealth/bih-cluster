@@ -44,7 +44,7 @@ Some remarks here:
 For example, to create a grouped display with reasons for being down use:
 
 ```bash
-med-login1:~$ sinfo -o "%10P %.5a %.10l %.16F  %40N %E"
+res-login-1:~$ sinfo -o "%10P %.5a %.10l %.16F  %40N %E"
 PARTITION  AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST                                 REASON
 debug*        up    8:00:00        0/0/16/16  med[0703-0710,0740-0742,0744-0745,0749,0 bogus node
 debug*        up    8:00:00      18/98/0/116  med[0104-0124,0127,0133-0148,0151-0164,0 none
@@ -63,7 +63,7 @@ gpu           up 14-00:00:0          3/1/0/4  med[0301-0304]                    
 The standard squeue output might yield the following
 
 ```bash
-med-login1:~$ squeue | head
+res-login-1:~$ squeue | head
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
               3149    medium variant_ holtgrem PD       0:00      1 (Dependency)
               1177    medium     bash jweiner_  R 6-03:32:41      1 med0127
@@ -88,7 +88,7 @@ This looks a bit wasteful.
 Let's cut down on the padding of the job ID and expand on the job name and remove some right paddings.
 
 ```bash
-med-login1:~$ squeue -o "%.6i %9P %30j %.10u %.2t %.10M %.6D %R %b" | head
+res-login-1:~$ squeue -o "%.6i %9P %30j %.10u %.2t %.10M %.6D %R %b" | head
  JOBID PARTITION NAME                                 USER ST       TIME  NODES NODELIST(REASON)
   3149 medium    variant_calling                holtgrem_c PD       0:00      1 (Dependency)
   1177 medium    bash                            jweiner_m  R 6-03:35:55      1 med0127
@@ -106,7 +106,7 @@ med-login1:~$ squeue -o "%.6i %9P %30j %.10u %.2t %.10M %.6D %R %b" | head
 Now display how many of our internal projects still exist.
 
 ```bash
-med-login1:~$ squeue -o "%.6i %9P %30j %.10u %.2t %.10M %.6D %10R %s" | head
+res-login-1:~$ squeue -o "%.6i %9P %30j %.10u %.2t %.10M %.6D %10R %s" | head
 ```
 
 The next steps are (TODO):

@@ -89,7 +89,7 @@ It is thus recommended to use the following snippet for loading modules automati
 
 ```bash
 case "${HOSTNAME}" in
-    med-login*)
+    login-*)
         ;;
     *)
         # load Python3 environment module

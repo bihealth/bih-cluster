@@ -50,7 +50,7 @@ The BIH HPC system provides the following head nodes:
 
 - `login-1` and `login-2` that accept SSH connections and are meant for **low intensity**, interactive work such as editing files, running screen/tmux sessions, and logging into the compute nodes.
   Users should run **no computational tasks** and **no large-scale data transfer** on these nodes.
-- `med-transfer1` and `med-transfer2` also accept SSH connections.
+- `transfer-1` and `transfer-2` also accept SSH connections.
   Users should **run all large-scale data transfer through these nodes.**
 
 ## Common Use Case
@@ -58,14 +58,14 @@ The BIH HPC system provides the following head nodes:
 After registration and client configurations, users with typically connect to the HPC system through the login nodes:
 
 ```bash
-local:~$ ssh -l jdoe_c med-login1.bihealth.org
-med-login1:~$
+local:~$ ssh -l jdoe_c login-1.research.hpc.bihealth.org
+res-login-1:~$
 ```
 
 Subsequently, they might submit batch jobs to the cluster for execution through the Slurm scheduling system or open interactive sessions:
 
 ```bash
-med-login1:~$ sbatch job_script.sh
-med-login1:~$ srun --pty bash -i
+res-login-1:~$ sbatch job_script.sh
+res-login-1:~$ srun --pty bash -i
 med0104:~$
 ```

@@ -36,7 +36,7 @@ We will setup a miniconda installation with `pytorch` testing the GPU.
 If you already have this setup then you can skip this step
 
 ```bash
-med-login1:~$ srun --pty bash
+res-login-1:~$ srun --pty bash
 med0703:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0703:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/miniconda3
 med0703:~$ source ~/miniconda3/bin/activate
@@ -45,7 +45,7 @@ med0703:~$ conda activate gpu-test
 med0703:~$ python -c 'import torch; print(torch.cuda.is_available())'
 False
 med0703:~$ exit
-med-login1:~$
+res-login-1:~$
 ```
 
 The `False` shows that CUDA is not available on the node but that is to be expected.
@@ -58,12 +58,12 @@ The Slurm schedule will properly allocate GPUs for you and setup the environment
 The following dry run shows these environment variables (and that they are not available on the login node).
 
 ```bash
-med-login1:~$ export | grep CUDA_VISIBLE_DEVICES
-med-login1:~$ srun --gres=gpu:tesla:1 --pty bash
+res-login-1:~$ export | grep CUDA_VISIBLE_DEVICES
+res-login-1:~$ srun --gres=gpu:tesla:1 --pty bash
 med0303:~$ export | grep CUDA_VISIBLE_DEVICES
 declare -x CUDA_VISIBLE_DEVICES="0"
 med0303:~$ exit
-med-login1:~$ srun --gres=gpu:tesla:2 --pty bash
+res-login-1:~$ srun --gres=gpu:tesla:2 --pty bash
 med0303:~$ export | grep CUDA_VISIBLE_DEVICES
 declare -x CUDA_VISIBLE_DEVICES="0,1"
 ```
@@ -75,7 +75,7 @@ Note that any two jobs are isolated using Linux cgroups ("container" technology 
 Now to the somewhat boring part where we show that CUDA actually works.
 
 ```bash
-med-login1:~$ srun --gres=gpu:tesla:1 --pty bash
+res-login-1:~$ srun --gres=gpu:tesla:1 --pty bash
 med0301:~$ nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
@@ -92,7 +92,7 @@ True
 Use `squeue` to find out about currently queued jobs (the `egrep` only keeps the header and entries in the `gpu` partition).
 
 ```bash
-med-login1:~$ squeue | egrep -iw 'JOBID|gpu'
+res-login-1:~$ squeue | egrep -iw 'JOBID|gpu'
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                 33       gpu     bash holtgrem  R       2:26      1 med0301
 ```
@@ -102,7 +102,7 @@ med-login1:~$ squeue | egrep -iw 'JOBID|gpu'
 To find out how active the GPU nodes actually are, you can connect to the nodes (without allocating a GPU you can do this even if the node is full) and then use `nvidia-smi`.
 
 ```bash
-med-login1:~$ ssh med0301 bash
+res-login-1:~$ ssh med0301 bash
 med0301:~$ nvidia-smi
 Fri Mar  6 11:10:08 2020
 +-----------------------------------------------------------------------------+

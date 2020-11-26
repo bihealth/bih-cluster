@@ -16,7 +16,7 @@ jailnode (only for users with active MDC account).
 ## I can connect, but it seems that my account has no access yet
 
 ```
-You're logging into BIH HPC cluster! (med-login1)
+You're logging into BIH HPC cluster! (login-1)
 
  ***Your account has not been granted cluster access yet.***
 
@@ -25,7 +25,7 @@ You're logging into BIH HPC cluster! (med-login1)
 
  For applying for cluster access, contact hpc-gatekeeper@bihealth.de.
 
-user@med-login1's password:
+user@login-1's password:
 ```
 
 !!! hint
@@ -40,7 +40,7 @@ did.
 ## I'm getting a passPHRASE prompt
 
 ```
-You're logging into BIH HPC cluster! (med-login1)
+You're logging into BIH HPC cluster! (login-1)
 
  *** It looks like your account has access. ***
 
@@ -56,14 +56,14 @@ Read [SSH Basics](/misc/ssh-basics/) for further information of what is going on
 ## I can connect, but I get a passWORD prompt
 
 ```
-You're logging into BIH HPC cluster! (med-login1)
+You're logging into BIH HPC cluster! (login-1)
 
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
  then please contact hpc-helpdesk@bihealth.de for assistance.
 
-user@med-login1's password:
+user@login-1's password:
 ```
 
 !!! important "This is diffeerent from passPHRASE prompt"

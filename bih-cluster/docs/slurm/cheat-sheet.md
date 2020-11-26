@@ -14,7 +14,7 @@ $ man squeue
 **interactive sessions**
 
 ```bash
-med-login1:~$ srun --pty bash
+res-login-1:~$ srun --pty bash
 med0740:~$ echo "Hello World"
 med0740:~$ exit
 ```
@@ -22,9 +22,9 @@ med0740:~$ exit
 **batch submission**
 
 ```bash
-med-login1:~$ sbatch script.sh
+res-login-1:~$ sbatch script.sh
 Submitted batch job 2
-med-login1:~$ squeue
+res-login-1:~$ squeue
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                 27     debug script.s holtgrem  R       0:06      1 med0703
 ```

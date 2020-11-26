@@ -25,7 +25,7 @@ When you logged into the cluster, please make sure that you also executed `srun`
 ## Installing conda
 
 ```bash
-med-login1:~$ srun --pty bash -i
+res-login-1:~$ srun --pty bash -i
 med0127:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0127:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
 ```
@@ -41,7 +41,7 @@ installation path + `/bin` and add it to your `$HOME/.bashrc`:
 
 ```bash
 case "${SLURMD_NODENAME-${HOSTNAME}}" in
-    med-login*)
+    login-*)
         ;;
     *)
         export PATH=$HOME/work/miniconda/condabin:$PATH

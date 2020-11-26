@@ -202,7 +202,7 @@ There are only four GPU machines in the cluster (with four GPUs each, med0301 to
 Please inspect first the number of running jobs with GPU resource requests:
 
 ```bash
-med-login1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep med03 | sort -k7,7
+res-login-1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep med03 | sort -k7,7
    1902163 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
    1902167 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
    1902164 ONT-basecalling       R     1    2         8G          med0302   gpu:tesla:2
@@ -217,7 +217,7 @@ This indicates that there are two free GPUs on med0304.
 Second, inspect the node states:
 
 ```bash
-med-login1:~$ sinfo -n med030[1-4]
+res-login-1:~$ sinfo -n med030[1-4]
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
 debug*       up    8:00:00      0    n/a  
 medium       up 7-00:00:00      0    n/a  
@@ -234,7 +234,7 @@ med0304 is shown to be in "draining state".
 Let's look what's going on there.
 
 ```bash hl_lines="10 18"
-med-login1:~$ scontrol show node med0304
+res-login-1:~$ scontrol show node med0304
 NodeName=med0304 Arch=x86_64 CoresPerSocket=16 
    CPUAlloc=2 CPUTot=64 CPULoad=1.44
    AvailableFeatures=skylake
@@ -262,7 +262,7 @@ The "Reason" gives that it has been scheduled for power-off for maintenance of t
 You can see the partition that your job runs in with `squeue -j JOBID`:
 
 ```bash
-med-login1:~$ squeue -j 877092
+res-login-1:~$ squeue -j 877092
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
             877092    medium snakejob holtgrem  R       0:05      1 med0626
 ```
@@ -286,7 +286,14 @@ Network volumes are notorious for degrading performance, depending on the used p
 
 ## How can I then access the files from my workstation/server?
 
-You can transfer files to the cluster through Rsync over SSH or through SFTP to the `med-transfer1` or `med-transfer2` node.
+=== "HPC 4 Research"
+
+    You can transfer files to the cluster through Rsync over SSH or through SFTP to the `transfer-1` or `transfer-2` node.
+
+=== "HPC 4 Clinic"
+
+    We are currently working on a solution to this.
+    Please contact hpc-helpdesk@bihealth.de in case of any questions.
 
 **Do not transfer files through the login nodes.**
 Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.
@@ -352,7 +359,7 @@ This is sometimes useful, e.g., for monitoring the CPU/GPU usage of your job int
 The answer is simple, just SSH into this node.
 
 ```bash
-med-login1:~$ ssh med0XXX
+res-login-1:~$ ssh med0XXX
 ```
 
 ## Snakemake DRMAA doesn't accept my Slurm parameters!?
@@ -396,20 +403,20 @@ Often, users are confused if these dot directories take up all of their `home` q
 Use the following command to list **all** files and directories in your home:
 
 ```bash
-med-login1:~$ ls -la ~/
+res-login-1:~$ ls -la ~/
 ```
 
 You can use the following command to see how space each item takes up, including the hidden directories
 
 ```bash
-med-login1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
+res-login-1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
 ```
 
 In the case that, e.g., the `.cpan` directory is large, you can move it to `work` and create a symlink in its original place.
 
 ```bash
-med-login1:~$ mv ~/.cpan ~/work/.cpan
-med-login1:~$ ln -sr ~/work/.cpan ~/.cpan
+res-login-1:~$ mv ~/.cpan ~/work/.cpan
+res-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
 ```
 
 ## Environment modules don't work and I get "module: command not found"
@@ -425,7 +432,7 @@ These file names start with a dot `.` and are hidden when you type `ls`, you hav
 You can find the current skelleton in `/etc/skel.bih` and inspect the content of the Bash related files as follows:
 
 ```bash
-med-login1:~$ head /etc/skel.bih/.bash*
+res-login-1:~$ head /etc/skel.bih/.bash*
 ==> /etc/skel.bih/.bash_logout <==
 # ~/.bash_logout
 
@@ -457,7 +464,7 @@ There actually are a couple of more files by default.
 The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!
 
 ```bash
-med-login1:~$ tree -a /etc/skel.bih/
+res-login-1:~$ tree -a /etc/skel.bih/
 /etc/skel.bih/
 ├── .bash_logout
 ├── .bash_profile
@@ -479,7 +486,7 @@ Yes, please also refer to these guides on possible approaches to find the proble
 For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)
 
 ```bash
-med-login1:~$ ssh med0301
+res-login-1:~$ ssh med0301
 med0301:~$ yum list installed 2>/dev/null | grep cuda.x86_64
 cuda.x86_64                               10.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
@@ -501,11 +508,11 @@ The BIH HPC is located in the BIH network.
 In general, connections can only be initiated from the MDC network to the BIH network.
 The reverse does not work.
 In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
-E.g., use `rsync -avP some/path user_m@med-transfer1.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@med-transfer1.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+E.g., use `rsync -avP some/path user_m@transfer-1.research.hpc.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@transfer-1.research.hpc.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
 
 ## How can I copy data between the Charite Network and BIH HPC?
 
 In general, connections can only be initiated from the Charite network to the BIH network.
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
-E.g., use `rsync -avP some/path user_c@med-transfer1.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@med-transfer1.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+E.g., use `rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.

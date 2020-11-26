@@ -31,8 +31,8 @@ Administration provides a system with state of the art IT security, users are re
 
     The cluster consists of the following major components:
 
-    - 2 login nodes for users `med-login1` and `med-login2` (for interactive sessions only),
-    - 2 nodes for file transfers `med-transfer1` and `med-transfer2`,
+    - 2 login nodes for users `transfer-1` and `transfer-2` (for interactive sessions only),
+    - 2 nodes for file transfers `transfer-1` and `transfer-2`,
     - a scheduling system using Slurm,
     - approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
     - a few high memory nodes `med040[1-4]`,
@@ -154,7 +154,7 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
 
 === "HPC 4 Research"
 
-- From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `med-login{1,2}.bihealth.org`.
+- From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `login-{1,2}.research.hpc.bihealth.org`.
     - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
 - From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
     - Note that you have to use your MDC user name (without any suffix `_m`) for connecting to this host.
@@ -175,7 +175,7 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
 ### Connecting to Compute Node through Login Node
 
 After logging into the cluster, you are on the login node `<cluster>-login<X>` (`<cluster>` is either `res` for HPC 4 Research and `cln` for HPC 4 Clinic; `<X>` can be either `1` or `2`).
-When transferring files, use the `med-transfer1` or `med-transfer2` nodes (HPC 4 Research only).
+When transferring files, use the `transfer-1` or `transfer-2` nodes (HPC 4 Research only).
 You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
 Typically, you'll create an interactive session on a compute node using the `srun` command.
 

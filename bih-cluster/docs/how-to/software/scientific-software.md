@@ -38,7 +38,7 @@ Note that the files in your `scratch` directory will automatically be removed af
 You can also use your `work` directory here.
 
 ```bash
-med-login1:~$ srun --pty bash -i
+res-login-1:~$ srun --pty bash -i
 med0127:~$ mkdir $HOME/scratch/gromacs-install
 med0127:~$ cd $HOME/scratch/gromacs-install
 med0127:~$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
@@ -230,7 +230,7 @@ Note that `module` is not available on the login or transfer nodes, the followin
 ```bash
 med0127:~$ cat >>~/.bashrc <<"EOF"
 case "${HOSTNAME}" in
-  med-login*|med-transfer*)
+  login-*|transfer-*)
     ;;
   *)
     module use $HOME/local/modules

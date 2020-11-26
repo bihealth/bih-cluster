@@ -3,7 +3,7 @@
 You can find the current default content of newly created user homes in `/etc/skel.bih`:
 
 ```bash
-med-login1:~$ head /etc/skel.bih/.bash*
+res-login-1:~$ head /etc/skel.bih/.bash*
 ==> /etc/skel.bih/.bash_logout <==
 # ~/.bash_logout
 

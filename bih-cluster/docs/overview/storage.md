@@ -17,9 +17,8 @@ This document gives an overview of the nodes and volumes on the cluster.
 The following groups of nodes are available to cluster users.
 There are a number of nodes that are invisible to non-admin staff, hosting the queue master and monitoring tools and providing backup storage for key critical data, but these are not shown here.
 
-- `med-login1..3`
-    - available as `med-login{1,2,3}.bihealth.org`
-    - login nodes (IPs: `172.16.45.209`, `172.16.45.210`, `172.16.45.211`)
+- `login-1..2`
+    - available as `login-{1,2,3}.research.hpc.bihealth.org`
     - do not perform any computation on these nodes!
     - these nodes are not execution nodes
     - each process may at most use 1GB of RAM to increase stability of the node

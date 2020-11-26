@@ -15,7 +15,7 @@ Click on `SSH`.
 
 ![](figures/mobaxterm_connect2.png)
 
-In **Basic SSH settings**, enter a hostname (`med-loginX.bihealth.org`, where `X` is 1 or 2), check **Specify username** and enter your username in the textfield.
+In **Basic SSH settings**, enter a hostname (`login-X.research.hpc.bihealth.org`, where `X` is 1 or 2), check **Specify username** and enter your username in the textfield.
 Select the tab **Advanced SSH settings**, check **Use private key** and select your private SSH key file (possible choices described with the next to figures).
 
 ![](figures/mobaxterm_connect3.png)

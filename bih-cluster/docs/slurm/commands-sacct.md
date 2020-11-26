@@ -25,7 +25,7 @@ However, not all information is available to the accouting system, so `scontrol 
 Also see all important arguments of the [`sbatch`](commands-sbatch.md) command.
 
 - `--jobs`
-  -- The job(s) to query for.   
+  -- The job(s) to query for.
 - `--format`
   -- Define attributes to retrieve.
 - `--long`
