@@ -1999,7 +1999,7 @@ If you already have this setup then you can skip this step</p>
 med0703:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0703:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/miniconda3
 med0703:~$ <span class="nb">source</span> ~/miniconda3/bin/activate
-med0703:~$ conda create -y -n gpu-test <span class="nv">python</span><span class="o">=</span><span class="m">3</span> pytorch
+med0703:~$ conda create -y -n gpu-test pytorch <span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">10</span>.2 -c pytorch
 med0703:~$ conda activate gpu-test
 med0703:~$ python -c <span class="s1">&#39;import torch; print(torch.cuda.is_available())&#39;</span>
 False
@@ -2094,7 +2094,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
 <div class="md-source-date">
   <small>
     
-      Last update: November 26, 2020
+      Last update: December 1, 2020
     
   </small>
 </div>
