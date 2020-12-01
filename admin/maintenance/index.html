@@ -309,8 +309,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unification-of-mass-data-mounts" class="md-nav__link">
-    Unification of Mass Data Mounts
+  <a href="#finalize-unification-of-mass-data-mounts" class="md-nav__link">
+    Finalize unification of Mass Data Mounts
   </a>
   
 </li>
@@ -1922,8 +1922,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unification-of-mass-data-mounts" class="md-nav__link">
-    Unification of Mass Data Mounts
+  <a href="#finalize-unification-of-mass-data-mounts" class="md-nav__link">
+    Finalize unification of Mass Data Mounts
   </a>
   
 </li>
@@ -1969,7 +1969,7 @@
 <li>Re-Mounting of GPFS<ul>
 <li>The <code>/fast</code> file system will be re-mounted to <code>/data/gpfs-1</code>.</li>
 <li><code>/fast</code> becomes a symbolic link to <code>/data</code> on all of the cluster.</li>
-<li>**GPFS access will disappear for some time.</li>
+<li><strong>GPFS access will disappear for some time.</strong></li>
 </ul>
 </li>
 <li>Login &amp; Transfer Node Migration<ul>
@@ -1997,17 +1997,15 @@ No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twe
 <li>This will be done in a rolling fashion over the course of 1 month.</li>
 <li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
 </ul>
-<h2 id="unification-of-mass-data-mounts">Unification of Mass Data Mounts<a class="headerlink" href="#unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
+<h2 id="finalize-unification-of-mass-data-mounts">Finalize unification of Mass Data Mounts<a class="headerlink" href="#finalize-unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
 No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
 </div>
 <ul>
-<li>To harmonize the mount options with HPC 4 Clinic, the mount location of <code>/fast</code> must be changed to <code>/data/gpfs-1</code>.</li>
-<li>We will start by creating a symlink from <code>/data/gpfs-1</code> to <code>/fast</code>.</li>
-<li>To do this properly, a full reboot will be required.</li>
-<li>We will keep around a symlink from <code>/fast</code> to <code>/data/gpfs-1</code> for some time during a migration phase.</li>
+<li>We will remove the bind mount <code>/fast</code> that currently points to <code>/data/gpfs-1</code> on HPC 4 Research.</li>
+<li>Users should use <code>/data</code> instead of <code>/fast</code> everywhere, e.g., <code>/data/users/$NAME</code> etc.</li>
 </ul>
 <h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="slurm-scheduler-updates-september-8-2020">Slurm Scheduler Updates: September 8, 2020<a class="headerlink" href="#slurm-scheduler-updates-september-8-2020" title="Permanent link">&para;</a></h2>
