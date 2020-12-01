@@ -18,7 +18,7 @@ This page documents the current and known upcoming maintenance windows.
 - Re-Mounting of GPFS
     - The `/fast` file system will be re-mounted to `/data/gpfs-1`.
     - `/fast` becomes a symbolic link to `/data` on all of the cluster.
-    - **GPFS access will disappear for some time.
+    - **GPFS access will disappear for some time.**
 - Login & Transfer Node Migration
     - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
     - Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
@@ -42,17 +42,15 @@ This page documents the current and known upcoming maintenance windows.
 - This will be done in a rolling fashion over the course of 1 month.
 - The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
 
-## Unification of Mass Data Mounts
+## Finalize unification of Mass Data Mounts
 
 !!! note
 
     :construction: This task is currently being planned.
     No schedule has been fixed yet. :construction:
 
-- To harmonize the mount options with HPC 4 Clinic, the mount location of `/fast` must be changed to `/data/gpfs-1`.
-- We will start by creating a symlink from `/data/gpfs-1` to `/fast`.
-- To do this properly, a full reboot will be required.
-- We will keep around a symlink from `/fast` to `/data/gpfs-1` for some time during a migration phase.
+- We will remove the bind mount `/fast` that currently points to `/data/gpfs-1` on HPC 4 Research.
+- Users should use `/data` instead of `/fast` everywhere, e.g., `/data/users/$NAME` etc.
 
 # Previous Maintenance Windows
 
