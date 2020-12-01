@@ -6,7 +6,7 @@
 
         A Charite or MDC account is required for accessing HPC 4 Research.
 
-        1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
+        1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
         2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
         3. **Connect.** `ssh -l <user>_<c or m>@login-1.research.bihealth.org`
 
@@ -16,12 +16,12 @@
 
         For using HPC 4 Clinic, a Charite account is required.
 
-        1. **Register Users.** Group leaders register their members via  hpc-gatekeeper@bihealth.de.
+        1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
         2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
         3. **Connect.** `ssh -l <user>_<c or m>@login-1.clinic.bihealth.org`
 
 Access to the BIH HPC clusters is based on work groups (also known as labs, units).
-Each group is headed by a leader (also known as principle investigator/PI).
+Each group is headed by a leader (also known as principle investigator/PI) who has to send requests but and also have one delegate.
 Data can also be managed in **project** which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.
 
 
@@ -64,7 +64,7 @@ The process to create a new group is as follows.
 2. hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
 3. All new users are notified and further instructions are sent to them via email.
 
-Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the group.
+Subsequently, both owner and delegate (but **only owner and delegate**) can initiate changes (new users, resource changes etc.) to the group.
 
 ## Form
 
