@@ -25,6 +25,12 @@ This page documents the current and known upcoming maintenance windows.
     - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
     - The aim is to improve stability and make everything easier to manage by administration.
 
+### Current Status / Result
+
+- We had to clear the accounting information database to make the update work within an acceptable time (we have 4M+ jobs in there).
+  From now on we will only keep the last 31 days in the database (updated nightly).
+- The old login and transfer nodes have been made available as nodes `med010[1-3]` and `med012[5-6]`.
+
 ## CentOS 8 Migration (in planning)
 
 !!! note
