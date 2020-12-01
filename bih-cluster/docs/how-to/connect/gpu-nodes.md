@@ -40,7 +40,7 @@ res-login-1:~$ srun --pty bash
 med0703:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0703:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/miniconda3
 med0703:~$ source ~/miniconda3/bin/activate
-med0703:~$ conda create -y -n gpu-test python=3 pytorch
+med0703:~$ conda create -y -n gpu-test pytorch cudatoolkit=10.2 -c pytorch
 med0703:~$ conda activate gpu-test
 med0703:~$ python -c 'import torch; print(torch.cuda.is_available())'
 False
