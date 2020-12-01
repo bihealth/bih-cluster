@@ -1956,7 +1956,7 @@
 <p class="admonition-title">Get Access</p>
 <p>A Charite or MDC account is required for accessing HPC 4 Research.</p>
 <ol>
-<li><strong>Register Users.</strong> Group leaders register their members via  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</li>
+<li><strong>Register Users.</strong> <strong>Group leaders/PIs</strong> register their members via  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</li>
 <li><strong>Upload Key.</strong> Upload your SSH key through the Charite and MDC Infrastructure.</li>
 <li><strong>Connect.</strong> <code>ssh -l &lt;user&gt;_&lt;c or m&gt;@login-1.research.bihealth.org</code></li>
 </ol>
@@ -1967,7 +1967,7 @@
 <p class="admonition-title">Get Access</p>
 <p>For using HPC 4 Clinic, a Charite account is required.</p>
 <ol>
-<li><strong>Register Users.</strong> Group leaders register their members via  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</li>
+<li><strong>Register Users.</strong> <strong>Group leaders/PIs</strong> register their members via  <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.</li>
 <li><strong>Upload Key.</strong> Upload your SSH key through the Charite and MDC Infrastructure.</li>
 <li><strong>Connect.</strong> <code>ssh -l &lt;user&gt;_&lt;c or m&gt;@login-1.clinic.bihealth.org</code></li>
 </ol>
@@ -1975,7 +1975,7 @@
 </div>
 </div>
 <p>Access to the BIH HPC clusters is based on work groups (also known as labs, units).
-Each group is headed by a leader (also known as principle investigator/PI).
+Each group is headed by a leader (also known as principle investigator/PI) who has to send requests but and also have one delegate.
 Data can also be managed in <strong>project</strong> which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.</p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
 <p>HPC 4 Research is available for Charite, MDC, and BIH networks.</p>
@@ -2015,7 +2015,7 @@ host:~$ ssh -l user_m login-1.research.hpc.bihealth.org
 <li>hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).</li>
 <li>All new users are notified and further instructions are sent to them via email.</li>
 </ol>
-<p>Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the group.</p>
+<p>Subsequently, both owner and delegate (but <strong>only owner and delegate</strong>) can initiate changes (new users, resource changes etc.) to the group.</p>
 <h2 id="form">Form<a class="headerlink" href="#form" title="Permanent link">&para;</a></h2>
 <p>Example values are given in curly braces.</p>
 <div class="highlight"><pre><span></span><code># Group &quot;ag-doe&quot;
