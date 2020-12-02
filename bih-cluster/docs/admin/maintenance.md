@@ -30,6 +30,8 @@ This page documents the current and known upcoming maintenance windows.
 - We had to clear the accounting information database to make the update work within an acceptable time (we have 4M+ jobs in there).
   From now on we will only keep the last 31 days in the database (updated nightly).
 - The old login and transfer nodes have been made available as nodes `med010[1-3]` and `med012[5-6]`.
+- All nodes are available again.
+- The maintenance is complete.
 
 ## CentOS 8 Migration (in planning)
 
