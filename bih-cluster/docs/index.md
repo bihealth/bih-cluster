@@ -58,10 +58,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :test_tube: Head node migration -- December 1, 2020
-    - :calendar: `/fast` => `/data` -- December 1, 2020
-    - :calendar: Slurm upgrade -- December 1, 2020
-    - :wrench: GPFS controller replacement -- December 1, 2020
+    - :check_mark: Currently no planned future maintenance
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 
