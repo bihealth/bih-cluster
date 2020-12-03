@@ -1,9 +1,8 @@
+
 This page describes strictly enforced policies valid on the BIH HPC clusters.
 
 The aim of the HPC systems is to support the users in their scientific work and relies on their cooperation.
-First and foremost, the administration team enforced standard IT security and reliability practices through their organizational and operational processes and actions.
-Beyond this, policies are only introduced only when required to allow non-restrictive access to the resources themselves.
-We ask users to follow a cluster etiquette, though.
+First and foremost, the administration team enforces state of the art IT security and reliability practices through their organizational and operational processes and actions. We kindly ask user to follow the Cluster Etiquette describe below to allow for fair use and flexible access to the shared resources. Beyond this, policies are introduced or enforced only when required to ensure non-restrictive access to the resources themselves. Major or recurrent breaches of policies may lead to exclusion from service. 
 
 We will update this list of policies over time.
 Larger changes will be announced through the mailing list.
@@ -40,7 +39,7 @@ In the case of violations marked with a shield (:shield:) administration reserve
 
 1. Data transfers should happen through the transfer nodes (HPC 4 Research) and/or the compute nodes themselves.
 2. :shield: The cluster is not meant as a "hop node".
-   Do not use it to connect to the login node first and then jump to another host outside of the cluster network.
+   Do not use it to connect to the login node first and then jump to another host outside of the cluster network. Doing so is a breach of cluster policies and quite possibly your organization's IT security policies
 3. :shield: As a corollary, SSH reverse tunnels are strictly prohibited.
 4. Outgoing connections are meant for data transfers only (in other words: using SSH/SCP to download file is fine).
 5. :shiedl: Do not leave outgoing connections open longer than necessary.
@@ -52,6 +51,7 @@ In the case of violations marked with a shield (:shield:) administration reserve
 2. The cluster is optimized for batch processing.
    Interactive use is a secondary aim.
    Administration attempts to strike a good balance here but batch usage is most important.
+   Consider using our Open on Demand service for interactive use. 
 3. Interactive use should happen through the Slurm scheduler (`srun`).
 4. SSH connections to the nodes are allowed for monitoring purposes but not meant for computation.
    Administration enforces
