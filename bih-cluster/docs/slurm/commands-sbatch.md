@@ -49,6 +49,13 @@ The command will create a batch job and add it to the queue to be executed at a 
 - `--output`
     -- The path to the output log file (by default joining stdout and stderr, see the man page on `--error` on how to redirect stderr separately).
     A various number of placeholders is available, see the "filename pattern" section of `man sbatch` or the official [Slurm documentation on srun](https://slurm.schedmd.com/srun.html).
+- `--mail-type=<type>`
+  -- Send out notifications by email when an event occurs.
+  Use `FAIL` to get emails when your job fails.
+  Also see the documentation of [sbatch in the Slurm manual](https://slurm.schedmd.com/sbatch.html).
+- `--mail-user=<email>`
+  -- The email address to send to.
+  Must end in `@charite.de`, `@mdc-berlin.de`, or `@bihealth.de`.
 
 !!! important "Ensure your `--output` directory exists!"
 
