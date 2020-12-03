@@ -1,5 +1,13 @@
 # How-To: Write a Good Ticket
 
+!!! info "Can you solve the question yourself?"
+
+    Please try to solve the question yourself with this manual and Google.
+
+    ![](/help/figures/help-workflow.png){: style="width: 75%;" .center}
+
+    If the problem turns out to be hard, we're happy to help.
+
 This page describes how to write a good help request ticket.
 
 1. Write a descriptive summary.

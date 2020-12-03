@@ -6,6 +6,10 @@
 
 Note that there also is the bih-cluster@charite.de email address that you can user for user discussions and getting support from other users (in particular for things out of scope for the helpdesk).
 
+Please also use the handy figure below on general problem resolution.
+
+![](/help/figures/help-workflow.png){: .center}
+
 ## Helpdesk Scope
 
 Our helpdesk can support you in the following areas:
