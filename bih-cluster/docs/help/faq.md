@@ -70,6 +70,14 @@ slurmstepd: error: *** JOB <your job id> ON med0xxx CANCELLED AT 2020-09-02T21:0
 
 This indicates that you need to need to adjust the `--time` limit to your `sbatch` command.
 
+```
+slurmstepd: error: Detected 2 oom-kill event(s) in step <your job id>.batch cgroup.
+Some of your processes may have been killed by the cgroup out-of-memory handler
+```
+
+This indicates that your job tries to use more memory than has been allocated to it.
+Also see [Slurm Scheduler: Memory Allocation](/slurm/memory-allocation/)
+
 Otherwise, you can use `sacct -j JOBID` to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by `CANCELED`) by the Slurm job scheduler looks like this (ignore the `COMPLETED` step that is just some post-job step added by Slurm automatically).
 
