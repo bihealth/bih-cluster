@@ -604,6 +604,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#my-jobs-are-slowdie-on-the-logintransfer-node" class="md-nav__link">
+    My jobs are slow/die on the login/transfer node!
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2350,6 +2357,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#my-jobs-are-slowdie-on-the-logintransfer-node" class="md-nav__link">
+    My jobs are slow/die on the login/transfer node!
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2777,6 +2791,11 @@ E.g., use <code>rsync -avP some/path user_m@transfer-1.research.hpc.bihealth.org
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
 E.g., use <code>rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+<h2 id="my-jobs-are-slowdie-on-the-logintransfer-node">My jobs are slow/die on the login/transfer node!<a class="headerlink" href="#my-jobs-are-slowdie-on-the-logintransfer-node" title="Permanent link">&para;</a></h2>
+<p>As of December 3, 2020 we have established a policy to limit you to 512 files and 128MB of RAM.
+Further, you are limited to using the equivalent of one core.
+This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
+This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.</p>
                 
                   
                     
