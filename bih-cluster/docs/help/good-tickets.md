@@ -4,7 +4,7 @@
 
     Please try to solve the question yourself with this manual and Google.
 
-    ![](/help/figures/help-workflow.png){: style="width: 75%;" .center}
+    ![](figures/help-workflow.png){: style="width: 75%;" .center}
 
     If the problem turns out to be hard, we're happy to help.
 

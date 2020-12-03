@@ -8,7 +8,7 @@ Note that there also is the bih-cluster@charite.de email address that you can us
 
 Please also use the handy figure below on general problem resolution.
 
-![](/help/figures/help-workflow.png){: .center}
+![](figures/help-workflow.png){: .center}
 
 ## Helpdesk Scope
 
