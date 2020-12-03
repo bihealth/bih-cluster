@@ -11,21 +11,21 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/connecting/generate-key/linux/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/admin/policies/">
       
       
         <meta name="author" content="BIH HPC IT">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.5">
     
     
       
-        <title>Linux - BIH HPC Docs</title>
+        <title>Policies - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.df84b5fe.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.df84b5fe.min.css">
       
       
     
@@ -39,7 +39,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
     
       
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#generating-an-ssh-key-in-linux" class="md-skip">
+        <a href="#cluster-etiquette" class="md-skip">
           Skip to content
         </a>
       
@@ -84,7 +84,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Linux
+              Policies
             
           </span>
         </div>
@@ -184,7 +184,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -194,10 +194,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Administrative
@@ -221,7 +223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../admin/getting-access/" title="Getting Access" class="md-nav__link">
+    <a href="../getting-access/" title="Getting Access" class="md-nav__link">
       Getting Access
     </a>
   </li>
@@ -233,7 +235,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
+    <a href="../resource-registration/" title="Resource Registration" class="md-nav__link">
       Resource Registration
     </a>
   </li>
@@ -245,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
+    <a href="../maintenance/" title="Maintenance etc." class="md-nav__link">
       Maintenance etc.
     </a>
   </li>
@@ -257,7 +259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../admin/provided-software/" title="Provided Software" class="md-nav__link">
+    <a href="../provided-software/" title="Provided Software" class="md-nav__link">
       Provided Software
     </a>
   </li>
@@ -267,11 +269,90 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../admin/policies/" title="Policies" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Policies
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Policies" class="md-nav__link md-nav__link--active">
       Policies
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-etiquette" class="md-nav__link">
+    Cluster Etiquette
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-policies" class="md-nav__link">
+    Cluster Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-system-policies" class="md-nav__link">
+    File System Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connections" class="md-nav__link">
+    Connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-use" class="md-nav__link">
+    Interactive Use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-use" class="md-nav__link">
+    GPU Use
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -311,7 +392,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
+    <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
       HPC Helpdesk
     </a>
   </li>
@@ -323,7 +404,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
+    <a href="../../help/good-tickets/" title="Good Tickets" class="md-nav__link">
       Good Tickets
     </a>
   </li>
@@ -335,7 +416,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
+    <a href="../../help/faq/" title="Frequently Asked Questions" class="md-nav__link">
       Frequently Asked Questions
     </a>
   </li>
@@ -377,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
+    <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
       For the Impatient
     </a>
   </li>
@@ -389,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/architecture/" title="Architecture" class="md-nav__link">
+    <a href="../../overview/architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -401,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
+    <a href="../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
       Job Scheduler
     </a>
   </li>
@@ -413,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
+    <a href="../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
       Nodes and Volumes
     </a>
   </li>
@@ -428,12 +509,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Connecting
@@ -455,12 +534,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
     
     <label class="md-nav__link" for="nav-5-1">
       Generate Keys
@@ -482,53 +559,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Linux
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Linux" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#submit-your-key" class="md-nav__link">
-    Submit Your Key
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -538,7 +573,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../windows/" title="Windows" class="md-nav__link">
+    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -580,7 +615,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../submit-key/charite/" title="Charite" class="md-nav__link">
+    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
       Charite
     </a>
   </li>
@@ -592,7 +627,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../submit-key/mdc/" title="MDC" class="md-nav__link">
+    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
       MDC
     </a>
   </li>
@@ -634,7 +669,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
+    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
       Pre-Requisites
     </a>
   </li>
@@ -646,7 +681,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configure-ssh/linux/" title="Linux" class="md-nav__link">
+    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -658,7 +693,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configure-ssh/windows/" title="Windows" class="md-nav__link">
+    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
       Windows
     </a>
   </li>
@@ -670,7 +705,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
+    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
       Connection Problems
     </a>
   </li>
@@ -687,7 +722,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../from-external/" title="From External" class="md-nav__link">
+    <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
       From External
     </a>
   </li>
@@ -699,7 +734,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
+    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
       Windows SSH Client
     </a>
   </li>
@@ -741,7 +776,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
+    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
       Episode 0
     </a>
   </li>
@@ -753,7 +788,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
+    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
       Episode 1
     </a>
   </li>
@@ -765,7 +800,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
+    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
       Episode 2
     </a>
   </li>
@@ -777,7 +812,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
+    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
       Episode 3
     </a>
   </li>
@@ -789,7 +824,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
+    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
       Episode 4
     </a>
   </li>
@@ -831,7 +866,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
+    <a href="../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
       Accessing Snapshots
     </a>
   </li>
@@ -843,7 +878,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
+    <a href="../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
       Querying Quotas
     </a>
   </li>
@@ -855,7 +890,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
+    <a href="../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
       Storage Locations
     </a>
   </li>
@@ -897,7 +932,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/overview/" title="Scheduling Overview" class="md-nav__link">
+    <a href="../../slurm/overview/" title="Scheduling Overview" class="md-nav__link">
       Scheduling Overview
     </a>
   </li>
@@ -909,7 +944,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/background/" title="Introduction to Scheduling" class="md-nav__link">
+    <a href="../../slurm/background/" title="Introduction to Scheduling" class="md-nav__link">
       Introduction to Scheduling
     </a>
   </li>
@@ -921,7 +956,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
+    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
       Slurm Quickstart
     </a>
   </li>
@@ -933,7 +968,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
+    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
   </li>
@@ -945,7 +980,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
+    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
       Slurm Job Scripts
     </a>
   </li>
@@ -957,7 +992,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/memory-allocation/" title="Memory Allocation" class="md-nav__link">
+    <a href="../../slurm/memory-allocation/" title="Memory Allocation" class="md-nav__link">
       Memory Allocation
     </a>
   </li>
@@ -994,7 +1029,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-srun/" title="srun" class="md-nav__link">
+    <a href="../../slurm/commands-srun/" title="srun" class="md-nav__link">
       srun
     </a>
   </li>
@@ -1006,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-sbatch/" title="sbatch" class="md-nav__link">
+    <a href="../../slurm/commands-sbatch/" title="sbatch" class="md-nav__link">
       sbatch
     </a>
   </li>
@@ -1018,7 +1053,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-sattach/" title="sattach" class="md-nav__link">
+    <a href="../../slurm/commands-sattach/" title="sattach" class="md-nav__link">
       sattach
     </a>
   </li>
@@ -1030,7 +1065,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-scancel/" title="scancel" class="md-nav__link">
+    <a href="../../slurm/commands-scancel/" title="scancel" class="md-nav__link">
       scancel
     </a>
   </li>
@@ -1042,7 +1077,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-sinfo/" title="sinfo" class="md-nav__link">
+    <a href="../../slurm/commands-sinfo/" title="sinfo" class="md-nav__link">
       sinfo
     </a>
   </li>
@@ -1054,7 +1089,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-squeue/" title="squeue" class="md-nav__link">
+    <a href="../../slurm/commands-squeue/" title="squeue" class="md-nav__link">
       squeue
     </a>
   </li>
@@ -1066,7 +1101,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-scontrol/" title="scontrol" class="md-nav__link">
+    <a href="../../slurm/commands-scontrol/" title="scontrol" class="md-nav__link">
       scontrol
     </a>
   </li>
@@ -1078,7 +1113,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/commands-sacct/" title="sacct" class="md-nav__link">
+    <a href="../../slurm/commands-sacct/" title="sacct" class="md-nav__link">
       sacct
     </a>
   </li>
@@ -1090,7 +1125,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
+    <a href="../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
       Format Strings
     </a>
   </li>
@@ -1107,7 +1142,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
+    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
       Snakemake with Slurm
     </a>
   </li>
@@ -1119,7 +1154,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
+    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
       X11 Forwarding
     </a>
   </li>
@@ -1131,7 +1166,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
+    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
       Slurm Rosetta Stone
     </a>
   </li>
@@ -1143,7 +1178,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
+    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
       Migrating to Slurm
     </a>
   </li>
@@ -1185,7 +1220,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ondemand/overview/" title="Overview" class="md-nav__link">
+    <a href="../../ondemand/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1197,7 +1232,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ondemand/interactive/" title="Interactive Sessions" class="md-nav__link">
+    <a href="../../ondemand/interactive/" title="Interactive Sessions" class="md-nav__link">
       Interactive Sessions
     </a>
   </li>
@@ -1209,7 +1244,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ondemand/quotas/" title="Quotas" class="md-nav__link">
+    <a href="../../ondemand/quotas/" title="Quotas" class="md-nav__link">
       Quotas
     </a>
   </li>
@@ -1251,7 +1286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
+    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
       Project Structure
     </a>
   </li>
@@ -1263,7 +1298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
+    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
       Software Craftmanship
     </a>
   </li>
@@ -1275,7 +1310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
+    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
       Using Screen/Tmux
     </a>
   </li>
@@ -1287,7 +1322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
+    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
       ~/.bashrc Guide
     </a>
   </li>
@@ -1299,7 +1334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
+    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
       Temporary Files
     </a>
   </li>
@@ -1311,7 +1346,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
+    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
       Custom Environment Modules
     </a>
   </li>
@@ -1323,7 +1358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
+    <a href="../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
       Install with Conda
     </a>
   </li>
@@ -1365,7 +1400,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/" title="Overview" class="md-nav__link">
+    <a href="../../cubit/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1377,7 +1412,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/annotations/" title="Annotations" class="md-nav__link">
+    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
       Annotations
     </a>
   </li>
@@ -1389,7 +1424,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/app-support/" title="Application Support" class="md-nav__link">
+    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
       Application Support
     </a>
   </li>
@@ -1401,7 +1436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/databases/" title="Databases" class="md-nav__link">
+    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
       Databases
     </a>
   </li>
@@ -1413,7 +1448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
+    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
       Exomes and Panels
     </a>
   </li>
@@ -1425,7 +1460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
+    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
       Exon Lists
     </a>
   </li>
@@ -1437,7 +1472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
+    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
       Precomputed Indexes
     </a>
   </li>
@@ -1449,7 +1484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../cubit/references/" title="Reference Sequences" class="md-nav__link">
+    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
       Reference Sequences
     </a>
   </li>
@@ -1516,7 +1551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
+    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
       High-Memory Nodes
     </a>
   </li>
@@ -1528,7 +1563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
+    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
       GPU Nodes
     </a>
   </li>
@@ -1570,7 +1605,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
+    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
       OpenMPI
     </a>
   </li>
@@ -1582,7 +1617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
+    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
       Scientific Software
     </a>
   </li>
@@ -1594,7 +1629,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
+    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
       Cell Ranger
     </a>
   </li>
@@ -1606,7 +1641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
+    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
       Jupyter
     </a>
   </li>
@@ -1618,7 +1653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/keras/" title="Keras" class="md-nav__link">
+    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
       Keras
     </a>
   </li>
@@ -1630,7 +1665,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
+    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
       Matlab
     </a>
   </li>
@@ -1642,7 +1677,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
+    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
       Tensorflow
     </a>
   </li>
@@ -1654,7 +1689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/software/singularity/" title="Singularity" class="md-nav__link">
+    <a href="../../how-to/software/singularity/" title="Singularity" class="md-nav__link">
       Singularity
     </a>
   </li>
@@ -1696,7 +1731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
+    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
       File Exchange
     </a>
   </li>
@@ -1738,7 +1773,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/misc/debug-software/" title="Debug Software" class="md-nav__link">
+    <a href="../../how-to/misc/debug-software/" title="Debug Software" class="md-nav__link">
       Debug Software
     </a>
   </li>
@@ -1750,7 +1785,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/misc/debug-at-hpc/" title="Debug @HPC" class="md-nav__link">
+    <a href="../../how-to/misc/debug-at-hpc/" title="Debug @HPC" class="md-nav__link">
       Debug @HPC
     </a>
   </li>
@@ -1762,7 +1797,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
+    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
       Contribute to Docs
     </a>
   </li>
@@ -1809,7 +1844,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../misc/publication-list/" title="Publication List" class="md-nav__link">
+    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
       Publication List
     </a>
   </li>
@@ -1821,7 +1856,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../misc/external-resources/" title="External Guides" class="md-nav__link">
+    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
       External Guides
     </a>
   </li>
@@ -1833,7 +1868,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../misc/tips/" title="Misc. Tips" class="md-nav__link">
+    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
       Misc. Tips
     </a>
   </li>
@@ -1845,7 +1880,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
+    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
       SSH Basics
     </a>
   </li>
@@ -1870,8 +1905,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -1882,9 +1915,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#submit-your-key" class="md-nav__link">
-    Submit Your Key
+  <a href="#cluster-etiquette" class="md-nav__link">
+    Cluster Etiquette
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-policies" class="md-nav__link">
+    Cluster Policies
+  </a>
+  
+    <nav class="md-nav" aria-label="Cluster Policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-system-policies" class="md-nav__link">
+    File System Policies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connections" class="md-nav__link">
+    Connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-use" class="md-nav__link">
+    Interactive Use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-use" class="md-nav__link">
+    GPU Use
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1900,7 +1974,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/connecting/generate-key/linux.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/admin/policies.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1908,57 +1982,70 @@
                   
                 
                 
-                <h1 id="generating-an-ssh-key-in-linux">Generating an SSH Key in Linux<a class="headerlink" href="#generating-an-ssh-key-in-linux" title="Permanent link">&para;</a></h1>
-<ul>
-<li>You might already have one, check whether the file <code>~/.ssh/id_rsa.pub</code> is present.</li>
-<li>Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):
-  <div class="highlight"><pre><span></span><code>host:~$ ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
-</code></pre></div></li>
-<li>Use the default location for your key</li>
-<li>Enter the passphrase twice to encrypt your key</li>
+                  <h1>Policies</h1>
+                
+                <p>This page describes strictly enforced policies valid on the BIH HPC clusters.</p>
+<p>The aim of the HPC systems is to support the users in their scientific work and relies on their cooperation.
+First and foremost, the administration team enforces state of the art IT security and reliability practices through their organizational and operational processes and actions. We kindly ask user to follow the Cluster Etiquette describe below to allow for fair use and flexible access to the shared resources. Beyond this, policies are introduced or enforced only when required to ensure non-restrictive access to the resources themselves. Major or recurrent breaches of policies may lead to exclusion from service. </p>
+<p>We will update this list of policies over time.
+Larger changes will be announced through the mailing list.</p>
+<h2 id="cluster-etiquette">Cluster Etiquette<a class="headerlink" href="#cluster-etiquette" title="Permanent link">&para;</a></h2>
+<ol>
+<li>The clusters are soft-partitioned shared resources that are made available under a "fair use" policy as far as possible.</li>
+<li>The general assumption that if a user interferes with the work of others (e.g., by blocking compute slots) then this happens accidentally.<ul>
+<li>Please do not do this.</li>
+<li>If you see this happening try to contact the user yourself (use <code>getent passswd $USER</code> to find out the user's office contact details).</li>
+<li>Send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you need administrative intervention.</li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">What is your key's passphrase?</p>
-<p>You should set a passphrase when generating your private key.
-This passphrase is used for encrypting you private key to protect it against the private key file theft/being lost.
-When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
-Note that when being asked for the <strong>passphrase</strong> this does not occur on the cluster (and is thus unrelated to it) but on your local computer.</p>
-<p>Also see <a href="/misc/ssh-basics/">SSH Basics</a> for more information.</p>
-</div>
-<p>The whole session should look something like this:</p>
-<div class="highlight"><pre><span></span><code>host:~$ ssh-keygen -t rsa -C <span class="s2">&quot;your_email@example.com&quot;</span>
-Generating public/private rsa key pair.
-Enter file in which to save the key <span class="o">(</span>/home/USER/.ssh/id_rsa<span class="o">)</span>: 
-Created directory <span class="s1">&#39;/home/USER/.ssh&#39;</span>.
-Enter passphrase <span class="o">(</span>empty <span class="k">for</span> no passphrase<span class="o">)</span>:
-Enter same passphrase again: 
-Your identification has been saved in /home/USER/.ssh/id_rsa.
-Your public key has been saved in /home/USER/.ssh/id_rsa.pub.
-The key fingerprint is:
-<span class="m">55</span>:dd:8f:88:84:1b:b6:f0:19:d3:fb:19:8e:7a:9e:7d your_email@example.com
-The key<span class="err">&#39;</span>s randomart image is:
-+--<span class="o">[</span> RSA <span class="m">2048</span><span class="o">]</span>----+
-<span class="p">|</span>         o  .. . <span class="p">|</span>
-<span class="p">|</span>      . * o.  . .<span class="p">|</span>
-<span class="p">|</span>       + O.o . ..<span class="p">|</span>
-<span class="p">|</span>        <span class="o">=</span>.o o . .<span class="p">|</span>
-<span class="p">|</span>        S  + o   <span class="p">|</span>
-<span class="p">|</span>          . +    <span class="p">|</span>
-<span class="p">|</span>         .       <span class="p">|</span>
-<span class="p">|</span>        . .o  E  <span class="p">|</span>
-<span class="p">|</span>         oo ..   <span class="p">|</span>
-</code></pre></div>
-
-<p>The file content of <code>~/.ssh/id_rsa.pub</code> should look something like this):</p>
-<div class="highlight"><pre><span></span><code>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809QK7hV6RCG13VcyPTIHSQePycfcUv5q1Jdy28MpacL/nv1UR/o35xPBn2HkgB4OqnKtt86soCGMd9/YzQP5lY7V60kPBJbrXDApeqf+H1GALsFNQM6MCwicdE6zTqE1mzWVdhGymZR28hGJbV9H4snMDDc0tW4i3FHGrDdmb7wHM9THMx6OcCrnNyA9Sh2OyBH4MwItKfuqEg2rc56D7WAQ2JcmPQZTlBAYeFL/dYYKcXmbffEpXTbYh+7O0o9RAJ7T3uOUj/2IbSnsgg6fyw0Kotcg8iHAPvb61bZGPOEWZb your_email@example.com
-</code></pre></div>
-
-<h2 id="submit-your-key">Submit Your Key<a class="headerlink" href="#submit-your-key" title="Permanent link">&para;</a></h2>
-<p>As a next step you need to submit the SSH key use these links as:</p>
-<ul>
-<li><a href="../submit-key/charite"><img alt="🏥" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f3e5.svg" title=":hospital:" /> Charite user</a></li>
-<li><a href="../submit-key/mdc"><img alt="🔬" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f52c.svg" title=":microscope:" /> MDC user</a></li>
+</li>
+<li>All users must be subscribed to the cluster mailing list (they are subscribed automatically when the account is created).</li>
+<li>When leaving please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> such that we can shutdown your account in an organized fashion.
+   We also need to arrange for cleaning up your data.</li>
+</ol>
+<h2 id="cluster-policies">Cluster Policies<a class="headerlink" href="#cluster-policies" title="Permanent link">&para;</a></h2>
+<h3 id="file-system-policies">File System Policies<a class="headerlink" href="#file-system-policies" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Storage on the GPFS file system is a sparse resource try to use both data volume and file sparingly.
+   Note well that small files above ~4KB take up at least 8MB of space.</li>
+<li>Default quotas are as follows (each user, group, project has a <code>home</code>, <code>work</code>, and <code>scratch</code> volume).
+   You can request an increase by an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>.<ul>
+<li><code>home</code> 10k files, 1GB space</li>
+<li><code>work</code> 2M files, 1TB space</li>
+<li><code>scratch</code> 20M files, 200TB space</li>
 </ul>
+</li>
+<li>The overall throughput limit is 20GB/sec.
+   Try not to overload the cluster I/O wise.</li>
+</ol>
+<h3 id="connections">Connections<a class="headerlink" href="#connections" title="Permanent link">&para;</a></h3>
+<p>Network connections are a topic important in security.
+In the case of violations marked with a shield (<img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" />) administration reserves the right to terminate connections without notice and perform other actions.</p>
+<ol>
+<li>Data transfers should happen through the transfer nodes (HPC 4 Research) and/or the compute nodes themselves.</li>
+<li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> The cluster is not meant as a "hop node".
+   Do not use it to connect to the login node first and then jump to another host outside of the cluster network. Doing so is a breach of cluster policies and quite possibly your organization's IT security policies</li>
+<li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> As a corollary, SSH reverse tunnels are strictly prohibited.</li>
+<li>Outgoing connections are meant for data transfers only (in other words: using SSH/SCP to download file is fine).</li>
+<li>:shiedl: Do not leave outgoing connections open longer than necessary.</li>
+</ol>
+<h3 id="interactive-use">Interactive Use<a class="headerlink" href="#interactive-use" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Interactive sessions block resources to the scheduler.
+   Reduce interactive use to the minimal time and resources possible.</li>
+<li>The cluster is optimized for batch processing.
+   Interactive use is a secondary aim.
+   Administration attempts to strike a good balance here but batch usage is most important.
+   Consider using our Open on Demand service for interactive use. </li>
+<li>Interactive use should happen through the Slurm scheduler (<code>srun</code>).</li>
+<li>SSH connections to the nodes are allowed for monitoring purposes but not meant for computation.
+   Administration enforces</li>
+</ol>
+<h3 id="gpu-use">GPU Use<a class="headerlink" href="#gpu-use" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Interactive sessions block resources to the scheduler.
+   Interactive GPU use is discouraged.</li>
+<li>Accessing GPUs outside of the Slurm scheduler has been disabled by administration.</li>
+</ol>
                 
                   
                     
@@ -1990,7 +2077,7 @@ The key<span class="err">&#39;</span>s randomart image is:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../../overview/storage/" title="Nodes and Volumes" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../provided-software/" title="Provided Software" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1999,19 +2086,19 @@ The key<span class="err">&#39;</span>s randomart image is:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Nodes and Volumes
+                Provided Software
               </div>
             </div>
           </a>
         
         
-          <a href="../windows/" title="Windows" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Windows
+                HPC Helpdesk
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -2042,15 +2129,15 @@ The key<span class="err">&#39;</span>s randomart image is:
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../../..",
+          base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
