@@ -516,3 +516,10 @@ In general, connections can only be initiated from the Charite network to the BI
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
 E.g., use `rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+
+## My jobs are slow/die on the login/transfer node!
+
+As of December 3, 2020 we have established a policy to limit you to 512 files and 128MB of RAM.
+Further, you are limited to using the equivalent of one core.
+This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
+This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.
