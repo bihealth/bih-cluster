@@ -24,6 +24,11 @@ This will automatically place your job in the `gpu` partition (which is where th
 
     Further, interactive GPU jobs are currently limited to 24 hours.
     We will monitor the situation and adjust that limit to optimize GPU usage and usability.
+    
+!!! important "Allocation of GPUs through Slurm is mandatory"
+
+    In other word: using GPUs from SSH sessions is prohibited.
+    The scheduler is not aware of manually allocated GPUs and this interferes with other users' jobs.
 
 ## Prequisites
 
