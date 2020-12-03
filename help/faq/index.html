@@ -2451,6 +2451,12 @@ Please look at the end of the last line in your log file.</p>
 </code></pre></div>
 
 <p>This indicates that you need to need to adjust the <code>--time</code> limit to your <code>sbatch</code> command.</p>
+<div class="highlight"><pre><span></span><code>slurmstepd: error: Detected 2 oom-kill event(s) in step &lt;your job id&gt;.batch cgroup.
+Some of your processes may have been killed by the cgroup out-of-memory handler
+</code></pre></div>
+
+<p>This indicates that your job tries to use more memory than has been allocated to it.
+Also see <a href="/slurm/memory-allocation/">Slurm Scheduler: Memory Allocation</a></p>
 <p>Otherwise, you can use <code>sacct -j JOBID</code> to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by <code>CANCELED</code>) by the Slurm job scheduler looks like this (ignore the <code>COMPLETED</code> step that is just some post-job step added by Slurm automatically).</p>
 <div class="highlight"><pre><span></span><code># sacct -j _JOBID_
