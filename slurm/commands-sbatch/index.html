@@ -1998,6 +1998,13 @@ Submitted batch job JOB_ID
 <li><code>--output</code>
     -- The path to the output log file (by default joining stdout and stderr, see the man page on <code>--error</code> on how to redirect stderr separately).
     A various number of placeholders is available, see the "filename pattern" section of <code>man sbatch</code> or the official <a href="https://slurm.schedmd.com/srun.html">Slurm documentation on srun</a>.</li>
+<li><code>--mail-type=&lt;type&gt;</code>
+  -- Send out notifications by email when an event occurs.
+  Use <code>FAIL</code> to get emails when your job fails.
+  Also see the documentation of <a href="https://slurm.schedmd.com/sbatch.html">sbatch in the Slurm manual</a>.</li>
+<li><code>--mail-user=&lt;email&gt;</code>
+  -- The email address to send to.
+  Must end in <code>@charite.de</code>, <code>@mdc-berlin.de</code>, or <code>@bihealth.de</code>.</li>
 </ul>
 <div class="admonition important">
 <p class="admonition-title">Ensure your <code>--output</code> directory exists!</p>
