@@ -67,6 +67,7 @@ nav:
     - "Resource Registration": admin/resource-registration.md
     - "Maintenance etc.": admin/maintenance.md
     - "Provided Software": admin/provided-software.md
+    - "Policies": admin/policies.md
   - "Getting Help":
     - "HPC Helpdesk": help/helpdesk.md
     - "Good Tickets": help/good-tickets.md
