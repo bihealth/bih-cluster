@@ -663,8 +663,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#im-unable-to-connect-to-the-cluster" class="md-nav__link">
-    I'm unable to connect to the cluster
+  <a href="#im-getting-a-connection-refused" class="md-nav__link">
+    I'm getting a "connection refused"
   </a>
   
 </li>
@@ -722,18 +722,6 @@
   <li class="md-nav__item">
     <a href="../../ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
       Windows SSH Client
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../troubleshooting/" title="Troubleshooting" class="md-nav__link">
-      Troubleshooting
     </a>
   </li>
 
@@ -1915,8 +1903,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#im-unable-to-connect-to-the-cluster" class="md-nav__link">
-    I'm unable to connect to the cluster
+  <a href="#im-getting-a-connection-refused" class="md-nav__link">
+    I'm getting a "connection refused"
   </a>
   
 </li>
@@ -1966,12 +1954,34 @@
 <p>When you encounter problems with the login to the cluster although we indicated
 that you should have access, depending on the issue, here is a list of how to
 solve the problem:</p>
-<h2 id="im-unable-to-connect-to-the-cluster">I'm unable to connect to the cluster<a class="headerlink" href="#im-unable-to-connect-to-the-cluster" title="Permanent link">&para;</a></h2>
-<p>When you can't reach the cluster, please make sure that you are in the right
-network. Connections are only possible from within <strong>Charité or MDC network</strong>.
-Connections from Eduroam or outside do not work unless you access via the MDC
-jailnode (only for users with active MDC account).</p>
-<p><strong>Solution</strong>: Connect from within Charite or MDC.</p>
+<h3 id="im-getting-a-connection-refused">I'm getting a "connection refused"<a class="headerlink" href="#im-getting-a-connection-refused" title="Permanent link">&para;</a></h3>
+<p>The full error message looks as follows:</p>
+<div class="highlight"><pre><span></span><code>ssh: connect to host login-1.research.hpc.bihealth.org port 22: Connection refused
+</code></pre></div>
+
+<p>This means that your computer could not open a network connection to the server.</p>
+<ul>
+<li>HPC 4 Clinic is currently only available from the Charite (cabled) network.</li>
+<li>HPC 4 Research can be connected to from:<ul>
+<li>Charite (cabled) network</li>
+<li>Charite VPN <img alt="👉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f449.svg" title=":point_right:" /> <strong>but only with <a href="/connecting/from-external/#zusatzantrag-b-recommended">Zusatzantrag B</a></strong>. <img alt="👈" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f448.svg" title=":point_left:" /></li>
+<li>MDC (cabled) network</li>
+<li>MDC VPN</li>
+<li>BIH (cabled) network</li>
+</ul>
+</li>
+<li>If you think that there is no problem with any of this then please include the output of the following command in your ticket (use the server that you want to read instead of <code>&lt;DEST&gt;</code>):<ul>
+<li>Linux/Mac
+    <div class="highlight"><pre><span></span><code>ifconfig
+traceroute &lt;DEST&gt;
+</code></pre></div></li>
+<li>Windows
+    <div class="highlight"><pre><span></span><code>ipconfig
+tracepath &lt;DEST&gt;
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h2 id="i-can-connect-but-it-seems-that-my-account-has-no-access-yet">I can connect, but it seems that my account has no access yet<a class="headerlink" href="#i-can-connect-but-it-seems-that-my-account-has-no-access-yet" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>You&#39;re logging into BIH HPC cluster! (login-1)
 
