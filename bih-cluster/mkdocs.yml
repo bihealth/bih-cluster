@@ -91,7 +91,6 @@ nav:
       - "Connection Problems": connecting/configure-ssh/connection-problems.md
     - "From External": connecting/from-external.md
     - "Windows SSH Client": connecting/ssh-client-windows.md
-    - "Troubleshooting": connecting/troubleshooting.md
   - "First Steps":
     - "Episode 0": first-steps/episode-0.md
     - "Episode 1": first-steps/episode-1.md

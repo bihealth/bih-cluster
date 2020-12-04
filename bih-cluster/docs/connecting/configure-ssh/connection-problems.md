@@ -4,14 +4,34 @@ When you encounter problems with the login to the cluster although we indicated
 that you should have access, depending on the issue, here is a list of how to
 solve the problem:
 
-## I'm unable to connect to the cluster
+### I'm getting a "connection refused"
 
-When you can't reach the cluster, please make sure that you are in the right
-network. Connections are only possible from within **Charité or MDC network**.
-Connections from Eduroam or outside do not work unless you access via the MDC
-jailnode (only for users with active MDC account).
+The full error message looks as follows:
 
-**Solution**: Connect from within Charite or MDC.
+```
+ssh: connect to host login-1.research.hpc.bihealth.org port 22: Connection refused
+```
+
+This means that your computer could not open a network connection to the server.
+
+- HPC 4 Clinic is currently only available from the Charite (cabled) network.
+- HPC 4 Research can be connected to from:
+    - Charite (cabled) network
+    - Charite VPN :point_right: **but only with [Zusatzantrag B](/connecting/from-external/#zusatzantrag-b-recommended)**. :point_left:
+    - MDC (cabled) network
+    - MDC VPN
+    - BIH (cabled) network
+- If you think that there is no problem with any of this then please include the output of the following command in your ticket (use the server that you want to read instead of `<DEST>`):
+    - Linux/Mac
+        ```
+        ifconfig
+        traceroute <DEST>
+        ```
+    - Windows
+        ```
+        ipconfig
+        tracepath <DEST>
+        ```
 
 ## I can connect, but it seems that my account has no access yet
 
