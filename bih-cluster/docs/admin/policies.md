@@ -42,7 +42,9 @@ In the case of violations marked with a shield (:shield:) administration reserve
    Do not use it to connect to the login node first and then jump to another host outside of the cluster network. Doing so is a breach of cluster policies and quite possibly your organization's IT security policies
 3. :shield: As a corollary, SSH reverse tunnels are strictly prohibited.
 4. Outgoing connections are meant for data transfers only (in other words: using SSH/SCP to download file is fine).
-5. :shiedl: Do not leave outgoing connections open longer than necessary.
+5. :shield: Do not leave outgoing connections open longer than necessary.
+6. Sessions of `screen` and `tmux` are only allowed to run on the head nodes.
+   They will be terminated automatically on the compute nodes.
 
 ### Interactive Use
 
@@ -54,7 +56,8 @@ In the case of violations marked with a shield (:shield:) administration reserve
    Consider using our Open on Demand service for interactive use. 
 3. Interactive use should happen through the Slurm scheduler (`srun`).
 4. SSH connections to the nodes are allowed for monitoring purposes but not meant for computation.
-   Administration enforces
+   Administration enforces this by restricting all jobs outside of Slurm to use at most 1 core and 128 MB of RAM.
+   This limit is enforced per node per user with Linux cgroups.
 
 ### GPU Use
 
