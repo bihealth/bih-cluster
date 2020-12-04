@@ -2026,7 +2026,9 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
    Do not use it to connect to the login node first and then jump to another host outside of the cluster network. Doing so is a breach of cluster policies and quite possibly your organization's IT security policies</li>
 <li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> As a corollary, SSH reverse tunnels are strictly prohibited.</li>
 <li>Outgoing connections are meant for data transfers only (in other words: using SSH/SCP to download file is fine).</li>
-<li>:shiedl: Do not leave outgoing connections open longer than necessary.</li>
+<li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> Do not leave outgoing connections open longer than necessary.</li>
+<li>Sessions of <code>screen</code> and <code>tmux</code> are only allowed to run on the head nodes.
+   They will be terminated automatically on the compute nodes.</li>
 </ol>
 <h3 id="interactive-use">Interactive Use<a class="headerlink" href="#interactive-use" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2038,7 +2040,8 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
    Consider using our Open on Demand service for interactive use. </li>
 <li>Interactive use should happen through the Slurm scheduler (<code>srun</code>).</li>
 <li>SSH connections to the nodes are allowed for monitoring purposes but not meant for computation.
-   Administration enforces</li>
+   Administration enforces this by restricting all jobs outside of Slurm to use at most 1 core and 128 MB of RAM.
+   This limit is enforced per node per user with Linux cgroups.</li>
 </ol>
 <h3 id="gpu-use">GPU Use<a class="headerlink" href="#gpu-use" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2054,7 +2057,7 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
 <div class="md-source-date">
   <small>
     
-      Last update: December 3, 2020
+      Last update: December 4, 2020
     
   </small>
 </div>
