@@ -531,3 +531,8 @@ As of December 3, 2020 we have established a policy to limit you to 512 files an
 Further, you are limited to using the equivalent of one core.
 This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
 This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.
+
+## How can I share files/collaborate with users from another work group?
+
+Please use [projects as documented here](/bih-cluster/admin/getting-access/#projects).
+Projects were created for this particular purpose.
