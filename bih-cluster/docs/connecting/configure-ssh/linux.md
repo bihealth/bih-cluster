@@ -127,7 +127,7 @@ $ ssh-add  id_rsa
 === "HPC 4 Research"
 
     ```
-    $ sshfs -l <USERNAME>@transfer-<X>.research.hpc.bihealth.org:/ <MOUNTPOINT>
+    $ sshfs <USERNAME>@transfer-<X>.research.hpc.bihealth.org:/ <MOUNTPOINT>
     ```
 
     * `<X>` can be either `1` or `2`
