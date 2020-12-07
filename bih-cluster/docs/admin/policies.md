@@ -22,6 +22,9 @@ Larger changes will be announced through the mailing list.
 
 ### File System Policies
 
+In the case of violations marked with a shield (:shield:) administration reserves the right to remove write and possibly read permission to the given locations.
+Policies marked with a robot (:robot:) are automatically enforced.
+
 1. Storage on the GPFS file system is a sparse resource try to use both data volume and file sparingly.
    Note well that small files above ~4KB take up at least 8MB of space.
 2. Default quotas are as follows (each user, group, project has a `home`, `work`, and `scratch` volume).
@@ -31,6 +34,10 @@ Larger changes will be announced through the mailing list.
     - `scratch` 20M files, 200TB space
 3. The overall throughput limit is 20GB/sec.
    Try not to overload the cluster I/O wise.
+4. :shield: :robot: User home/work/group file sets have to be owned by the user, group is `hpc-users` and mode is `u=rwx,go=`; POSIX ACLs are prohibited.
+    This policy is automatically enforced every 5 minutes.
+5. :shield: :robot: Group and project home/work/group file sets have to be owned by the owner, group set to the corresponding unix group and mode is `u=rwx,g=rwxs,o=`; POSIX ACLs are prohibited.
+    This policy is automatically enforced every 5 minutes.
 
 ### Connections
 
