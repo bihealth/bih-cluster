@@ -19,6 +19,7 @@ Larger changes will be announced through the mailing list.
    We also need to arrange for cleaning up your data.
 5. The cluster mailing list bih-cluster@bihealth.de is the primary contact channel for administration to user.
    Users must be subscribed to the mailing list.
+   Users must follow the announcements, failure to do so can lead to missing important policy changes and thus losing access to the cluster or data.
 
 ## Cluster Policies
 
