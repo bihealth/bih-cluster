@@ -38,10 +38,11 @@ Policies marked with a robot (:robot:) are automatically enforced.
     This policy is automatically enforced every 5 minutes.
 5. :shield: :robot: Group and project home/work/group file sets have to be owned by the owner, group set to the corresponding unix group and mode is `u=rwx,g=rwxs,o=`; POSIX ACLs are prohibited.
     This policy is automatically enforced every 5 minutes.
-6. All files in scratch will be moved into a read-only "trash can" directory called `BIH_TRASH/YYMMDD` after 14 days (by `mtime`) over night.
+6. All files in scratch will be moved into a read-only "trash can" inside `scratch/BIH_TRASH` after 14 days (by `mtime`) over night.
    Trash directories will be removed after 14 further days.
     - Users can arrange with hpc-gatekeeper@bihealth.de to keep files longer by using `touch` on files in `scratch` and subsequently bumping the `mtime`.
     - :warning: In the case of abuse of this mechanism / failure to communicate with hpc-gatekeeper, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.
+    - You can learn more in the [Automated Scratch Cleanup](/storage/scratch-cleanup/) section.
 
 ### Connections
 

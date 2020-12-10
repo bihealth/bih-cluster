@@ -101,6 +101,7 @@ nav:
     - "Accessing Snapshots": storage/accessing-snapshots.md
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Locations": storage/storage-locations.md
+    - "Automated Cleanup": storage/scratch-cleanup.md
   - "Cluster Scheduler":
     - slurm/overview.md
     - slurm/background.md
