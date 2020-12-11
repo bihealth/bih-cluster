@@ -85,7 +85,7 @@ In the case of violations marked with a shield (:shield:) administration reserve
 1. :shield: Sharing accounts and/or credentials is strictly prohibited.
    Doing so is a breach of cluster policies and certainly also of your organization's IT security policies.
 2. :shield: Hosting shared services on the cluster is also strictly prohibited.
-   - This includes Jupyter servers that shall only be used by the user starting them, this also includes work schedulers such as Dask.
-   - You can assume that the cluster internal network is secure and you do not have to encrypt connections between nodes.
-   - Connections towards outside of the clsuter must be encrypted (e.g., via SSH tunnels; incoming ones as reverse tunneling is prohibited, see above).
-   - Access to any service must be protected by appropriate means, e.g., passwords, tokens or client certifictes.
+        - This includes Jupyter servers that shall only be used by the user starting them, this also includes work schedulers such as Dask.
+        - You can assume that the cluster internal network is secure and you do not have to encrypt connections between nodes.
+        - Connections towards outside of the clsuter must be encrypted (e.g., via SSH tunnels; incoming ones as reverse tunneling is prohibited, see above).
+        - Access to any service must be protected by appropriate means, e.g., passwords, tokens or client certifictes.
