@@ -46,6 +46,10 @@ Policies marked with a robot (:robot:) are automatically enforced.
     - Users can arrange with hpc-gatekeeper@bihealth.de to keep files longer by using `touch` on files in `scratch` and subsequently bumping the `mtime`.
     - :warning: In the case of abuse of this mechanism / failure to communicate with hpc-gatekeeper, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.
     - You can learn more in the [Automated Scratch Cleanup](/storage/scratch-cleanup/) section.
+7. :shield: Administration will not delete any files.
+   In the case that users need to delete files that they can access but not update/delete, administration will either give write permissions to the Unix group of the work group or project or change the owner to the owner/delegate of this group.
+   This can occur in a group/project directory of a user who has left the organization.
+   In the case that a user laeaves the organiation, the owner/delegate of the hosting group can request getting access to the user's files with the express agreement of this user.
 
 ### Connections
 
