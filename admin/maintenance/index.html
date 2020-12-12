@@ -282,22 +282,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-4-research-miscellaneous-maintenances-december-1-2020" class="md-nav__link">
-    HPC 4 Research: Miscellaneous Maintenances, December 1, 2020
+  <a href="#miscellaneous-maintenances-december-23-25-2020" class="md-nav__link">
+    Miscellaneous Maintenances, December 23-25, 2020
   </a>
-  
-    <nav class="md-nav" aria-label="HPC 4 Research: Miscellaneous Maintenances, December 1, 2020">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#current-status-result" class="md-nav__link">
-    Current Status / Result
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1919,22 +1906,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-4-research-miscellaneous-maintenances-december-1-2020" class="md-nav__link">
-    HPC 4 Research: Miscellaneous Maintenances, December 1, 2020
+  <a href="#miscellaneous-maintenances-december-23-25-2020" class="md-nav__link">
+    Miscellaneous Maintenances, December 23-25, 2020
   </a>
-  
-    <nav class="md-nav" aria-label="HPC 4 Research: Miscellaneous Maintenances, December 1, 2020">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#current-status-result" class="md-nav__link">
-    Current Status / Result
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1974,6 +1948,38 @@
                 
                 <p>This page documents the current and known upcoming maintenance windows.</p>
 <h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
+<h2 id="miscellaneous-maintenances-december-23-25-2020">Miscellaneous Maintenances, December 23-25, 2020<a class="headerlink" href="#miscellaneous-maintenances-december-23-25-2020" title="Permanent link">&para;</a></h2>
+<p><strong>HPC 4 Research</strong></p>
+<ul>
+<li>Separate HPC 4 Research group GID space from other organization's.<ul>
+<li><strong>Fully Unavailable</strong></li>
+</ul>
+</li>
+<li>Reboot login nodes to increase RAM on login-2.research</li>
+<li>Update firmwares of transfer-{1,2}.research</li>
+</ul>
+<h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>All nodes will be upgraded to CentOS 8.</li>
+<li>This will be done in a rolling fashion over the course of 1 month.</li>
+<li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
+</ul>
+<h2 id="finalize-unification-of-mass-data-mounts">Finalize unification of Mass Data Mounts<a class="headerlink" href="#finalize-unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>We will remove the bind mount <code>/fast</code> that currently points to <code>/data/gpfs-1</code> on HPC 4 Research.</li>
+<li>Users should use <code>/data</code> instead of <code>/fast</code> everywhere, e.g., <code>/data/users/$NAME</code> etc.</li>
+</ul>
+<h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="hpc-4-research-miscellaneous-maintenances-december-1-2020">HPC 4 Research: Miscellaneous Maintenances, December 1, 2020<a class="headerlink" href="#hpc-4-research-miscellaneous-maintenances-december-1-2020" title="Permanent link">&para;</a></h2>
 <p><strong>Time</strong>: 6am-12am</p>
 <ul>
@@ -2012,28 +2018,6 @@
 <li>All nodes are available again.</li>
 <li>The maintenance is complete.</li>
 </ul>
-<h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
-No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
-</div>
-<ul>
-<li>All nodes will be upgraded to CentOS 8.</li>
-<li>This will be done in a rolling fashion over the course of 1 month.</li>
-<li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
-</ul>
-<h2 id="finalize-unification-of-mass-data-mounts">Finalize unification of Mass Data Mounts<a class="headerlink" href="#finalize-unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
-No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6a7.svg" title=":construction:" /></p>
-</div>
-<ul>
-<li>We will remove the bind mount <code>/fast</code> that currently points to <code>/data/gpfs-1</code> on HPC 4 Research.</li>
-<li>Users should use <code>/data</code> instead of <code>/fast</code> everywhere, e.g., <code>/data/users/$NAME</code> etc.</li>
-</ul>
-<h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
 <h2 id="slurm-scheduler-updates-september-8-2020">Slurm Scheduler Updates: September 8, 2020<a class="headerlink" href="#slurm-scheduler-updates-september-8-2020" title="Permanent link">&para;</a></h2>
 <ul>
 <li>To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.</li>
@@ -2183,7 +2167,7 @@ you encounter any unexpected behavior of the cluster during this time, please le
 <div class="md-source-date">
   <small>
     
-      Last update: December 11, 2020
+      Last update: December 12, 2020
     
   </small>
 </div>
