@@ -2,6 +2,38 @@ This page documents the current and known upcoming maintenance windows.
 
 # Next Maintenance Window
 
+## Miscellaneous Maintenances, December 23-25, 2020
+
+**HPC 4 Research**
+
+- Separate HPC 4 Research group GID space from other organization's.
+    - **Fully Unavailable**
+- Reboot login nodes to increase RAM on login-2.research
+- Update firmwares of transfer-{1,2}.research
+
+## CentOS 8 Migration (in planning)
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+- All nodes will be upgraded to CentOS 8.
+- This will be done in a rolling fashion over the course of 1 month.
+- The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
+
+## Finalize unification of Mass Data Mounts
+
+!!! note
+
+    :construction: This task is currently being planned.
+    No schedule has been fixed yet. :construction:
+
+- We will remove the bind mount `/fast` that currently points to `/data/gpfs-1` on HPC 4 Research.
+- Users should use `/data` instead of `/fast` everywhere, e.g., `/data/users/$NAME` etc.
+
+# Previous Maintenance Windows
+
 ## HPC 4 Research: Miscellaneous Maintenances, December 1, 2020
 
 **Time**: 6am-12am
@@ -32,30 +64,6 @@ This page documents the current and known upcoming maintenance windows.
 - The old login and transfer nodes have been made available as nodes `med010[1-3]` and `med012[5-6]`.
 - All nodes are available again.
 - The maintenance is complete.
-
-## CentOS 8 Migration (in planning)
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
-
-- All nodes will be upgraded to CentOS 8.
-- This will be done in a rolling fashion over the course of 1 month.
-- The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).
-
-## Finalize unification of Mass Data Mounts
-
-!!! note
-
-    :construction: This task is currently being planned.
-    No schedule has been fixed yet. :construction:
-
-- We will remove the bind mount `/fast` that currently points to `/data/gpfs-1` on HPC 4 Research.
-- Users should use `/data` instead of `/fast` everywhere, e.g., `/data/users/$NAME` etc.
-
-# Previous Maintenance Windows
-
 ## Slurm Scheduler Updates: September 8, 2020
 
 - To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.
