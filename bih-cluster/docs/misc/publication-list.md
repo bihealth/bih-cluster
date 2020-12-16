@@ -10,6 +10,8 @@ It has been used to support the publications listed below.
 
 ### 2020
 
+Klotz-Noack K, Klinger B, Rivera M, Bublitz N, Uhlitz F, Riemer P, Lüthen M, Sell T, Kasack K, Gastl B, Ispasanie SSS, Simon T, Janssen N, Schwab M, Zuber J, Horst D, Blüthgen N, Schäfer R, Morkel M, Sers C. SFPQ Depletion Is Synthetically Lethal with BRAFV600E in Colorectal Cancer Cells. Cell Rep. 2020 Sep 22;32(12):108184. [doi: 10.1016/j.celrep.2020.108184](https://doi.org/10.1016/j.celrep.2020.108184).
+
 Kleinert, P., Martin, B., & Kircher, M. (2020).
 "HemoMIPs—Automated analysis and result reporting pipeline for targeted sequencing data."
 *PLOS Computational Biology*,
