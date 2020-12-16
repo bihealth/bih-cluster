@@ -93,3 +93,10 @@ In the case of violations marked with a shield (:shield:) administration reserve
         - You can assume that the cluster internal network is secure and you do not have to encrypt connections between nodes.
         - Connections towards outside of the clsuter must be encrypted (e.g., via SSH tunnels; incoming ones as reverse tunneling is prohibited, see above).
         - Access to any service must be protected by appropriate means, e.g., passwords, tokens or client certifictes.
+
+### Maintenances
+
+1. Maintenance that are expected to cause major service interruptions (the whole system becomes unusable and/or jobs might be prevented to run etc.) are announced 14 days in advance.
+2. Maintenance of login nodes (e.g., reboot one node while the other is still available) are announced 7 days in advance.
+3. Maintenance of transfer nodes are announced 1 day in advance.
+   Rationale: transfer nodes expected to not have any interactive sessions running.
