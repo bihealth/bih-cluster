@@ -427,6 +427,10 @@ res-login-1:~$ mv ~/.cpan ~/work/.cpan
 res-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
 ```
 
+## I'm getting a "Disk quota exceeded" error.
+
+Most probably you are running into the same problem as described and solved in the entry [Help, I'm getting a Quota Warning Email!](#help-im-getting-a-quota-warning-email)
+
 ## Environment modules don't work and I get "module: command not found"
 
 First of all, ensure that you are on a compute node and not on one of the login nodes.
