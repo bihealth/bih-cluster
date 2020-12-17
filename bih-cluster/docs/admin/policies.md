@@ -100,3 +100,10 @@ In the case of violations marked with a shield (:shield:) administration reserve
 2. Maintenance of login nodes (e.g., reboot one node while the other is still available) are announced 7 days in advance.
 3. Maintenance of transfer nodes are announced 1 day in advance.
    Rationale: transfer nodes expected to not have any interactive sessions running.
+
+### Credentials Policies
+
+1. Login on HPC 4 Research is currently based on SSH keys only.
+   HPC 4 Clinic currently allows login with password or SSH keys.
+2. SSH keys must deposited with the host organizations (Charite/MDC) as documented.
+3. For technical reasons, the compute nodes also use the `~/.ssh/authorized_keys` file but their usage is discouraged.
