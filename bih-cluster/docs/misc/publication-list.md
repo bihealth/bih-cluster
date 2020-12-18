@@ -10,6 +10,8 @@ It has been used to support the publications listed below.
 
 ### 2020
 
+Krützfeldt LM, Schubach M, Kircher M. The impact of different negative training data on regulatory sequence predictions. PLoS One. 2020 Dec 1;15(12):e0237412. [doi: 10.1371/journal.pone.0237412](https://doi.org/10.1371/journal.pone.0237412).
+
 Klotz-Noack K, Klinger B, Rivera M, Bublitz N, Uhlitz F, Riemer P, Lüthen M, Sell T, Kasack K, Gastl B, Ispasanie SSS, Simon T, Janssen N, Schwab M, Zuber J, Horst D, Blüthgen N, Schäfer R, Morkel M, Sers C. SFPQ Depletion Is Synthetically Lethal with BRAFV600E in Colorectal Cancer Cells. Cell Rep. 2020 Sep 22;32(12):108184. [doi: 10.1016/j.celrep.2020.108184](https://doi.org/10.1016/j.celrep.2020.108184).
 
 Kleinert, P., Martin, B., & Kircher, M. (2020).
