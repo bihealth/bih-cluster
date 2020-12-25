@@ -540,3 +540,36 @@ This was done to prevent users from thrashing the head nodes or using SSH based 
 
 Please use [projects as documented here](/bih-cluster/admin/getting-access/#projects).
 Projects were created for this particular purpose.
+
+## What's the relation of Charite, MDC, and cluster accounts?
+
+For HPC 4 Research either a working Charite or MDC account is required.
+The system has a separate meta directory that is used for the authorization of users (in other words, whether the user is active, has access to the system, and which groups the user belongs to).
+Charite and MDC accounts map to accounts `<Charite user name>_c` and `<MDC user name>_m` accounts in this meta directory.
+In the case that a user has both Charite and MDC accounts these are completely separate entities in the meta directory.
+For authentication (veryfing that a user has acccess to an account), the Charite and MDC account systems (MS Active Directory) are used.
+Authentication currently only uses the SSH keys deposited into Charite (via zugang.charite.de) and MDC (via MDC persdb).
+Users have to obtain a suitable Charite/MDC account via Charite and MDC central IT departments and upload their SSH keys through the host organization systems on their own.
+The hpc-gatekeeper process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special `hpc-users` group that controls access to the system and organizing users into work groups and projects.
+
+For HPC 4 Clinic, a Charite account is required.
+Such accounts map to an account of the same name of the HPC 4 Clinic system.
+Further, users have to be explicitely registered and setup for access to the system via the hpc-gatekeeper process as well as management of users into work groups and access to projects.
+This creates their users home/work/scratch shares and grants access for connecting to the system by becoming a member of the special `h4c-users` group.
+HPC 4 Clinic is directly connected to the Charite authentication and authorization systems and users can login with their password or SSH key uploaded to zugang.charite.de.
+
+The process of submitting keys to Charite and MDC is documented in the "Connecting" section.
+
+## How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?
+
+Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](/connecting/from-external/).
+For Charite VPN, as for all Charite IT systems, users must use their Charite user name (e.g., `jdoe` and not `jdoe_c`).
+
+MDC users either have to use MDC VPN or the MDC jail node, as [documented here](/connecting/from-external/).
+For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., `jdoe` and not `jdoe_m`).
+
+For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.
+
+Only when connecting **from** the host organizations' VPN or **from** the host organizations' jail node, the users use the HPC 4 Research user name that is `jdoe_c` or `jdoe_m` and not `jdoe`!
+
+Note well that access to HPC 4 Clinic currently does not allow access from external ystems.
