@@ -543,7 +543,7 @@ Projects were created for this particular purpose.
 
 ## What's the relation of Charite, MDC, and cluster accounts?
 
-For HPC 4 Research either a working Charite or MDC account is required.
+For HPC 4 Research either an active and working Charite or MDC account is required (that is, you can login e.g., into email.charite.de or mail.mdc-berlin.de).
 The system has a separate meta directory that is used for the authorization of users (in other words, whether the user is active, has access to the system, and which groups the user belongs to).
 Charite and MDC accounts map to accounts `<Charite user name>_c` and `<MDC user name>_m` accounts in this meta directory.
 In the case that a user has both Charite and MDC accounts these are completely separate entities in the meta directory.
@@ -552,7 +552,7 @@ Authentication currently only uses the SSH keys deposited into Charite (via zuga
 Users have to obtain a suitable Charite/MDC account via Charite and MDC central IT departments and upload their SSH keys through the host organization systems on their own.
 The hpc-gatekeeper process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special `hpc-users` group that controls access to the system and organizing users into work groups and projects.
 
-For HPC 4 Clinic, a Charite account is required.
+For HPC 4 Clinic, a Charite account is required (that is, you can login e.g., into email.charite.de).
 Such accounts map to an account of the same name of the HPC 4 Clinic system.
 Further, users have to be explicitely registered and setup for access to the system via the hpc-gatekeeper process as well as management of users into work groups and access to projects.
 This creates their users home/work/scratch shares and grants access for connecting to the system by becoming a member of the special `h4c-users` group.
