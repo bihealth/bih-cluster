@@ -9,5 +9,7 @@ MobaXterm is a software that allows you to connect to an SSH server, much like P
       This is not for the faint of heart (but great if you're a Unix head).
 
 * Navigate to https://mobaxterm.mobatek.net/download-home-edition.html
-* Download either the Portable edition (blue button lefthand-side, if you have no admin rights, e.g. as Charite or MDC user) or the Installer edition (green button righthand-side).
+* Download either the
+    * **Portable edition** (blue button lefthand-side, **if you have no admin rights**, e.g. on a Charite or MDC workstation), or
+    * **Installer edition** (green button righthand-side, **requires admin rights on your computer**).
 * Install or unpack MobaXterm and start the software. As a Charite user, please cancel any firewall warnings that pop up.
