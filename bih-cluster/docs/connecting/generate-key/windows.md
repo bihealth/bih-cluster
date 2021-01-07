@@ -1,8 +1,8 @@
 # Generating an SSH Key in Windows
 
-!!! hint
+!!! hint Prerequisite: Installing an SSH Client
 
-    Please install an [SSH client for Windows](../ssh-client-windows.md).
+    Please install an [SSH client for Windows](../ssh-client-windows.md) first.
 
 ## Generate the Key
 
