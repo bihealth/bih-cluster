@@ -111,6 +111,11 @@ For example, the following tells us that the given job was above its elapsed tim
 
 Use `man sacct`, `sacct --helpformat`, or see the [Slurm Documentation](https://slurm.schedmd.com/sacct.html) for options for the `--format` field of `sacct`.
 
+## I'm getting a "Bus error (core dumped)"
+
+This is most probably caused by your job being allocated insufficient memory.
+Please see the memory part of the answer to [My job terminated before being done. What happened?](/help/faq/#my-job-terminated-before-being-done-what-happened)
+
 ## How can I create a new project?
 
 You can create a project if you are either a group leader of an AG or a delegate of an AG.
