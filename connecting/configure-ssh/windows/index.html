@@ -658,6 +658,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mounting-the-fs-from-within-the-mdccharite-network" class="md-nav__link">
+    Mounting the FS from within the MDC/Charite Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connecting-via-mdc-jail-node" class="md-nav__link">
     Connecting via MDC Jail Node
   </a>
@@ -1915,6 +1922,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mounting-the-fs-from-within-the-mdccharite-network" class="md-nav__link">
+    Mounting the FS from within the MDC/Charite Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connecting-via-mdc-jail-node" class="md-nav__link">
     Connecting via MDC Jail Node
   </a>
@@ -1971,6 +1985,30 @@ Select the tab <strong>Advanced SSH settings</strong>, check <strong>Use private
 <p>Afterwards hit the <strong>OK</strong> button and MobaXterm will connect.</p>
 <p><img alt="" src="../figures/mobaxterm_connect4.png" /></p>
 <p>The session will be stored automatically and you can establish new connections later on, or also multiple ones at the same time, if you like.</p>
+<h2 id="mounting-the-fs-from-within-the-mdccharite-network">Mounting the FS from within the MDC/Charite Network<a class="headerlink" href="#mounting-the-fs-from-within-the-mdccharite-network" title="Permanent link">&para;</a></h2>
+<p>Once WinSshFS is started, an icon will be added to your taskbar:</p>
+<p><img alt="" src="../figures/winsshfs1.png" /></p>
+<p>Left-clicking that icon will bring up a window.
+If not, right click the taskbar icon, select <code>Show Manager</code> and click <code>Add</code> in the menu.</p>
+<p><img alt="" src="../figures/winsshfs2.png" /></p>
+<p>Fill out the marked fields:</p>
+<ul>
+<li><strong>Drive Name:</strong>
+Name that will show up in the windows explorer</li>
+<li><strong>Host:</strong>
+<code>transfer-1.research.hpc.bihealth.org</code></li>
+<li><strong>Username:</strong>
+Your cluster username</li>
+<li><strong>Authentication method:</strong>
+<code>PrivateKey</code>. Select the <code>id_rsa</code> private key, not the <code>.ppk</code> format that is provided by PuTTY.
+Enter the password that you used to secure your key with.</li>
+<li><strong>Directory:</strong>
+Cluster directory that will be mounted, you can choose any directory you have access to on the cluster.</li>
+</ul>
+<p>Then click <code>Save</code> and then <code>Mount</code>.</p>
+<p>Open the explorer. A new drive with the name you gave should show up:</p>
+<p><img alt="" src="/figures/winsshfs3.png" /></p>
+<p>Finished!</p>
 <h2 id="connecting-via-mdc-jail-node">Connecting via MDC Jail Node<a class="headerlink" href="#connecting-via-mdc-jail-node" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -2003,7 +2041,7 @@ Select the tab <strong>Advanced SSH settings</strong>, check <strong>Use private
 <div class="md-source-date">
   <small>
     
-      Last update: January 20, 2021
+      Last update: January 26, 2021
     
   </small>
 </div>
