@@ -63,7 +63,7 @@ Then click `Save` and then `Mount`.
 
 Open the explorer. A new drive with the name you gave should show up:
 
-![](/figures/winsshfs3.png)
+![](figures/winsshfs3.png)
 
 Finished!
 
