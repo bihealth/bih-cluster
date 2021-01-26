@@ -34,6 +34,40 @@ Afterwards hit the **OK** button and MobaXterm will connect.
 
 The session will be stored automatically and you can establish new connections later on, or also multiple ones at the same time, if you like.
 
+## Mounting the FS from within the MDC/Charite Network
+
+Once WinSshFS is started, an icon will be added to your taskbar:
+
+![](figures/winsshfs1.png)
+
+Left-clicking that icon will bring up a window.
+If not, right click the taskbar icon, select `Show Manager` and click `Add` in the menu.
+
+![](figures/winsshfs2.png)
+
+Fill out the marked fields:
+
+- **Drive Name:**
+Name that will show up in the windows explorer
+- **Host:**
+`transfer-1.research.hpc.bihealth.org`
+- **Username:**
+Your cluster username
+- **Authentication method:**
+`PrivateKey`. Select the `id_rsa` private key, not the `.ppk` format that is provided by PuTTY.
+Enter the password that you used to secure your key with.
+- **Directory:**
+Cluster directory that will be mounted, you can choose any directory you have access to on the cluster.
+
+Then click `Save` and then `Mount`.
+
+Open the explorer. A new drive with the name you gave should show up:
+
+![](/figures/winsshfs3.png)
+
+Finished!
+
+
 ## Connecting via MDC Jail Node
 
 * This requires an active MDC account!
