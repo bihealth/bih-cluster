@@ -84,6 +84,13 @@ res-login-1:~$ mv ~/ondemand ~/work/ondemand
 res-login-1:~$ ln -sr ~/work/ondemand ~/ondemand
 ```
 
+!!! important
+
+    Make sure to delete potential interactive sessions and to logout from the
+    Ondemand Portal first. Otherwise, the `~/ondemand` folder is constantly
+    recreated and the symlink will be just created within this folder as
+    `~/ondemand/ondemand` and thus not be used as intended.
+
 ## Portal Dashboard
 
 !!! help "Problems with Open OnDemand?"

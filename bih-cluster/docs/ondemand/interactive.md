@@ -64,6 +64,11 @@ $ ls -lhtr $HOME/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-s
     $ ln -sr ~/work/ondemand ~/ondemand
     ```
 
+    Make sure to delete potential interactive sessions and to logout from the
+    Ondemand Portal first. Otherwise, the `~/ondemand` folder is constantly
+    recreated and the symlink will be just created within this folder as
+    `~/ondemand/ondemand` and thus not be used as intended.
+
     Also, clear out `~/work/ondemand/*` from time to time but take care that you don't remove the directory of any running job.
     
 
