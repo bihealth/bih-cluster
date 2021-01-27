@@ -2035,6 +2035,13 @@ a symlink for the now dislocated <code>~/ondemand</code> folder:</p>
 res-login-1:~$ ln -sr ~/work/ondemand ~/ondemand
 </code></pre></div>
 
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to delete potential interactive sessions and to logout from the
+Ondemand Portal first. Otherwise, the <code>~/ondemand</code> folder is constantly
+recreated and the symlink will be just created within this folder as
+<code>~/ondemand/ondemand</code> and thus not be used as intended.</p>
+</div>
 <h2 id="portal-dashboard">Portal Dashboard<a class="headerlink" href="#portal-dashboard" title="Permanent link">&para;</a></h2>
 <div class="admonition help">
 <p class="admonition-title">Problems with Open OnDemand?</p>
@@ -2092,7 +2099,7 @@ Consider carefully what you do as you would from the command line (e.g., don't u
 <div class="md-source-date">
   <small>
     
-      Last update: January 26, 2021
+      Last update: January 27, 2021
     
   </small>
 </div>

@@ -1985,6 +1985,10 @@ Also, the helpdesk will need the path to this folder to help you with interactiv
 $ ln -sr ~/work/ondemand ~/ondemand
 </code></pre></div>
 
+<p>Make sure to delete potential interactive sessions and to logout from the
+Ondemand Portal first. Otherwise, the <code>~/ondemand</code> folder is constantly
+recreated and the symlink will be just created within this folder as
+<code>~/ondemand/ondemand</code> and thus not be used as intended.</p>
 <p>Also, clear out <code>~/work/ondemand/*</code> from time to time but take care that you don't remove the directory of any running job.</p>
 </div>
 <h2 id="example-rstudio-session">Example: RStudio Session<a class="headerlink" href="#example-rstudio-session" title="Permanent link">&para;</a></h2>
@@ -2009,7 +2013,7 @@ to get an interactive session by clicking <code>Connect to RStudio Server</code>
 <div class="md-source-date">
   <small>
     
-      Last update: January 26, 2021
+      Last update: January 27, 2021
     
   </small>
 </div>
