@@ -65,7 +65,7 @@ host:~$ cd ~/scratch/download_dir
 ```
 
 Next, start `lftp`.
-You can open the connection using `open -u <user>@<DOMAIN> https://file-exchange.bihealth.org/<file-box-id>` where
+You can open the connection using `open -u <user>@<DOMAIN> https://file-exchange.bihealth.org/<file-box-id>/` (NB: there is a trailing slash) where
 
 - `<user>` is your user name, e.g., `holtgrem`,
 - `<domain>` is either `MDC` or `CHARITE`, and
