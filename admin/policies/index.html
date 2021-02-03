@@ -2058,6 +2058,9 @@ Larger changes will be announced through the mailing list.</p>
 <li>The cluster mailing list <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#105;&#104;&#45;&#99;&#108;&#117;&#115;&#116;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#98;&#105;&#104;&#45;&#99;&#108;&#117;&#115;&#116;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> is the primary contact channel for administration to user.
    Users must be subscribed to the mailing list.
    Users must follow the announcements, failure to do so can lead to missing important policy changes and thus losing access to the cluster or data.</li>
+<li><strong>Do not perform any computation on the login nodes.</strong>
+   This includes: running <code>conda</code>, archive management tools such as <code>tar</code>, <code>(un)zip</code>, or <code>gzip</code>.
+   You should probably only run <code>screen</code>/<code>tmux</code> and maybe a text editor there.</li>
 </ol>
 <h2 id="cluster-policies">Cluster Policies<a class="headerlink" href="#cluster-policies" title="Permanent link">&para;</a></h2>
 <h3 id="file-system-policies">File System Policies<a class="headerlink" href="#file-system-policies" title="Permanent link">&para;</a></h3>
@@ -2155,7 +2158,7 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
 <div class="md-source-date">
   <small>
     
-      Last update: January 28, 2021
+      Last update: February 3, 2021
     
   </small>
 </div>
