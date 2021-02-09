@@ -24,6 +24,11 @@ plugins:
   - search
   - git-revision-date-localized
 
+# Custom overrides.
+theme:
+  name: material
+  custom_dir: overrides
+
 # Extensions
 markdown_extensions:
   - attr_list
