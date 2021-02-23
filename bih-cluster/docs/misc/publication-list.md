@@ -8,6 +8,12 @@ It has been used to support the publications listed below.
 
 ## Articles & Preprints
 
+### 2021
+
+Kossen T, Subramaniam P, Madai VI, Hennemuth A, Hildebrand K, Hilbert A, Sobesky J, Livne M, Galinovic I, Khalil AA, Fiebach JB, Frey D. 
+Synthesizing anonymized and labeled TOF-MRA patches for brain vessel segmentation using generative adversarial networks. 
+*Computers in Biology and Medicine*. 2021 Apr 131,104254. [doi: 10.1016/j.compbiomed.2021.104254](https://doi.org/10.1016/j.compbiomed.2021.104254)
+
 ### 2020
 
 Krützfeldt LM, Schubach M, Kircher M. The impact of different negative training data on regulatory sequence predictions. PLoS One. 2020 Dec 1;15(12):e0237412. [doi: 10.1371/journal.pone.0237412](https://doi.org/10.1371/journal.pone.0237412).
