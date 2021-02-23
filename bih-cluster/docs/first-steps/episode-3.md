@@ -146,7 +146,7 @@ rule all:
         'structural_variants/test.vcf'
 
 rule alignment:
-    input:l
+    input:
         '/fast/projects/cubit/work/tutorial/input/{id}_R1.fq.gz',
         '/fast/projects/cubit/work/tutorial/input/{id}_R2.fq.gz',
     output:
