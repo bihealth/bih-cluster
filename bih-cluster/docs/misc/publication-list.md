@@ -10,6 +10,10 @@ It has been used to support the publications listed below.
 
 ### 2021
 
+Bressem KK, Vahldiek JL, Adams L, Niehues SM, Haibel H, Rodriguez VR, Torgutalp M, Protopopov M, Proft F, Rademacher J, Sieper J, Rudwaleit M, Hamm B, Makowski MR, Hermann KG, Poddubnyy D. 
+Deep learning for detection of radiographic sacroiliitis: achieving expert-level performance. 
+Arthritis Res Ther. 2021 Apr 8;23(1):106. [doi: 10.1186/s13075-021-02484-0](https://doi.org/10.1186/s13075-021-02484-0)
+
 Kossen T, Subramaniam P, Madai VI, Hennemuth A, Hildebrand K, Hilbert A, Sobesky J, Livne M, Galinovic I, Khalil AA, Fiebach JB, Frey D. 
 Synthesizing anonymized and labeled TOF-MRA patches for brain vessel segmentation using generative adversarial networks. 
 *Computers in Biology and Medicine*. 2021 Apr 131,104254. [doi: 10.1016/j.compbiomed.2021.104254](https://doi.org/10.1016/j.compbiomed.2021.104254)
