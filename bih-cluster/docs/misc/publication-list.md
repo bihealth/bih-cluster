@@ -14,6 +14,12 @@ Kossen T, Subramaniam P, Madai VI, Hennemuth A, Hildebrand K, Hilbert A, Sobesky
 Synthesizing anonymized and labeled TOF-MRA patches for brain vessel segmentation using generative adversarial networks. 
 *Computers in Biology and Medicine*. 2021 Apr 131,104254. [doi: 10.1016/j.compbiomed.2021.104254](https://doi.org/10.1016/j.compbiomed.2021.104254)
 
+Paraskevopoulou S., Käfer S., Zirkel F., Donath A., Petersen M., Liu S., Zhou X., Drosten C., Misof B., Junglen S. (2021). 
+"Viromics of extant insect orders unveil the evolution of the flavi-like superfamily."
+*Virus Evolution*
+2021 Mar 30. 
+[doi: 10.1093/ve/veab030](https://doi.org/10.1093/ve/veab030)
+
 ### 2020
 
 Krützfeldt LM, Schubach M, Kircher M. The impact of different negative training data on regulatory sequence predictions. PLoS One. 2020 Dec 1;15(12):e0237412. [doi: 10.1371/journal.pone.0237412](https://doi.org/10.1371/journal.pone.0237412).
