@@ -31,7 +31,7 @@ Administration provides a system with state of the art IT security, users are re
 
     The cluster consists of the following major components:
 
-    - 2 login nodes for users `transfer-1` and `transfer-2` (for interactive sessions only),
+    - 2 login nodes for users `login-1` and `login-2` (for interactive sessions only),
     - 2 nodes for file transfers `transfer-1` and `transfer-2`,
     - a scheduling system using Slurm,
     - approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
