@@ -10,7 +10,7 @@ There are two types of quotas: for (a) size of and (b) number of files in a dire
 Every row in the table corresponds to a directory that you have access to. This implies
 your home directory (`fast/users`) as well as the group directory of your lab (`fast/groups`) and possible projects (`fast/projects`)
 (if any). Quotas are not directly implied on these directories but on the `home`, `scratch` and `work`
-subdirectories that each of subdirectory of the beforementioned directories has (for a detailed explanation see [Storage and Volumes](../storage-locations)).
+subdirectories that each of subdirectory of the beforementioned directories has (for a detailed explanation see [Storage and Volumes](../storage/storage-locations.md)).
 
 The following list explains the columns of the table:
 

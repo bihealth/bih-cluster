@@ -18,7 +18,7 @@ The options differ depending on your home organization and are described in deta
 !!! tip "SSH Key Gotchas"
 
     You should use separate SSH key pairs for your workstation, laptop, home computer etc.
-    As a reminder, you will have to register the SSH keys with your home IT organization ([MDC](../submit-key/mdc) or [Charite](../submit-key/charite)).
+    As a reminder, you will have to register the SSH keys with your home IT organization ([MDC](submit-key/mdc.md) or [Charite](submit-key/charite.md)).
     When using gateway nodes, please make sure to use SSH key agents and agent forwarding (`ssh` flag "`-A`").
 
 ## For MDC Users
@@ -88,4 +88,4 @@ The form can be found [here](https://intranet.charite.de/fileadmin/user_upload/p
 It is important to tick **Dienst(e)**, enter **HTTPS** and as target `view.bihealth.org`.
 Please write to [helpdesk@charite.de](mailto:helpdesk@charite.de) with the request to access the [BIH VDI](https://view.bihealth.org).
 
-When the access has been set up, follow the instructions on [client configuration](../configure-ssh/windows) for Windows, after logging in to the [BIH VDI](https://view.bihealth.org).
+When the access has been set up, follow the instructions on [client configuration](configure-ssh/windows.md) for Windows, after logging in to the [BIH VDI](https://view.bihealth.org).

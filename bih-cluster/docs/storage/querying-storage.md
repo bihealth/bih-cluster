@@ -6,7 +6,7 @@
 
 !!! info "More Convenient OnDemand Portal"
 
-    You can also see your quotas in the [Open OnDemand Portal Quotas application](/ondemand/quotas/).
+    You can also see your quotas in the [Open OnDemand Portal Quotas application](../ondemand/quotas.md).
 
 As described elsewhere, all data in your user, group, and project volumes is subject to quotas.
 Again, note that in case you face a shortage of storage, do not hesitate to send a request for quota increase to hpc-gatekeeper@bihealth.de.

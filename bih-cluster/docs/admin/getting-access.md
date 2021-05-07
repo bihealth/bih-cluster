@@ -7,7 +7,7 @@
         A Charite or MDC account is required for accessing HPC 4 Research.
 
         1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
-        2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
+        2. **Upload Key.** Upload your SSH key through the Charite and MDC infrastructure.
         3. **Connect.** `ssh -l <user>_<c or m>@login-1.research.bihealth.org`
 
 === "HPC 4 Clinic"
@@ -17,8 +17,8 @@
         For using HPC 4 Clinic, a Charite account is required.
 
         1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
-        2. **Upload Key.** Upload your SSH key through the Charite and MDC Infrastructure.
-        3. **Connect.** `ssh -l <user>_<c or m>@login-1.clinic.bihealth.org`
+        2. **Upload Key.** Upload your SSH key through the Charite infrastructure.
+        3. **Connect.** `ssh -l <user>@login-1.clinic.bihealth.org`
 
 Access to the BIH HPC clusters is based on work groups (also known as labs, units).
 Each group is headed by a leader (also known as principle investigator/PI) who has to send requests but and also have one delegate.

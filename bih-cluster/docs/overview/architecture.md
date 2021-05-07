@@ -41,7 +41,7 @@ Users don't connect to nodes directly but rather create interactive or batch job
   These are submitted to the cluster and then assigned to compute hosts by the job scheduler.
   Users can configure the scheduler to send them an email upon completion.
   Users can submit many batch jobs at the same time and the scheduler will execute them once the cluster offers sufficient resources.
-- **Web-based access** can be achieved using the [OnDemand Portal](/ondemand/overview/)
+- **Web-based access** can be achieved using the [OnDemand Portal](../ondemand/overview.md)
 
 ## Head vs. Compute Nodes
 

@@ -3,7 +3,7 @@
 !!! info "Please Contribute!"
 
     This guide is far from complete.
-    Please feel free to contribute, e.g., refer to [How-To: Contribute to this Document](../contribute).
+    Please feel free to contribute, e.g., refer to [How-To: Contribute to this Document](contribute.md).
 
 Software development in general or even debugging of software are very broad topics.
 As such, we will not be able to handle them here comprehensively.

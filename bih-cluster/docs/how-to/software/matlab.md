@@ -6,12 +6,12 @@
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
     While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-    Further, you can [easily install it yourself using Conda](../../best-practice/software-installation-with-conda).
+    Further, you can [easily install it yourself using Conda](../../best-practice/software-installation-with-conda.md).
 
 !!! question "Want to use the Matlab GUI?"
     Make sure you understand X forwarding as outline [in this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
 
-    You can also use [Open OnDemand Portal](/ondemand/overview/) to run Matlab.
+    You can also use [Open OnDemand Portal](../../ondemand/overview.md) to run Matlab.
 
 ## Pre-requisites
 

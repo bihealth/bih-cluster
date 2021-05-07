@@ -11,7 +11,7 @@ However, it is quite well-documented and easy to install for scientific software
 
 ## Related Documents
 
-- [How-To: Build and Run OpenMPI Programs](openmpi)
+- [How-To: Build and Run OpenMPI Programs](openmpi.md)
 
 ## Steps for Installing Scientific Software
 
@@ -277,7 +277,7 @@ med0127:~$ module load gcc/7.2.0-0 openmpi/4.0.3-0 gromacs-mpi/2018.3
 ## Launching Gromacs
 
 Something along the lines of the following job script should be appropriate.
-See [How-To: Build Run OpenMPI Programs](openmpi) for more information.
+See [How-To: Build Run OpenMPI Programs](openmpi.md) for more information.
 
 ```bash
 #!/bin/bash

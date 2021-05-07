@@ -14,15 +14,13 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## I cannot connect to the cluster. What's wrong?
 
-Please see the section [Connection Problems](../../connecting/configure-ssh/connection-problems).
+Please see the section [Connection Problems](../connecting/configure-ssh/connection-problems.md).
 
 ## I'd like to learn more about Slurm
 
-- Some documentation is available on this website, e.g., start at [Slurm Quickstart](../slurm/quickstart).
+- Some documentation is available on this website, e.g., start at [Slurm Quickstart](../slurm/quickstart.md).
 
 ## What is the difference between MAX and BIH cluster? What is their relation?
-
-## What is the difference between MAX and BIH clusters? What is their relation?
 
 **Administrativa**
 
@@ -76,7 +74,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler
 ```
 
 This indicates that your job tries to use more memory than has been allocated to it.
-Also see [Slurm Scheduler: Memory Allocation](/slurm/memory-allocation/)
+Also see [Slurm Scheduler: Memory Allocation](../slurm/memory-allocation.md)
 
 Otherwise, you can use `sacct -j JOBID` to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by `CANCELED`) by the Slurm job scheduler looks like this (ignore the `COMPLETED` step that is just some post-job step added by Slurm automatically).
@@ -114,7 +112,7 @@ Use `man sacct`, `sacct --helpformat`, or see the [Slurm Documentation](https://
 ## I'm getting a "Bus error (core dumped)"
 
 This is most probably caused by your job being allocated insufficient memory.
-Please see the memory part of the answer to [My job terminated before being done. What happened?](/help/faq/#my-job-terminated-before-being-done-what-happened)
+Please see the memory part of the answer to [My job terminated before being done. What happened?](faq.md#my-job-terminated-before-being-done-what-happened)
 
 ## How can I create a new project?
 
@@ -280,7 +278,7 @@ res-login-1:~$ squeue -j 877092
             877092    medium snakejob holtgrem  R       0:05      1 med0626
 ```
 
-See [Job Scheduler](/overview/job-scheduler/) for information about the partition's properties and how jbos are routed to partitions.
+See [Job Scheduler](../overview/job-scheduler.md) for information about the partition's properties and how jbos are routed to partitions.
 You can force jobs to run in a particular partition by specifying the `--partition` parameter, e.g., by adding `--partition=medium` or `-p medium` to your `srun` and `sbatch` calls.
 
 ## My jobs get killed after four hours
@@ -290,7 +288,7 @@ This is probably answered by the answer to [My jobs don't run in the partition I
 ## How can I mount a network volume from elsewhere on the cluster?
 
 You cannot.
-Also see the [For the Impatient](../overview/for-the-impatient) section of the manual.
+Also see the [For the Impatient](../overview/for-the-impatient.md) section of the manual.
 
 ## Why can I not mount a network volume from elsewhere on the cluster?
 
@@ -403,7 +401,7 @@ This will also display node partition, availability etc.
 
 No worries!
 
-As documented in the [Storage Locations](/storage/storage-locations) section, each user/project/group has three storage volumes:
+As documented in the [Storage Locations](../storage/storage-locations.md) section, each user/project/group has three storage volumes:
 A small `home`, a larger `work` and a large (but temporary) `scratch`.
 There are limits on the size of these volumes.
 You get a nightly warning email in case you are over the soft limit and you will not be able to write any more data if you get above the hard limit.
@@ -478,7 +476,7 @@ fi
 ```
 
 There actually are a couple of more files by default.
-The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!
+The original copy in `/etc/skel.bih` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!
 
 ```bash
 res-login-1:~$ tree -a /etc/skel.bih/
@@ -492,7 +490,7 @@ res-login-1:~$ tree -a /etc/skel.bih/
 
 ## My program crashes! What should I do?
 
-Have a look at our [How-To: Debug Software](../../how-to-/debug-software) and [How-To: Debug Software on HPC Systems](../../how-to-/debug-at-hpc) guides!
+Have a look at our [How-To: Debug Software](../how-to/misc/debug-software.md) and [How-To: Debug Software on HPC Systems](../how-to/misc/debug-at-hpc.md) guides!
 
 **But it works on my workstation!**
 
@@ -514,7 +512,7 @@ nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
 No, as Docker essentially gives you access as the root user.
 
 However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
-Also see [Using Singularity (with Docker Images)](../../how-to/software/singularity).
+Also see [Using Singularity (with Docker Images)](../how-to/software/singularity.md).
 
 ## How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?
 
@@ -543,7 +541,7 @@ This was done to prevent users from thrashing the head nodes or using SSH based 
 
 ## How can I share files/collaborate with users from another work group?
 
-Please use [projects as documented here](/bih-cluster/admin/getting-access/#projects).
+Please use [projects as documented here](../admin/getting-access.md#projects).
 Projects were created for this particular purpose.
 
 ## What's the relation of Charite, MDC, and cluster accounts?
@@ -567,10 +565,10 @@ The process of submitting keys to Charite and MDC is documented in the "Connecti
 
 ## How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?
 
-Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](/connecting/from-external/).
+Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](../connecting/from-external.md).
 For Charite VPN, as for all Charite IT systems, users must use their Charite user name (e.g., `jdoe` and not `jdoe_c`).
 
-MDC users either have to use MDC VPN or the MDC jail node, as [documented here](/connecting/from-external/).
+MDC users either have to use MDC VPN or the MDC jail node, as [documented here](../connecting/from-external.md).
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., `jdoe` and not `jdoe_m`).
 
 For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.

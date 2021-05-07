@@ -2,7 +2,7 @@
 
 !!! info "SSH Tunnels Considered Harmful"
 
-    **Please use our [Open OnDemand Portal](/ondemand/overview/) for running Jupyter notebooks!**
+    **Please use our [Open OnDemand Portal](../../ondemand/overview.md) for running Jupyter notebooks!**
 
     The information below is still accurate.
     However, many users find it tricky to get SSH tunnels working correctly.

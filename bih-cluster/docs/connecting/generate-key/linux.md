@@ -15,7 +15,7 @@
     When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
     Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
 
-    Also see [SSH Basics](/misc/ssh-basics/) for more information.
+    Also see [SSH Basics](../../misc/ssh-basics.md) for more information.
 
 The whole session should look something like this:
 
@@ -54,5 +54,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809
 As a next step you need to submit the SSH key use these links as:
 
 
-- [:hospital: Charite user](../../submit-key/charite.md)
+- [:hospital: Charite user](../submit-key/charite.md)
 - [:microscope: MDC user](../submit-key/mdc.md)
