@@ -42,7 +42,7 @@ The main features are:
 
 ## Logging into the Portal
 
-The first prerequisite is to have a cluster account already (see [Getting Access](../admin/getting-access/)).
+The first prerequisite is to have a cluster account already (see [Getting Access](../admin/getting-access.md)).
 Once you have done your first SSH connection to the cluster successfully you can start using the portal.
 For this you perform the following steps:
 
@@ -114,19 +114,19 @@ We will not go into detail of all of them and expect them to be self-explanatory
 
 - **Files**
     - **Home Directory** - Access a file browser.
-    - [**Quotas**](../quotas) - Display quota information (only available on HPC 4 Research).
+    - [**Quotas**](quotas.md) - Display quota information (only available on HPC 4 Research).
 - **Jobs**
     - **Active Jobs** - List your jobs.
     - **Job Composer** - Start a new job.
 - **Clusters**
     - **Shell Access** - Shell access in your browser.
-- [**Interactive Apps**](../interactive)
+- [**Interactive Apps**](interactive.md)
     - **Mate and Xfce Desktops** - Start virtual desktops on the HPC.
     - **Matlab** - Run a virtual desktop that has Matlab installed.
     - **MaxQuant** - Run a virtual desktop that has MaxQuant installed.
     - **Jupyter** - Run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
     - **RStudio Server** - Run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
-- [**My Interactive Sessions**](../interactive) - See details of your currently running interactive sessions.
+- [**My Interactive Sessions**](interactive.md) - See details of your currently running interactive sessions.
 - **Help**
     - **Contact Support** - Links ot the "Getting Help" page in this documentation.
     - **Online Documentation** - Links to this documentation.

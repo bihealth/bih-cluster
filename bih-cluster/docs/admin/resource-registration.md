@@ -26,7 +26,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
     - How frequently do you need the GPU node, for how long at a time?
     - Do you plan to do more interactive work (e.g., using `ipython`) or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](../../how-to/connect/gpu-nodes)
+3. Use the GPU node by following the instructions [How To: Connect to GPU Nodes](../how-to/connect/gpu-nodes.md)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
@@ -45,7 +45,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
     - Do you plan to do more interactive work (e.g., using `ipython`) or using batch jobs?
     - What kind of work do you plan to do (e.g., assembly, running R scripts that don't run on the usual nodes)
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Connect to High-Memory Node](../how-to/connect/high-memory)
+3. Use the high-memory node by following the instructions [How-To: Connect to High-Memory Node](../how-to/connect/high-memory.md)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
@@ -59,7 +59,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
     While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-    Further, you can [easily install it yourself using Conda](../best-practice/software-installation-with-conda).
+    Further, you can [easily install it yourself using Conda](../best-practice/software-installation-with-conda.md).
 
 
 !!! question "Want to use the Matlab GUI?"
@@ -71,7 +71,7 @@ We trust that our users are grown-ups and are able to arrange for fair usage wit
     - How frequently do you need the nodes, for how long at a time?
     - Do you plan to do more interactive work or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Use Matlab](../how-to/software/matlab)
+3. Use the high-memory node by following the instructions [How-To: Use Matlab](../how-to/software/matlab.md)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.
 
@@ -91,6 +91,6 @@ Access to this partition has to be explicitely granted as with the other resourc
     - How frequently do you need the nodes, for how long at a time?
     - Do you plan to do more interactive work or using batch jobs?
 2. At the moment, all requests will be granted by hpc-gatekeeper.
-3. Use the high-memory node by following the instructions [How-To: Use the Critical Partition](../how-to/connect/high-memory)
+3. Use the high-memory node by following the instructions [How-To: Use the Critical Partition](../how-to/connect/high-memory.md)
 4. **Be nice and cooperative with other users, e.g., ask arrange sharing of the node via email and phone.**
    Type `getent passwd USER_NAME` on the cluster to see user's contact details.

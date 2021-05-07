@@ -6,10 +6,10 @@ For more detailed information, you will have to refer to the [Slurm website](htt
 
 For a quick introduction and hands-on examples, please see the manual sections
 
-- Overview, starting with [For the Impatient](/overview/for-the-impatient), and
-- First Steps/Tutorial, starting with [Episode 0](/first-steps/episode-0).
+- Overview, starting with [For the Impatient](../overview/for-the-impatient.md), and
+- First Steps/Tutorial, starting with [Episode 0](../first-steps/episode-0.md).
 
-Also, make sure that you are aware of our [How-To: Debug Software](../../how-to-/debug-software) and [How-To: Debug Software on HPC Systems](../../how-to-/debug-at-hpc) guides in the case that something goes wrong.
+Also, make sure that you are aware of our [How-To: Debug Software](../how-to/misc/debug-software.md) and [How-To: Debug Software on HPC Systems](../how-to/misc/debug-at-hpc.md) guides in the case that something goes wrong.
 
 ## Annotated Contents
 

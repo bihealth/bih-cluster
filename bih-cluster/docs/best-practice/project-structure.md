@@ -43,7 +43,7 @@ These scripts rather fall into the "configuration" category and should then live
 
 !!! warning "Temporary files"
 
-    You really should keep temporary files in a temporary directory, set the environment variable `TMPDIR` appropriately and automatically clean them up (see [Useful Tips: Temporary Files](../best-practice/temp-files))
+    You really should keep temporary files in a temporary directory, set the environment variable `TMPDIR` appropriately and automatically clean them up (see [Useful Tips: Temporary Files](temp-files.md))
 
 ## Best Practices in Practice
 

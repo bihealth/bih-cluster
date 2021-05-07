@@ -38,7 +38,7 @@ automatically).
     When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
     Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
 
-    Also see [SSH Basics](/misc/ssh-basics/) for more information.
+    Also see [SSH Basics](../../misc/ssh-basics.md) for more information.
 
 The gibberish in the textbox is your public key in the format how it has to be submitted to the MDC and Charite (links for this step below).
 Thus, copy this text and paste it to the SSH-key-submission-web-service of your institution.
@@ -70,5 +70,5 @@ cluster. It will be added to the sessions in MobaXterm and WinSSHFS
 
 As a next step you need to submit the SSH key use these links as:
 
-- [:hospital: Charite user](../submit-key/charite)
-- [:microscope: MDC user](../submit-key/mdc)
+- [:hospital: Charite user](../submit-key/charite.md)
+- [:microscope: MDC user](../submit-key/mdc.md)

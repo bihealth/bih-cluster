@@ -79,4 +79,4 @@ Each user, group, and project has one of the sections each, e.g., for users:
 - `/fast/users/$USER/scratch`
 
 
-See [Storage and Volumes: Locations](/storage/storage-locations/) for more informatin.
+See [Storage and Volumes: Locations](../storage/storage-locations.md) for more informatin.

@@ -15,7 +15,7 @@ At the time of writing, Tensorflow was available with GPU support from conda in 
 :lower_left_ballpoint_pen: You're welcome to update this (and any other) wiki page with new information.
 This is the only way to keep the Wiki up to date.
 
-This tutorial assumes, that conda has been set up as described in [Software Management]((../../best-practice/software-installation-with-conda).
+This tutorial assumes, that conda has been set up as described in [Software Management]((../../best-practice/software-installation-with-conda.md).
 
 ## Create conda environment
 

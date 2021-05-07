@@ -3,9 +3,9 @@
 !!! info "Please Contribute!"
 
     This guide is far from complete.
-    Please feel free to contribute, e.g., refer to [How-To: Contribute to this Document](../contribute).
+    Please feel free to contribute, e.g., refer to [How-To: Contribute to this Document](contribute.md).
 
-Please make sure that you have read [How-To: Debug Software](../debug-software) as a general primer.
+Please make sure that you have read [How-To: Debug Software](debug-software.md) as a general primer.
 
 As debugging is hard enough already, it makes one wonder how to do this on the HPC system in batch mode.
 Here is a list of pointers.
@@ -57,7 +57,7 @@ This attempt will be greatly helped by reproducible running on a minimal working
 
 ## Attempt 4: Use `sattach`
 
-You can use [`sattach`](../../slurm/command-sattach) for attaching your terminal to your running job.
+You can use [`sattach`](../../slurm/commands-sattach.md) for attaching your terminal to your running job.
 This way, you can perform an interactive inspection of the commands.
 
 You can combine this with one of the next attempst of using debuggers to e.g., get an `pdb` debugger at an important position of your program.
@@ -67,7 +67,7 @@ However, please note that `pdb` and `ipdb` will stop the program's execution if 
 
 Log into the node that your program runs on either using `srun --pty --nodelist=NODE` or using `ssh`.
 Please note that you should never perform computational intensive things when logging into the node directly.
-You can then use all activity inspection tips from [How-To: Debug Software](../debug-software).
+You can then use all activity inspection tips from [How-To: Debug Software](debug-software.md).
 
 ## Attempt 6: Use Debuggers
 

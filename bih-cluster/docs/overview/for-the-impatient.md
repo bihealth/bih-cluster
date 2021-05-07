@@ -9,18 +9,18 @@ BIH HPC IT operates two clusters: HPC 4 Research and HPC 4 Clinic.
 **HPC 4 Research** is the older and larger of both.
 It is located in the BIH data center in Buch and connected via the BIH research networks.
 Connections can be made from Charite, MDC, and BIH networks.
-The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](/admin/getting-access/).
+The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
 
 **HPC 4 Clinic** (BETA) is the more recent and smaller cluster.
 It is located in the Charite data center on the Charite Campus Virchowklinikum and connected only to the Charite network ("Kernnetz").
 Connections can only be made from Charite networks.
-The cluster is open for users with a Charite account after [getting access through the gatekeeper proces](/admin/getting-access/).
+The cluster is open for users with a Charite account after [getting access through the gatekeeper proces](../admin/getting-access.md).
 The system has also been designed to be suitable for the processing of human genetics data but is located within the hospital physical walls and network firewalls.
 It is thus also suitable for the processing of data from clinical context.
 Administration provides a system with state of the art IT security, users are responsible to obtain proper data privacy and ethics votes.
 
-!!! important "HPC 4 Clinic is in Beta Status
+!!! important "HPC 4 Clinic is in Beta Status"
 
     Do not use for production purposes or with critical data during beta test!
     We will notify you when the HPC 4 Clinic cluster becomes stable.
@@ -154,23 +154,23 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
 
 === "HPC 4 Research"
 
-- From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `login-{1,2}.research.hpc.bihealth.org`.
-    - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
-- From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
-    - Note that you have to use your MDC user name (without any suffix `_m`) for connecting to this host.
-    - Also note that BIH HPC IT does not have control over `ssh1.mdc-berlin.de`.
-      *You have to contact MDC IT in case of any issues.*
-- From the outside, **for Charite** users, there is no SSH hop node.
-  Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
-  You can use [this form availble in Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf) for this.
-  Please refer to the Charite intranet or helpdesk@charite.de for more information.
-- Also consider using the [OnDemand Portal](/ondemand/overview) at https://portal.research.hpc.bihealth.org.
+    - From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `login-{1,2}.research.hpc.bihealth.org`.
+        - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
+    - From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
+        - Note that you have to use your MDC user name (without any suffix `_m`) for connecting to this host.
+        - Also note that BIH HPC IT does not have control over `ssh1.mdc-berlin.de`.
+          *You have to contact MDC IT in case of any issues.*
+    - From the outside, **for Charite** users, there is no SSH hop node.
+      Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
+      You can use [this form availble in Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf) for this.
+      Please refer to the Charite intranet or helpdesk@charite.de for more information.
+    - Also consider using the [OnDemand Portal](../ondemand/overview.md) at https://portal.research.hpc.bihealth.org.
 
 === "HPC 4 Clinic"
 
-- You have to login from the Charite network with your charite account to `login-{1,2}.clinic.hpc.bihealth.org`.
-- Access from VPN is currently not possible.
-- Also consider using the [OnDemand Portal](/ondemand/overview) at https://portal.clinic.hpc.bihealth.org.
+    - You have to login from the Charite network with your charite account to `login-{1,2}.clinic.hpc.bihealth.org`.
+    - Access from VPN is currently not possible.
+    - Also consider using the [OnDemand Portal](../ondemand/overview.md) at https://portal.clinic.hpc.bihealth.org.
 
 ### Connecting to Compute Node through Login Node
 
@@ -183,9 +183,9 @@ Typically, you'll create an interactive session on a compute node using the `sru
 
 While not recommended, you can perform computations (such as using BWA) in the interactive session.
 However, when the connection is interrupted, your computation process will be stopped.
-It is therefore recommended you submit jobs using the `sbatch` command (or [use screen or tmux](../../best-practice/screen-tmux)).
+It is therefore recommended you submit jobs using the `sbatch` command (or [use screen or tmux](../best-practice/screen-tmux.md)).
 
-Details on how to use Slurm `srun`, `sbatch`, and and other commands can be found in the [Cluster Scheduler](../../slurm/overview) section.
+Details on how to use Slurm `srun`, `sbatch`, and and other commands can be found in the [Cluster Scheduler](../slurm/overview.md) section.
 
 ### Inspecting Jobs and the Cluster
 

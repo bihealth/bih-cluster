@@ -4,7 +4,7 @@ This document gives an introduction to SSH for Non-Techies.
 
 ## What is SSH?
 
-SSH stands for **S**ecure **Sh**ell. It is a software that allows to establish a user-connection to a remote UNIX/Linux machine over the network and remote-control it from your local work-station.
+SSH stands for **S** ecure **Sh** ell. It is a software that allows to establish a user-connection to a remote UNIX/Linux machine over the network and remote-control it from your local work-station.
 
 Let's say you have an HPC cluster with hundreds of machines somewhere in a remote data-center and you want to connect to those machines to issue commands and run jobs. Then you would use SSH.
 
@@ -14,7 +14,7 @@ Let's say you have an HPC cluster with hundreds of machines somewhere in a remot
 ### Installation
 
 Simply install your distributions `openssh-client` package. You should be able to find plenty of good tutorials online.
-On Windows you can consider using [MobaXterm (recommended)](../connecting/ssh-client-windows) or [Putty](https://www.putty.org/).
+On Windows you can consider using [MobaXterm (recommended)](../connecting/ssh-client-windows.md) or [Putty](https://www.putty.org/).
 
 ### Connecting
 
