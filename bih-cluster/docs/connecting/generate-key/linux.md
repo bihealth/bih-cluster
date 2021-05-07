@@ -54,6 +54,5 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809
 As a next step you need to submit the SSH key use these links as:
 
 
-- [:hospital: Charite user](../../submit-key/charite)
-- [:hospital: Charite user](../submit-key/charite/)
+- [:hospital: Charite user](../../submit-key/charite.md)
 - [:microscope: MDC user](../submit-key/mdc.md)
