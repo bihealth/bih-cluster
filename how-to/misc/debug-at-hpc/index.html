@@ -2022,9 +2022,9 @@
 <div class="admonition info">
 <p class="admonition-title">Please Contribute!</p>
 <p>This guide is far from complete.
-Please feel free to contribute, e.g., refer to <a href="../contribute">How-To: Contribute to this Document</a>.</p>
+Please feel free to contribute, e.g., refer to <a href="../contribute/">How-To: Contribute to this Document</a>.</p>
 </div>
-<p>Please make sure that you have read <a href="../debug-software">How-To: Debug Software</a> as a general primer.</p>
+<p>Please make sure that you have read <a href="../debug-software/">How-To: Debug Software</a> as a general primer.</p>
 <p>As debugging is hard enough already, it makes one wonder how to do this on the HPC system in batch mode.
 Here is a list of pointers.</p>
 <h2 id="attempt-1-run-it-interactively">Attempt 1: Run it interactively!<a class="headerlink" href="#attempt-1-run-it-interactively" title="Permanent link">&para;</a></h2>
@@ -2061,14 +2061,14 @@ Please note that if the previous output line did not include a line ending, the 
 See how far your program gets, see where it fails.
 This attempt will be greatly helped by reproducible running on a minimal working example.</p>
 <h2 id="attempt-4-use-sattach">Attempt 4: Use <code>sattach</code><a class="headerlink" href="#attempt-4-use-sattach" title="Permanent link">&para;</a></h2>
-<p>You can use <a href="../../slurm/command-sattach"><code>sattach</code></a> for attaching your terminal to your running job.
+<p>You can use <a href="../../../slurm/commands-sattach/"><code>sattach</code></a> for attaching your terminal to your running job.
 This way, you can perform an interactive inspection of the commands.</p>
 <p>You can combine this with one of the next attempst of using debuggers to e.g., get an <code>pdb</code> debugger at an important position of your program.
 However, please note that <code>pdb</code> and <code>ipdb</code> will stop the program's execution if the standard input stream is at end of file (which <code>/dev/null</code> is and this is used by default in <code>sbatch</code> jobs).</p>
 <h2 id="attempt-5-inspect-program-activity">Attempt 5: Inspect Program Activity<a class="headerlink" href="#attempt-5-inspect-program-activity" title="Permanent link">&para;</a></h2>
 <p>Log into the node that your program runs on either using <code>srun --pty --nodelist=NODE</code> or using <code>ssh</code>.
 Please note that you should never perform computational intensive things when logging into the node directly.
-You can then use all activity inspection tips from <a href="../debug-software">How-To: Debug Software</a>.</p>
+You can then use all activity inspection tips from <a href="../debug-software/">How-To: Debug Software</a>.</p>
 <h2 id="attempt-6-use-debuggers">Attempt 6: Use Debuggers<a class="headerlink" href="#attempt-6-use-debuggers" title="Permanent link">&para;</a></h2>
 <p>After having logged into the node running your program, you can of course also attach to the program with <code>gdb -p PID</code> or <code>cgdb -p PID</code>.</p>
 <h2 id="dont-despair">Don't Despair<a class="headerlink" href="#dont-despair" title="Permanent link">&para;</a></h2>

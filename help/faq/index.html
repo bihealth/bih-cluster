@@ -421,13 +421,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-the-difference-between-max-and-bih-clusters-what-is-their-relation" class="md-nav__link">
-    What is the difference between MAX and BIH clusters? What is their relation?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this" class="md-nav__link">
     My SSH sessions break with "packet_write_wait: Connection to XXX : Broken pipe". How can I fix this?
   </a>
@@ -2221,13 +2214,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-the-difference-between-max-and-bih-clusters-what-is-their-relation" class="md-nav__link">
-    What is the difference between MAX and BIH clusters? What is their relation?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#my-ssh-sessions-break-with-packet_write_wait-connection-to-xxx-broken-pipe-how-can-i-fix-this" class="md-nav__link">
     My SSH sessions break with "packet_write_wait: Connection to XXX : Broken pipe". How can I fix this?
   </a>
@@ -2504,13 +2490,12 @@ The aim is to gather the information for using the cluster efficiently and helpi
 <li>For problems with BIH HPC please contact [<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>].</li>
 </ul>
 <h2 id="i-cannot-connect-to-the-cluster-whats-wrong">I cannot connect to the cluster. What's wrong?<a class="headerlink" href="#i-cannot-connect-to-the-cluster-whats-wrong" title="Permanent link">&para;</a></h2>
-<p>Please see the section <a href="../../connecting/configure-ssh/connection-problems">Connection Problems</a>.</p>
+<p>Please see the section <a href="../../connecting/configure-ssh/connection-problems/">Connection Problems</a>.</p>
 <h2 id="id-like-to-learn-more-about-slurm">I'd like to learn more about Slurm<a class="headerlink" href="#id-like-to-learn-more-about-slurm" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Some documentation is available on this website, e.g., start at <a href="../slurm/quickstart">Slurm Quickstart</a>.</li>
+<li>Some documentation is available on this website, e.g., start at <a href="../../slurm/quickstart/">Slurm Quickstart</a>.</li>
 </ul>
 <h2 id="what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation">What is the difference between MAX and BIH cluster? What is their relation?<a class="headerlink" href="#what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation" title="Permanent link">&para;</a></h2>
-<h2 id="what-is-the-difference-between-max-and-bih-clusters-what-is-their-relation">What is the difference between MAX and BIH clusters? What is their relation?<a class="headerlink" href="#what-is-the-difference-between-max-and-bih-clusters-what-is-their-relation" title="Permanent link">&para;</a></h2>
 <p><strong>Administrativa</strong></p>
 <ul>
 <li>The BIH clusters are the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by BIH HPC IT.
@@ -2552,7 +2537,7 @@ Some of your processes may have been killed by the cgroup out-of-memory handler
 </code></pre></div>
 
 <p>This indicates that your job tries to use more memory than has been allocated to it.
-Also see <a href="/slurm/memory-allocation/">Slurm Scheduler: Memory Allocation</a></p>
+Also see <a href="../../slurm/memory-allocation/">Slurm Scheduler: Memory Allocation</a></p>
 <p>Otherwise, you can use <code>sacct -j JOBID</code> to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by <code>CANCELED</code>) by the Slurm job scheduler looks like this (ignore the <code>COMPLETED</code> step that is just some post-job step added by Slurm automatically).</p>
 <div class="highlight"><pre><span></span><code># sacct -j _JOBID_
@@ -2583,7 +2568,7 @@ For example, the following tells us that the given job was above its elapsed tim
 <p>Use <code>man sacct</code>, <code>sacct --helpformat</code>, or see the <a href="https://slurm.schedmd.com/sacct.html">Slurm Documentation</a> for options for the <code>--format</code> field of <code>sacct</code>.</p>
 <h2 id="im-getting-a-bus-error-core-dumped">I'm getting a "Bus error (core dumped)"<a class="headerlink" href="#im-getting-a-bus-error-core-dumped" title="Permanent link">&para;</a></h2>
 <p>This is most probably caused by your job being allocated insufficient memory.
-Please see the memory part of the answer to <a href="/help/faq/#my-job-terminated-before-being-done-what-happened">My job terminated before being done. What happened?</a></p>
+Please see the memory part of the answer to <a href="./#my-job-terminated-before-being-done-what-happened">My job terminated before being done. What happened?</a></p>
 <h2 id="how-can-i-create-a-new-project">How can I create a new project?<a class="headerlink" href="#how-can-i-create-a-new-project" title="Permanent link">&para;</a></h2>
 <p>You can create a project if you are either a group leader of an AG or a delegate of an AG.</p>
 <p>In this case, please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> and request a new project.</p>
@@ -2717,13 +2702,13 @@ The "Reason" gives that it has been scheduled for power-off for maintenance of t
             <span class="m">877092</span>    medium snakejob holtgrem  R       <span class="m">0</span>:05      <span class="m">1</span> med0626
 </code></pre></div>
 
-<p>See <a href="/overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties and how jbos are routed to partitions.
+<p>See <a href="../../overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties and how jbos are routed to partitions.
 You can force jobs to run in a particular partition by specifying the <code>--partition</code> parameter, e.g., by adding <code>--partition=medium</code> or <code>-p medium</code> to your <code>srun</code> and <code>sbatch</code> calls.</p>
 <h2 id="my-jobs-get-killed-after-four-hours">My jobs get killed after four hours<a class="headerlink" href="#my-jobs-get-killed-after-four-hours" title="Permanent link">&para;</a></h2>
 <p>This is probably answered by the answer to <a href="#my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect</a>.</p>
 <h2 id="how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster">How can I mount a network volume from elsewhere on the cluster?<a class="headerlink" href="#how-can-i-mount-a-network-volume-from-elsewhere-on-the-cluster" title="Permanent link">&para;</a></h2>
 <p>You cannot.
-Also see the <a href="../overview/for-the-impatient">For the Impatient</a> section of the manual.</p>
+Also see the <a href="../../overview/for-the-impatient/">For the Impatient</a> section of the manual.</p>
 <h2 id="why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster">Why can I not mount a network volume from elsewhere on the cluster?<a class="headerlink" href="#why-can-i-not-mount-a-network-volume-from-elsewhere-on-the-cluster" title="Permanent link">&para;</a></h2>
 <p>For performance and stability reasons.
 Network volumes are notorious for degrading performance, depending on the used protocol, even stability.</p>
@@ -2811,7 +2796,7 @@ You can see the assignment of architectures to nodes using the <code>sinfo -o "%
 This will also display node partition, availability etc.</p>
 <h2 id="help-im-getting-a-quota-warning-email">Help, I'm getting a Quota Warning Email!<a class="headerlink" href="#help-im-getting-a-quota-warning-email" title="Permanent link">&para;</a></h2>
 <p>No worries!</p>
-<p>As documented in the <a href="/storage/storage-locations">Storage Locations</a> section, each user/project/group has three storage volumes:
+<p>As documented in the <a href="../../storage/storage-locations/">Storage Locations</a> section, each user/project/group has three storage volumes:
 A small <code>home</code>, a larger <code>work</code> and a large (but temporary) <code>scratch</code>.
 There are limits on the size of these volumes.
 You get a nightly warning email in case you are over the soft limit and you will not be able to write any more data if you get above the hard limit.
@@ -2871,7 +2856,7 @@ You can find the current skelleton in <code>/etc/skel.bih</code> and inspect the
 </code></pre></div>
 
 <p>There actually are a couple of more files by default.
-The original copy in `/etc/skel.bih`` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!</p>
+The original copy in <code>/etc/skel.bih</code> might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!</p>
 <div class="highlight"><pre><span></span><code>res-login-1:~$ tree -a /etc/skel.bih/
 /etc/skel.bih/
 ├── .bash_logout
@@ -2882,7 +2867,7 @@ The original copy in `/etc/skel.bih`` might slightly change over time during imp
 </code></pre></div>
 
 <h2 id="my-program-crashes-what-should-i-do">My program crashes! What should I do?<a class="headerlink" href="#my-program-crashes-what-should-i-do" title="Permanent link">&para;</a></h2>
-<p>Have a look at our <a href="../../how-to-/debug-software">How-To: Debug Software</a> and <a href="../../how-to-/debug-at-hpc">How-To: Debug Software on HPC Systems</a> guides!</p>
+<p>Have a look at our <a href="../../how-to/misc/debug-software/">How-To: Debug Software</a> and <a href="../../how-to/misc/debug-at-hpc/">How-To: Debug Software on HPC Systems</a> guides!</p>
 <p><strong>But it works on my workstation!</strong></p>
 <p>Yes, please also refer to these guides on possible approaches to find the problem.</p>
 <h2 id="which-cuda-version-is-installed">Which CUDA version is installed?<a class="headerlink" href="#which-cuda-version-is-installed" title="Permanent link">&para;</a></h2>
@@ -2896,7 +2881,7 @@ nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.e
 <h2 id="can-i-use-docker-on-the-cluster">Can I use Docker on the Cluster?<a class="headerlink" href="#can-i-use-docker-on-the-cluster" title="Permanent link">&para;</a></h2>
 <p>No, as Docker essentially gives you access as the root user.</p>
 <p>However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
-Also see <a href="../../how-to/software/singularity">Using Singularity (with Docker Images)</a>.</p>
+Also see <a href="../../how-to/software/singularity/">Using Singularity (with Docker Images)</a>.</p>
 <h2 id="how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc">How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?<a class="headerlink" href="#how-can-i-copy-data-between-the-max-cluster-mdc-network-and-bih-hpc" title="Permanent link">&para;</a></h2>
 <p>The MAX cluster is the HPC system of the MDC.
 It is located in the MDC network.
@@ -2916,7 +2901,7 @@ Further, you are limited to using the equivalent of one core.
 This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
 This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.</p>
 <h2 id="how-can-i-share-filescollaborate-with-users-from-another-work-group">How can I share files/collaborate with users from another work group?<a class="headerlink" href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" title="Permanent link">&para;</a></h2>
-<p>Please use <a href="/bih-cluster/admin/getting-access/#projects">projects as documented here</a>.
+<p>Please use <a href="../../admin/getting-access/#projects">projects as documented here</a>.
 Projects were created for this particular purpose.</p>
 <h2 id="whats-the-relation-of-charite-mdc-and-cluster-accounts">What's the relation of Charite, MDC, and cluster accounts?<a class="headerlink" href="#whats-the-relation-of-charite-mdc-and-cluster-accounts" title="Permanent link">&para;</a></h2>
 <p>For HPC 4 Research either an active and working Charite or MDC account is required (that is, you can login e.g., into email.charite.de or mail.mdc-berlin.de).
@@ -2934,9 +2919,9 @@ This creates their users home/work/scratch shares and grants access for connecti
 HPC 4 Clinic is directly connected to the Charite authentication and authorization systems and users can login with their password or SSH key uploaded to zugang.charite.de.</p>
 <p>The process of submitting keys to Charite and MDC is documented in the "Connecting" section.</p>
 <h2 id="how-do-charitemdccluster-accounts-interplay-with-vpn-and-the-mdc-jail-node">How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?<a class="headerlink" href="#how-do-charitemdccluster-accounts-interplay-with-vpn-and-the-mdc-jail-node" title="Permanent link">&para;</a></h2>
-<p>Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., <a href="/connecting/from-external/">Zusatzantrag B as documented here</a>.
+<p>Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., <a href="../../connecting/from-external/">Zusatzantrag B as documented here</a>.
 For Charite VPN, as for all Charite IT systems, users must use their Charite user name (e.g., <code>jdoe</code> and not <code>jdoe_c</code>).</p>
-<p>MDC users either have to use MDC VPN or the MDC jail node, as <a href="/connecting/from-external/">documented here</a>.
+<p>MDC users either have to use MDC VPN or the MDC jail node, as <a href="../../connecting/from-external/">documented here</a>.
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., <code>jdoe</code> and not <code>jdoe_m</code>).</p>
 <p>For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.</p>
 <p>Only when connecting <strong>from</strong> the host organizations' VPN or <strong>from</strong> the host organizations' jail node, the users use the HPC 4 Research user name that is <code>jdoe_c</code> or <code>jdoe_m</code> and not <code>jdoe</code>!</p>
