@@ -2,6 +2,11 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Moving servers, May 20 + May 25, 2021
+
+- Physically moving proxmox-{2,4} and transfer-2.research (May 20)
+- Physically moving proxmox-{1,3} and transfer-1.research (May 25)
+
 ## Miscellaneous Maintenances, December 23-25, 2020
 
 **HPC 4 Research**
