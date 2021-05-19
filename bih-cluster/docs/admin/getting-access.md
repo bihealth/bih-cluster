@@ -6,7 +6,7 @@
 
         A Charite or MDC account is required for accessing HPC 4 Research.
 
-        1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
+        1. **Register Users.** **Group leaders/PIs** register their members via hpc-gatekeeper@bihealth.de using the forms below.
         2. **Upload Key.** Upload your SSH key through the Charite and MDC infrastructure.
         3. **Connect.** `ssh -l <user>_<c or m>@login-1.research.bihealth.org`
 
@@ -16,7 +16,7 @@
 
         For using HPC 4 Clinic, a Charite account is required.
 
-        1. **Register Users.** **Group leaders/PIs** register their members via  hpc-gatekeeper@bihealth.de.
+        1. **Register Users.** **Group leaders/PIs** register their members via hpc-gatekeeper@bihealth.de using the forms below.
         2. **Upload Key.** Upload your SSH key through the Charite infrastructure.
         3. **Connect.** `ssh -l <user>@login-1.clinic.bihealth.org`
 
