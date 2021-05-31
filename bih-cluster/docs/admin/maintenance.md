@@ -2,6 +2,19 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+
+## Memory and PSU exchange, May 31, 2021
+
+- Memory exchange
+  - transfer-1.research (OK)
+  - med0143 (OK)
+  - med0147 (OK)
+  - med0206 (FAIL - exchange part broken)
+  - med0233 (FAIL - exchange part broken)
+  - med0254 (FAIL - exchange part broken)
+- PSU exchange
+  - med-host024 (OK)
+
 ## Moving servers, May 20 + May 25, 2021
 
 - Physically moving proxmox-{2,4} and transfer-2.research (May 20)
