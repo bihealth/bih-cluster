@@ -95,6 +95,3 @@ your SSH key. In this case, please connect with increased verbosity to the
 cluster (`ssh -vvv ...`) and mail the output and a detailed description to
 [hpc-helpdesk@bihealth.de](mailto:hpc-helpdesk@bihealth.de).
 
-!!! note "If you are asked to write to helpdesk"
-
-    If you have an existent conversation with hpc-gatekeeper@bihealth.de and you are asked to open a ticket with hpc-helpdesk@bihealth.de: Please don't continue your conversation with hpc-helpdesk@bihealth.de, using the same ticket (i.e. same subject). The ticket system will automatically assign your reply to the existing ticket in hpc-gatekeeper. To avoid this, simply start with a fresh email.
