@@ -58,7 +58,7 @@ It's really simple:
 
 ```bash
 host:snake-slurm$ unset DRMAA_LIBRARY_PATH
-host:snake-slurm$snakemake --drmaa " -t 05:00" --jobs 2
+host:snake-slurm$snakemake --drmaa " -t 05:00 --mem=1000" --jobs 2
 Building DAG of jobs...
 Using shell: /usr/bin/bash
 Provided cluster nodes: 2
@@ -106,6 +106,6 @@ The DRMAA interface to Slurm has a few limitations:
 - `--export` is not supported by drmaa yet.
   The default of SLURM is `--export=ALL` (similar to `-V` for SGE).
 
-A full list of supported parameters can be found [in the officical documentation](http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification).
+A full list of supported parameters can be found [in the officical documentation](https://apps.man.poznan.pl/trac/slurm-drmaa/wiki).
 
 ... that's all, folks!
