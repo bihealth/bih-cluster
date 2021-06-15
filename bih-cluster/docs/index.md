@@ -61,7 +61,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :calendar: May 31, 2021 (HPC4Research): Memory exchange transfer-1.research.hpc.bihealth.org done.
+    - :calendar: June 22+23, 2021 (HPC4Research): Reorganization of servers.
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 
