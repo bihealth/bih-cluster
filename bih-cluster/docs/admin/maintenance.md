@@ -2,6 +2,14 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Server reorganization, June 22 + 23, 2021
+
+- Affected servers are:
+  - med01xx
+  - med05xx
+  - med06xx
+  - med03xx
+  - med0405
 
 ## Memory and PSU exchange, May 31, 2021
 
