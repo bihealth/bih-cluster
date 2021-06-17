@@ -2005,8 +2005,13 @@
                 <h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
 <p>This page documents the current and known upcoming maintenance windows.</p>
 <h2 id="server-reorganization-june-22-23-2021">Server reorganization, June 22 + 23, 2021<a class="headerlink" href="#server-reorganization-june-22-23-2021" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>If you have a job running on any of the before mentioned nodes that goes beyond June 22, 6am, this job will die.
+We put a so-called Slurm reservation for the maintenance period.
+Any job that is scheduled before the maintenance and whose end time (start time + max running time) is not before the start of the maintenance will not be scheduled with the message ReqNodeNotAvail, Reserved for maintenance.</p>
+</blockquote>
+<p>Affected servers are:</p>
 <ul>
-<li>Affected servers are:</li>
 <li>med01xx</li>
 <li>med05xx</li>
 <li>med06xx</li>
@@ -2249,7 +2254,7 @@ you encounter any unexpected behavior of the cluster during this time, please le
 <div class="md-source-date">
   <small>
     
-      Last update: June 16, 2021
+      Last update: June 17, 2021
     
   </small>
 </div>
