@@ -4,12 +4,17 @@ This page documents the current and known upcoming maintenance windows.
 
 ## Server reorganization, June 22 + 23, 2021
 
-- Affected servers are:
-  - med01xx
-  - med05xx
-  - med06xx
-  - med03xx
-  - med0405
+> If you have a job running on any of the before mentioned nodes that goes beyond June 22, 6am, this job will die.
+> We put a so-called Slurm reservation for the maintenance period.
+> Any job that is scheduled before the maintenance and whose end time (start time + max running time) is not before the start of the maintenance will not be scheduled with the message ReqNodeNotAvail, Reserved for maintenance.
+
+Affected servers are:
+
+- med01xx
+- med05xx
+- med06xx
+- med03xx
+- med0405
 
 ## Memory and PSU exchange, May 31, 2021
 
