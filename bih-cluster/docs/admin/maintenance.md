@@ -2,6 +2,13 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Server reorganization, July 13, 2021
+
+Affected servers are:
+
+- med02xx
+- med07xx
+
 ## Server reorganization, June 22 + 23, 2021
 
 > If you have a job running on any of the before mentioned nodes that goes beyond June 22, 6am, this job will die.
