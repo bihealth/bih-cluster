@@ -165,7 +165,7 @@ Host bihcluster
 Host bihcluster2
     ForwardAgent yes
     ForwardX11 yes
-    HostName login-1.hpc.bihealth.org.bihealth.org
+    HostName login-2.hpc.bihealth.org.bihealth.org
     User MDC_USER_NAME
     RequestTTY yes
 ```
