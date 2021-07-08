@@ -17,7 +17,7 @@ This means that your computer could not open a network connection to the server.
 - HPC 4 Clinic is currently only available from the Charite (cabled) network.
 - HPC 4 Research can be connected to from:
     - Charite (cabled) network
-    - Charite VPN :point_right: **but only with [Zusatzantrag B](/connecting/from-external/#zusatzantrag-b-recommended)**. :point_left:
+    - Charite VPN :point_right: **but only with [Zusatzantrag B](/bih-cluster/connecting/from-external/#zusatzantrag-b-recommended)**. :point_left:
     - MDC (cabled) network
     - MDC VPN
     - BIH (cabled) network
