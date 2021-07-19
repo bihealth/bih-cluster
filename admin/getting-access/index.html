@@ -2012,9 +2012,21 @@
 </div>
 </div>
 </div>
-<p>Access to the BIH HPC clusters is based on work groups (also known as labs, units).
-Each group is headed by a leader (also known as principle investigator/PI) who has to send requests but and also have one delegate.
-Data can also be managed in <strong>project</strong> which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.</p>
+<p>Access to the BIH HPC clusters is based on the <strong>work groups</strong> (also known as labs, units) and <strong>projects</strong> concepts. 
+The work groups <a href="../../storage/storage-locations/">data/folder structure</a> can only be accessed by the work group members and is not accessible to other cluster users.
+Collaborative projects involving multiple PIs/groups should be realized using the <strong>project</strong> mechanism described below.
+Please note, the <strong>hot</strong> near cluster fast storage is rather expensive and sparse resource which is not intended for long term storage. </p>
+<p>Independent group leaders at BIH/Charité/MDC can request a <strong>work group</strong> on the cluster and name <strong>group members</strong>. 
+The work group <strong>leader</strong> (the group PI) has to take responsiblity and undertake the necessary measures to ensure that all <strong>group members</strong> follow the <a href="../policies/">cluster policies and etiquette</a> for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
+Major and/or continued violations may lead to exclusion of the work group form the cluster.  </p>
+<p>The <strong>leader</strong> may also name one <strong>delegate</strong> (typically an IT savvy Post-Doc) who is allowed to take decision about cluster usage and work group on behalf of the leader. 
+The above mentioned responsiblities stay with the work group leader.  </p>
+<p>Data can also be managed in <strong>projects</strong> which allow </p>
+<ol>
+<li>cross-group collaboration spaces and</li>
+<li>substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).</li>
+</ol>
+<p>Projects are also an excellent way to partition your data into set with different life </p>
 <div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
 <p>HPC 4 Research is available for Charite, MDC, and BIH networks.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Charite Users</span>
@@ -2094,15 +2106,16 @@ Users for each member:
 <li>Work groups on the cluster must have an owner (its leader, principal investigator, etc.)</li>
 <li>Group ownership implies control but also accountability for their work group and members.</li>
 <li>Through the delegate mechanism, control can be delegated to up to one person (e.g., post-doc in the lab).</li>
-<li><strong>Users can be members of one work group only.</strong>
-  For multi-group collaborations, please use the project mechanism described below.</li>
+<li><strong>Users can be members of one work group only.</strong></li>
 </ul>
+<p>We <strong>strongly</strong> dis-encourage on boarding non lab members into your group. 
+This cause biases in usage accounting, may raise concerns in IT security and data privacy audits and also puts unfair responsibilities on the group leader. 
+Please use the <strong>project</strong> mechanism described below. </p>
 <h2 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h2>
-<p>Projects are very similar to work groups with the main distinction that</p>
-<ul>
-<li>users can be a member of more than one project, but</li>
-<li>project membership does not grant cluster access (group membership is still required).</li>
-</ul>
+<p>Projects are very similar to work groups with the main distinction that
+- users can be a member of multiple projects (no upper limit) 
+- projects can be accessible for member of differnt groups </p>
+<p>Please note, project membership does not grant cluster access (a primary group membership is still required).</p>
 <p>Project creation can be initiated by group leaders and group delegates with the following process.</p>
 <ol>
 <li>The initiator sends an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> and fills out the following form.
@@ -2110,7 +2123,7 @@ Users for each member:
 <li>hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).</li>
 <li>All new users are notified and further instructions are sent to them via email.</li>
 </ol>
-<p>Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project.</p>
+<p>Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project. </p>
 <h2 id="form_1">Form<a class="headerlink" href="#form_1" title="Permanent link">&para;</a></h2>
 <p>Example values are given in curly braces.</p>
 <div class="highlight"><pre><span></span><code># Project &quot;doe-dbgap-rna&quot;
@@ -2137,7 +2150,7 @@ Additional members:
 <div class="md-source-date">
   <small>
     
-      Last update: July 8, 2021
+      Last update: July 19, 2021
     
   </small>
 </div>
