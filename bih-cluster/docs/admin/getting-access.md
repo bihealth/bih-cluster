@@ -21,12 +21,12 @@
         3. **Connect.** `ssh -l <user>@login-1.clinic.bihealth.org`
 
 Access to the BIH HPC clusters is based on the **work groups** (also known as labs, units) and **projects** concepts. 
-The work groups [data/folder structure](https://bihealth.github.io/bih-cluster/storage/storage-locations/) can only be accessed by the work group members and is not accessible to other cluster users. 
+The work groups [data/folder structure](../../storage/storage-locations/) can only be accessed by the work group members and is not accessible to other cluster users.
 Collaborative projects involving multiple PIs/groups should be realized using the **project** mechanism described below.
 Please note, the **hot** near cluster fast storage is rather expensive and sparse resource which is not intended for long term storage. 
 
 Independent group leaders at BIH/Charité/MDC can request a **work group** on the cluster and name **group members**. 
-The work group **leader** (the group PI) has to take responsiblity and undertake the necessary measures to ensure that all **group members** follow the cluster etiquete for fair usage and do not abuse the cluster resources for unethical or illegal purposes. 
+The work group **leader** (the group PI) has to take responsiblity and undertake the necessary measures to ensure that all **group members** follow the [cluster policies and etiquette](../policies/) for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
 Major and/or continued violations may lead to exclusion of the work group form the cluster.  
 
 The **leader** may also name one **delegate** (typically an IT savvy Post-Doc) who is allowed to take decision about cluster usage and work group on behalf of the leader. 
@@ -34,8 +34,8 @@ The above mentioned responsiblities stay with the work group leader.
 
 Data can also be managed in **projects** which allow 
 
-a) cross-group collaboration spaces and 
-b) substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).
+1. cross-group collaboration spaces and
+2. substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).
 
 Projects are also an excellent way to partition your data into set with different life 
 
