@@ -20,10 +20,24 @@
         2. **Upload Key.** Upload your SSH key through the Charite infrastructure.
         3. **Connect.** `ssh -l <user>@login-1.clinic.bihealth.org`
 
-Access to the BIH HPC clusters is based on work groups (also known as labs, units).
-Each group is headed by a leader (also known as principle investigator/PI) who has to send requests but and also have one delegate.
-Data can also be managed in **project** which allow cross-group collaboration but also providing a limited access space, e.g., for controlled data access data where only a few group members may access the data.
+Access to the BIH HPC clusters is based on the **work groups** (also known as labs, units) and **projects** concepts. 
+The work groups [data/folder structure](../../storage/storage-locations/) can only be accessed by the work group members and is not accessible to other cluster users.
+Collaborative projects involving multiple PIs/groups should be realized using the **project** mechanism described below.
+Please note, the **hot** near cluster fast storage is rather expensive and sparse resource which is not intended for long term storage. 
 
+Independent group leaders at BIH/Charité/MDC can request a **work group** on the cluster and name **group members**. 
+The work group **leader** (the group PI) has to take responsiblity and undertake the necessary measures to ensure that all **group members** follow the [cluster policies and etiquette](../policies/) for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
+Major and/or continued violations may lead to exclusion of the work group form the cluster.  
+
+The **leader** may also name one **delegate** (typically an IT savvy Post-Doc) who is allowed to take decision about cluster usage and work group on behalf of the leader. 
+The above mentioned responsiblities stay with the work group leader.  
+
+Data can also be managed in **projects** which allow 
+
+1. cross-group collaboration spaces and
+2. substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).
+
+Projects are also an excellent way to partition your data into set with different life 
 
 === "HPC 4 Research"
 
@@ -110,14 +124,18 @@ Users for each member:
 - Group ownership implies control but also accountability for their work group and members.
 - Through the delegate mechanism, control can be delegated to up to one person (e.g., post-doc in the lab).
 - **Users can be members of one work group only.**
-  For multi-group collaborations, please use the project mechanism described below.
+
+We **strongly** dis-encourage on boarding non lab members into your group. 
+This cause biases in usage accounting, may raise concerns in IT security and data privacy audits and also puts unfair responsibilities on the group leader. 
+Please use the **project** mechanism described below. 
 
 ## Projects
 
 Projects are very similar to work groups with the main distinction that
+- users can be a member of multiple projects (no upper limit) 
+- projects can be accessible for member of differnt groups 
 
-- users can be a member of more than one project, but
-- project membership does not grant cluster access (group membership is still required).
+Please note, project membership does not grant cluster access (a primary group membership is still required).
 
 Project creation can be initiated by group leaders and group delegates with the following process.
 
@@ -126,7 +144,7 @@ Project creation can be initiated by group leaders and group delegates with the 
 2. hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
 3. All new users are notified and further instructions are sent to them via email.
 
-Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project.
+Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project. 
 
 ## Form
 
