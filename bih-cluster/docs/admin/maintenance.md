@@ -2,6 +2,15 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Networking hardware exchange, August 3, 2021
+
+Following servers won't be reachable:
+
+- GPU nodes (med03xx)
+- computing nodes (med0233-0248)
+
+> These nodes are running in reservation mode now. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday, August 3, all-day). For example, if you submit a job that can run up to 7 days after July 26 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable". If you have a job running on any of the before mentioned nodes that goes beyond August 3, 12:00 am (00:00 Uhr), this job will die. We do not expect the remaining nodes to be affected. However, there remains a minor risk of unexpected downtime of other nodes.
+
 ## Server reorganization, July 13, 2021
 
 Affected servers are:
