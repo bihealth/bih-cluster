@@ -61,7 +61,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :calendar: July 13, 2021 (HPC4Research): Reorganization of nodes (med02xx/med07xx)
+    - :calendar: August 3, 2021 (HPC4Research): Networking hardware exchange
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 
