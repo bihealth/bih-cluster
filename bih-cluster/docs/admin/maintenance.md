@@ -2,6 +2,10 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Slurm upgrade, August 6, 2021
+
+We upgrade from `20.11.2` to `20.11.8` which contains some fixes for bugs that our users actually stumbled over. The change should be non-intrusive as it's only a patch-level update.
+
 ## Networking hardware exchange, August 3, 2021
 
 Following servers won't be reachable:
