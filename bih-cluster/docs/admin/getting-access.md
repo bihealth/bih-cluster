@@ -98,9 +98,9 @@ Required resources:
 - GPU hours per year: {none}
 - Number of files [if >> 1M]: {less than 1M}
 
-Users for each member:
+# Users
 
-# User 1
+## User 1
 
 - cluster: {HPC 4 Clinic or HPC 4 Research}
 - first name: John
@@ -166,4 +166,30 @@ Required resources:
 
 Additional members:
 - Susi Sorglos <Susi.Sorglos@charite.de>
+```
+
+## Users
+
+If you wish to add users to your AG, please use the following form. Note that users you want to add to a project need to be associated with an AG first.
+
+The inquiry has to be send to hpc-gatekeeper@bih-charite.de, either by the PI or the delegate.
+
+```
+# User 1
+
+- cluster: {HPC 4 Clinic or HPC 4 Research}
+- first name: John
+- last name: Doe
+- affiliation: Charite, Department of Oncology
+- institute email: john.doe@charite.de
+- institute phone: 030-8445-0
+- user has account with
+    - [ ] BIH
+    - [ ] Charite
+    - [ ] MDC
+- BIH/Charite/MDC user name: doej
+- duration of cluster access (max 1 year): 2020-03-30 to 2021-03-30
+- AG: ag-abcd
+
+[etc]
 ```
