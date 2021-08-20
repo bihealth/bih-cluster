@@ -2,6 +2,14 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Network re-cabling, September 7-8, 2021
+
+All servers/nodes won't be reachable!
+
+>All nodes will be running in reservation mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, September 7 and 8, all-day). For example, if you submit a job that can run up to 7 days after August 30 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".
+
+>If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
+
 ## Slurm upgrade, August 6, 2021
 
 We upgrade from `20.11.2` to `20.11.8` which contains some fixes for bugs that our users actually stumbled over. The change should be non-intrusive as it's only a patch-level update.
