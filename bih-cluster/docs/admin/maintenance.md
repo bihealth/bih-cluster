@@ -10,6 +10,11 @@ All servers/nodes won't be reachable!
 
 >If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
 
+## Update to Job Sumission Script, August 23, 2021
+
+The `srun` command will now behave as if `--immediate=60` has been specified by default.
+It explains how to override this behaviour and possible reasons for job scheduling to fail within 60 seconds (reservations and full cluster).
+
 ## Slurm upgrade, August 6, 2021
 
 We upgrade from `20.11.2` to `20.11.8` which contains some fixes for bugs that our users actually stumbled over. The change should be non-intrusive as it's only a patch-level update.
