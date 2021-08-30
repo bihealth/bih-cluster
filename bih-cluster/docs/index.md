@@ -62,6 +62,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 !!! attention "Current and Future Maintenances"
     - :sparkles: August 23: `srun` will use `--immediate=60` by default with message.
+    - :sparkles: August 30: Maintenance notes are now display on login.
     - :calendar: September 7-8, 2021 (HPC4Research): Network re-cabling, all nodes unavailable!
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.

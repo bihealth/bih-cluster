@@ -115,6 +115,7 @@ nav:
     - slurm/cheat-sheet.md
     - slurm/job-scripts.md
     - slurm/memory-allocation.md
+    - slurm/reservations.md
     - "Slurm Commands":
         - "srun": slurm/commands-srun.md
         - "sbatch": slurm/commands-sbatch.md

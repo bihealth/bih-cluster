@@ -10,6 +10,22 @@ All servers/nodes won't be reachable!
 
 >If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
 
+## Reservation / Maintenance Display on Login, August 30, 2021
+
+User will now be notified on login about maintenance, for example:
+
+```
+NOTE: scheduled maintenance(s)
+
+ 1: 2021-09-07 00:00:00 to 2021-09-09 00:00:00 ALL nodes
+
+Slurm jobs will only start if they do not overlap with scheduled reservations.
+More information:
+
+  - https://bihealth.github.io/bih-cluster/slurm/reservations/
+  - https://bihealth.github.io/bih-cluster/admin/maintenance/
+```
+
 ## Update to Job Sumission Script, August 23, 2021
 
 The `srun` command will now behave as if `--immediate=60` has been specified by default.

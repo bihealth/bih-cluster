@@ -205,6 +205,8 @@ JobId=863089 JobName=pipeline_job.sh
    MailUser=(null) MailType=NONE
 ```
 
+If you see a `Reason=ReqNodeNotAvail,_Reserved_for_maintenance` then also see [Reservations / Maintenances](../../slurm/reservations/).
+
 For GPU jobs also see "My GPU jobs don't get scheduled".
 
 ## My GPU jobs don't get scheduled
