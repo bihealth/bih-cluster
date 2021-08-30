@@ -11,7 +11,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/cheat-sheet/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/reservations/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slurm Cheat Sheet - BIH HPC Docs</title>
+        <title>Reservations / Maintenances - BIH HPC Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-cheat-sheet" class="md-skip">
+        <a href="#reservations-maintenances" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Slurm Cheat Sheet
+              Reservations / Maintenances
             
           </span>
         </div>
@@ -925,20 +925,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Slurm Cheat Sheet" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
-    
   </li>
 
         
@@ -970,11 +961,53 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../reservations/" title="Reservations / Maintenances" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Reservations / Maintenances
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Reservations / Maintenances" class="md-nav__link md-nav__link--active">
       Reservations / Maintenances
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-effect-of-a-reservation" class="md-nav__link">
+    What is the Effect of a Reservation?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1888,6 +1921,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-effect-of-a-reservation" class="md-nav__link">
+    What is the Effect of a Reservation?
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1898,7 +1948,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/cheat-sheet.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/slurm/reservations.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -1906,212 +1956,83 @@
                   
                 
                 
-                <h1 id="slurm-cheat-sheet">Slurm Cheat Sheet<a class="headerlink" href="#slurm-cheat-sheet" title="Permanent link">&para;</a></h1>
-<p>This page contains assorted Slurm commands and Bash snippets that should be helpful.</p>
-<p><strong><code>man</code> pages!</strong></p>
-<div class="highlight"><pre><span></span><code>$ man sinfo
-$ man scontrol
-$ man squeue
-<span class="c1"># etc...</span>
+                <h1 id="reservations-maintenances">Reservations / Maintenances<a class="headerlink" href="#reservations-maintenances" title="Permanent link">&para;</a></h1>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Read this in particular if you want to know why your job does not get scheduled and you see <code>Reason=ReqNodeNotAvail,_Reserved_for_maintenance</code> in <code>scontrol show job</code> <img alt="😱" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f631.svg" title=":scream:" />.</p>
+</div>
+<p>Administration registers maintenances with the Slurm scheduler as so-called <strong>reservations</strong>.
+You can see the current reservations with <code>scontrol show reservation</code>.
+The following is a scheduled reservation affecting ALL nodes of the cluster.</p>
+<div class="highlight"><pre><span></span><code># scontrol show reservation
+ReservationName=root_13 StartTime=2021-09-07T00:00:00 EndTime=2021-09-09T00:00:00 Duration=2-00:00:00
+   Nodes=hpc-cpu-[1-36],med[0101-0116,0201-0264,0301-0304,0401-0404,0501-0516,0601-0632,0701-0764]
+   NodeCnt=236 CoreCnt=5344 Features=(null) PartitionName=(null)
+   Flags=MAINT,IGNORE_JOBS,SPEC_NODES,ALL_NODES TRES=cpu=10176
+   Users=root Groups=(null) Accounts=(null) Licenses=(null) State=INACTIVE BurstBuffer=(null) Watts=n/a
+   MaxStartDelay=(null)
 </code></pre></div>
 
-<p><strong>interactive sessions</strong></p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ srun --pty bash
-med0740:~$ <span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span>
-med0740:~$ <span class="nb">exit</span>
+<p>You will also be notified when logging into the login nodes, e.g.,</p>
+<div class="highlight"><pre><span></span><code>--
+             ***NOTE: 1 scheduled maintenance(s)***
+
+ 1: 2021-09-07 00:00:00 to 2021-09-09 00:00:00 ALL nodes
+
+You jobs do not start because of &quot;Reserved_for_maintenance&quot;?
+Slurm jobs will only start if they do not overlap with scheduled reservations.
+More information:
+
+  - https://bihealth.github.io/bih-cluster/slurm/reservations/
+  - https://bihealth.github.io/bih-cluster/admin/maintenance/
+--
 </code></pre></div>
 
-<p><strong>batch submission</strong></p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ sbatch script.sh
-Submitted batch job <span class="m">2</span>
-res-login-1:~$ squeue
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-                <span class="m">27</span>     debug script.s holtgrem  R       <span class="m">0</span>:06      <span class="m">1</span> med0703
-</code></pre></div>
-
-<p><strong>listing nodes</strong></p>
-<div class="highlight"><pre><span></span><code>$ sinfo -N
-NODELIST   NODES PARTITION STATE
-med0740        <span class="m">1</span>    debug* idle
-med0741        <span class="m">1</span>    debug* down*
-med0742        <span class="m">1</span>    debug* down*
-
-$ scontrol show nodes
-<span class="nv">NodeName</span><span class="o">=</span>med0740 <span class="nv">Arch</span><span class="o">=</span>x86_64 <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">8</span>
-   <span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">0</span> <span class="nv">CPUTot</span><span class="o">=</span><span class="m">32</span> <span class="nv">CPULoad</span><span class="o">=</span><span class="m">0</span>.06
-   <span class="nv">AvailableFeatures</span><span class="o">=(</span>null<span class="o">)</span>
-<span class="o">[</span>...<span class="o">]</span>
-
-$ scontrol show nodes med0740
-<span class="nv">NodeName</span><span class="o">=</span>med0740 <span class="nv">Arch</span><span class="o">=</span>x86_64 <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">8</span>
-   <span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">0</span> <span class="nv">CPUTot</span><span class="o">=</span><span class="m">32</span> <span class="nv">CPULoad</span><span class="o">=</span><span class="m">0</span>.06
-   <span class="nv">AvailableFeatures</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">ActiveFeatures</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">Gres</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">NodeAddr</span><span class="o">=</span>med0740 <span class="nv">NodeHostName</span><span class="o">=</span>med0740 <span class="nv">Version</span><span class="o">=</span><span class="m">20</span>.02.0
-   <span class="nv">OS</span><span class="o">=</span>Linux <span class="m">3</span>.10.0-1062.12.1.el7.x86_64 <span class="c1">#1 SMP Tue Feb 4 23:02:59 UTC 2020</span>
-   <span class="nv">RealMemory</span><span class="o">=</span><span class="m">1</span> <span class="nv">AllocMem</span><span class="o">=</span><span class="m">0</span> <span class="nv">FreeMem</span><span class="o">=</span><span class="m">174388</span> <span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span> <span class="nv">Boards</span><span class="o">=</span><span class="m">1</span>
-   <span class="nv">State</span><span class="o">=</span>IDLE <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">TmpDisk</span><span class="o">=</span><span class="m">0</span> <span class="nv">Weight</span><span class="o">=</span><span class="m">1</span> <span class="nv">Owner</span><span class="o">=</span>N/A <span class="nv">MCS_label</span><span class="o">=</span>N/A
-   <span class="nv">Partitions</span><span class="o">=</span>debug
-   <span class="nv">BootTime</span><span class="o">=</span><span class="m">2020</span>-03-05T00:54:15 <span class="nv">SlurmdStartTime</span><span class="o">=</span><span class="m">2020</span>-03-05T16:23:25
-   <span class="nv">CfgTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">32</span>,mem<span class="o">=</span>1M,billing<span class="o">=</span><span class="m">32</span>
-   <span class="nv">AllocTRES</span><span class="o">=</span>
-   <span class="nv">CapWatts</span><span class="o">=</span>n/a
-   <span class="nv">CurrentWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">AveWatts</span><span class="o">=</span><span class="m">0</span>
-   <span class="nv">ExtSensorsJoules</span><span class="o">=</span>n/s <span class="nv">ExtSensorsWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExtSensorsTemp</span><span class="o">=</span>n/s
-</code></pre></div>
-
-<p><strong>queue states</strong></p>
-<div class="highlight"><pre><span></span><code>$ squeue
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-$ squeue -u holtgrem_c
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-</code></pre></div>
-
-<p><strong>node resources</strong></p>
-<div class="highlight"><pre><span></span><code>$ sinfo -o <span class="s2">&quot;%20N  %10c  %10m  %25f  %10G &quot;</span>
-</code></pre></div>
-
-<p><strong>additional resources such as GPUs</strong></p>
-<div class="highlight"><pre><span></span><code>$ sinfo -o <span class="s2">&quot;%N %G&quot;</span>
-</code></pre></div>
-
-<p><strong>listing job details</strong></p>
-<div class="highlight"><pre><span></span><code>$ scontrol show job 225
-JobId=225 JobName=bash
-   UserId=XXX(135001) GroupId=XXX(30069) MCS_label=N/A
-   Priority=4294901580 Nice=0 Account=(null) QOS=normal
-   JobState=FAILED Reason=NonZeroExitCode Dependency=(null)
-   Requeue=1 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=130:0
-   RunTime=00:16:27 TimeLimit=14-00:00:00 TimeMin=N/A
-   SubmitTime=2020-03-23T11:34:26 EligibleTime=2020-03-23T11:34:26
-   AccrueTime=Unknown
-   StartTime=2020-03-23T11:34:26 EndTime=2020-03-23T11:50:53 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-03-23T11:34:26
-   Partition=gpu AllocNode:Sid=med-login1:1918
+<h2 id="what-is-the-effect-of-a-reservation">What is the Effect of a Reservation?<a class="headerlink" href="#what-is-the-effect-of-a-reservation" title="Permanent link">&para;</a></h2>
+<p>Maintenance reservations will block the affected nodes (or even the whole cluster) for jobs.
+If there is a maintenance in one week then your <strong>job must have an end time before the reservation starts</strong>.
+By this, the job gives a guarantee to the scheduler that it will not interfer with the maintenance reservation.</p>
+<p>For example, <code>scontrol show job JOBID</code> might report the following</p>
+<div class="highlight"><pre><span></span><code>JobId=4011580 JobName=snakejob
+   UserId=USER(UID) GroupId=GROUP(GID) MCS_label=N/A
+   Priority=1722 Nice=0 Account=GROUP QOS=normal
+   JobState=PENDING Reason=ReqNodeNotAvail,_Reserved_for_maintenance Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=28-00:00:00 TimeMin=N/A
+   SubmitTime=2021-08-30T09:01:01 EligibleTime=2021-08-30T09:01:01
+   AccrueTime=2021-08-30T09:01:01
+   StartTime=2021-09-09T00:00:00 EndTime=2021-10-07T00:00:00 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2021-08-30T10:20:40
+   Partition=long AllocNode:Sid=172.16.35.153:5453
    ReqNodeList=(null) ExcNodeList=(null)
-   NodeList=med0301
-   BatchHost=med0301
-   NumNodes=1 NumCPUs=2 NumTasks=0 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-   TRES=cpu=2,node=1,billing=2
+   NodeList=(null)
+   NumNodes=1-1 NumCPUs=8 NumTasks=8 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=8,mem=4G,node=1,billing=8
    Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
-   MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
+   MinCPUsNode=1 MinMemoryNode=4G MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-   Command=bash
-   WorkDir=XXX
    Power=
-   TresPerNode=gpu:tesla:4
-   MailUser=(null) MailType=NONE
+   NtasksPerTRES:0
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>host:~$ squeue
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span> 
-              <span class="m">1177</span>    medium     bash jweiner_  R <span class="m">4</span>-21:52:24      <span class="m">1</span> med0127 
-              <span class="m">1192</span>    medium     bash jweiner_  R <span class="m">4</span>-07:08:40      <span class="m">1</span> med0127 
-              <span class="m">1209</span>   highmem     bash mkuhrin_  R <span class="m">2</span>-01:07:17      <span class="m">1</span> med0402 
-              <span class="m">1210</span>       gpu     bash hilberta  R <span class="m">1</span>-10:30:34      <span class="m">1</span> med0304 
-              <span class="m">1213</span>      long     bash schubacm  R <span class="m">1</span>-09:42:27      <span class="m">1</span> med0127 
-              <span class="m">2401</span>       gpu     bash ramkem_c  R <span class="m">1</span>-05:14:53      <span class="m">1</span> med0303 
-              <span class="m">2431</span>    medium ngs_mapp holtgrem  R <span class="m">1</span>-05:01:41      <span class="m">1</span> med0127 
-              <span class="m">2437</span>  critical snakejob holtgrem  R <span class="m">1</span>-05:01:34      <span class="m">1</span> med0135 
-              <span class="m">2733</span>     debug     bash schubacm  R    <span class="m">7</span>:36:42      <span class="m">1</span> med0127 
-              <span class="m">3029</span>  critical ngs_mapp holtgrem  R    <span class="m">5</span>:59:07      <span class="m">1</span> med0127 
-              <span class="m">3030</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0134 
-              <span class="m">3031</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0137 
-              <span class="m">3032</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0137 
-              <span class="m">3033</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0138 
-              <span class="m">3034</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:23      <span class="m">1</span> med0138 
-              <span class="m">3035</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0139 
-              <span class="m">3036</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0139 
-              <span class="m">3037</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0140 
-              <span class="m">3038</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0140 
-              <span class="m">3039</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0141 
-              <span class="m">3040</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0141 
-              <span class="m">3041</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0142 
-              <span class="m">3042</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0142 
-              <span class="m">3043</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0143 
-              <span class="m">3044</span>  critical snakejob holtgrem  R    <span class="m">5</span>:56:20      <span class="m">1</span> med0143 
-              <span class="m">3063</span>      long     bash schubacm  R    <span class="m">4</span>:12:37      <span class="m">1</span> med0127 
-              <span class="m">3066</span>      long     bash schubacm  R    <span class="m">4</span>:11:47      <span class="m">1</span> med0127 
-              <span class="m">3113</span>    medium ngs_mapp holtgrem  R    <span class="m">1</span>:52:33      <span class="m">1</span> med0708 
-              <span class="m">3118</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0133 
-              <span class="m">3119</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0703 
-              <span class="m">3126</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0706 
-              <span class="m">3127</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0144 
-              <span class="m">3128</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:38      <span class="m">1</span> med0144 
-              <span class="m">3133</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0147 
-              <span class="m">3134</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0147 
-              <span class="m">3135</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0148 
-              <span class="m">3136</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0148 
-              <span class="m">3138</span>    medium snakejob holtgrem  R    <span class="m">1</span>:50:35      <span class="m">1</span> med0104 
+<p>Look out for the <code>Reason</code> line:</p>
+<div class="highlight"><pre><span></span><code>Reason=ReqNodeNotAvail,_Reserved_for_maintenance
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>host:~$ squeue -o <span class="s2">&quot;%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b&quot;</span>
-     JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST<span class="o">(</span>R TRES_PER_NODE
-      <span class="m">1177</span> medium    bash                 jweiner_m   R <span class="m">4</span>-21:52:22      <span class="m">1</span> med0127    N/A
-      <span class="m">1192</span> medium    bash                 jweiner_m   R <span class="m">4</span>-07:08:38      <span class="m">1</span> med0127    N/A
-      <span class="m">1209</span> highmem   bash                 mkuhrin_m   R <span class="m">2</span>-01:07:15      <span class="m">1</span> med0402    N/A
-      <span class="m">1210</span> gpu       bash                 hilberta_c  R <span class="m">1</span>-10:30:32      <span class="m">1</span> med0304    gpu:tesla:4
-      <span class="m">1213</span> long      bash                 schubacm_c  R <span class="m">1</span>-09:42:25      <span class="m">1</span> med0127    N/A
-      <span class="m">2401</span> gpu       bash                 ramkem_c    R <span class="m">1</span>-05:14:51      <span class="m">1</span> med0303    gpu:tesla:1
-      <span class="m">2431</span> medium    ngs_mapping          holtgrem_c  R <span class="m">1</span>-05:01:39      <span class="m">1</span> med0127    N/A
-      <span class="m">2437</span> critical  snakejob.ngs_mapping holtgrem_c  R <span class="m">1</span>-05:01:32      <span class="m">1</span> med0135    N/A
-      <span class="m">2733</span> debug     bash                 schubacm_c  R    <span class="m">7</span>:36:40      <span class="m">1</span> med0127    N/A
-      <span class="m">3029</span> critical  ngs_mapping          holtgrem_c  R    <span class="m">5</span>:59:05      <span class="m">1</span> med0127    N/A
-      <span class="m">3030</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0134    N/A
-      <span class="m">3031</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0137    N/A
-      <span class="m">3032</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0137    N/A
-      <span class="m">3033</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0138    N/A
-      <span class="m">3034</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:21      <span class="m">1</span> med0138    N/A
-      <span class="m">3035</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0139    N/A
-      <span class="m">3036</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0139    N/A
-      <span class="m">3037</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0140    N/A
-      <span class="m">3038</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0140    N/A
-      <span class="m">3039</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0141    N/A
-      <span class="m">3040</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0141    N/A
-      <span class="m">3041</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0142    N/A
-      <span class="m">3042</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0142    N/A
-      <span class="m">3043</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0143    N/A
-      <span class="m">3044</span> critical  snakejob.ngs_mapping holtgrem_c  R    <span class="m">5</span>:56:18      <span class="m">1</span> med0143    N/A
-      <span class="m">3063</span> long      bash                 schubacm_c  R    <span class="m">4</span>:12:35      <span class="m">1</span> med0127    N/A
-      <span class="m">3066</span> long      bash                 schubacm_c  R    <span class="m">4</span>:11:45      <span class="m">1</span> med0127    N/A
-      <span class="m">3113</span> medium    ngs_mapping          holtgrem_c  R    <span class="m">1</span>:52:31      <span class="m">1</span> med0708    N/A
-      <span class="m">3118</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0133    N/A
-      <span class="m">3119</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0703    N/A
-      <span class="m">3126</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0706    N/A
-      <span class="m">3127</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0144    N/A
-      <span class="m">3128</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:36      <span class="m">1</span> med0144    N/A
-      <span class="m">3133</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0147    N/A
-      <span class="m">3134</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0147    N/A
-      <span class="m">3135</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0148    N/A
-      <span class="m">3136</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0148    N/A
-      <span class="m">3138</span> medium    snakejob.ngs_mapping holtgrem_c  R    <span class="m">1</span>:50:33      <span class="m">1</span> med0104    N/A
+<p>This job is scheduled to run up to 4 weeks and has been submitted on 2021-08-30.</p>
+<p>Right now the following reservation is active</p>
+<div class="highlight"><pre><span></span><code># scontrol show reservation
+ReservationName=root_13 StartTime=2021-09-07T00:00:00 EndTime=2021-09-09T00:00:00 Duration=2-00:00:00
+   Nodes=hpc-cpu-[1-36],med[0101-0116,0201-0264,0301-0304,0401-0404,0501-0516,0601-0632,0701-0764]
+   NodeCnt=236 CoreCnt=5344 Features=(null) PartitionName=(null)
+   Flags=MAINT,IGNORE_JOBS,SPEC_NODES,ALL_NODES TRES=cpu=10176
+   Users=root Groups=(null) Accounts=(null) Licenses=(null) State=INACTIVE BurstBuffer=(null) Watts=n/a
+   MaxStartDelay=(null)
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>host:~$ sinfo
-PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
-debug*       up    <span class="m">8</span>:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
-debug*       up    <span class="m">8</span>:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
-debug*       up    <span class="m">8</span>:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
-debug*       up    <span class="m">8</span>:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
-medium       up <span class="m">7</span>-00:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
-medium       up <span class="m">7</span>-00:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
-medium       up <span class="m">7</span>-00:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
-medium       up <span class="m">7</span>-00:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
-long         up <span class="m">28</span>-00:00:0     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
-long         up <span class="m">28</span>-00:00:0      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
-long         up <span class="m">28</span>-00:00:0     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
-long         up <span class="m">28</span>-00:00:0    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
-critical     up <span class="m">7</span>-00:00:00     <span class="m">11</span>  drain med<span class="o">[</span><span class="m">0707</span>,0709-0710,0740-0742,0744-0745,0749,0752,0755<span class="o">]</span> 
-critical     up <span class="m">7</span>-00:00:00      <span class="m">8</span>    mix med<span class="o">[</span><span class="m">0104</span>,0127,0133-0135,0703,0706,0708<span class="o">]</span> 
-critical     up <span class="m">7</span>-00:00:00     <span class="m">10</span>  alloc med<span class="o">[</span><span class="m">0137</span>-0144,0147-0148<span class="o">]</span> 
-critical     up <span class="m">7</span>-00:00:00    <span class="m">103</span>   idle med<span class="o">[</span><span class="m">0105</span>-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705<span class="o">]</span> 
-highmem      up <span class="m">14</span>-00:00:0      <span class="m">1</span>    mix med0402 
-highmem      up <span class="m">14</span>-00:00:0      <span class="m">3</span>   idle med<span class="o">[</span><span class="m">0401</span>,0403-0404<span class="o">]</span> 
-gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span>    mix med<span class="o">[</span><span class="m">0303</span>-0304<span class="o">]</span> 
-gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span>   idle med<span class="o">[</span><span class="m">0301</span>-0302<span class="o">]</span> 
-</code></pre></div>
+<p>Thus, the scheduler decided to set a <code>StartTime</code> of the job to <code>2021-09-09T00:00:00</code>, which is the end time of the reservation.
+Effectively, the job is forced to run outside the maintenance reservation?</p>
                 
                   
                     
@@ -2143,7 +2064,7 @@ gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span> 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../quickstart/" title="Slurm Quickstart" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../memory-allocation/" title="Memory Allocation" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2152,19 +2073,19 @@ gpu          up <span class="m">14</span>-00:00:0      <span class="m">2</span> 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Slurm Quickstart
+                Memory Allocation
               </div>
             </div>
           </a>
         
         
-          <a href="../job-scripts/" title="Slurm Job Scripts" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../commands-srun/" title="srun" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Slurm Job Scripts
+                srun
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
