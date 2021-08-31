@@ -88,4 +88,6 @@ ReservationName=root_13 StartTime=2021-09-07T00:00:00 EndTime=2021-09-09T00:00:0
 ```
 
 Thus, the scheduler decided to set a `StartTime` of the job to `2021-09-09T00:00:00`, which is the end time of the reservation.
-Effectively, the job is forced to run outside the maintenance reservation?
+Effectively, the job is forced to run outside the maintenance reservation.
+
+You can resolve this by using a `--time=` parameter to `srun` or `sbatch` such that the job ends before the maintenance reservation starts.
