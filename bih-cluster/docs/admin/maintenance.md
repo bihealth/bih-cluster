@@ -10,6 +10,29 @@ All servers/nodes won't be reachable!
 
 >If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
 
+## New Nodes in the `staging` partition, August 31, 2021
+
+We have installed 36 new nodes (in BETA mode) in the cluster called `hpc-node-[1-36]`.
+They have 48 cores (thus 96 hardware threads) each and have 360GiB of main memory available (for the hardware nerds, it's Intel(R) Xeon(R) Gold 6240R CPUs at 2.40GHz, featuring the `cascadelake` architecture).
+
+Right now, they are only available in the `staging` partition.
+After some testing we will move them to the other partitions.
+We'd like to ask you to test them as well and report any issues to hpc-helpdesk@bih-charite.de.
+The nodes have been setup identically to the existing `med0xxx` nodes.
+We do not expect big changes but the nodes might not be as stable as other oness.
+
+Here is how you can reach them.
+
+```
+login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
+[...]
+hpc-cpu-1 #
+```
+
+Note that I'm specifying a maximal running time of 24h so the scheduler will end the job after 24 hours which is before the upcoming maintenance reservation begins.
+By default, the scheduler allocates 28 days to the job which means that the job cannot end before the reservation and will be scheduled to start **after** it.
+See [Reservations / Maintenances](../../slurm/reservations/) for more information about maintenance reservations.
+
 ## Reservation / Maintenance Display on Login, August 30, 2021
 
 User will now be notified on login about maintenance, for example:
