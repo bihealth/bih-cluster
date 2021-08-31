@@ -303,6 +303,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-nodes-in-the-staging-partition-august-31-2021" class="md-nav__link">
+    New Nodes in the staging partition, August 31, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reservation-maintenance-display-on-login-august-30-2021" class="md-nav__link">
     Reservation / Maintenance Display on Login, August 30, 2021
   </a>
@@ -2014,6 +2021,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-nodes-in-the-staging-partition-august-31-2021" class="md-nav__link">
+    New Nodes in the staging partition, August 31, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reservation-maintenance-display-on-login-august-30-2021" class="md-nav__link">
     Reservation / Maintenance Display on Login, August 30, 2021
   </a>
@@ -2118,6 +2132,23 @@
 <p>All nodes will be running in reservation mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, September 7 and 8, all-day). For example, if you submit a job that can run up to 7 days after August 30 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".</p>
 <p>If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.</p>
 </blockquote>
+<h2 id="new-nodes-in-the-staging-partition-august-31-2021">New Nodes in the <code>staging</code> partition, August 31, 2021<a class="headerlink" href="#new-nodes-in-the-staging-partition-august-31-2021" title="Permanent link">&para;</a></h2>
+<p>We have installed 36 new nodes (in BETA mode) in the cluster called <code>hpc-node-[1-36]</code>.
+They have 48 cores (thus 96 hardware threads) each and have 360GiB of main memory available (for the hardware nerds, it's Intel(R) Xeon(R) Gold 6240R CPUs at 2.40GHz, featuring the <code>cascadelake</code> architecture).</p>
+<p>Right now, they are only available in the <code>staging</code> partition.
+After some testing we will move them to the other partitions.
+We'd like to ask you to test them as well and report any issues to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>.
+The nodes have been setup identically to the existing <code>med0xxx</code> nodes.
+We do not expect big changes but the nodes might not be as stable as other oness.</p>
+<p>Here is how you can reach them.</p>
+<div class="highlight"><pre><span></span><code>login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
+[...]
+hpc-cpu-1 #
+</code></pre></div>
+
+<p>Note that I'm specifying a maximal running time of 24h so the scheduler will end the job after 24 hours which is before the upcoming maintenance reservation begins.
+By default, the scheduler allocates 28 days to the job which means that the job cannot end before the reservation and will be scheduled to start <strong>after</strong> it.
+See <a href="../../slurm/reservations/">Reservations / Maintenances</a> for more information about maintenance reservations.</p>
 <h2 id="reservation-maintenance-display-on-login-august-30-2021">Reservation / Maintenance Display on Login, August 30, 2021<a class="headerlink" href="#reservation-maintenance-display-on-login-august-30-2021" title="Permanent link">&para;</a></h2>
 <p>User will now be notified on login about maintenance, for example:</p>
 <div class="highlight"><pre><span></span><code>NOTE: scheduled maintenance(s)
