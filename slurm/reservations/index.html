@@ -2032,7 +2032,8 @@ ReservationName=root_13 StartTime=2021-09-07T00:00:00 EndTime=2021-09-09T00:00:0
 </code></pre></div>
 
 <p>Thus, the scheduler decided to set a <code>StartTime</code> of the job to <code>2021-09-09T00:00:00</code>, which is the end time of the reservation.
-Effectively, the job is forced to run outside the maintenance reservation?</p>
+Effectively, the job is forced to run outside the maintenance reservation.</p>
+<p>You can resolve this by using a <code>--time=</code> parameter to <code>srun</code> or <code>sbatch</code> such that the job ends before the maintenance reservation starts.</p>
                 
                   
                     
@@ -2041,7 +2042,7 @@ Effectively, the job is forced to run outside the maintenance reservation?</p>
 <div class="md-source-date">
   <small>
     
-      Last update: August 30, 2021
+      Last update: August 31, 2021
     
   </small>
 </div>
