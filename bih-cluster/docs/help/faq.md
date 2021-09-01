@@ -560,6 +560,18 @@ This means taht instead of writing `--mem 96G --partition staging --immediate 5`
 
 In this respect, Slurm deviates from the [GNU argument syntax](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html) where the equal sign is optional for long arguments.
 
+## `slurmstepd` says that `hwloc_get_obj_below_by_type` fails
+
+You can ignore the following problem:
+
+```
+slurmstepd: error: hwloc_get_obj_below_by_type() failing, task/affinity plugin may be required to address bug fixed in HWLOC version 1.11.5
+slurmstepd: error: task[0] unable to set taskset '0x0'
+```
+
+This is a minor failure related to Slurm and cgroups.
+Your job **should** run through successfully despite this error (that is more of a warning for end-users).
+
 ## How can I share files/collaborate with users from another work group?
 
 Please use [projects as documented here](../admin/getting-access.md#projects).
