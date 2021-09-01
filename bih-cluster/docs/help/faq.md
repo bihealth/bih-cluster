@@ -541,6 +541,25 @@ Further, you are limited to using the equivalent of one core.
 This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
 This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.
 
+## Slurm complains about `execve` / "No such file or directory"
+
+This means that the program that you want to execute does not exist.
+Consider the following example:
+
+```
+[user@res-login-1 ~]$ srun --time 2-0 --nodes=1 --ntasks-per-node=1 \
+  --cpus-per-task=12 --mem 96G --partition staging --immediate 5 \
+  --pty bash -i
+slurmstepd: error: execve(): 5: No such file or directory
+srun: error: hpc-cpu-2: task 0: Exited with exit code 2
+```
+
+Can you spot the problem?
+In this case, the problem is that for long arguments such as `--mem` you **must use the equal sign for `--arg=value`** with Slurm.
+This means taht instead of writing `--mem 96G --partition staging --immediate 5`, you must use ``--mem=96G --partition=staging --immediate=5`.
+
+In this respect, Slurm deviates from the [GNU argument syntax](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html) where the equal sign is optional for long arguments.
+
 ## How can I share files/collaborate with users from another work group?
 
 Please use [projects as documented here](../admin/getting-access.md#projects).
