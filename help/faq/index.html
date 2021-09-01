@@ -657,6 +657,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slurm-complains-about-execve-no-such-file-or-directory" class="md-nav__link">
+    Slurm complains about execve / "No such file or directory"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2462,6 +2469,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slurm-complains-about-execve-no-such-file-or-directory" class="md-nav__link">
+    Slurm complains about execve / "No such file or directory"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2925,6 +2939,20 @@ E.g., use <code>rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org
 Further, you are limited to using the equivalent of one core.
 This limit is enforced for all processes originating from an SSH session and the limit is enforced on all jobs.
 This was done to prevent users from thrashing the head nodes or using SSH based sessions for computation.</p>
+<h2 id="slurm-complains-about-execve-no-such-file-or-directory">Slurm complains about <code>execve</code> / "No such file or directory"<a class="headerlink" href="#slurm-complains-about-execve-no-such-file-or-directory" title="Permanent link">&para;</a></h2>
+<p>This means that the program that you want to execute does not exist.
+Consider the following example:</p>
+<div class="highlight"><pre><span></span><code>[user@res-login-1 ~]$ srun --time 2-0 --nodes=1 --ntasks-per-node=1 \
+  --cpus-per-task=12 --mem 96G --partition staging --immediate 5 \
+  --pty bash -i
+slurmstepd: error: execve(): 5: No such file or directory
+srun: error: hpc-cpu-2: task 0: Exited with exit code 2
+</code></pre></div>
+
+<p>Can you spot the problem?
+In this case, the problem is that for long arguments such as <code>--mem</code> you <strong>must use the equal sign for <code>--arg=value</code></strong> with Slurm.
+This means taht instead of writing <code>--mem 96G --partition staging --immediate 5</code>, you must use <code>`--mem=96G --partition=staging --immediate=5</code>.</p>
+<p>In this respect, Slurm deviates from the <a href="https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html">GNU argument syntax</a> where the equal sign is optional for long arguments.</p>
 <h2 id="how-can-i-share-filescollaborate-with-users-from-another-work-group">How can I share files/collaborate with users from another work group?<a class="headerlink" href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" title="Permanent link">&para;</a></h2>
 <p>Please use <a href="../../admin/getting-access/#projects">projects as documented here</a>.
 Projects were created for this particular purpose.</p>
@@ -2959,7 +2987,7 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 <div class="md-source-date">
   <small>
     
-      Last update: August 31, 2021
+      Last update: September 1, 2021
     
   </small>
 </div>
