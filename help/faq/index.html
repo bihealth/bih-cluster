@@ -664,6 +664,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slurmstepd-says-that-hwloc_get_obj_below_by_type-fails" class="md-nav__link">
+    slurmstepd says that hwloc_get_obj_below_by_type fails
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2476,6 +2483,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#slurmstepd-says-that-hwloc_get_obj_below_by_type-fails" class="md-nav__link">
+    slurmstepd says that hwloc_get_obj_below_by_type fails
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2953,6 +2967,14 @@ srun: error: hpc-cpu-2: task 0: Exited with exit code 2
 In this case, the problem is that for long arguments such as <code>--mem</code> you <strong>must use the equal sign for <code>--arg=value</code></strong> with Slurm.
 This means taht instead of writing <code>--mem 96G --partition staging --immediate 5</code>, you must use <code>`--mem=96G --partition=staging --immediate=5</code>.</p>
 <p>In this respect, Slurm deviates from the <a href="https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html">GNU argument syntax</a> where the equal sign is optional for long arguments.</p>
+<h2 id="slurmstepd-says-that-hwloc_get_obj_below_by_type-fails"><code>slurmstepd</code> says that <code>hwloc_get_obj_below_by_type</code> fails<a class="headerlink" href="#slurmstepd-says-that-hwloc_get_obj_below_by_type-fails" title="Permanent link">&para;</a></h2>
+<p>You can ignore the following problem:</p>
+<div class="highlight"><pre><span></span><code>slurmstepd: error: hwloc_get_obj_below_by_type() failing, task/affinity plugin may be required to address bug fixed in HWLOC version 1.11.5
+slurmstepd: error: task[0] unable to set taskset &#39;0x0&#39;
+</code></pre></div>
+
+<p>This is a minor failure related to Slurm and cgroups.
+Your job <strong>should</strong> run through successfully despite this error (that is more of a warning for end-users).</p>
 <h2 id="how-can-i-share-filescollaborate-with-users-from-another-work-group">How can I share files/collaborate with users from another work group?<a class="headerlink" href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" title="Permanent link">&para;</a></h2>
 <p>Please use <a href="../../admin/getting-access/#projects">projects as documented here</a>.
 Projects were created for this particular purpose.</p>
