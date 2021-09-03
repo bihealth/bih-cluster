@@ -572,6 +572,14 @@ slurmstepd: error: task[0] unable to set taskset '0x0'
 This is a minor failure related to Slurm and cgroups.
 Your job **should** run through successfully despite this error (that is more of a warning for end-users).
 
+## My login stalls / something weird is happening
+
+You can try to run `ssh -l USER login-1.research.hpc.bihealth.org bash -iv`.
+This will run `bash -iv` instead of the normal login shell.
+The parameter `-i` is creating an interactive shell (which is what you want) and `-v` to see every command that is executed.
+This way you will see **every command** that is executed.
+You will also be able to identify at which point there is any stalling (e.g., activating conda via `source .../conda` when the fiel system is slow).
+
 ## How can I share files/collaborate with users from another work group?
 
 Please use [projects as documented here](../admin/getting-access.md#projects).
