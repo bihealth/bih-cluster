@@ -671,6 +671,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-login-stalls-something-weird-is-happening" class="md-nav__link">
+    My login stalls / something weird is happening
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2490,6 +2497,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-login-stalls-something-weird-is-happening" class="md-nav__link">
+    My login stalls / something weird is happening
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" class="md-nav__link">
     How can I share files/collaborate with users from another work group?
   </a>
@@ -2975,6 +2989,12 @@ slurmstepd: error: task[0] unable to set taskset &#39;0x0&#39;
 
 <p>This is a minor failure related to Slurm and cgroups.
 Your job <strong>should</strong> run through successfully despite this error (that is more of a warning for end-users).</p>
+<h2 id="my-login-stalls-something-weird-is-happening">My login stalls / something weird is happening<a class="headerlink" href="#my-login-stalls-something-weird-is-happening" title="Permanent link">&para;</a></h2>
+<p>You can try to run <code>ssh -l USER login-1.research.hpc.bihealth.org bash -iv</code>.
+This will run <code>bash -iv</code> instead of the normal login shell.
+The parameter <code>-i</code> is creating an interactive shell (which is what you want) and <code>-v</code> to see every command that is executed.
+This way you will see <strong>every command</strong> that is executed.
+You will also be able to identify at which point there is any stalling (e.g., activating conda via <code>source .../conda</code> when the fiel system is slow).</p>
 <h2 id="how-can-i-share-filescollaborate-with-users-from-another-work-group">How can I share files/collaborate with users from another work group?<a class="headerlink" href="#how-can-i-share-filescollaborate-with-users-from-another-work-group" title="Permanent link">&para;</a></h2>
 <p>Please use <a href="../../admin/getting-access/#projects">projects as documented here</a>.
 Projects were created for this particular purpose.</p>
@@ -3009,7 +3029,7 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 <div class="md-source-date">
   <small>
     
-      Last update: September 1, 2021
+      Last update: September 3, 2021
     
   </small>
 </div>
