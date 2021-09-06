@@ -61,6 +61,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
+    - :sparkles: September 7: GPU hosts `med030[1-4]` renamed to `hpc-gpu-[1-4]`.
     - :sparkles: August 23: `srun` will use `--immediate=60` by default with message.
     - :sparkles: August 30: Maintenance notes are now display on login.
     - :sparkles: August 31: 36 new nodes in the `staging` partition.
