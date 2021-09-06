@@ -10,6 +10,11 @@ All servers/nodes won't be reachable!
 
 >If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
 
+## Renaming of GPU machines, September 7, 2021
+
+The GPU machines `med030[1-4]` have been renamed to `hpc-gpu-[1-4]`.
+It will probably take us some time to update all places in the documentation.
+
 ## New Nodes in the `staging` partition, August 31, 2021
 
 We have installed 36 new nodes (in BETA mode) in the cluster called `hpc-node-[1-36]`.
