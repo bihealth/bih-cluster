@@ -57,10 +57,10 @@ Users can only allocate the equivalent of 4 nodes.
 This partition is for long-running tasks.
 Only one node can be reserved for so long to discourage really long-running jobs and encourage users for splitting their jobs into smaller parts.
 
-* **maximum run time:** 28 days
+* **maximum run time:** 14 days
 * **maximum cores:** 32 cores/slots (1 node)
 * **partition name:** `long`
-* **argument string:** maximum run time: `--time 28-00:00:00`
+* **argument string:** maximum run time: `--time 14-00:00:00`
 
 ### `gpu`
 
