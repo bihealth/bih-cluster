@@ -10,11 +10,13 @@ All servers/nodes won't be reachable!
 
 >If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.
 
-## Renaming of GPU & High Memory Machines, September 7, 2021
+## Renaming of GPU & High Memory Machines & Scheduler Changes, September 7, 2021
 
 The GPU machines `med030[1-4]` have been renamed to `hpc-gpu-[1-4]`.
 The high memory machines `med040[1-4]` have been renamed to `hpc-mem-[1-4]`.
 It will probably take us some time to update all places in the documentation.
+
+Furthe `long` partition has been changed to allow jobs with a maximum running time of 14 days.
 
 ## New Nodes in the `staging` partition, August 31, 2021
 
