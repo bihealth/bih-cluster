@@ -88,12 +88,12 @@ Wavelet Toolbox                                       Version 4.17        (R2016
 ## Running MATLAB UI
 
 For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., `ssh -X login-1.research.hpc.bihealth.org` from the Linux command line).
-Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11` for connecting to a node with X11 forwarding enabled.
+Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11 bash -i` for connecting to a node with X11 forwarding enabled.
 
 ```bash
 client:~$ ssh -X login-1.research.hpc.bihealth.org
 [...]
-res-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11
+res-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11 bash -i
 [...]
 med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
