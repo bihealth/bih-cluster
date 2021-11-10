@@ -15,7 +15,7 @@ Access control list maintenance is done with audit-trails ("Revisionssicherheit"
 - [Jump to "From Linux"](#from-linux)
 - [Jump to "From Mac"](#from-mac)
 
-!!! important "Access from Charite Network"
+!!! important "Access from internal Charite Network (not VPN)"
 
     Access from the Charite network (IP ranges `141.x.x.x` and `10.x.x.x`) must connect through the Charite proxy (`http://proxy.charite.de:8080`).
     Depending on the client software that you are using, you might have to configure the proxy.
@@ -158,7 +158,7 @@ The window should now look similar to the one below.
 
 ![The WinSCP Login Window](figures/winscp-login.png)
 
-!!! important "Proxy Configuration on Charite Network"
+!!! important "Proxy Configuration on internal Charite Network (not VPN)"
 
     **If you are on the Charite network then you have to configure the proxy.**
     **Otherwise, you have to skip this step.**
@@ -181,7 +181,7 @@ Alternatively, you can use the two-panel view of WinSCP to transfer files [as de
 For Mac, we you can also use `lftp` as described above in [From Linux](#from-linux).
 You can find install instructions [here online](http://macappstore.org/lftp/).
 
-!!! important "Proxy Configuration on Charite Network"
+!!! important "Proxy Configuration on internal Charite Network (not VPN)"
 
     **If you are on the Charite network then you must have configured the proxy appropriately.**
     **Otherwise, you have to skip this step.**
