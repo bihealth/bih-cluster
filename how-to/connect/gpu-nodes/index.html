@@ -2039,6 +2039,11 @@
 <p>Connecting to a node with GPUs is easy.
 You simply request a GPU using the <code>--gres=gpu:tesla:COUNT</code> argument to <code>srun</code> and <code>batch</code>.
 This will automatically place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recently, <code>--gres=gpu:tesla:COUNT</code> was often not able to allocate the right partion on it's own.
+If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with <code>--partition gpu</code> (or <code>#SBATCH --partition gpu</code> in batch file).</p>
+</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>".</p>
@@ -2106,6 +2111,11 @@ med0301:~$ python -c <span class="s1">&#39;import torch; print(torch.cuda.is_ava
 True
 </code></pre></div>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Recently, <code>--gres=gpu:tesla:COUNT</code> was often not able to allocate the right partion on it's own.
+If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with <code>--partition gpu</code> (or <code>#SBATCH --partition gpu</code> in batch file).</p>
+</div>
 <h2 id="bonus-1-who-is-using-the-gpus">Bonus <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/squidfunk/mkdocs-material/issues/1" title="GitHub Issue: squidfunk/mkdocs-material#1">#1</a>: Who is using the GPUs?<a class="headerlink" href="#bonus-1-who-is-using-the-gpus" title="Permanent link">&para;</a></h2>
 <p>Use <code>squeue</code> to find out about currently queued jobs (the <code>egrep</code> only keeps the header and entries in the <code>gpu</code> partition).</p>
 <div class="highlight"><pre><span></span><code>res-login-1:~$ squeue <span class="p">|</span> egrep -iw <span class="s1">&#39;JOBID|gpu&#39;</span>
@@ -2161,7 +2171,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
 <div class="md-source-date">
   <small>
     
-      Last update: September 10, 2021
+      Last update: November 23, 2021
     
   </small>
 </div>
