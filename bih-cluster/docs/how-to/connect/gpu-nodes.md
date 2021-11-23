@@ -12,6 +12,11 @@ Connecting to a node with GPUs is easy.
 You simply request a GPU using the `--gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
 This will automatically place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
+!!! note
+
+    Recently, `--gres=gpu:tesla:COUNT` was often not able to allocate the right partion on it's own.
+    If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with `--partition gpu` (or `#SBATCH --partition gpu` in batch file).
+
 !!! hint
 
     Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".
@@ -91,6 +96,11 @@ med0301:~$ conda activate gpu-test
 med0301:~$ python -c 'import torch; print(torch.cuda.is_available())'
 True
 ```
+
+!!! note
+
+    Recently, `--gres=gpu:tesla:COUNT` was often not able to allocate the right partion on it's own.
+    If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with `--partition gpu` (or `#SBATCH --partition gpu` in batch file).
 
 ## Bonus #1: Who is using the GPUs?
 
