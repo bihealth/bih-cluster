@@ -31,7 +31,7 @@ Account creation is handled by the core facilities that the external user is a c
 
 ## File Access
 
-Generally, you will be given a URL to your file box similar to `https://file-exchange.bihealth.org/<file-box-id>`.
+Generally, you will be given a URL to your file box similar to `https://file-exchange.bihealth.org/<file-box-id>/`.
 The files are served over an encrypted connection using WebDAV (which uses HTTPS).
 
 The following describes how to access the files in the box from different platforms.
