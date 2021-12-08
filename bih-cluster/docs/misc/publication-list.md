@@ -28,6 +28,8 @@ Paraskevopoulou S., Käfer S., Zirkel F., Donath A., Petersen M., Liu S., Zhou X
 
 Thomas Krannich, W Timothy J White, Sebastian Niehus, Guillaume Holley, Bjarni V Halldórsson, Birte Kehr, Population-scale detection of non-reference sequence variants using colored de Bruijn graphs, Bioinformatics, 2021, btab749, [doi: 10.1093/bioinformatics/btab749](https://doi.org/10.1093/bioinformatics/btab749)
 
+Julia Markowski, Rieke Kempfer, Alexander Kukalev, Ibai Irastorza-Azcarate, Gesa Loof, Birte Kehr, Ana Pombo, Sven Rahmann, Roland F Schwarz, GAMIBHEAR: whole-genome haplotype reconstruction from Genome Architecture Mapping data, Bioinformatics, Volume 37, Issue 19, 1 October 2021, Pages 3128–3135. [doi: 10.1093/bioinformatics/btab238](https://doi.org/10.1093/bioinformatics/btab238)
+
 ### 2020
 
 Krützfeldt LM, Schubach M, Kircher M. The impact of different negative training data on regulatory sequence predictions. PLoS One. 2020 Dec 1;15(12):e0237412. [doi: 10.1371/journal.pone.0237412](https://doi.org/10.1371/journal.pone.0237412).
