@@ -26,6 +26,8 @@ Paraskevopoulou S., Käfer S., Zirkel F., Donath A., Petersen M., Liu S., Zhou X
 2021 Mar 30. 
 [doi: 10.1093/ve/veab030](https://doi.org/10.1093/ve/veab030)
 
+Thomas Krannich, W Timothy J White, Sebastian Niehus, Guillaume Holley, Bjarni V Halldórsson, Birte Kehr, Population-scale detection of non-reference sequence variants using colored de Bruijn graphs, Bioinformatics, 2021, btab749, [doi: 10.1093/bioinformatics/btab749](https://doi.org/10.1093/bioinformatics/btab749)
+
 ### 2020
 
 Krützfeldt LM, Schubach M, Kircher M. The impact of different negative training data on regulatory sequence predictions. PLoS One. 2020 Dec 1;15(12):e0237412. [doi: 10.1371/journal.pone.0237412](https://doi.org/10.1371/journal.pone.0237412).
