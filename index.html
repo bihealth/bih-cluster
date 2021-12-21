@@ -2005,34 +2005,20 @@
 </ul>
 <p>This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.</p>
 <p><img alt="⬅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b05.svg" title=":arrow_left:" /> The global table of contents is on the left, it is on the right for the current page <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" />.</p>
-<p><img alt="⬇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b07.svg" title=":arrow_down:" /> Use tabs such as the one below to switch betweeen HPC 4 Research and HPC 4 Clinic info <img alt="⬇" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b07.svg" title=":arrow_down:" />.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <ul>
 <li>Web Access: <a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a></li>
 <li>
 <p>SSH-Based Access:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Interactive Login as Charite/MDC user</span>
-ssh -l user_c login-1.research.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
+ssh -l user_c login-1.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
 ssh -l user_m login-1.research.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
 <span class="c1"># File Transfer as Charite/MDC user</span>
-sftp user_c@transfer-1.research.hpc.bihealth.org  <span class="c1"># OR transfer-2...</span>
-sftp user_m@transfer-1.research.hpc.bihealth.org  <span class="c1"># OR transfer-2...</span>
+sftp user_c@hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
+sftp user_m@hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
 <span class="c1"># Of course, you can also log into the transfer nodes (no Slurm)</span>
-ssh -l user_c transfer-1.research.hpc.bihealth.org  <span class="c1"># OR transfer-2...</span>
-ssh -l user_m transfer-1.research.hpc.bihealth.org  <span class="c1"># OR transfer-2...</span>
-</code></pre></div>
-
-</li>
-</ul>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>!!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!</p>
-<ul>
-<li>Web Access: <a href="https://portal.clinic.hpc.bihealth.org">https://portal.clinic.hpc.bihealth.org</a></li>
-<li>
-<p>SSH-Based Access:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Interactive Login as Charite user</span>
-ssh -l user login-1.clinic.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
+ssh -l user_c hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
+ssh -l user_m hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
 </code></pre></div>
 
 </li>
@@ -2101,7 +2087,7 @@ Here are the most important points:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: December 8, 2021
+      Last update: December 21, 2021
     
   </small>
 </div>
