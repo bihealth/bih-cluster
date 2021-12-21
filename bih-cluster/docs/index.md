@@ -10,8 +10,6 @@ This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformati
 
 :arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
 
-:arrow_down: Use tabs such as the one below to switch betweeen HPC 4 Research and HPC 4 Clinic info :arrow_down:.
-
 === "HPC 4 Research"
 
     - Web Access: https://portal.research.hpc.bihealth.org
@@ -19,26 +17,14 @@ This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformati
 
         ```bash
         # Interactive Login as Charite/MDC user
-        ssh -l user_c login-1.research.hpc.bihealth.org  # OR login-2...
+        ssh -l user_c login-1.hpc.bihealth.org  # OR login-2...
         ssh -l user_m login-1.research.hpc.bihealth.org  # OR login-2...
         # File Transfer as Charite/MDC user
-        sftp user_c@transfer-1.research.hpc.bihealth.org  # OR transfer-2...
-        sftp user_m@transfer-1.research.hpc.bihealth.org  # OR transfer-2...
+        sftp user_c@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
+        sftp user_m@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
         # Of course, you can also log into the transfer nodes (no Slurm)
-        ssh -l user_c transfer-1.research.hpc.bihealth.org  # OR transfer-2...
-        ssh -l user_m transfer-1.research.hpc.bihealth.org  # OR transfer-2...
-        ```
-
-=== "HPC 4 Clinic"
-
-    !!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!
-
-    - Web Access: https://portal.clinic.hpc.bihealth.org
-    - SSH-Based Access:
-
-        ```bash
-        # Interactive Login as Charite user
-        ssh -l user login-1.clinic.hpc.bihealth.org  # OR login-2...
+        ssh -l user_c hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
+        ssh -l user_m hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
         ```
 
 ## Getting Started
