@@ -2006,20 +2006,10 @@ In case of any issues, please send an email to <a href="&#109;&#97;&#105;&#108;&
 </div>
 <p>To allow for better interactive works, BIH HPC administration has setup an  <a href="https://openondemand.org/">Open OnDemand (OOD)</a> portal web server.
 There is a separate portal for HPC 4 Clinic and Research each.</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <p>You can find the OnDemand Portal for HPC 4 Research at:</p>
 <ul>
-<li><a href="https://portal.research.hpc.bihealth.org"><img alt="🌐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f310.svg" title=":globe_with_meridians:" /> https://portal.research.hpc.bihealth.org</a></li>
+<li><a href="https://hpc-portal.cubi.bihealth.org"><img alt="🌐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f310.svg" title=":globe_with_meridians:" /> https://hpc-portal.cubi.bihealth.org</a></li>
 </ul>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>!!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!</p>
-<p>You can find the OnDemand Portal for HPC 4 Clinic at:</p>
-<ul>
-<li><a href="https://portal.clinic.hpc.bihealth.org"><img alt="🌐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f310.svg" title=":globe_with_meridians:" /> https://portal.clinic.hpc.bihealth.org</a></li>
-</ul>
-</div>
-</div>
 <h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>OOD allows you to access cluster resources using a web-based graphical interface in addition to traditional SSH connections.
 You can then connect to jobs running graphical applications either to virtual desktops (such as Matlab) or to web apps (such as Jupyter and RStudio Server).</p>
@@ -2037,27 +2027,13 @@ However, we all like to have the option of a graphical interface, at least from 
 <p>The first prerequisite is to have a cluster account already (see <a href="../../admin/getting-access/">Getting Access</a>).
 Once you have done your first SSH connection to the cluster successfully you can start using the portal.
 For this you perform the following steps:</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
 <ol>
-<li>Go to <a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a> - you will be redirected to the login page shown below.
-   If you have an account with Charite (ends in <code>_c</code>) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
-   <img alt="" class="center" src="../figures/ondemand-hpc-sso.png" style="width:30%;" /></li>
+<li>Go to <a href="https://hpc-portal.cubi.bihealth.org">https://hpc-portal.cubi.bihealth.org</a> - you will be redirected to the login page shown below.
+    If you have an account with Charite (ends in <code>_c</code>) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
+    <img alt="" class="center" src="../figures/ondemand-hpc-sso.png" style="width:30%;" /></li>
 <li>Login with your home organization's SSO system.
-   Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.</li>
+    Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.</li>
 </ol>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>!!! NO Open Ondemand Portal for HPC 4 Clinic during BETA TEST !!!</p>
-<ol>
-<li>Go to <a href="https://portal.clinic.hpc.bihealth.org">https://portal.clinic.hpc.bihealth.org</a> - you will be redirected to the login page shown below.
-   <strong>You will need an account with Charite to use HPC 4 Clinic.</strong>
-   Subsequently, you will only be able to sign into HPC 4 Clinic using the "Charité - Universitätmedizin Berlin" button.
-   <img alt="" class="center" src="../figures/ondemand-hpc-sso.png" style="width:30%;" /></li>
-<li>Login with your Charite login (e.g., with your charite email and your Charite password or <code>user@CHARITE</code> and your Charite password).
-   Please note that depending on whether you are accessing the system via the wired network at Charite or via VPN the SSO might look differently.</li>
-</ol>
-</div>
-</div>
 <div class="admonition help">
 <p class="admonition-title">Clicked the Wrong Login Button?</p>
 <p>If you clicked the wrong button then please clear your cookies to force a logout of the system.</p>
@@ -2084,7 +2060,7 @@ recreated and the symlink will be just created within this folder as
 <div class="admonition help">
 <p class="admonition-title">Problems with Open OnDemand?</p>
 <p>First try to log out and login again.
-Next, try to clear all cookies for the domain <code>portal.research.hpc.bihealth.org</code>.
+Next, try to clear all cookies for the domain <code>hpc-portal.cubi.bihealth.org</code>.
 Finally, try the <code>Help &gt; Restart Web Server</code> link to restart the per-user nginx (PUN) server.</p>
 </div>
 <p>You will then be redirected to the dashboard screen.</p>
@@ -2137,7 +2113,7 @@ Consider carefully what you do as you would from the command line (e.g., don't u
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

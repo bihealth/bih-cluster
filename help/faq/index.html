@@ -2780,14 +2780,7 @@ Also see the <a href="../../overview/for-the-impatient/">For the Impatient</a> s
 <p>For performance and stability reasons.
 Network volumes are notorious for degrading performance, depending on the used protocol, even stability.</p>
 <h2 id="how-can-i-then-access-the-files-from-my-workstationserver">How can I then access the files from my workstation/server?<a class="headerlink" href="#how-can-i-then-access-the-files-from-my-workstationserver" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <p>You can transfer files to the cluster through Rsync over SSH or through SFTP to the <code>transfer-1</code> or <code>transfer-2</code> node.</p>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>We are currently working on a solution to this.
-Please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> in case of any questions.</p>
-</div>
-</div>
 <p><strong>Do not transfer files through the login nodes.</strong>
 Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.</p>
 <h2 id="how-can-i-circumvent-invalid-instruction-signal-4-errors">How can I circumvent "invalid instruction" (signal 4) errors?<a class="headerlink" href="#how-can-i-circumvent-invalid-instruction-signal-4-errors" title="Permanent link">&para;</a></h2>
@@ -2956,12 +2949,12 @@ The BIH HPC is located in the BIH network.</p>
 <p>In general, connections can only be initiated from the MDC network to the BIH network.
 The reverse does not work.
 In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
-E.g., use <code>rsync -avP some/path user_m@transfer-1.research.hpc.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_m@transfer-1.research.hpc.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+E.g., use <code>rsync -avP some/path user_m@hpc-transfer-1.cubi.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_m@hpc-transfer-1.cubi.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
 <h2 id="how-can-i-copy-data-between-the-charite-network-and-bih-hpc">How can I copy data between the Charite Network and BIH HPC?<a class="headerlink" href="#how-can-i-copy-data-between-the-charite-network-and-bih-hpc" title="Permanent link">&para;</a></h2>
 <p>In general, connections can only be initiated from the Charite network to the BIH network.
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
-E.g., use <code>rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
+E.g., use <code>rsync -avP some/path user_c@hpc-transfer-1.cubi.bihealth.org:/another/path</code> to copy files from the MAX cluster to BIH HPC and <code>rsync -avP user_c@hpc-transfer-1.cubi.bihealth.org:/another/path some/path</code> to copy data from the BIH HPC to the MAX cluster.</p>
 <h2 id="my-jobs-are-slowdie-on-the-logintransfer-node">My jobs are slow/die on the login/transfer node!<a class="headerlink" href="#my-jobs-are-slowdie-on-the-logintransfer-node" title="Permanent link">&para;</a></h2>
 <p>As of December 3, 2020 we have established a policy to limit you to 512 files and 128MB of RAM.
 Further, you are limited to using the equivalent of one core.
@@ -2990,7 +2983,7 @@ slurmstepd: error: task[0] unable to set taskset &#39;0x0&#39;
 <p>This is a minor failure related to Slurm and cgroups.
 Your job <strong>should</strong> run through successfully despite this error (that is more of a warning for end-users).</p>
 <h2 id="my-login-stalls-something-weird-is-happening">My login stalls / something weird is happening<a class="headerlink" href="#my-login-stalls-something-weird-is-happening" title="Permanent link">&para;</a></h2>
-<p>You can try to run <code>ssh -l USER login-1.research.hpc.bihealth.org bash -iv</code>.
+<p>You can try to run <code>ssh -l USER hpc-login-1.cubi.bihealth.org bash -iv</code>.
 This will run <code>bash -iv</code> instead of the normal login shell.
 The parameter <code>-i</code> is creating an interactive shell (which is what you want) and <code>-v</code> to see every command that is executed.
 This way you will see <strong>every command</strong> that is executed.
@@ -3029,7 +3022,7 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

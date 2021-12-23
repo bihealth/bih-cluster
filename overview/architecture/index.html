@@ -473,20 +473,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#cluster-hardware_1" class="md-nav__link">
-    Cluster Hardware
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-interconnect_1" class="md-nav__link">
-    Network Interconnect
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2006,20 +1992,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#cluster-hardware_1" class="md-nav__link">
-    Cluster Hardware
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#network-interconnect_1" class="md-nav__link">
-    Network Interconnect
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2070,33 +2042,18 @@
 <p>BIH HPC IT provides acess to high-performance compute (HPC) cluster systems.
 A cluster system bundles a high number of nodes and in the case of HPC, the focus is on performance (with contrast to high availability clusters).</p>
 <h2 id="hpc-4-research">HPC 4 Research<a class="headerlink" href="#hpc-4-research" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <h3 id="cluster-hardware">Cluster Hardware<a class="headerlink" href="#cluster-hardware" title="Permanent link">&para;</a></h3>
 <ul>
 <li>approx. 256 nodes (from three generations),</li>
 <li>4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),</li>
-<li>4 GPU nodes (with 4 Tesla GPUs each), and</li>
+<li>7 GPU nodes (with 4 Tesla GPUs each), and</li>
 <li>a high-perfomance parallel GPFS files system.</li>
 </ul>
 <h3 id="network-interconnect">Network Interconnect<a class="headerlink" href="#network-interconnect" title="Permanent link">&para;</a></h3>
 <ul>
-<li>All nodes are connected with 2x10GbE,</li>
-<li>32 nodes provide Infiniband interconnect (lower latency, but MPI library required).</li>
+<li>Older nodes are interconnected with 2x10GbE/2x40GbE</li>
+<li>Recent nodes are interconnected with 2x25GbE/2x100GbE</li>
 </ul>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<h3 id="cluster-hardware_1">Cluster Hardware<a class="headerlink" href="#cluster-hardware_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>24 general purpose nodes,</li>
-<li>3 GPU nodes (with 4 Tesla GPUs each), and</li>
-<li>a scale-out NAS system based on Isilon</li>
-</ul>
-<h3 id="network-interconnect_1">Network Interconnect<a class="headerlink" href="#network-interconnect_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>All nodes are connected with 25GbE.</li>
-</ul>
-</div>
-</div>
 <h2 id="cluster-management">Cluster Management<a class="headerlink" href="#cluster-management" title="Permanent link">&para;</a></h2>
 <p>Users don't connect to nodes directly but rather create interactive or batch jobs to be executed by the cluster job scheduler <em>Slurm</em>.</p>
 <ul>
@@ -2119,7 +2076,7 @@ The BIH HPC system provides the following head nodes:</p>
 </ul>
 <h2 id="common-use-case">Common Use Case<a class="headerlink" href="#common-use-case" title="Permanent link">&para;</a></h2>
 <p>After registration and client configurations, users with typically connect to the HPC system through the login nodes:</p>
-<div class="highlight"><pre><span></span><code>local:~$ ssh -l jdoe_c login-1.research.hpc.bihealth.org
+<div class="highlight"><pre><span></span><code>local:~$ ssh -l jdoe_c hpc-login-1.cubi.bihealth.org
 res-login-1:~$
 </code></pre></div>
 
@@ -2136,7 +2093,7 @@ med0104:~$
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

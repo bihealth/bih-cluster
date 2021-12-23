@@ -1997,22 +1997,19 @@
                 
                 
                 <h1 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h1>
-<p>This is the documentation of the BIH high-performance compute (HPC) clusters:</p>
-<ul>
-<li><strong>HPC 4 Research</strong> -- for basic and translational research,</li>
-<li><strong>HPC 4 Clinic</strong> -- for translational, clinical research within the Charite firewall.
-  (Beta test - do not use for production purposes or with critical data yet).</li>
-</ul>
-<p>This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.</p>
+<p>This is the documentation of the BIH high-performance compute (HPC).
+The BIH HPC cluster is maintained by CUBI (Core Unit Bionformatics).</p>
+<p>This documentation is maintained by BIH CUBI, and the user community.</p>
 <p><img alt="⬅" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b05.svg" title=":arrow_left:" /> The global table of contents is on the left, it is on the right for the current page <img alt="➡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/27a1.svg" title=":arrow_right:" />.</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
+<div class="admonition tip">
+<p class="admonition-title">Connecting to the Cluster</p>
 <ul>
-<li>Web Access: <a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a></li>
+<li>Web Access: <a href="https://hpc-portal.cubi.bihealth.org">https://hpc-portal.cubi.bihealth.org</a></li>
 <li>
 <p>SSH-Based Access:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Interactive Login as Charite/MDC user</span>
-ssh -l user_c login-1.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
-ssh -l user_m login-1.research.hpc.bihealth.org  <span class="c1"># OR login-2...</span>
+ssh -l user_c hpc-login-1.cubi.bihealth.org  <span class="c1"># OR login-2...</span>
+ssh -l user_m hpc-login-1.cubi.bihealth.org  <span class="c1"># OR login-2...</span>
 <span class="c1"># File Transfer as Charite/MDC user</span>
 sftp user_c@hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
 sftp user_m@hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transfer-2...</span>
@@ -2023,7 +2020,6 @@ ssh -l user_m hpc-transfer-1.cubi.bihealth.org  <span class="c1"># OR hpc-transf
 
 </li>
 </ul>
-</div>
 </div>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.</p>
@@ -2045,12 +2041,8 @@ Please add your publications using the cluster to <a href="misc/publication-list
 <div class="admonition attention">
 <p class="admonition-title">Current and Future Maintenances</p>
 <ul>
-<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> September 8: Upgraded Slurm to <code>21.08.0</code>.</li>
-<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> September 7: GPU hosts <code>med030[1-4]</code> renamed to <code>hpc-gpu-[1-4]</code>, high-memory hosts renamed form <code>med040[1-4]</code> renamed to <code>hpc-mem-[1-4]</code>, maximal running time in <code>long</code> is 14 days.</li>
-<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> August 23: <code>srun</code> will use <code>--immediate=60</code> by default with message.</li>
-<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> August 30: Maintenance notes are now display on login.</li>
-<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> August 31: 36 new nodes in the <code>staging</code> partition.</li>
-<li><img alt="📆" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4c6.svg" title=":calendar:" /> September 7-8, 2021 (HPC4Research): Network re-cabling, all nodes unavailable!</li>
+<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> December 21-22: GPFS Upgrade</li>
+<li><img alt="✨" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2728.svg" title=":sparkles:" /> December 23-24: Cluster OS Upgrade</li>
 </ul>
 </div>
 <p>See <a href="admin/maintenance">Maintenance</a> for a detailed list of current, planned, and previous maintenance and update work.</p>
@@ -2087,7 +2079,7 @@ Here are the most important points:</p>
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

@@ -296,6 +296,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cluster-node-upgrades-december-22-23-2021" class="md-nav__link">
+    Cluster Node Upgrades, December 22-23, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpfs-upgrade-december-20-21-2021" class="md-nav__link">
+    GPFS Upgrade, December 20-21, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#slurm-upgrade-to-21080-september-8-2021" class="md-nav__link">
     Slurm upgrade to 21.08.0, September 8, 2021
   </a>
@@ -2028,6 +2042,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cluster-node-upgrades-december-22-23-2021" class="md-nav__link">
+    Cluster Node Upgrades, December 22-23, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpfs-upgrade-december-20-21-2021" class="md-nav__link">
+    GPFS Upgrade, December 20-21, 2021
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#slurm-upgrade-to-21080-september-8-2021" class="md-nav__link">
     Slurm upgrade to 21.08.0, September 8, 2021
   </a>
@@ -2154,6 +2182,22 @@
                 
                 <h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
 <p>This page documents the current and known upcoming maintenance windows.</p>
+<h2 id="cluster-node-upgrades-december-22-23-2021">Cluster Node Upgrades, December 22-23, 2021<a class="headerlink" href="#cluster-node-upgrades-december-22-23-2021" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Renaming of cluster head nodes to:</li>
+<li><code>hpc-login-1.cubi.bihealth.org</code></li>
+<li><code>hpc-login-2.cubi.bihealth.org</code></li>
+<li><code>hpc-portal.cubi.bihealth.org</code></li>
+<li><code>hpc-transfer-1.cubi.bihealth.org</code></li>
+<li><code>hpc-transfer-2.cubi.bihealth.org</code></li>
+<li>Upgraded cluster operating system from CentOS 7.9 to Rocky Linux 8.5.</li>
+<li>Added three more GPU nodes with Tesla V100 GPUS: <code>hpc-gpu-{5..7}</code>.  </li>
+<li>Slurm has been upgraded to <code>28.08.5</code>.</li>
+<li>Ganglia monitoring generally available at <a href="https://hpc-ganglia.cubi.bihealth.org">https://hpc-ganglia.cubi.bihealth.org</a>, from internal networks.</li>
+<li>We have applied a number of changes to maximal running times in Slurm configuration.</li>
+</ul>
+<h2 id="gpfs-upgrade-december-20-21-2021">GPFS Upgrade, December 20-21, 2021<a class="headerlink" href="#gpfs-upgrade-december-20-21-2021" title="Permanent link">&para;</a></h2>
+<p>The GPFS storage system has been upgraded to the latest version to make compatible with Enterprise Linux version 8.</p>
 <h2 id="slurm-upgrade-to-21080-september-8-2021">Slurm upgrade to <code>21.08.0</code>, September 8, 2021<a class="headerlink" href="#slurm-upgrade-to-21080-september-8-2021" title="Permanent link">&para;</a></h2>
 <p>Slurm has been upgraded to version <code>21.08.0</code>.</p>
 <h2 id="network-re-cabling-september-7-8-2021">Network re-cabling, September 7-8, 2021<a class="headerlink" href="#network-re-cabling-september-7-8-2021" title="Permanent link">&para;</a></h2>
@@ -2304,7 +2348,7 @@ No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://twe
 </li>
 <li>Login &amp; Transfer Node Migration<ul>
 <li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
-<li>Further, they will be available as <code>login-1.research.hpc.bihealth.org</code> and <code>login-2...</code> instead of  <code>med-login{1,2}</code>.</li>
+<li>Further, they will be available as <code>hpc-login-1.cubi.bihealth.org</code> and <code>login-2...</code> instead of  <code>med-login{1,2}</code>.</li>
 <li>The same is true for, <code>med-transfer{1,2}</code> which will be replaced by <code>transfer-1.research.hpc.bihealth.org</code> and <code>transfer-2...</code>.</li>
 <li>The aim is to improve stability and make everything easier to manage by administration.</li>
 </ul>
@@ -2467,7 +2511,7 @@ you encounter any unexpected behavior of the cluster during this time, please le
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

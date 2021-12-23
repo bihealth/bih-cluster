@@ -2142,32 +2142,19 @@ Administration provides a system with state of the art IT security, users are re
 We will notify you when the HPC 4 Clinic cluster becomes stable.</p>
 </div>
 <h2 id="cluster-hardware-and-scheduling">Cluster Hardware and Scheduling<a class="headerlink" href="#cluster-hardware-and-scheduling" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <p>The cluster consists of the following major components:</p>
 <ul>
-<li>2 login nodes for users <code>login-1</code> and <code>login-2</code> (for interactive sessions only),</li>
-<li>2 nodes for file transfers <code>transfer-1</code> and <code>transfer-2</code>,</li>
+<li>2 login nodes for users <code>hpc-login-1</code> and <code>hpc-login-2</code> (for interactive sessions only),</li>
+<li>2 nodes for file transfers <code>hpc-transfer-1</code> and <code>hpc-transfer-2</code>,</li>
 <li>a scheduling system using Slurm,</li>
 <li>approximately 200 general purpose compute nodes <code>med01XX</code>, <code>med02XX</code>, <code>med05XX</code>, <code>med06XX</code>, <code>med07XX</code>.</li>
-<li>a few high memory nodes <code>med040[1-4]</code>,</li>
-<li>4 nodes with 4 Tesla GPUs each (!) <code>med030[1-4]</code>,</li>
+<li>a few high memory nodes <code>hpc-mem-{1..4}</code>,</li>
+<li>7 nodes with 4 Tesla V100 GPUs each (!) <code>hpc-gpu-{1..7}</code>,</li>
 <li>a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at <code>/fast</code>,</li>
-<li>a slower "classic" ZFS file system available through NFS with ~250 TB mounted at <code>/slow</code>.</li>
+<li>a tier 2 (slower) storage system based on Ceph/CephFS</li>
 </ul>
 <p>This is shown by the following picture:</p>
 <p><img alt="" src="../figures/Cluster_Layout.png" /></p>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>The cluster consists of the following major components:</p>
-<ul>
-<li>2 login nodes for users <code>login-1.clinic.hpc.bihealth.org</code> (and <code>login-2</code>).</li>
-<li>a scheduling system using Slurm,</li>
-<li>24 general purpose compute nodes <code>cc-node0[00-23]</code></li>
-<li>3 nodes with 4 Tesla GPUs each (!) <code>cc-node02[4-6]</code></li>
-<li>an Isilon scale-out NAS system mounted at <code>/data/isilon-1</code> with ~1.2PB of space (~100TB on SSDs).</li>
-</ul>
-</div>
-</div>
 <h2 id="differences-between-workstations-and-clusters">Differences Between Workstations and Clusters<a class="headerlink" href="#differences-between-workstations-and-clusters" title="Permanent link">&para;</a></h2>
 <p>The differences include:</p>
 <ul>
@@ -2256,9 +2243,8 @@ However, for creating locks special Unix files such as sockets or fifos, <code>/
 <strong>Do not place any valueable files in there.</strong></p>
 <h2 id="first-steps-on-the-cluster">First Steps on the Cluster<a class="headerlink" href="#first-steps-on-the-cluster" title="Permanent link">&para;</a></h2>
 <h3 id="connecting-to-the-cluster">Connecting to the Cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
 <ul>
-<li>From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes <code>login-{1,2}.research.hpc.bihealth.org</code>.<ul>
+<li>From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes <code>hpc-login-{1,2}.cubi.bihealth.org</code>.<ul>
 <li>For Charite users, your name is <code>${USER}_c</code>, for MDC users, your account is <code>${USER}_m</code> where <code>$USER</code> is the login name of your primary location.</li>
 </ul>
 </li>
@@ -2272,20 +2258,11 @@ However, for creating locks special Unix files such as sockets or fifos, <code>/
   Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
   You can use <a href="https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf">this form availble in Charite Intranet</a> for this.
   Please refer to the Charite intranet or <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> for more information.</li>
-<li>Also consider using the <a href="../../ondemand/overview/">OnDemand Portal</a> at <a href="https://portal.research.hpc.bihealth.org">https://portal.research.hpc.bihealth.org</a>.</li>
+<li>Also consider using the <a href="../../ondemand/overview/">OnDemand Portal</a> at <a href="https://hpc-portal.cubi.bihealth.org">https://hpc-portal.cubi.bihealth.org</a>.</li>
 </ul>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">HPC 4 Clinic</label><div class="tabbed-content">
-<ul>
-<li>You have to login from the Charite network with your charite account to <code>login-{1,2}.clinic.hpc.bihealth.org</code>.</li>
-<li>Access from VPN is currently not possible.</li>
-<li>Also consider using the <a href="../../ondemand/overview/">OnDemand Portal</a> at <a href="https://portal.clinic.hpc.bihealth.org">https://portal.clinic.hpc.bihealth.org</a>.</li>
-</ul>
-</div>
-</div>
 <h3 id="connecting-to-compute-node-through-login-node">Connecting to Compute Node through Login Node<a class="headerlink" href="#connecting-to-compute-node-through-login-node" title="Permanent link">&para;</a></h3>
-<p>After logging into the cluster, you are on the login node <code>&lt;cluster&gt;-login&lt;X&gt;</code> (<code>&lt;cluster&gt;</code> is either <code>res</code> for HPC 4 Research and <code>cln</code> for HPC 4 Clinic; <code>&lt;X&gt;</code> can be either <code>1</code> or <code>2</code>).
-When transferring files, use the <code>transfer-1</code> or <code>transfer-2</code> nodes (HPC 4 Research only).
+<p>After logging into the cluster, you are on the login node <code>hpc-login-1</code> or <code>hpc-login-2</code>.
+When transferring files, use the <code>hpc-transfer-1</code> or <code>hpc-transfer-2</code> nodes.
 You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
 Typically, you'll create an interactive session on a compute node using the <code>srun</code> command.</p>
 <h3 id="submitting-jobs">Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permanent link">&para;</a></h3>
@@ -2304,7 +2281,7 @@ You can inspect jobs that have finished with <code>sacct</code>, and see the clu
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>

@@ -2027,28 +2027,14 @@
                 
                 
                 <h1 id="getting-access">Getting Access<a class="headerlink" href="#getting-access" title="Permanent link">&para;</a></h1>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">HPC 4 Research</label><div class="tabbed-content">
 <div class="admonition tip">
 <p class="admonition-title">Get Access</p>
 <p>A Charite or MDC account is required for accessing HPC 4 Research.</p>
 <ol>
 <li><strong>Register Users.</strong> <strong>Group leaders/PIs</strong> register their members via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> using the forms below.</li>
 <li><strong>Upload Key.</strong> Upload your SSH key through the Charite and MDC infrastructure.</li>
-<li><strong>Connect.</strong> <code>ssh -l &lt;user&gt;_&lt;c or m&gt;@login-1.research.bihealth.org</code></li>
+<li><strong>Connect.</strong> <code>ssh -l &lt;user&gt;_&lt;c or m&gt;@hpc-login-1.cubi.bihealth.org</code> or using <code>hpc-login-2.cubi.bihealth.org</code>.</li>
 </ol>
-</div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">HPC 4 Clinic</label><div class="tabbed-content">
-<div class="admonition tip">
-<p class="admonition-title">Get Access</p>
-<p>For using HPC 4 Clinic, a Charite account is required.</p>
-<ol>
-<li><strong>Register Users.</strong> <strong>Group leaders/PIs</strong> register their members via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> using the forms below.</li>
-<li><strong>Upload Key.</strong> Upload your SSH key through the Charite infrastructure.</li>
-<li><strong>Connect.</strong> <code>ssh -l &lt;user&gt;@login-1.clinic.bihealth.org</code></li>
-</ol>
-</div>
-</div>
 </div>
 <p>Access to the BIH HPC clusters is based on the <strong>work groups</strong> (also known as labs, units) and <strong>projects</strong> concepts. 
 The work groups <a href="../../storage/storage-locations/">data/folder structure</a> can only be accessed by the work group members and is not accessible to other cluster users.
@@ -2065,12 +2051,11 @@ The above mentioned responsiblities stay with the work group leader.  </p>
 <li>substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).</li>
 </ol>
 <p>Projects are also an excellent way to partition your data into set with different life </p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">HPC 4 Research</label><div class="tabbed-content">
 <p>HPC 4 Research is available for Charite, MDC, and BIH networks.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Charite Users</span>
-host:~$ ssh -l user_c login-1.research.hpc.bihealth.org
+host:~$ ssh -l user_c hpc-login-1.cubi.bihealth.org
 <span class="c1"># MDC Users</span>
-host:~$ ssh -l user_m login-1.research.hpc.bihealth.org
+host:~$ ssh -l user_m hpc-login-1.cubi.bihealth.org
 </code></pre></div>
 
 <div class="admonition important">
@@ -2079,21 +2064,6 @@ host:~$ ssh -l user_m login-1.research.hpc.bihealth.org
 <li>All users on the cluster must already have an account with either Charite/BIH or MDC.</li>
 <li>Please only use email addresses from the institutions Charite, BIH, MDC.</li>
 </ul>
-</div>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">HPC 4 Clinic</label><div class="tabbed-content">
-<p>HPC 4 Clinic is only from the Charite network.</p>
-<div class="highlight"><pre><span></span><code>host:~$ ssh -l user login-1.clinic.hpc.bihealth.org
-</code></pre></div>
-
-<div class="admonition important">
-<p class="admonition-title">Accounts and Email Adresses</p>
-<ul>
-<li>All users on the cluster must already have an account either Charite/BIH.</li>
-<li>You must use your Charite/BIH email address.</li>
-</ul>
-</div>
-</div>
 </div>
 <h2 id="work-groups">Work Groups<a class="headerlink" href="#work-groups" title="Permanent link">&para;</a></h2>
 <p>The process to create a new group is as follows.</p>
@@ -2210,7 +2180,7 @@ Additional members:
 <div class="md-source-date">
   <small>
     
-      Last update: December 21, 2021
+      Last update: December 23, 2021
     
   </small>
 </div>
