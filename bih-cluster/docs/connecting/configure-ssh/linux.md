@@ -36,31 +36,16 @@ please use:
 
 ## Connect to the cluster
 
-=== "HPC 4 Research"
+If you are within **BIH**, **Charite** or the **MDC**, then one of the
+following commands should work now (`<USERNAME>` is the
+[cluster username](prerequisites.md#what-is-my-username)). This will connect you to the login node.
 
-    If you are within **BIH**, **Charite** or the **MDC**, then one of the
-    following commands should work now (`<USERNAME>` is the
-    [cluster username](prerequisites.md#what-is-my-username)). This will connect you to the login node.
+```
+# ssh -A -t -l <USERNAME> hpc-login-1.cubi.bihealth.org
+```
 
-    ```
-    # ssh -A -t -l <USERNAME> login-1.research.hpc.bihealth.org
-    ```
-
-    * `<X>` can be either `1` or `2`
-    * Use `login-transfer-<X>` instead of `login-1<X>.research.hpc.bihealth.org` for file transfers!
-
-=== "HPC 4 Clinic"
-
-    You have to be in the Charite network for the connection to work to HPC 4 Clinic.
-    `<USERNAME>` is the [cluster username](prerequisites.md#what-is-my-username)).
-    This will connect you to the login node.
-
-    ```
-    # ssh -A -t -l <USERNAME> login-1.clinic.hpc.bihealth.org
-    ```
-
-    * `<X>` can be either `1` or `2`
-    * There currently is no transfer node for HPC 4 Clinic.
+* `<X>` can be either `1` or `2`
+* Use `hpc-transfer-<X>` instead of `hpc-login-<X>.cubi.bihealth.org` for file transfers!
 
 
 !!! warning
@@ -87,7 +72,7 @@ Connect to the hop-node:
 ```
 $ ssh -A -t -l <MDC_USER> ssh1.mdc-berlin.de
 ...
-jail1 $ ssh -A -t -l <USERNAME> login-<X>.research.hpc.bihealth.org
+jail1 $ ssh -A -t -l <USERNAME> hpc-login-<X>.cubi.bihealth.org
 ```
 
 * `<X>` can be either `1` or `2`
@@ -124,30 +109,24 @@ $ ssh-add  id_rsa
 
 ## File System mount via sshfs
 
-=== "HPC 4 Research"
+```
+$ sshfs <USERNAME>@hpc-transfer-<X>.cubi.bihealth.org:/ <MOUNTPOINT>
+```
 
-    ```
-    $ sshfs <USERNAME>@transfer-<X>.research.hpc.bihealth.org:/ <MOUNTPOINT>
-    ```
+* `<X>` can be either `1` or `2`
+* `hpc-transfer-<X>:/` follows the structure `<host>:<directory>`; in our case it refers to the cluster root folder but can be any path available to you on the cluster and gives the folder that will be mounted.
+* `<MOUNTPOINT>` must be an empty but existing and readable directory on your
+local computer
 
-    * `<X>` can be either `1` or `2`
-    * `transfer-<X>:/` follows the structure `<host>:<directory>`; in our case it refers to the cluster root folder but can be any path available to you on the cluster and gives the folder that will be mounted.
-    * `<MOUNTPOINT>` must be an empty but existing and readable directory on your
-    local computer
-
-    On MacOS, make sure you have both OSXFUSE and SSHFS installed. You can get both from here: https://osxfuse.github.io/ or the most recent version via Homebrew:
-    ```
-    $ brew cask install osxfuse; brew install sshfs; brew link --overwrite sshfs
-    ```
-    The last command is optional and unlinks any pre-existing links to older versions of sshfs.
-    Now you can run
-    ```
-    $ sshfs -o follow_symlinks <USERNAME>@transfer-1<X>.research.bihealth.org:<directory_relative_to_Cluster_root> <MOUNTPOINT> -o volname=<BIH-FOLDER> -o allow_other,noapplexattr,noappledouble
-    ```
-
-=== "HPC 4 Clinic"
-
-    Do not mount anything on HPC 4 Clinic via SSHFS!
+On MacOS, make sure you have both OSXFUSE and SSHFS installed. You can get both from here: https://osxfuse.github.io/ or the most recent version via Homebrew:
+```
+$ brew cask install osxfuse; brew install sshfs; brew link --overwrite sshfs
+```
+The last command is optional and unlinks any pre-existing links to older versions of sshfs.
+Now you can run
+```
+$ sshfs -o follow_symlinks <USERNAME>@hpc-transfer-1<X>.cubi.bihealth.org:<directory_relative_to_Cluster_root> <MOUNTPOINT> -o volname=<BIH-FOLDER> -o allow_other,noapplexattr,noappledouble
+```
 
 ## Configure SSH Client
 
@@ -158,14 +137,14 @@ Replace `MDC_USER_NAME` with your MDC user name.
 Host bihcluster
     ForwardAgent yes
     ForwardX11 yes
-    HostName login-1.research.hpc.bihealth.org
+    HostName hpc-login-1.cubi.bihealth.org
     User MDC_USER_NAME
     RequestTTY yes
 
 Host bihcluster2
     ForwardAgent yes
     ForwardX11 yes
-    HostName login-1.hpc.bihealth.org.bihealth.org
+    HostName hpc-login-1.cubi.bihealth.org
     User MDC_USER_NAME
     RequestTTY yes
 ```
@@ -199,7 +178,7 @@ Host mdcjail
 Now, do
 
 ```
-# ssh mdcjail ssh -A -t -l MDC_USER login-<X>.research.hpc.bihealth.org
+# ssh mdcjail ssh -A -t -l MDC_USER hpc-login-<X>.cubi.bihealth.org
 ```
 
 * `<X>` can be either `1` or `2`
@@ -213,7 +192,7 @@ Now, do
 Connect to one of the login nodes using X11 forwarding:
 
 ```
-# ssh -X -C -A -t -l <USERNAME> login-<X>.research.hpc.bihealth.org
+# ssh -X -C -A -t -l <USERNAME> hpc-login-<X>..bihealth.org
 ```
 
 * `<X>` can be either `1` or `2`

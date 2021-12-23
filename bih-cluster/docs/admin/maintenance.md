@@ -2,6 +2,24 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Cluster Node Upgrades, December 22-23, 2021
+
+- Renaming of cluster head nodes to:
+  - `hpc-login-1.cubi.bihealth.org`
+  - `hpc-login-2.cubi.bihealth.org`
+  - `hpc-portal.cubi.bihealth.org`
+  - `hpc-transfer-1.cubi.bihealth.org`
+  - `hpc-transfer-2.cubi.bihealth.org`
+- Upgraded cluster operating system from CentOS 7.9 to Rocky Linux 8.5.
+- Added three more GPU nodes with Tesla V100 GPUS: `hpc-gpu-{5..7}`.  
+- Slurm has been upgraded to `28.08.5`.
+- Ganglia monitoring generally available at https://hpc-ganglia.cubi.bihealth.org, from internal networks.
+- We have applied a number of changes to maximal running times in Slurm configuration.
+
+## GPFS Upgrade, December 20-21, 2021
+
+The GPFS storage system has been upgraded to the latest version to make compatible with Enterprise Linux version 8.
+
 ## Slurm upgrade to `21.08.0`, September 8, 2021
 
 Slurm has been upgraded to version `21.08.0`.
@@ -168,7 +186,7 @@ Affected servers are:
     - **GPFS access will disappear for some time.**
 - Login & Transfer Node Migration
     - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-    - Further, they will be available as `login-1.research.hpc.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
+    - Further, they will be available as `hpc-login-1.cubi.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
     - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
     - The aim is to improve stability and make everything easier to manage by administration.
 

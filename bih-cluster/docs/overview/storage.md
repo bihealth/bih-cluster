@@ -17,8 +17,8 @@ This document gives an overview of the nodes and volumes on the cluster.
 The following groups of nodes are available to cluster users.
 There are a number of nodes that are invisible to non-admin staff, hosting the queue master and monitoring tools and providing backup storage for key critical data, but these are not shown here.
 
-- `login-1..2`
-    - available as `login-{1,2,3}.research.hpc.bihealth.org`
+- `hpc-login-{1,2}`
+    - available as `hpc-login-{1,2}.cubi.bihealth.org`
     - do not perform any computation on these nodes!
     - these nodes are not execution nodes
     - each process may at most use 1GB of RAM to increase stability of the node

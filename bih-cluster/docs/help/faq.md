@@ -299,14 +299,7 @@ Network volumes are notorious for degrading performance, depending on the used p
 
 ## How can I then access the files from my workstation/server?
 
-=== "HPC 4 Research"
-
-    You can transfer files to the cluster through Rsync over SSH or through SFTP to the `transfer-1` or `transfer-2` node.
-
-=== "HPC 4 Clinic"
-
-    We are currently working on a solution to this.
-    Please contact hpc-helpdesk@bihealth.de in case of any questions.
+You can transfer files to the cluster through Rsync over SSH or through SFTP to the `transfer-1` or `transfer-2` node.
 
 **Do not transfer files through the login nodes.**
 Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.
@@ -525,14 +518,14 @@ The BIH HPC is located in the BIH network.
 In general, connections can only be initiated from the MDC network to the BIH network.
 The reverse does not work.
 In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
-E.g., use `rsync -avP some/path user_m@transfer-1.research.hpc.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@transfer-1.research.hpc.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+E.g., use `rsync -avP some/path user_m@hpc-transfer-1.cubi.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@hpc-transfer-1.cubi.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
 
 ## How can I copy data between the Charite Network and BIH HPC?
 
 In general, connections can only be initiated from the Charite network to the BIH network.
 The reverse does not work.
 In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
-E.g., use `rsync -avP some/path user_c@transfer-1.research.hpc.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@transfer-1.research.hpc.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
+E.g., use `rsync -avP some/path user_c@hpc-transfer-1.cubi.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@hpc-transfer-1.cubi.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
 
 ## My jobs are slow/die on the login/transfer node!
 
@@ -574,7 +567,7 @@ Your job **should** run through successfully despite this error (that is more of
 
 ## My login stalls / something weird is happening
 
-You can try to run `ssh -l USER login-1.research.hpc.bihealth.org bash -iv`.
+You can try to run `ssh -l USER hpc-login-1.cubi.bihealth.org bash -iv`.
 This will run `bash -iv` instead of the normal login shell.
 The parameter `-i` is creating an interactive shell (which is what you want) and `-v` to see every command that is executed.
 This way you will see **every command** that is executed.

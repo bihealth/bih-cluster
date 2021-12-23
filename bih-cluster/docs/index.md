@@ -1,24 +1,21 @@
 # Home
 
-This is the documentation of the BIH high-performance compute (HPC) clusters:
+This is the documentation of the BIH high-performance compute (HPC).
+The BIH HPC cluster is maintained by CUBI (Core Unit Bionformatics).
 
-- **HPC 4 Research** -- for basic and translational research,
-- **HPC 4 Clinic** -- for translational, clinical research within the Charite firewall.
-  (Beta test - do not use for production purposes or with critical data yet).
-
-This documentation is maintained by BIH HPC IT, BIH CUBI (Core Unit Bioinformatics), and the user community.
+This documentation is maintained by BIH CUBI, and the user community.
 
 :arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
 
-=== "HPC 4 Research"
+!!! tip "Connecting to the Cluster"
 
-    - Web Access: https://portal.research.hpc.bihealth.org
+    - Web Access: https://hpc-portal.cubi.bihealth.org
     - SSH-Based Access:
 
         ```bash
         # Interactive Login as Charite/MDC user
-        ssh -l user_c login-1.hpc.bihealth.org  # OR login-2...
-        ssh -l user_m login-1.research.hpc.bihealth.org  # OR login-2...
+        ssh -l user_c hpc-login-1.cubi.bihealth.org  # OR login-2...
+        ssh -l user_m hpc-login-1.cubi.bihealth.org  # OR login-2...
         # File Transfer as Charite/MDC user
         sftp user_c@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
         sftp user_m@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
@@ -47,12 +44,9 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 ## Maintenance Announcements
 
 !!! attention "Current and Future Maintenances"
-    - :sparkles: September 8: Upgraded Slurm to `21.08.0`.
-    - :sparkles: September 7: GPU hosts `med030[1-4]` renamed to `hpc-gpu-[1-4]`, high-memory hosts renamed form `med040[1-4]` renamed to `hpc-mem-[1-4]`, maximal running time in `long` is 14 days.
-    - :sparkles: August 23: `srun` will use `--immediate=60` by default with message.
-    - :sparkles: August 30: Maintenance notes are now display on login.
-    - :sparkles: August 31: 36 new nodes in the `staging` partition.
-    - :calendar: September 7-8, 2021 (HPC4Research): Network re-cabling, all nodes unavailable!
+   
+    - :sparkles: December 21-22: GPFS Upgrade
+    - :sparkles: December 23-24: Cluster OS Upgrade
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 

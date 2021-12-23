@@ -27,32 +27,20 @@ Administration provides a system with state of the art IT security, users are re
 
 ## Cluster Hardware and Scheduling
 
-=== "HPC 4 Research"
+The cluster consists of the following major components:
 
-    The cluster consists of the following major components:
+- 2 login nodes for users `hpc-login-1` and `hpc-login-2` (for interactive sessions only),
+- 2 nodes for file transfers `hpc-transfer-1` and `hpc-transfer-2`,
+- a scheduling system using Slurm,
+- approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
+- a few high memory nodes `hpc-mem-{1..4}`,
+- 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}`,
+- a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
+- a tier 2 (slower) storage system based on Ceph/CephFS
 
-    - 2 login nodes for users `login-1` and `login-2` (for interactive sessions only),
-    - 2 nodes for file transfers `transfer-1` and `transfer-2`,
-    - a scheduling system using Slurm,
-    - approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
-    - a few high memory nodes `med040[1-4]`,
-    - 4 nodes with 4 Tesla GPUs each (!) `med030[1-4]`,
-    - a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
-    - a slower "classic" ZFS file system available through NFS with ~250 TB mounted at `/slow`.
+This is shown by the following picture:
 
-    This is shown by the following picture:
-
-    ![](figures/Cluster_Layout.png)
-
-=== "HPC 4 Clinic"
-
-    The cluster consists of the following major components:
-
-    - 2 login nodes for users `login-1.clinic.hpc.bihealth.org` (and `login-2`).
-    - a scheduling system using Slurm,
-    - 24 general purpose compute nodes `cc-node0[00-23]`
-    - 3 nodes with 4 Tesla GPUs each (!) `cc-node02[4-6]`
-    - an Isilon scale-out NAS system mounted at `/data/isilon-1` with ~1.2PB of space (~100TB on SSDs).
+![](figures/Cluster_Layout.png)
 
 ## Differences Between Workstations and Clusters
 
@@ -152,30 +140,22 @@ However, for creating locks special Unix files such as sockets or fifos, `/tmp` 
 
 ### Connecting to the Cluster
 
-=== "HPC 4 Research"
-
-    - From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `login-{1,2}.research.hpc.bihealth.org`.
-        - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
-    - From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
-        - Note that you have to use your MDC user name (without any suffix `_m`) for connecting to this host.
-        - Also note that BIH HPC IT does not have control over `ssh1.mdc-berlin.de`.
-          *You have to contact MDC IT in case of any issues.*
-    - From the outside, **for Charite** users, there is no SSH hop node.
-      Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
-      You can use [this form availble in Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf) for this.
-      Please refer to the Charite intranet or helpdesk@charite.de for more information.
-    - Also consider using the [OnDemand Portal](../ondemand/overview.md) at https://portal.research.hpc.bihealth.org.
-
-=== "HPC 4 Clinic"
-
-    - You have to login from the Charite network with your charite account to `login-{1,2}.clinic.hpc.bihealth.org`.
-    - Access from VPN is currently not possible.
-    - Also consider using the [OnDemand Portal](../ondemand/overview.md) at https://portal.clinic.hpc.bihealth.org.
+- From the Charite, MDC, and BIH networks, you can connect to the cluster login nodes `hpc-login-{1,2}.cubi.bihealth.org`.
+    - For Charite users, your name is `${USER}_c`, for MDC users, your account is `${USER}_m` where `$USER` is the login name of your primary location.
+- From the outside, **for MDC users**, the cluster is accessible via `ssh1.mdc-berlin.de` (you need to enable SSH key agent forwarding for this)
+    - Note that you have to use your MDC user name (without any suffix `_m`) for connecting to this host.
+    - Also note that BIH HPC IT does not have control over `ssh1.mdc-berlin.de`.
+      *You have to contact MDC IT in case of any issues.*
+- From the outside, **for Charite** users, there is no SSH hop node.
+  Instead, you have to apply for VPN through Charite Geschäftsbereich IT.
+  You can use [this form availble in Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_O.pdf) for this.
+  Please refer to the Charite intranet or helpdesk@charite.de for more information.
+- Also consider using the [OnDemand Portal](../ondemand/overview.md) at https://hpc-portal.cubi.bihealth.org.
 
 ### Connecting to Compute Node through Login Node
 
-After logging into the cluster, you are on the login node `<cluster>-login<X>` (`<cluster>` is either `res` for HPC 4 Research and `cln` for HPC 4 Clinic; `<X>` can be either `1` or `2`).
-When transferring files, use the `transfer-1` or `transfer-2` nodes (HPC 4 Research only).
+After logging into the cluster, you are on the login node `hpc-login-1` or `hpc-login-2`.
+When transferring files, use the `hpc-transfer-1` or `hpc-transfer-2` nodes.
 You should not do computation or other work on the login or file transfer nodes, but use the compute nodes instead.
 Typically, you'll create an interactive session on a compute node using the `srun` command.
 

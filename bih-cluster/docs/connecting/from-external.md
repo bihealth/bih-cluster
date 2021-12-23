@@ -37,7 +37,7 @@ Once you are on the gateway node, connect as if you were on your workstation:
 host:~$ ssh -A -l user ssh1.mdc-berlin.de
 # If the SSH key agent does not run on your client host then the following
 # will not work and the SSH key will not be available!
-user@sl-it-p-ssh1:~$ ssh -l user_m login-1.research.hpc.bihealth.org
+user@sl-it-p-ssh1:~$ ssh -l user_m hpc-login-1.cubi.bihealth.org
 ```
 
 ### MDC VPN
@@ -49,7 +49,7 @@ Install the VPN client and then start it.
 Once VPN has been activated you can SSH to the HPC just as from your workstation.
 
 ```bash
-host:~$ ssh -l user_m login-1.research.hpc.bihealth.org
+host:~$ ssh -l user_m hpc-login-1.cubi.bihealth.org
 ```
 
 ## For Charite Users
@@ -74,7 +74,7 @@ Once you have been granted VPN access, start the client and connect to VPN.
 You will then be able to connect from your client in the VPN just as you do from your workstation.
 
 ```
-host:~$ ssh -l jdoe_c login-1.research.hpc.bihealth.org
+host:~$ ssh -l jdoe_c hpc-login-1.cubi.bihealth.org
 ```
 
 ### Charite VDI

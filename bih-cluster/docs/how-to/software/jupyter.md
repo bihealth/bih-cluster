@@ -47,19 +47,19 @@ You have to add (replace with your `$CLUSTER_USER` and `$MDC_USER`)
 ```
 Host med0*
   user $CLUSTER_USER
-  ProxyCommand ssh $CLUSTER_USER@login-2.research.hpc.bihealth.org -W %h:%p
+  ProxyCommand ssh $CLUSTER_USER@hpc-login-2.cubi.bihealth.org -W %h:%p
 ```
 
 (and if you are outside of the MDC network):
 
 ```
-Host login-2.research.hpc.bihealth.org
+Host hpc-login-2.cubi.bihealth.org
   ProxyCommand ssh $MDC_USER@ssh1.mdc-berlin.de -W %h:%p
 ```
 
 to your ```~/.ssh/config```
 
-(If you have a newer version (7.2+) of SSH installed, you can also use `ProxyJump $CLUSTER_USER@login-2.research.hpc.bihealth.org` instead of `ProxyCommand ...`)
+(If you have a newer version (7.2+) of SSH installed, you can also use `ProxyJump $CLUSTER_USER@hpc-login-2.cubi.bihealth.org` instead of `ProxyCommand ...`)
 
 See whether this works via i.e. `ssh med0110`
 

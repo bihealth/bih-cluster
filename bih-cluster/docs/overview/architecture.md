@@ -5,31 +5,17 @@ A cluster system bundles a high number of nodes and in the case of HPC, the focu
 
 ## HPC 4 Research
 
-=== "HPC 4 Research"
+### Cluster Hardware
 
-    ### Cluster Hardware
+- approx. 256 nodes (from three generations),
+- 4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),
+- 7 GPU nodes (with 4 Tesla GPUs each), and
+- a high-perfomance parallel GPFS files system.
 
-    - approx. 256 nodes (from three generations),
-    - 4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),
-    - 4 GPU nodes (with 4 Tesla GPUs each), and
-    - a high-perfomance parallel GPFS files system.
+### Network Interconnect
 
-    ### Network Interconnect
-
-    - All nodes are connected with 2x10GbE,
-    - 32 nodes provide Infiniband interconnect (lower latency, but MPI library required).
-
-=== "HPC 4 Clinic"
-
-    ### Cluster Hardware
-
-    - 24 general purpose nodes,
-    - 3 GPU nodes (with 4 Tesla GPUs each), and
-    - a scale-out NAS system based on Isilon
-
-    ### Network Interconnect
-
-    - All nodes are connected with 25GbE.
+- Older nodes are interconnected with 2x10GbE/2x40GbE
+- Recent nodes are interconnected with 2x25GbE/2x100GbE
 
 ## Cluster Management
 
@@ -58,7 +44,7 @@ The BIH HPC system provides the following head nodes:
 After registration and client configurations, users with typically connect to the HPC system through the login nodes:
 
 ```bash
-local:~$ ssh -l jdoe_c login-1.research.hpc.bihealth.org
+local:~$ ssh -l jdoe_c hpc-login-1.cubi.bihealth.org
 res-login-1:~$
 ```
 

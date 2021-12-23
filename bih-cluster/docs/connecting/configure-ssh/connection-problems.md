@@ -9,7 +9,7 @@ solve the problem:
 The full error message looks as follows:
 
 ```
-ssh: connect to host login-1.research.hpc.bihealth.org port 22: Connection refused
+ssh: connect to host hpc-login-1.cubi.bihealth.org port 22: Connection refused
 ```
 
 This means that your computer could not open a network connection to the server.
