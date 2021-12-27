@@ -1027,6 +1027,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../slurm/temporary-files/" title="Slurm and Temporary Files" class="md-nav__link">
+      Slurm and Temporary Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
       Slurm Cheat Sheet
     </a>
@@ -1076,16 +1088,16 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-8" type="checkbox" id="nav-8-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-9" type="checkbox" id="nav-8-9">
     
-    <label class="md-nav__link" for="nav-8-8">
+    <label class="md-nav__link" for="nav-8-9">
       Slurm Commands
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Slurm Commands" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-8">
+      <label class="md-nav__title" for="nav-8-9">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -2114,7 +2126,7 @@ Policies marked with a robot (<img alt="🤖" class="twemoji" src="https://twemo
 <li><code>scratch</code> 20M files, 200TB space</li>
 </ul>
 </li>
-<li>The overall throughput limit is 20GB/sec.
+<li>The overall throughput limit is 10GB/sec.
    Try not to overload the cluster I/O wise.</li>
 <li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> <img alt="🤖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f916.svg" title=":robot:" /> User home/work/group file sets have to be owned by the user, group is <code>hpc-users</code> and mode is <code>u=rwx,go=</code>; POSIX ACLs are prohibited.
     This policy is automatically enforced every 5 minutes.</li>
@@ -2127,10 +2139,12 @@ Policies marked with a robot (<img alt="🤖" class="twemoji" src="https://twemo
 <li>You can learn more in the <a href="../../storage/scratch-cleanup/">Automated Scratch Cleanup</a> section.</li>
 </ul>
 </li>
-<li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> Administration will not delete any files.
+<li><img alt="🛡" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f6e1.svg" title=":shield:" /> Administration will not delete any files (outside of <code>/tmp</code>).
    In the case that users need to delete files that they can access but not update/delete, administration will either give write permissions to the Unix group of the work group or project or change the owner to the owner/delegate of this group.
    This can occur in a group/project directory of a user who has left the organization.
    In the case that a user laeaves the organiation, the owner/delegate of the hosting group can request getting access to the user's files with the express agreement of this user.</li>
+<li>Only use <code>/tmp</code> in Slurm-controlled jobs.
+   This will enforce that Slurm can clean up after you.</li>
 </ol>
 <h3 id="connections">Connections<a class="headerlink" href="#connections" title="Permanent link">&para;</a></h3>
 <p>Network connections are a topic important in security.
@@ -2196,7 +2210,7 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
 <div class="md-source-date">
   <small>
     
-      Last update: December 23, 2021
+      Last update: December 27, 2021
     
   </small>
 </div>
