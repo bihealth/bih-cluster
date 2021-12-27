@@ -10,7 +10,7 @@ repo_url: https://github.com/bihealth/bih-cluster/
 edit_uri: 'edit/master/bih-cluster/docs/'
 
 # Copyright
-copyright: 2016-2020, BIH HPC IT
+copyright: 2016-2022, BIH HPC IT
 
 # Theming, Configuration
 theme:
