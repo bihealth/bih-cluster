@@ -2,6 +2,20 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Enforcing Usage of `localtmp` Resource, January 31, 2021
+
+- We will enforce using `localtmp` resource for local storage above 100MB.
+- See [Slurm: Temporary Files](../../slurm/temporary-files/) for details.
+
+## Temporary File Handling Changes, December 27, 2021
+
+- Each job gets its private `/tmp` using Linux namespaces/cgroups.
+  This greatly improves the reliability of cleaning up after jobs.
+  (Technically, this is implemented using the Slurm [job_container/tmpfs](https://slurm.schedmd.com/job_container.conf.html)) plugin.
+- We are starting to track available local temporary space with Slurm in the general resource (`Gres`) "localtmp".
+  In the future this will become a requirement.
+  Also see [Slurm: Temporary Files](../../slurm/temporary-files/).
+
 ## Cluster Node Upgrades, December 22-23, 2021
 
 - Renaming of cluster head nodes to:

@@ -112,6 +112,7 @@ nav:
     - slurm/overview.md
     - slurm/background.md
     - slurm/quickstart.md
+    - slurm/temporary-files.md
     - slurm/cheat-sheet.md
     - slurm/job-scripts.md
     - slurm/memory-allocation.md

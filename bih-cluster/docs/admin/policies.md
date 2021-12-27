@@ -38,7 +38,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
     - `home` 10k files, 1GB space
     - `work` 2M files, 1TB space
     - `scratch` 20M files, 200TB space
-3. The overall throughput limit is 20GB/sec.
+3. The overall throughput limit is 10GB/sec.
    Try not to overload the cluster I/O wise.
 4. :shield: :robot: User home/work/group file sets have to be owned by the user, group is `hpc-users` and mode is `u=rwx,go=`; POSIX ACLs are prohibited.
     This policy is automatically enforced every 5 minutes.
@@ -49,10 +49,12 @@ Policies marked with a robot (:robot:) are automatically enforced.
     - Users can arrange with hpc-gatekeeper@bihealth.de to keep files longer by using `touch` on files in `scratch` and subsequently bumping the `mtime`.
     - :warning: In the case of abuse of this mechanism / failure to communicate with hpc-gatekeeper, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.
     - You can learn more in the [Automated Scratch Cleanup](../storage/scratch-cleanup.md) section.
-7. :shield: Administration will not delete any files.
+7. :shield: Administration will not delete any files (outside of `/tmp`).
    In the case that users need to delete files that they can access but not update/delete, administration will either give write permissions to the Unix group of the work group or project or change the owner to the owner/delegate of this group.
    This can occur in a group/project directory of a user who has left the organization.
    In the case that a user laeaves the organiation, the owner/delegate of the hosting group can request getting access to the user's files with the express agreement of this user.
+8. Only use `/tmp` in Slurm-controlled jobs.
+   This will enforce that Slurm can clean up after you.
 
 ### Connections
 

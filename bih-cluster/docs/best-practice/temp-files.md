@@ -1,5 +1,9 @@
 # Temporary Files
 
+!!! info "Temporary Files and Slurm"
+
+    See [Slurm: Temporary Files](../slurm/temporary-files/) for information how Slurm controls access to local temporary storage.
+
 Often, it is necessary to use temporary files, i.e., write something out in the  middle of your program, read it in again later, and then discard these files.
 For example, `samtools sort` has to write out chunks of sorted read alignments for allowing to sort files larger than main memory.
 
@@ -13,18 +17,21 @@ When undefined, usually `/tmp` is used.
 Generally, there are two locations where you could put temporary files:
 
 - `/fast/users/$USER/scratch/tmp` -- inside your scratch folder on the fast GPFS file system; this location is available from all cluster nodes
-- `/tmp` -- on the local node's temporary folder; this location is only available on the node itself
+- `/tmp` -- on the local node's temporary folder; this location is only available on the node itself.
+  The slurm scheduler uses Linux namespaces such that every **job** gets its private `/tmp` even when run on the same node.
 
 ### Best Practice:  Use `/fast/users/$USER/scratch/tmp`
 
 !!! warning "Use GPFS-based TMPDIR"
+
     Generally setup your environment to use `/fast/users/$USER/scratch/tmp` as filling the local disk of a node with forgotten files can cause a lot of problems.
 
 Ideally, you append the following to your `~/.bashrc` to use `/fast/users/$USER/scratch/tmp` as the temporary directory.
 This will also create the directory if it does not exist.
+Further, it will create one directory per host name which prevents too many entries in the temporary directory.
 
 ```bash
-export TMPDIR=/fast/users/$USER/scratch/tmp
+export TMPDIR=$HOME/scratch/tmp/$(hostname)
 mkdir -p $TMPDIR
 ```
 
@@ -37,9 +44,10 @@ Further, the local disk is independent from the GPFS file system, so I/O volume 
 Please note that by default, Slurm will not change your environment variables.
 This includes the environment variable `TMPDIR`.
 
-To automatically clean up temporary directories, use the following tip.
+Slurm will automatically update temporary files in a job's `/tmp` on the local file system when the job terminates.
+To automatically clean up temporary directories on the shared file system, use the following tip.
 
-### Use Bash Trapcs
+### Use Bash Traps
 
 You can use the following code at the top of your job script to set `TMPDIR` to the location in your home directory and get the directory automatically cleaned when the job is done (regardless of successful or erroneous completion):
 
