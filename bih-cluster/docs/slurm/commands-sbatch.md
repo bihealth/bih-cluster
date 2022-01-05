@@ -55,7 +55,7 @@ The command will create a batch job and add it to the queue to be executed at a 
   Also see the documentation of [sbatch in the Slurm manual](https://slurm.schedmd.com/sbatch.html).
 - `--mail-user=<email>`
   -- The email address to send to.
-  Must end in `@charite.de`, `@mdc-berlin.de`, or `@bihealth.de`.
+  Must end in `@charite.de`, `@mdc-berlin.de`, or `@bih-charite.de`.
 
 !!! important "Ensure your `--output` directory exists!"
 
