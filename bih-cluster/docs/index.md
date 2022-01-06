@@ -46,6 +46,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 !!! attention "Current and Future Maintenances"
    
     - :warning: January 31: Enforcing usage of `localtmp` resource above 100MB of node-local storage.
+    - :sparkles: January 6: Oversubscribing physical cores to improve throughput.
     - :sparkles: December 27: Temporary File Handling Improvements
     - :sparkles: December 23-24: Cluster OS Upgrade
     - :sparkles: December 21-22: GPFS Upgrade
