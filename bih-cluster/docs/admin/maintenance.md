@@ -2,6 +2,11 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Enabling Oversubscription, January 6, 2021
+
+- Many resources remain unused as users allocate too many cores to their jobs.
+  Slurm will now oversubscribe jobs in terms of CPUs, i.e., schedule more than one allocated core per physical core/thread.
+
 ## Enforcing Usage of `localtmp` Resource, January 31, 2021
 
 - We will enforce using `localtmp` resource for local storage above 100MB.
