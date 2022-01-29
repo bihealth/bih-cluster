@@ -2,6 +2,11 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Misc Changes, January 29, 2021
+
+- We have reduced oversubscription to 2x from 4x.
+- We have setup the user quota on /tmp on the login nodes to 20MB to improve stability of the nodes.
+
 ## Enabling Oversubscription, January 6, 2021
 
 - Many resources remain unused as users allocate too many cores to their jobs.
