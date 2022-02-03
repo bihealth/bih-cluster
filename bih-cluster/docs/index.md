@@ -45,6 +45,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 !!! attention "Current and Future Maintenances"
    
+    - :book: February 3: Adding Ganglia documentation.
     - :adhesive_bandage: February 3: Ganglia monitoring of GPFS and NVIDIA GPU metrics.
     - :warning: January 31: Enforcing usage of `localtmp` resource above 100MB of node-local storage.
     - :sparkles: January 29: Reduced oversubscription, quotas on `/tmp` on the login nodes.

@@ -83,6 +83,7 @@ nav:
     - "Architecture": overview/architecture.md
     - "Job Scheduler": overview/job-scheduler.md
     - "Nodes and Volumes": overview/storage.md
+    - "Monitoring": overview/monitoring.md
   - "Connecting":
     - "Generate Keys":
       - "Linux": connecting/generate-key/linux.md

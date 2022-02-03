@@ -2,11 +2,12 @@
 
 This page documents the current and known upcoming maintenance windows.
 
-## Ganglia Fixes, February 3, 2021
+## Ganglia Fixes & Docs, February 3, 2021
 
 - Reparing GPFS and NVIDIA GPU monitoring in [Ganglia](https://hpc-ganglia.cubi.bihealth.org)
 - Root cause was that the Python modules in Ganglia were removed from EPEL.
   We now have a local package build of Ganglia, if you are interested, here is the [patch](https://github.com/bihealth/rpms-ganglia) and [Docker based build instructions](https://github.com/bihealth/rpms-ganglia/issues/1).
+- You can find some [documentation about our Ganglia here](../../overview/monitoring).
 
 ## Misc Changes, January 29, 2021
 
