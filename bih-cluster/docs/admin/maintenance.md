@@ -2,24 +2,31 @@
 
 This page documents the current and known upcoming maintenance windows.
 
-## Ganglia Fixes & Docs, February 3, 2021
+## Limiting Global Memory Usage, February 14, 2022
+
+- A global memory allocation limit per user is set per partition.
+- The value is set to "max CPU count per user * 7GB".
+- Users can allocate up to "max cpu count" CPUs or "max cpu count * 7GB" RAM.
+- This is enforced globally (users could allocate 2/3 of their global CPU limit with 3.5 GB RAM and 1/3 with 7GB of RAM, for example).
+
+## Ganglia Fixes & Docs, February 3, 2022
 
 - Reparing GPFS and NVIDIA GPU monitoring in [Ganglia](https://hpc-ganglia.cubi.bihealth.org)
 - Root cause was that the Python modules in Ganglia were removed from EPEL.
   We now have a local package build of Ganglia, if you are interested, here is the [patch](https://github.com/bihealth/rpms-ganglia) and [Docker based build instructions](https://github.com/bihealth/rpms-ganglia/issues/1).
 - You can find some [documentation about our Ganglia here](../../overview/monitoring).
 
-## Misc Changes, January 29, 2021
+## Misc Changes, January 29, 2022
 
 - We have reduced oversubscription to 2x from 4x.
 - We have setup the user quota on /tmp on the login nodes to 20MB to improve stability of the nodes.
 
-## Enabling Oversubscription, January 6, 2021
+## Enabling Oversubscription, January 6, 2022
 
 - Many resources remain unused as users allocate too many cores to their jobs.
   Slurm will now oversubscribe jobs in terms of CPUs, i.e., schedule more than one allocated core per physical core/thread.
 
-## Enforcing Usage of `localtmp` Resource, January 31, 2021
+## Enforcing Usage of `localtmp` Resource, January 31, 2022
 
 - We will enforce using `localtmp` resource for local storage above 100MB.
 - See [Slurm: Temporary Files](../../slurm/temporary-files/) for details.
