@@ -296,29 +296,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ganglia-fixes-docs-february-3-2021" class="md-nav__link">
-    Ganglia Fixes &amp; Docs, February 3, 2021
+  <a href="#limiting-global-memory-usage-february-14-2022" class="md-nav__link">
+    Limiting Global Memory Usage, February 14, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#misc-changes-january-29-2021" class="md-nav__link">
-    Misc Changes, January 29, 2021
+  <a href="#ganglia-fixes-docs-february-3-2022" class="md-nav__link">
+    Ganglia Fixes &amp; Docs, February 3, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-oversubscription-january-6-2021" class="md-nav__link">
-    Enabling Oversubscription, January 6, 2021
+  <a href="#misc-changes-january-29-2022" class="md-nav__link">
+    Misc Changes, January 29, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enforcing-usage-of-localtmp-resource-january-31-2021" class="md-nav__link">
-    Enforcing Usage of localtmp Resource, January 31, 2021
+  <a href="#enabling-oversubscription-january-6-2022" class="md-nav__link">
+    Enabling Oversubscription, January 6, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-usage-of-localtmp-resource-january-31-2022" class="md-nav__link">
+    Enforcing Usage of localtmp Resource, January 31, 2022
   </a>
   
 </li>
@@ -2101,29 +2108,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ganglia-fixes-docs-february-3-2021" class="md-nav__link">
-    Ganglia Fixes &amp; Docs, February 3, 2021
+  <a href="#limiting-global-memory-usage-february-14-2022" class="md-nav__link">
+    Limiting Global Memory Usage, February 14, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#misc-changes-january-29-2021" class="md-nav__link">
-    Misc Changes, January 29, 2021
+  <a href="#ganglia-fixes-docs-february-3-2022" class="md-nav__link">
+    Ganglia Fixes &amp; Docs, February 3, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-oversubscription-january-6-2021" class="md-nav__link">
-    Enabling Oversubscription, January 6, 2021
+  <a href="#misc-changes-january-29-2022" class="md-nav__link">
+    Misc Changes, January 29, 2022
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#enforcing-usage-of-localtmp-resource-january-31-2021" class="md-nav__link">
-    Enforcing Usage of localtmp Resource, January 31, 2021
+  <a href="#enabling-oversubscription-january-6-2022" class="md-nav__link">
+    Enabling Oversubscription, January 6, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-usage-of-localtmp-resource-january-31-2022" class="md-nav__link">
+    Enforcing Usage of localtmp Resource, January 31, 2022
   </a>
   
 </li>
@@ -2276,24 +2290,31 @@
                 
                 <h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
 <p>This page documents the current and known upcoming maintenance windows.</p>
-<h2 id="ganglia-fixes-docs-february-3-2021">Ganglia Fixes &amp; Docs, February 3, 2021<a class="headerlink" href="#ganglia-fixes-docs-february-3-2021" title="Permanent link">&para;</a></h2>
+<h2 id="limiting-global-memory-usage-february-14-2022">Limiting Global Memory Usage, February 14, 2022<a class="headerlink" href="#limiting-global-memory-usage-february-14-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A global memory allocation limit per user is set per partition.</li>
+<li>The value is set to "max CPU count per user * 7GB".</li>
+<li>Users can allocate up to "max cpu count" CPUs or "max cpu count * 7GB" RAM.</li>
+<li>This is enforced globally (users could allocate &#8532; of their global CPU limit with 3.5 GB RAM and &#8531; with 7GB of RAM, for example).</li>
+</ul>
+<h2 id="ganglia-fixes-docs-february-3-2022">Ganglia Fixes &amp; Docs, February 3, 2022<a class="headerlink" href="#ganglia-fixes-docs-february-3-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Reparing GPFS and NVIDIA GPU monitoring in <a href="https://hpc-ganglia.cubi.bihealth.org">Ganglia</a></li>
 <li>Root cause was that the Python modules in Ganglia were removed from EPEL.
   We now have a local package build of Ganglia, if you are interested, here is the <a href="https://github.com/bihealth/rpms-ganglia">patch</a> and <a href="https://github.com/bihealth/rpms-ganglia/issues/1">Docker based build instructions</a>.</li>
 <li>You can find some <a href="../../overview/monitoring">documentation about our Ganglia here</a>.</li>
 </ul>
-<h2 id="misc-changes-january-29-2021">Misc Changes, January 29, 2021<a class="headerlink" href="#misc-changes-january-29-2021" title="Permanent link">&para;</a></h2>
+<h2 id="misc-changes-january-29-2022">Misc Changes, January 29, 2022<a class="headerlink" href="#misc-changes-january-29-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We have reduced oversubscription to 2x from 4x.</li>
 <li>We have setup the user quota on /tmp on the login nodes to 20MB to improve stability of the nodes.</li>
 </ul>
-<h2 id="enabling-oversubscription-january-6-2021">Enabling Oversubscription, January 6, 2021<a class="headerlink" href="#enabling-oversubscription-january-6-2021" title="Permanent link">&para;</a></h2>
+<h2 id="enabling-oversubscription-january-6-2022">Enabling Oversubscription, January 6, 2022<a class="headerlink" href="#enabling-oversubscription-january-6-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Many resources remain unused as users allocate too many cores to their jobs.
   Slurm will now oversubscribe jobs in terms of CPUs, i.e., schedule more than one allocated core per physical core/thread.</li>
 </ul>
-<h2 id="enforcing-usage-of-localtmp-resource-january-31-2021">Enforcing Usage of <code>localtmp</code> Resource, January 31, 2021<a class="headerlink" href="#enforcing-usage-of-localtmp-resource-january-31-2021" title="Permanent link">&para;</a></h2>
+<h2 id="enforcing-usage-of-localtmp-resource-january-31-2022">Enforcing Usage of <code>localtmp</code> Resource, January 31, 2022<a class="headerlink" href="#enforcing-usage-of-localtmp-resource-january-31-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We will enforce using <code>localtmp</code> resource for local storage above 100MB.</li>
 <li>See <a href="../../slurm/temporary-files/">Slurm: Temporary Files</a> for details.</li>
