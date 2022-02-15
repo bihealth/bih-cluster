@@ -170,6 +170,18 @@ The most likely states you will see (5th column of the table):
 
 In the 8th column you can see that your job is very likely running on a different machine than the one you are on!
 
+!!! warning "Do not use Slurm and `watch` or loops"
+
+    The `watch` command is a useful tool for running commands in a loop every `N` seconds.
+    For example, **on your workstation** you could do `watch 'ping -c 3 google.com'` to execute three network pings to Google every two seconds.
+    
+    👎 Using `watch` or manual loops in a cluster environment can have bad effects when querying Slurm or the shared file system.
+    Both are shared resources and "expensive" queries should not be run in loops.
+    For Slurm, this includes running `squeue`.
+
+    👍 Rather use `squeue --me --iterate=10` to perform a query, keep the connection open, and get updates every 10 seconds.
+    Compared with running `squeue --me` every 10 seconds, this causes almost no additional load on the Slurm controller daemon.
+
 Get more information about your jobs by either passing the job id:
 
 ```terminal
