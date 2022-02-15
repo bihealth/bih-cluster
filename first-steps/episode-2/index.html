@@ -2176,6 +2176,16 @@ The most likely states you will see (5<sup>th</sup> column of the table):</p>
 <li>disappeared, either because of an error or because it finished</li>
 </ul>
 <p>In the 8<sup>th</sup> column you can see that your job is very likely running on a different machine than the one you are on!</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not use Slurm and <code>watch</code> or loops</p>
+<p>The <code>watch</code> command is a useful tool for running commands in a loop every <code>N</code> seconds.
+For example, <strong>on your workstation</strong> you could do <code>watch 'ping -c 3 google.com'</code> to execute three network pings to Google every two seconds.</p>
+<p>👎 Using <code>watch</code> or manual loops in a cluster environment can have bad effects when querying Slurm or the shared file system.
+Both are shared resources and "expensive" queries should not be run in loops.
+For Slurm, this includes running <code>squeue</code>.</p>
+<p>👍 Rather use <code>squeue --me --iterate=10</code> to perform a query, keep the connection open, and get updates every 10 seconds.
+Compared with running <code>squeue --me</code> every 10 seconds, this causes almost no additional load on the Slurm controller daemon.</p>
+</div>
 <p>Get more information about your jobs by either passing the job id:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ sstat &lt;JOBID&gt;
 </code></pre></div>
@@ -2205,7 +2215,7 @@ To get to know what partitions are available, and how to use them properly, we h
 <div class="md-source-date">
   <small>
     
-      Last update: February 14, 2022
+      Last update: February 15, 2022
     
   </small>
 </div>
