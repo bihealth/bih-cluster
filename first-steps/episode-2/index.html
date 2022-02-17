@@ -2182,9 +2182,10 @@ The most likely states you will see (5<sup>th</sup> column of the table):</p>
 For example, <strong>on your workstation</strong> you could do <code>watch 'ping -c 3 google.com'</code> to execute three network pings to Google every two seconds.</p>
 <p>👎 Using <code>watch</code> or manual loops in a cluster environment can have bad effects when querying Slurm or the shared file system.
 Both are shared resources and "expensive" queries should not be run in loops.
-For Slurm, this includes running <code>squeue</code>.</p>
-<p>👍 Rather use <code>squeue --me --iterate=10</code> to perform a query, keep the connection open, and get updates every 10 seconds.
-Compared with running <code>squeue --me</code> every 10 seconds, this causes almost no additional load on the Slurm controller daemon.</p>
+For Slurm, this includes running <code>squeue</code>.
+The same would be true for running <code>squeue -i</code> which performs an internal loop.</p>
+<p>👍 Use the Slurm query commands only when you actually need the output.
+If you run them in an (implict or explicit) loop, then do so only for a short time and don't leave this open in a screen.</p>
 </div>
 <p>Get more information about your jobs by either passing the job id:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ sstat &lt;JOBID&gt;
@@ -2215,7 +2216,7 @@ To get to know what partitions are available, and how to use them properly, we h
 <div class="md-source-date">
   <small>
     
-      Last update: February 15, 2022
+      Last update: February 17, 2022
     
   </small>
 </div>
