@@ -178,9 +178,10 @@ In the 8th column you can see that your job is very likely running on a differen
     👎 Using `watch` or manual loops in a cluster environment can have bad effects when querying Slurm or the shared file system.
     Both are shared resources and "expensive" queries should not be run in loops.
     For Slurm, this includes running `squeue`.
-
-    👍 Rather use `squeue --me --iterate=10` to perform a query, keep the connection open, and get updates every 10 seconds.
-    Compared with running `squeue --me` every 10 seconds, this causes almost no additional load on the Slurm controller daemon.
+    The same would be true for running `squeue -i` which performs an internal loop.
+    
+    👍 Use the Slurm query commands only when you actually need the output.
+    If you run them in an (implict or explicit) loop, then do so only for a short time and don't leave this open in a screen.
 
 Get more information about your jobs by either passing the job id:
 
