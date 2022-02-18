@@ -2,7 +2,7 @@
 
 You can find the built documentation here:
 
-- https://docs.hpc.bihealth.org
+- https://hpc-docs.cubi.bihealth.org
 
 ## Building the Documentation Locally
 
