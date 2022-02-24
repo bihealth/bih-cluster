@@ -2,6 +2,12 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Login-Nodes and Storage Maintenance, March 22-23, 2022
+
+All COMPUTE nodes and STORAGE resources won't be reachable!
+  
+> All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".
+
 ## Limiting Global Memory Usage, February 14, 2022
 
 - A global memory allocation limit per user is set per partition.
