@@ -2,11 +2,18 @@
 
 This page documents the current and known upcoming maintenance windows.
 
-## Login-Nodes and Storage Maintenance, March 22-23, 2022
+## Login, Compute and Storage Maintenance, March 22-23, 2022
 
 All COMPUTE nodes and STORAGE resources won't be reachable!
   
 > All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".
+
+## Cluster Setting Tuning, March 1, 2022
+
+- We have adjusted the scheduler settings to address high number of jobs by users:
+- `SchedulerParameters+=bf_max_job_user=50`: backfill scheduler only considers 50 jobs of each user. This mitigates an issue with some users having too many jobs and thus other users' jobs don't get ahead in the queue
+- `EnforcePartLimits=ALL`: jobs that don't fit into their partition are rejected
+- `DependencyParameters=kill_invalid_depend`: jobs that have dependencies set that cannot be fulfilled will be killed
 
 ## Limiting Global Memory Usage, February 14, 2022
 
