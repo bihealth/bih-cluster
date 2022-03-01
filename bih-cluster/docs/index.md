@@ -46,6 +46,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 !!! attention "Current and Future Maintenances"
 
     - :warning: March 22-23: Compute and Storage Downtime.
+    - :sparkles: March 1: New scheduler settings to address high job per user count.
     - :warning: February 14: Limiting allocateable memory per user.
     - :book: February 3: Adding Ganglia documentation.
     - :adhesive_bandage: February 3: Ganglia monitoring of GPFS and NVIDIA GPU metrics.
