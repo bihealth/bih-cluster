@@ -368,10 +368,6 @@ The answer is simple, just SSH into this node.
 res-login-1:~$ ssh med0XXX
 ```
 
-## Snakemake DRMAA doesn't accept my Slurm parameters!?
-
-Yes. Unfortunately, [Slurm DRMAA differs slightly](../slurm/snakemake.md#limitations) from the original Slurm syntax.
-
 ## Why am I getting multiple nodes to my job?
 
 Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.

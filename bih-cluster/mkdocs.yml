@@ -131,7 +131,6 @@ nav:
     - slurm/snakemake.md
     - "X11 Forwarding": slurm/x11.md
     - slurm/rosetta-stone.md
-    - slurm/migrating.md
   - "OnDemand Portal":
     - "Overview": ondemand/overview.md
     - "Interactive Sessions": ondemand/interactive.md

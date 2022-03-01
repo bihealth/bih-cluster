@@ -30,7 +30,6 @@ Also, make sure that you are aware of our [How-To: Debug Software](../how-to/mis
 - [Slurm and Snakemake](snakemake.md) -- how to use Snakemake with Slurm
 - [X11 Forwarding](x11.md) -- X11 forwarding in Slurm (simple; short)
 - [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
-- [Migrating from SGE](migrating.md) -- hints for migrating from SGE to Slurm (:spider_web: deprecated, will be removed)
 
 ## A Word on "Elsewhere"
 
