@@ -2070,7 +2070,7 @@ host:snake-slurm$ rm the-result.txt
 <h2 id="snakemake-and-slurm">Snakemake and <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /> Slurm<a class="headerlink" href="#snakemake-and-slurm" title="Permanent link">&para;</a></h2>
 <p>You have two options:</p>
 <ol>
-<li>Simply use <code>snakemake --profile=cubi-v1</code> and the Snakemake resource configuration as shown below.</li>
+<li>Simply use <code>snakemake --profile=cubi-v1</code> and the Snakemake resource configuration as shown below. <strong>STRONGLY PREFERRED</strong></li>
 <li>Use the <code>snakemake --cluster='sbatch ...'</code> command.</li>
 </ol>
 <p>Note that we sneaked in a <code>sleep 1m</code>? In a second terminal session, we can see that the job has been submitted to SLURM indeed.</p>
@@ -2092,6 +2092,7 @@ host:snake-slurm$ rm the-result.txt
 <li><code>resources.partition</code>: the partition to submit your job into (Slurm will pick a fitting partition for you by default)</li>
 <li><code>resources.nodes</code>: the number of nodes to schedule your job on (defaults to <code>1</code> and you will want to keep that value unless you want to use MPI)</li>
 </ul>
+<p>You will need Snakemake &gt;=7.0.2 for this.</p>
 <p>So for example:</p>
 <div class="highlight"><pre><span></span><code><span class="n">rule</span> <span class="n">myrule</span><span class="p">:</span>
     <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
