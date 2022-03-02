@@ -599,10 +599,10 @@ The process of submitting keys to Charite and MDC is documented in the "Connecti
 
 ## How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?
 
-Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](../connecting/from-external.md).
+Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](/bih-cluster/connecting/from-external/#for-charite-users).
 For Charite VPN, as for all Charite IT systems, users must use their Charite user name (e.g., `jdoe` and not `jdoe_c`).
 
-MDC users either have to use MDC VPN or the MDC jail node, as [documented here](../connecting/from-external.md).
+MDC users either have to use MDC VPN or the MDC jail node, as [documented here](/bih-cluster/connecting/from-external/#for-mdc-users).
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., `jdoe` and not `jdoe_m`).
 
 For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.
