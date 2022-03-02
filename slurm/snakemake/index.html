@@ -1200,8 +1200,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#threads-resources" class="md-nav__link">
+    Threads &amp; Resources
   </a>
   
 </li>
@@ -1233,18 +1233,6 @@
   <li class="md-nav__item">
     <a href="../rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
       Slurm Rosetta Stone
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
     </a>
   </li>
 
@@ -2010,8 +1998,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#threads-resources" class="md-nav__link">
+    Threads &amp; Resources
   </a>
   
 </li>
@@ -2045,8 +2033,8 @@
 </ul>
 <h2 id="environment-setup">Environment Setup<a class="headerlink" href="#environment-setup" title="Permanent link">&para;</a></h2>
 <p>We first create a new environment <code>snakemake-slurm</code> and activate it.
-We need the <code>snakemake</code> package and the <code>drmaa</code> Python library for interfacing with the SLURM scheduler via the DRMAA interface.</p>
-<div class="highlight"><pre><span></span><code>host:~$ conda create -y -n snakemake-slurm snakemake drmaa
+We need the <code>snakemake</code> package for this.</p>
+<div class="highlight"><pre><span></span><code>host:~$ conda create -y -n snakemake-slurm snakemake
 <span class="o">[</span>...<span class="o">]</span>
 <span class="c1">#</span>
 <span class="c1"># To activate this environment, use</span>
@@ -2080,59 +2068,63 @@ host:snake-slurm$ rm the-result.txt
 </code></pre></div>
 
 <h2 id="snakemake-and-slurm">Snakemake and <img alt="🎉" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f389.svg" title=":tada:" /> Slurm<a class="headerlink" href="#snakemake-and-slurm" title="Permanent link">&para;</a></h2>
-<p>It's really simple:</p>
+<p>You have two options:</p>
 <ol>
-<li>unset the <code>DRMAA_LIBRARY_PATH</code> variable (that might be set and point to the SGE DRMAA library); you could set it to <code>/usr/lib64/libdrmaa.so</code> but that would not be necessary, consider all mentions of it from <code>~/.bashrc</code>.</li>
-<li>Use <code>snakemake --drmaa " [params]"</code> and use SLURM syntax here.</li>
+<li>Simply use <code>snakemake --profile=cubi-v1</code> and the Snakemake resource configuration as shown below.</li>
+<li>Use the <code>snakemake --cluster='sbatch ...'</code> command.</li>
 </ol>
-<div class="highlight"><pre><span></span><code>host:snake-slurm$ <span class="nb">unset</span> DRMAA_LIBRARY_PATH
-host:snake-slurm<span class="nv">$snakemake</span> --drmaa <span class="s2">&quot; -t 05:00&quot;</span> --jobs <span class="m">2</span>
-Building DAG of jobs...
-Using shell: /usr/bin/bash
-Provided cluster nodes: <span class="m">2</span>
-Job counts:
-        count   <span class="nb">jobs</span>
-        <span class="m">1</span>       default
-        <span class="m">1</span>       mkresult
-        <span class="m">2</span>
-
-<span class="o">[</span>Wed Mar <span class="m">25</span> <span class="m">23</span>:06:01 <span class="m">2020</span><span class="o">]</span>
-rule mkresult:
-    output: the-result.txt
-    jobid: <span class="m">1</span>
-
-Submitted DRMAA job <span class="m">1</span> with external jobid <span class="m">325</span>.
-<span class="o">[</span>Wed Mar <span class="m">25</span> <span class="m">23</span>:07:11 <span class="m">2020</span><span class="o">]</span>
-Finished job <span class="m">1</span>.
-<span class="m">1</span> of <span class="m">2</span> steps <span class="o">(</span><span class="m">50</span>%<span class="o">)</span> <span class="k">done</span>
-
-<span class="o">[</span>Wed Mar <span class="m">25</span> <span class="m">23</span>:07:11 <span class="m">2020</span><span class="o">]</span>
-localrule default:
-    input: the-result.txt
-    jobid: <span class="m">0</span>
-
-<span class="o">[</span>Wed Mar <span class="m">25</span> <span class="m">23</span>:07:11 <span class="m">2020</span><span class="o">]</span>
-Finished job <span class="m">0</span>.
-<span class="m">2</span> of <span class="m">2</span> steps <span class="o">(</span><span class="m">100</span>%<span class="o">)</span> <span class="k">done</span>
-Complete log: /fast/home/users/holtgrem_c/snake-slurm/.snakemake/log/2020-03-25T230601.353735.snakemake.log
-</code></pre></div>
-
 <p>Note that we sneaked in a <code>sleep 1m</code>? In a second terminal session, we can see that the job has been submitted to SLURM indeed.</p>
 <div class="highlight"><pre><span></span><code>host:~$ squeue  -u holtgrem_c
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
                <span class="m">325</span>     debug snakejob holtgrem  R       <span class="m">0</span>:47      <span class="m">1</span> med0127
 </code></pre></div>
 
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
-<p>The DRMAA interface to Slurm has a few limitations:</p>
+<h2 id="threads-resources">Threads &amp; Resources<a class="headerlink" href="#threads-resources" title="Permanent link">&para;</a></h2>
+<p>The <code>cubi-v1</code> profile (stored in <code>/etc/xdg/snakemake/cubi-v1</code> on all cluster nodes) supports the following specification in your Snakemake rule:</p>
 <ul>
-<li>memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes) and as a plain number without unit,</li>
-<li>running time has to be given as <code>hh:mm</code>.</li>
-<li><code>--export</code> is not supported by drmaa yet.
-  The default of SLURM is <code>--export=ALL</code> (similar to <code>-V</code> for SGE).</li>
+<li><code>threads</code>: the number of threads to execute the job on</li>
+<li>memory in a syntax understood by Slurm, EITHER<ul>
+<li><code>resources.mem</code>/<code>resources.mem_mb</code>: the memory to allocate <strong>for the whole job</strong>, OR </li>
+<li><code>resources.mem_per_thread</code>: the memory to allocate <strong>for each thread</strong>.</li>
 </ul>
-<p>A full list of supported parameters can be found <a href="http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification">in the officical documentation</a>.</p>
-<p>... that's all, folks!</p>
+</li>
+<li><code>resources.time</code>: the running time of the rule, in a syntax supported by Slurm, e.g. <code>HH:MM:SS</code> or <code>D-HH:MM:SS</code></li>
+<li><code>resources.partition</code>: the partition to submit your job into (Slurm will pick a fitting partition for you by default)</li>
+<li><code>resources.nodes</code>: the number of nodes to schedule your job on (defaults to <code>1</code> and you will want to keep that value unless you want to use MPI)</li>
+</ul>
+<p>So for example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">rule</span> <span class="n">myrule</span><span class="p">:</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">resources</span><span class="p">:</span>
+        <span class="n">mem</span><span class="o">=</span><span class="s1">&#39;8G&#39;</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="s1">&#39;04:00:00&#39;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="c1"># ...</span>
+    <span class="n">output</span><span class="p">:</span> <span class="c1"># ...</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="c1"># ...</span>
+</code></pre></div>
+
+<p>You can combine this with Snakemake <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#resources">resource callables</a>, of course:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">myrule_mem</span><span class="p">(</span><span class="n">wildcards</span><span class="p">,</span> <span class="n">attempt</span><span class="p">):</span>
+    <span class="n">mem</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">attempt</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">G&#39;</span> <span class="o">%</span> <span class="n">mem</span>
+
+<span class="n">rule</span> <span class="n">snps</span><span class="p">:</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">resources</span><span class="p">:</span>
+        <span class="n">mem</span><span class="o">=</span><span class="n">myrule_mem</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="s1">&#39;04:00:00&#39;</span><span class="p">,</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="c1"># ...</span>
+    <span class="n">output</span><span class="p">:</span> <span class="c1"># ...</span>
+    <span class="n">shell</span><span class="p">:</span> <span class="c1"># ...</span>
+</code></pre></div>
+
+<p>Here is how to call Snakemake:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># snakemake --profile=cubi-v1 -j1</span>
+</code></pre></div>
+
+<p>Note that right now you will need an unreleased version of Snakemake v7:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># pip install git+https://github.com/snakemake/snakemake.git@6d19f7e5585d9e9ee93c66222b7883ef09c1bc1d</span>
+</code></pre></div>
                 
                   
                     

@@ -1223,18 +1223,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2141,7 +2129,7 @@ bwa mem -t <span class="m">8</span> <span class="se">\</span>
     <span class="nv">$BWAREF</span> <span class="se">\</span>
     /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz <span class="se">\</span>
     /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz <span class="se">\</span>
-<span class="p">|</span> samtools view -b - <span class="se">\</span>
+<span class="p">|</span> samtools view -b <span class="se">\</span>
 <span class="p">|</span> samtools sort -O BAM -T <span class="nv">$TMPDIR</span> -o aln.bam
 
 samtools index aln.bam

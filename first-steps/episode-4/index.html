@@ -1176,18 +1176,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2009,60 +1997,133 @@ to call Snakemake. We run the script and the magic will start.</p>
 <span class="nb">export</span> <span class="nv">LOGDIR</span><span class="o">=</span>logs/<span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span>-<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>
 mkdir -p <span class="nv">$LOGDIR</span>
 
-<span class="nb">unset</span> DRMAA_LIBRARY_PATH
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$($(</span>which conda<span class="k">)</span> shell.bash hook<span class="k">)</span><span class="s2">&quot;</span>
 conda activate first-steps
 
 <span class="nb">set</span> -x
 
-<span class="c1"># Note that Slurm DRMAA differs slightly from original Slurm syntax</span>
-<span class="c1"># --mem-per-cpu doesn&#39;t accept units and the default unit here is MB</span>
-<span class="c1"># -t only accepts HH:MM</span>
-snakemake <span class="se">\</span>
-    --drmaa <span class="s2">&quot; \</span>
-<span class="s2">        -p medium \</span>
-<span class="s2">        -t 01:00 \</span>
-<span class="s2">        --nodes=1 \</span>
-<span class="s2">        --mem=8192 \</span>
-<span class="s2">        -n 8 \</span>
-<span class="s2">        -o </span><span class="nv">$LOGDIR</span><span class="s2">/%x-%j.log&quot;</span> <span class="se">\</span>
-    -j <span class="m">2</span> <span class="se">\</span>
-    -k <span class="se">\</span>
-    -p
+snakemake --profile<span class="o">=</span>cubi-v1 -j <span class="m">2</span> -k -p --restart-times<span class="o">=</span><span class="m">2</span>
 </code></pre></div>
 
-<p>In the beginning you see the <code>#SBATCH</code> that introduces the parameters when you provide this script to <code>sbatch</code>
-as described in the <a href="../episode-2/">second episode</a>. Please make sure that the <code>logs</code> folder exists before starting the run!
+<p>In the beginning you see the <code>#SBATCH</code> that introduces the parameters when you provide this script to <code>sbatch</code> as described in the <a href="../episode-2/">second episode</a>.
+Please make sure that the <code>logs</code> folder exists before starting the run!
 We then set and export the <code>TMPDIR</code> and <code>LOGDIR</code> variables.
-Note that <code>LOGDIR</code> has a subfolder named <code>$SLURM_JOB_NAME-$SLURM_JOB_ID</code> that will be created
-for you. Snakemake will store its logfiles for this very Snakemake run in this folder.
-The next new thing is <code>set -x</code>. This simply prints to the terminal every command that is executed within
-the script. This is useful for debugging.</p>
-<p>Finally, the Snakemake call takes place. With the <code>--drmaa</code> option we define how the jobs inside Snakemake should be started on the nodes. Please note that the <code>sbatch</code> command does not appear here, but the argument string provided to the <code>--drmaa</code> option is the same as the parameters for <code>sbatch</code>, except for some minor differences as descrived above or <a href="../../slurm/snakemake/#limitations">here</a>. The <code>drmaa</code> library provides more stable job distribution than using plain <code>sbatch</code> in this scenario. Note that we don't write the parameter string to a bash file (which we don't have in this case). There are three new parameters that are defining the hardware requirements for our run and the project:</p>
+Note that <code>LOGDIR</code> has a subfolder named <code>$SLURM_JOB_NAME-$SLURM_JOB_ID</code> that will be created for you.
+Snakemake will store its logfiles for this very Snakemake run in this folder.
+The next new thing is <code>set -x</code>. This simply prints to the terminal every command that is executed within the script.
+This is useful for debugging.</p>
+<p>Finally, the Snakemake call takes place.
+With the <code>--profile</code> option we define that Snakemake uses the <a href="https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles">Snakemake profile</a> at <code>/etc/xdg/snakemake/cubi-v1</code>.
+The profile will take create appropriate calls to <code>sbatch</code> and interpret the following settings from your Snakemake rule:</p>
 <ul>
-<li><code>--mem=X</code>: How much memory ONE job (=Snakemake rule) should get in Megabyte</li>
-<li><code>-t HH:MM</code>: How long a job (=Snakemake rule) is allowed to run</li>
-<li><code>-n X</code>: How many cores of a node a job (=Snakemake rule) should get</li>
-<li><code>--nodes=1</code>: Force allocation of all cores on a single node.</li>
-<li><code>-p medium</code>: The partition name (this system was introduced in <a href="../episode-2/#job-queues">Episode 2</a> and is described <a href="../../overview/job-scheduler/">here</a>)</li>
+<li><code>threads</code>: the number of threads to execute the job on</li>
+<li>memory in megabytes or with a suffix of <code>k</code>, <code>M</code>, <code>G</code>, or <code>T</code>. You can specify EITHER<ul>
+<li><code>resources.mem</code>/<code>resources.mem_mb</code>: the memory to allocate <strong>for the whole job</strong>, OR</li>
+<li><code>resources.mem_per_thread</code>: the memory to allocate <strong>for each thread</strong>.</li>
 </ul>
-<p>Note that the memory is not shared among the cores. This means the final memory on a node is defined by</p>
-<div class="highlight"><pre><span></span><code>&lt;mem-per-cpu&gt; * &lt;n&gt;
+</li>
+<li><code>resources.time</code>: the running time of the rule, in a syntax supported by Slurm, e.g. <code>HH:MM:SS</code> or <code>D-HH:MM:SS</code></li>
+<li><code>resources.partition</code>: the partition to submit your job into (Slurm will pick a fitting partition for you by default)</li>
+<li><code>resources.nodes</code>: the number of nodes to schedule your job on (defaults to <code>1</code> and you will want to keep that value unless you want to use MPI)</li>
+</ul>
+<p>The other options to <code>snakemake</code> have the meaning:</p>
+<ul>
+<li><code>-j 2</code>: run at most two jobs at the same time</li>
+<li><code>-k</code>: keep going even if a rule execution fails</li>
+<li><code>-p</code>: print the executed shell commands</li>
+<li><code>--restart-times=2</code>: restart failing jobs up to two times</li>
+</ul>
+<p>It is now time to update your <code>Snakefile</code> such that it actually specifies the resources mentioned above:</p>
+<div class="highlight"><pre><span></span><code><span class="n">rule</span> <span class="nb">all</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;snps/test.vcf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;structural_variants/test.vcf&#39;</span>
+
+<span class="n">rule</span> <span class="n">alignment</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R1.fq.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R2.fq.gz&#39;</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">:</span>
+        <span class="n">bam</span><span class="o">=</span><span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam&#39;</span><span class="p">,</span>
+        <span class="n">bai</span><span class="o">=</span><span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam.bai&#39;</span><span class="p">,</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="mi">8</span>
+    <span class="n">resources</span><span class="p">:</span>
+        <span class="n">mem</span><span class="o">=</span><span class="s1">&#39;8G&#39;</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="s1">&#39;12:00:00&#39;</span><span class="p">,</span>
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        export TMPDIR=/fast/users/${{USER}}/scratch/tmp</span>
+<span class="sd">        mkdir -p ${{TMPDIR}}</span>
+
+<span class="sd">        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+
+<span class="sd">        bwa mem -t 8 \</span>
+<span class="sd">            -R &quot;@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01&quot; \</span>
+<span class="sd">            ${{BWAREF}} \</span>
+<span class="sd">            {input} \</span>
+<span class="sd">        | samtools view -b \</span>
+<span class="sd">        | samtools sort -O BAM -T ${{TMPDIR}} -o {output.bam}</span>
+
+<span class="sd">        samtools index {output.bam}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="n">rule</span> <span class="n">structural_variants</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam&#39;</span>
+    <span class="n">output</span><span class="p">:</span>
+        <span class="s1">&#39;structural_variants/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">resources</span><span class="p">:</span>
+        <span class="n">mem</span><span class="o">=</span><span class="s1">&#39;4G&#39;</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="s1">&#39;2-00:00:00&#39;</span><span class="p">,</span>
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+
+<span class="sd">        delly call -o {output} -g ${{REF}} {input}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">snps_mem</span><span class="p">(</span><span class="n">wildcards</span><span class="p">,</span> <span class="n">attempt</span><span class="p">):</span>
+    <span class="n">mem</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">attempt</span>
+    <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">G&#39;</span> <span class="o">%</span> <span class="n">mem</span>
+
+<span class="n">rule</span> <span class="n">snps</span><span class="p">:</span>
+    <span class="nb">input</span><span class="p">:</span>
+        <span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam&#39;</span>
+    <span class="n">output</span><span class="p">:</span>
+        <span class="s1">&#39;snps/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span>
+    <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">resources</span><span class="p">:</span>
+        <span class="n">mem</span><span class="o">=</span><span class="n">snps_mem</span><span class="p">,</span>
+        <span class="n">time</span><span class="o">=</span><span class="s1">&#39;04:00:00&#39;</span><span class="p">,</span>
+    <span class="n">shell</span><span class="p">:</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+
+<span class="sd">        gatk HaplotypeCaller \</span>
+<span class="sd">            -R ${{REF}} \</span>
+<span class="sd">            -I {input} \</span>
+<span class="sd">            -ploidy 2 \</span>
+<span class="sd">            -O {output}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 </code></pre></div>
 
-<p>So in our example the total memory requested on one node would be 8GB.</p>
-<p>The other parameters provided to Snakemake are:</p>
+<p>We thus configure the resource consumption of the rules as follows:</p>
 <ul>
-<li><code>-j</code>: Use 2 cores for this Snakemake run. In this scenario the parameter determines how many jobs will be submitted to SLURM at a time.</li>
-<li><code>-k</code>: Keep going if a job fails</li>
-<li><code>-p</code>: Print out shell commands</li>
+<li><code>alignment</code> with 8 threads and up to 8GB of memory in total with a running time of up to 12 hours,</li>
+<li><code>structural_variants</code> with one thread and up to 4GB of memory in with a running time of up to 2 days,</li>
+<li><code>snps</code> with one thread and running up to four hours.
+  Instead of passing a static amount of memory, we pass a <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#resources">resource callable</a>.
+  The <code>attempt</code> parameter will be passed a value of <code>1</code> on the initial invocation.
+  If variant calling with the GATK HaplotypeCaller fails then it will retry and <code>attempt</code> will have an incremented value on each invocation (<code>2</code> on the first retry and so on).
+  Thus, we try to do small variant calling with 2, 4, 6, and 8 GB.</li>
 </ul>
 <p>Finally, run the script:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ sbatch submit_snakejob.sh
 </code></pre></div>
 
 <p>If you watch <code>squeue --me</code> now, you will see that the jobs are distributed to the system:</p>
-<div class="highlight"><pre><span></span><code>(first-steps) $ watch -n 60 squeue --me
+<div class="highlight"><pre><span></span><code>(first-steps) $ squeue --me
 </code></pre></div>
 
 <p>Please refer to the Snakemake documentation for more details on using Snakemake, in particular <a href="http://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration">how to use the cluster configuration</a> on how to specify the resource requirements on a per-rule base.</p>

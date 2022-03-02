@@ -1230,18 +1230,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2083,12 +2071,10 @@ Make also sure that you are logged in to a computation node using ``.</p>
 <p>Now we will create a new environment, so as to not interfere
 with your current or planned software stack, and install into it all the
 software that we need during the tutorial. Run the following commands:</p>
-<div class="highlight"><pre><span></span><code>$ conda create -n first-steps python=3 snakemake drmaa bwa delly samtools gatk4
+<div class="highlight"><pre><span></span><code>$ conda create -n first-steps python=3 snakemake bwa delly samtools gatk4
 $ conda activate first-steps
 (first-steps) $
 </code></pre></div>
-
-<p>As you can see, we also installed a tool called DRMAA (which is in fact a software library). DRMAA is an API that provides more stable job distribution on the cluster than the native SGE implementation. We will use this during the tutorial and we recommend it for your every day usage. If you are interested, we have a <a href="../../slurm/snakemake/#snakemake-and-slurm">wiki page</a> about this library and how to use it. For now there is no need for you to set up anything more.</p>
                 
                   
                     

@@ -566,13 +566,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snakemake-drmaa-doesnt-accept-my-slurm-parameters" class="md-nav__link">
-    Snakemake DRMAA doesn't accept my Slurm parameters!?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-am-i-getting-multiple-nodes-to-my-job" class="md-nav__link">
     Why am I getting multiple nodes to my job?
   </a>
@@ -1503,18 +1496,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/migrating/" title="Migrating to Slurm" class="md-nav__link">
-      Migrating to Slurm
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -2416,13 +2397,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snakemake-drmaa-doesnt-accept-my-slurm-parameters" class="md-nav__link">
-    Snakemake DRMAA doesn't accept my Slurm parameters!?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#why-am-i-getting-multiple-nodes-to-my-job" class="md-nav__link">
     Why am I getting multiple nodes to my job?
   </a>
@@ -2860,8 +2834,6 @@ This is done by specifying a format string and using the <code>%b</code> field.<
 <div class="highlight"><pre><span></span><code>res-login-1:~$ ssh med0XXX
 </code></pre></div>
 
-<h2 id="snakemake-drmaa-doesnt-accept-my-slurm-parameters">Snakemake DRMAA doesn't accept my Slurm parameters!?<a class="headerlink" href="#snakemake-drmaa-doesnt-accept-my-slurm-parameters" title="Permanent link">&para;</a></h2>
-<p>Yes. Unfortunately, <a href="../../slurm/snakemake/#limitations">Slurm DRMAA differs slightly</a> from the original Slurm syntax.</p>
 <h2 id="why-am-i-getting-multiple-nodes-to-my-job">Why am I getting multiple nodes to my job?<a class="headerlink" href="#why-am-i-getting-multiple-nodes-to-my-job" title="Permanent link">&para;</a></h2>
 <p>Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
 Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
