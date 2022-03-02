@@ -10,10 +10,10 @@ This page describes how to use Snakemake with Slurm.
 ## Environment Setup
 
 We first create a new environment `snakemake-slurm` and activate it.
-We need the `snakemake` package and the `drmaa` Python library for interfacing with the SLURM scheduler via the DRMAA interface.
+We need the `snakemake` package for this.
 
 ```bash
-host:~$ conda create -y -n snakemake-slurm snakemake drmaa
+host:~$ conda create -y -n snakemake-slurm snakemake
 [...]
 #
 # To activate this environment, use
@@ -51,43 +51,10 @@ host:snake-slurm$ rm the-result.txt
 
 ## Snakemake and :tada: Slurm
 
-It's really simple:
+You have two options:
 
-0. unset the `DRMAA_LIBRARY_PATH` variable (that might be set and point to the SGE DRMAA library); you could set it to `/usr/lib64/libdrmaa.so` but that would not be necessary, consider all mentions of it from `~/.bashrc`.
-1. Use `snakemake --drmaa " [params]"` and use SLURM syntax here.
-
-```bash
-host:snake-slurm$ unset DRMAA_LIBRARY_PATH
-host:snake-slurm$snakemake --drmaa " -t 05:00" --jobs 2
-Building DAG of jobs...
-Using shell: /usr/bin/bash
-Provided cluster nodes: 2
-Job counts:
-        count   jobs
-        1       default
-        1       mkresult
-        2
-
-[Wed Mar 25 23:06:01 2020]
-rule mkresult:
-    output: the-result.txt
-    jobid: 1
-
-Submitted DRMAA job 1 with external jobid 325.
-[Wed Mar 25 23:07:11 2020]
-Finished job 1.
-1 of 2 steps (50%) done
-
-[Wed Mar 25 23:07:11 2020]
-localrule default:
-    input: the-result.txt
-    jobid: 0
-
-[Wed Mar 25 23:07:11 2020]
-Finished job 0.
-2 of 2 steps (100%) done
-Complete log: /fast/home/users/holtgrem_c/snake-slurm/.snakemake/log/2020-03-25T230601.353735.snakemake.log
-```
+1. Simply use `snakemake --profile=cubi-v1` and the Snakemake resource configuration as shown below.
+2. Use the `snakemake --cluster='sbatch ...'` command.
 
 Note that we sneaked in a `sleep 1m`? In a second terminal session, we can see that the job has been submitted to SLURM indeed.
 
@@ -97,15 +64,56 @@ host:~$ squeue  -u holtgrem_c
                325     debug snakejob holtgrem  R       0:47      1 med0127
 ```
 
-## Limitations
+## Threads & Resources
 
-The DRMAA interface to Slurm has a few limitations:
+The `cubi-v1` profile (stored in `/etc/xdg/snakemake/cubi-v1` on all cluster nodes) supports the following specification in your Snakemake rule:
 
-- memory has to be given as an integer in the unit Megabytes (1024 * 1024 bytes) and as a plain number without unit,
-- running time has to be given as `hh:mm`.
-- `--export` is not supported by drmaa yet.
-  The default of SLURM is `--export=ALL` (similar to `-V` for SGE).
+* `threads`: the number of threads to execute the job on
+* memory in a syntax understood by Slurm, EITHER
+    * `resources.mem`/`resources.mem_mb`: the memory to allocate **for the whole job**, OR 
+    * `resources.mem_per_thread`: the memory to allocate **for each thread**.
+* `resources.time`: the running time of the rule, in a syntax supported by Slurm, e.g. `HH:MM:SS` or `D-HH:MM:SS`
+* `resources.partition`: the partition to submit your job into (Slurm will pick a fitting partition for you by default)
+* `resources.nodes`: the number of nodes to schedule your job on (defaults to `1` and you will want to keep that value unless you want to use MPI)
 
-A full list of supported parameters can be found [in the officical documentation](http://apps.man.poznan.pl/trac/slurm-drmaa#Nativespecification).
+So for example:
 
-... that's all, folks!
+```python
+rule myrule:
+    threads: 1
+    resources:
+        mem='8G',
+        time='04:00:00',
+    input: # ...
+    output: # ...
+    shell: # ...
+```
+
+You can combine this with Snakemake [resource callables](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html?highlight=resources#resources), of course:
+
+```python
+def myrule_mem(wildcards, attempt):
+    mem = 2 * attempt
+    return '%dG' % mem
+
+rule snps:
+    threads: 1
+    resources:
+        mem=myrule_mem,
+        time='04:00:00',
+    input: # ...
+    output: # ...
+    shell: # ...
+```
+
+Here is how to call Snakemake:
+
+```bash
+# snakemake --profile=cubi-v1 -j1
+```
+
+Note that right now you will need an unreleased version of Snakemake v7:
+
+```bash
+# pip install git+https://github.com/snakemake/snakemake.git@6d19f7e5585d9e9ee93c66222b7883ef09c1bc1d
+```

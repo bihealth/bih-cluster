@@ -62,7 +62,7 @@ rule alignment:
             -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
             ${{BWAREF}} \
             {input} \
-        | samtools view -b - \
+        | samtools view -b \
         | samtools sort -O BAM -T ${{TMPDIR}} -o {output.bam}
 
         samtools index {output.bam}
@@ -163,7 +163,7 @@ rule alignment:
             -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
             ${{BWAREF}} \
             {input} \
-        | samtools view -b - \
+        | samtools view -b \
         | samtools sort -O BAM -T ${{TMPDIR}} -o {output.bam}
 
         samtools index {output.bam}

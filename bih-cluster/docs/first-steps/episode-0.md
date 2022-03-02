@@ -52,9 +52,7 @@ with your current or planned software stack, and install into it all the
 software that we need during the tutorial. Run the following commands:
 
 ```terminal
-$ conda create -n first-steps python=3 snakemake drmaa bwa delly samtools gatk4
+$ conda create -n first-steps python=3 snakemake bwa delly samtools gatk4
 $ conda activate first-steps
 (first-steps) $
 ```
-
-As you can see, we also installed a tool called DRMAA (which is in fact a software library). DRMAA is an API that provides more stable job distribution on the cluster than the native SGE implementation. We will use this during the tutorial and we recommend it for your every day usage. If you are interested, we have a [wiki page](../slurm/snakemake.md#snakemake-and-slurm) about this library and how to use it. For now there is no need for you to set up anything more.

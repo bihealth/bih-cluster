@@ -127,7 +127,7 @@ bwa mem -t 8 \
     $BWAREF \
     /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
     /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
-| samtools view -b - \
+| samtools view -b \
 | samtools sort -O BAM -T $TMPDIR -o aln.bam
 
 samtools index aln.bam

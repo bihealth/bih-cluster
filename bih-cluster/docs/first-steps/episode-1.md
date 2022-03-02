@@ -73,7 +73,7 @@ Let's align our data:
     /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
     /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
-| samtools view -b - \
+| samtools view -b \
 | samtools sort -O BAM -T $TMPDIR -o aln.bam
 
 (first-steps) $ samtools index aln.bam
