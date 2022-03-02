@@ -53,7 +53,7 @@ host:snake-slurm$ rm the-result.txt
 
 You have two options:
 
-1. Simply use `snakemake --profile=cubi-v1` and the Snakemake resource configuration as shown below.
+1. Simply use `snakemake --profile=cubi-v1` and the Snakemake resource configuration as shown below. **STRONGLY PREFERRED**
 2. Use the `snakemake --cluster='sbatch ...'` command.
 
 Note that we sneaked in a `sleep 1m`? In a second terminal session, we can see that the job has been submitted to SLURM indeed.
@@ -75,6 +75,8 @@ The `cubi-v1` profile (stored in `/etc/xdg/snakemake/cubi-v1` on all cluster nod
 * `resources.time`: the running time of the rule, in a syntax supported by Slurm, e.g. `HH:MM:SS` or `D-HH:MM:SS`
 * `resources.partition`: the partition to submit your job into (Slurm will pick a fitting partition for you by default)
 * `resources.nodes`: the number of nodes to schedule your job on (defaults to `1` and you will want to keep that value unless you want to use MPI)
+
+You will need Snakemake >=7.0.2 for this.
 
 So for example:
 
