@@ -303,6 +303,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#drmaa-deprecation-march-2-2022" class="md-nav__link">
+    DRMAA Deprecation, March 2, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cluster-setting-tuning-march-1-2022" class="md-nav__link">
     Cluster Setting Tuning, March 1, 2022
   </a>
@@ -2117,6 +2124,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#drmaa-deprecation-march-2-2022" class="md-nav__link">
+    DRMAA Deprecation, March 2, 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cluster-setting-tuning-march-1-2022" class="md-nav__link">
     Cluster Setting Tuning, March 1, 2022
   </a>
@@ -2311,6 +2325,32 @@
 <blockquote>
 <p>All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".</p>
 </blockquote>
+<h2 id="drmaa-deprecation-march-2-2022">DRMAA Deprecation, March 2, 2022<a class="headerlink" href="#drmaa-deprecation-march-2-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The usage of DRMAA on the HPC is deprecated.</li>
+<li>In Snakemake, it has been deprecated in favor of using Snakemake Profiles <a href="../snakemake/#snakemake-and-slurm">as documented</a>.</li>
+<li>We will support DRMAA at least until June 31, 2022 but ask all users to migrate away from it as soon as possible.</li>
+<li>Background:<ul>
+<li>With DRMAA, the status of each job is queried for using <code>scontrol show job JOBID</code> and <code>sacct -j JOBID</code>.</li>
+<li>This leads to regular remote procedure calls (RPC) to the slurm control daemon.</li>
+<li>It leads to <strong>a lot of such calls</strong>.</li>
+<li>It leads to so many calls that it prevents the scheduler from working correctly and leads to service degradation for all users.</li>
+</ul>
+</li>
+<li>Using Snakemake profiles is easy.<ul>
+<li>Call Snakemake with <code>snakemake --profile=cubi-v1</code> instead of <code>snakemake --drmaa "..."</code>.</li>
+<li>In your rules, specify threads, running time and memory as:
+  <div class="highlight"><pre><span></span><code>rule myrule:
+  # ...
+  threads: 8
+  resources:
+    time=&quot;12:00:00&quot;,
+    memory=&quot;8G&quot;,
+  # ...
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
 <h2 id="cluster-setting-tuning-march-1-2022">Cluster Setting Tuning, March 1, 2022<a class="headerlink" href="#cluster-setting-tuning-march-1-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>We have adjusted the scheduler settings to address high number of jobs by users:</li>
