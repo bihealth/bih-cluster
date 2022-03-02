@@ -46,16 +46,12 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 !!! attention "Current and Future Maintenances"
 
     - :warning: March 22-23: Compute and Storage Downtime.
+    - :warning: March: Deprecation of using DRMAA.
     - :sparkles: March 1: New scheduler settings to address high job per user count.
     - :warning: February 14: Limiting allocateable memory per user.
     - :book: February 3: Adding Ganglia documentation.
     - :adhesive_bandage: February 3: Ganglia monitoring of GPFS and NVIDIA GPU metrics.
     - :warning: January 31: Enforcing usage of `localtmp` resource above 100MB of node-local storage.
-    - :sparkles: January 29: Reduced oversubscription, quotas on `/tmp` on the login nodes.
-    - :sparkles: January 6: Oversubscribing physical cores to improve throughput.
-    - :sparkles: December 27: Temporary File Handling Improvements
-    - :sparkles: December 23-24: Cluster OS Upgrade
-    - :sparkles: December 21-22: GPFS Upgrade
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 

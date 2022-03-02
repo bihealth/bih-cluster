@@ -3,4 +3,4 @@ default: serve
 
 .PHONY: serve
 serve:
-	mkdocs serve -a 0.0.0.0:8000
+	mkdocs serve -a 127.0.0.1:8000

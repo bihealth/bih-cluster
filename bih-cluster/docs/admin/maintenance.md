@@ -8,6 +8,30 @@ All COMPUTE nodes and STORAGE resources won't be reachable!
   
 > All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".
 
+
+## DRMAA Deprecation, March 2, 2022
+
+- The usage of DRMAA on the HPC is deprecated.
+- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../snakemake/#snakemake-and-slurm).
+- We will support DRMAA at least until June 31, 2022 but ask all users to migrate away from it as soon as possible.
+- Background:
+    - With DRMAA, the status of each job is queried for using `scontrol show job JOBID` and `sacct -j JOBID`.
+    - This leads to regular remote procedure calls (RPC) to the slurm control daemon.
+    - It leads to **a lot of such calls**.
+    - It leads to so many calls that it prevents the scheduler from working correctly and leads to service degradation for all users.
+- Using Snakemake profiles is easy.
+    - Call Snakemake with `snakemake --profile=cubi-v1` instead of `snakemake --drmaa "..."`.
+    - In your rules, specify threads, running time and memory as:
+      ```
+      rule myrule:
+        # ...
+        threads: 8
+        resources:
+          time="12:00:00",
+          memory="8G",
+        # ...
+      ```
+
 ## Cluster Setting Tuning, March 1, 2022
 
 - We have adjusted the scheduler settings to address high number of jobs by users:
