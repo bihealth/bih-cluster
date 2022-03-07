@@ -32,7 +32,7 @@ The cluster consists of the following major components:
 - 2 login nodes for users `hpc-login-1` and `hpc-login-2` (for interactive sessions only),
 - 2 nodes for file transfers `hpc-transfer-1` and `hpc-transfer-2`,
 - a scheduling system using Slurm,
-- approximately 200 general purpose compute nodes `med01XX`, `med02XX`, `med05XX`, `med06XX`, `med07XX`.
+- 228 general purpose compute nodes `hpc-cpu-{1..228}
 - a few high memory nodes `hpc-mem-{1..4}`,
 - 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}`,
 - a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
