@@ -45,6 +45,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 !!! attention "Current and Future Maintenances"
 
+    - :nerd: March 9: [Updated TensorFlow How-To to Slurm and Tensorflow 2.0](how-to/software/tensorflow/)
     - :warning: March 22-23: Compute and Storage Downtime.
     - :warning: March: Deprecation of using DRMAA.
     - :sparkles: March 1: New scheduler settings to address high job per user count.
