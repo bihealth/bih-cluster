@@ -1705,7 +1705,14 @@
       
         <li class="md-nav__item">
   <a href="#run-tensorflow-example" class="md-nav__link">
-    Run TensorFlow example
+    Run TensorFlow Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-tensorflow-slurm-jobs" class="md-nav__link">
+    Writing TensorFlow Slurm Jobs
   </a>
   
 </li>
@@ -1959,7 +1966,14 @@
       
         <li class="md-nav__item">
   <a href="#run-tensorflow-example" class="md-nav__link">
-    Run TensorFlow example
+    Run TensorFlow Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-tensorflow-slurm-jobs" class="md-nav__link">
+    Writing TensorFlow Slurm Jobs
   </a>
   
 </li>
@@ -1985,68 +1999,163 @@
                 
                 
                 <h1 id="how-to-setup-tensorflow">How-To: Setup TensorFlow<a class="headerlink" href="#how-to-setup-tensorflow" title="Permanent link">&para;</a></h1>
-<div class="admonition todo">
-<p class="admonition-title">Not yet updated to Slurm</p>
-<p>TODO: This still needs to be updated to Slurm.</p>
-</div>
 <p>TensorFlow is a package for deep learning with optional support for GPUs.
-You can find the original TensorFlow installation instructions <a href="https://www.tensorflow.org/versions/r1.3/get_started/os_setup.html#download-and-setup">here</a>.</p>
+You can find the original TensorFlow installation instructions <a href="https://www.tensorflow.org/install">here</a>.</p>
 <p>This article describes how to set up TensorFlow with GPU support using Conda.
-This how-to assumes that you have just connected to a GPU node via <code>qrsh -P gpu -l gpu=1</code> (with <code>-P gpu</code>, the <code>gpu</code> SGE project gives you access to the GPU node and <code>-l gpu=1</code> reserves the GPU resource) .</p>
-<p>At the time of writing, Tensorflow was available with GPU support from conda in version 1.2.</p>
-<p><img alt="🖊" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f58a.svg" title=":lower_left_ballpoint_pen:" /> You're welcome to update this (and any other) wiki page with new information.
-This is the only way to keep the Wiki up to date.</p>
+This how-to assumes that you have just connected to a GPU node via <code>srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i</code>.
+Note that you will need to allocate "enough" memory, otherwise your python session will be <code>Killed</code> because of too little memory.
+You should read the <a href="../../how-to/connect/gpu-nodes/">How-To: Connect to GPU Nodes</a> tutorial on an explanation of how to do this and to learn how to register for GPU usage.</p>
 <p>This tutorial assumes, that conda has been set up as described in [Software Management]((../../best-practice/software-installation-with-conda.md).</p>
 <h2 id="create-conda-environment">Create conda environment<a class="headerlink" href="#create-conda-environment" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ conda create -n cuda python=3.6
-$ source activate cuda
-$ conda install tensorflow-gpu==1.12.0
+<p>We recommend that you install mamba first with <code>conda install -y mamba</code> and use this C++ reimplementation of the <code>conda command</code> as follows.</p>
+<div class="highlight"><pre><span></span><code>$ conda create -y -n python-tf tensorflow-gpu
+$ conda activate python-tf
 </code></pre></div>
 
-<h2 id="run-tensorflow-example">Run TensorFlow example<a class="headerlink" href="#run-tensorflow-example" title="Permanent link">&para;</a></h2>
-<p>We now trying to run the example from the TensorFlow documentation.</p>
-<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> Note that the two <code>export</code> lines are important. <img alt="❗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2757.svg" title=":exclamation:" /></p>
-<div class="highlight"><pre><span></span><code>## these two lines are important
-$ export CUDA_HOME=$(dirname $(dirname $(which python)))
-$ export LD_LIBRARY_PATH=$CUDA_HOME/lib:$LD_LIBRARY_PATH
+<p>Let us verify that we have Python and TensorFlow installed.
+You might get different versions you could pin the version on installing with `conda create -y -n python-tf python==3.9.10 tensorflow-gpu==2.6.2</p>
+<div class="highlight"><pre><span></span><code>$ python --version
+Python 3.9.10
+$ python -c &#39;import tensorflow; print(tensorflow.__version__)&#39;
+2.6.2
+</code></pre></div>
 
-$ python
+<p>We thus end up with an installation of Python 3.9.10 with tensorflow 2.6.2.</p>
+<h2 id="run-tensorflow-example">Run TensorFlow Example<a class="headerlink" href="#run-tensorflow-example" title="Permanent link">&para;</a></h2>
+<p>Let us now see whether TensorFlow has recognized our GPU correctly.</p>
+<div class="highlight"><pre><span></span><code>$ python
 &gt;&gt;&gt; import tensorflow as tf
-&gt;&gt;&gt; hello = tf.constant(&#39;Hello, TensorFlow!&#39;)
-&gt;&gt;&gt; sess = tf.Session()
-2017-09-19 18:07:40.571996: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
-2017-09-19 18:07:40.572090: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
-2017-09-19 18:07:40.572129: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn&#39;t compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
-2017-09-19 18:07:43.742453: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 0 with properties:
-name: Tesla K20Xm
-major: 3 minor: 5 memoryClockRate (GHz) 0.732
-pciBusID 0000:04:00.0
-Total memory: 5.57GiB
-Free memory: 5.50GiB
-2017-09-19 18:07:43.983863: W tensorflow/stream_executor/cuda/cuda_driver.cc:523] A non-primary context 0x3b11f70 exists before initializing the StreamExecutor. We haven&#39;t verified StreamExecutor works with that.
-2017-09-19 18:07:43.985238: I tensorflow/core/common_runtime/gpu/gpu_device.cc:940] Found device 1 with properties:
-name: Tesla K20Xm
-major: 3 minor: 5 memoryClockRate (GHz) 0.732
-pciBusID 0000:42:00.0
-Total memory: 5.57GiB
-Free memory: 5.50GiB
-2017-09-19 18:07:43.985403: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 0 and 1
-2017-09-19 18:07:43.985440: I tensorflow/core/common_runtime/gpu/gpu_device.cc:832] Peer access not supported between device ordinals 1 and 0
-2017-09-19 18:07:43.985498: I tensorflow/core/common_runtime/gpu/gpu_device.cc:961] DMA: 0 1
-2017-09-19 18:07:43.985517: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 0:   Y N
-2017-09-19 18:07:43.985533: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971] 1:   N Y
-2017-09-19 18:07:43.985657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:0) -&gt; (device: 0, name: Tesla K20Xm, pci bus id: 0000:04:00.0)
-2017-09-19 18:07:43.985683: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Creating TensorFlow device (/gpu:1) -&gt; (device: 1, name: Tesla K20Xm, pci bus id: 0000:42:00.0)
-&gt;&gt;&gt; print(sess.run(hello))
-b&#39;Hello, TensorFlow!&#39;
-&gt;&gt;&gt; a = tf.constant(10)
-&gt;&gt;&gt; b = tf.constant(32)
-&gt;&gt;&gt; print(sess.run(a + b))
-42
+&gt;&gt;&gt; print(&quot;TensorFlow version:&quot;, tf.__version__)
+TensorFlow version: 2.6.2
+&gt;&gt;&gt; print(tf.config.list_physical_devices())
+[PhysicalDevice(name=&#39;/physical_device:CPU:0&#39;, device_type=&#39;CPU&#39;), PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;)]
+</code></pre></div>
+
+<p>Yay, we can proceed to run the <a href="https://www.tensorflow.org/tutorials/quickstart/beginner">Quickstart Tutorial</a>.</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; mnist = tf.keras.datasets.mnist
+&gt;&gt;&gt; (x_train, y_train), (x_test, y_test) = mnist.load_data()
+&gt;&gt;&gt; x_train, x_test = x_train / 255.0, x_test / 255.0
+&gt;&gt;&gt; model = tf.keras.models.Sequential([
+...   tf.keras.layers.Flatten(input_shape=(28, 28)),
+...   tf.keras.layers.Dense(128, activation=&#39;relu&#39;),
+...   tf.keras.layers.Dropout(0.2),
+...   tf.keras.layers.Dense(10)
+... ])
+&gt;&gt;&gt; predictions = model(x_train[:1]).numpy()
+&gt;&gt;&gt; predictions
+array([[-0.50569224,  0.26386747,  0.43226188,  0.61226094,  0.09630793,
+         0.34400576,  0.9819117 , -0.3693726 ,  0.5221357 ,  0.3323232 ]],
+      dtype=float32)
+&gt;&gt;&gt; tf.nn.softmax(predictions).numpy()
+array([[0.04234391, 0.09141268, 0.10817807, 0.12951255, 0.07731011,
+        0.09903987, 0.18743432, 0.04852816, 0.11835073, 0.09788957]],
+      dtype=float32)
+&gt;&gt;&gt; loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+&gt;&gt;&gt; loss_fn(y_train[:1], predictions).numpy()
+2.3122327
+&gt;&gt;&gt; model.compile(optimizer=&#39;adam&#39;,
+...               loss=loss_fn,
+...               metrics=[&#39;accuracy&#39;])
+&gt;&gt;&gt; model.fit(x_train, y_train, epochs=5)
+2022-03-09 17:53:47.237997: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+Epoch 1/5
+1875/1875 [==============================] - 3s 1ms/step - loss: 0.2918 - accuracy: 0.9151
+Epoch 2/5
+1875/1875 [==============================] - 3s 1ms/step - loss: 0.1444 - accuracy: 0.9561
+Epoch 3/5
+1875/1875 [==============================] - 3s 1ms/step - loss: 0.1082 - accuracy: 0.9674
+Epoch 4/5
+1875/1875 [==============================] - 3s 1ms/step - loss: 0.0898 - accuracy: 0.9720
+Epoch 5/5
+1875/1875 [==============================] - 3s 1ms/step - loss: 0.0773 - accuracy: 0.9756
+&lt;keras.callbacks.History object at 0x154e81360190&gt;
+&gt;&gt;&gt; model.evaluate(x_test,  y_test, verbose=2)
+313/313 - 0s - loss: 0.0713 - accuracy: 0.9785
+[0.0713074803352356, 0.9785000085830688]
+&gt;&gt;&gt; probability_model = tf.keras.Sequential([
+...   model,
+...   tf.keras.layers.Softmax()
+... ])
+&gt;&gt;&gt; probability_model(x_test[:5])
+&lt;tf.Tensor: shape=(5, 10), dtype=float32, numpy=
+array([[1.2339272e-06, 6.5599060e-10, 1.0560590e-06, 5.9356184e-06,
+        5.3691075e-12, 1.4447859e-07, 5.4218874e-13, 9.9996936e-01,
+        1.0347234e-07, 2.2147648e-05],
+       [2.9887938e-06, 6.8461006e-05, 9.9991941e-01, 7.2003731e-06,
+        2.9751782e-13, 8.2818183e-08, 1.4307782e-06, 2.3203837e-13,
+        4.7433215e-07, 2.9504194e-14],
+       [1.8058477e-06, 9.9928612e-01, 7.8716243e-05, 3.9140195e-06,
+        3.0842333e-05, 9.4537208e-06, 2.2774333e-05, 4.5549971e-04,
+        1.1015874e-04, 6.9138093e-07],
+       [9.9978787e-01, 3.0206781e-08, 2.8528208e-05, 8.5581682e-08,
+        1.3851340e-07, 2.3634559e-06, 1.8480707e-05, 1.0153375e-04,
+        1.1583331e-07, 6.0887167e-05],
+       [6.4914235e-07, 2.5808356e-08, 1.8225538e-06, 2.3215563e-09,
+        9.9588013e-01, 4.6049720e-08, 3.8903639e-07, 2.9772724e-05,
+        4.3141077e-07, 4.0867776e-03]], dtype=float32)&gt;
 &gt;&gt;&gt; exit()
 </code></pre></div>
 
-<p>Check that you get the lines metioning <code>Tesla K20Xm</code> and the two lines mentioning <code>gpu:0</code> and <code>gpu:1</code>.</p>
+<h2 id="writing-tensorflow-slurm-jobs">Writing TensorFlow Slurm Jobs<a class="headerlink" href="#writing-tensorflow-slurm-jobs" title="Permanent link">&para;</a></h2>
+<p>Writing Slurm jobs using TensorFlow is as easy as creating the following scripts.</p>
+<p><code>tf_script.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">#/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow version:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">())</span>
+
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
+
+<span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">/</span> <span class="mf">255.0</span>
+
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)),</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+  <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x_train</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+
+<span class="c1"># ... and so on ;-)</span>
+</code></pre></div>
+
+<p><code>tf_job.sh</code></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=tf-job</span>
+<span class="c1">#SBATCH --mem=10g</span>
+<span class="c1">#SBATCH --partition=gpu</span>
+<span class="c1">#SBATCH --gres=gpu:tesla:1</span>
+
+<span class="nb">source</span> <span class="nv">$HOME</span>/work/miniconda3/bin/activate
+conda activate python-tf
+
+python tf_script.py <span class="p">&amp;</span>&gt;tf-out.txt
+</code></pre></div>
+
+<p>And then calling</p>
+<div class="highlight"><pre><span></span><code>$ sbatch tf_job.sh
+</code></pre></div>
+
+<p>You can find the reuslts in <code>tf-out.txt</code> after completion.</p>
+<div class="highlight"><pre><span></span><code>$ cat tf-out.txt 
+2022-03-09 18:05:54.628846: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-03-09 18:05:56.999848: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1510] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 30988 MB memory:  -&gt; device: 0, name: Tesla V100-SXM2-32GB, pci bus id: 0000:18:00.0, compute capability: 7.0
+TensorFlow version: 2.6.2
+[PhysicalDevice(name=&#39;/physical_device:CPU:0&#39;, device_type=&#39;CPU&#39;), PhysicalDevice(name=&#39;/physical_device:GPU:0&#39;, device_type=&#39;GPU&#39;)]
+[[-0.07757086  0.04676083  0.9420195  -0.59902835 -0.26286742 -0.392514
+   0.3231195  -0.17169198  0.3480805   0.37013203]]
+[[0.07963609 0.09017922 0.22075593 0.04727634 0.06616627 0.05812084
+  0.11888511 0.07248258 0.12188996 0.12460768]]
+</code></pre></div>
                 
                   
                     
@@ -2055,7 +2164,7 @@ b&#39;Hello, TensorFlow!&#39;
 <div class="md-source-date">
   <small>
     
-      Last update: March 7, 2022
+      Last update: March 9, 2022
     
   </small>
 </div>
