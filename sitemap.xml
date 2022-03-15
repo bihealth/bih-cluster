@@ -1,363 +1,367 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://bihealth.github.io/bih-cluster/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/admin/getting-access/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/admin/resource-registration/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/admin/maintenance/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/admin/provided-software/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/admin/policies/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/help/self-help-teams/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/help/helpdesk/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/help/good-tickets/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/help/faq/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/overview/for-the-impatient/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/overview/architecture/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/overview/job-scheduler/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/overview/storage/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/overview/monitoring/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/generate-key/linux/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/generate-key/windows/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/submit-key/charite/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/submit-key/mdc/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/configure-ssh/prerequisites/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/configure-ssh/linux/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/configure-ssh/windows/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/configure-ssh/connection-problems/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/from-external/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/connecting/ssh-client-windows/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/first-steps/episode-0/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/first-steps/episode-1/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/first-steps/episode-2/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/first-steps/episode-3/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/first-steps/episode-4/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/storage/accessing-snapshots/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/storage/querying-storage/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/storage/storage-locations/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/storage/scratch-cleanup/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/overview/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/background/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/quickstart/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/temporary-files/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/cheat-sheet/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/job-scripts/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/memory-allocation/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/reservations/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-srun/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-sbatch/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-sattach/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-scancel/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-sinfo/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-squeue/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-scontrol/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/commands-sacct/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/format-strings/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/snakemake/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/x11/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/slurm/rosetta-stone/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/ondemand/overview/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/ondemand/interactive/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/ondemand/quotas/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/project-structure/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/software-craftmanship/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/screen-tmux/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/bashrc-guide/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/temp-files/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/env-modules/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/best-practice/software-installation-with-conda/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/annotations/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/app-support/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/databases/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/exomes-panels/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/exon-lists/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/index-files/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/cubit/references/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/connect/high-memory/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/connect/gpu-nodes/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/openmpi/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/scientific-software/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/cell-ranger/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/jupyter/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/keras/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/matlab/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/tensorflow/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/software/singularity/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/service/file-exchange/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://bihealth.github.io/bih-cluster/how-to/misc/hpc-talk/</loc>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/misc/debug-software/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/misc/debug-at-hpc/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/how-to/misc/contribute/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/misc/publication-list/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/misc/external-resources/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/misc/tips/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://bihealth.github.io/bih-cluster/misc/ssh-basics/</loc>
-     <lastmod>2022-03-09</lastmod>
+     <lastmod>2022-03-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
