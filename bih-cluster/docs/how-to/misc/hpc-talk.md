@@ -49,6 +49,16 @@ You will be directed to the page with your new topic.
 
 You can enable email notifications to receive emails if someone answers.
 
+## Disabling Browser Notifications
+
+In your settings, you will find an option to disable browser notifications in this browser.
+
+![](figures/discourse-disable-notifications.png){: style="width: 50%;" .center}
+
+Or you can use the do not disturb button.
+
+![](figures/discourse-dnd.png){: style="width: 50%;" .center}
+
 ## Closing Remarks
 
 We established the HPC Talk forum as a self-help forum for users.
@@ -66,3 +76,4 @@ For example:
 - [Cross Validated](https://stats.stackexchange.com/) for questions regading statistics
 - [Unix & Linux Stack Exchange](https://unix.stackexchange.com/) for discussing all sorts of Linux/Unix questions
 - [Super User](https://superuser.com/) for certain more advanced Unix topics
+
