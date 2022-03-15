@@ -15,7 +15,7 @@ copyright: 2016-2022, BIH HPC IT
 # Theming, Configuration
 theme:
   name: material
-strict: true
+# strict: true
 extra_css:
   - css/extra.css
 
@@ -168,6 +168,7 @@ nav:
     - "Service":
       - "File Exchange": how-to/service/file-exchange.md
     - "Miscellaneous":
+      - "Access HPC Talk": how-to/misc/hpc-talk.md
       - "Debug Software": how-to/misc/debug-software.md
       - "Debug @HPC": how-to/misc/debug-at-hpc.md
       - "Contribute to Docs": how-to/misc/contribute.md
