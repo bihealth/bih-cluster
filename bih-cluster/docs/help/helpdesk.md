@@ -10,6 +10,8 @@ Please also use the handy figure below on general problem resolution.
 
 ![](figures/help-workflow.png){: .center}
 
+You can also try to get help in the [HPC Talk](../how-to/misc/hpc-talk.md) BIH HPC user self-help forum!
+
 ## Helpdesk Scope
 
 Our helpdesk can support you in the following areas:

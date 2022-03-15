@@ -15,7 +15,7 @@ copyright: 2016-2022, BIH HPC IT
 # Theming, Configuration
 theme:
   name: material
-# strict: true
+strict: true
 extra_css:
   - css/extra.css
 
@@ -74,7 +74,6 @@ nav:
     - "Provided Software": admin/provided-software.md
     - "Policies": admin/policies.md
   - "Getting Help":
-    - "User Self-Help": help/self-help-teams.md
     - "HPC Helpdesk": help/helpdesk.md
     - "Good Tickets": help/good-tickets.md
     - "Frequently Asked Questions": help/faq.md
