@@ -23,6 +23,8 @@ Issues of today's maintenance:
 - **All running jobs will die**
 - **All sessions on login nodes will die**
 
+[Progress Thread on hpc-talk](https://hpc-talk.cubi.bihealth.org/t/maintenance-2022-03-22-progress-thread/90)
+
 ## DRMAA Deprecation, March 2, 2022
 
 - The usage of DRMAA on the HPC is deprecated.
