@@ -2325,6 +2325,23 @@
 <blockquote>
 <p>All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".</p>
 </blockquote>
+<p>Issues of today's maintenance:</p>
+<ul>
+<li>Mounting of storage to <code>/tmp</code> on login nodes</li>
+<li>Changing mount options of the root partition on the compute nodes</li>
+<li>Upgrading all nodes kernels and further packages<ul>
+<li>This implies an upgrade of CUDA, Singularity, and further packages</li>
+</ul>
+</li>
+<li>Cold reboot ("power off, power on") of storage system</li>
+<li>Exchanging <code>cephfs-2</code> switches (Tier 2 storage, not relevant for most users)</li>
+</ul>
+<p><strong>IMPORTANT</strong></p>
+<ul>
+<li><strong>All nodes will reboot</strong></li>
+<li><strong>All running jobs will die</strong></li>
+<li><strong>All sessions on login nodes will die</strong></li>
+</ul>
 <h2 id="drmaa-deprecation-march-2-2022">DRMAA Deprecation, March 2, 2022<a class="headerlink" href="#drmaa-deprecation-march-2-2022" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The usage of DRMAA on the HPC is deprecated.</li>
@@ -2725,7 +2742,7 @@ you encounter any unexpected behavior of the cluster during this time, please le
 <div class="md-source-date">
   <small>
     
-      Last update: March 15, 2022
+      Last update: March 22, 2022
     
   </small>
 </div>
