@@ -28,7 +28,7 @@ Issues of today's maintenance:
 ## DRMAA Deprecation, March 2, 2022
 
 - The usage of DRMAA on the HPC is deprecated.
-- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../snakemake/#snakemake-and-slurm).
+- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../../slurm/snakemake/#snakemake-and-slurm).
 - We will support DRMAA at least until June 30, 2022 but ask all users to migrate away from it as soon as possible.
 - Background:
     - With DRMAA, the status of each job is queried for using `scontrol show job JOBID` and `sacct -j JOBID`.
