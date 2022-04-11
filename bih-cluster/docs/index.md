@@ -29,7 +29,7 @@ This documentation is maintained by BIH CUBI, and the user community.
 To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.
 
 1. [Getting Access](admin/getting-access).
-2. [Getting Help](help/helpdesk) (and [Writing Good Tickets](help/good-tickets)).
+2. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
 3. [For the Impatient](overview/for-the-impatient).
 4. [The Cluster Tutorial: First Steps](first-steps/episode-0).
 
