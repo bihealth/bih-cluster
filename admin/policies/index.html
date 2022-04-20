@@ -2111,6 +2111,8 @@ Larger changes will be announced through the mailing list.</p>
 <li><strong>Do not perform any computation on the login nodes.</strong>
    This includes: running <code>conda</code>, archive management tools such as <code>tar</code>, <code>(un)zip</code>, or <code>gzip</code>.
    You should probably only run <code>screen</code>/<code>tmux</code> and maybe a text editor there.</li>
+<li><strong>Do not perform file transfers through the login nodes.</strong>
+   Rather use the transfer nodes <code>hpc-transfer-1</code> and <code>hpc-transfer-2</code>.</li>
 </ol>
 <h2 id="cluster-policies">Cluster Policies<a class="headerlink" href="#cluster-policies" title="Permanent link">&para;</a></h2>
 <h3 id="file-system-policies">File System Policies<a class="headerlink" href="#file-system-policies" title="Permanent link">&para;</a></h3>
@@ -2210,7 +2212,7 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
 <div class="md-source-date">
   <small>
     
-      Last update: April 11, 2022
+      Last update: April 20, 2022
     
   </small>
 </div>
