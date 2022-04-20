@@ -23,6 +23,8 @@ Larger changes will be announced through the mailing list.
 6. **Do not perform any computation on the login nodes.**
    This includes: running `conda`, archive management tools such as `tar`, `(un)zip`, or `gzip`.
    You should probably only run `screen`/`tmux` and maybe a text editor there.
+7. **Do not perform file transfers through the login nodes.**
+   Rather use the transfer nodes `hpc-transfer-1` and `hpc-transfer-2`.
 
 ## Cluster Policies
 
