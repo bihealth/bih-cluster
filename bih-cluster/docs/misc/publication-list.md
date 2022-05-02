@@ -8,6 +8,11 @@ It has been used to support the publications listed below.
 
 ## Articles & Preprints
 
+### 2022
+
+Kossen T, Hirzel MA, Madai VI, Boenisch F, Hennemuth A, Hildebrand K, Pokutta S, Sharma K, Hilbert A, Sobesky J, Galinovic I, Khalil AA, Fiebach JB and Frey D. Toward Sharing Brain Images: Differentially Private TOF-MRA Images With Segmentation Labels Using Generative Adversarial Networks. *Frontiers in
+Artificial Intelligence*. 5 (2022). issn: 2624-8212. [doi: 10.3389/frai.2022.813842](https://doi.org/10.3389/frai.2022.813842)
+
 ### 2021
 
 Li, N., Hollunder, B., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Al-Fatly, B., Strange, B. A., Barcia, J. A., Zrinzo, L., Joyce, E. M., Chabardes, S., Visser-Vandewalle, V., Polosan, M., Kuhn, J., Kühn, A. A., & Horn, A. (2021). A Unified Functional Network Target for Deep Brain Stimulation in Obsessive-Compulsive Disorder. Biological Psychiatry. [doi: 10.1016/j.biopsych.2021.04.006](https://doi.org/10.1016/j.biopsych.2021.04.006)
