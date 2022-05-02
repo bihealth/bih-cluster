@@ -113,9 +113,3 @@ Here is how to call Snakemake:
 ```bash
 # snakemake --profile=cubi-v1 -j1
 ```
-
-Note that right now you will need an unreleased version of Snakemake v7:
-
-```bash
-# pip install git+https://github.com/snakemake/snakemake.git@6d19f7e5585d9e9ee93c66222b7883ef09c1bc1d
-```
