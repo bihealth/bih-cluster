@@ -68,7 +68,7 @@ Next, start `lftp`.
 You can open the connection using `open -u <user>@<DOMAIN> https://file-exchange.bihealth.org/<file-box-id>/` (NB: there is a trailing slash) where
 
 - `<user>` is your user name, e.g., `holtgrem`,
-- `<domain>` is either `MDC` or `CHARITE`, and
+- `<domain>` is either `MDC-BERLIN` or `CHARITE`, and
 - `<file-box-id>` the file box ID from the URL provided to you.
 
 When prompted, use your normal Charite/MDC password to login.
