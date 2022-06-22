@@ -113,3 +113,5 @@ Here is how to call Snakemake:
 ```bash
 # snakemake --profile=cubi-v1 -j1
 ```
+
+Note that you might need a current Snakemake version that supports the `--profile` parameter.
