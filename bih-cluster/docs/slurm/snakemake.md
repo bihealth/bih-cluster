@@ -78,7 +78,13 @@ The `cubi-v1` profile (stored in `/etc/xdg/snakemake/cubi-v1` on all cluster nod
 
 You will need Snakemake >=7.0.2 for this.
 
-So for example:
+Here is how to call Snakemake:
+
+```bash
+# snakemake --profile=cubi-v1 -j1
+```
+
+To set rule-specific resources:
 
 ```python
 rule myrule:
@@ -108,10 +114,30 @@ rule snps:
     shell: # ...
 ```
 
-Here is how to call Snakemake:
+## Custom logging directory
+
+By default, slurm will write log files into the working directory of snakemake, which will look like `slurm-$jobid.out`.
+
+To change this behaviour, the environment variable `SBATCH_DEFAULTS` can be set to re-route the `--output` parameter. If you want to write your files into `slurm_logs` with a filename pattern of `$name-$jobid` for instance, consider the following snippet for your submission script:
 
 ```bash
-# snakemake --profile=cubi-v1 -j1
+#!/bin/bash
+#
+#SBATCH --job-name=snakemake_main_job
+#SBATCH --ntasks=1
+#SBATCH --nodes=1
+#SBATCH --time=48:10:00
+#SBATCH --mem-per-cpu=300M
+#SBATCH --output=slurm_logs/%x-%j.log
+
+mkdir -p slurm_logs
+export SBATCH_DEFAULTS=" --output=slurm_logs/%x-%j.log"
+
+date
+srun snakemake --use-conda -j1 --profile=cubi-v1
+date
+
 ```
 
-Note that you might need a current Snakemake version that supports the `--profile` parameter.
+The name of the snakemake slurm job will be `snakemake_main_job`, the name of the jobs spawned from it will be called after the rule name in the Snakefile.
+
