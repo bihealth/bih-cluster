@@ -325,6 +325,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../help/hpc-talk/" title="HPC Talk Forum" class="md-nav__link">
+      HPC Talk Forum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../help/helpdesk/" title="HPC Helpdesk" class="md-nav__link">
       HPC Helpdesk
     </a>
@@ -1194,6 +1206,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-logging-directory" class="md-nav__link">
+    Custom logging directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2004,6 +2023,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#custom-logging-directory" class="md-nav__link">
+    Custom logging directory
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2093,7 +2119,11 @@ host:snake-slurm$ rm the-result.txt
 <li><code>resources.nodes</code>: the number of nodes to schedule your job on (defaults to <code>1</code> and you will want to keep that value unless you want to use MPI)</li>
 </ul>
 <p>You will need Snakemake &gt;=7.0.2 for this.</p>
-<p>So for example:</p>
+<p>Here is how to call Snakemake:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># snakemake --profile=cubi-v1 -j1</span>
+</code></pre></div>
+
+<p>To set rule-specific resources:</p>
 <div class="highlight"><pre><span></span><code><span class="n">rule</span> <span class="n">myrule</span><span class="p">:</span>
     <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
     <span class="n">resources</span><span class="p">:</span>
@@ -2119,11 +2149,27 @@ host:snake-slurm$ rm the-result.txt
     <span class="n">shell</span><span class="p">:</span> <span class="c1"># ...</span>
 </code></pre></div>
 
-<p>Here is how to call Snakemake:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># snakemake --profile=cubi-v1 -j1</span>
+<h2 id="custom-logging-directory">Custom logging directory<a class="headerlink" href="#custom-logging-directory" title="Permanent link">&para;</a></h2>
+<p>By default, slurm will write log files into the working directory of snakemake, which will look like <code>slurm-$jobid.out</code>.</p>
+<p>To change this behaviour, the environment variable <code>SBATCH_DEFAULTS</code> can be set to re-route the <code>--output</code> parameter. If you want to write your files into <code>slurm_logs</code> with a filename pattern of <code>$name-$jobid</code> for instance, consider the following snippet for your submission script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#</span>
+<span class="c1">#SBATCH --job-name=snakemake_main_job</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --nodes=1</span>
+<span class="c1">#SBATCH --time=48:10:00</span>
+<span class="c1">#SBATCH --mem-per-cpu=300M</span>
+<span class="c1">#SBATCH --output=slurm_logs/%x-%j.log</span>
+
+mkdir -p slurm_logs
+<span class="nb">export</span> <span class="nv">SBATCH_DEFAULTS</span><span class="o">=</span><span class="s2">&quot; --output=slurm_logs/%x-%j.log&quot;</span>
+
+date
+srun snakemake --use-conda -j1 --profile<span class="o">=</span>cubi-v1
+date
 </code></pre></div>
 
-<p>Note that you might need a current Snakemake version that supports the <code>--profile</code> parameter.</p>
+<p>The name of the snakemake slurm job will be <code>snakemake_main_job</code>, the name of the jobs spawned from it will be called after the rule name in the Snakefile.</p>
                 
                   
                     
