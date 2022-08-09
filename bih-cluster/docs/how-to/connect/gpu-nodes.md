@@ -1,6 +1,6 @@
 # How-To: Connect to GPU Nodes
 
-The cluster has four nodes with seven Tesla V100 GPUs each: `hpc-gpu-{1..7}`.
+The cluster has seven nodes with four Tesla V100 GPUs each: `hpc-gpu-{1..7}`.
 
 Connecting to a node with GPUs is easy.
 You simply request a GPU using the `--gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
