@@ -2053,7 +2053,7 @@
                 
                 
                 <h1 id="how-to-connect-to-gpu-nodes">How-To: Connect to GPU Nodes<a class="headerlink" href="#how-to-connect-to-gpu-nodes" title="Permanent link">&para;</a></h1>
-<p>The cluster has four nodes with seven Tesla V100 GPUs each: <code>hpc-gpu-{1..7}</code>.</p>
+<p>The cluster has seven nodes with four Tesla V100 GPUs each: <code>hpc-gpu-{1..7}</code>.</p>
 <p>Connecting to a node with GPUs is easy.
 You simply request a GPU using the <code>--gres=gpu:tesla:COUNT</code> argument to <code>srun</code> and <code>batch</code>.
 This will automatically place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
@@ -2189,7 +2189,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
 <div class="md-source-date">
   <small>
     
-      Last update: August 5, 2022
+      Last update: August 9, 2022
     
   </small>
 </div>
