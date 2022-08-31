@@ -7,8 +7,8 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## Where can I get help?
 
-- First, contact [bih-cluster@charite.de](mailto:bih-cluster@charite.de) with your question.
-  Here, administrators, CUBI, and other users alike are subscribed and can answer your question.
+- First, have a look at our forums at [HPC-talk](https://hpc-talk.cubi.bihealth.org/) to see if someone already solved the same problem.
+  If not, create a new topic. Administrators, CUBI, and other users can see and answer your question.
 - For problems while connecting and logging in, please contact [helpdesk@mdc-berlin.de](mailto:helpdesk@mdc-berlin.de) or [helpdesk@charite.de](mailto:helpdesk@charite.de).
 - For problems with BIH HPC please contact [hpc-helpdesk@bihealth.de].
 
@@ -545,7 +545,7 @@ srun: error: hpc-cpu-2: task 0: Exited with exit code 2
 
 Can you spot the problem?
 In this case, the problem is that for long arguments such as `--mem` you **must use the equal sign for `--arg=value`** with Slurm.
-This means taht instead of writing `--mem 96G --partition staging --immediate 5`, you must use ``--mem=96G --partition=staging --immediate=5`.
+This means that instead of writing `--mem 96G --partition staging --immediate 5`, you must use ``--mem=96G --partition=staging --immediate=5`.
 
 In this respect, Slurm deviates from the [GNU argument syntax](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html) where the equal sign is optional for long arguments.
 

@@ -17,7 +17,7 @@ Larger changes will be announced through the mailing list.
 3. All users must be subscribed to the cluster mailing list (they are subscribed automatically when the account is created).
 4. When leaving please send an email to hpc-helpdesk@bihealth.de such that we can shutdown your account in an organized fashion.
    We also need to arrange for cleaning up your data.
-5. The cluster mailing list bih-cluster@bihealth.de is the primary contact channel for administration to user.
+5. The cluster mailing list bih-cluster@bihealth.de is the primary contact channel for announcements by administration to users.
    Users must be subscribed to the mailing list.
    Users must follow the announcements, failure to do so can lead to missing important policy changes and thus losing access to the cluster or data.
 6. **Do not perform any computation on the login nodes.**

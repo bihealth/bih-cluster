@@ -4,13 +4,11 @@
     Our helpdesk can be reached via email to hpc-helpdesk@bihealth.de.
     Please read our guide on [how to write good tickets](good-tickets.md) first.
 
-Note that there also is the bih-cluster@charite.de email address that you can user for user discussions and getting support from other users (in particular for things out of scope for the helpdesk).
-
 Please also use the handy figure below on general problem resolution.
 
 ![](figures/help-workflow.png){: .center}
 
-You can also try to get help in the [HPC Talk](../how-to/misc/hpc-talk.md) BIH HPC user self-help forum!
+But before contacting the helpdesk, try to get help in the [HPC Talk](../how-to/misc/hpc-talk.md) BIH HPC user self-help forum!
 
 ## Helpdesk Scope
 
