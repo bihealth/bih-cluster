@@ -34,7 +34,7 @@ However, otherwise you will have to install them on their own.
 ## Downloading and Extracting Software
 
 This is best done in your `scratch` directory as we don't have to keep these files around for long.
-Note that the files in your `scratch` directory will automatically be removed after 4 weeks.
+Note that the files in your `scratch` directory will automatically be removed after 2 weeks.
 You can also use your `work` directory here.
 
 ```bash

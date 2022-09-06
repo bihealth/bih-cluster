@@ -34,7 +34,7 @@ This will install conda to `$HOME/work/miniconda`.
 This path can be changed to your liking.
 Please note that the `$HOME` folder has limited space (an exception is the subfolder `$HOME/work` which has no space limit).
 
-NB: `$HOME/scratch` is not appropriate as files placed there will be removed automatically after 4 weeks.
+NB: `$HOME/scratch` is not appropriate as files placed there will be removed automatically after 2 weeks.
 
 To make it available upon login, extend and export the `$PATH` variable with the
 installation path + `/bin` and add it to your `$HOME/.bashrc`:

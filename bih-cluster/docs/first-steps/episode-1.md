@@ -42,7 +42,7 @@ It would be good to have it in your `work` directory in `/fast/users/$USER`, bec
     - This limit does not apply to your work directory at `/fast/users/$USER/work`.
       The limits are much higher here but no snapshots or backups are available.
     - There is no limit on your scratch directory at `/fast/users/$USER/scratch`.
-      However, **files placed here are automatically removed after 4 weeks.**
+      However, **files placed here are automatically removed after 2 weeks.**
       This is only appropriate for files during download or temporary files.
 
 ## Creating a Directory for Temporary Files

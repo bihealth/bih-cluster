@@ -1,9 +1,11 @@
 # Home
 
-This is the documentation of the BIH high-performance compute (HPC).
-The BIH HPC cluster is maintained by CUBI (Core Unit Bionformatics).
+This is the documentation of the BIH high-performance compute (HPC), also called HPC 4 Research.
+The BIH HPC cluster is maintained by CUBI (Core Unit Bioinformatics).
 
-This documentation is maintained by BIH CUBI, and the user community.
+This documentation is maintained by BIH CUBI and the user community.
+This is a living document that you can update and add to.
+See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 :arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
 
@@ -34,8 +36,7 @@ To get started, the following is a suggested (in order) set of pages to read aft
 4. [The Cluster Tutorial: First Steps](first-steps/episode-0).
 
 Then, continue reading through the manual.
-This is a living document that you can update and add to.
-See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
+
 
 !!! cite "Acknowledging BIH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
@@ -45,6 +46,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 !!! attention "Current and Future Maintenances"
 
+    - :nerd: August 30: Replace defect Nvidia V100 and make hpc-gpu-4 available to slurm users again.
     - :nerd: March 9: [Updated TensorFlow How-To to Slurm and Tensorflow 2.0](how-to/software/tensorflow/)
     - :warning: March 22-23: Compute and Storage Downtime.
     - :warning: March: Deprecation of using DRMAA.

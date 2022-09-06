@@ -1,16 +1,11 @@
 # How-To: Connect to High-Memory Nodes
 
-!!! info "HPC 4 Research Only"
-
-    High memory nodes are available on the HPC 4 Research cluster only.
-    However, the HPC 4 Clinic cluster nodes have 350GB+ of RAM which is likely enough for many applications.
-
 ## Prequisites
 
 You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access.
 
 Afterwards, you can connect to the High-Memory using the `highmem` SLURM partition (see below).
-Jobs allocating more than 200GB of RAM will be routed automatically to the `highmem` nodes.
+Jobs allocating more than 200GB of RAM should be routed automatically to the `highmem` nodes.
 
 ## How-To
 

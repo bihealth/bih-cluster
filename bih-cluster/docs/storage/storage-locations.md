@@ -1,9 +1,5 @@
 # Storage and Volumes: Locations
 
-!!! info "HPC 4 Research Only"
-
-    The following information is only valid for HPC 4 Research.
-
 On the BIH HPC cluster, there are three kinds of entities: users, groups (*Arbeitsgruppen*), and projects.
 Each user, group, and project has a central folder for their files to be stored.
 
@@ -18,7 +14,7 @@ Each user, group, and project directory consists of three locations (using `/fas
   Note that there is no backup or snapshots going on.
 - `/fast/users/muster_c/scratch`:
   Here, you put your large temporary files that you will delete after a short time anyway.
-  **Data placed here will be automatically removed four weeks after creation.**
+  **Data placed here will be automatically removed 2 weeks after last modification.**
 - `/fast/users/muster_c` (and all other sub directories):
   Here you put your programs and scripts and very important small data.
   By default, you will have a soft quota of 1GB (hard quota of 1.5GB, 7 days grace period).
@@ -30,7 +26,7 @@ You can check your current usage using the command `bih-gpfs-report-quota user $
 
 First and foremost:
 
-- **DO NOT place any valuable data in `scratch` as it will be removed within 4 weeks.**
+- **DO NOT place any valuable data in `scratch` as it will be removed within 2 weeks.**
 
 Further:
 

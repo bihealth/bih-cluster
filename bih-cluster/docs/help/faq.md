@@ -7,7 +7,8 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## Where can I get help?
 
-- First, have a look at our forums at [HPC-talk](https://hpc-talk.cubi.bihealth.org/) to see if someone already solved the same problem.
+- Talk to your colleagues!
+- Have a look at our forums at [HPC-talk](https://hpc-talk.cubi.bihealth.org/) to see if someone already solved the same problem.
   If not, create a new topic. Administrators, CUBI, and other users can see and answer your question.
 - For problems while connecting and logging in, please contact [helpdesk@mdc-berlin.de](mailto:helpdesk@mdc-berlin.de) or [helpdesk@charite.de](mailto:helpdesk@charite.de).
 - For problems with BIH HPC please contact [hpc-helpdesk@bihealth.de].
@@ -24,17 +25,17 @@ Please see the section [Connection Problems](../connecting/configure-ssh/connect
 
 **Administrativa**
 
-- The BIH clusters are the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by BIH HPC IT.
+- The BIH HPC 4 Research cluster of the Berlin Institute of Health (BIH) is located in Buch and operated by BIH HPC IT.
   The cluster is open for users of both BIH/Charite and MDC.
 - The MAX cluster is the cluster of the Max Delbrueck Center (MDC) in Buch.
-  This cluster is used by the researchers at MDC and integrates a lot of infrastructure of the MDC.
+  This cluster is used by the researchers at MDC and integrates with a lot of infrastructure of the MDC.
 
 Request for both systems are handled separately, depending on the user's affiliation with research/service groups.
 
 **Hardware and Systems**
 
 - Both clusters consist of similar hardware for the compute nodes and both feature a DDN system at different number of nodes and different storage volume.
-- Both clusters run CentOS but at potentially different version.
+- Both clusters run CentOS/rocky but at potentially different version.
 - BIH HPC uses the Slurm workload manager whereas MAX uses Univa Grid Engine.
 - The BIH cluster has a significantly faster internal network (40GB/s optical).
 
@@ -585,12 +586,6 @@ Authentication currently only uses the SSH keys deposited into Charite (via zuga
 Users have to obtain a suitable Charite/MDC account via Charite and MDC central IT departments and upload their SSH keys through the host organization systems on their own.
 The hpc-gatekeeper process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special `hpc-users` group that controls access to the system and organizing users into work groups and projects.
 
-For HPC 4 Clinic, a Charite account is required (that is, you can login e.g., into email.charite.de).
-Such accounts map to an account of the same name of the HPC 4 Clinic system.
-Further, users have to be explicitely registered and setup for access to the system via the hpc-gatekeeper process as well as management of users into work groups and access to projects.
-This creates their users home/work/scratch shares and grants access for connecting to the system by becoming a member of the special `h4c-users` group.
-HPC 4 Clinic is directly connected to the Charite authentication and authorization systems and users can login with their password or SSH key uploaded to zugang.charite.de.
-
 The process of submitting keys to Charite and MDC is documented in the "Connecting" section.
 
 ## How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?
@@ -604,5 +599,3 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.
 
 Only when connecting **from** the host organizations' VPN or **from** the host organizations' jail node, the users use the HPC 4 Research user name that is `jdoe_c` or `jdoe_m` and not `jdoe`!
-
-Note well that access to HPC 4 Clinic currently does not allow access from external ystems.

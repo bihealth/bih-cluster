@@ -6,7 +6,6 @@
     In case of any issues, please send an email to hpc-helpdesk@bihealth.de.
 
 To allow for better interactive works, BIH HPC administration has setup an  [Open OnDemand (OOD)](https://openondemand.org/) portal web server.
-There is a separate portal for HPC 4 Clinic and Research each.
 
 You can find the OnDemand Portal for HPC 4 Research at:
 
