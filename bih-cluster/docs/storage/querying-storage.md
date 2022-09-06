@@ -1,16 +1,10 @@
 # Querying Storage Quotas
 
-!!! info "HPC 4 Research Only"
-
-    The following information is only valid for HPC 4 Research.
-
 !!! info "More Convenient OnDemand Portal"
 
     You can also see your quotas in the [Open OnDemand Portal Quotas application](../ondemand/quotas.md).
 
 As described elsewhere, all data in your user, group, and project volumes is subject to quotas.
-Again, note that in case you face a shortage of storage, do not hesitate to send a request for quota increase to hpc-gatekeeper@bihealth.de.
-
 This page quickly shows how to query for the current usage of data volume and file counts for your user, group, and projects.
 
 ## Query for User Data and File Usage

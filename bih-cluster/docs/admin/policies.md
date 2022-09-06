@@ -36,7 +36,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
 1. Storage on the GPFS file system is a sparse resource try to use both data volume and file sparingly.
    Note well that small files above ~4KB take up at least 8MB of space.
 2. Default quotas are as follows (each user, group, project has a `home`, `work`, and `scratch` volume).
-   You can request an increase by an email to hpc-gatekeeper@bihealth.de.
+   You can request an increase by an email to hpc-gatekeeper@bihealth.de for groups and projects.
     - `home` 10k files, 1GB space
     - `work` 2M files, 1TB space
     - `scratch` 20M files, 200TB space
@@ -54,7 +54,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
 7. :shield: Administration will not delete any files (outside of `/tmp`).
    In the case that users need to delete files that they can access but not update/delete, administration will either give write permissions to the Unix group of the work group or project or change the owner to the owner/delegate of this group.
    This can occur in a group/project directory of a user who has left the organization.
-   In the case that a user laeaves the organiation, the owner/delegate of the hosting group can request getting access to the user's files with the express agreement of this user.
+   In the case that a user leaves the organization, the owner/delegate of the hosting group can request getting access to the user's files with the express agreement of this user.
 8. Only use `/tmp` in Slurm-controlled jobs.
    This will enforce that Slurm can clean up after you.
 
@@ -99,9 +99,9 @@ In the case of violations marked with a shield (:shield:) administration reserve
         - This includes Jupyter servers that shall only be used by the user starting them, this also includes work schedulers such as Dask.
         - You can assume that the cluster internal network is secure and you do not have to encrypt connections between nodes.
         - Connections towards outside of the cluster must be encrypted (e.g., via SSH tunnels; incoming ones as reverse tunneling is prohibited, see above).
-        - Access to any service must be protected by appropriate means, e.g., passwords, tokens or client certifictes.
+        - Access to any service must be protected by appropriate means, e.g., passwords, tokens or client certificates.
 
-### Maintenances
+### Maintenance
 
 1. Maintenance that are expected to cause major service interruptions (the whole system becomes unusable and/or jobs might be prevented to run etc.) are announced 14 days in advance.
 2. Maintenance of login nodes (e.g., reboot one node while the other is still available) are announced 7 days in advance.
@@ -110,7 +110,6 @@ In the case of violations marked with a shield (:shield:) administration reserve
 
 ### Credentials Policies
 
-1. Login on HPC 4 Research is currently based on SSH keys only.
-   HPC 4 Clinic currently allows login with password or SSH keys.
-2. SSH keys must deposited with the host organizations (Charite/MDC) as documented.
+1. Login is currently based on SSH keys only.
+2. SSH keys must be deposited with the host organizations (Charite/MDC) as documented.
 3. For technical reasons, the compute nodes also use the `~/.ssh/authorized_keys` file but their usage is discouraged.

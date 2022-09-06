@@ -70,7 +70,7 @@ The GPFS storage is split into three sections:
 
 - `home` -- *small, persistent, and safe storage*, e.g., for documents and configuration files (default quota of 1GB).
 - `work` -- *larger and persistent storage*, e.g., for your large data files (default quota of 1TB).
-- `scratch` -- *large and non-persistent storage*, e.g., for temporary files, files are automatically deleted after 4 weeks (default quota of 100TB; deletion not implemented yet).)
+- `scratch` -- *large and non-persistent storage*, e.g., for temporary files, files are automatically deleted after 2 weeks (default quota of 100TB; deletion not implemented yet).)
 
 Each user, group, and project has one of the sections each, e.g., for users:
 

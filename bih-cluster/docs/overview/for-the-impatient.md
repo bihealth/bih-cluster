@@ -1,29 +1,13 @@
 # For the Impatient
 
-This document describes the fundamentals of using the BIH clusters in a very terse manner.
+This document describes the fundamentals of using the BIH cluster in a very terse manner.
 
-## HPC 4 Research vs. HPC 4 Clinic
+## HPC 4 Research
 
-BIH HPC IT operates two clusters: HPC 4 Research and HPC 4 Clinic.
-
-**HPC 4 Research** is the older and larger of both.
-It is located in the BIH data center in Buch and connected via the BIH research networks.
+**HPC 4 Research** is located in the BIH data center in Buch and connected via the BIH research networks.
 Connections can be made from Charite, MDC, and BIH networks.
 The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
-
-**HPC 4 Clinic** (BETA) is the more recent and smaller cluster.
-It is located in the Charite data center on the Charite Campus Virchowklinikum and connected only to the Charite network ("Kernnetz").
-Connections can only be made from Charite networks.
-The cluster is open for users with a Charite account after [getting access through the gatekeeper proces](../admin/getting-access.md).
-The system has also been designed to be suitable for the processing of human genetics data but is located within the hospital physical walls and network firewalls.
-It is thus also suitable for the processing of data from clinical context.
-Administration provides a system with state of the art IT security, users are responsible to obtain proper data privacy and ethics votes.
-
-!!! important "HPC 4 Clinic is in Beta Status"
-
-    Do not use for production purposes or with critical data during beta test!
-    We will notify you when the HPC 4 Clinic cluster becomes stable.
 
 ## Cluster Hardware and Scheduling
 
@@ -103,7 +87,7 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
   This is where you should place large files.
   Files in this location do not have snapshots or backups.
 - The directory (actually a GPFS file set) `/fast/users/$USER/scratch` should be used for temporary data.
-  **All data placed there will be removed after 4 weeks.**
+  **All data placed there will be removed after 2 weeks.**
 - If you are part of an AG/lab working on the cluster, the group directory is in `/fast/groups/$AG`.
 - Projects are located in `/fast/projects/$PROJECT`.
 
@@ -133,8 +117,8 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
 Note that you also have access to `/tmp` on the individual nodes but the disk is **small** and might be a **slow** spinning disk.
 If you are processing large NGS data, we recommend you create `/fast/users/$USER/scratch/tmp` and set the environment variable `TMPDIR` to point there.
 However, for creating locks special Unix files such as sockets or fifos, `/tmp` is the right place.
-**Note that files placed in your `scratch` directory will be removed automatically after 4 weeks.**
-**Do not place any valueable files in there.**
+**Note that files placed in your `scratch` directory will be removed automatically after 2 weeks.**
+**Do not place any valuable files in there.**
 
 ## First Steps on the Cluster
 

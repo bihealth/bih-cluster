@@ -14,16 +14,16 @@ Collaborative projects involving multiple PIs/groups should be realized using th
 Please note, the **hot** near cluster fast storage is rather expensive and sparse resource which is not intended for long term storage. 
 
 Independent group leaders at BIH/Charité/MDC can request a **work group** on the cluster and name **group members**. 
-The work group **leader** (the group PI) has to take responsiblity and undertake the necessary measures to ensure that all **group members** follow the [cluster policies and etiquette](../policies/) for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
+The work group **leader** (the group PI) has to take responsibility and undertake the necessary measures to ensure that all **group members** follow the [cluster policies and etiquette](../policies/) for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
 Major and/or continued violations may lead to exclusion of the work group form the cluster.  
 
 The **leader** may also name one **delegate** (typically an IT savvy Post-Doc) who is allowed to take decision about cluster usage and work group on behalf of the leader. 
-The above mentioned responsiblities stay with the work group leader.  
+The above mentioned responsibilities stay with the work group leader.  
 
 Data can also be managed in **projects** which allow 
 
 1. cross-group collaboration spaces and
-2. substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valueable and potentially sensitive data).
+2. substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valuable and potentially sensitive data).
 
 Projects are also an excellent way to partition your data into set with different life 
 
@@ -59,7 +59,7 @@ Example values are given in curly braces.
 ```
 # Group "ag-doe"
 
-Cluster: {HPC 4 Clinic or HPC 4 Research}
+Cluster: HPC 4 Research
 Group leader/PI: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
@@ -74,7 +74,7 @@ Required resources:
 
 ## User 1
 
-- cluster: {HPC 4 Clinic or HPC 4 Research}
+- cluster: HPC 4 Research
 - first name: John
 - last name: Doe
 - affiliation: Charite, Department of Oncology
@@ -105,7 +105,7 @@ Please use the **project** mechanism described below.
 
 Projects are very similar to work groups with the main distinction that
 - users can be a member of multiple projects (no upper limit) 
-- projects can be accessible for member of differnt groups 
+- projects can be accessible for member of different groups 
 
 Please note, project membership does not grant cluster access (a primary group membership is still required).
 
@@ -125,7 +125,7 @@ Example values are given in curly braces.
 ```
 # Project "doe-dbgap-rna"
 
-Cluster: {HPC 4 Research}
+Cluster: HPC 4 Research
 Project owner: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
@@ -149,7 +149,7 @@ The inquiry has to be send to hpc-gatekeeper@bih-charite.de, either by the PI or
 ```
 # User 1
 
-- cluster: {HPC 4 Clinic or HPC 4 Research}
+- cluster: HPC 4 Research
 - first name: John
 - last name: Doe
 - affiliation: Charite, Department of Oncology
