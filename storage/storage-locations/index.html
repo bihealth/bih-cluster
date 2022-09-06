@@ -2201,10 +2201,6 @@
                 
                 
                 <h1 id="storage-and-volumes-locations">Storage and Volumes: Locations<a class="headerlink" href="#storage-and-volumes-locations" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">HPC 4 Research Only</p>
-<p>The following information is only valid for HPC 4 Research.</p>
-</div>
 <p>On the BIH HPC cluster, there are three kinds of entities: users, groups (<em>Arbeitsgruppen</em>), and projects.
 Each user, group, and project has a central folder for their files to be stored.</p>
 <h2 id="for-the-impatient">For the Impatient<a class="headerlink" href="#for-the-impatient" title="Permanent link">&para;</a></h2>
@@ -2216,7 +2212,7 @@ Each user, group, and project has a central folder for their files to be stored.
   Note that there is no backup or snapshots going on.</li>
 <li><code>/fast/users/muster_c/scratch</code>:
   Here, you put your large temporary files that you will delete after a short time anyway.
-  <strong>Data placed here will be automatically removed four weeks after creation.</strong></li>
+  <strong>Data placed here will be automatically removed 2 weeks after last modification.</strong></li>
 <li><code>/fast/users/muster_c</code> (and all other sub directories):
   Here you put your programs and scripts and very important small data.
   By default, you will have a soft quota of 1GB (hard quota of 1.5GB, 7 days grace period).
@@ -2226,7 +2222,7 @@ Each user, group, and project has a central folder for their files to be stored.
 <h3 id="dos-and-donts">Do's and Don'ts<a class="headerlink" href="#dos-and-donts" title="Permanent link">&para;</a></h3>
 <p>First and foremost:</p>
 <ul>
-<li><strong>DO NOT place any valuable data in <code>scratch</code> as it will be removed within 4 weeks.</strong></li>
+<li><strong>DO NOT place any valuable data in <code>scratch</code> as it will be removed within 2 weeks.</strong></li>
 </ul>
 <p>Further:</p>
 <ul>
@@ -2351,7 +2347,7 @@ Quotas are implemented on the file-set level.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: August 31, 2022
+      Last update: September 6, 2022
     
   </small>
 </div>

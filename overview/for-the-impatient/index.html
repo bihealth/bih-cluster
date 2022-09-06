@@ -440,8 +440,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-4-research-vs-hpc-4-clinic" class="md-nav__link">
-    HPC 4 Research vs. HPC 4 Clinic
+  <a href="#hpc-4-research" class="md-nav__link">
+    HPC 4 Research
   </a>
   
 </li>
@@ -2036,8 +2036,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hpc-4-research-vs-hpc-4-clinic" class="md-nav__link">
-    HPC 4 Research vs. HPC 4 Clinic
+  <a href="#hpc-4-research" class="md-nav__link">
+    HPC 4 Research
   </a>
   
 </li>
@@ -2145,26 +2145,12 @@
                 
                 
                 <h1 id="for-the-impatient">For the Impatient<a class="headerlink" href="#for-the-impatient" title="Permanent link">&para;</a></h1>
-<p>This document describes the fundamentals of using the BIH clusters in a very terse manner.</p>
-<h2 id="hpc-4-research-vs-hpc-4-clinic">HPC 4 Research vs. HPC 4 Clinic<a class="headerlink" href="#hpc-4-research-vs-hpc-4-clinic" title="Permanent link">&para;</a></h2>
-<p>BIH HPC IT operates two clusters: HPC 4 Research and HPC 4 Clinic.</p>
-<p><strong>HPC 4 Research</strong> is the older and larger of both.
-It is located in the BIH data center in Buch and connected via the BIH research networks.
+<p>This document describes the fundamentals of using the BIH cluster in a very terse manner.</p>
+<h2 id="hpc-4-research">HPC 4 Research<a class="headerlink" href="#hpc-4-research" title="Permanent link">&para;</a></h2>
+<p><strong>HPC 4 Research</strong> is located in the BIH data center in Buch and connected via the BIH research networks.
 Connections can be made from Charite, MDC, and BIH networks.
 The cluster is open for users with either Charite or MDC accounts after <a href="../../admin/getting-access/">getting access through the gatekeeper proces</a>.
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).</p>
-<p><strong>HPC 4 Clinic</strong> (BETA) is the more recent and smaller cluster.
-It is located in the Charite data center on the Charite Campus Virchowklinikum and connected only to the Charite network ("Kernnetz").
-Connections can only be made from Charite networks.
-The cluster is open for users with a Charite account after <a href="../../admin/getting-access/">getting access through the gatekeeper proces</a>.
-The system has also been designed to be suitable for the processing of human genetics data but is located within the hospital physical walls and network firewalls.
-It is thus also suitable for the processing of data from clinical context.
-Administration provides a system with state of the art IT security, users are responsible to obtain proper data privacy and ethics votes.</p>
-<div class="admonition important">
-<p class="admonition-title">HPC 4 Clinic is in Beta Status</p>
-<p>Do not use for production purposes or with critical data during beta test!
-We will notify you when the HPC 4 Clinic cluster becomes stable.</p>
-</div>
 <h2 id="cluster-hardware-and-scheduling">Cluster Hardware and Scheduling<a class="headerlink" href="#cluster-hardware-and-scheduling" title="Permanent link">&para;</a></h2>
 <p>The cluster consists of the following major components:</p>
 <ul>
@@ -2239,7 +2225,7 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
   This is where you should place large files.
   Files in this location do not have snapshots or backups.</li>
 <li>The directory (actually a GPFS file set) <code>/fast/users/$USER/scratch</code> should be used for temporary data.
-  <strong>All data placed there will be removed after 4 weeks.</strong></li>
+  <strong>All data placed there will be removed after 2 weeks.</strong></li>
 <li>If you are part of an AG/lab working on the cluster, the group directory is in <code>/fast/groups/$AG</code>.</li>
 <li>Projects are located in <code>/fast/projects/$PROJECT</code>.</li>
 </ul>
@@ -2263,8 +2249,8 @@ host:~$ ln -s ~/work/.local ~/.local
 <p>Note that you also have access to <code>/tmp</code> on the individual nodes but the disk is <strong>small</strong> and might be a <strong>slow</strong> spinning disk.
 If you are processing large NGS data, we recommend you create <code>/fast/users/$USER/scratch/tmp</code> and set the environment variable <code>TMPDIR</code> to point there.
 However, for creating locks special Unix files such as sockets or fifos, <code>/tmp</code> is the right place.
-<strong>Note that files placed in your <code>scratch</code> directory will be removed automatically after 4 weeks.</strong>
-<strong>Do not place any valueable files in there.</strong></p>
+<strong>Note that files placed in your <code>scratch</code> directory will be removed automatically after 2 weeks.</strong>
+<strong>Do not place any valuable files in there.</strong></p>
 <h2 id="first-steps-on-the-cluster">First Steps on the Cluster<a class="headerlink" href="#first-steps-on-the-cluster" title="Permanent link">&para;</a></h2>
 <h3 id="connecting-to-the-cluster">Connecting to the Cluster<a class="headerlink" href="#connecting-to-the-cluster" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2305,7 +2291,7 @@ You can inspect jobs that have finished with <code>sacct</code>, and see the clu
 <div class="md-source-date">
   <small>
     
-      Last update: August 31, 2022
+      Last update: September 6, 2022
     
   </small>
 </div>

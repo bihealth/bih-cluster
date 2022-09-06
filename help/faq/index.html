@@ -2560,7 +2560,8 @@
 The aim is to gather the information for using the cluster efficiently and helping common issues andproblems.</p>
 <h2 id="where-can-i-get-help">Where can I get help?<a class="headerlink" href="#where-can-i-get-help" title="Permanent link">&para;</a></h2>
 <ul>
-<li>First, have a look at our forums at <a href="https://hpc-talk.cubi.bihealth.org/">HPC-talk</a> to see if someone already solved the same problem.
+<li>Talk to your colleagues!</li>
+<li>Have a look at our forums at <a href="https://hpc-talk.cubi.bihealth.org/">HPC-talk</a> to see if someone already solved the same problem.
   If not, create a new topic. Administrators, CUBI, and other users can see and answer your question.</li>
 <li>For problems while connecting and logging in, please contact <a href="mailto:helpdesk@mdc-berlin.de">helpdesk@mdc-berlin.de</a> or <a href="mailto:helpdesk@charite.de">helpdesk@charite.de</a>.</li>
 <li>For problems with BIH HPC please contact [<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a>].</li>
@@ -2574,16 +2575,16 @@ The aim is to gather the information for using the cluster efficiently and helpi
 <h2 id="what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation">What is the difference between MAX and BIH cluster? What is their relation?<a class="headerlink" href="#what-is-the-difference-between-max-and-bih-cluster-what-is-their-relation" title="Permanent link">&para;</a></h2>
 <p><strong>Administrativa</strong></p>
 <ul>
-<li>The BIH clusters are the cluster of the Berlin Institute of Health (BIH) and is located in Buch and operated by BIH HPC IT.
+<li>The BIH HPC 4 Research cluster of the Berlin Institute of Health (BIH) is located in Buch and operated by BIH HPC IT.
   The cluster is open for users of both BIH/Charite and MDC.</li>
 <li>The MAX cluster is the cluster of the Max Delbrueck Center (MDC) in Buch.
-  This cluster is used by the researchers at MDC and integrates a lot of infrastructure of the MDC.</li>
+  This cluster is used by the researchers at MDC and integrates with a lot of infrastructure of the MDC.</li>
 </ul>
 <p>Request for both systems are handled separately, depending on the user's affiliation with research/service groups.</p>
 <p><strong>Hardware and Systems</strong></p>
 <ul>
 <li>Both clusters consist of similar hardware for the compute nodes and both feature a DDN system at different number of nodes and different storage volume.</li>
-<li>Both clusters run CentOS but at potentially different version.</li>
+<li>Both clusters run CentOS/rocky but at potentially different version.</li>
 <li>BIH HPC uses the Slurm workload manager whereas MAX uses Univa Grid Engine.</li>
 <li>The BIH cluster has a significantly faster internal network (40GB/s optical).</li>
 </ul>
@@ -3008,11 +3009,6 @@ For authentication (veryfing that a user has acccess to an account), the Charite
 Authentication currently only uses the SSH keys deposited into Charite (via zugang.charite.de) and MDC (via MDC persdb).
 Users have to obtain a suitable Charite/MDC account via Charite and MDC central IT departments and upload their SSH keys through the host organization systems on their own.
 The hpc-gatekeeper process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special <code>hpc-users</code> group that controls access to the system and organizing users into work groups and projects.</p>
-<p>For HPC 4 Clinic, a Charite account is required (that is, you can login e.g., into email.charite.de).
-Such accounts map to an account of the same name of the HPC 4 Clinic system.
-Further, users have to be explicitely registered and setup for access to the system via the hpc-gatekeeper process as well as management of users into work groups and access to projects.
-This creates their users home/work/scratch shares and grants access for connecting to the system by becoming a member of the special <code>h4c-users</code> group.
-HPC 4 Clinic is directly connected to the Charite authentication and authorization systems and users can login with their password or SSH key uploaded to zugang.charite.de.</p>
 <p>The process of submitting keys to Charite and MDC is documented in the "Connecting" section.</p>
 <h2 id="how-do-charitemdccluster-accounts-interplay-with-vpn-and-the-mdc-jail-node">How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?<a class="headerlink" href="#how-do-charitemdccluster-accounts-interplay-with-vpn-and-the-mdc-jail-node" title="Permanent link">&para;</a></h2>
 <p>Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., <a href="/bih-cluster/connecting/from-external/#for-charite-users">Zusatzantrag B as documented here</a>.
@@ -3021,7 +3017,6 @@ For Charite VPN, as for all Charite IT systems, users must use their Charite use
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., <code>jdoe</code> and not <code>jdoe_m</code>).</p>
 <p>For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.</p>
 <p>Only when connecting <strong>from</strong> the host organizations' VPN or <strong>from</strong> the host organizations' jail node, the users use the HPC 4 Research user name that is <code>jdoe_c</code> or <code>jdoe_m</code> and not <code>jdoe</code>!</p>
-<p>Note well that access to HPC 4 Clinic currently does not allow access from external ystems.</p>
                 
                   
                     
@@ -3030,7 +3025,7 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 <div class="md-source-date">
   <small>
     
-      Last update: August 31, 2022
+      Last update: September 6, 2022
     
   </small>
 </div>
