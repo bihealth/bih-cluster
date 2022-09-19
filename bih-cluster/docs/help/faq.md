@@ -271,6 +271,41 @@ NodeName=med0304 Arch=x86_64 CoresPerSocket=16
 The "State" attribute indicates the node has jobs running but is currenlty being "drained" (accepts no new jobs).
 The "Reason" gives that it has been scheduled for power-off for maintenance of the power supply unit.
 
+## When will my job be scheduled?
+
+You can use the `scontrol show job JOBID` command to inspect the scheduling information for your job.
+For example, the following job is scheduled to start at `2022-09-19T07:53:29` (`StartTime`) and will be terminated if it does not stop before `2022-09-19T15:53:29` (`EndTime`)
+For further information, it has been submitted at `2022-09-15T12:24:57` (`SubmitTime`) and has been last considered by the scheduler at `2022-09-19T07:53:15` (`LastSchedEval`).
+
+```hl_lines="10"
+# scontrol show job 4225062
+JobId=4225062 JobName=C2371_2
+   UserId=user_c(133196) GroupId=hpc-ag-group(1030014) MCS_label=N/A
+   Priority=805 Nice=0 Account=hpc-ag-group QOS=normal
+   JobState=PENDING Reason=QOSMaxCpuPerUserLimit Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=08:00:00 TimeMin=N/A
+   SubmitTime=2022-09-15T12:24:57 EligibleTime=2022-09-15T12:24:57
+   AccrueTime=2022-09-15T12:24:57
+   StartTime=2022-09-19T07:53:29 EndTime=2022-09-19T15:53:29 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-09-19T07:53:15 Scheduler=Main
+   Partition=medium AllocNode:Sid=hpc-login-1:557796
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=(null)
+   NumNodes=1-1 NumCPUs=25 NumTasks=25 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=25,mem=150G,node=1,billing=25
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=150G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=YES Contiguous=0 Licenses=(null) Network=(null)
+   Command=/fast/work/users/user_c/SCZ_replic/JR_sims/GS_wrapy/wrap_y0_VP_2371_GS_chunk2_C02.sh
+   WorkDir=/fast/work/users/user_c/SCZ_replic/JR_sims
+   StdErr=/fast/work/users/user_c/SCZ_replic/JR_sims/E2371_2.txt
+   StdIn=/dev/null
+   StdOut=/fast/work/users/user_c/SCZ_replic/JR_sims/slurm-4225062.out
+   Power=
+```
+
 ## My jobs don't run in the partition I expect
 
 You can see the partition that your job runs in with `squeue -j JOBID`:
