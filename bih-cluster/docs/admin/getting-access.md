@@ -126,8 +126,8 @@ Example values are given in curly braces.
 # Project "doe-dbgap-rna"
 
 Cluster: HPC 4 Research
-Project owner: {John Doe}
-Delegate [optional]: {Max Mustermann}
+Project owner: {John Doe}, {doej_c}
+Delegate [optional]: {Max Mustermann}, {musterm_c}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
 
 Required resources:
@@ -137,7 +137,7 @@ Required resources:
 - Number of files [if >> 1M]: {less than 1M}
 
 Additional members:
-- Susi Sorglos <Susi.Sorglos@charite.de>
+- {Susi Sorglos}, {sorgls_c}
 ```
 
 ## Users
