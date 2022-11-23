@@ -728,8 +728,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#software-for-mounting-the-cluster-fs" class="md-nav__link">
-    Software for Mounting the Cluster FS
+  <a href="#software-for-transfering-data-fromto-windows" class="md-nav__link">
+    Software for transfering data from/to Windows
   </a>
   
 </li>
@@ -1954,8 +1954,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#software-for-mounting-the-cluster-fs" class="md-nav__link">
-    Software for Mounting the Cluster FS
+  <a href="#software-for-transfering-data-fromto-windows" class="md-nav__link">
+    Software for transfering data from/to Windows
   </a>
   
 </li>
@@ -2000,13 +2000,24 @@ MobaXterm is a software that allows you to connect to an SSH server, much like P
 </li>
 <li>Install or unpack MobaXterm and start the software. As a Charite user, please cancel any firewall warnings that pop up.</li>
 </ul>
-<h2 id="software-for-mounting-the-cluster-fs">Software for Mounting the Cluster FS<a class="headerlink" href="#software-for-mounting-the-cluster-fs" title="Permanent link">&para;</a></h2>
-<p>In case you also want to mount the cluster file system in Windows, we recommend WinSshFS.</p>
+<h2 id="software-for-transfering-data-fromto-windows">Software for transfering data from/to Windows<a class="headerlink" href="#software-for-transfering-data-fromto-windows" title="Permanent link">&para;</a></h2>
+<p>For transfering data from/to Windows, we recommand using WinSCP.</p>
+<p>Install the latest version from here: <a href="https://winscp.net/eng/download.php">https://winscp.net/eng/download.php</a></p>
+<p>On the <code>Login</code> screen of WinSCP create a new login by selecting <code>New Site</code>.</p>
+<p>Fill in the following parameters:</p>
 <ul>
-<li>Navigate to <a href="https://github.com/feo-cz/win-sshfs/releases/tag/1.5.12.8">https://github.com/feo-cz/win-sshfs/releases/tag/1.5.12.8</a></li>
-<li>Download the <strong>Release1.5.12.8.zip</strong> file.</li>
-<li>Unpack and execute.</li>
+<li><code>File protocol</code>: <code>SFTP</code></li>
+<li><code>Host name</code>: <code>hpc-transfer-1.cubi.bihealth.org</code> or <code>hpc-transfer-2.cubi.bihealth.org</code></li>
+<li><code>User name</code>: your user name</li>
 </ul>
+<p>Go to <code>Advanced</code> &gt; <code>SSH</code> &gt; <code>Authentication</code> &gt; <code>Authentication parameters</code> &gt; <code>Private key file</code>
+and select your private ssh key file (in <code>.ppk</code> format).</p>
+<p>Press <code>Ok</code> then <code>Save</code>.</p>
+<p>Press <code>Login</code> to connect.
+It will ask for your private key passphrase, if you set one up.</p>
+<p>If you need to convert your private ssh key file the <code>.ppk</code> format,
+on the WinSCP login screen go to <code>Tools</code> &gt; <code>PuTTYgen</code> and follow the steps here:
+<a href="https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/">https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/</a></p>
                 
                   
                     
@@ -2015,7 +2026,7 @@ MobaXterm is a software that allows you to connect to an SSH server, much like P
 <div class="md-source-date">
   <small>
     
-      Last update: November 4, 2022
+      Last update: November 23, 2022
     
   </small>
 </div>
