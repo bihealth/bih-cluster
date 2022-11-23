@@ -14,10 +14,29 @@ MobaXterm is a software that allows you to connect to an SSH server, much like P
     * **Installer edition** (green button righthand-side, **requires admin rights on your computer**).
 * Install or unpack MobaXterm and start the software. As a Charite user, please cancel any firewall warnings that pop up.
 
-## Software for Mounting the Cluster FS
 
-In case you also want to mount the cluster file system in Windows, we recommend WinSshFS.
+## Software for transfering data from/to Windows
 
-* Navigate to https://github.com/feo-cz/win-sshfs/releases/tag/1.5.12.8
-* Download the **Release1.5.12.8.zip** file.
-* Unpack and execute.
+For transfering data from/to Windows, we recommand using WinSCP.
+
+Install the latest version from here: https://winscp.net/eng/download.php
+
+On the `Login` screen of WinSCP create a new login by selecting `New Site`.
+
+Fill in the following parameters:
+
+* `File protocol`: `SFTP`
+* `Host name`: `hpc-transfer-1.cubi.bihealth.org` or `hpc-transfer-2.cubi.bihealth.org`
+* `User name`: your user name
+
+Go to `Advanced` > `SSH` > `Authentication` > `Authentication parameters` > `Private key file`
+and select your private ssh key file (in `.ppk` format).
+ 
+Press `Ok` then `Save`.
+
+Press `Login` to connect.
+It will ask for your private key passphrase, if you set one up.
+
+If you need to convert your private ssh key file the `.ppk` format,
+on the WinSCP login screen go to `Tools` > `PuTTYgen` and follow the steps here:
+https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/
