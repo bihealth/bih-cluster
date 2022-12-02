@@ -2,6 +2,10 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Login, Compute and Storage Maintenance, December 13-14, 2022
+
+All informationand updates regarding maintenance will be circulated on our forum https://hpc-talk.cubi.bihealth.org/c/announcements/5.
+
 ## Login, Compute and Storage Maintenance, March 22-23, 2022
 
 All COMPUTE nodes and STORAGE resources won't be reachable!
