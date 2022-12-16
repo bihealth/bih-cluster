@@ -61,6 +61,8 @@ add a file `slurm.template` to `/fast/users/$USER/work/cellranger-3.0.2/martian-
 __MRO_CMD__
 ```
 
+**note**: on newer cellranger version, `slurm.template` needs to go to `/fast/users/$USER/work/cellranger-XX/external/martian/jobmanagers/`
+
 # demultiplexing
 
 if that hasn't been done yet, you can use `cellranger mkfastq` (details to be added)
