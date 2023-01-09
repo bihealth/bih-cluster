@@ -15,10 +15,13 @@ The command will create a batch job and add it to the queue to be executed at a 
 
 !!! info "Slurm Documentation: sbatch"
 
-    Please also see the official [Slurm documentation on srun](https://slurm.schedmd.com/sbatch.html).
+    Please also see the official [Slurm documentation on sbatch](https://slurm.schedmd.com/sbatch.html).
 
 ## Important Arguments
 
+- `--array`
+    -- Submit jobs as array jobs.
+    Also see the section [#array-jobs] below.
 - `--nodes`
     -- The number of nodes to allocate.
     This is only given here as an important argument as the maximum number of nodes allocatable to any partition but `mpi` is set to one (1).
@@ -71,6 +74,61 @@ The command will create a batch job and add it to the queue to be executed at a 
 ## Job Scripts
 
 Also see the section [Slurm Job Scripts](job-scripts.md) on how to embed the `sbatch` parameters in `#SBATCH` lines.
+
+## Array Jobs
+
+If you have many (say, more than 10) similar jobs (e.g., when performing a grid search), you can also use array jobs.
+However, you should also consider whether it would make sense to increase the time of your jobs, e.g, to be at least ~10min.
+
+You can submit array jobs by specifying `-a EXPR` or `--array EXPR` where `EXPR` is a range or a list (of course, you can also add this as an `#SBATCH` header in your job script).
+For example:
+
+```bash
+hpc-login-1 ~# sbatch -a 1-3 grid_search.sh
+hpc-login-1 ~# sbatch -a 1,2,5-10 grid_search.sh
+```
+
+This will submit `grid_search.sh` with certain variables set:
+
+- `SLURM_ARRAY_JOB_ID` -- the ID of the first job
+- `SLURM_ARRAY_TASK_ID` -- the index of the job in the array
+- `SLURM_ARRAY_TASK_COUNT` -- number of submitted jobs in array
+- `SLURM_ARRAY_TASK_MAX` -- higehst job array index value
+- `SLURM_ARRAY_TASK_MIN` -- lowest job array index value
+
+Using array jobs has several advantages:
+
+- It greatly reduces the load on the Slurm scheduler.
+- You do not need to submit in a loop, but rather
+- You can use a single command line.
+
+Also see [Slurm documentation on job arrays](https://slurm.schedmd.com/job_array.html).
+
+For example, if you submit `sbatch --array=1-3 grid_search.sh` and slurm responsds with `Submitted batch job 36` then the script will be run three times with the following prameters set:
+
+```
+
+SLURM_JOB_ID=36
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=1
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+
+SLURM_JOB_ID=37
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=2
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+
+SLURM_JOB_ID=38
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=3
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+```
 
 ## Notes
 
