@@ -1094,6 +1094,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    Array Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     Notes
   </a>
@@ -1998,6 +2005,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#array-jobs" class="md-nav__link">
+    Array Jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     Notes
   </a>
@@ -2038,10 +2052,13 @@ Submitted batch job JOB_ID
 <p>The command will create a batch job and add it to the queue to be executed at a later point in time.</p>
 <div class="admonition info">
 <p class="admonition-title">Slurm Documentation: sbatch</p>
-<p>Please also see the official <a href="https://slurm.schedmd.com/sbatch.html">Slurm documentation on srun</a>.</p>
+<p>Please also see the official <a href="https://slurm.schedmd.com/sbatch.html">Slurm documentation on sbatch</a>.</p>
 </div>
 <h2 id="important-arguments">Important Arguments<a class="headerlink" href="#important-arguments" title="Permanent link">&para;</a></h2>
 <ul>
+<li><code>--array</code>
+    -- Submit jobs as array jobs.
+    Also see the section [#array-jobs] below.</li>
 <li><code>--nodes</code>
     -- The number of nodes to allocate.
     This is only given here as an important argument as the maximum number of nodes allocatable to any partition but <code>mpi</code> is set to one (1).
@@ -2093,6 +2110,53 @@ Always check that the path to the directories in <code>StdErr</code> and <code>S
 </ul>
 <h2 id="job-scripts">Job Scripts<a class="headerlink" href="#job-scripts" title="Permanent link">&para;</a></h2>
 <p>Also see the section <a href="../job-scripts/">Slurm Job Scripts</a> on how to embed the <code>sbatch</code> parameters in <code>#SBATCH</code> lines.</p>
+<h2 id="array-jobs">Array Jobs<a class="headerlink" href="#array-jobs" title="Permanent link">&para;</a></h2>
+<p>If you have many (say, more than 10) similar jobs (e.g., when performing a grid search), you can also use array jobs.
+However, you should also consider whether it would make sense to increase the time of your jobs, e.g, to be at least ~10min.</p>
+<p>You can submit array jobs by specifying <code>-a EXPR</code> or <code>--array EXPR</code> where <code>EXPR</code> is a range or a list (of course, you can also add this as an <code>#SBATCH</code> header in your job script).
+For example:</p>
+<div class="highlight"><pre><span></span><code>hpc-login-1 ~# sbatch -a <span class="m">1</span>-3 grid_search.sh
+hpc-login-1 ~# sbatch -a <span class="m">1</span>,2,5-10 grid_search.sh
+</code></pre></div>
+
+<p>This will submit <code>grid_search.sh</code> with certain variables set:</p>
+<ul>
+<li><code>SLURM_ARRAY_JOB_ID</code> -- the ID of the first job</li>
+<li><code>SLURM_ARRAY_TASK_ID</code> -- the index of the job in the array</li>
+<li><code>SLURM_ARRAY_TASK_COUNT</code> -- number of submitted jobs in array</li>
+<li><code>SLURM_ARRAY_TASK_MAX</code> -- higehst job array index value</li>
+<li><code>SLURM_ARRAY_TASK_MIN</code> -- lowest job array index value</li>
+</ul>
+<p>Using array jobs has several advantages:</p>
+<ul>
+<li>It greatly reduces the load on the Slurm scheduler.</li>
+<li>You do not need to submit in a loop, but rather</li>
+<li>You can use a single command line.</li>
+</ul>
+<p>Also see <a href="https://slurm.schedmd.com/job_array.html">Slurm documentation on job arrays</a>.</p>
+<p>For example, if you submit <code>sbatch --array=1-3 grid_search.sh</code> and slurm responsds with <code>Submitted batch job 36</code> then the script will be run three times with the following prameters set:</p>
+<div class="highlight"><pre><span></span><code>SLURM_JOB_ID=36
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=1
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+
+SLURM_JOB_ID=37
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=2
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+
+SLURM_JOB_ID=38
+SLURM_ARRAY_JOB_ID=36
+SLURM_ARRAY_TASK_ID=3
+SLURM_ARRAY_TASK_COUNT=3
+SLURM_ARRAY_TASK_MAX=3
+SLURM_ARRAY_TASK_MIN=1
+</code></pre></div>
+
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>This is the primary entry point for creating batch jobs to be executed at a later point in time.</li>
@@ -2111,7 +2175,7 @@ Always check that the path to the directories in <code>StdErr</code> and <code>S
 <div class="md-source-date">
   <small>
     
-      Last update: December 2, 2022
+      Last update: January 9, 2023
     
   </small>
 </div>
