@@ -11,7 +11,7 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/how-to/software/singularity/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/how-to/software/apptainer/">
       
       
         <meta name="author" content="BIH HPC IT">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Singularity - BIH HPC Docs</title>
+        <title>Apptainer - BIH HPC Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-singularity-with-docker-images" class="md-skip">
+        <a href="#using-apptainer-with-docker-images" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Singularity
+              Apptainer
             
           </span>
         </div>
@@ -1683,14 +1683,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Singularity
+        Apptainer
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="Singularity" class="md-nav__link md-nav__link--active">
-      Singularity
+    <a href="./" title="Apptainer" class="md-nav__link md-nav__link--active">
+      Apptainer
     </a>
     
       
@@ -2056,7 +2056,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/software/singularity.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/how-to/software/apptainer.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -2064,13 +2064,19 @@
                   
                 
                 
-                <h1 id="using-singularity-with-docker-images">Using Singularity (with Docker Images)<a class="headerlink" href="#using-singularity-with-docker-images" title="Permanent link">&para;</a></h1>
-<p>Singularity (<a href="https://sylabs.io/docs/">https://sylabs.io/docs/</a>) is a popular alternative to docker, because it does not require to run as a privileged user.
-Singularity can run Docker images out-of-the-box by converting them to the singularity image format.
-The following guide gives a quick dive into using docker images with singularity.</p>
+                <h1 id="using-apptainer-with-docker-images">Using Apptainer (with Docker Images)<a class="headerlink" href="#using-apptainer-with-docker-images" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Singularity is now Apptainer!
+While Apptainer provides an <code>singularity</code> alias for backwards compatibility,
+it is recommanded to adapt all workflows to use the new binary <code>apptainer</code>.</p>
+</div>
+<p>Apptainer (<a href="https://apptainer.org/">https://apptainer.org/</a>) is a popular alternative to docker, because it does not require to run as a privileged user.
+Apptainer can run Docker images out-of-the-box by converting them to the apptainer image format.
+The following guide gives a quick dive into using docker images with apptainer.</p>
 <div class="admonition important">
 <p class="admonition-title">Build on your workstation, run on the HPC</p>
-<p>Building images using Singularity requires root privileges.
+<p>Building images using Apptainer requires root privileges.
 We cannot give you these permissions on the BIH HPC.
 Thus, you will have to build the images on your local workstation (or anywhere where you have root access).
 You can then run the built images on the BIH HPC.</p>
@@ -2079,89 +2085,89 @@ Apparently it needs root permissions which you don't have on the cluster.</p>
 </div>
 <h2 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h2>
 <div class="admonition important">
-<p class="admonition-title">Link ~/.singularity to ~/work/.singularity</p>
-<p>Because you only have a quota of 1 GB in your home directory, you should symlink <code>~/.singularity</code> to <code>~/work/.singularity</code>.</p>
-<div class="highlight"><pre><span></span><code>host:~$ mkdir -p ~/work/.singularity <span class="o">&amp;&amp;</span> ln -sr ~/work/.singularity ~/.singularity
+<p class="admonition-title">Link ~/.apptainer to ~/work/.apptainer</p>
+<p>Because you only have a quota of 1 GB in your home directory, you should symlink <code>~/.apptainer</code> to <code>~/work/.apptainer</code>.</p>
+<div class="highlight"><pre><span></span><code>host:~$ mkdir -p ~/work/.apptainer <span class="o">&amp;&amp;</span> ln -sr ~/work/.apptainer ~/.apptainer
 </code></pre></div>
 
-<p>In case you already have a singularity directory:</p>
-<div class="highlight"><pre><span></span><code>host:~$ mv ~/.singularity ~/work/.singularity <span class="o">&amp;&amp;</span> ln -sr ~/work/.singularity ~/.singularity
+<p>In case you already have a apptainer directory:</p>
+<div class="highlight"><pre><span></span><code>host:~$ mv ~/.apptainer ~/work/.apptainer <span class="o">&amp;&amp;</span> ln -sr ~/work/.apptainer ~/.apptainer
 </code></pre></div>
 
 </div>
 <p>Run a bash in a docker image:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity bash docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$ apptainer bash docker://godlovedc/lolcow
 </code></pre></div>
 
 <p>Run a command in a docker image:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity <span class="nb">exec</span> docker://godlovedc/lolcow <span class="nb">echo</span> <span class="s2">&quot;hello, hello!&quot;</span>
+<div class="highlight"><pre><span></span><code>host:~$ apptainer <span class="nb">exec</span> docker://godlovedc/lolcow <span class="nb">echo</span> <span class="s2">&quot;hello, hello!&quot;</span>
 </code></pre></div>
 
 <p>Run a bash in a docker image, enable access to the cuda driver (--nv) and mount a path (--bind or -B):</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity bash --nv --bind /path_on_host/:/path_inside_container/ docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$ apptainer bash --nv --bind /path_on_host/:/path_inside_container/ docker://godlovedc/lolcow
 </code></pre></div>
 
 <h2 id="some-caveats-and-notes">Some Caveats and Notes<a class="headerlink" href="#some-caveats-and-notes" title="Permanent link">&para;</a></h2>
 <p><strong>Caveats</strong></p>
 <ul>
-<li>The default singularity images format (.sif) is read-only.</li>
-<li>By default singularity mounts /home/$USER, /tmp, and $PWD in the container.</li>
+<li>The default apptainer images format (.sif) is read-only.</li>
+<li>By default apptainer mounts /home/$USER, /tmp, and $PWD in the container.</li>
 </ul>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Environment variables can be provided by setting them in the bash and adding the prefix <code>SINGULARITYENV_</code>:
-    <div class="highlight"><pre><span></span><code>host:~$ <span class="nv">SINGULARITYENV_HELLO</span><span class="o">=</span><span class="m">123</span> singularity bash docker://godlovedc/lolcow <span class="nb">echo</span> <span class="nv">$HELLO</span>
+<li>Environment variables can be provided by setting them in the bash and adding the prefix <code>APPTAINERENV_</code>:
+    <div class="highlight"><pre><span></span><code>host:~$ <span class="nv">APPTAINERENV_HELLO</span><span class="o">=</span><span class="m">123</span> apptainer bash docker://godlovedc/lolcow <span class="nb">echo</span> <span class="nv">$HELLO</span>
 </code></pre></div></li>
-<li>Calling <code>singularity shell</code> or <code>singularity exec</code> uses as cwd the host callers cwd not the one set in the Dockerfile.
+<li>Calling <code>apptainer shell</code> or <code>apptainer exec</code> uses as cwd the host callers cwd not the one set in the Dockerfile.
   One can change this by setting <code>--pwd</code>.</li>
 </ul>
 <h2 id="referencingproviding-docker-images">Referencing/Providing Docker Images<a class="headerlink" href="#referencingproviding-docker-images" title="Permanent link">&para;</a></h2>
 <h3 id="option-1-use-docker-images-via-docker-hub">Option 1: Use Docker Images via Docker Hub<a class="headerlink" href="#option-1-use-docker-images-via-docker-hub" title="Permanent link">&para;</a></h3>
 <p>The easiest variant to run a docker image available via a docker hub is by specifying its url.
-This causes singularity to download the image and convert it to a singularity image:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity run docker://godlovedc/lolcow
+This causes apptainer to download the image and convert it to a apptainer image:</p>
+<div class="highlight"><pre><span></span><code>host:~$ apptainer run docker://godlovedc/lolcow
 </code></pre></div>
 
 <p>or to open a shell inside the image</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity bash docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$ apptainer bash docker://godlovedc/lolcow
 </code></pre></div>
 
 <p>Furthermore, similar to docker, one can pull (and convert) remote image with the following call:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity pull docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$ apptainer pull docker://godlovedc/lolcow
 </code></pre></div>
 
 <p>In case your registry requires authentication you can provide it via a prompt by adding the option <code>--docker-login</code>:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity pull --docker-login docker://ilumb/mylolcow
+<div class="highlight"><pre><span></span><code>host:~$ apptainer pull --docker-login docker://ilumb/mylolcow
 </code></pre></div>
 
 <p>or by setting the following environment variables:</p>
-<div class="highlight"><pre><span></span><code>host:~$ <span class="nb">export</span> <span class="nv">SINGULARITY_DOCKER_USERNAME</span><span class="o">=</span>ilumb
-host:~$ <span class="nb">export</span> <span class="nv">SINGULARITY_DOCKER_PASSWORD</span><span class="o">=</span>&lt;redacted&gt;
-host:~$ singularity pull docker://ilumb/mylolcow
+<div class="highlight"><pre><span></span><code>host:~$ <span class="nb">export</span> <span class="nv">APPTAINER_DOCKER_USERNAME</span><span class="o">=</span>ilumb
+host:~$ <span class="nb">export</span> <span class="nv">APPTAINER_DOCKER_PASSWORD</span><span class="o">=</span>&lt;redacted&gt;
+host:~$ apptainer pull docker://ilumb/mylolcow
 </code></pre></div>
 
-<p>More details can be found <a href="https://sylabs.io/guides/3.5/user-guide/singularity_and_docker.html">in the Singularity documentation</a>.</p>
+<p>More details can be found <a href="https://apptainer.org/docs/user/main/docker_and_oci.html">in the Apptainer documentation</a>.</p>
 <h3 id="option-2-converting-docker-images">Option 2: Converting Docker Images<a class="headerlink" href="#option-2-converting-docker-images" title="Permanent link">&para;</a></h3>
-<p>Another option is to convert your docker image into the Singularity image format.
+<p>Another option is to convert your docker image into the Apptainer/Singularity image format.
 This can be easily done using the docker images provided by <a href="https://github.com/singularityhub/docker2singularity">docker2singularity</a>.</p>
-<p>To convert the docker image <code>docker_image_name</code> to the singularity image <code>singularity_image_name</code> one can use the following command line.
+<p>To convert the docker image <code>docker_image_name</code> to the apptainer image <code>apptainer_image_name</code> one can use the following command line.
 The output image will be located in <code>output_directory_for_images</code>.</p>
-<div class="highlight"><pre><span></span><code>host:~$ docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -t --rm quay.io/singularity/docker2singularity -v /output_directory_for_images/:/output --name singularity_image_name docker_image_name
+<div class="highlight"><pre><span></span><code>host:~$ docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -t --rm quay.io/singularity/docker2singularity -v /output_directory_for_images/:/output --name apptainer_image_name docker_image_name
 </code></pre></div>
 
 <p>The resulting image can then directly be used as image:</p>
-<div class="highlight"><pre><span></span><code>host:~$ singularity bash singularity_image_name
+<div class="highlight"><pre><span></span><code>host:~$ apptainer bash apptainer_image_name
 </code></pre></div>
 
 <h2 id="conversion-compatibility">Conversion Compatibility<a class="headerlink" href="#conversion-compatibility" title="Permanent link">&para;</a></h2>
-<p>Here are some tips for making Docker images compatible with Singularity taken from <a href="https://github.com/singularityhub/docker2singularity">docker2singulrity</a>:</p>
+<p>Here are some tips for making Docker images compatible with Apptainer taken from <a href="https://github.com/singularityhub/docker2singularity">docker2singulrity</a>:</p>
 <ul>
 <li>Define all environmental variables using the ENV instruction set. Do not rely on <code>~/.bashrc</code>, <code>~/.profile</code>, etc.</li>
 <li>Define an <code>ENTRYPOINT</code> instruction set pointing to the command line interface to your pipeline.</li>
 <li>Do not define <code>CMD</code> - rely only on <code>ENTRYPOINT</code>.</li>
 <li>You can interactively test the software inside the container by overriding the <code>ENTRYPOINT docker run -i -t --entrypoint /bin/bash bids/example</code>.</li>
 <li>Do not rely on being able to write anywhere other than the home folder and /scratch.
-  Make sure your container runs with the <code>--read-only --tmpfs /run --tmpfs /tmp parameters</code> (this emulates the read-only behavior of Singularity).</li>
+  Make sure your container runs with the <code>--read-only --tmpfs /run --tmpfs /tmp parameters</code> (this emulates the read-only behavior of Apptainer).</li>
 <li>Don't rely on having elevated user permissions.</li>
 <li>Don't use the <code>USER</code> instruction set.</li>
 </ul>
@@ -2173,7 +2179,7 @@ The output image will be located in <code>output_directory_for_images</code>.</p
 <div class="md-source-date">
   <small>
     
-      Last update: January 9, 2023
+      Last update: January 20, 2023
     
   </small>
 </div>
