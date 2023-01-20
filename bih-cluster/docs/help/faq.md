@@ -538,8 +538,8 @@ nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
 
 No, as Docker essentially gives you access as the root user.
 
-However, you can use Singularity to run containers (and even many Docker contains if they are "properly built").
-Also see [Using Singularity (with Docker Images)](../how-to/software/singularity.md).
+However, you can use Apptainer (former Singularity) to run containers (and even many Docker contains if they are "properly built").
+Also see [Using Apptainer (with Docker Images)](../how-to/software/apptainer.md).
 
 ## How can I copy data between the MAX Cluster (MDC Network) and BIH HPC?
 
