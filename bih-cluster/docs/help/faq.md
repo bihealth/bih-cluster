@@ -634,3 +634,28 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.
 
 Only when connecting **from** the host organizations' VPN or **from** the host organizations' jail node, the users use the HPC 4 Research user name that is `jdoe_c` or `jdoe_m` and not `jdoe`!
+
+## How can I exchange data with external collaborators?
+
+BIH HPC IT does not have the resources to offer such a service to normal users.
+
+In particular, for **privacy sensitive** data this comes with a large number of strings attached to fulfill all regulatory requirements.
+If you need to exchange such data then you need to contact the central IT departments of your home organisation:
+
+- Charite GB IT: heldpesk@charite.de
+- MDC: helpdesk@mdc-berlin.de
+
+If your data is not **privacy sensitive** or you can **guarantee strong encryption of the data** then the Gigamove service of RWTH Aachen might come in handy:
+
+- https://gigamove.rwth-aachen.de/en
+- https://help.itc.rwth-aachen.de/en/service/1jeqhtat4k0o3/faq/
+
+You can login via Charite/MDC credentials (or most German academic institutions) and store up to 1TB of data at a time in the account with each file having up to 100GB.
+
+As a note, Charite GB IT has a (German) manual on how to use 7-Zip with AES256 and strong passwords for **encrypting data** such that it is fit for transfer over unencrypted channels.
+You can find it here (Charite Intranet only) at point 2.12.
+
+- https://intranet.charite.de/it/helpdesk/anleitungen/
+
+The key point is using a strong password (e.g. with the `pwgen` utility), creating an encrypted file with AES256 encryption, using distinct password for each recipient, and exchanging the password over a second channel (SMS or voice phone).
+Note that the central manual remains the ground truth of information and this FAQ entry may not reflect the current process recommended by GB IT if it changes without us noticing.
