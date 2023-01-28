@@ -698,6 +698,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-exchange-data-with-external-collaborators" class="md-nav__link">
+    How can I exchange data with external collaborators?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2548,6 +2555,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-can-i-exchange-data-with-external-collaborators" class="md-nav__link">
+    How can I exchange data with external collaborators?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3063,6 +3077,27 @@ For Charite VPN, as for all Charite IT systems, users must use their Charite use
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., <code>jdoe</code> and not <code>jdoe_m</code>).</p>
 <p>For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.</p>
 <p>Only when connecting <strong>from</strong> the host organizations' VPN or <strong>from</strong> the host organizations' jail node, the users use the HPC 4 Research user name that is <code>jdoe_c</code> or <code>jdoe_m</code> and not <code>jdoe</code>!</p>
+<h2 id="how-can-i-exchange-data-with-external-collaborators">How can I exchange data with external collaborators?<a class="headerlink" href="#how-can-i-exchange-data-with-external-collaborators" title="Permanent link">&para;</a></h2>
+<p>BIH HPC IT does not have the resources to offer such a service to normal users.</p>
+<p>In particular, for <strong>privacy sensitive</strong> data this comes with a large number of strings attached to fulfill all regulatory requirements.
+If you need to exchange such data then you need to contact the central IT departments of your home organisation:</p>
+<ul>
+<li>Charite GB IT: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#100;&#112;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#101;&#108;&#100;&#112;&#101;&#115;&#107;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a></li>
+<li>MDC: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#109;&#100;&#99;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;">&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#109;&#100;&#99;&#45;&#98;&#101;&#114;&#108;&#105;&#110;&#46;&#100;&#101;</a></li>
+</ul>
+<p>If your data is not <strong>privacy sensitive</strong> or you can <strong>guarantee strong encryption of the data</strong> then the Gigamove service of RWTH Aachen might come in handy:</p>
+<ul>
+<li><a href="https://gigamove.rwth-aachen.de/en">https://gigamove.rwth-aachen.de/en</a></li>
+<li><a href="https://help.itc.rwth-aachen.de/en/service/1jeqhtat4k0o3/faq/">https://help.itc.rwth-aachen.de/en/service/1jeqhtat4k0o3/faq/</a></li>
+</ul>
+<p>You can login via Charite/MDC credentials (or most German academic institutions) and store up to 1TB of data at a time in the account with each file having up to 100GB.</p>
+<p>As a note, Charite GB IT has a (German) manual on how to use 7-Zip with AES256 and strong passwords for <strong>encrypting data</strong> such that it is fit for transfer over unencrypted channels.
+You can find it here (Charite Intranet only) at point 2.12.</p>
+<ul>
+<li><a href="https://intranet.charite.de/it/helpdesk/anleitungen/">https://intranet.charite.de/it/helpdesk/anleitungen/</a></li>
+</ul>
+<p>The key point is using a strong password (e.g. with the <code>pwgen</code> utility), creating an encrypted file with AES256 encryption, using distinct password for each recipient, and exchanging the password over a second channel (SMS or voice phone).
+Note that the central manual remains the ground truth of information and this FAQ entry may not reflect the current process recommended by GB IT if it changes without us noticing.</p>
                 
                   
                     
@@ -3071,7 +3106,7 @@ For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC u
 <div class="md-source-date">
   <small>
     
-      Last update: January 20, 2023
+      Last update: January 28, 2023
     
   </small>
 </div>
