@@ -2111,11 +2111,11 @@ Larger changes will be announced through the mailing list.</p>
 <li>The general assumption that if a user interferes with the work of others (e.g., by blocking compute slots) then this happens accidentally.<ul>
 <li>Please do not do this.</li>
 <li>If you see this happening try to contact the user yourself (use <code>getent passswd $USER</code> to find out the user's office contact details).</li>
-<li>Send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> if you need administrative intervention.</li>
+<li>Send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> if you need administrative intervention.</li>
 </ul>
 </li>
 <li>All users must be subscribed to the cluster mailing list (they are subscribed automatically when the account is created).</li>
-<li>When leaving please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> such that we can shutdown your account in an organized fashion.
+<li>When leaving please send an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> such that we can shutdown your account in an organized fashion.
    We also need to arrange for cleaning up your data.</li>
 <li>The cluster mailing list <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#105;&#104;&#45;&#99;&#108;&#117;&#115;&#116;&#101;&#114;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#98;&#105;&#104;&#45;&#99;&#108;&#117;&#115;&#116;&#101;&#114;&#64;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> is the primary contact channel for announcements by administration to users.
    Users must be subscribed to the mailing list.
@@ -2134,7 +2134,7 @@ Policies marked with a robot (<img alt="🤖" class="twemoji" src="https://twemo
 <li>Storage on the GPFS file system is a sparse resource try to use both data volume and file sparingly.
    Note well that small files above ~4KB take up at least 8MB of space.</li>
 <li>Default quotas are as follows (each user, group, project has a <code>home</code>, <code>work</code>, and <code>scratch</code> volume).
-   You can request an increase by an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> for groups and projects.<ul>
+   You can request an increase by an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> for groups and projects.<ul>
 <li><code>home</code> 10k files, 1GB space</li>
 <li><code>work</code> 2M files, 1TB space</li>
 <li><code>scratch</code> 20M files, 200TB space</li>
@@ -2148,8 +2148,8 @@ Policies marked with a robot (<img alt="🤖" class="twemoji" src="https://twemo
     This policy is automatically enforced every 5 minutes.</li>
 <li><img alt="🤖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f916.svg" title=":robot:" /> All files in scratch will be moved into a read-only "trash can" inside <code>scratch/BIH_TRASH</code> after 14 days (by <code>mtime</code>) over night.
    Trash directories will be removed after 14 further days.<ul>
-<li>Users can arrange with <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#103;&#97;&#116;&#101;&#107;&#101;&#101;&#112;&#101;&#114;&#64;&#98;&#105;&#104;&#101;&#97;&#108;&#116;&#104;&#46;&#100;&#101;</a> to keep files longer by using <code>touch</code> on files in <code>scratch</code> and subsequently bumping the <code>mtime</code>.</li>
-<li><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> In the case of abuse of this mechanism / failure to communicate with hpc-gatekeeper, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.</li>
+<li>Users can arrange with <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> to keep files longer by using <code>touch</code> on files in <code>scratch</code> and subsequently bumping the <code>mtime</code>.</li>
+<li><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> In the case of abuse of this mechanism / failure to communicate with hpc-helpdesk, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.</li>
 <li>You can learn more in the <a href="../../storage/scratch-cleanup/">Automated Scratch Cleanup</a> section.</li>
 </ul>
 </li>
@@ -2223,7 +2223,7 @@ In the case of violations marked with a shield (<img alt="🛡" class="twemoji" 
 <div class="md-source-date">
   <small>
     
-      Last update: January 28, 2023
+      Last update: February 7, 2023
     
   </small>
 </div>
