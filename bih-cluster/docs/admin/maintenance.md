@@ -383,7 +383,7 @@ Key dates are:
 
 Please also be informed that non-invasive maintenance this weekend which we announced has been canceled, so cluster will operate normally.
 
-In case of any concerns, issues, do not hesitate to contact us via hpc-admin@bihealth.de, or hpc-helpdesk@bihealth.de.
+In case of any concerns, issues, do not hesitate to contact us via hpc-admin@bih-charite.de, or hpc-helpdesk@bih-charite.de.
 
 
 ## June 18, 2018, 0600-1500

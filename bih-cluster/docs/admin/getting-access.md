@@ -4,7 +4,7 @@
 
     A Charite or MDC account is required for accessing HPC 4 Research.
 
-    1. **Register Users.** **Group leaders/PIs** register their members via hpc-gatekeeper@bihealth.de using the forms below.
+    1. **Register Users.** **Group leaders/PIs** register their members via hpc-helpdesk@bih-charite.de using the forms below.
     2. **Upload Key.** Upload your SSH key through the Charite and MDC infrastructure.
     3. **Connect.** `ssh -l <user>_<c or m>@hpc-login-1.cubi.bihealth.org` or using `hpc-login-2.cubi.bihealth.org`.
 
@@ -45,9 +45,9 @@ host:~$ ssh -l user_m hpc-login-1.cubi.bihealth.org
 
 The process to create a new group is as follows.
 
-1. The group leader sends an email to hpc-gatekeeper@bihealth.de and fills out the form below.
+1. The group leader sends an email to hpc-helpdesk@bih-charite.de and fills out the form below.
    Please consider the notes below on this page.
-2. hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
+2. hpc-helpdesk decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
 3. All new users are notified and further instructions are sent to them via email.
 
 Subsequently, both owner and delegate (but **only owner and delegate**) can initiate changes (new users, resource changes etc.) to the group.
@@ -111,9 +111,9 @@ Please note, project membership does not grant cluster access (a primary group m
 
 Project creation can be initiated by group leaders and group delegates with the following process.
 
-1. The initiator sends an email to hpc-gatekeeper@bihealth.de and fills out the following form.
+1. The initiator sends an email to hpc-helpdesk@bih-charite.de and fills out the following form.
    Please consider the notes below on this page.
-2. hpc-gatekeeper decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
+2. hpc-helpdesk decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
 3. All new users are notified and further instructions are sent to them via email.
 
 Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project. 
@@ -144,7 +144,7 @@ Additional members:
 
 If you wish to add users to your AG, please use the following form. Note that users you want to add to a project need to be associated with an AG first.
 
-The inquiry has to be send to hpc-gatekeeper@bih-charite.de, either by the PI or the delegate.
+The inquiry has to be send to hpc-helpdesk@bih-charite.de, either by the PI or the delegate.
 
 ```
 # User 1

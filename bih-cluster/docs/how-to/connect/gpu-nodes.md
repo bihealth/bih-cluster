@@ -31,7 +31,7 @@ This will automatically place your job in the `gpu` partition (which is where th
 
 ## Prequisites
 
-You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access.
+You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access.
 Afterwards, you can connect to the GPU nodes as shown below.
 
 ## Preparation
@@ -149,4 +149,4 @@ Fri Mar  6 11:10:08 2020
 If you see someone blocking the GPU nodes for long time, then first find out who it is.
 You can type `getent passwd USER_NAME` on any cluster node to see the email address (and work phone number if added) of the user.
 Send a friendly email to the other user, most likely they blocked the node accidentally.
-If you cannot resolve the issue (e.g., the user is not reachable) then please contact hpc-helpdesk@bihealth.de with your issue.
+If you cannot resolve the issue (e.g., the user is not reachable) then please contact hpc-helpdesk@bih-charite.de with your issue.

@@ -68,9 +68,9 @@ Jobs requesting GPU resources are automatically assigned to the `gpu` partition.
 
 The GPU nodes are only part of the `gpu` partition so they are not blocked by normal compute jobs.
 The maximum run time is relatively high (14 days) to allow for longer training jobs.
-Contact [hpc-helpdesk@bihealth.de](mailto:hpc-helpdesk@bihealth.de) if you have longer running jobs that you really cannot make run any shorter for assistance.
+Contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) if you have longer running jobs that you really cannot make run any shorter for assistance.
 
-For access to it you have register [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
+For access to it you have register [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) (who will grant all requests).
 See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nodes) for details.
 
 * **maximum run time:** 14 days
@@ -83,9 +83,9 @@ Jobs requesting more than 200 GB of RAM are automatically routed to the `highmem
 
 The high memory nodes are only part of the `highmem` partition so they are not blocked by normal compute jobs.
 The maximum run time is relatively high (14 days) to allow for longer jobs.
-Contact [hpc-helpdesk@bihealth.de](mailto:hpc-helpdesk@bihealth.de) for assistance if you have longer running jobs that you really cannot make run any shorter.
+Contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for assistance if you have longer running jobs that you really cannot make run any shorter.
 
-For access you must first contact [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
+For access you must first contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) (who will grant all requests).
 See [Resource Registration: GPU Nodes](../admin/resource-registration.md#high-memory-nodes) for details.
 
 * **maximum run time:** 14 days
@@ -100,9 +100,9 @@ This is the only partition in which more than one node can be allocated to a job
 You can submit multi-node jobs into the `mpi` partition.
 The maximum run time is relatively high (14 days) to allow for longer jobs.
 Don't abuse this.
-Contact [hpc-helpdesk@bihealth.de](mailto:hpc-helpdesk@bihealth.de) for assistance if you have longer running jobs that you really cannot make run any shorter.
+Contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for assistance if you have longer running jobs that you really cannot make run any shorter.
 
-For access you must first contact [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) (who will grant all requests).
+For access you must first contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) (who will grant all requests).
 See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nodes) for details.
 
 * **maximum run time:** 14 days
@@ -114,11 +114,11 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nod
 Jobs are not routed into `critial` automatically, and the partition has to be selected manually.
 
 This partition is for time-critical jobs with deadlines.
-For access to it you have to first ask [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de).
+For access to it you have to first ask [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de).
 See [Resource Registration: Critical Partition](../admin/resource-registration.md#critical-partition) for details.
 
 As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
-However, do not use this partition without arranging with hpc-gatekeeper as killing jobs will be used as the *ultima ratio* in case of such policy violations.
+However, do not use this partition without arranging with hpc-helpdesk as killing jobs will be used as the *ultima ratio* in case of such policy violations.
 
 * **maximum run time:** 7 days
 * **maximum cores:** 2000 cores/slots (48 nodes)

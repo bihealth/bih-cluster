@@ -1,7 +1,7 @@
 # HPC IT Helpdesk
 
 !!! faq "Getting Help"
-    Our helpdesk can be reached via email to hpc-helpdesk@bihealth.de.
+    Our helpdesk can be reached via email to hpc-helpdesk@bih-charite.de.
     Please read our guide on [how to write good tickets](good-tickets.md) first.
 
 Please also use the handy figure below on general problem resolution.
@@ -27,7 +27,7 @@ Please note that all other questions can only be answered in a "best effort way"
 The following topics are out of scope for the BIH HPC Helpdesk:
 
 - Generic Linux or programming questions (try [stackoverflow.com](http://stackoverflow.com)).
-- Managing users, groups, and projects on the clusters (use hpc-gatekeeper@bihealth.de).
+- Managing users, groups, and projects on the clusters (use hpc-helpdesk@bih-charite.de).
 - Generic help with Snakemake or other workflow engines (See [Stackoverflow](https://stackoverflow.com/questions/tagged/snakemake) for getting help with Snakemake).
 - Help with bioinformatics or other scientific software.
   Please contact the authors/communities of these software for help (also known as "upstream").

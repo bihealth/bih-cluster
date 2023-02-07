@@ -11,7 +11,7 @@ The aim is to gather the information for using the cluster efficiently and helpi
 - Have a look at our forums at [HPC-talk](https://hpc-talk.cubi.bihealth.org/) to see if someone already solved the same problem.
   If not, create a new topic. Administrators, CUBI, and other users can see and answer your question.
 - For problems while connecting and logging in, please contact [helpdesk@mdc-berlin.de](mailto:helpdesk@mdc-berlin.de) or [helpdesk@charite.de](mailto:helpdesk@charite.de).
-- For problems with BIH HPC please contact [hpc-helpdesk@bihealth.de].
+- For problems with BIH HPC please contact [hpc-helpdesk@bih-charite.de].
 
 ## I cannot connect to the cluster. What's wrong?
 
@@ -55,7 +55,7 @@ ServerAliveInterval 30
 This will make `ssh` send an empty network package to the server.
 This will prevent network hardware from thinking your connection is unused/broken and terminating it.
 
-If the problem persists, please report it to hpc-helpdesk@bihealth.de.
+If the problem persists, please report it to hpc-helpdesk@bih-charite.de.
 
 ## My job terminated before being done. What happened?
 
@@ -119,7 +119,7 @@ Please see the memory part of the answer to [My job terminated before being done
 
 You can create a project if you are either a group leader of an AG or a delegate of an AG.
 
-In this case, please send an email to hpc-admin@bihealth.de and request a new project.
+In this case, please send an email to hpc-admin@bih-charite.de and request a new project.
 
 ## I have a problem with my SSH key, help!
 
@@ -465,7 +465,7 @@ Most probably you are running into the same problem as described and solved in t
 
 First of all, ensure that you are on a compute node and not on one of the login nodes.
 One common reason is that the system-wide Bash configuration has not been loaded, try to execute `source /etc/bashrc` and then re-try using `module`.
-In the case that the problem persists, please contact hpc-helpdesk@bihealth.de.
+In the case that the problem persists, please contact hpc-helpdesk@bih-charite.de.
 
 ## What should my ~/.bashrc look like?
 
@@ -619,7 +619,7 @@ In the case that a user has both Charite and MDC accounts these are completely s
 For authentication (veryfing that a user has acccess to an account), the Charite and MDC account systems (MS Active Directory) are used.
 Authentication currently only uses the SSH keys deposited into Charite (via zugang.charite.de) and MDC (via MDC persdb).
 Users have to obtain a suitable Charite/MDC account via Charite and MDC central IT departments and upload their SSH keys through the host organization systems on their own.
-The hpc-gatekeeper process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special `hpc-users` group that controls access to the system and organizing users into work groups and projects.
+The hpc-helpdesk process is then used for getting their accounts setup on the HPC 4 Research system (the home/work/scratch shares being setup), becoming part of the special `hpc-users` group that controls access to the system and organizing users into work groups and projects.
 
 The process of submitting keys to Charite and MDC is documented in the "Connecting" section.
 

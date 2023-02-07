@@ -15,8 +15,8 @@
 
 ## Pre-requisites
 
-You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access to the Latlab licenses.
-Register on [User Self Organisation MATLAB](../../admin/resource-registration.md#matlab-licenses) after registering with hpc-gatekeeper.
+You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access to the Latlab licenses.
+Register on [User Self Organisation MATLAB](../../admin/resource-registration.md#matlab-licenses) after registering with hpc-helpdesk.
 
 Afterwards, you can connect to the High-Memory using the `license_matlab_r2016b` resource (see below).
 
@@ -169,5 +169,5 @@ If you were to submit 17 of these jobs, then at least one of them would have to 
 !!! warning "Matlab License Server"
     Note that there is a Matlab license server running on the server that will check whether 16 or less Matlab sessions are currently running.
     If a Matlab session is running but this is not made known to the scheduler via `-L matlab_r2016b` then this can lead to scripts crashing as not enough licenses are available.
-    If this happens to you, double-check that you have specified the license requirements correctly and notify hpc-helpdesk@bihealth.de in case of any problems.
+    If this happens to you, double-check that you have specified the license requirements correctly and notify hpc-helpdesk@bih-charite.de in case of any problems.
     We will try to sort out the situation then.

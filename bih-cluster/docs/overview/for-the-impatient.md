@@ -53,7 +53,7 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
 - A place for data move data at the beginning of your project.
   By definition, every project has an end.
   **Your project data needs to leave the cluster at the end of the project.**
-- A collaborative resource with central administration managed by BIH HPC IT and supported via hpc-helpdesk@bihealth.de
+- A collaborative resource with central administration managed by BIH HPC IT and supported via hpc-helpdesk@bih-charite.de
 
 **IT IS NOT**
 

@@ -2,7 +2,7 @@
 
 ## Prequisites
 
-You have to register with [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de) for requesting access.
+You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access.
 
 Afterwards, you can connect to the High-Memory using the `highmem` SLURM partition (see below).
 Jobs allocating more than 200GB of RAM should be routed automatically to the `highmem` nodes.

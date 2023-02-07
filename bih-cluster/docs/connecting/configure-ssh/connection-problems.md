@@ -40,9 +40,9 @@ You're logging into BIH HPC cluster! (login-1)
  ***Your account has not been granted cluster access yet.***
 
  If you think that you should have access, please contact
- hpc-helpdesk@bihealth.de for assistance.
+ hpc-helpdesk@bih-charite.de for assistance.
 
- For applying for cluster access, contact hpc-gatekeeper@bihealth.de.
+ For applying for cluster access, contact hpc-helpdesk@bih-charite.de.
 
 user@login-1's password:
 ```
@@ -52,7 +52,7 @@ user@login-1's password:
     **This is the most common error**, and the main cause for this is a wrong username. Please take a couple of minutes to read the [article about how usernames are constructed](prerequisites.md#what-is-my-username)!
 
 If you encounter this message **although we told you that you have access and you checked the username as mentioned above**,
-please write to [hpc-gatekeeper@bihealth.de](mailto:hpc-gatekeeper@bihealth.de),
+please write to [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de),
 always indicating the message you get and a detailed description of what you
 did.
 
@@ -64,7 +64,7 @@ You're logging into BIH HPC cluster! (login-1)
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
- then please contact hpc-helpdesk@bihealth.de for assistance.
+ then please contact hpc-helpdesk@bih-charite.de for assistance.
 
 Enter passphrase for key '/home/USER/.ssh/id_rsa':
 ```
@@ -80,7 +80,7 @@ You're logging into BIH HPC cluster! (login-1)
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
- then please contact hpc-helpdesk@bihealth.de for assistance.
+ then please contact hpc-helpdesk@bih-charite.de for assistance.
 
 user@login-1's password:
 ```
@@ -92,5 +92,5 @@ user@login-1's password:
 When you encounter this message during a login attempt, there is an issue with
 your SSH key. In this case, please connect with increased verbosity to the
 cluster (`ssh -vvv ...`) and mail the output and a detailed description to
-[hpc-helpdesk@bihealth.de](mailto:hpc-helpdesk@bihealth.de).
+[hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de).
 

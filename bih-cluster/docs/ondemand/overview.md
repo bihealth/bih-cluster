@@ -3,7 +3,7 @@
 !!! important "Status / Stability"
 
     OnDemand Support is currently in **beta** phase on the BIH HPC.
-    In case of any issues, please send an email to hpc-helpdesk@bihealth.de.
+    In case of any issues, please send an email to hpc-helpdesk@bih-charite.de.
 
 To allow for better interactive works, BIH HPC administration has setup an  [Open OnDemand (OOD)](https://openondemand.org/) portal web server.
 

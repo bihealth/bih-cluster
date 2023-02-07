@@ -60,7 +60,7 @@ See [Maintenance](admin/maintenance) for a detailed list of current, planned, an
 
 ## Connecting to the Cluster
 
-You will need to perform some configuration steps after you have been registered with the cluster (via email to hpc-gatekeeper@bihealth.de by a group leader/PI).
+You will need to perform some configuration steps after you have been registered with the cluster (via email to hpc-helpdesk@bih-charite.de by a group leader/PI).
 Here are the most important points:
 
 1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux) or [Windows](connecting/generate-key/windows).

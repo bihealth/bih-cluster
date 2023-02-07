@@ -148,7 +148,7 @@ HPC administration is constantly working on optimizing the scheduler settings.
 Note that you can use the `--format` option to the `squeue` command to request that it shows you information
 about job scheduling (in particular, see the `%S` field, which will show you the expected start time for a job,
 assuming Slurm has calculated it). See `man squeue` for details.
-If you observe inexplicable behavior, please notify us at `hpc-helpdesk@bihealth.de`.
+If you observe inexplicable behavior, please notify us at `hpc-helpdesk@bih-charite.de`.
 
 ## Slurm Partitions
 

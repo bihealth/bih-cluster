@@ -13,9 +13,9 @@ Larger changes will be announced through the mailing list.
 2. The general assumption that if a user interferes with the work of others (e.g., by blocking compute slots) then this happens accidentally.
     - Please do not do this.
     - If you see this happening try to contact the user yourself (use `getent passswd $USER` to find out the user's office contact details).
-    - Send an email to hpc-helpdesk@bihealth.de if you need administrative intervention.
+    - Send an email to hpc-helpdesk@bih-charite.de if you need administrative intervention.
 3. All users must be subscribed to the cluster mailing list (they are subscribed automatically when the account is created).
-4. When leaving please send an email to hpc-helpdesk@bihealth.de such that we can shutdown your account in an organized fashion.
+4. When leaving please send an email to hpc-helpdesk@bih-charite.de such that we can shutdown your account in an organized fashion.
    We also need to arrange for cleaning up your data.
 5. The cluster mailing list bih-cluster@charite.de is the primary contact channel for announcements by administration to users.
    Users must be subscribed to the mailing list.
@@ -36,7 +36,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
 1. Storage on the GPFS file system is a sparse resource try to use both data volume and file sparingly.
    Note well that small files above ~4KB take up at least 8MB of space.
 2. Default quotas are as follows (each user, group, project has a `home`, `work`, and `scratch` volume).
-   You can request an increase by an email to hpc-gatekeeper@bihealth.de for groups and projects.
+   You can request an increase by an email to hpc-helpdesk@bih-charite.de for groups and projects.
     - `home` 10k files, 1GB space
     - `work` 2M files, 1TB space
     - `scratch` 20M files, 200TB space
@@ -48,8 +48,8 @@ Policies marked with a robot (:robot:) are automatically enforced.
     This policy is automatically enforced every 5 minutes.
 6. :robot: All files in scratch will be moved into a read-only "trash can" inside `scratch/BIH_TRASH` after 14 days (by `mtime`) over night.
    Trash directories will be removed after 14 further days.
-    - Users can arrange with hpc-gatekeeper@bihealth.de to keep files longer by using `touch` on files in `scratch` and subsequently bumping the `mtime`.
-    - :warning: In the case of abuse of this mechanism / failure to communicate with hpc-gatekeeper, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.
+    - Users can arrange with hpc-helpdesk@bih-charite.de to keep files longer by using `touch` on files in `scratch` and subsequently bumping the `mtime`.
+    - :warning: In the case of abuse of this mechanism / failure to communicate with hpc-helpdesk, administration reserves the right to drastically reduce scratch quota of affected users and employ other measures to ensure stability of operations.
     - You can learn more in the [Automated Scratch Cleanup](../storage/scratch-cleanup.md) section.
 7. :shield: Administration will not delete any files (outside of `/tmp`).
    In the case that users need to delete files that they can access but not update/delete, administration will either give write permissions to the Unix group of the work group or project or change the owner to the owner/delegate of this group.
