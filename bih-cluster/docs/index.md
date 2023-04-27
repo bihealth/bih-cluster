@@ -46,6 +46,7 @@ Then, continue reading through the manual.
 
 !!! attention "Current and Future Maintenances"
 
+    - :warning: 2023, May 09-10: [BIH HPC / CUBI services downtime: maintenance at MDC data center](https://hpc-talk.cubi.bihealth.org/t/bih-hpc-cubi-services-downtime-maintenance-at-mdc-data-center-09-10-05-2023/525).
     - :nerd: August 30: Replace defect Nvidia V100 and make hpc-gpu-4 available to slurm users again.
     - :nerd: March 9: [Updated TensorFlow How-To to Slurm and Tensorflow 2.0](how-to/software/tensorflow/)
     - :warning: March 22-23: Compute and Storage Downtime.
