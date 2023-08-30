@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,13 +9,20 @@
         <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
       
       
+        <meta name="author" content="BIH HPC IT">
+      
+      
         <link rel="canonical" href="https://bihealth.github.io/bih-cluster/help/faq/">
       
       
-        <meta name="author" content="BIH HPC IT">
+        <link rel="prev" href="../good-tickets/">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.5">
+      
+        <link rel="next" href="../../overview/for-the-impatient/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.5">
     
     
       
@@ -25,22 +30,28 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df84b5fe.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
       
       
-    
+
+
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
     
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
     
     
       <link rel="stylesheet" href="../../css/extra.css">
     
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <!-- Matomo -->
 <script type="text/javascript">
@@ -59,11 +70,16 @@
 <!-- End Matomo Code -->
 
     
+    
   </head>
   
   
     <body dir="ltr">
   
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -79,48 +95,65 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://bihealth.github.io/bih-cluster" title="BIH HPC Docs" class="md-header-nav__button md-logo" aria-label="BIH HPC Docs">
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
+    <label class="md-header__button md-icon" for="__drawer">
       
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             BIH HPC Docs
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Frequently Asked Questions
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -128,7 +161,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -136,12 +169,11 @@
 </div>
     
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     BIH HPC Docs
@@ -150,39 +182,44 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
+      
         
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://bihealth.github.io/bih-cluster" title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs">
+    <a href="../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     BIH HPC Docs
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source">
+      <a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     BIH HPC Docs
@@ -194,208 +231,310 @@
     
       
       
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Administrative
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Administrative" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Administrative
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../admin/getting-access/" title="Getting Access" class="md-nav__link">
-      Getting Access
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../admin/resource-registration/" title="Resource Registration" class="md-nav__link">
-      Resource Registration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../admin/maintenance/" title="Maintenance etc." class="md-nav__link">
-      Maintenance etc.
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../admin/provided-software/" title="Provided Software" class="md-nav__link">
-      Provided Software
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../admin/policies/" title="Policies" class="md-nav__link">
-      Policies
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
   
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Getting Help
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Getting Help" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Getting Help
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../hpc-talk/" title="HPC Talk Forum" class="md-nav__link">
-      HPC Talk Forum
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../helpdesk/" title="HPC Helpdesk" class="md-nav__link">
-      HPC Helpdesk
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../good-tickets/" title="Good Tickets" class="md-nav__link">
-      Good Tickets
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+      </a>
+    </li>
   
 
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administrative
+  </span>
+  
 
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Administrative
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/getting-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/resource-registration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Registration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance etc.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/provided-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Provided Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin/policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Frequently Asked Questions
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Frequently Asked Questions" class="md-nav__link md-nav__link--active">
-      Frequently Asked Questions
-    </a>
-    
       
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hpc-talk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Talk Forum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helpdesk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Helpdesk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../good-tickets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Tickets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+      
+        
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#what-is-this-website" class="md-nav__link">
@@ -622,6 +761,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-r-sessions-is-always-crashing" class="md-nav__link">
+    My R sessions is always crashing!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#which-cuda-version-is-installed" class="md-nav__link">
     Which CUDA version is installed?
   </a>
@@ -708,1525 +854,2383 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
-        
-      </ul>
-    </nav>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Overview
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Overview" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Overview
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-nav__link">
-      For the Impatient
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../overview/architecture/" title="Architecture" class="md-nav__link">
-      Architecture
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../overview/job-scheduler/" title="Job Scheduler" class="md-nav__link">
-      Job Scheduler
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
-          
-          
-          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../overview/storage/" title="Nodes and Volumes" class="md-nav__link">
-      Nodes and Volumes
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../overview/monitoring/" title="Monitoring" class="md-nav__link">
-      Monitoring
-    </a>
-  </li>
-
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/for-the-impatient/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  <span class="md-ellipsis">
+    For the Impatient
+  </span>
+  
 
-    
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/job-scheduler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Scheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodes and Volumes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Connecting
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Connecting" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Connecting
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
-    
-    <label class="md-nav__link" for="nav-5-1">
-      Generate Keys
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Generate Keys" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Generate Keys
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/generate-key/linux/" title="Linux" class="md-nav__link">
-      Linux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/generate-key/windows/" title="Windows" class="md-nav__link">
-      Windows
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
-    
-    <label class="md-nav__link" for="nav-5-2">
-      Submit Keys
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Submit Keys" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Submit Keys
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/submit-key/charite/" title="Charite" class="md-nav__link">
-      Charite
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/submit-key/mdc/" title="MDC" class="md-nav__link">
-      MDC
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
-    
-    <label class="md-nav__link" for="nav-5-3">
-      Configure Client
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Configure Client" data-md-level="2">
-      <label class="md-nav__title" for="nav-5-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Configure Client
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/prerequisites/" title="Pre-Requisites" class="md-nav__link">
-      Pre-Requisites
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/linux/" title="Linux" class="md-nav__link">
-      Linux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/windows/" title="Windows" class="md-nav__link">
-      Windows
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/configure-ssh/connection-problems/" title="Connection Problems" class="md-nav__link">
-      Connection Problems
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/from-external/" title="From External" class="md-nav__link">
-      From External
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../connecting/ssh-client-windows/" title="Windows SSH Client" class="md-nav__link">
-      Windows SSH Client
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connecting
+  </span>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Connecting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-6">
-      First Steps
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="First Steps" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        First Steps
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../first-steps/episode-0/" title="Episode 0" class="md-nav__link">
-      Episode 0
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../first-steps/episode-1/" title="Episode 1" class="md-nav__link">
-      Episode 1
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../first-steps/episode-2/" title="Episode 2" class="md-nav__link">
-      Episode 2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../first-steps/episode-3/" title="Episode 3" class="md-nav__link">
-      Episode 3
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../first-steps/episode-4/" title="Episode 4" class="md-nav__link">
-      Episode 4
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
     
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Generate Keys
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Generate Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/generate-key/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/generate-key/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Storage
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Storage" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Storage
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../storage/accessing-snapshots/" title="Accessing Snapshots" class="md-nav__link">
-      Accessing Snapshots
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../storage/querying-storage/" title="Querying Quotas" class="md-nav__link">
-      Querying Quotas
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../storage/storage-locations/" title="Storage Locations" class="md-nav__link">
-      Storage Locations
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
-          
-          
-          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Submit Keys
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../storage/scratch-cleanup/" title="Automated Cleanup" class="md-nav__link">
-      Automated Cleanup
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      </ul>
-    </nav>
-  </li>
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Submit Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/submit-key/charite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Charite
+  </span>
+  
 
-    
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/submit-key/mdc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MDC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Configure Client
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Configure Client
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/configure-ssh/prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pre-Requisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/configure-ssh/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/configure-ssh/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/configure-ssh/connection-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
-    
-    <label class="md-nav__link" for="nav-8">
-      Cluster Scheduler
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Cluster Scheduler" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Cluster Scheduler
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/from-external/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    From External
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/ssh-client-windows/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Windows SSH Client
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../slurm/overview/" title="Scheduling Overview" class="md-nav__link">
-      Scheduling Overview
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/background/" title="Introduction to Scheduling" class="md-nav__link">
-      Introduction to Scheduling
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/quickstart/" title="Slurm Quickstart" class="md-nav__link">
-      Slurm Quickstart
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/temporary-files/" title="Slurm and Temporary Files" class="md-nav__link">
-      Slurm and Temporary Files
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/cheat-sheet/" title="Slurm Cheat Sheet" class="md-nav__link">
-      Slurm Cheat Sheet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/job-scripts/" title="Slurm Job Scripts" class="md-nav__link">
-      Slurm Job Scripts
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/memory-allocation/" title="Memory Allocation" class="md-nav__link">
-      Memory Allocation
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/reservations/" title="Reservations / Maintenances" class="md-nav__link">
-      Reservations / Maintenances
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8-9" type="checkbox" id="nav-8-9">
-    
-    <label class="md-nav__link" for="nav-8-9">
-      Slurm Commands
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Slurm Commands" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Slurm Commands
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-srun/" title="srun" class="md-nav__link">
-      srun
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-sbatch/" title="sbatch" class="md-nav__link">
-      sbatch
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-sattach/" title="sattach" class="md-nav__link">
-      sattach
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-scancel/" title="scancel" class="md-nav__link">
-      scancel
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-sinfo/" title="sinfo" class="md-nav__link">
-      sinfo
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-squeue/" title="squeue" class="md-nav__link">
-      squeue
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-scontrol/" title="scontrol" class="md-nav__link">
-      scontrol
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/commands-sacct/" title="sacct" class="md-nav__link">
-      sacct
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/format-strings/" title="Format Strings" class="md-nav__link">
-      Format Strings
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/snakemake/" title="Snakemake with Slurm" class="md-nav__link">
-      Snakemake with Slurm
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/x11/" title="X11 Forwarding" class="md-nav__link">
-      X11 Forwarding
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../slurm/rosetta-stone/" title="Slurm Rosetta Stone" class="md-nav__link">
-      Slurm Rosetta Stone
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      OnDemand Portal
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="OnDemand Portal" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        OnDemand Portal
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ondemand/overview/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ondemand/interactive/" title="Interactive Sessions" class="md-nav__link">
-      Interactive Sessions
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ondemand/quotas/" title="Quotas" class="md-nav__link">
-      Quotas
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
-      </ul>
-    </nav>
-  </li>
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    First Steps
+  </span>
+  
 
-    
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            First Steps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first-steps/episode-0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first-steps/episode-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first-steps/episode-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first-steps/episode-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../first-steps/episode-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      Best Practice
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Best Practice" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Best Practice
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/project-structure/" title="Project Structure" class="md-nav__link">
-      Project Structure
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/software-craftmanship/" title="Software Craftmanship" class="md-nav__link">
-      Software Craftmanship
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/screen-tmux/" title="Using Screen/Tmux" class="md-nav__link">
-      Using Screen/Tmux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/bashrc-guide/" title="~/.bashrc Guide" class="md-nav__link">
-      ~/.bashrc Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/temp-files/" title="Temporary Files" class="md-nav__link">
-      Temporary Files
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/env-modules/" title="Custom Environment Modules" class="md-nav__link">
-      Custom Environment Modules
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../best-practice/software-installation-with-conda/" title="Install with Conda" class="md-nav__link">
-      Install with Conda
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
-    
-    <label class="md-nav__link" for="nav-11">
-      Static Data
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Static Data" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Static Data
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cubit/" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cubit/annotations/" title="Annotations" class="md-nav__link">
-      Annotations
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cubit/app-support/" title="Application Support" class="md-nav__link">
-      Application Support
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
-          
-          
-          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../cubit/databases/" title="Databases" class="md-nav__link">
-      Databases
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../cubit/exomes-panels/" title="Exomes and Panels" class="md-nav__link">
-      Exomes and Panels
-    </a>
-  </li>
-
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/accessing-snapshots/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Accessing Snapshots
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../cubit/exon-lists/" title="Exon Lists" class="md-nav__link">
-      Exon Lists
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/querying-storage/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Querying Quotas
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../cubit/index-files/" title="Precomputed Indexes" class="md-nav__link">
-      Precomputed Indexes
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage-locations/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Storage Locations
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../cubit/references/" title="Reference Sequences" class="md-nav__link">
-      Reference Sequences
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  <span class="md-ellipsis">
+    Automated Cleanup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cluster Scheduler
+  </span>
+  
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Scheduler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scheduling Overview
+  </span>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Scheduling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/temporary-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm and Temporary Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/job-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Job Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/memory-allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/reservations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reservations / Maintenances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
-    <label class="md-nav__link" for="nav-12">
-      How-To
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="How-To" data-md-level="1">
-      <label class="md-nav__title" for="nav-12">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        How-To
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-1" type="checkbox" id="nav-12-1">
-    
-    <label class="md-nav__link" for="nav-12-1">
-      Connect
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Connect" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-1">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Connect
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/connect/high-memory/" title="High-Memory Nodes" class="md-nav__link">
-      High-Memory Nodes
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/connect/gpu-nodes/" title="GPU Nodes" class="md-nav__link">
-      GPU Nodes
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-2" type="checkbox" id="nav-12-2">
-    
-    <label class="md-nav__link" for="nav-12-2">
-      Software
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Software" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Software
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/openmpi/" title="OpenMPI" class="md-nav__link">
-      OpenMPI
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
         
-          
-          
-          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm Commands
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/scientific-software/" title="Scientific Software" class="md-nav__link">
-      Scientific Software
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/software/cell-ranger/" title="Cell Ranger" class="md-nav__link">
-      Cell Ranger
-    </a>
-  </li>
-
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-srun/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    srun
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/jupyter/" title="Jupyter" class="md-nav__link">
-      Jupyter
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    sbatch
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/keras/" title="Keras" class="md-nav__link">
-      Keras
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sattach/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    sattach
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/matlab/" title="Matlab" class="md-nav__link">
-      Matlab
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scancel/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    scancel
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/tensorflow/" title="Tensorflow" class="md-nav__link">
-      Tensorflow
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    sinfo
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/software/apptainer/" title="Apptainer" class="md-nav__link">
-      Apptainer
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-squeue/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  <span class="md-ellipsis">
+    squeue
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    scontrol
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-3" type="checkbox" id="nav-12-3">
-    
-    <label class="md-nav__link" for="nav-12-3">
-      Service
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Service" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Service
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sacct/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    sacct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/format-strings/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Format Strings
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/service/file-exchange/" title="File Exchange" class="md-nav__link">
-      File Exchange
-    </a>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/snakemake/" class="md-nav__link">
         
-      </ul>
-    </nav>
-  </li>
+  
+  <span class="md-ellipsis">
+    Snakemake with Slurm
+  </span>
+  
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/x11/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    X11 Forwarding
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12-4" type="checkbox" id="nav-12-4">
-    
-    <label class="md-nav__link" for="nav-12-4">
-      Miscellaneous
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Miscellaneous" data-md-level="2">
-      <label class="md-nav__title" for="nav-12-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Miscellaneous
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/rosetta-stone/" class="md-nav__link">
         
-        
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    Slurm Rosetta Stone
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/hpc-talk/" title="Access HPC Talk" class="md-nav__link">
-      Access HPC Talk
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/debug-software/" title="Debug Software" class="md-nav__link">
-      Debug Software
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/debug-at-hpc/" title="Debug @HPC" class="md-nav__link">
-      Debug @HPC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../how-to/misc/contribute/" title="Contribute to Docs" class="md-nav__link">
-      Contribute to Docs
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
       
       
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OnDemand Portal
+  </span>
+  
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand Portal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/interactive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interactive Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/quotas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      
+      
+  
+  
+  
     
-    <label class="md-nav__link" for="nav-13">
-      Miscellaneous
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="Miscellaneous" data-md-level="1">
-      <label class="md-nav__title" for="nav-13">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        Miscellaneous
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../misc/publication-list/" title="Publication List" class="md-nav__link">
-      Publication List
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../misc/external-resources/" title="External Guides" class="md-nav__link">
-      External Guides
-    </a>
-  </li>
-
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../misc/tips/" title="Misc. Tips" class="md-nav__link">
-      Misc. Tips
-    </a>
-  </li>
-
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
-          
-          
-          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Best Practice
+  </span>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../misc/ssh-basics/" title="SSH Basics" class="md-nav__link">
-      SSH Basics
-    </a>
-  </li>
-
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-      </ul>
-    </nav>
-  </li>
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Best Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/project-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/software-craftmanship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Craftmanship
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/screen-tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Screen/Tmux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/bashrc-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ~/.bashrc Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/temp-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Temporary Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/env-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Environment Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/software-installation-with-conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install with Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Static Data
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Static Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/annotations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/app-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/exomes-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exomes and Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/exon-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exon Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/index-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Precomputed Indexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How-To
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            How-To
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connect
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Connect
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/connect/high-memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    High-Memory Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/connect/gpu-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPU Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/openmpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/scientific-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scientific Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/cell-ranger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cell Ranger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/jupyter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/keras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/tensorflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tensorflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/apptainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Service
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/service/file-exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File Exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/hpc-talk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access HPC Talk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/debug-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/debug-at-hpc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug @HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute to Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/publication-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publication List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/external-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Guides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Misc. Tips
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/ssh-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
   </ul>
@@ -2236,23 +3240,24 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#what-is-this-website" class="md-nav__link">
@@ -2479,6 +3484,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-r-sessions-is-always-crashing" class="md-nav__link">
+    My R sessions is always crashing!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#which-cuda-version-is-installed" class="md-nav__link">
     Which CUDA version is installed?
   </a>
@@ -2570,19 +3582,17 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/bihealth/bih-cluster/edit/master/bih-cluster/docs/help/faq.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
                   
-                
-                
-                <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
+
+  
+  
+
+
+<h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-this-website">What is this Website?<a class="headerlink" href="#what-is-this-website" title="Permanent link">&para;</a></h2>
 <p>This is the BIH cluster documentation that was created and is maintained by BIH Core Unit Bioinformatics (CUBI) and BIH HPC IT with contributions by BIH HPC Users.
 The aim is to gather the information for using the cluster efficiently and helping common issues andproblems.</p>
@@ -2625,7 +3635,6 @@ The aim is to gather the information for using the cluster efficiently and helpi
 <p>Try to put the following line at the top of your <code>~/.ssh/config</code>.</p>
 <div class="highlight"><pre><span></span><code>ServerAliveInterval 30
 </code></pre></div>
-
 <p>This will make <code>ssh</code> send an empty network package to the server.
 This will prevent network hardware from thinking your connection is unused/broken and terminating it.</p>
 <p>If the problem persists, please report it to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>.</p>
@@ -2635,24 +3644,21 @@ In the case that the job was terminated by Slurm (e.g., because it ran too long)
 Please look at the end of the last line in your log file.</p>
 <div class="highlight"><pre><span></span><code>slurmstepd: error: *** JOB &lt;your job id&gt; ON med0xxx CANCELLED AT 2020-09-02T21:01:12 DUE TO TIME LIMIT ***
 </code></pre></div>
-
 <p>This indicates that you need to need to adjust the <code>--time</code> limit to your <code>sbatch</code> command.</p>
 <div class="highlight"><pre><span></span><code>slurmstepd: error: Detected 2 oom-kill event(s) in step &lt;your job id&gt;.batch cgroup.
 Some of your processes may have been killed by the cgroup out-of-memory handler
 </code></pre></div>
-
 <p>This indicates that your job tries to use more memory than has been allocated to it.
 Also see <a href="../../slurm/memory-allocation/">Slurm Scheduler: Memory Allocation</a></p>
 <p>Otherwise, you can use <code>sacct -j JOBID</code> to read the information that the job accounting system has recorded for your job.
 A job that was canceled (indicated by <code>CANCELED</code>) by the Slurm job scheduler looks like this (ignore the <code>COMPLETED</code> step that is just some post-job step added by Slurm automatically).</p>
 <div class="highlight"><pre><span></span><code># sacct -j _JOBID_
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
-_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15 
-_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0
+_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15
+_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0
 </code></pre></div>
-
 <p>Use the <code>--long</code> flag to see all fields (and probably pipe it into <code>less</code> as: <code>sacct -j JOBID --long | less -S</code>).
 Things to look out for:</p>
 <ul>
@@ -2667,9 +3673,8 @@ For example, the following tells us that the given job was above its elapsed tim
 ---------- ----------
   01:00:00   01:00:12
              01:00:13
-             01:00:12 
+             01:00:12
 </code></pre></div>
-
 <p>Use <code>man sacct</code>, <code>sacct --helpformat</code>, or see the <a href="https://slurm.schedmd.com/sacct.html">Slurm Documentation</a> for options for the <code>--format</code> field of <code>sacct</code>.</p>
 <h2 id="im-getting-a-bus-error-core-dumped">I'm getting a "Bus error (core dumped)"<a class="headerlink" href="#im-getting-a-bus-error-core-dumped" title="Permanent link">&para;</a></h2>
 <p>This is most probably caused by your job being allocated insufficient memory.
@@ -2687,7 +3692,7 @@ CUBI is also only a user on the BIH cluster and has no access to the user, passw
 This might be the case if you logged into a cluster node using <code>srun --x11</code> if configured correctly but is not the case if you submitted a bash job.
 The solution is to use <code>xvfb-run</code> (xvfb = X11 virtual frame-buffer).</p>
 <p>Here is the content of an example script:</p>
-<div class="highlight"><pre><span></span><code>$ cat img.R 
+<div class="highlight"><pre><span></span><code>$ cat img.R
 #!/usr/bin/env Rscript
 
 png(&#39;cars.png&#39;)
@@ -2695,110 +3700,103 @@ cars &lt;- c(1, 3, 6, 4, 9)
 plot(cars)
 dev.off()
 </code></pre></div>
-
 <p>Here, it fails without X11:</p>
-<div class="highlight"><pre><span></span><code>$ ./img.R 
-Error in .External2(C_X11, paste(&quot;png::&quot;, filename, sep = &quot;&quot;), g$width,  : 
+<div class="highlight"><pre><span></span><code>$ ./img.R
+Error in .External2(C_X11, paste(&quot;png::&quot;, filename, sep = &quot;&quot;), g$width,  :
   unable to start device PNG
 Calls: png
 In addition: Warning message:
 In png(&quot;cars.png&quot;) : unable to open connection to X11 display &#39;&#39;
 Execution halted
 </code></pre></div>
-
 <p>Here, it works with  <code>xvfb-run</code>:</p>
-<div class="highlight"><pre><span></span><code>$ xvfb-run ./img.R 
-null device 
-          1 
+<div class="highlight"><pre><span></span><code>$ xvfb-run ./img.R
+null device
+          1
 $ ls
 cars.png  foo.png  img.R  Rplots.pdf
 </code></pre></div>
-
 <h2 id="my-jobs-dont-get-scheduled">My jobs don't get scheduled<a class="headerlink" href="#my-jobs-dont-get-scheduled" title="Permanent link">&para;</a></h2>
 <p>You can use <code>scontrol show job JOBID</code> to get the details displayed about your jobs.
 In the example below, we can see that the job is in the <code>PENDING</code> state.
 The <code>Reason</code> field tells us that the job did not scheduled because the specified dependency was neverfulfilled.
 You can find a list of all job reason codes in the <a href="https://slurm.schedmd.com/squeue.html#lbAF">Slurm <code>squeue</code> documentation</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">JobId</span><span class="o">=</span><span class="m">863089</span> <span class="nv">JobName</span><span class="o">=</span>pipeline_job.sh
-   <span class="nv">UserId</span><span class="o">=</span>holtgrem_c<span class="o">(</span><span class="m">100131</span><span class="o">)</span> <span class="nv">GroupId</span><span class="o">=</span>hpc-ag-cubi<span class="o">(</span><span class="m">5272</span><span class="o">)</span> <span class="nv">MCS_label</span><span class="o">=</span>N/A
-   <span class="nv">Priority</span><span class="o">=</span><span class="m">1</span> <span class="nv">Nice</span><span class="o">=</span><span class="m">0</span> <span class="nv">Account</span><span class="o">=(</span>null<span class="o">)</span> <span class="nv">QOS</span><span class="o">=</span>normal
-<span class="hll">   <span class="nv">JobState</span><span class="o">=</span>PENDING <span class="nv">Reason</span><span class="o">=</span>DependencyNeverSatisfied <span class="nv">Dependency</span><span class="o">=</span>afterok:863087<span class="o">(</span>failed<span class="o">)</span>
-</span>   <span class="nv">Requeue</span><span class="o">=</span><span class="m">1</span> <span class="nv">Restarts</span><span class="o">=</span><span class="m">0</span> <span class="nv">BatchFlag</span><span class="o">=</span><span class="m">1</span> <span class="nv">Reboot</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExitCode</span><span class="o">=</span><span class="m">0</span>:0
-   <span class="nv">RunTime</span><span class="o">=</span><span class="m">00</span>:00:00 <span class="nv">TimeLimit</span><span class="o">=</span><span class="m">08</span>:00:00 <span class="nv">TimeMin</span><span class="o">=</span>N/A
-   <span class="nv">SubmitTime</span><span class="o">=</span><span class="m">2020</span>-05-03T18:57:34 <span class="nv">EligibleTime</span><span class="o">=</span>Unknown
-   <span class="nv">AccrueTime</span><span class="o">=</span>Unknown
-   <span class="nv">StartTime</span><span class="o">=</span>Unknown <span class="nv">EndTime</span><span class="o">=</span>Unknown <span class="nv">Deadline</span><span class="o">=</span>N/A
-   <span class="nv">SuspendTime</span><span class="o">=</span>None <span class="nv">SecsPreSuspend</span><span class="o">=</span><span class="m">0</span> <span class="nv">LastSchedEval</span><span class="o">=</span><span class="m">2020</span>-05-03T18:57:34
-   <span class="nv">Partition</span><span class="o">=</span>debug AllocNode:Sid<span class="o">=</span>med-login1:28797
-   <span class="nv">ReqNodeList</span><span class="o">=(</span>null<span class="o">)</span> <span class="nv">ExcNodeList</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">NodeList</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">NumNodes</span><span class="o">=</span><span class="m">1</span> <span class="nv">NumCPUs</span><span class="o">=</span><span class="m">1</span> <span class="nv">NumTasks</span><span class="o">=</span><span class="m">1</span> CPUs/Task<span class="o">=</span><span class="m">1</span> ReqB:S:C:T<span class="o">=</span><span class="m">0</span>:0:*:*
-   <span class="nv">TRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">1</span>,node<span class="o">=</span><span class="m">1</span>,billing<span class="o">=</span><span class="m">1</span>
-   Socks/Node<span class="o">=</span>* NtasksPerN:B:S:C<span class="o">=</span><span class="m">0</span>:0:*:* <span class="nv">CoreSpec</span><span class="o">=</span>*
-   <span class="nv">MinCPUsNode</span><span class="o">=</span><span class="m">1</span> <span class="nv">MinMemoryNode</span><span class="o">=</span><span class="m">0</span> <span class="nv">MinTmpDiskNode</span><span class="o">=</span><span class="m">0</span>
-   <span class="nv">Features</span><span class="o">=(</span>null<span class="o">)</span> <span class="nv">DelayBoot</span><span class="o">=</span><span class="m">00</span>:00:00
-   <span class="nv">OverSubscribe</span><span class="o">=</span>OK <span class="nv">Contiguous</span><span class="o">=</span><span class="m">0</span> <span class="nv">Licenses</span><span class="o">=(</span>null<span class="o">)</span> <span class="nv">Network</span><span class="o">=(</span>null<span class="o">)</span>
-   <span class="nv">Command</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
-   <span class="nv">WorkDir</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
-   <span class="nv">StdErr</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
-   <span class="nv">StdIn</span><span class="o">=</span>/dev/null
-   <span class="nv">StdOut</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
-   <span class="nv">Power</span><span class="o">=</span>
-   <span class="nv">MailUser</span><span class="o">=(</span>null<span class="o">)</span> <span class="nv">MailType</span><span class="o">=</span>NONE
+<div class="highlight"><pre><span></span><code><span class="nv">JobId</span><span class="o">=</span><span class="m">863089</span><span class="w"> </span><span class="nv">JobName</span><span class="o">=</span>pipeline_job.sh
+<span class="w">   </span><span class="nv">UserId</span><span class="o">=</span>holtgrem_c<span class="o">(</span><span class="m">100131</span><span class="o">)</span><span class="w"> </span><span class="nv">GroupId</span><span class="o">=</span>hpc-ag-cubi<span class="o">(</span><span class="m">5272</span><span class="o">)</span><span class="w"> </span><span class="nv">MCS_label</span><span class="o">=</span>N/A
+<span class="w">   </span><span class="nv">Priority</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Nice</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Account</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">QOS</span><span class="o">=</span>normal
+<span class="hll"><span class="w">   </span><span class="nv">JobState</span><span class="o">=</span>PENDING<span class="w"> </span><span class="nv">Reason</span><span class="o">=</span>DependencyNeverSatisfied<span class="w"> </span><span class="nv">Dependency</span><span class="o">=</span>afterok:863087<span class="o">(</span>failed<span class="o">)</span>
+</span><span class="w">   </span><span class="nv">Requeue</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Restarts</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">BatchFlag</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Reboot</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ExitCode</span><span class="o">=</span><span class="m">0</span>:0
+<span class="w">   </span><span class="nv">RunTime</span><span class="o">=</span><span class="m">00</span>:00:00<span class="w"> </span><span class="nv">TimeLimit</span><span class="o">=</span><span class="m">08</span>:00:00<span class="w"> </span><span class="nv">TimeMin</span><span class="o">=</span>N/A
+<span class="w">   </span><span class="nv">SubmitTime</span><span class="o">=</span><span class="m">2020</span>-05-03T18:57:34<span class="w"> </span><span class="nv">EligibleTime</span><span class="o">=</span>Unknown
+<span class="w">   </span><span class="nv">AccrueTime</span><span class="o">=</span>Unknown
+<span class="w">   </span><span class="nv">StartTime</span><span class="o">=</span>Unknown<span class="w"> </span><span class="nv">EndTime</span><span class="o">=</span>Unknown<span class="w"> </span><span class="nv">Deadline</span><span class="o">=</span>N/A
+<span class="w">   </span><span class="nv">SuspendTime</span><span class="o">=</span>None<span class="w"> </span><span class="nv">SecsPreSuspend</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">LastSchedEval</span><span class="o">=</span><span class="m">2020</span>-05-03T18:57:34
+<span class="w">   </span><span class="nv">Partition</span><span class="o">=</span>debug<span class="w"> </span>AllocNode:Sid<span class="o">=</span>med-login1:28797
+<span class="w">   </span><span class="nv">ReqNodeList</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">ExcNodeList</span><span class="o">=(</span>null<span class="o">)</span>
+<span class="w">   </span><span class="nv">NodeList</span><span class="o">=(</span>null<span class="o">)</span>
+<span class="w">   </span><span class="nv">NumNodes</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">NumCPUs</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">NumTasks</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>CPUs/Task<span class="o">=</span><span class="m">1</span><span class="w"> </span>ReqB:S:C:T<span class="o">=</span><span class="m">0</span>:0:*:*
+<span class="w">   </span><span class="nv">TRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">1</span>,node<span class="o">=</span><span class="m">1</span>,billing<span class="o">=</span><span class="m">1</span>
+<span class="w">   </span>Socks/Node<span class="o">=</span>*<span class="w"> </span>NtasksPerN:B:S:C<span class="o">=</span><span class="m">0</span>:0:*:*<span class="w"> </span><span class="nv">CoreSpec</span><span class="o">=</span>*
+<span class="w">   </span><span class="nv">MinCPUsNode</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">MinMemoryNode</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">MinTmpDiskNode</span><span class="o">=</span><span class="m">0</span>
+<span class="w">   </span><span class="nv">Features</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">DelayBoot</span><span class="o">=</span><span class="m">00</span>:00:00
+<span class="w">   </span><span class="nv">OverSubscribe</span><span class="o">=</span>OK<span class="w"> </span><span class="nv">Contiguous</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Licenses</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">Network</span><span class="o">=(</span>null<span class="o">)</span>
+<span class="w">   </span><span class="nv">Command</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
+<span class="w">   </span><span class="nv">WorkDir</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
+<span class="w">   </span><span class="nv">StdErr</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+<span class="w">   </span><span class="nv">StdIn</span><span class="o">=</span>/dev/null
+<span class="w">   </span><span class="nv">StdOut</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+<span class="w">   </span><span class="nv">Power</span><span class="o">=</span>
+<span class="w">   </span><span class="nv">MailUser</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">MailType</span><span class="o">=</span>NONE
 </code></pre></div>
-
 <p>If you see a <code>Reason=ReqNodeNotAvail,_Reserved_for_maintenance</code> then also see <a href="../../slurm/reservations/">Reservations / Maintenances</a>.</p>
 <p>For GPU jobs also see "My GPU jobs don't get scheduled".</p>
 <h2 id="my-gpu-jobs-dont-get-scheduled">My GPU jobs don't get scheduled<a class="headerlink" href="#my-gpu-jobs-dont-get-scheduled" title="Permanent link">&para;</a></h2>
 <p>There are only four GPU machines in the cluster (with four GPUs each, med0301 to med0304).
 Please inspect first the number of running jobs with GPU resource requests:</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -o <span class="s2">&quot;%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b&quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="p">|</span> grep med03 <span class="p">|</span> sort -k7,7
-   <span class="m">1902163</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0301   gpu:tesla:2
-   <span class="m">1902167</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0301   gpu:tesla:2
-   <span class="m">1902164</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0302   gpu:tesla:2
-   <span class="m">1902166</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0302   gpu:tesla:2
-   <span class="m">1902162</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0303   gpu:tesla:2
-   <span class="m">1902165</span> ONT-basecalling       R     <span class="m">1</span>    <span class="m">2</span>         8G          med0303   gpu:tesla:2
-   <span class="m">1785264</span> bash                  R     <span class="m">1</span>    <span class="m">1</span>         1G          med0304   gpu:tesla:2
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>squeue<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>med03<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-k7,7
+<span class="w">   </span><span class="m">1902163</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0301<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1902167</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0301<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1902164</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0302<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1902166</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0302<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1902162</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0303<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1902165</span><span class="w"> </span>ONT-basecalling<span class="w">       </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">2</span><span class="w">         </span>8G<span class="w">          </span>med0303<span class="w">   </span>gpu:tesla:2
+<span class="w">   </span><span class="m">1785264</span><span class="w"> </span>bash<span class="w">                  </span>R<span class="w">     </span><span class="m">1</span><span class="w">    </span><span class="m">1</span><span class="w">         </span>1G<span class="w">          </span>med0304<span class="w">   </span>gpu:tesla:2
 </code></pre></div>
-
 <p>This indicates that there are two free GPUs on med0304.</p>
 <p>Second, inspect the node states:</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ sinfo -n med030<span class="o">[</span><span class="m">1</span>-4<span class="o">]</span>
-PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
-debug*       up    <span class="m">8</span>:00:00      <span class="m">0</span>    n/a  
-medium       up <span class="m">7</span>-00:00:00      <span class="m">0</span>    n/a  
-long         up <span class="m">28</span>-00:00:0      <span class="m">0</span>    n/a  
-critical     up <span class="m">7</span>-00:00:00      <span class="m">0</span>    n/a  
-highmem      up <span class="m">14</span>-00:00:0      <span class="m">0</span>    n/a  
-gpu          up <span class="m">14</span>-00:00:0      <span class="m">1</span>   drng med0304 
-gpu          up <span class="m">14</span>-00:00:0      <span class="m">3</span>    mix med<span class="o">[</span><span class="m">0301</span>-0303<span class="o">]</span> 
-mpi          up <span class="m">14</span>-00:00:0      <span class="m">0</span>    n/a  
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>sinfo<span class="w"> </span>-n<span class="w"> </span>med030<span class="o">[</span><span class="m">1</span>-4<span class="o">]</span>
+PARTITION<span class="w"> </span>AVAIL<span class="w">  </span>TIMELIMIT<span class="w">  </span>NODES<span class="w">  </span>STATE<span class="w"> </span>NODELIST
+debug*<span class="w">       </span>up<span class="w">    </span><span class="m">8</span>:00:00<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
+medium<span class="w">       </span>up<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
+long<span class="w">         </span>up<span class="w"> </span><span class="m">28</span>-00:00:0<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
+critical<span class="w">     </span>up<span class="w"> </span><span class="m">7</span>-00:00:00<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
+highmem<span class="w">      </span>up<span class="w"> </span><span class="m">14</span>-00:00:0<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
+gpu<span class="w">          </span>up<span class="w"> </span><span class="m">14</span>-00:00:0<span class="w">      </span><span class="m">1</span><span class="w">   </span>drng<span class="w"> </span>med0304
+gpu<span class="w">          </span>up<span class="w"> </span><span class="m">14</span>-00:00:0<span class="w">      </span><span class="m">3</span><span class="w">    </span>mix<span class="w"> </span>med<span class="o">[</span><span class="m">0301</span>-0303<span class="o">]</span>
+mpi<span class="w">          </span>up<span class="w"> </span><span class="m">14</span>-00:00:0<span class="w">      </span><span class="m">0</span><span class="w">    </span>n/a
 </code></pre></div>
-
 <p>This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
 med0304 is shown to be in "draining state".
 Let's look what's going on there.</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ scontrol show node med0304
-<span class="nv">NodeName</span><span class="o">=</span>med0304 <span class="nv">Arch</span><span class="o">=</span>x86_64 <span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">16</span> 
-   <span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">2</span> <span class="nv">CPUTot</span><span class="o">=</span><span class="m">64</span> <span class="nv">CPULoad</span><span class="o">=</span><span class="m">1</span>.44
-   <span class="nv">AvailableFeatures</span><span class="o">=</span>skylake
-   <span class="nv">ActiveFeatures</span><span class="o">=</span>skylake
-   <span class="nv">Gres</span><span class="o">=</span>gpu:tesla:4<span class="o">(</span>S:0-1<span class="o">)</span>
-   <span class="nv">NodeAddr</span><span class="o">=</span>med0304 <span class="nv">NodeHostName</span><span class="o">=</span>med0304 <span class="nv">Version</span><span class="o">=</span><span class="m">20</span>.02.0
-   <span class="nv">OS</span><span class="o">=</span>Linux <span class="m">3</span>.10.0-1127.13.1.el7.x86_64 <span class="c1">#1 SMP Tue Jun 23 15:46:38 UTC 2020 </span>
-   <span class="nv">RealMemory</span><span class="o">=</span><span class="m">385215</span> <span class="nv">AllocMem</span><span class="o">=</span><span class="m">1024</span> <span class="nv">FreeMem</span><span class="o">=</span><span class="m">347881</span> <span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span> <span class="nv">Boards</span><span class="o">=</span><span class="m">1</span>
-<span class="hll">   <span class="nv">State</span><span class="o">=</span>MIXED+DRAIN <span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span> <span class="nv">TmpDisk</span><span class="o">=</span><span class="m">0</span> <span class="nv">Weight</span><span class="o">=</span><span class="m">1</span> <span class="nv">Owner</span><span class="o">=</span>N/A <span class="nv">MCS_label</span><span class="o">=</span>N/A
-</span>   <span class="nv">Partitions</span><span class="o">=</span>gpu 
-   <span class="nv">BootTime</span><span class="o">=</span><span class="m">2020</span>-06-30T20:33:36 <span class="nv">SlurmdStartTime</span><span class="o">=</span><span class="m">2020</span>-07-01T09:31:51
-   <span class="nv">CfgTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">64</span>,mem<span class="o">=</span>385215M,billing<span class="o">=</span><span class="m">64</span>
-   <span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">2</span>,mem<span class="o">=</span>1G
-   <span class="nv">CapWatts</span><span class="o">=</span>n/a
-   <span class="nv">CurrentWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">AveWatts</span><span class="o">=</span><span class="m">0</span>
-   <span class="nv">ExtSensorsJoules</span><span class="o">=</span>n/s <span class="nv">ExtSensorsWatts</span><span class="o">=</span><span class="m">0</span> <span class="nv">ExtSensorsTemp</span><span class="o">=</span>n/s
-<span class="hll">   <span class="nv">Reason</span><span class="o">=</span>deep power-off required <span class="k">for</span> PSU <span class="o">[</span>root@2020-07-17T13:21:02<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span>med0304
+<span class="nv">NodeName</span><span class="o">=</span>med0304<span class="w"> </span><span class="nv">Arch</span><span class="o">=</span>x86_64<span class="w"> </span><span class="nv">CoresPerSocket</span><span class="o">=</span><span class="m">16</span>
+<span class="w">   </span><span class="nv">CPUAlloc</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">CPUTot</span><span class="o">=</span><span class="m">64</span><span class="w"> </span><span class="nv">CPULoad</span><span class="o">=</span><span class="m">1</span>.44
+<span class="w">   </span><span class="nv">AvailableFeatures</span><span class="o">=</span>skylake
+<span class="w">   </span><span class="nv">ActiveFeatures</span><span class="o">=</span>skylake
+<span class="w">   </span><span class="nv">Gres</span><span class="o">=</span>gpu:tesla:4<span class="o">(</span>S:0-1<span class="o">)</span>
+<span class="w">   </span><span class="nv">NodeAddr</span><span class="o">=</span>med0304<span class="w"> </span><span class="nv">NodeHostName</span><span class="o">=</span>med0304<span class="w"> </span><span class="nv">Version</span><span class="o">=</span><span class="m">20</span>.02.0
+<span class="w">   </span><span class="nv">OS</span><span class="o">=</span>Linux<span class="w"> </span><span class="m">3</span>.10.0-1127.13.1.el7.x86_64<span class="w"> </span><span class="c1">#1 SMP Tue Jun 23 15:46:38 UTC 2020</span>
+<span class="w">   </span><span class="nv">RealMemory</span><span class="o">=</span><span class="m">385215</span><span class="w"> </span><span class="nv">AllocMem</span><span class="o">=</span><span class="m">1024</span><span class="w"> </span><span class="nv">FreeMem</span><span class="o">=</span><span class="m">347881</span><span class="w"> </span><span class="nv">Sockets</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">Boards</span><span class="o">=</span><span class="m">1</span>
+<span class="hll"><span class="w">   </span><span class="nv">State</span><span class="o">=</span>MIXED+DRAIN<span class="w"> </span><span class="nv">ThreadsPerCore</span><span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="nv">TmpDisk</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Weight</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">Owner</span><span class="o">=</span>N/A<span class="w"> </span><span class="nv">MCS_label</span><span class="o">=</span>N/A
+</span><span class="w">   </span><span class="nv">Partitions</span><span class="o">=</span>gpu
+<span class="w">   </span><span class="nv">BootTime</span><span class="o">=</span><span class="m">2020</span>-06-30T20:33:36<span class="w"> </span><span class="nv">SlurmdStartTime</span><span class="o">=</span><span class="m">2020</span>-07-01T09:31:51
+<span class="w">   </span><span class="nv">CfgTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">64</span>,mem<span class="o">=</span>385215M,billing<span class="o">=</span><span class="m">64</span>
+<span class="w">   </span><span class="nv">AllocTRES</span><span class="o">=</span><span class="nv">cpu</span><span class="o">=</span><span class="m">2</span>,mem<span class="o">=</span>1G
+<span class="w">   </span><span class="nv">CapWatts</span><span class="o">=</span>n/a
+<span class="w">   </span><span class="nv">CurrentWatts</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">AveWatts</span><span class="o">=</span><span class="m">0</span>
+<span class="w">   </span><span class="nv">ExtSensorsJoules</span><span class="o">=</span>n/s<span class="w"> </span><span class="nv">ExtSensorsWatts</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">ExtSensorsTemp</span><span class="o">=</span>n/s
+<span class="hll"><span class="w">   </span><span class="nv">Reason</span><span class="o">=</span>deep<span class="w"> </span>power-off<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>PSU<span class="w"> </span><span class="o">[</span>root@2020-07-17T13:21:02<span class="o">]</span>
 </span></code></pre></div>
-
 <p>The "State" attribute indicates the node has jobs running but is currenlty being "drained" (accepts no new jobs).
 The "Reason" gives that it has been scheduled for power-off for maintenance of the power supply unit.</p>
 <h2 id="when-will-my-job-be-scheduled">When will my job be scheduled?<a class="headerlink" href="#when-will-my-job-be-scheduled" title="Permanent link">&para;</a></h2>
@@ -2832,14 +3830,12 @@ JobId=4225062 JobName=C2371_2
    StdOut=/fast/work/users/user_c/SCZ_replic/JR_sims/slurm-4225062.out
    Power=
 </code></pre></div>
-
 <h2 id="my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect<a class="headerlink" href="#my-jobs-dont-run-in-the-partition-i-expect" title="Permanent link">&para;</a></h2>
 <p>You can see the partition that your job runs in with <code>squeue -j JOBID</code>:</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ squeue -j <span class="m">877092</span>
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-            <span class="m">877092</span>    medium snakejob holtgrem  R       <span class="m">0</span>:05      <span class="m">1</span> med0626
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>squeue<span class="w"> </span>-j<span class="w"> </span><span class="m">877092</span>
+<span class="w">             </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
+<span class="w">            </span><span class="m">877092</span><span class="w">    </span>medium<span class="w"> </span>snakejob<span class="w"> </span>holtgrem<span class="w">  </span>R<span class="w">       </span><span class="m">0</span>:05<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0626
 </code></pre></div>
-
 <p>See <a href="../../overview/job-scheduler/">Job Scheduler</a> for information about the partition's properties and how jbos are routed to partitions.
 You can force jobs to run in a particular partition by specifying the <code>--partition</code> parameter, e.g., by adding <code>--partition=medium</code> or <code>-p medium</code> to your <code>srun</code> and <code>sbatch</code> calls.</p>
 <h2 id="my-jobs-get-killed-after-four-hours">My jobs get killed after four hours<a class="headerlink" href="#my-jobs-get-killed-after-four-hours" title="Permanent link">&para;</a></h2>
@@ -2866,19 +3862,18 @@ Look at the <code>/proc/cpuinfo</code> files for details.</p>
 <p>Please check whether there might be other jobs waiting in front of you!
 The following <code>squeue</code> call will show the allocated GPUs of jobs in the <code>gpu</code> queue.
 This is done by specifying a format string and using the <code>%b</code> field.</p>
-<div class="highlight"><pre><span></span><code>squeue -o <span class="s2">&quot;%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b&quot;</span> -p gpu
-     JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST<span class="o">(</span>R TRES_PER_NODE
-    <span class="m">872571</span> gpu       bash                 user1       R   <span class="m">15</span>:53:25      <span class="m">1</span> med0303    gpu:tesla:1
-    <span class="m">862261</span> gpu       bash                 user2       R <span class="m">2</span>-16:26:59      <span class="m">1</span> med0304    gpu:tesla:4
-    <span class="m">860771</span> gpu       kidney.job           user3       R <span class="m">2</span>-16:27:12      <span class="m">1</span> med0302    gpu:tesla:1
-    <span class="m">860772</span> gpu       kidney.job           user3       R <span class="m">2</span>-16:27:12      <span class="m">1</span> med0302    gpu:tesla:1
-    <span class="m">860773</span> gpu       kidney.job           user3       R <span class="m">2</span>-16:27:12      <span class="m">1</span> med0302    gpu:tesla:1
-    <span class="m">860770</span> gpu       kidney.job           user3       R <span class="m">4</span>-03:23:08      <span class="m">1</span> med0301    gpu:tesla:1
-    <span class="m">860766</span> gpu       kidney.job           user3       R <span class="m">4</span>-03:23:11      <span class="m">1</span> med0303    gpu:tesla:1
-    <span class="m">860767</span> gpu       kidney.job           user3       R <span class="m">4</span>-03:23:11      <span class="m">1</span> med0301    gpu:tesla:1
-    <span class="m">860768</span> gpu       kidney.job           user3       R <span class="m">4</span>-03:23:11      <span class="m">1</span> med0301    gpu:tesla:1
+<div class="highlight"><pre><span></span><code>squeue<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b&quot;</span><span class="w"> </span>-p<span class="w"> </span>gpu
+<span class="w">     </span>JOBID<span class="w"> </span>PARTITION<span class="w"> </span>NAME<span class="w">                 </span>USER<span class="w">       </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>R<span class="w"> </span>TRES_PER_NODE
+<span class="w">    </span><span class="m">872571</span><span class="w"> </span>gpu<span class="w">       </span>bash<span class="w">                 </span>user1<span class="w">       </span>R<span class="w">   </span><span class="m">15</span>:53:25<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0303<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">862261</span><span class="w"> </span>gpu<span class="w">       </span>bash<span class="w">                 </span>user2<span class="w">       </span>R<span class="w"> </span><span class="m">2</span>-16:26:59<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0304<span class="w">    </span>gpu:tesla:4
+<span class="w">    </span><span class="m">860771</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">2</span>-16:27:12<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0302<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860772</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">2</span>-16:27:12<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0302<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860773</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">2</span>-16:27:12<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0302<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860770</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">4</span>-03:23:08<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0301<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860766</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">4</span>-03:23:11<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0303<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860767</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">4</span>-03:23:11<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0301<span class="w">    </span>gpu:tesla:1
+<span class="w">    </span><span class="m">860768</span><span class="w"> </span>gpu<span class="w">       </span>kidney.job<span class="w">           </span>user3<span class="w">       </span>R<span class="w"> </span><span class="m">4</span>-03:23:11<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0301<span class="w">    </span>gpu:tesla:1
 </code></pre></div>
-
 <p>In the example above, user1 has one job with one GPU running on med0303, user2 has one job running with 4 GPUs on med0304 and user3 has 7 jobs in total running of different machines with one GPU each.</p>
 <h2 id="how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">How can I access graphical user interfaces (such as for Matlab) on the cluster?<a class="headerlink" href="#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2904,9 +3899,8 @@ This is done by specifying a format string and using the <code>%b</code> field.<
 <p>Do <strong>not</strong> perform any computation outside of the scheduler as (1) this breaks the purpose of the scheduling system and (2) administration is not aware and might kill you jobs.</p>
 </div>
 <p>The answer is simple, just SSH into this node.</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ ssh med0XXX
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>ssh<span class="w"> </span>med0XXX
 </code></pre></div>
-
 <h2 id="why-am-i-getting-multiple-nodes-to-my-job">Why am I getting multiple nodes to my job?<a class="headerlink" href="#why-am-i-getting-multiple-nodes-to-my-job" title="Permanent link">&para;</a></h2>
 <p>Classically, jobs on HPC systems are written in a way that they can run on multiple nodes at once, using the network to communicate.
 Slurm comes from this world and when allocating more than one CPU/core, it might allocate them on different nodes.
@@ -2934,18 +3928,15 @@ When you login to the login nodes, the quotas and current usage is displayed to 
 You have to add the <code>-a</code> parameter to also show files and directory starting with a dot.
 Often, users are confused if these dot directories take up all of their <code>home</code> quota.</p>
 <p>Use the following command to list <strong>all</strong> files and directories in your home:</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ ls -la ~/
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>~/
 </code></pre></div>
-
 <p>You can use the following command to see how space each item takes up, including the hidden directories</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ du -shc ~/.* ~/* --exclude<span class="o">=</span>.. --exclude<span class="o">=</span>.
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>du<span class="w"> </span>-shc<span class="w"> </span>~/.*<span class="w"> </span>~/*<span class="w"> </span>--exclude<span class="o">=</span>..<span class="w"> </span>--exclude<span class="o">=</span>.
 </code></pre></div>
-
 <p>In the case that, e.g., the <code>.cpan</code> directory is large, you can move it to <code>work</code> and create a symlink in its original place.</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ mv ~/.cpan ~/work/.cpan
-res-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>mv<span class="w"> </span>~/.cpan<span class="w"> </span>~/work/.cpan
+res-login-1:~$<span class="w"> </span>ln<span class="w"> </span>-sr<span class="w"> </span>~/work/.cpan<span class="w"> </span>~/.cpan
 </code></pre></div>
-
 <h2 id="im-getting-a-disk-quota-exceeded-error">I'm getting a "Disk quota exceeded" error.<a class="headerlink" href="#im-getting-a-disk-quota-exceeded-error" title="Permanent link">&para;</a></h2>
 <p>Most probably you are running into the same problem as described and solved in the entry <a href="#help-im-getting-a-quota-warning-email">Help, I'm getting a Quota Warning Email!</a></p>
 <h2 id="environment-modules-dont-work-and-i-get-module-command-not-found">Environment modules don't work and I get "module: command not found"<a class="headerlink" href="#environment-modules-dont-work-and-i-get-module-command-not-found" title="Permanent link">&para;</a></h2>
@@ -2956,57 +3947,103 @@ In the case that the problem persists, please contact <a href="&#109;&#97;&#105;
 <p>All users get their home directory setup using a skelleton files.
 These file names start with a dot <code>.</code> and are hidden when you type <code>ls</code>, you have to type <code>ls -a</code> to see them.
 You can find the current skelleton in <code>/etc/skel.bih</code> and inspect the content of the Bash related files as follows:</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ head /etc/skel.bih/.bash*
-<span class="o">==</span>&gt; /etc/skel.bih/.bash_logout &lt;<span class="o">==</span>
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>head<span class="w"> </span>/etc/skel.bih/.bash*
+<span class="o">==</span>&gt;<span class="w"> </span>/etc/skel.bih/.bash_logout<span class="w"> </span>&lt;<span class="o">==</span>
 <span class="c1"># ~/.bash_logout</span>
 
-<span class="o">==</span>&gt; /etc/skel.bih/.bash_profile &lt;<span class="o">==</span>
+<span class="o">==</span>&gt;<span class="w"> </span>/etc/skel.bih/.bash_profile<span class="w"> </span>&lt;<span class="o">==</span>
 <span class="c1"># .bash_profile</span>
 
 <span class="c1"># Get the aliases and functions</span>
-<span class="k">if</span> <span class="o">[</span> -f ~/.bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        . ~/.bashrc
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>~/.bashrc<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span>~/.bashrc
 <span class="k">fi</span>
 
 <span class="c1"># User specific environment and startup programs</span>
 
 <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/.local/bin:<span class="nv">$HOME</span>/bin
 
-<span class="o">==</span>&gt; /etc/skel.bih/.bashrc &lt;<span class="o">==</span>
+<span class="o">==</span>&gt;<span class="w"> </span>/etc/skel.bih/.bashrc<span class="w"> </span>&lt;<span class="o">==</span>
 <span class="c1"># .bashrc</span>
 
 <span class="c1"># Source global definitions</span>
-<span class="k">if</span> <span class="o">[</span> -f /etc/bashrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        . /etc/bashrc
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/etc/bashrc<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>.<span class="w"> </span>/etc/bashrc
 <span class="k">fi</span>
 
 <span class="c1"># Uncomment the following line if you don&#39;t like systemctl&#39;s auto-paging feature:</span>
 <span class="c1"># export SYSTEMD_PAGER=</span>
 </code></pre></div>
-
 <p>There actually are a couple of more files by default.
 The original copy in <code>/etc/skel.bih</code> might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ tree -a /etc/skel.bih/
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>tree<span class="w"> </span>-a<span class="w"> </span>/etc/skel.bih/
 /etc/skel.bih/
-├── .bash_logout
-├── .bash_profile
-├── .bashrc
-├── .screenrc
-└── .vimrc
+├──<span class="w"> </span>.bash_logout
+├──<span class="w"> </span>.bash_profile
+├──<span class="w"> </span>.bashrc
+├──<span class="w"> </span>.screenrc
+└──<span class="w"> </span>.vimrc
 </code></pre></div>
-
 <h2 id="my-program-crashes-what-should-i-do">My program crashes! What should I do?<a class="headerlink" href="#my-program-crashes-what-should-i-do" title="Permanent link">&para;</a></h2>
 <p>Have a look at our <a href="../../how-to/misc/debug-software/">How-To: Debug Software</a> and <a href="../../how-to/misc/debug-at-hpc/">How-To: Debug Software on HPC Systems</a> guides!</p>
 <p><strong>But it works on my workstation!</strong></p>
 <p>Yes, please also refer to these guides on possible approaches to find the problem.</p>
+<h2 id="my-r-sessions-is-always-crashing">My R sessions is always crashing!<a class="headerlink" href="#my-r-sessions-is-always-crashing" title="Permanent link">&para;</a></h2>
+<p>We are aware of issues for macOS users that are related to locales.
+You might see something like the following in your R session or logs.</p>
+<p>Note that this is not macOS specific by itself but by macOS using a locale that R does not understand.</p>
+<p>Try using <code>export LC_ALL=C</code> before calling R.
+If the problem goes away, you can add the following lines to your <code>~/.bashrc</code> file to make this permanent.
+Note that this is actually a good idea so your locale settings are fixed.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fix all locale settings to &quot;C&quot; for robustness.</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>C
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">ChatGPT on Unix Locales</p>
+<p>Let's se what ChatGPT 3.5 tells us about Unix locale.</p>
+<p><strong>Me: Please explain the concept of Unix locales to me.</strong></p>
+<blockquote>
+<p>Certainly! Unix locales are a set of environment variables and settings that define how various aspects of software and user interactions should be handled to accommodate different languages, regions, and cultural conventions. They play a crucial role in enabling software to adapt to local preferences for displaying text, formatting numbers, handling dates, and more.</p>
+<p>In a Unix-like operating system (such as Linux or macOS), locales provide a way to customize how programs behave based on the user's language, country, and cultural norms. Here are some of the key components of Unix locales:</p>
+<ol>
+<li>
+<p><strong>Language:</strong> The primary language used for messages, menus, prompts, and system output. For instance, if you set your locale to "en_US", messages and interfaces will be in English (United States).</p>
+</li>
+<li>
+<p><strong>Region:</strong> The country or region that defines conventions for aspects like date and time formatting, number formatting (decimal point or comma, thousands separator, etc.), and currency symbols. For example, "en_GB" represents English (Great Britain).</p>
+</li>
+<li>
+<p><strong>Character Encoding:</strong> Specifies how characters are encoded, which is vital for correctly displaying and handling text in various scripts and languages. Common encodings include UTF-8 for Unicode text.</p>
+</li>
+<li>
+<p><strong>Collation:</strong> Defines how strings should be sorted. Different languages have different sorting orders for characters, and the locale determines the appropriate collation rules.</p>
+</li>
+<li>
+<p><strong>Numeric and Date Formats:</strong> Specifies how numbers, dates, and times should be formatted. Different regions have different conventions for date formats (dd/mm/yyyy vs. mm/dd/yyyy) and numerical representations (commas vs. periods as decimal points).</p>
+</li>
+<li>
+<p><strong>Currency Symbols:</strong> Defines the symbol or abbreviation used for representing currency. This is important for currency formatting in software.</p>
+</li>
+</ol>
+<p>Unix locales are typically identified by a combination of language and region codes, like "en_US" for American English or "fr_FR" for French (France). These locales are stored in files on the system, and they contain the necessary rules and data for proper localization.</p>
+<p>Users and administrators can set the system's default locale, and individual users can override this setting in their environment. Here are some common commands used to manage locales:</p>
+<ul>
+<li><code>locale</code>: Displays the current locale settings.</li>
+<li><code>locale -a</code>: Lists all available locales on the system.</li>
+<li><code>export LC_ALL=locale_code</code>: Temporarily sets the locale for the current session.</li>
+<li><code>update-locale locale_code</code>: Changes the system-wide default locale.</li>
+</ul>
+<p>Programs that are designed to be locale-aware use these settings to display messages, format numbers and dates, and handle other language-dependent features. This allows software to be more user-friendly and relevant to different linguistic and cultural contexts.</p>
+<p>In summary, Unix locales provide a framework for adapting software behavior to match the language, region, and cultural preferences of users, ensuring a more inclusive and globally accessible computing experience.</p>
+</blockquote>
+</div>
 <h2 id="which-cuda-version-is-installed">Which CUDA version is installed?<a class="headerlink" href="#which-cuda-version-is-installed" title="Permanent link">&para;</a></h2>
 <p>For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$ ssh med0301
-med0301:~$ yum list installed <span class="m">2</span>&gt;/dev/null <span class="p">|</span> grep cuda.x86_64
-cuda.x86_64                               <span class="m">10</span>.2.89-1                  @local-cuda
-nvidia-driver-latest-dkms-cuda.x86_64     <span class="m">3</span>:440.64.00-1.el7          @local-cuda
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>ssh<span class="w"> </span>med0301
+med0301:~$<span class="w"> </span>yum<span class="w"> </span>list<span class="w"> </span>installed<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cuda.x86_64
+cuda.x86_64<span class="w">                               </span><span class="m">10</span>.2.89-1<span class="w">                  </span>@local-cuda
+nvidia-driver-latest-dkms-cuda.x86_64<span class="w">     </span><span class="m">3</span>:440.64.00-1.el7<span class="w">          </span>@local-cuda
 </code></pre></div>
-
 <h2 id="can-i-use-docker-on-the-cluster">Can I use Docker on the Cluster?<a class="headerlink" href="#can-i-use-docker-on-the-cluster" title="Permanent link">&para;</a></h2>
 <p>No, as Docker essentially gives you access as the root user.</p>
 <p>However, you can use Apptainer (former Singularity) to run containers (and even many Docker contains if they are "properly built").
@@ -3038,7 +4075,6 @@ Consider the following example:</p>
 slurmstepd: error: execve(): 5: No such file or directory
 srun: error: hpc-cpu-2: task 0: Exited with exit code 2
 </code></pre></div>
-
 <p>Can you spot the problem?
 In this case, the problem is that for long arguments such as <code>--mem</code> you <strong>must use the equal sign for <code>--arg=value</code></strong> with Slurm.
 This means that instead of writing <code>--mem 96G --partition staging --immediate 5</code>, you must use <code>`--mem=96G --partition=staging --immediate=5</code>.</p>
@@ -3048,7 +4084,6 @@ This means that instead of writing <code>--mem 96G --partition staging --immedia
 <div class="highlight"><pre><span></span><code>slurmstepd: error: hwloc_get_obj_below_by_type() failing, task/affinity plugin may be required to address bug fixed in HWLOC version 1.11.5
 slurmstepd: error: task[0] unable to set taskset &#39;0x0&#39;
 </code></pre></div>
-
 <p>This is a minor failure related to Slurm and cgroups.
 Your job <strong>should</strong> run through successfully despite this error (that is more of a warning for end-users).</p>
 <h2 id="my-login-stalls-something-weird-is-happening">My login stalls / something weird is happening<a class="headerlink" href="#my-login-stalls-something-weird-is-happening" title="Permanent link">&para;</a></h2>
@@ -3098,101 +4133,62 @@ You can find it here (Charite Intranet only) at point 2.12.</p>
 </ul>
 <p>The key point is using a strong password (e.g. with the <code>pwgen</code> utility), creating an encrypted file with AES256 encryption, using distinct password for each recipient, and exchanging the password over a second channel (SMS or voice phone).
 Note that the central manual remains the ground truth of information and this FAQ entry may not reflect the current process recommended by GB IT if it changes without us noticing.</p>
-                
-                  
-                    
 
-<hr>
-<div class="md-source-date">
+  <hr>
+<div class="md-source-file">
   <small>
     
-      Last update: February 7, 2023
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2023</span>
+      
     
   </small>
 </div>
-                  
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../good-tickets/" title="Good Tickets" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Good Tickets
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../../overview/for-the-impatient/" title="For the Impatient" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                For the Impatient
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            2016-2022, BIH HPC IT
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2016-2022, BIH HPC IT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
       
     
   </body>
