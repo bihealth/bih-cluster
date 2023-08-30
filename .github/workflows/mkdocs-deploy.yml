@@ -7,20 +7,21 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v1
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.6'
-          architecture: 'x64'
+          python-version: '3.10'
+          cache: "pipenv"
+          cache-dependency-path: |
+            backend/Pipfile.lock
 
       - name: Install dependencies
         run: |
-          python3 -m pip install pipenv
-          pipenv --python python3.6
+          python -m pip install --upgrade pipenv wheel
           pipenv install
 
       - run: cd bih-cluster && pipenv run mkdocs build
