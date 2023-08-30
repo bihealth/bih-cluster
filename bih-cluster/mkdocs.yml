@@ -7,7 +7,7 @@ site_url: https://bihealth.github.io/bih-cluster
 # Repository
 repo_name: BIH HPC Docs
 repo_url: https://github.com/bihealth/bih-cluster/
-edit_uri: 'edit/master/bih-cluster/docs/'
+edit_uri: 'edit/main/bih-cluster/docs/'
 
 # Copyright
 copyright: 2016-2022, BIH HPC IT

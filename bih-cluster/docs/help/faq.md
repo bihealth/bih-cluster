@@ -82,11 +82,11 @@ A job that was canceled (indicated by `CANCELED`) by the Slurm job scheduler loo
 
 ```
 # sacct -j _JOBID_
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0 
-_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15 
-_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+_JOBID_      snakejob.+     medium hpc-ag-xx+          4    TIMEOUT      0:0
+_JOBID_.bat+      batch            hpc-ag-xx+          4  CANCELLED     0:15
+_JOBID_.ext+     extern            hpc-ag-xx+          4  COMPLETED      0:0
 ```
 
 Use the `--long` flag to see all fields (and probably pipe it into `less` as: `sacct -j JOBID --long | less -S`).
@@ -105,7 +105,7 @@ For example, the following tells us that the given job was above its elapsed tim
 ---------- ----------
   01:00:00   01:00:12
              01:00:13
-             01:00:12 
+             01:00:12
 ```
 
 Use `man sacct`, `sacct --helpformat`, or see the [Slurm Documentation](https://slurm.schedmd.com/sacct.html) for options for the `--format` field of `sacct`.
@@ -139,7 +139,7 @@ The solution is to use `xvfb-run` (xvfb = X11 virtual frame-buffer).
 Here is the content of an example script:
 
 ```terminal
-$ cat img.R 
+$ cat img.R
 #!/usr/bin/env Rscript
 
 png('cars.png')
@@ -151,8 +151,8 @@ dev.off()
 Here, it fails without X11:
 
 ```terminal
-$ ./img.R 
-Error in .External2(C_X11, paste("png::", filename, sep = ""), g$width,  : 
+$ ./img.R
+Error in .External2(C_X11, paste("png::", filename, sep = ""), g$width,  :
   unable to start device PNG
 Calls: png
 In addition: Warning message:
@@ -163,9 +163,9 @@ Execution halted
 Here, it works with  `xvfb-run`:
 
 ```terminal
-$ xvfb-run ./img.R 
-null device 
-          1 
+$ xvfb-run ./img.R
+null device
+          1
 $ ls
 cars.png  foo.png  img.R  Rplots.pdf
 ```
@@ -232,15 +232,15 @@ Second, inspect the node states:
 
 ```bash
 res-login-1:~$ sinfo -n med030[1-4]
-PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
-debug*       up    8:00:00      0    n/a  
-medium       up 7-00:00:00      0    n/a  
-long         up 28-00:00:0      0    n/a  
-critical     up 7-00:00:00      0    n/a  
-highmem      up 14-00:00:0      0    n/a  
-gpu          up 14-00:00:0      1   drng med0304 
-gpu          up 14-00:00:0      3    mix med[0301-0303] 
-mpi          up 14-00:00:0      0    n/a  
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+debug*       up    8:00:00      0    n/a
+medium       up 7-00:00:00      0    n/a
+long         up 28-00:00:0      0    n/a
+critical     up 7-00:00:00      0    n/a
+highmem      up 14-00:00:0      0    n/a
+gpu          up 14-00:00:0      1   drng med0304
+gpu          up 14-00:00:0      3    mix med[0301-0303]
+mpi          up 14-00:00:0      0    n/a
 ```
 
 This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
@@ -249,16 +249,16 @@ Let's look what's going on there.
 
 ```bash hl_lines="10 18"
 res-login-1:~$ scontrol show node med0304
-NodeName=med0304 Arch=x86_64 CoresPerSocket=16 
+NodeName=med0304 Arch=x86_64 CoresPerSocket=16
    CPUAlloc=2 CPUTot=64 CPULoad=1.44
    AvailableFeatures=skylake
    ActiveFeatures=skylake
    Gres=gpu:tesla:4(S:0-1)
    NodeAddr=med0304 NodeHostName=med0304 Version=20.02.0
-   OS=Linux 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 
+   OS=Linux 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020
    RealMemory=385215 AllocMem=1024 FreeMem=347881 Sockets=2 Boards=1
    State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
-   Partitions=gpu 
+   Partitions=gpu
    BootTime=2020-06-30T20:33:36 SlurmdStartTime=2020-07-01T09:31:51
    CfgTRES=cpu=64,mem=385215M,billing=64
    AllocTRES=cpu=2,mem=1G
@@ -522,6 +522,57 @@ Have a look at our [How-To: Debug Software](../how-to/misc/debug-software.md) an
 **But it works on my workstation!**
 
 Yes, please also refer to these guides on possible approaches to find the problem.
+
+## My R sessions is always crashing!
+
+We are aware of issues for macOS users that are related to locales.
+You might see something like the following in your R session or logs.
+
+Note that this is not macOS specific by itself but by macOS using a locale that R does not understand.
+
+Try using `export LC_ALL=C` before calling R.
+If the problem goes away, you can add the following lines to your `~/.bashrc` file to make this permanent.
+Note that this is actually a good idea so your locale settings are fixed.
+
+```bash
+# Fix all locale settings to "C" for robustness.
+export LC_ALL=C
+```
+
+!!! note "ChatGPT on Unix Locales"
+
+    Let's se what ChatGPT 3.5 tells us about Unix locale.
+
+    **Me: Please explain the concept of Unix locales to me.**
+
+    > Certainly! Unix locales are a set of environment variables and settings that define how various aspects of software and user interactions should be handled to accommodate different languages, regions, and cultural conventions. They play a crucial role in enabling software to adapt to local preferences for displaying text, formatting numbers, handling dates, and more.
+    >
+    > In a Unix-like operating system (such as Linux or macOS), locales provide a way to customize how programs behave based on the user's language, country, and cultural norms. Here are some of the key components of Unix locales:
+    >
+    > 1. **Language:** The primary language used for messages, menus, prompts, and system output. For instance, if you set your locale to "en_US", messages and interfaces will be in English (United States).
+    >
+    > 2. **Region:** The country or region that defines conventions for aspects like date and time formatting, number formatting (decimal point or comma, thousands separator, etc.), and currency symbols. For example, "en_GB" represents English (Great Britain).
+    >
+    > 3. **Character Encoding:** Specifies how characters are encoded, which is vital for correctly displaying and handling text in various scripts and languages. Common encodings include UTF-8 for Unicode text.
+    >
+    > 4. **Collation:** Defines how strings should be sorted. Different languages have different sorting orders for characters, and the locale determines the appropriate collation rules.
+    >
+    > 5. **Numeric and Date Formats:** Specifies how numbers, dates, and times should be formatted. Different regions have different conventions for date formats (dd/mm/yyyy vs. mm/dd/yyyy) and numerical representations (commas vs. periods as decimal points).
+    >
+    > 6. **Currency Symbols:** Defines the symbol or abbreviation used for representing currency. This is important for currency formatting in software.
+    >
+    > Unix locales are typically identified by a combination of language and region codes, like "en_US" for American English or "fr_FR" for French (France). These locales are stored in files on the system, and they contain the necessary rules and data for proper localization.
+    >
+    > Users and administrators can set the system's default locale, and individual users can override this setting in their environment. Here are some common commands used to manage locales:
+    >
+    > - `locale`: Displays the current locale settings.
+    > - `locale -a`: Lists all available locales on the system.
+    > - `export LC_ALL=locale_code`: Temporarily sets the locale for the current session.
+    > - `update-locale locale_code`: Changes the system-wide default locale.
+    >
+    > Programs that are designed to be locale-aware use these settings to display messages, format numbers and dates, and handle other language-dependent features. This allows software to be more user-friendly and relevant to different linguistic and cultural contexts.
+    >
+    > In summary, Unix locales provide a framework for adapting software behavior to match the language, region, and cultural preferences of users, ensuring a more inclusive and globally accessible computing experience.
 
 ## Which CUDA version is installed?
 
