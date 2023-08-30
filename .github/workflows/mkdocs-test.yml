@@ -16,7 +16,7 @@ jobs:
           python-version: '3.10'
           cache: "pipenv"
           cache-dependency-path: |
-            backend/Pipfile.lock
+            Pipfile.lock
 
       - name: Install dependencies
         run: |
