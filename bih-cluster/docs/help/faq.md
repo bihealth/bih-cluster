@@ -528,6 +528,16 @@ Yes, please also refer to these guides on possible approaches to find the proble
 We are aware of issues for macOS users that are related to locales.
 You might see something like the following in your R session or logs.
 
+```
+Base R (using macOS) During startup - Warning message:
+
+Setting LC_CTYPE failed, using "C"
+
+ *** caught segfault ***
+
+address (nil), cause 'memory not mapped'
+```
+
 Note that this is not macOS specific by itself but by macOS using a locale that R does not understand.
 
 Try using `export LC_ALL=C` before calling R.
