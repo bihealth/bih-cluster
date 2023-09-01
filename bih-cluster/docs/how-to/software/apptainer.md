@@ -118,13 +118,13 @@ To convert the docker image `docker_image_name` to the apptainer image `apptaine
 The output image will be located in `output_directory_for_images`.
 
 ```bash
-host:~$ docker run -v /var/run/docker.sock:/var/run/docker.sock --privileged -t --rm quay.io/singularity/docker2singularity -v /output_directory_for_images/:/output --name apptainer_image_name docker_image_name
+host:~$ docker run -v /var/run/docker.sock:/var/run/docker.sock -v /output_directory_for_images/:/output --privileged -t --rm quay.io/singularity/docker2singularity --name apptainer_image_name docker_image_name
 ```
 
 The resulting image can then directly be used as image:
 
 ```bash
-host:~$ apptainer bash apptainer_image_name
+host:~$ apptainer exec apptainer_image_name.sif bash
 ```
 
 ## Conversion Compatibility
