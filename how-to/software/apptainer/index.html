@@ -3138,10 +3138,10 @@ host:~$<span class="w"> </span>apptainer<span class="w"> </span>pull<span class=
 This can be easily done using the docker images provided by <a href="https://github.com/singularityhub/docker2singularity">docker2singularity</a>.</p>
 <p>To convert the docker image <code>docker_image_name</code> to the apptainer image <code>apptainer_image_name</code> one can use the following command line.
 The output image will be located in <code>output_directory_for_images</code>.</p>
-<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span>--privileged<span class="w"> </span>-t<span class="w"> </span>--rm<span class="w"> </span>quay.io/singularity/docker2singularity<span class="w"> </span>-v<span class="w"> </span>/output_directory_for_images/:/output<span class="w"> </span>--name<span class="w"> </span>apptainer_image_name<span class="w"> </span>docker_image_name
+<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/var/run/docker.sock:/var/run/docker.sock<span class="w"> </span>-v<span class="w"> </span>/output_directory_for_images/:/output<span class="w"> </span>--privileged<span class="w"> </span>-t<span class="w"> </span>--rm<span class="w"> </span>quay.io/singularity/docker2singularity<span class="w"> </span>--name<span class="w"> </span>apptainer_image_name<span class="w"> </span>docker_image_name
 </code></pre></div>
 <p>The resulting image can then directly be used as image:</p>
-<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>bash<span class="w"> </span>apptainer_image_name
+<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>apptainer_image_name.sif<span class="w"> </span>bash
 </code></pre></div>
 <h2 id="conversion-compatibility">Conversion Compatibility<a class="headerlink" href="#conversion-compatibility" title="Permanent link">&para;</a></h2>
 <p>Here are some tips for making Docker images compatible with Apptainer taken from <a href="https://github.com/singularityhub/docker2singularity">docker2singulrity</a>:</p>
