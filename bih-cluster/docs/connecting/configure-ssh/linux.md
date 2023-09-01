@@ -31,7 +31,7 @@ If you run into problems that your key is not accepted when connecting from MacO
 please use:
 
 ```
-# ssh-add -K
+# ssh-add --apple-use-keychain
 ```
 
 ## Connect to the cluster
