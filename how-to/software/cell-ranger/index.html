@@ -2933,14 +2933,14 @@
 <h1 id="installation">installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
 <p>requires registration before download from <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest">here</a></p>
 <p>to unpack Cell Ranger, its dependencies and the <code>cellranger</code> script:</p>
-<div class="highlight"><pre><span></span><code>cd /fast/users/$USER/scratch
+<div class="highlight"><pre><span></span><code>cd /fast/users/$USER/work
 mv /path/to/cellranger-3.0.2.tar.gz .
 tar -xzvf cellranger-3.0.2.tar.gz
 </code></pre></div>
 <h1 id="reference-data">reference data<a class="headerlink" href="#reference-data" title="Permanent link">&para;</a></h1>
 <p>will be provided in <code>/fast/projects/cubit/current/static_data/app_support/cellranger</code></p>
 <h1 id="cluster-support-slurm">cluster support SLURM<a class="headerlink" href="#cluster-support-slurm" title="Permanent link">&para;</a></h1>
-<p>add a file <code>slurm.template</code> to <code>/fast/users/$USER/scratch/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template</code> with the following contents:</p>
+<p>add a file <code>slurm.template</code> to <code>/fast/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template</code> with the following contents:</p>
 <div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
 #
 # Copyright (c) 2016 10x Genomics, Inc. All rights reserved.
@@ -2976,13 +2976,14 @@ tar -xzvf cellranger-3.0.2.tar.gz
 
 __MRO_CMD__
 </code></pre></div>
+<p><strong>note</strong>: on newer cellranger version, <code>slurm.template</code> needs to go to <code>/fast/users/$USER/work/cellranger-XX/external/martian/jobmanagers/</code></p>
 <h1 id="demultiplexing">demultiplexing<a class="headerlink" href="#demultiplexing" title="Permanent link">&para;</a></h1>
 <p>if that hasn't been done yet, you can use <code>cellranger mkfastq</code> (details to be added)</p>
 <h1 id="run-the-pipeline-count">run the pipeline (<code>count</code>)<a class="headerlink" href="#run-the-pipeline-count" title="Permanent link">&para;</a></h1>
 <p>create a script <code>run_cellranger.sh</code> with these contents (consult the <a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count">documentation</a> for help:</p>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
-/fast/users/$USER/scratch/cellranger-3.0.2/cellranger count \
+/fast/users/$USER/work/cellranger-3.0.2/cellranger count \
   --id=sample_id \
   --transcriptome=/fast/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
   --fastqs=/path/to/fastqs \
@@ -2996,7 +2997,7 @@ __MRO_CMD__
 <div class="highlight"><pre><span></span><code>sbatch --ntasks=1 --mem-per-cpu=4G --time=8:00:00 -p medium -o cellranger.log run_cellranger.sh
 </code></pre></div>
 <h1 id="cluster-support-sge-outdated">cluster support SGE (outdated)<a class="headerlink" href="#cluster-support-sge-outdated" title="Permanent link">&para;</a></h1>
-<p>add a file <code>sge.template</code> to <code>/fast/users/$USER/scratch/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template</code> with the following contents:</p>
+<p>add a file <code>sge.template</code> to <code>/fast/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template</code> with the following contents:</p>
 <div class="highlight"><pre><span></span><code># =============================================================================
 # Template
 # =============================================================================
@@ -3025,7 +3026,7 @@ __MRO_CMD__
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2023</span>
       
     
   </small>
