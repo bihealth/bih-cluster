@@ -45,7 +45,7 @@ In preparation for our first steps tutorial series, we would like you to install
 In general the users on the cluster will manage their own software with the help of conda.
 If you haven't done so so far, please [follow the instructions in installing conda](../best-practice/software-installation-with-conda.md) first.
 The only premise is that you are able to [log into the cluster](../connecting/configure-ssh/linux.md).
-Make also sure that you are logged in to a computation node using ``.
+Make also sure that you are logged in to a computation node using `srun -p long --time 7-00 --mem=8G --ntasks=8 --pty bash -i`.
 
 Now we will create a new environment, so as to not interfere
 with your current or planned software stack, and install into it all the
