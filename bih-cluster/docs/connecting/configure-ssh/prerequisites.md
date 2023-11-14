@@ -22,7 +22,3 @@ The username for accessing the cluster is composed of your username at your prim
 
     - Access to the cluster is granted by BIH HPC IT through hpc-helpdesk@bih-charite.de
     - Access to the MDC jail node is managed by MDC IT
-
-### What is my username?
-
-You simply use your Charite user name!
