@@ -3073,7 +3073,7 @@ That was easy!</p>
 In general the users on the cluster will manage their own software with the help of conda.
 If you haven't done so so far, please <a href="../../best-practice/software-installation-with-conda/">follow the instructions in installing conda</a> first.
 The only premise is that you are able to <a href="../../connecting/configure-ssh/linux/">log into the cluster</a>.
-Make also sure that you are logged in to a computation node using ``.</p>
+Make also sure that you are logged in to a computation node using <code>srun -p medium --time 1-00 --mem=4G --ntasks=1 --pty bash -i</code>.</p>
 <p>Now we will create a new environment, so as to not interfere
 with your current or planned software stack, and install into it all the
 software that we need during the tutorial. Run the following commands:</p>
@@ -3087,7 +3087,7 @@ $ conda activate first-steps
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2023</span>
       
     
   </small>
