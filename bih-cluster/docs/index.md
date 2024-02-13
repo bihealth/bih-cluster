@@ -26,6 +26,12 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
         ssh -l user_m hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
         ```
 
+!!! tip "Additional resources"
+
+    - hpc-talk (user discussion forum): https://hpc-talk.cubi.bihealth.org/
+    - metrics (performance and workload monitoring): https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302
+
+
 ## Getting Started
 
 To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.
