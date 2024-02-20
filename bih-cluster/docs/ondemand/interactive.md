@@ -108,63 +108,63 @@ To use the OnDemand portal with a specific R installation including a stable set
 For this you may first need to create this conda environment including your R version of choice and all necessary packages. Specific installations of i.e. python from conda can be used similarly in other interactive apps.
 
 - For reproducibility this environment should clearly define all package versions and include dependencies. This is easiest to achieve by first collecting all packages you need into a primary collection (i.e. a yaml file, potentially including a specific R version for r-base if needed) and creating an environment from there. Exporting this environment will generate a file with all used packages and their version numbers, that can be used to recreate the same environment.
-- Example code
+- Example code:
 
-  <details>
-  <summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
-  * Commands:
-    + `conda env create -n R-example -f R-example.yaml`
-    + `conda activate R-example`
-    + `conda env export -f R-fixed-versions.yaml`
-    + `conda env create -n R-fixed-versions -f R-fixed-versions.yaml`
-  * R-example.yaml
+* Commands:
+  + `conda env create -n R-example -f R-example.yaml`
+  + `conda activate R-example`
+  + `conda env export -f R-fixed-versions.yaml`
+  + `conda env create -n R-fixed-versions -f R-fixed-versions.yaml`
+* R-example.yaml
 
-  ```
-  channels:
-    - conda-forge
-    - bioconda
-    - defaults
-  dependencies:
-    - r-base
-    - r-essentials
-    - r-devtools
-    - bioconductor-deseq2
-    - r-tidyverse
-    - r-rmarkdown
-    - r-knitr
-    - r-dt
-  ```
-  </details>
+```
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base
+  - r-essentials
+  - r-devtools
+  - bioconductor-deseq2
+  - r-tidyverse
+  - r-rmarkdown
+  - r-knitr
+  - r-dt
+```
+</details>
 
 - R packages only available from github
 
   Some packages (i.e. several single-cell-RNAseq analysis tools) are only available from github and not on Cran/Bioconductor. There are two ways to install such packages into a conda enviroment.
 
-  <details>
-  <summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
-  1) Install from inside R \[easier option, but not pure conda\]
+1) Install from inside R \[easier option, but not pure conda\]
 
-  * First setup the conda env, ideally including all dependencies for the desired package from github (and do include r-devtools)
-  * Then within R run `devtools::install_github('owner/repo', dependencies=F, upgrade=F, lib='/path/to/conda/env-name/lib/R/library')`
-  * if you don't have all dependencies already installed you will have to omit dependencies=F and risk a mix of conda & native R installed packages (or just have to redo the conda env).
-  * github_install involves a build process and still needs a bit of memory, so this might crash on the default `srun --pty bash -i` shell
+* First setup the conda env, ideally including all dependencies for the desired package from github (and do include r-devtools)
+* Then within R run `devtools::install_github('owner/repo', dependencies=F, upgrade=F, lib='/path/to/conda/env-name/lib/R/library')`
+* if you don't have all dependencies already installed you will have to omit dependencies=F and risk a mix of conda & native R installed packages (or just have to redo the conda env).
+* github_install involves a build process and still needs a bit of memory, so this might crash on the default `srun --pty bash -i` shell
 
-  2) Build packages into a local conda channel \[takes longer, but pure conda\]\
-     This approach is mostly taken from the answers given [here](https://stackoverflow.com/questions/52061664/install-r-package-from-github-using-conda). These steps must be taken _before_ building the final env used with Rstudio
+2) Build packages into a local conda channel \[takes longer, but pure conda\]\
+   This approach is mostly taken from the answers given [here](https://stackoverflow.com/questions/52061664/install-r-package-from-github-using-conda). These steps must be taken _before_ building the final env used with Rstudio
 
-  * use `conda skeleton cran https://github.com/owner/repo [--git-tag vX.Y]` to generate build files
-    * conda skeleton only works for repositories with a release/version tag. If the package you want to install does not have that, you either need to create a fork and add a such a tag, or find a fork that already did that. Downloading the code directly from github and building the package from that is also possible, but you will the need to manually set up the `meta.yaml` and `build.sh` files that conda skeleton would create.
-    * If there is more than one release tag, do specify which one you want, it may not automatically take the most recent one.
-    * If any r-packages from bioconductor are dependencies, conda will not find them during the build process. You will need to change the respective entries in the `meta.yaml` file created by conda skeleton. I.e. change `r-deseq2` to `bioconductor-deseq2`
-  * Build the package with `conda build --R=<X.X.X> [--use-local] r-<repo-name>`
-    * You need to specifying the same R-version used in the final conda env
-    * If the github package has additional dependencies from github, build those first and then add `--use-local` so the build process can find them.
-    * The build process definitely needs more memory than the default `srun --pty bash -i` shell. It also takes quite a bit of time (much longer than installing through devtools::install_github)
-  * Finally add the packages (+versions) you built to the environment definition (i.e. yaml file) and create the (final) conda environment. Don't forget to tell conda to use locally build packages (either supply `--use-local` or add `- local` to the channel list in the yaml file)
+* use `conda skeleton cran https://github.com/owner/repo [--git-tag vX.Y]` to generate build files
+  * conda skeleton only works for repositories with a release/version tag. If the package you want to install does not have that, you either need to create a fork and add a such a tag, or find a fork that already did that. Downloading the code directly from github and building the package from that is also possible, but you will the need to manually set up the `meta.yaml` and `build.sh` files that conda skeleton would create.
+  * If there is more than one release tag, do specify which one you want, it may not automatically take the most recent one.
+  * If any r-packages from bioconductor are dependencies, conda will not find them during the build process. You will need to change the respective entries in the `meta.yaml` file created by conda skeleton. I.e. change `r-deseq2` to `bioconductor-deseq2`
+* Build the package with `conda build --R=<X.X.X> [--use-local] r-<repo-name>`
+  * You need to specifying the same R-version used in the final conda env
+  * If the github package has additional dependencies from github, build those first and then add `--use-local` so the build process can find them.
+  * The build process definitely needs more memory than the default `srun --pty bash -i` shell. It also takes quite a bit of time (much longer than installing through devtools::install_github)
+* Finally add the packages (+versions) you built to the environment definition (i.e. yaml file) and create the (final) conda environment. Don't forget to tell conda to use locally build packages (either supply `--use-local` or add `- local` to the channel list in the yaml file)
 
-  </details>
+</details>
 
 
 Starting the Rstudio session via the OnDemand portal works almost as described above (see Example 1). However, you do have to select \`miniconda\` as R source and provide the path to your miniconda installation and (separated by a colon) the name of the (newly created) conda enviroment you want to use.
