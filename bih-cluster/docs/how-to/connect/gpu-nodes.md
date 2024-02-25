@@ -1,9 +1,9 @@
 # How-To: Connect to GPU Nodes
 
-The cluster has seven nodes with four Tesla V100 GPUs each: `hpc-gpu-{1..7}`.
+The cluster has seven nodes with four Tesla V100 GPUs each: `hpc-gpu-{1..7}` and one node with 10 A400 GPUs: `hpc-gpu-8`.
 
 Connecting to a node with GPUs is easy.
-You simply request a GPU using the `--gres=gpu:tesla:COUNT` argument to `srun` and `batch`.
+You simply request a GPU using the `--gres=gpu:$CARD:COUNT` (for `CARD=tesla` or `CARD=a40`) argument to `srun` and `batch`.
 This will automatically place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
 !!! note
@@ -80,14 +80,14 @@ Now to the somewhat boring part where we show that CUDA actually works.
 
 ```bash
 res-login-1:~$ srun --gres=gpu:tesla:1 --pty bash
-med0301:~$ nvcc --version
+hpc-gpu-1:~$ nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
 Built on Wed_Oct_23_19:24:38_PDT_2019
 Cuda compilation tools, release 10.2, V10.2.89
-med0301:~$ source ~/miniconda3/bin/activate
-med0301:~$ conda activate gpu-test
-med0301:~$ python -c 'import torch; print(torch.cuda.is_available())'
+hpc-gpu-1:~$ source ~/miniconda3/bin/activate
+hpc-gpu-1:~$ conda activate gpu-test
+hpc-gpu-1:~$ python -c 'import torch; print(torch.cuda.is_available())'
 True
 ```
 
@@ -103,7 +103,7 @@ Use `squeue` to find out about currently queued jobs (the `egrep` only keeps the
 ```bash
 res-login-1:~$ squeue | egrep -iw 'JOBID|gpu'
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-                33       gpu     bash holtgrem  R       2:26      1 med0301
+                33       gpu     bash holtgrem  R       2:26      1 hpc-gpu-1
 ```
 
 ## Bonus #2: Is the GPU running?
@@ -111,8 +111,8 @@ res-login-1:~$ squeue | egrep -iw 'JOBID|gpu'
 To find out how active the GPU nodes actually are, you can connect to the nodes (without allocating a GPU you can do this even if the node is full) and then use `nvidia-smi`.
 
 ```bash
-res-login-1:~$ ssh med0301 bash
-med0301:~$ nvidia-smi
+res-login-1:~$ ssh hpc-gpu-1 bash
+hpc-gpu-1:~$ nvidia-smi
 Fri Mar  6 11:10:08 2020
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 440.33.01    Driver Version: 440.33.01    CUDA Version: 10.2     |

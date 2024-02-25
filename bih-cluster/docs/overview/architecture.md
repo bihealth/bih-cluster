@@ -9,8 +9,9 @@ A cluster system bundles a high number of nodes and in the case of HPC, the focu
 
 - approx. 256 nodes (from three generations),
 - 4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),
-- 7 GPU nodes (with 4 Tesla GPUs each), and
-- a high-perfomance parallel GPFS files system.
+- 7 GPU nodes with 4 Tesla GPUs each, 1 GPU node with 10 A40 GPUs, and
+- a high-performance Tier 1 parallel CephFS file system with a larger but slower Tier 2 CephFS file system, and
+- a legacy parallel GPFS files system.
 
 ### Network Interconnect
 

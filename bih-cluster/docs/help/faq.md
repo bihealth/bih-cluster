@@ -212,49 +212,49 @@ For GPU jobs also see "My GPU jobs don't get scheduled".
 
 ## My GPU jobs don't get scheduled
 
-There are only four GPU machines in the cluster (with four GPUs each, med0301 to med0304).
+There are only four GPU machines in the cluster (with four GPUs each, hpc-gpu-1 to hpc-gpu-4).
 Please inspect first the number of running jobs with GPU resource requests:
 
 ```bash
-res-login-1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep med03 | sort -k7,7
-   1902163 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
-   1902167 ONT-basecalling       R     1    2         8G          med0301   gpu:tesla:2
-   1902164 ONT-basecalling       R     1    2         8G          med0302   gpu:tesla:2
-   1902166 ONT-basecalling       R     1    2         8G          med0302   gpu:tesla:2
-   1902162 ONT-basecalling       R     1    2         8G          med0303   gpu:tesla:2
-   1902165 ONT-basecalling       R     1    2         8G          med0303   gpu:tesla:2
-   1785264 bash                  R     1    1         1G          med0304   gpu:tesla:2
+res-login-1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep hpc-gpu- | sort -k7,7
+   1902163 ONT-basecalling       R     1    2         8G          hpc-gpu-1   gpu:tesla:2
+   1902167 ONT-basecalling       R     1    2         8G          hpc-gpu-1   gpu:tesla:2
+   1902164 ONT-basecalling       R     1    2         8G          hpc-gpu-2   gpu:tesla:2
+   1902166 ONT-basecalling       R     1    2         8G          hpc-gpu-2   gpu:tesla:2
+   1902162 ONT-basecalling       R     1    2         8G          hpc-gpu-3   gpu:tesla:2
+   1902165 ONT-basecalling       R     1    2         8G          hpc-gpu-3   gpu:tesla:2
+   1785264 bash                  R     1    1         1G          hpc-gpu-4   gpu:tesla:2
 ```
 
-This indicates that there are two free GPUs on med0304.
+This indicates that there are two free GPUs on hpc-gpu-4.
 
 Second, inspect the node states:
 
 ```bash
-res-login-1:~$ sinfo -n med030[1-4]
+res-login-1:~$ sinfo -n hpc-gpu-[1-4]
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 debug*       up    8:00:00      0    n/a
 medium       up 7-00:00:00      0    n/a
 long         up 28-00:00:0      0    n/a
 critical     up 7-00:00:00      0    n/a
 highmem      up 14-00:00:0      0    n/a
-gpu          up 14-00:00:0      1   drng med0304
+gpu          up 14-00:00:0      1   drng hpc-gpu-4
 gpu          up 14-00:00:0      3    mix med[0301-0303]
 mpi          up 14-00:00:0      0    n/a
 ```
 
-This tells you that med0301 to med0303 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
-med0304 is shown to be in "draining state".
+This tells you that hpc-gpu-1 to hpc-gpu-3 have jobs running ("mix" indicates that there are free resources, but these are only CPU cores not GPUs).
+hpc-gpu-4 is shown to be in "draining state".
 Let's look what's going on there.
 
 ```bash hl_lines="10 18"
-res-login-1:~$ scontrol show node med0304
-NodeName=med0304 Arch=x86_64 CoresPerSocket=16
+res-login-1:~$ scontrol show node hpc-gpu-4
+NodeName=hpc-gpu-4 Arch=x86_64 CoresPerSocket=16
    CPUAlloc=2 CPUTot=64 CPULoad=1.44
    AvailableFeatures=skylake
    ActiveFeatures=skylake
    Gres=gpu:tesla:4(S:0-1)
-   NodeAddr=med0304 NodeHostName=med0304 Version=20.02.0
+   NodeAddr=hpc-gpu-4 NodeHostName=hpc-gpu-4 Version=20.02.0
    OS=Linux 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020
    RealMemory=385215 AllocMem=1024 FreeMem=347881 Sockets=2 Boards=1
    State=MIXED+DRAIN ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
@@ -362,18 +362,18 @@ This is done by specifying a format string and using the `%b` field.
 ```bash
 squeue -o "%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b" -p gpu
      JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST(R TRES_PER_NODE
-    872571 gpu       bash                 user1       R   15:53:25      1 med0303    gpu:tesla:1
-    862261 gpu       bash                 user2       R 2-16:26:59      1 med0304    gpu:tesla:4
-    860771 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
-    860772 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
-    860773 gpu       kidney.job           user3       R 2-16:27:12      1 med0302    gpu:tesla:1
-    860770 gpu       kidney.job           user3       R 4-03:23:08      1 med0301    gpu:tesla:1
-    860766 gpu       kidney.job           user3       R 4-03:23:11      1 med0303    gpu:tesla:1
-    860767 gpu       kidney.job           user3       R 4-03:23:11      1 med0301    gpu:tesla:1
-    860768 gpu       kidney.job           user3       R 4-03:23:11      1 med0301    gpu:tesla:1
+    872571 gpu       bash                 user1       R   15:53:25      1 hpc-gpu-3    gpu:tesla:1
+    862261 gpu       bash                 user2       R 2-16:26:59      1 hpc-gpu-4    gpu:tesla:4
+    860771 gpu       kidney.job           user3       R 2-16:27:12      1 hpc-gpu-2    gpu:tesla:1
+    860772 gpu       kidney.job           user3       R 2-16:27:12      1 hpc-gpu-2    gpu:tesla:1
+    860773 gpu       kidney.job           user3       R 2-16:27:12      1 hpc-gpu-2    gpu:tesla:1
+    860770 gpu       kidney.job           user3       R 4-03:23:08      1 hpc-gpu-1    gpu:tesla:1
+    860766 gpu       kidney.job           user3       R 4-03:23:11      1 hpc-gpu-3    gpu:tesla:1
+    860767 gpu       kidney.job           user3       R 4-03:23:11      1 hpc-gpu-1    gpu:tesla:1
+    860768 gpu       kidney.job           user3       R 4-03:23:11      1 hpc-gpu-1    gpu:tesla:1
 ```
 
-In the example above, user1 has one job with one GPU running on med0303, user2 has one job running with 4 GPUs on med0304 and user3 has 7 jobs in total running of different machines with one GPU each.
+In the example above, user1 has one job with one GPU running on hpc-gpu-3, user2 has one job running with 4 GPUs on hpc-gpu-4 and user3 has 7 jobs in total running of different machines with one GPU each.
 
 ## How can I access graphical user interfaces (such as for Matlab) on the cluster?
 
@@ -579,8 +579,8 @@ export LC_ALL=C
 For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)
 
 ```bash
-res-login-1:~$ ssh med0301
-med0301:~$ yum list installed 2>/dev/null | grep cuda.x86_64
+res-login-1:~$ ssh hpc-gpu-1
+hpc-gpu-1:~$ yum list installed 2>/dev/null | grep cuda.x86_64
 cuda.x86_64                               10.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
 ```

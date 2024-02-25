@@ -34,7 +34,7 @@ The command will create a batch job and add it to the queue to be executed at a 
     As you can define minimal and maximal number of tasks/CPUs/cores, you could also specify `--mem-per-cpu` and get more flexible scheduling of your job.
 - `--gres`
     -- Generic resource allocation.
-    On the BIH HPC, this is only used for allocating GPUS, e.g., with `--gres=gpu:tesla:2`, a user could allocate two NVIDIA Tesla GPUs on the same hsot.
+    On the BIH HPC, this is only used for allocating GPUS, e.g., with `--gres=gpu:tesla:2`, a user could allocate two NVIDIA Tesla GPUs on the same host (use `a40` instead of `tesla` for the A40 GPUs).
 - `--licenses`
     -- On the BIH HPC, this is used for the allocation of MATLAB 2016b licenses only.
 - `--partition`
