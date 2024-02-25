@@ -18,7 +18,7 @@ The cluster consists of the following major components:
 - a scheduling system using Slurm,
 - 228 general purpose compute nodes `hpc-cpu-{1..228}
 - a few high memory nodes `hpc-mem-{1..4}`,
-- 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}`,
+- 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}` and 1 node with 10x A40 GPUs (!) `hpc-gpu-8`,
 - a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
 - a tier 2 (slower) storage system based on Ceph/CephFS
 

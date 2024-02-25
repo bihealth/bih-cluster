@@ -75,7 +75,7 @@ See [Resource Registration: GPU Nodes](../admin/resource-registration.md#gpu-nod
 
 * **maximum run time:** 14 days
 * **partition name:** `gpu`
-* **argument string:** select `$count` GPUs: `-p gpu --gres=gpu:tesla:$count`, maximum run time: `--time 14-00:00:00`
+* **argument string:** select `$count` GPUs: `-p gpu --gres=gpu:$card:$count` (`card=tesla` or `card=a40`), maximum run time: `--time 14-00:00:00`
 
 ### `highmem`
 

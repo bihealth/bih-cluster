@@ -45,4 +45,4 @@ The table below shows some SGE commands and their Slurm equivalents.
 | allocate memory | `-l h_vmem=size` | `--mem=mem` OR `--mem-per-cpu=mem` |
 | wait for job | `-hold_jid jid` | `--depend state:job` |
 | select target host | `-l hostname=host1\|host1` | `--nodelist=nodes` AND/OR `--exclude` |
-| allocate GPU | `-l gpu=1` | `--gres=gpu:tesla:count` |
+| allocate GPU | `-l gpu=1` | `--gres=gpu:tesla:count` or `--gres=gpu:a40:count` |

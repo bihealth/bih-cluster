@@ -4,7 +4,7 @@ TensorFlow is a package for deep learning with optional support for GPUs.
 You can find the original TensorFlow installation instructions [here](https://www.tensorflow.org/install).
 
 This article describes how to set up TensorFlow with GPU support using Conda.
-This how-to assumes that you have just connected to a GPU node via `srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i`.
+This how-to assumes that you have just connected to a GPU node via `srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i` (for Tesla V100 GPUs, for A400 GPUs use `--gres=gpu:a40:1`).
 Note that you will need to allocate "enough" memory, otherwise your python session will be `Killed` because of too little memory.
 You should read the [How-To: Connect to GPU Nodes](../../how-to/connect/gpu-nodes/) tutorial on an explanation of how to do this and to learn how to register for GPU usage.
 
