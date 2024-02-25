@@ -3049,9 +3049,9 @@
 
 
 <h1 id="how-to-connect-to-gpu-nodes">How-To: Connect to GPU Nodes<a class="headerlink" href="#how-to-connect-to-gpu-nodes" title="Permanent link">&para;</a></h1>
-<p>The cluster has seven nodes with four Tesla V100 GPUs each: <code>hpc-gpu-{1..7}</code>.</p>
+<p>The cluster has seven nodes with four Tesla V100 GPUs each: <code>hpc-gpu-{1..7}</code> and one node with 10 A400 GPUs: <code>hpc-gpu-8</code>.</p>
 <p>Connecting to a node with GPUs is easy.
-You simply request a GPU using the <code>--gres=gpu:tesla:COUNT</code> argument to <code>srun</code> and <code>batch</code>.
+You simply request a GPU using the <code>--gres=gpu:$CARD:COUNT</code> (for <code>CARD=tesla</code> or <code>CARD=a40</code>) argument to <code>srun</code> and <code>batch</code>.
 This will automatically place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -3112,14 +3112,14 @@ If we were to open two concurrent connections (e.g., in a <code>screen</code>) t
 Note that any two jobs are isolated using Linux cgroups ("container" technology 🚀) so you cannot accidentally use a GPU of another job.</p>
 <p>Now to the somewhat boring part where we show that CUDA actually works.</p>
 <div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>srun<span class="w"> </span>--gres<span class="o">=</span>gpu:tesla:1<span class="w"> </span>--pty<span class="w"> </span>bash
-med0301:~$<span class="w"> </span>nvcc<span class="w"> </span>--version
+hpc-gpu-1:~$<span class="w"> </span>nvcc<span class="w"> </span>--version
 nvcc:<span class="w"> </span>NVIDIA<span class="w"> </span><span class="o">(</span>R<span class="o">)</span><span class="w"> </span>Cuda<span class="w"> </span>compiler<span class="w"> </span>driver
 Copyright<span class="w"> </span><span class="o">(</span>c<span class="o">)</span><span class="w"> </span><span class="m">2005</span>-2019<span class="w"> </span>NVIDIA<span class="w"> </span>Corporation
 Built<span class="w"> </span>on<span class="w"> </span>Wed_Oct_23_19:24:38_PDT_2019
 Cuda<span class="w"> </span>compilation<span class="w"> </span>tools,<span class="w"> </span>release<span class="w"> </span><span class="m">10</span>.2,<span class="w"> </span>V10.2.89
-med0301:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/miniconda3/bin/activate
-med0301:~$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>gpu-test
-med0301:~$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import torch; print(torch.cuda.is_available())&#39;</span>
+hpc-gpu-1:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/miniconda3/bin/activate
+hpc-gpu-1:~$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>gpu-test
+hpc-gpu-1:~$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import torch; print(torch.cuda.is_available())&#39;</span>
 True
 </code></pre></div>
 <div class="admonition note">
@@ -3131,12 +3131,12 @@ If scheduling a GPU fails, consider additionally indicating the GPU partion expl
 <p>Use <code>squeue</code> to find out about currently queued jobs (the <code>egrep</code> only keeps the header and entries in the <code>gpu</code> partition).</p>
 <div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>squeue<span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span>-iw<span class="w"> </span><span class="s1">&#39;JOBID|gpu&#39;</span>
 <span class="w">             </span>JOBID<span class="w"> </span>PARTITION<span class="w">     </span>NAME<span class="w">     </span>USER<span class="w"> </span>ST<span class="w">       </span>TIME<span class="w">  </span>NODES<span class="w"> </span>NODELIST<span class="o">(</span>REASON<span class="o">)</span>
-<span class="w">                </span><span class="m">33</span><span class="w">       </span>gpu<span class="w">     </span>bash<span class="w"> </span>holtgrem<span class="w">  </span>R<span class="w">       </span><span class="m">2</span>:26<span class="w">      </span><span class="m">1</span><span class="w"> </span>med0301
+<span class="w">                </span><span class="m">33</span><span class="w">       </span>gpu<span class="w">     </span>bash<span class="w"> </span>holtgrem<span class="w">  </span>R<span class="w">       </span><span class="m">2</span>:26<span class="w">      </span><span class="m">1</span><span class="w"> </span>hpc-gpu-1
 </code></pre></div>
 <h2 id="bonus-2-is-the-gpu-running">Bonus <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/squidfunk/mkdocs-material/issues/2" title="GitHub Issue: squidfunk/mkdocs-material #2">#2</a>: Is the GPU running?<a class="headerlink" href="#bonus-2-is-the-gpu-running" title="Permanent link">&para;</a></h2>
 <p>To find out how active the GPU nodes actually are, you can connect to the nodes (without allocating a GPU you can do this even if the node is full) and then use <code>nvidia-smi</code>.</p>
-<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>ssh<span class="w"> </span>med0301<span class="w"> </span>bash
-med0301:~$<span class="w"> </span>nvidia-smi
+<div class="highlight"><pre><span></span><code>res-login-1:~$<span class="w"> </span>ssh<span class="w"> </span>hpc-gpu-1<span class="w"> </span>bash
+hpc-gpu-1:~$<span class="w"> </span>nvidia-smi
 Fri<span class="w"> </span>Mar<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">11</span>:10:08<span class="w"> </span><span class="m">2020</span>
 +-----------------------------------------------------------------------------+
 <span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">440</span>.33.01<span class="w">    </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">440</span>.33.01<span class="w">    </span>CUDA<span class="w"> </span>Version:<span class="w"> </span><span class="m">10</span>.2<span class="w">     </span><span class="p">|</span>
@@ -3178,7 +3178,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
       
     
   </small>

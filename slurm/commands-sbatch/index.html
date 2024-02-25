@@ -3066,7 +3066,7 @@ Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"
     As you can define minimal and maximal number of tasks/CPUs/cores, you could also specify <code>--mem-per-cpu</code> and get more flexible scheduling of your job.</li>
 <li><code>--gres</code>
     -- Generic resource allocation.
-    On the BIH HPC, this is only used for allocating GPUS, e.g., with <code>--gres=gpu:tesla:2</code>, a user could allocate two NVIDIA Tesla GPUs on the same hsot.</li>
+    On the BIH HPC, this is only used for allocating GPUS, e.g., with <code>--gres=gpu:tesla:2</code>, a user could allocate two NVIDIA Tesla GPUs on the same host (use <code>a40</code> instead of <code>tesla</code> for the A40 GPUs).</li>
 <li><code>--licenses</code>
     -- On the BIH HPC, this is used for the allocation of MATLAB 2016b licenses only.</li>
 <li><code>--partition</code>
@@ -3166,7 +3166,7 @@ SLURM_ARRAY_TASK_MIN=1
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
       
     
   </small>

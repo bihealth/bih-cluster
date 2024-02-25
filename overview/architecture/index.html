@@ -3066,8 +3066,9 @@ A cluster system bundles a high number of nodes and in the case of HPC, the focu
 <ul>
 <li>approx. 256 nodes (from three generations),</li>
 <li>4 high-memory nodes (2 nodes with 512 GB RAM, 2 nodes with 1 TB RAM),</li>
-<li>7 GPU nodes (with 4 Tesla GPUs each), and</li>
-<li>a high-perfomance parallel GPFS files system.</li>
+<li>7 GPU nodes with 4 Tesla GPUs each, 1 GPU node with 10 A40 GPUs, and</li>
+<li>a high-performance Tier 1 parallel CephFS file system with a larger but slower Tier 2 CephFS file system, and</li>
+<li>a legacy parallel GPFS files system.</li>
 </ul>
 <h3 id="network-interconnect">Network Interconnect<a class="headerlink" href="#network-interconnect" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3110,7 +3111,7 @@ med0104:~$
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
       
     
   </small>

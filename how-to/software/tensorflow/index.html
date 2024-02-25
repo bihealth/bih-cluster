@@ -3010,7 +3010,7 @@
 <p>TensorFlow is a package for deep learning with optional support for GPUs.
 You can find the original TensorFlow installation instructions <a href="https://www.tensorflow.org/install">here</a>.</p>
 <p>This article describes how to set up TensorFlow with GPU support using Conda.
-This how-to assumes that you have just connected to a GPU node via <code>srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i</code>.
+This how-to assumes that you have just connected to a GPU node via <code>srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i</code> (for Tesla V100 GPUs, for A400 GPUs use <code>--gres=gpu:a40:1</code>).
 Note that you will need to allocate "enough" memory, otherwise your python session will be <code>Killed</code> because of too little memory.
 You should read the <a href="../../how-to/connect/gpu-nodes/">How-To: Connect to GPU Nodes</a> tutorial on an explanation of how to do this and to learn how to register for GPU usage.</p>
 <p>This tutorial assumes, that conda has been set up as described in [Software Management]((../../best-practice/software-installation-with-conda.md).</p>
@@ -3163,7 +3163,7 @@ TensorFlow version: 2.6.2
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
       
     
   </small>

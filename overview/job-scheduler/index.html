@@ -3179,7 +3179,7 @@ See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration
 <ul>
 <li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>gpu</code></li>
-<li><strong>argument string:</strong> select <code>$count</code> GPUs: <code>-p gpu --gres=gpu:tesla:$count</code>, maximum run time: <code>--time 14-00:00:00</code></li>
+<li><strong>argument string:</strong> select <code>$count</code> GPUs: <code>-p gpu --gres=gpu:$card:$count</code> (<code>card=tesla</code> or <code>card=a40</code>), maximum run time: <code>--time 14-00:00:00</code></li>
 </ul>
 <h3 id="highmem"><code>highmem</code><a class="headerlink" href="#highmem" title="Permanent link">&para;</a></h3>
 <p>Jobs requesting more than 200 GB of RAM are automatically routed to the <code>highmem</code> partition.</p>
@@ -3226,7 +3226,7 @@ However, do not use this partition without arranging with hpc-helpdesk as killin
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2024</span>
       
     
   </small>
