@@ -1,5 +1,5 @@
 ## What is going to happen?
-Files on the cluster's main storage (`/data/gpfs-1` aka. `/fast`) will move to a new filesystem.
+Files on the cluster's main storage `/data/gpfs-1` aka. `/fast` will move to a new filesystem.
 That includes users' home directories, work directories, and workgroup directories.
 Once files have been moved to their new locations, `/fast` will be retired.
 
@@ -30,7 +30,7 @@ Depending on the location and Tier, Cephfs utilises snapshots in differ differen
 Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the datacenter to provide an additional layer of security.
 
 | Tier | Location                 | Path                         | Retention policy                | Mirrored |
-|-----:|:-------------------------|:-----------------------------|:--------------------------------|:---------|
+|:-----|:-------------------------|:-----------------------------|:--------------------------------|---------:|
 |    1 | User homes               | `/data/cephfs-1/home/users/` | Hourly for 48 h, daily for 14 d | yes      |
 |    1 | Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | yes      |
 |    1 | Group/project scratch    | `/data/cephfs-1/scratch/`    | Daily for 3 d                   | no       |
@@ -42,8 +42,8 @@ User access to the snapshots is documented here: https://hpc-docs.cubi.bihealth.
 ### Quotas
 
 | Tier | Function | Path | Default Quota |
-|-----:|:---------|:-----|--------------:|
-|    1 | User home          | `/data/cephfs-1/home/users/<user>`              | 1 GB        |
+|:-----|:---------|:-----|--------------:|
+|    1 | User home          | `/data/cephfs-1/home/users/<user>`             | 1 GB        |
 |    1 | Group work         | `/data/cephfs-1/work/groups/<group>`           | 1 TB        |
 |    1 | Group scratch      | `/data/cephfs-1/scratch/groups/<group>`        | 10 TB       |
 |    1 | Projects work      | `/data/cephfs-1/work/projects/<project>`       | individual  |
@@ -64,9 +64,9 @@ Due to the increase in storage quality options, there will be some more more fol
 - Work on Tier 1: `/data/cephfs-1/work/groups/<ag-doe>/users/<user>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<ag-doe>/users/<user>`
 
-[!IMPORTANT]
-User work & scratch spaces are now part of the user's group folder.
-This means, groups should coordinate internally to distribute their allotted quota evenly among users.
+!!! warning
+    User work & scratch spaces are now part of the user's group folder.
+    This means, groups should coordinate internally to distribute their allotted quota evenly among users.
 
 The implementation is done _via_ symlinks created by default when the user account is moved to its new destination.
 
@@ -84,23 +84,23 @@ The full list of symlinks is:
 - Programming languanges libraries & registry: `R`, `.theano`, `.cargo`, `.cpan`, `.cpanm`, & `.npm`
 - Others: `.ncbi`, `.vs`
 
-[!IMPORTANT]
-Automatic symlink creation will **not create a symlink to any conda installation**.
+!!! warning
+    Automatic symlink creation will not create a symlink to any conda installation.
 
 ### Groups
 - Work on Tier 1: `/data/cephfs-1/work/groups/<group>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<group>`
 - Mirrored work on Tier 2: `/data/cephfs-2/mirrored/groups/<group>`
 
-[!NOTE]
-Un-mirrored work space on Tier 2 is available on request.
+!!! note
+    Un-mirrored work space on Tier 2 is available on request.
 
 ### Projects
 - Work on Tier 1: `/data/cephfs-1/work/projects/<project>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/projects/<project>`
 
-[!NOTE]
-Tier 2 work space (mirrored & un-mirrored) is available on request.
+!!! note
+    Tier 2 work space (mirrored & un-mirrored) is available on request.
 
 ## Recommended practices
 ### Data locations
@@ -132,7 +132,7 @@ Tier 2 work space (mirrored & un-mirrored) is available on request.
 
 #### Machine learning
 
-## Data migration process from old `fast/` to CephFS 
+## Data migration process from old `/fast` to CephFS 
 1. Administrative preparations  
     1. HPC-Access registration (PIs will receive in invite mail)
     2. PIs need to assign a delegate.
@@ -146,10 +146,10 @@ Tier 2 work space (mirrored & un-mirrored) is available on request.
 
 Best practice and/or tools will be provided.
 
-[!NOTE]
-The users' `work` space will be moved to the group's `work` space.
+!!! note
+    The users' `work` space will be moved to the group's `work` space.
 
-## Technical details on the new infrastructure
+## Technical details about the new infrastructure
 ### Tier 1
 - Fast & expensive (flash drive based), mounted on `/data/cephfs-1`
 - Currently 12 Nodes with 10 × 14 TB NVME/SSD each installed
