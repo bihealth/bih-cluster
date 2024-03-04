@@ -124,11 +124,58 @@ The full list of symlinks is:
 7. After publication (or the end of the project), files on Tier 1 can be deleted.
 
 ### Example use cases
+
+These examples are based on our experience of processing diverse NGS datasets.
+Your mileage may vary but there is a basic principle that remains true for all projects.
+
+!!! note
+    **Keep on Tier 1 only files in active use.**
+	The space on Tier 1 is limited, your colleagues and other cluster users will be 
+	grateful if you remove from Tier 1 the files you don't immediatly need.
+
 #### DNA sequencing (WES, WGS)
+
+The typical Whole Genome Sequencing of human sample at 100x coverage takes about 150GB storage.
+For Whole Exome Sequencing, the data typically takes between 6 to 30 GB.
+These large files require considerable computing resources for processing, in particular for the mapping step.
+Therefore, for mapping it may be useful to follow a prudent workflow, such as:
+
+1. For one sample in the cohort, subsample its raw data files (`fastqs`) from the Tier 2 location to Tier 1. [`seqtk`](https://github.com/lh3/seqtk) is your friend!
+2. Test, improve & check your processing scripts on those smaller files.
+3. Once you are happy with the scripts, copy the complete `fastq` files from Tier 2 to Tier 1. Run the your scripts on the whole dataset, and copy the results (`bam` or `cram` files) back to Tier 2.
+4. **Remove the raw data & bam/cram files from Tier 1**, unless the downstream processing of mapped files (variant calling, structural variants, ...) can be done immediatly.
+
+!!! tip
+    Don't forget to use your `scratch` area for transient operation, for example to sort your `bam` file after mapping.
+	You find more information how efficiently to set up temporary directory [here](../best-practice/temp-files.md)
 
 #### bulk RNA-seq
 
+Analysis of RNA expression datasets are typically a long and iterative process, where the data must remain accessible for a significant period.
+However, there is usually not need to keep raw data files and mapping results available, once the genes & transcripts counts have been generated.
+The count files are much smaller than the raw data or the mapped data, so they can live longer on Tier 1. A typical workflow would be:
+
+1. Copy your `fastq` files from Tier 2 to Tier 1,
+2. Get expression levels, for example using `salmon` or `STAR`, and store the results on Tier 1,
+3. Import the expression levels into `R`, using `tximport` and `DESeq2` or `featureCounts` & `edgeR`, for example,
+4. Save the expression levels `R` objects and the output of `salmon`, `STAR` (or any mapper/aligner of your choice) to Tier 2,
+5. **Remove the raw data, bam & count files from Tier 1**
+
+!!! tip
+    If using `STAR`, don't forget to use your `scratch` area for transient operation.
+	You find more information how efficiently to set up temporary directory [here](../best-practice/temp-files.md)
+
 #### scRNA-seq
+
+The analysis workflow of bulk RNA & single cell dataset is conceptually similar:
+the large raw files need to be processed only once, and only the outcome of the processing (the gene counts matrix) is required for downstream analysis.
+Therefore, a typical workflow would be:
+
+1. Copy your `fastq` files from Tier 2 to Tier 1,
+2. Perform raw data QC (for example with `fastqc`),
+3. Get the count matrix, for example using `Cell Ranger` or `alevin-fry`, perform count matrix QC and store the results on Tier 1,
+4. **Remove the raw data, bam & count files from Tier 1**
+5. Downstream analysis with for example `seurat`, `scanpy` or `Loupe Browser`.
 
 #### Machine learning
 
