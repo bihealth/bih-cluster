@@ -27,8 +27,8 @@ First, create a new folder for this episode:
 And copy the wrapper script to this folder as well as the Snakefile (you can also reuse the one with the adjustments from the previous [episode](episode-3.md)):
 
 ```terminal
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/submit_snakejob.sh .
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/Snakefile .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_snakejob.sh .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/Snakefile .
 (first-steps) $ chmod u+w submit_snakejob.sh Snakefile
 ```
 
@@ -109,8 +109,8 @@ rule all:
 
 rule alignment:
     input:
-        '/fast/projects/cubit/work/tutorial/input/{id}_R1.fq.gz',
-        '/fast/projects/cubit/work/tutorial/input/{id}_R2.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/{id}_R1.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/{id}_R2.fq.gz',
     output:
         bam='alignment/{id}.bam',
         bai='alignment/{id}.bam.bai',
@@ -123,7 +123,7 @@ rule alignment:
         export TMPDIR=/fast/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
-        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         bwa mem -t 8 \
             -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
@@ -146,7 +146,7 @@ rule structural_variants:
         time='2-00:00:00',
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         delly call -o {output} -g ${{REF}} {input}
         """
@@ -166,7 +166,7 @@ rule snps:
         time='04:00:00',
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         gatk HaplotypeCaller \
             -R ${{REF}} \
