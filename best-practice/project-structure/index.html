@@ -3163,7 +3163,7 @@ We call the location for non-data part of the project the <strong>home</strong> 
 <h2 id="example-link-configscripts-into-work-location-option-1">Example: Link config/scripts into work location (Option 1)<a class="headerlink" href="#example-link-configscripts-into-work-location-option-1" title="Permanent link">&para;</a></h2>
 <p>Creating the work directory and copy the input files into <code>work/input</code>.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>project/work/input
-$<span class="w"> </span>cp<span class="w"> </span>/fast/projects/cubit/tutorial/input/*<span class="w"> </span>project/work/input
+$<span class="w"> </span>cp<span class="w"> </span>/data/cephfs-1/work/projects/cubit/tutorial/input/*<span class="w"> </span>project/work/input
 </code></pre></div>
 <p>Creating the home space.
 We initialize a Git repository, properly configure the <code>.gitignore</code> file and add a <code>README.md</code> file.</p>
@@ -3245,7 +3245,7 @@ EOF
 $<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>scripts/run-mapping.sh
 $<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>config
 $<span class="w"> </span>cat<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span><span class="w"> </span>&gt;config/default-config.sh
-<span class="nv">BWA_INDEX</span><span class="o">=</span>/fast/projects/cubit/current/static_data/reference/GRCh37/hs37d5/hs37d5.fa
+<span class="nv">BWA_INDEX</span><span class="o">=</span>/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/hs37d5/hs37d5.fa
 <span class="nv">SAMPLES</span><span class="o">=</span>
 EOF
 $<span class="w"> </span>cat<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span><span class="w"> </span>&gt;config/project-config.sh
@@ -3308,7 +3308,7 @@ $<span class="w"> </span>./do-run-mapping.sh
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2024</span>
       
     
   </small>

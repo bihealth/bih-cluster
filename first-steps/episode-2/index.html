@@ -3054,7 +3054,7 @@ Thus, everybody using the cluster benefits.</p>
 The reason is that <code>sbatch</code> only accepts bash scripts.
 If you give <code>sbatch</code> a normal shell command or binary, it won't work.
 This means that we have to put the command(s) we want to use in a bash script.
-A skeleton script can be found at <code>/fast/projects/cubit/work/tutorial/skeletons/submit_job.sh</code></p>
+A skeleton script can be found at <code>/data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh</code></p>
 <p>The content of the file:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -3090,7 +3090,7 @@ Slurm will create a log file with a file name composed of the job name (<code>%x
 </code></pre></div>
 <p>and copy the wrapper script to this directory:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ pushd /fast/users/$USER/work/tutorial/episode2
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/submit_job.sh .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh .
 (first-steps) $ chmod u+w submit_job.sh
 </code></pre></div>
 <p>Now open this file and copy the same commands we executed in the last tutorial to this file.</p>
@@ -3126,14 +3126,14 @@ Your file should look something like this:</p>
 <span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">TMPDIR</span><span class="si">}</span>
 
-<span class="nv">BWAREF</span><span class="o">=</span>/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
-<span class="nv">REF</span><span class="o">=</span>/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+<span class="nv">BWAREF</span><span class="o">=</span>/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+<span class="nv">REF</span><span class="o">=</span>/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
 bwa<span class="w"> </span>mem<span class="w"> </span>-t<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-R<span class="w"> </span><span class="s2">&quot;@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="nv">$BWAREF</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>/fast/projects/cubit/work/tutorial/input/test_R1.fq.gz<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>/fast/projects/cubit/work/tutorial/input/test_R2.fq.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>/data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz<span class="w"> </span><span class="se">\</span>
 <span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>view<span class="w"> </span>-b<span class="w"> </span><span class="se">\</span>
 <span class="p">|</span><span class="w"> </span>samtools<span class="w"> </span>sort<span class="w"> </span>-O<span class="w"> </span>BAM<span class="w"> </span>-T<span class="w"> </span><span class="nv">$TMPDIR</span><span class="w"> </span>-o<span class="w"> </span>aln.bam
 
@@ -3202,7 +3202,7 @@ To get to know what partitions are available, and how to use them properly, we h
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2024</span>
       
     
   </small>

@@ -2938,7 +2938,7 @@ mv /path/to/cellranger-3.0.2.tar.gz .
 tar -xzvf cellranger-3.0.2.tar.gz
 </code></pre></div>
 <h1 id="reference-data">reference data<a class="headerlink" href="#reference-data" title="Permanent link">&para;</a></h1>
-<p>will be provided in <code>/fast/projects/cubit/current/static_data/app_support/cellranger</code></p>
+<p>will be provided in <code>/data/cephfs-1/work/projects/cubit/current/static_data/app_support/cellranger</code></p>
 <h1 id="cluster-support-slurm">cluster support SLURM<a class="headerlink" href="#cluster-support-slurm" title="Permanent link">&para;</a></h1>
 <p>add a file <code>slurm.template</code> to <code>/fast/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template</code> with the following contents:</p>
 <div class="highlight"><pre><span></span><code>#!/usr/bin/env bash
@@ -2985,7 +2985,7 @@ __MRO_CMD__
 
 /fast/users/$USER/work/cellranger-3.0.2/cellranger count \
   --id=sample_id \
-  --transcriptome=/fast/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
+  --transcriptome=/data/cephfs-1/work/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
   --fastqs=/path/to/fastqs \
   --sample=sample_name \
   --expect-cells=n_cells \
@@ -3026,7 +3026,7 @@ __MRO_CMD__
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2024</span>
       
     
   </small>

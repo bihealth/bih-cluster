@@ -2974,7 +2974,7 @@ basics of this powerful tool. For more, we highly recommend digging into the Sna
 copy the skeleton:</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ mkdir -p /fast/users/${USER}/work/tutorial/episode3
 (first-steps) $ pushd /fast/users/${USER}/work/tutorial/episode3
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/Snakefile .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/Snakefile .
 (first-steps) $ chmod u+w Snakefile
 </code></pre></div>
 <p>Your <code>Snakefile</code> should look as follows:</p>
@@ -2985,8 +2985,8 @@ copy the skeleton:</p>
 
 <span class="n">rule</span> <span class="n">alignment</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/test_R1.fq.gz&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/test_R2.fq.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz&#39;</span><span class="p">,</span>
     <span class="n">output</span><span class="p">:</span>
         <span class="n">bam</span><span class="o">=</span><span class="s1">&#39;alignment/test.bam&#39;</span><span class="p">,</span>
         <span class="n">bai</span><span class="o">=</span><span class="s1">&#39;alignment/test.bam.bai&#39;</span><span class="p">,</span>
@@ -2995,7 +2995,7 @@ copy the skeleton:</p>
 <span class="sd">        export TMPDIR=/fast/users/${{USER}}/scratch/tmp</span>
 <span class="sd">        mkdir -p ${{TMPDIR}}</span>
 
-<span class="sd">        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        bwa mem -t 8 \</span>
 <span class="sd">            -R &quot;@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01&quot; \</span>
@@ -3014,7 +3014,7 @@ copy the skeleton:</p>
         <span class="s1">&#39;structural_variants/test.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        delly call -o {output} -g ${{REF}} {input}</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -3026,7 +3026,7 @@ copy the skeleton:</p>
         <span class="s1">&#39;snps/test.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        gatk HaplotypeCaller \</span>
 <span class="sd">            -R ${{REF}} \</span>
@@ -3083,8 +3083,8 @@ which value this variable should have. Your <code>Snakefile</code> should look n
 
 <span class="n">rule</span> <span class="n">alignment</span><span class="p">:</span>
     <span class="nb">input</span><span class="p">:</span>
-        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R1.fq.gz&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;/fast/projects/cubit/work/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R2.fq.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/data/cephfs-1/work/projects/cubit/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R1.fq.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;/data/cephfs-1/work/projects/cubit/tutorial/input/</span><span class="si">{id}</span><span class="s1">_R2.fq.gz&#39;</span><span class="p">,</span>
     <span class="n">output</span><span class="p">:</span>
         <span class="n">bam</span><span class="o">=</span><span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam&#39;</span><span class="p">,</span>
         <span class="n">bai</span><span class="o">=</span><span class="s1">&#39;alignment/</span><span class="si">{id}</span><span class="s1">.bam.bai&#39;</span><span class="p">,</span>
@@ -3093,7 +3093,7 @@ which value this variable should have. Your <code>Snakefile</code> should look n
 <span class="sd">        export TMPDIR=/fast/users/${{USER}}/scratch/tmp</span>
 <span class="sd">        mkdir -p ${{TMPDIR}}</span>
 
-<span class="sd">        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        bwa mem -t 8 \</span>
 <span class="sd">            -R &quot;@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01&quot; \</span>
@@ -3112,7 +3112,7 @@ which value this variable should have. Your <code>Snakefile</code> should look n
         <span class="s1">&#39;structural_variants/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        delly call -o {output} -g ${{REF}} {input}</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -3124,7 +3124,7 @@ which value this variable should have. Your <code>Snakefile</code> should look n
         <span class="s1">&#39;snps/</span><span class="si">{id}</span><span class="s1">.vcf&#39;</span>
     <span class="n">shell</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
+<span class="sd">        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
 
 <span class="sd">        gatk HaplotypeCaller \</span>
 <span class="sd">            -R ${{REF}} \</span>
@@ -3146,7 +3146,7 @@ to allow two single-threaded jobs to be run simultaneously:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2024</span>
       
     
   </small>
