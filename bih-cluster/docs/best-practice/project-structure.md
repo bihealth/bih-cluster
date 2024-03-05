@@ -71,7 +71,7 @@ Creating the work directory and copy the input files into `work/input`.
 
 ```bash
 $ mkdir -p project/work/input
-$ cp /fast/projects/cubit/tutorial/input/* project/work/input
+$ cp /data/cephfs-1/work/projects/cubit/tutorial/input/* project/work/input
 ```
 
 Creating the home space.
@@ -159,7 +159,7 @@ EOF
 $ chmod +x scripts/run-mapping.sh
 $ mkdir -p config
 $ cat <<"EOF" >config/default-config.sh
-BWA_INDEX=/fast/projects/cubit/current/static_data/reference/GRCh37/hs37d5/hs37d5.fa
+BWA_INDEX=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/hs37d5/hs37d5.fa
 SAMPLES=
 EOF
 $ cat <<"EOF" >config/project-config.sh

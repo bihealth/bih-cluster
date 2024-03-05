@@ -22,8 +22,8 @@ $ srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i
 We will provide you with some example FASTQ files, but you can use your own if you like.
 You can find the data here:
 
-- `/fast/projects/cubit/work/tutorial/input/test_R1.fq.gz`
-- `/fast/projects/cubit/work/tutorial/input/test_R2.fq.gz`
+- `/data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz`
+- `/data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz`
 
 ## Creating a Project Directory
 
@@ -57,11 +57,11 @@ You can create one in your `~/scratch` folder and make it available to the syste
 
 ## Using the Cubit Static Data
 
-The static data is located in `/fast/projects/cubit/current/static_data`.
+The static data is located in `/data/cephfs-1/work/projects/cubit/current/static_data`.
 For our small example, the required reference genome and index can be found at:
 
-- `/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta`
-- `/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta`
+- `/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta`
+- `/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta`
 
 ## Aligning the Reads
 
@@ -70,9 +70,9 @@ Let's align our data:
 ```terminal
 (first-steps) $ bwa mem -t 8 \
     -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
-    /fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta \
-    /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
-    /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
+    /data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz \
+    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz \
 | samtools view -b \
 | samtools sort -O BAM -T $TMPDIR -o aln.bam
 
@@ -85,7 +85,7 @@ And do the structural variant calling:
 
 ```terminal
 (first-steps) $ delly call \
-    -g /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    -g /data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     aln.bam
 ```
 
@@ -97,7 +97,7 @@ And now for the SNP calling (this step will take ~ 20 minutes):
 
 ```terminal
 (first-steps) $ gatk HaplotypeCaller \
-    -R /fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
+    -R /data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta \
     -I aln.bam \
     -ploidy 2 \
     -O test.GATK.vcf
@@ -111,5 +111,5 @@ You can access a list of all static data through this wiki, follow this link to 
 You can also have a peek via:
 
 ```terminal
-(first-steps) $ tree -L 3 /fast/projects/cubit/current/static_data | less
+(first-steps) $ tree -L 3 /data/cephfs-1/work/projects/cubit/current/static_data | less
 ```
