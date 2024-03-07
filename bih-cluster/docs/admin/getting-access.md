@@ -52,7 +52,7 @@ The process to create a new group is as follows.
 
 Subsequently, both owner and delegate (but **only owner and delegate**) can initiate changes (new users, resource changes etc.) to the group.
 
-## Form
+### Form
 
 Example values are given in curly braces.
 
@@ -90,7 +90,7 @@ Required resources:
 [etc.]
 ```
 
-## Notes
+### Notes
 
 - Work groups on the cluster must have an owner (its leader, principal investigator, etc.)
 - Group ownership implies control but also accountability for their work group and members.
@@ -118,7 +118,7 @@ Project creation can be initiated by group leaders and group delegates with the 
 
 Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project. 
 
-## Form
+### Form
 
 Example values are given in curly braces.
 
@@ -145,6 +145,8 @@ Additional members:
 If you wish to add users to your AG, please use the following form. Note that users you want to add to a project need to be associated with an AG first.
 
 The inquiry has to be send to hpc-helpdesk@bih-charite.de, either by the PI or the delegate.
+
+### Form
 
 ```
 # User 1
