@@ -32,7 +32,7 @@ Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire
 | Tier | Location                 | Path                         | Retention policy                | Mirrored |
 |:-----|:-------------------------|:-----------------------------|:--------------------------------|---------:|
 |    1 | User homes               | `/data/cephfs-1/home/users/` | Hourly for 48 h, daily for 14 d | yes      |
-|    1 | Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | yes      |
+|    1 | Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | no       |
 |    1 | Group/project scratch    | `/data/cephfs-1/scratch/`    | Daily for 3 d                   | no       |
 |    2 | Group/project mirrored   | `/data/cephfs-2/mirrored/`   | Daily for 30 d, weekly for 16 w | yes      |
 |    2 | Group/project unmirrored | `/data/cephfs-2/unmirrored/` | Daily for 30 d, weekly for 16 w | no       |
