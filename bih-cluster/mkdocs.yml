@@ -10,11 +10,24 @@ repo_url: https://github.com/bihealth/bih-cluster/
 edit_uri: 'edit/main/bih-cluster/docs/'
 
 # Copyright
-copyright: 2016-2022, BIH HPC IT
+copyright: 2016-2024, BIH HPC IT
 
 # Theming, Configuration
 theme:
   name: material
+  # Custom overrides
+  custom_dir: overrides
+  palette:
+  # Palette toggle for light mode
+  - scheme: default
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  # Palette toggle for dark mode
+  - scheme: slate
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
 strict: true
 extra_css:
   - css/extra.css
@@ -23,11 +36,6 @@ extra_css:
 plugins:
   - search
   - git-revision-date-localized
-
-# Custom overrides.
-theme:
-  name: material
-  custom_dir: overrides
 
 # Extensions
 markdown_extensions:

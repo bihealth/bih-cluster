@@ -32,7 +32,7 @@ copy the skeleton:
 ```terminal
 (first-steps) $ mkdir -p /fast/users/${USER}/work/tutorial/episode3
 (first-steps) $ pushd /fast/users/${USER}/work/tutorial/episode3
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/Snakefile .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/Snakefile .
 (first-steps) $ chmod u+w Snakefile
 ```
 
@@ -46,8 +46,8 @@ rule all:
 
 rule alignment:
     input:
-        '/fast/projects/cubit/work/tutorial/input/test_R1.fq.gz',
-        '/fast/projects/cubit/work/tutorial/input/test_R2.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz',
     output:
         bam='alignment/test.bam',
         bai='alignment/test.bam.bai',
@@ -56,7 +56,7 @@ rule alignment:
         export TMPDIR=/fast/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
-        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         bwa mem -t 8 \
             -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
@@ -75,7 +75,7 @@ rule structural_variants:
         'structural_variants/test.vcf'
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         delly call -o {output} -g ${{REF}} {input}
         """
@@ -87,7 +87,7 @@ rule snps:
         'snps/test.vcf'
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         gatk HaplotypeCaller \
             -R ${{REF}} \
@@ -147,8 +147,8 @@ rule all:
 
 rule alignment:
     input:
-        '/fast/projects/cubit/work/tutorial/input/{id}_R1.fq.gz',
-        '/fast/projects/cubit/work/tutorial/input/{id}_R2.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/{id}_R1.fq.gz',
+        '/data/cephfs-1/work/projects/cubit/tutorial/input/{id}_R2.fq.gz',
     output:
         bam='alignment/{id}.bam',
         bai='alignment/{id}.bam.bai',
@@ -157,7 +157,7 @@ rule alignment:
         export TMPDIR=/fast/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
-        BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         bwa mem -t 8 \
             -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
@@ -176,7 +176,7 @@ rule structural_variants:
         'structural_variants/{id}.vcf'
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         delly call -o {output} -g ${{REF}} {input}
         """
@@ -188,7 +188,7 @@ rule snps:
         'snps/{id}.vcf'
     shell:
         r"""
-        REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+        REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
         gatk HaplotypeCaller \
             -R ${{REF}} \

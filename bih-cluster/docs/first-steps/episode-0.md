@@ -23,7 +23,7 @@ introduce the following convention that we use throughout the series:
 $ Commands are prefixed with a little dollar sign
 ```
 
-While file paths are highlighted like this: `/fast/projects/cubit/current`.
+While file paths are highlighted like this: `/data/cephfs-1/work/projects/cubit/current`.
 
 ## Instant Gratification
 

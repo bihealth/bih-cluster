@@ -33,7 +33,7 @@ You may have noticed that you run `sbatch` with a script, not with regular comma
 The reason is that `sbatch` only accepts bash scripts.
 If you give `sbatch` a normal shell command or binary, it won't work.
 This means that we have to put the command(s) we want to use in a bash script.
-A skeleton script can be found at `/fast/projects/cubit/work/tutorial/skeletons/submit_job.sh`
+A skeleton script can be found at `/data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh`
 
 The content of the file:
 
@@ -79,7 +79,7 @@ and copy the wrapper script to this directory:
 
 ```terminal
 (first-steps) $ pushd /fast/users/$USER/work/tutorial/episode2
-(first-steps) $ cp /fast/projects/cubit/work/tutorial/skeletons/submit_job.sh .
+(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh .
 (first-steps) $ chmod u+w submit_job.sh
 ```
 
@@ -119,14 +119,14 @@ Your file should look something like this:
 export TMPDIR=/fast/users/${USER}/scratch/tmp
 mkdir -p ${TMPDIR}
 
-BWAREF=/fast/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
-REF=/fast/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
 bwa mem -t 8 \
     -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
     $BWAREF \
-    /fast/projects/cubit/work/tutorial/input/test_R1.fq.gz \
-    /fast/projects/cubit/work/tutorial/input/test_R2.fq.gz \
+    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz \
+    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz \
 | samtools view -b \
 | samtools sort -O BAM -T $TMPDIR -o aln.bam
 

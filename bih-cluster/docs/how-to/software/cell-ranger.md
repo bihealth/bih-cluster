@@ -18,7 +18,7 @@ tar -xzvf cellranger-3.0.2.tar.gz
 
 # reference data
 
-will be provided in `/fast/projects/cubit/current/static_data/app_support/cellranger`
+will be provided in `/data/cephfs-1/work/projects/cubit/current/static_data/app_support/cellranger`
 
 # cluster support SLURM
 
@@ -76,7 +76,7 @@ create a script `run_cellranger.sh` with these contents (consult the [documentat
 
 /fast/users/$USER/work/cellranger-3.0.2/cellranger count \
   --id=sample_id \
-  --transcriptome=/fast/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
+  --transcriptome=/data/cephfs-1/work/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
   --fastqs=/path/to/fastqs \
   --sample=sample_name \
   --expect-cells=n_cells \
