@@ -1,3 +1,4 @@
+# Migration from old GPFS to new CephFS
 ## What is going to happen?
 Files on the cluster's main storage `/data/gpfs-1` aka. `/fast` will move to a new file system.
 That includes users' home directories, work directories, and work-group directories.
@@ -10,50 +11,19 @@ The company selling it has terminated support which also means buying replacemen
 ## The new storage
 There are *two* file systems set up to replace `/fast`, named *Tier 1* and *Tier 2* after their difference in I/O speed:
 
-- **Tier 1** is faster than `/fast` ever was, but it only has about 75  % of its usable capacity.
+- **Tier 1** is faster than `/fast` ever was, but it only has about 75 % of its usable capacity.
 - **Tier 2** is not as fast, but much larger, almost 3 times the current usable capacity.
 
-The **Hot storage** Tier 1 is reserved for large files, requiring frequent random access.
+The **Hot storage** Tier 1 is reserved for files requiring frequent random access, user homes, and scratch.
 Tier 2 (**Warm storage**) should be used for everything else.
 Both file systems are based on the open-source, software-defined [Ceph](https://ceph.io/en/) storage platform and differ in the type of drives used.
 Tier 1 or Cephfs-1 uses NVME SSDs and is optimized for performance, Tier 2 or Cephfs-2 used traditional hard drives and is optimized for cost.
 
 So these are the three terminologies in use right now:
-- Cephfs-1 = Tier 1 = Hot storage
-- Cephfs-2 = Tier 2 = Warm storage
+- Cephfs-1 = Tier 1 = Hot storage = `/data/cephfs-1`
+- Cephfs-2 = Tier 2 = Warm storage = `/data/cephfs-2`
 
-### Snapshots and Mirroring
-Snapshots are incremental copies of the state of the data at a particular point in time. 
-They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
-
-Depending on the location and Tier, Cephfs utilizes snapshots in differ differently.
-Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center to provide an additional layer of security.
-
-| Tier | Location                 | Path                         | Retention policy                | Mirrored |
-|:-----|:-------------------------|:-----------------------------|:--------------------------------|---------:|
-|    1 | User homes               | `/data/cephfs-1/home/users/` | Hourly for 48 h, daily for 14 d | yes      |
-|    1 | Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | no       |
-|    1 | Group/project scratch    | `/data/cephfs-1/scratch/`    | Daily for 3 d                   | no       |
-|    2 | Group/project mirrored   | `/data/cephfs-2/mirrored/`   | Daily for 30 d, weekly for 16 w | yes      |
-|    2 | Group/project unmirrored | `/data/cephfs-2/unmirrored/` | Daily for 30 d, weekly for 16 w | no       |
-
-User access to the snapshots is documented here: https://hpc-docs.cubi.bihealth.org/storage/accessing-snapshots
-
-### Quotas
-
-| Tier | Function | Path | Default Quota |
-|:-----|:---------|:-----|--------------:|
-|    1 | User home          | `/data/cephfs-1/home/users/<user>`             | 1 GB        |
-|    1 | Group work         | `/data/cephfs-1/work/groups/<group>`           | 1 TB        |
-|    1 | Group scratch      | `/data/cephfs-1/scratch/groups/<group>`        | 10 TB       |
-|    1 | Projects work      | `/data/cephfs-1/work/projects/<project>`       | individual  |
-|    1 | Projects scratch   | `/data/cephfs-1/scratch/projects/<project>`    | individual  |
-|    2 | Group mirrored     | `/data/cephfs-2/mirrored/groups/<group>`       | 4 TB        |
-|    2 | Group unmirrored   | `/data/cephfs-2/unmirrored/groups/<group>`     | On request  |
-|    2 | Project mirrored   | `/data/cephfs-2/mirrored/projects/<project>`   | On request  |
-|    2 | Project unmirrored | `/data/cephfs-2/unmirrored/projects/<project>` | individual  |
-
-There are no quotas on the number of files.
+There are no more quotas on the number of files.
 
 ## New file locations
 Naturally, paths are going to change after files move to their new location.
@@ -195,28 +165,3 @@ Best practice and/or tools will be provided.
 
 !!! note
     The users' `work` space will be moved to the group's `work` space.
-
-## Technical details about the new infrastructure
-### Tier 1
-- Fast & expensive (flash drive based), mounted on `/data/cephfs-1`
-- Currently 12 Nodes with 10 × 14 TB NVME/SSD each installed
-    - 1.68 PB raw storage
-    - 1.45 PB erasure coded (EC 8:2)
-    - 1.23 PB usable (85 %, ceph performance limit)
-- For typical CUBI use case 3 to 5 times faster I/O then the old DDN
-- Two more nodes in purchasing process
-- Example of flexible extension:
-    - Chunk size: 45 kE for one node with 150 TB, i.e. ca. 300 E/TB
-
-### Tier 2
-- Slower but more affordable (spinning HDDs), mounted on `/data/cephfs-2`
-- Currently ten nodes with 52 HDDs slots plus SSD cache installed, per node ca. 40 HDDs with 16 to 18 TB filled, i.e.
-    - 6.6 PB raw
-    - 5.3 PB erasure coded (EC 8:2)
-    - 4.5 PB usable (85 %; Ceph performance limit)
-- Nine more nodes in purchasing process with 5+ PB
-- Very Flexible Extension possible:
-    - ca. 50 Euro per TB, 100 Euro mirrored, starting at small chunk sizes
-    
-### Tier 2 mirror
-Similar hardware and size duplicate (another 10 nodes, 6+ PB) in separate fire compartment

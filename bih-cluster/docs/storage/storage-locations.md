@@ -1,152 +1,123 @@
 # Storage and Volumes: Locations
-
-On the BIH HPC cluster, there are three kinds of entities: users, groups (*Arbeitsgruppen*), and projects.
-Each user, group, and project has a central folder for their files to be stored.
-
-## For the Impatient
-
-### Storage Locations
-
-Each user, group, and project directory consists of three locations (using `/fast/users/muster_c` as an example here):
-
-- `/fast/users/muster_c/work`:
-  Here, you put your large data that you need to keep.
-  Note that there is no backup or snapshots going on.
-- `/fast/users/muster_c/scratch`:
-  Here, you put your large temporary files that you will delete after a short time anyway.
-  **Data placed here will be automatically removed 2 weeks after last modification.**
-- `/fast/users/muster_c` (and all other sub directories):
-  Here you put your programs and scripts and very important small data.
-  By default, you will have a soft quota of 1GB (hard quota of 1.5GB, 7 days grace period).
-  However, we create snapshots of this data (every 24 hours) and this data goes to a backup.
-
-You can check your current usage using the command `bih-gpfs-report-quota user $USER`
-
-### Do's and Don'ts
-
-First and foremost:
-
-- **DO NOT place any valuable data in `scratch` as it will be removed within 2 weeks.**
-
-Further:
-
-- **DO** set your `TMPDIR` environment variable to `/fast/users/$USER/scratch/tmp`.
-- **DO** add `mkdir -p /fast/users/$USER/scratch/tmp` to your `~/.bashrc` and job script files.
-- **DO** try to prefer creating fewer large files over many small files.
-- **DO NOT** create multiple copies of large data.
-  For sequencing data, in most cases you should not need more than raw times the size of the raw data (raw data + alignments + derived results).
-
-## Introduction
-
-This document describes the third iteration of the file system structure on the BIH HPC cluster.
-This iteration was made necessary by problems with second iteration which worked well for about two years but is now reaching its limits.
+This document describes the forth iteration of the file system structure on the BIH HPC cluster.
+It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed [Ceph](https://ceph.io/en/) storage.
+For now, the third-generation file system is still mounted at `/fast`.
 
 ## Organizational Entities
-
 There are the following three entities on the cluster:
 
-1. normal user accounts ("natural people")
-2. groups *(Arbeitsgruppen)* with on leader and an optional delegate
-3. projects with one owner and an optional delegate.
+1. **Users** *(natural people)*
+2. **Groups** *(Arbeitsgruppen)* with on leader and an optional delegate
+3. **Projects** with one owner and an optional delegate
 
-Their purpose is described in the document "User and Group Management".
+Each user, group, and project can have storage folders in different locations.
 
-## Storage/Data Tiers
+## Data Types and storage Tiers
+Files stored on the HPC fall into one of three categories:
 
-The files fall into one of three categories:
+1. **Home** folders store programs, scripts, and user config which are generally long-lived and very important files. 
+Loss of home data requires to redo manual work (like programming).
 
-1. **Home** data are programs and scripts of which there is relatively few but which is long-lived and very important.
-   Loss of home data requires to redo manual work (like programming).
+2. **Work** folders store data of potentially large size which has a medium life time and is important.
+Examples are raw sequencing data and intermediate results that are to be kept (e. g. sorted and indexed BAM files).
+Work data requires time-consuming actions to be restored, such as downloading large amounts of data or long-running computation.
 
-2. **Work** data is data of potential large size and has a medium life time and important.
-   Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
-   Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.
+3. **Scratch** folder store temporary files with a short life-time.
+Examples are temporary files (e. g. unsorted BAM files).
+Scratch data is created to be removed eventually.
 
-3. **Scratch** data is data that is temporary by nature and has a short life-time only.
-   Examples are temporary files (e.g., unsorted BAM files).
-   Scratch data is created to be removed eventually.
+Ceph storage comes in two types which differ in their I/O speed, total capacity, and cost.
+They are called **Tier 1** and **Tier 2** and sometimes **hot storage** and **warm storage**.
+In the HPC filesystem they are mounted in `/data/cephfs-1` and `/data/cephfs-2`.
+Tier 1 storage is fast, relatively small, expensive, and optimized for performance.
+Tier 2 storage is slow, big, cheap, and built for keeping large files for longer times.
+Storage quotas are imposed in these locations to restrict the maximum size of folders.
 
-## Snapshots, Backups, Archive
+### Home directories
+**Location:** `/data/cephfs-1/home/`
 
-- **A snapshot** stores the state of a data volume at a given time.
-  File systems like GPFS implement this in a copy-on-write manner, meaning that for a snapshot and the subsequent "live" state, only the differences in data need to be store.d
-  Note that there is additional overhead in the meta data storage.
+Only users have home directories on Tier 1 storage.
+This is the starting point when starting a new shell or SSH session.
+Important config files are stored here as well as analysis scripts and small user files.
+Home folders have a strict storage quota of 1 GB.
 
-- **A backup** is a copy of a data set on another physical location, i.e., all data from a given date copied to another server.
-  Backups are made regularly and only a small number of previous ones is usually kept.
+### Work directories
+**Location:** `/data/cephfs-1/work/`
 
-- **An archive** is a single copy of a single state of a data set to be kept for a long time.
-  Classically, archives are made by copying data to magnetic tape for long-term storage.
+Groups and projects have work directories on Tier 1 storage.
+User home folders contain a symlink to their respective group's work folder.
+Files shared within a group/project are stored here as long as they are in active use.
+Work folders are generally limited to 1 TB per group.
+Project work folders are allocated on an individual basis.
 
-## Storage Locations
+### Scratch space
+**Location:** `/data/cephfs-1/scratch/`
 
-This section describes the different storage locations and gives an overview of their properties.
+Groups and projects have scratch space on Tier 1 storage.
+User home folders contain a symlink to their respective group's scratch space.
+Meant for temporary, potentially large data e. g. intermediate unsorted or unmasked BAM files, data downloaded from the internet etc.
+**Files in scratch will be automatically removed 2 weeks after their creation.**
+Scratch space is generally limited to 10 TB per group.
+Projects are allocated scratch on an individual basis.
 
-### Home Directories
+### Tier 2 storage
+**Location:** `/data/cephfs-2/`
 
-- **Location** `/fast/{users,groups,projects}/<name>` (except for `work` and `scratch` sub directories)
-- the user, group, or project home directory
-- meant for documents, scripts, and programs
-- default quota for data: default soft quota of 1 GB, hard quota of 1.5 GB, grace period of 7 days
-- quota can be increased on request with short reason statement
-- default quota for metadata: 10k files soft, 12k files hard
-- snapshots are regularly created, see Section \ref{snapshot-details}
-- nightly incremental backups are created, the last 5 are kept
-- *Long-term strategy:*
-    users are expected to manage data life time independently and use best practice for source code and document management best practice (e.g., use Git).
-    When users/groups leave the organization or projects ends, they are expected to handle data storage and cleanup on their own.
-    Responsibility to enforce this is with the leader of a user's group, the group leader, or the project owner, respectively.
+Groups and projects can be allocated additional storage on the Tier 2 system.
+File quotas here can be significantly larger as it is much cheaper and more abundant than Tier 1.
 
-### Work Directories
+### Overview
 
-- **Location** `/fast/{users,groups,projects}/<name>/work`
-- the user, group, or project work directory
-- meant for larger data that is to be used for a longer time, e.g., raw data, final sorted BAM file
-- default quota for data: default soft quota of 1 TB, hard quota of 1.1 TB, grace period of 7 days
-- quota can be increased on request with short reason statement
-- default quota for metadata: 2 Mfile soft, 2.2M files hard
-- no snapshots, no backup
-- *Long-term strategy:*
-    When users/groups leave the organization or projects ends, they are expected to cleanup unneeded data on their own.
-    HPC IT can provide archival services on request.
-    Responsibility to enforce this is with the leader of a user's group, the group leader, or the project owner, respectively.
+| Tier | Function         | Path                                         | Default Quota |
+|:-----|:-----------------|:---------------------------------------------|--------------:|
+|    1 | User home        | `/data/cephfs-1/home/users/<user>`           | 1 GB          |
+|    1 | Group work       | `/data/cephfs-1/work/groups/<group>`         | 1 TB          |
+|    1 | Group scratch    | `/data/cephfs-1/scratch/groups/<group>`      | 10 TB         |
+|    1 | Projects work    | `/data/cephfs-1/work/projects/<project>`     | individual    |
+|    1 | Projects scratch | `/data/cephfs-1/scratch/projects/<project>`  | individual    | 
+|    2 | Group            | `/data/cephfs-2/mirrored/groups/<group>`     | On request    |
+|    2 | Project          | `/data/cephfs-2/mirrored/projects/<project>` | On request    |
 
-### Scratch Directories
+## Snapshots and Mirroring
+Snapshots are incremental copies of the state of the data at a particular point in time. 
+They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
+Depending on the location and Tier, CephFS creates snapshots in different frequencies and retention plans.
+User access to the snapshots is documented in [this document](https://hpc-docs.cubi.bihealth.org/storage/accessing-snapshots).
 
-- **Location** `/fast/{users,groups,projects}/<name>/scratch`
-- the user, group, or project scratch directory
-- **files will be removed 2 weeks after their creation**
-- meant for temporary, potentially large data, e.g., intermediate unsorted or unmasked BAM files, data downloaded from the internet for trying out etc.
-- default quota for data: default soft quota of 200TB, hard quota of 220TB, grace period of 7 days
-- quota can be increased on request with short reason statement
-- default quota for metadata: 2M files soft, 2.2M files hard
-- no snapshots, no backup
-- *Long-term strategy:*
-    as data on this volume is not to be kept for longer than 2 weeks, the long term strategy is to delete all files.
+| Location                 | Path                         | Retention policy                | Mirrored |
+|:-------------------------|:-----------------------------|:--------------------------------|---------:|
+| User homes               | `/data/cephfs-1/home/users/` | Hourly for 48 h, daily for 14 d | yes      |
+| Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | no       |
+| Group/project scratch    | `/data/cephfs-1/scratch/`    | Daily for 3 d                   | no       |
+| Group/project mirrored   | `/data/cephfs-2/mirrored/`   | Daily for 30 d, weekly for 16 w | yes      |
+| Group/project unmirrored | `/data/cephfs-2/unmirrored/` | Daily for 30 d, weekly for 16 w | no       |
 
-## Snapshot Details
-
-Snapshots are made every 24 hours.
-Of these snapshots, the last 7 are kept, then one for each day.
-
-## Backup Details
-
-Backups of the snapshots is made nightly.
-The backups of the last 7 days are kept.
-
-## Archive Details
-
-BIH HPC IT has some space allocated on the MDC IT tape archive.
-User data can be put under archive after agreeing with head of HPC IT.
-The process is as describe in Section \ref{sop-data-archival}.
+Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
+This provides an additional layer of security i. e. physical damage to the servers.
 
 ## Technical Implementation
-
 As a quick (very) technical note:
 
-There exists a file system `fast`.
-This file system has three independent file sets `home`, `work`, `scratch`.
-On each of these file sets, there is a dependent file set for each user, group, and project below directories `users`, `groups`, and `projects`.
-`home` is also mounted as `/fast_new/home` and for each user, group, and project, the entry `work` links to the corresponding fileset in `work`, the same for scratch.
-Automatic file removal from `scratch` is implemented using GPFS ILM.
-Quotas are implemented on the file-set level.
+### Tier 1
+- Fast & expensive (flash drive based), mounted on `/data/cephfs-1`
+- Currently 12 Nodes with 10 × 14 TB NVME SSD each
+    - 1.68 PB raw storage
+    - 1.45 PB erasure coded (EC 8:2)
+    - 1.23 PB usable (85 %, ceph performance limit)
+- For typical CUBI use case 3 to 5 times faster I/O then the old DDN
+- Two more nodes in purchasing process
+- Example of flexible extension:
+    - Chunk size: 45.000 € for one node with 150 TB, i. e. ca. 300 €/TB
+
+### Tier 2
+- Slower but more affordable (spinning HDDs), mounted on `/data/cephfs-2`
+- Currently ten nodes with 52 HDDs slots plus SSD cache installed, per node ca. 40 HDDs with 16 to 18 TB filled, i.e.
+    - 6.6 PB raw
+    - 5.3 PB erasure coded (EC 8:2)
+    - 4.5 PB usable (85 %; Ceph performance limit)
+- Nine more nodes in purchasing process with 5+ PB
+- Very Flexible Extension possible:
+    - ca. 50 € per TB, 100 € mirrored, starting at small chunk sizes
+    
+### Tier 2 mirror
+Similar hardware and size duplicate (another 10 nodes, 6+ PB) in separate fire compartment.
