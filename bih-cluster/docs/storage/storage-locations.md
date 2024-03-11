@@ -3,11 +3,13 @@ This document describes the forth iteration of the file system structure on the 
 It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed [Ceph](https://ceph.io/en/) storage.
 For now, the third-generation file system is still mounted at `/fast`.
 
+**The old, third-generation filesystem will be decommissioned soon, please consult the [document describing the migration process](storage-migration.md)!**
+
 ## Organizational Entities
 There are the following three entities on the cluster:
 
-1. **Users** *(natural people)*
-2. **Groups** *(Arbeitsgruppen)* with on leader and an optional delegate
+1. **Users** *(real people)*
+2. **Groups** *(Arbeitsgruppen)* with one leader and an optional delegate
 3. **Projects** with one owner and an optional delegate
 
 Each user, group, and project can have storage folders in different locations.

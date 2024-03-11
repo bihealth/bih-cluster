@@ -20,6 +20,7 @@ Both file systems are based on the open-source, software-defined [Ceph](https://
 Tier 1 or Cephfs-1 uses NVME SSDs and is optimized for performance, Tier 2 or Cephfs-2 used traditional hard drives and is optimized for cost.
 
 So these are the three terminologies in use right now:
+
 - Cephfs-1 = Tier 1 = Hot storage = `/data/cephfs-1`
 - Cephfs-2 = Tier 2 = Warm storage = `/data/cephfs-2`
 
@@ -27,7 +28,7 @@ There are no more quotas on the number of files.
 
 ## New file locations
 Naturally, paths are going to change after files move to their new location.
-Due to the increase in storage quality options, there will be some more more folders to consider.
+Due to the increase in storage quality options, there will be some more folders to consider.
 
 ### Users
 - Home on Tier 1: `/data/cephfs-1/home/users/<user>`
@@ -36,7 +37,7 @@ Due to the increase in storage quality options, there will be some more more fol
 
 !!! warning
     User work & scratch spaces are now part of the user's group folder.
-    This means, groups should coordinate internally to distribute their allotted quota evenly among users.
+    This means, groups should coordinate internally to distribute their allotted quota according to each user's needs.
 
 The implementation is done _via_ symlinks created by default when the user account is moved to its new destination.
 
@@ -104,7 +105,7 @@ Your mileage may vary but there is a basic principle that remains true for all p
 
 #### DNA sequencing (WES, WGS)
 
-Typical Whole Genome Sequencing data of a human sample at 100x coverage requires about 150  GB of storage, Whole Exome Sequencing between 6 and 30  GB.
+Typical Whole Genome Sequencing data of a human sample at 100x coverage requires about 150  GB of storage, Whole Exome Sequencing files occupy between 6 and 30  GB.
 These large files require considerable I/O resources for processing, in particular for the mapping step.
 A prudent workflow for these kind of analysis would therefore be the following:
 
@@ -126,10 +127,11 @@ The count files are much smaller than the raw data or the mapped data, so they c
 A typical workflow would be:
 
 1. Copy your `fastq` files from Tier 2 to Tier 1.
-2. Get expression levels, for example using `salmon` or `STAR`, and store the results on Tier 1.
-3. Import the expression levels into `R`, using `tximport` and `DESeq2` or `featureCounts` & `edgeR`, for example.
-4. Save expression levels (`R` objects) and the output of `salmon`, `STAR`, or any mapper/aligner of your choice to Tier 2.
-5. **Remove raw data, bam & count files from Tier 1.**
+2. Perform raw data quality control, and store the outcome on Tier 2.
+3. Get expression levels, for example using `salmon` or `STAR`, and store the results on Tier 1.
+4. Import the expression levels into `R`, using `tximport` and `DESeq2` or `featureCounts` & `edgeR`, for example.
+5. Save expression levels (`R` objects) and the output of `salmon`, `STAR`, or any mapper/aligner of your choice to Tier 2.
+6. **Remove raw data, bam & count files from Tier 1.**
 
 !!! tip
     If using `STAR`, don't forget to use your `scratch` area for transient operations.
@@ -142,12 +144,18 @@ Large raw files need to be processed once and only the outcome of the processing
 Therefore, a typical workflow would be:
 
 1. Copy your `fastq` files from Tier 2 to Tier 1.
-2. Perform raw data QC (for example with `fastqc`).
+2. Perform raw data QC, and store the results on Tier 2. 
 3. Get the count matrix, e.  g. using `Cell Ranger` or `alevin-fry`, perform count matrix QC and store the results on Tier 1.
 4. **Remove raw data, bam & count files from Tier 1.**
 5. Downstream analysis with `seurat`, `scanpy`, or `Loupe Browser`.
 
 #### Machine learning
+
+There is no obvious workflow that covers most used cases for machine learning. 
+However,
+
+- Training might be done on scratch where data access is quick and data size not as constrained as on work space. But files will disappear after 14 days.
+- Some models can be updated with new data, without needing to keep the whole dataset on Tier 1.
 
 ## Data migration process from old `/fast` to CephFS 
 1. Administrative preparations  
