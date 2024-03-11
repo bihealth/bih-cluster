@@ -118,7 +118,6 @@ nav:
     - "Storage Locations": storage/storage-locations.md
     - "Automated Cleanup": storage/scratch-cleanup.md
     - "Storage Migration": storage/storage-migration.md
-    - "Accessing Snapshots": storage/accessing-snapshots.md
     - "Querying Quotas": storage/querying-storage.md
   - "Cluster Scheduler":
     - slurm/overview.md

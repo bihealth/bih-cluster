@@ -1,9 +1,9 @@
 # Storage and Volumes: Locations
 This document describes the forth iteration of the file system structure on the BIH HPC cluster.
 It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed [Ceph](https://ceph.io/en/) storage.
-For now, the third-generation file system is still mounted at `/fast`.
 
-**The old, third-generation filesystem will be decommissioned soon, please consult the [document describing the migration process](storage-migration.md)!**
+!!! warning
+    For now, the old, third-generation file system is still mounted at `/fast`. **It will be decommissioned soon, please consult [this document describing the migration process](storage-migration.md)!**
 
 ## Organizational Entities
 There are the following three entities on the cluster:
@@ -17,15 +17,15 @@ Each user, group, and project can have storage folders in different locations.
 ## Data Types and storage Tiers
 Files stored on the HPC fall into one of three categories:
 
-1. **Home** folders store programs, scripts, and user config which are generally long-lived and very important files. 
-Loss of home data requires to redo manual work (like programming).
+1. **Home** folders store programs, scripts, and user config i.&nbsp;e. long-lived and very important files. 
+Loss of this data requires to redo manual work (like programming).
 
 2. **Work** folders store data of potentially large size which has a medium life time and is important.
-Examples are raw sequencing data and intermediate results that are to be kept (e. g. sorted and indexed BAM files).
+Examples are raw sequencing data and intermediate results that are to be kept (e.&nbsp;g. sorted and indexed BAM files).
 Work data requires time-consuming actions to be restored, such as downloading large amounts of data or long-running computation.
 
 3. **Scratch** folder store temporary files with a short life-time.
-Examples are temporary files (e. g. unsorted BAM files).
+Examples are temporary files (e.&nbsp;g. unsorted BAM files).
 Scratch data is created to be removed eventually.
 
 Ceph storage comes in two types which differ in their I/O speed, total capacity, and cost.
@@ -70,21 +70,20 @@ File quotas here can be significantly larger as it is much cheaper and more abun
 
 ### Overview
 
-| Tier | Function         | Path                                         | Default Quota |
-|:-----|:-----------------|:---------------------------------------------|--------------:|
-|    1 | User home        | `/data/cephfs-1/home/users/<user>`           | 1 GB          |
-|    1 | Group work       | `/data/cephfs-1/work/groups/<group>`         | 1 TB          |
-|    1 | Group scratch    | `/data/cephfs-1/scratch/groups/<group>`      | 10 TB         |
-|    1 | Projects work    | `/data/cephfs-1/work/projects/<project>`     | individual    |
-|    1 | Projects scratch | `/data/cephfs-1/scratch/projects/<project>`  | individual    | 
-|    2 | Group            | `/data/cephfs-2/mirrored/groups/<group>`     | On request    |
-|    2 | Project          | `/data/cephfs-2/mirrored/projects/<project>` | On request    |
+| Tier | Function        | Path                                         | Default Quota |
+|:-----|:----------------|:---------------------------------------------|--------------:|
+|    1 | User home       | `/data/cephfs-1/home/users/<user>`           | 1 GB          |
+|    1 | Group work      | `/data/cephfs-1/work/groups/<group>`         | 1 TB          |
+|    1 | Group scratch   | `/data/cephfs-1/scratch/groups/<group>`      | 10 TB         |
+|    1 | Project work    | `/data/cephfs-1/work/projects/<project>`     | individual    |
+|    1 | Project scratch | `/data/cephfs-1/scratch/projects/<project>`  | individual    | 
+|    2 | Group           | `/data/cephfs-2/mirrored/groups/<group>`     | On request    |
+|    2 | Project         | `/data/cephfs-2/mirrored/projects/<project>` | On request    |
 
 ## Snapshots and Mirroring
 Snapshots are incremental copies of the state of the data at a particular point in time. 
 They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
 Depending on the location and Tier, CephFS creates snapshots in different frequencies and retention plans.
-User access to the snapshots is documented in [this document](https://hpc-docs.cubi.bihealth.org/storage/accessing-snapshots).
 
 | Location                 | Path                         | Retention policy                | Mirrored |
 |:-------------------------|:-----------------------------|:--------------------------------|---------:|
@@ -96,6 +95,24 @@ User access to the snapshots is documented in [this document](https://hpc-docs.c
 
 Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
 This provides an additional layer of security i. e. physical damage to the servers.
+
+### Accessing snapshots
+To access snapshots, simply navigate to the `.snap/` sub-folder of the respective location.
+You will find one sub-folder for every snapshot created and in them a complete replica of the folder respective folder at the time of snapshot creation.
+
+For example:
+
+- `/data/cephfs-1/home/.snap/<some_snapshot>/users/<your_user>/`
+- `/data/cephfs-1/work/.snap/<some_snapshot>/groups/<your_group>/`
+- `/data/cephfs-2/unmirrored/.snap/<some_snapshot>/projects/<your_project>/`
+
+Here is a simple example of how to restore a file:
+
+```sh
+$ cd /data/cephfs-2/unmirrored/.snap/scheduled-2024-03-11-00_00_00_UTC/
+$ ls groups/cubi/
+$ cp groups/cubi/important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
+```
 
 ## Technical Implementation
 As a quick (very) technical note:
