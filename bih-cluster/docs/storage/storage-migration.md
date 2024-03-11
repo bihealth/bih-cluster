@@ -35,7 +35,7 @@ Due to the increase in storage quality options, there will be some more folders 
 - Work on Tier 1: `/data/cephfs-1/work/groups/<ag-doe>/users/<user>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<ag-doe>/users/<user>`
 
-!!! warning
+!!! warning "Important"
     User work & scratch spaces are now part of the user's group folder.
     This means, groups should coordinate internally to distribute their allotted quota according to each user's needs.
 
@@ -55,7 +55,7 @@ The full list of symlinks is:
 - Programming languages libraries & registry: `R`, `.theano`, `.cargo`, `.cpan`, `.cpanm`, & `.npm`
 - Others: `.ncbi`, `.vs`
 
-!!! warning
+!!! warning "Important"
     Automatic symlink creation will not create a symlink to any conda installation.
 
 ### Groups

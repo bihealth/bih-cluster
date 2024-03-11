@@ -2,7 +2,7 @@
 This document describes the forth iteration of the file system structure on the BIH HPC cluster.
 It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed [Ceph](https://ceph.io/en/) storage.
 
-!!! warning
+!!! warning "Important"
     For now, the old, third-generation file system is still mounted at `/fast`. **It will be decommissioned soon, please consult [this document describing the migration process](storage-migration.md)!**
 
 ## Organizational Entities
@@ -31,12 +31,15 @@ Scratch data is created to be removed eventually.
 Ceph storage comes in two types which differ in their I/O speed, total capacity, and cost.
 They are called **Tier 1** and **Tier 2** and sometimes **hot storage** and **warm storage**.
 In the HPC filesystem they are mounted in `/data/cephfs-1` and `/data/cephfs-2`.
-Tier 1 storage is fast, relatively small, expensive, and optimized for performance.
-Tier 2 storage is slow, big, cheap, and built for keeping large files for longer times.
+
+- Tier 1 storage is fast, relatively small, expensive, and optimized for performance.
+- Tier 2 storage is slow, big, cheap, and built for keeping large files for longer times.
+
 Storage quotas are imposed in these locations to restrict the maximum size of folders.
+Amount and utilization of quotas is communicated via the [HPC Access](https://hpc-access.cubi.bihealth.org/) web portal.
 
 ### Home directories
-**Location:** `/data/cephfs-1/home/`
+Location: `/data/cephfs-1/home/`
 
 Only users have home directories on Tier 1 storage.
 This is the starting point when starting a new shell or SSH session.
@@ -44,7 +47,7 @@ Important config files are stored here as well as analysis scripts and small use
 Home folders have a strict storage quota of 1 GB.
 
 ### Work directories
-**Location:** `/data/cephfs-1/work/`
+Location: `/data/cephfs-1/work/`
 
 Groups and projects have work directories on Tier 1 storage.
 User home folders contain a symlink to their respective group's work folder.
@@ -53,20 +56,23 @@ Work folders are generally limited to 1 TB per group.
 Project work folders are allocated on an individual basis.
 
 ### Scratch space
-**Location:** `/data/cephfs-1/scratch/`
+Location: `/data/cephfs-1/scratch/`
 
 Groups and projects have scratch space on Tier 1 storage.
 User home folders contain a symlink to their respective group's scratch space.
 Meant for temporary, potentially large data e. g. intermediate unsorted or unmasked BAM files, data downloaded from the internet etc.
-**Files in scratch will be automatically removed 2 weeks after their creation.**
 Scratch space is generally limited to 10 TB per group.
 Projects are allocated scratch on an individual basis.
+**Files in scratch will be [automatically removed](scratch-cleanup.md) 2 weeks after their creation.**
 
 ### Tier 2 storage
-**Location:** `/data/cephfs-2/`
+Location: `/data/cephfs-2/`
 
 Groups and projects can be allocated additional storage on the Tier 2 system.
 File quotas here can be significantly larger as it is much cheaper and more abundant than Tier 1.
+
+!!! note
+    Tier 2 storage is not mounted on the HPC login nodes.
 
 ### Overview
 
@@ -115,28 +121,29 @@ $ cp groups/cubi/important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
 ```
 
 ## Technical Implementation
-As a quick (very) technical note:
-
 ### Tier 1
-- Fast & expensive (flash drive based), mounted on `/data/cephfs-1`
+- Fast & expensive
+- mounted on `/data/cephfs-1`
 - Currently 12 Nodes with 10 × 14 TB NVME SSD each
     - 1.68 PB raw storage
     - 1.45 PB erasure coded (EC 8:2)
-    - 1.23 PB usable (85 %, ceph performance limit)
+    - 1.23 PB usable (85 %, Ceph performance limit)
 - For typical CUBI use case 3 to 5 times faster I/O then the old DDN
 - Two more nodes in purchasing process
 - Example of flexible extension:
     - Chunk size: 45.000 € for one node with 150 TB, i. e. ca. 300 €/TB
 
 ### Tier 2
-- Slower but more affordable (spinning HDDs), mounted on `/data/cephfs-2`
-- Currently ten nodes with 52 HDDs slots plus SSD cache installed, per node ca. 40 HDDs with 16 to 18 TB filled, i.e.
-    - 6.6 PB raw
+- Slower but more affordable
+- mounted on `/data/cephfs-2`
+- Currently 10 nodes with 52 HDDs slots and SSD cache (~40 HDDs per node with 16–18 TB capacity)
+    - 6.6 PB raw storage
     - 5.3 PB erasure coded (EC 8:2)
     - 4.5 PB usable (85 %; Ceph performance limit)
-- Nine more nodes in purchasing process with 5+ PB
+- More nodes in purchasing process
 - Very Flexible Extension possible:
     - ca. 50 € per TB, 100 € mirrored, starting at small chunk sizes
     
 ### Tier 2 mirror
-Similar hardware and size duplicate (another 10 nodes, 6+ PB) in separate fire compartment.
+- Similar in hardware and size (10 nodes, 6+ PB)
+- Stored in separate fire compartment.
