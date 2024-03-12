@@ -68,23 +68,26 @@ Projects are allocated scratch on an individual basis.
 ### Tier 2 storage
 Location: `/data/cephfs-2/`
 
-Groups and projects can be allocated additional storage on the Tier 2 system.
-File quotas here can be significantly larger as it is much cheaper and more abundant than Tier 1.
+This is where big files go when they are not in active use.
+Groups are allocated 10 TB of Tier 2 storage by default.
+File quotas here can be significantly larger as space is much cheaper and more abundant than on Tier 1.
 
 !!! note
-    Tier 2 storage is not mounted on the HPC login nodes.
+    Tier 2 storage is currently not accessible from HPC login nodes.
 
 ### Overview
 
-| Tier | Function        | Path                                         | Default Quota |
-|:-----|:----------------|:---------------------------------------------|--------------:|
-|    1 | User home       | `/data/cephfs-1/home/users/<user>`           | 1 GB          |
-|    1 | Group work      | `/data/cephfs-1/work/groups/<group>`         | 1 TB          |
-|    1 | Group scratch   | `/data/cephfs-1/scratch/groups/<group>`      | 10 TB         |
-|    1 | Project work    | `/data/cephfs-1/work/projects/<project>`     | individual    |
-|    1 | Project scratch | `/data/cephfs-1/scratch/projects/<project>`  | individual    | 
-|    2 | Group           | `/data/cephfs-2/mirrored/groups/<group>`     | On request    |
-|    2 | Project         | `/data/cephfs-2/mirrored/projects/<project>` | On request    |
+| Tier | Function        | Path                                           | Default Quota |
+|:-----|:----------------|:-----------------------------------------------|--------------:|
+|    1 | User home       | `/data/cephfs-1/home/users/<user>`             | 1 GB          |
+|    1 | Group work      | `/data/cephfs-1/work/groups/<group>`           | 1 TB          |
+|    1 | Group scratch   | `/data/cephfs-1/scratch/groups/<group>`        | 10 TB         |
+|    1 | Project work    | `/data/cephfs-1/work/projects/<project>`       | On request    |
+|    1 | Project scratch | `/data/cephfs-1/scratch/projects/<project>`    | On request    |
+|    2 | Group           | `/data/cephfs-2/unmirrored/groups/<group>`     | 10 TB         |
+|    2 | Project         | `/data/cephfs-2/unmirrored/projects/<project>` | On request    |
+|    2 | Group           | `/data/cephfs-2/mirrored/groups/<group>`       | On request    |
+|    2 | Project         | `/data/cephfs-2/mirrored/projects/<project>`   | On request    |
 
 ## Snapshots and Mirroring
 Snapshots are incremental copies of the state of the data at a particular point in time. 

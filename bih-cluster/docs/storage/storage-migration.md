@@ -4,6 +4,13 @@ Files on the cluster's main storage `/data/gpfs-1` aka. `/fast` will move to a n
 That includes users' home directories, work directories, and work-group directories.
 Once files have been moved to their new locations, `/fast` will be retired.
 
+Simultaneously we will move towards a more unified naming scheme for project and group folder names.
+From now on, all such folders names shall be in [kebab-case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case).
+This is Berlin after all.
+
+Detailed communication about the move will be communicated via the cluster mailinglist and the [user forum](https://hpc-talk.cubi.bihealth.org/).
+For technical help, please consult the [Data Migration Tips and tricks](migration-faq.md).
+
 ## Why is this happening?
 `/fast` is based on a high performance proprietary hardware (DDN) & file system (GPFS).
 The company selling it has terminated support which also means buying replacement parts will become increasingly difficult.
@@ -24,7 +31,7 @@ So these are the three terminologies in use right now:
 - Cephfs-1 = Tier 1 = Hot storage = `/data/cephfs-1`
 - Cephfs-2 = Tier 2 = Warm storage = `/data/cephfs-2`
 
-There are no more quotas on the number of files.
+More information about CephFS can be found [here](http://localhost:8000/bih-cluster/storage/storage-locations/).
 
 ## New file locations
 Naturally, paths are going to change after files move to their new location.
@@ -36,42 +43,24 @@ Due to the increase in storage quality options, there will be some more folders 
 - Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<ag-doe>/users/<user>`
 
 !!! warning "Important"
-    User work & scratch spaces are now part of the user's group folder.
-    This means, groups should coordinate internally to distribute their allotted quota according to each user's needs.
+    User `work` & `scratch` spaces are now part of the user's group folder.
+    This means, groups need to coordinate internally to distribute their allotted quota according to each user's needs.
 
-The implementation is done _via_ symlinks created by default when the user account is moved to its new destination.
+The implementation is done _via_ symlinks created by default when the user account is moved to its new destination:
 
-| Symlink named | Points to |
-|:--------------|:----------|
-| `/data/cephfs-1/home/users/<user>/work`    | `/data/cephfs-1/work/groups/<group>/users/<user>`    |
-| `/data/cephfs-1/home/users/<user>/scratch` | `/data/cephfs-1/scratch/groups/<group>/users/<user>` |
-
-Additional symlinks are created from the user's home directory to avoid storing large files (R packages for example) in their home.
-The full list of symlinks is:
-
-- HPC web portal cache: `ondemand`
-- General purpose caching: `.cache` & `.local`
-- Containers: `.singularity` & `.apptainer`
-- Programming languages libraries & registry: `R`, `.theano`, `.cargo`, `.cpan`, `.cpanm`, & `.npm`
-- Others: `.ncbi`, `.vs`
-
-!!! warning "Important"
-    Automatic symlink creation will not create a symlink to any conda installation.
+- `~/work -> /data/cephfs-1/work/groups/<group>/users/<user>`
+- `~/scratch -> /data/cephfs-1/scratch/groups/<group>/users/<user>`
 
 ### Groups
 - Work on Tier 1: `/data/cephfs-1/work/groups/<group>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<group>`
-- Mirrored work on Tier 2: `/data/cephfs-2/mirrored/groups/<group>`
-
-!!! note
-    Un-mirrored work space on Tier 2 is available on request.
+- Tier 2 storage: `/data/cephfs-2/unmirrored/groups/<group>`
+- Mirrored space on Tier 2 is available on request.
 
 ### Projects
 - Work on Tier 1: `/data/cephfs-1/work/projects/<project>`
 - Scratch on Tier 1: `/data/cephfs-1/scratch/projects/<project>`
-
-!!! note
-    Tier 2 work space (mirrored & un-mirrored) is available on request.
+- Tier 2 storage is available on request.
 
 ## Recommended practices
 ### Data locations
@@ -81,20 +70,20 @@ The full list of symlinks is:
 - Tier 2 mirrored: Extra layer of security. Longer term storage of invaluable data.
 
 #### Folders
-- Home: Persistent storage for configuration files, templates, generic scripts, & small documents.
-- Work: Persistent storage for conda environments, R packages, data actively processed or analyzed.
-- Scratch: Non-persistent storage for temporary or intermediate files, caches, etc. Automatically deleted after 14 days.
+- Home: Configuration files, templates, generic scripts, & small documents.
+- Work: Conda environments, R packages, data actively processed or analyzed.
+- Scratch: Non-persistent storage for temporary or intermediate files, caches, etc.
 
 ### Project life cycle
-1. Import the raw data on Tier 2 for validation (checksums, …)
+1. Import raw data on Tier 2 for validation (checksums, …)
 2. Stage raw data on Tier 1 for QC & processing.
-3. Save processing results to Tier 2 and validate copies.
+3. Save processing results to Tier 2.
 4. Continue analysis on Tier 1.
-5. Save analysis results on Tier 2 and validate copies.
+5. Save analysis results on Tier 2.
 6. Reports & publications can remain on Tier 2.
-7. After publication (or the end of the project), files on Tier 1 can be deleted.
+7. After publication (or the end of the project), files on Tier 1 should be deleted.
 
-### Example use cases
+## Example use cases
 
 Space on Tier 1 is limited.
 Your colleagues, other cluster users, and admins will be very grateful if you use it only for files you actively need to perform read/write operations on.
@@ -103,7 +92,7 @@ This means main project storage should probably always be on Tier 2 with workflo
 These examples are based on our experience of processing diverse NGS datasets.
 Your mileage may vary but there is a basic principle that remains true for all projects.
 
-#### DNA sequencing (WES, WGS)
+### DNA sequencing (WES, WGS)
 
 Typical Whole Genome Sequencing data of a human sample at 100x coverage requires about 150  GB of storage, Whole Exome Sequencing files occupy between 6 and 30  GB.
 These large files require considerable I/O resources for processing, in particular for the mapping step.
@@ -118,7 +107,7 @@ A prudent workflow for these kind of analysis would therefore be the following:
     Don't forget to use your `scratch` area for transient operations, for example to sort your `bam` file after mapping.
 	More information on how to efficiently set up your temporary directory [here](../best-practice/temp-files.md).
 
-#### bulk RNA-seq
+### bulk RNA-seq
 
 Analysis of RNA expression datasets are typically a long and iterative process, where the data must remain accessible for a significant period.
 However, there is usually no need to keep raw data files and mapping results available once the gene & transcripts counts have been generated.
@@ -137,7 +126,7 @@ A typical workflow would be:
     If using `STAR`, don't forget to use your `scratch` area for transient operations.
 	More information on how to efficiently set up your temporary directory [here](../best-practice/temp-files.md)
 
-#### scRNA-seq
+### scRNA-seq
 
 The analysis workflow of bulk RNA & single cell dataset is conceptually similar:
 Large raw files need to be processed once and only the outcome of the processing (gene counts matrices) are required for downstream analysis.
@@ -149,7 +138,7 @@ Therefore, a typical workflow would be:
 4. **Remove raw data, bam & count files from Tier 1.**
 5. Downstream analysis with `seurat`, `scanpy`, or `Loupe Browser`.
 
-#### Machine learning
+### Machine learning
 
 There is no obvious workflow that covers most used cases for machine learning. 
 However,

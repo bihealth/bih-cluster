@@ -119,6 +119,7 @@ nav:
     - "Scratch Cleanup": storage/scratch-cleanup.md
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Migration": storage/storage-migration.md
+    - "Migration FAQ": "storage/migration-faq.md"
   - "Cluster Scheduler":
     - slurm/overview.md
     - slurm/background.md
