@@ -348,27 +348,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/resource-registration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Resource Registration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../admin/maintenance/" class="md-nav__link">
         
   
@@ -3302,7 +3281,7 @@
 
 
 <h1 id="job-scheduler">Job Scheduler<a class="headerlink" href="#job-scheduler" title="Permanent link">&para;</a></h1>
-<p>Once logged into the cluster through the login nodes, users use the Slurm scheduler for job submission.
+<p>Once logged into the cluster through the login nodes, the Slurm scheduler needs to be used to submit computing jobs.
 In Slurm nomenclature, cluster compute nodes are assigned to one or more <strong>partitions</strong>.
 Submitted jobs are assigned to nodes according to the partition's configuration.</p>
 <h2 id="partitions">Partitions<a class="headerlink" href="#partitions" title="Permanent link">&para;</a></h2>
@@ -3359,10 +3338,15 @@ Only one node can be reserved for so long to discourage really long-running jobs
 <h3 id="gpu"><code>gpu</code><a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
 <p>Jobs requesting GPU resources are automatically assigned to the <code>gpu</code> partition.</p>
 <p>The GPU nodes are only part of the <code>gpu</code> partition so they are not blocked by normal compute jobs.
-The maximum run time is relatively high (14 days) to allow for longer training jobs.
+Maximum run time is relatively high (14 days) to allow for longer training jobs.
 Contact <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> if you have longer running jobs that you really cannot make run any shorter for assistance.</p>
-<p>For access to it you have register <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> (who will grant all requests).
-See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration: GPU Nodes</a> for details.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Fair use rules apply.
+As GPU nodes are a limited resource, excessive use by single users is prohibited and can lead to mitigating actions.
+Be nice and cooperative with other users.
+Tip: <code>getent passwd USER_NAME</code> will give you a user's contact details.</p>
+</div>
 <ul>
 <li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>gpu</code></li>
@@ -3371,10 +3355,15 @@ See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration
 <h3 id="highmem"><code>highmem</code><a class="headerlink" href="#highmem" title="Permanent link">&para;</a></h3>
 <p>Jobs requesting more than 200 GB of RAM are automatically routed to the <code>highmem</code> partition.</p>
 <p>The high memory nodes are only part of the <code>highmem</code> partition so they are not blocked by normal compute jobs.
-The maximum run time is relatively high (14 days) to allow for longer jobs.
+Maximum run time is relatively high (14 days) to allow for longer jobs.
 Contact <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> for assistance if you have longer running jobs that you really cannot make run any shorter.</p>
-<p>For access you must first contact <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> (who will grant all requests).
-See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Registration: GPU Nodes</a> for details.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Fair use rules apply.
+As high-memory nodes are a limited resource, excessive use by single users is prohibited and can lead to mitigating actions.
+Be nice and cooperative with other users.
+Tip: <code>getent passwd USER_NAME</code> will give you a user's contact details.</p>
+</div>
 <ul>
 <li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>highmem</code></li>
@@ -3384,22 +3373,18 @@ See <a href="../../admin/resource-registration/#high-memory-nodes">Resource Regi
 <p>Jobs are not routed automatically to the <code>mpi</code> partition but you have to explitely request the partition.
 This is the only partition in which more than one node can be allocated to a job.</p>
 <p>You can submit multi-node jobs into the <code>mpi</code> partition.
-The maximum run time is relatively high (14 days) to allow for longer jobs.
+Maximum run time is relatively high (14 days) to allow for longer jobs.
 Don't abuse this.
 Contact <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> for assistance if you have longer running jobs that you really cannot make run any shorter.</p>
-<p>For access you must first contact <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> (who will grant all requests).
-See <a href="../../admin/resource-registration/#gpu-nodes">Resource Registration: GPU Nodes</a> for details.</p>
 <ul>
 <li><strong>maximum run time:</strong> 14 days</li>
 <li><strong>partition name:</strong> <code>highmem</code></li>
 <li><strong>argument string:</strong> <code>-p mpi</code>, maximum run time: <code>--time 14-00:00:00</code></li>
 </ul>
 <h3 id="critical"><code>critical</code><a class="headerlink" href="#critical" title="Permanent link">&para;</a></h3>
-<p>Jobs are not routed into <code>critial</code> automatically, and the partition has to be selected manually.</p>
+<p>Jobs are not routed into <code>critial</code> automatically and the partition has to be selected manually.</p>
 <p>This partition is for time-critical jobs with deadlines.
-For access to it you have to first ask <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a>.
-See <a href="../../admin/resource-registration/#critical-partition">Resource Registration: Critical Partition</a> for details.</p>
-<p>As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
+As long as the cluster is not very busy, requests for critical jobs will be granted most of the time.
 However, do not use this partition without arranging with hpc-helpdesk as killing jobs will be used as the <em>ultima ratio</em> in case of such policy violations.</p>
 <ul>
 <li><strong>maximum run time:</strong> 7 days</li>
@@ -3427,7 +3412,7 @@ However, do not use this partition without arranging with hpc-helpdesk as killin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2024</span>
   </span>
 
     
