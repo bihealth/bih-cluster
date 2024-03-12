@@ -79,7 +79,6 @@ nav:
   - index.md
   - "Administrative":
     - "Getting Access": admin/getting-access.md
-    - "Resource Registration": admin/resource-registration.md
     - "Maintenance etc.": admin/maintenance.md
     - "Provided Software": admin/provided-software.md
     - "Policies": admin/policies.md
