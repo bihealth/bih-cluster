@@ -1,6 +1,6 @@
 # Data Migration Tips and tricks
 Please use `hpc-transfer-1` and `hpc-transfer-2` for moving large amounts of files.
-This not only leaves the compute notes available for actual computation, but also has now risk of your jobs being killed by Slurm.
+This not only leaves the compute notes available for actual computation, but also has no risk of your jobs being killed by Slurm.
 You should also use `tmux` to not risk connection loss during long running transfers.
 
 ## Useful commands
@@ -23,6 +23,9 @@ $ rm -r $SOURCE
 !!! Warning 
     When defining your source location, do not use the `*` wildcard character.
     This will not match hidden (dot) files and leave them behind.
+
+!!! Note
+	Paranoid users may want to consider using `hashdeep` to ensure that all files were successfully copied.
 
 ## Conda environments
 Conda environment tend to not react well when the folder they are stored in is moved from its original location.

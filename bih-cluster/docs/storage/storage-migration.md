@@ -117,7 +117,7 @@ A typical workflow would be:
 
 1. Copy your `fastq` files from Tier 2 to Tier 1.
 2. Perform raw data quality control, and store the outcome on Tier 2.
-3. Get expression levels, for example using `salmon` or `STAR`, and store the results on Tier 1.
+3. Get expression levels, for example using `salmon` or `STAR`, and store the results on Tier 2.
 4. Import the expression levels into `R`, using `tximport` and `DESeq2` or `featureCounts` & `edgeR`, for example.
 5. Save expression levels (`R` objects) and the output of `salmon`, `STAR`, or any mapper/aligner of your choice to Tier 2.
 6. **Remove raw data, bam & count files from Tier 1.**
@@ -134,7 +134,7 @@ Therefore, a typical workflow would be:
 
 1. Copy your `fastq` files from Tier 2 to Tier 1.
 2. Perform raw data QC, and store the results on Tier 2. 
-3. Get the count matrix, e.  g. using `Cell Ranger` or `alevin-fry`, perform count matrix QC and store the results on Tier 1.
+3. Get the count matrix, e.&nbsp;g. using `Cell Ranger` or `alevin-fry`, perform count matrix QC and store the results on Tier 2.
 4. **Remove raw data, bam & count files from Tier 1.**
 5. Downstream analysis with `seurat`, `scanpy`, or `Loupe Browser`.
 
