@@ -3150,7 +3150,7 @@ You can find the original TensorFlow installation instructions <a href="https://
 <p>This article describes how to set up TensorFlow with GPU support using Conda.
 This how-to assumes that you have just connected to a GPU node via <code>srun --mem=10g --partition=gpu --gres=gpu:tesla:1 --pty bash -i</code> (for Tesla V100 GPUs, for A400 GPUs use <code>--gres=gpu:a40:1</code>).
 Note that you will need to allocate "enough" memory, otherwise your python session will be <code>Killed</code> because of too little memory.
-You should read the <a href="../../how-to/connect/gpu-nodes/">How-To: Connect to GPU Nodes</a> tutorial on an explanation of how to do this and to learn how to register for GPU usage.</p>
+You should read the <a href="../../how-to/connect/gpu-nodes/">How-To: Connect to GPU Nodes</a> tutorial on an explanation of how to do this.</p>
 <p>This tutorial assumes, that conda has been set up as described in [Software Management]((../../best-practice/software-installation-with-conda.md).</p>
 <h2 id="create-conda-environment">Create conda environment<a class="headerlink" href="#create-conda-environment" title="Permanent link">&para;</a></h2>
 <p>We recommend that you install mamba first with <code>conda install -y mamba</code> and use this C++ reimplementation of the <code>conda command</code> as follows.</p>
@@ -3315,7 +3315,7 @@ TensorFlow version: 2.6.2
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2024</span>
   </span>
 
     

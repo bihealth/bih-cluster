@@ -2495,15 +2495,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#preparation" class="md-nav__link">
     <span class="md-ellipsis">
       Preparation
@@ -3127,15 +3118,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#preparation" class="md-nav__link">
     <span class="md-ellipsis">
       Preparation
@@ -3203,31 +3185,23 @@
 <p>Connecting to a node with GPUs is easy.
 You simply request a GPU using the <code>--gres=gpu:$CARD:COUNT</code> (for <code>CARD=tesla</code> or <code>CARD=a40</code>) argument to <code>srun</code> and <code>batch</code>.
 This will automatically place your job in the <code>gpu</code> partition (which is where the GPU nodes live) and allocate a number of <code>COUNT</code> GPUs to your job.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Recently, <code>--gres=gpu:tesla:COUNT</code> was often not able to allocate the right partion on it's own.
-If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with <code>--partition gpu</code> (or <code>#SBATCH --partition gpu</code> in batch file).</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Fair use rules apply.
+As GPU nodes are a limited resource, excessive use by single users is prohibited and can lead to mitigating actions.
+Be nice and cooperative with other users.
+Tip: <code>getent passwd USER_NAME</code> will give you a user's contact details.</p>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>".</p>
-</div>
-<div class="admonition important">
+<div class="admonition warning">
 <p class="admonition-title">Interactive Use of GPU Nodes is Discouraged</p>
 <p>While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
 While your job is allocated, it blocks the <strong>allocated</strong> GPUs and other users cannot use them although you might not be actually using them.
 Please prefer batch jobs for your GPU jobs over interactive jobs.</p>
-<p>Further, interactive GPU jobs are currently limited to 24 hours.
+<p>Furthermore, interactive GPU jobs are currently limited to 24 hours.
 We will monitor the situation and adjust that limit to optimize GPU usage and usability.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Allocation of GPUs through Slurm is mandatory</p>
-<p>In other word: using GPUs from SSH sessions is prohibited.
+<p>Please also note that allocation of GPUs through Slurm is mandatory, in other words: Using GPUs via SSH sessions is prohibited.
 The scheduler is not aware of manually allocated GPUs and this interferes with other users' jobs.</p>
 </div>
-<h2 id="prequisites">Prequisites<a class="headerlink" href="#prequisites" title="Permanent link">&para;</a></h2>
-<p>You have to register with <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> for requesting access.
-Afterwards, you can connect to the GPU nodes as shown below.</p>
 <h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
 <p>We will setup a miniconda installation with <code>pytorch</code> testing the GPU.
 If you already have this setup then you can skip this step</p>
@@ -3276,6 +3250,7 @@ True
 <p class="admonition-title">Note</p>
 <p>Recently, <code>--gres=gpu:tesla:COUNT</code> was often not able to allocate the right partion on it's own.
 If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with <code>--partition gpu</code> (or <code>#SBATCH --partition gpu</code> in batch file).</p>
+<p>Also make sure to read the FAQ entry "<a href="../../../help/faq/#i-have-problems-connecting-to-the-gpu-node-whats-wrong">I have problems connecting to the GPU node! What's wrong?</a>" if you encounter problems.   </p>
 </div>
 <h2 id="bonus-1-who-is-using-the-gpus">Bonus <a class="magiclink magiclink-github magiclink-issue" href="https://github.com/squidfunk/mkdocs-material/issues/1" title="GitHub Issue: squidfunk/mkdocs-material #1">#1</a>: Who is using the GPUs?<a class="headerlink" href="#bonus-1-who-is-using-the-gpus" title="Permanent link">&para;</a></h2>
 <p>Use <code>squeue</code> to find out about currently queued jobs (the <code>egrep</code> only keeps the header and entries in the <code>gpu</code> partition).</p>
@@ -3342,7 +3317,7 @@ If you cannot resolve the issue (e.g., the user is not reachable) then please co
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 12, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2024</span>
   </span>
 
     
