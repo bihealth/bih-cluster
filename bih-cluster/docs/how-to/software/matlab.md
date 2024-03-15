@@ -1,7 +1,7 @@
 # How-To: Use Matlab
 
-!!! todo "Matlab is not fully integrated yet"
-    We also need to finalize installation and then document the compiler version
+!!! note
+    This information is outdated and will soon be removed. 
 
 !!! note "GNU Octave as Matlab alternative"
     Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
@@ -15,9 +15,7 @@
 
 ## Pre-requisites
 
-You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access to the Latlab licenses.
-Register on [User Self Organisation MATLAB](../../admin/resource-registration.md#matlab-licenses) after registering with hpc-helpdesk.
-
+You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access to the Matlab licenses.
 Afterwards, you can connect to the High-Memory using the `license_matlab_r2016b` resource (see below).
 
 ## How-To Use
