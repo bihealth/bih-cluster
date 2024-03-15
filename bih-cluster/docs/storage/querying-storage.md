@@ -1,8 +1,9 @@
 # Querying Storage Quotas
 
-!!! info "More Convenient OnDemand Portal"
+!!! info "Outdated"
 
-    You can also see your quotas in the [Open OnDemand Portal Quotas application](../ondemand/quotas.md).
+    This document is only valid for the old, third-generation file system and will be removed soon.
+    Quotas of our new CephFS storage are communicated via the [HPC Access](https://hpc-access.cubi.bihealth.org/) web portal.
 
 As described elsewhere, all data in your user, group, and project volumes is subject to quotas.
 This page quickly shows how to query for the current usage of data volume and file counts for your user, group, and projects.

@@ -114,10 +114,11 @@ nav:
     - "Episode 3": first-steps/episode-3.md
     - "Episode 4": first-steps/episode-4.md
   - "Storage":
-    - "Accessing Snapshots": storage/accessing-snapshots.md
-    - "Querying Quotas": storage/querying-storage.md
     - "Storage Locations": storage/storage-locations.md
-    - "Automated Cleanup": storage/scratch-cleanup.md
+    - "Scratch Cleanup": storage/scratch-cleanup.md
+    - "Querying Quotas": storage/querying-storage.md
+    - "Storage Migration": storage/storage-migration.md
+    - "Migration FAQ": "storage/migration-faq.md"
   - "Cluster Scheduler":
     - slurm/overview.md
     - slurm/background.md
