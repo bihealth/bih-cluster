@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/storage-locations/">
       
       
-        <link rel="prev" href="../querying-storage/">
+        <link rel="prev" href="../../first-steps/episode-4/">
       
       
         <link rel="next" href="../scratch-cleanup/">
@@ -1253,48 +1253,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../accessing-snapshots/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Accessing Snapshots
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../querying-storage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Querying Quotas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1344,48 +1302,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-the-impatient" class="md-nav__link">
-    <span class="md-ellipsis">
-      For the Impatient
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="For the Impatient">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#storage-locations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Locations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dos-and-donts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Do's and Don'ts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#organizational-entities" class="md-nav__link">
     <span class="md-ellipsis">
       Organizational Entities
@@ -1395,37 +1311,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storagedata-tiers" class="md-nav__link">
+  <a href="#data-types-and-storage-tiers" class="md-nav__link">
     <span class="md-ellipsis">
-      Storage/Data Tiers
+      Data Types and storage Tiers
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snapshots-backups-archive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snapshots, Backups, Archive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage-locations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Locations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Storage Locations">
+    <nav class="md-nav" aria-label="Data Types and storage Tiers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#home-directories" class="md-nav__link">
     <span class="md-ellipsis">
-      Home Directories
+      Home directories
     </span>
   </a>
   
@@ -1434,16 +1332,34 @@
           <li class="md-nav__item">
   <a href="#work-directories" class="md-nav__link">
     <span class="md-ellipsis">
-      Work Directories
+      Work directories
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#scratch-directories" class="md-nav__link">
+  <a href="#scratch-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Scratch Directories
+      Scratch space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2 storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
     </span>
   </a>
   
@@ -1455,29 +1371,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshot-details" class="md-nav__link">
+  <a href="#snapshots-and-mirroring" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshot Details
+      Snapshots and Mirroring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshots and Mirroring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing snapshots
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#archive-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archive Details
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1487,6 +1400,39 @@
       Technical Implementation
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Technical Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2 mirror
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1510,7 +1456,70 @@
         
   
   <span class="md-ellipsis">
-    Automated Cleanup
+    Scratch Cleanup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Querying Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration FAQ
   </span>
   
 
@@ -3218,48 +3227,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#for-the-impatient" class="md-nav__link">
-    <span class="md-ellipsis">
-      For the Impatient
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="For the Impatient">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#storage-locations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Locations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dos-and-donts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Do's and Don'ts
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#organizational-entities" class="md-nav__link">
     <span class="md-ellipsis">
       Organizational Entities
@@ -3269,37 +3236,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storagedata-tiers" class="md-nav__link">
+  <a href="#data-types-and-storage-tiers" class="md-nav__link">
     <span class="md-ellipsis">
-      Storage/Data Tiers
+      Data Types and storage Tiers
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snapshots-backups-archive" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snapshots, Backups, Archive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage-locations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Locations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Storage Locations">
+    <nav class="md-nav" aria-label="Data Types and storage Tiers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#home-directories" class="md-nav__link">
     <span class="md-ellipsis">
-      Home Directories
+      Home directories
     </span>
   </a>
   
@@ -3308,16 +3257,34 @@
           <li class="md-nav__item">
   <a href="#work-directories" class="md-nav__link">
     <span class="md-ellipsis">
-      Work Directories
+      Work directories
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#scratch-directories" class="md-nav__link">
+  <a href="#scratch-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Scratch Directories
+      Scratch space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2 storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
     </span>
   </a>
   
@@ -3329,29 +3296,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#snapshot-details" class="md-nav__link">
+  <a href="#snapshots-and-mirroring" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshot Details
+      Snapshots and Mirroring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Snapshots and Mirroring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing snapshots
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup Details
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#archive-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archive Details
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3361,6 +3325,39 @@
       Technical Implementation
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Technical Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-mirror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tier 2 mirror
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3383,144 +3380,245 @@
 
 
 <h1 id="storage-and-volumes-locations">Storage and Volumes: Locations<a class="headerlink" href="#storage-and-volumes-locations" title="Permanent link">&para;</a></h1>
-<p>On the BIH HPC cluster, there are three kinds of entities: users, groups (<em>Arbeitsgruppen</em>), and projects.
-Each user, group, and project has a central folder for their files to be stored.</p>
-<h2 id="for-the-impatient">For the Impatient<a class="headerlink" href="#for-the-impatient" title="Permanent link">&para;</a></h2>
-<h3 id="storage-locations">Storage Locations<a class="headerlink" href="#storage-locations" title="Permanent link">&para;</a></h3>
-<p>Each user, group, and project directory consists of three locations (using <code>/fast/users/muster_c</code> as an example here):</p>
-<ul>
-<li><code>/fast/users/muster_c/work</code>:
-  Here, you put your large data that you need to keep.
-  Note that there is no backup or snapshots going on.</li>
-<li><code>/fast/users/muster_c/scratch</code>:
-  Here, you put your large temporary files that you will delete after a short time anyway.
-  <strong>Data placed here will be automatically removed 2 weeks after last modification.</strong></li>
-<li><code>/fast/users/muster_c</code> (and all other sub directories):
-  Here you put your programs and scripts and very important small data.
-  By default, you will have a soft quota of 1GB (hard quota of 1.5GB, 7 days grace period).
-  However, we create snapshots of this data (every 24 hours) and this data goes to a backup.</li>
-</ul>
-<p>You can check your current usage using the command <code>bih-gpfs-report-quota user $USER</code></p>
-<h3 id="dos-and-donts">Do's and Don'ts<a class="headerlink" href="#dos-and-donts" title="Permanent link">&para;</a></h3>
-<p>First and foremost:</p>
-<ul>
-<li><strong>DO NOT place any valuable data in <code>scratch</code> as it will be removed within 2 weeks.</strong></li>
-</ul>
-<p>Further:</p>
-<ul>
-<li><strong>DO</strong> set your <code>TMPDIR</code> environment variable to <code>/fast/users/$USER/scratch/tmp</code>.</li>
-<li><strong>DO</strong> add <code>mkdir -p /fast/users/$USER/scratch/tmp</code> to your <code>~/.bashrc</code> and job script files.</li>
-<li><strong>DO</strong> try to prefer creating fewer large files over many small files.</li>
-<li><strong>DO NOT</strong> create multiple copies of large data.
-  For sequencing data, in most cases you should not need more than raw times the size of the raw data (raw data + alignments + derived results).</li>
-</ul>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>This document describes the third iteration of the file system structure on the BIH HPC cluster.
-This iteration was made necessary by problems with second iteration which worked well for about two years but is now reaching its limits.</p>
+<p>This document describes the forth iteration of the file system structure on the BIH HPC cluster.
+It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed <a href="https://ceph.io/en/">Ceph</a> storage.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>For now, the old, third-generation file system is still mounted at <code>/fast</code>. <strong>It will be decommissioned soon, please consult <a href="../storage-migration/">this document describing the migration process</a>!</strong></p>
+</div>
 <h2 id="organizational-entities">Organizational Entities<a class="headerlink" href="#organizational-entities" title="Permanent link">&para;</a></h2>
 <p>There are the following three entities on the cluster:</p>
 <ol>
-<li>normal user accounts ("natural people")</li>
-<li>groups <em>(Arbeitsgruppen)</em> with on leader and an optional delegate</li>
-<li>projects with one owner and an optional delegate.</li>
+<li><strong>Users</strong> <em>(real people)</em></li>
+<li><strong>Groups</strong> <em>(Arbeitsgruppen)</em> with one leader and an optional delegate</li>
+<li><strong>Projects</strong> with one owner and an optional delegate</li>
 </ol>
-<p>Their purpose is described in the document "User and Group Management".</p>
-<h2 id="storagedata-tiers">Storage/Data Tiers<a class="headerlink" href="#storagedata-tiers" title="Permanent link">&para;</a></h2>
-<p>The files fall into one of three categories:</p>
+<p>Each user, group, and project can have storage folders in different locations.</p>
+<h2 id="data-types-and-storage-tiers">Data Types and storage Tiers<a class="headerlink" href="#data-types-and-storage-tiers" title="Permanent link">&para;</a></h2>
+<p>Files stored on the HPC fall into one of three categories:</p>
 <ol>
 <li>
-<p><strong>Home</strong> data are programs and scripts of which there is relatively few but which is long-lived and very important.
-   Loss of home data requires to redo manual work (like programming).</p>
+<p><strong>Home</strong> folders store programs, scripts, and user config i.&nbsp;e. long-lived and very important files. 
+Loss of this data requires to redo manual work (like programming).</p>
 </li>
 <li>
-<p><strong>Work</strong> data is data of potential large size and has a medium life time and important.
-   Examples are raw sequencing data and intermediate results that are to be kept (e.g., a final, sorted and indexed BAM file).
-   Work data can time-consuming actions to be restored, such as downloading large amounts of data or time-consuming computation.</p>
+<p><strong>Work</strong> folders store data of potentially large size which has a medium life time and is important.
+Examples are raw sequencing data and intermediate results that are to be kept (e.&nbsp;g. sorted and indexed BAM files).
+Work data requires time-consuming actions to be restored, such as downloading large amounts of data or long-running computation.</p>
 </li>
 <li>
-<p><strong>Scratch</strong> data is data that is temporary by nature and has a short life-time only.
-   Examples are temporary files (e.g., unsorted BAM files).
-   Scratch data is created to be removed eventually.</p>
+<p><strong>Scratch</strong> folder store temporary files with a short life-time.
+Examples are temporary files (e.&nbsp;g. unsorted BAM files).
+Scratch data is created to be removed eventually.</p>
 </li>
 </ol>
-<h2 id="snapshots-backups-archive">Snapshots, Backups, Archive<a class="headerlink" href="#snapshots-backups-archive" title="Permanent link">&para;</a></h2>
+<p>Ceph storage comes in two types which differ in their I/O speed, total capacity, and cost.
+They are called <strong>Tier 1</strong> and <strong>Tier 2</strong> and sometimes <strong>hot storage</strong> and <strong>warm storage</strong>.
+In the HPC filesystem they are mounted in <code>/data/cephfs-1</code> and <code>/data/cephfs-2</code>.</p>
 <ul>
-<li>
-<p><strong>A snapshot</strong> stores the state of a data volume at a given time.
-  File systems like GPFS implement this in a copy-on-write manner, meaning that for a snapshot and the subsequent "live" state, only the differences in data need to be store.d
-  Note that there is additional overhead in the meta data storage.</p>
-</li>
-<li>
-<p><strong>A backup</strong> is a copy of a data set on another physical location, i.e., all data from a given date copied to another server.
-  Backups are made regularly and only a small number of previous ones is usually kept.</p>
-</li>
-<li>
-<p><strong>An archive</strong> is a single copy of a single state of a data set to be kept for a long time.
-  Classically, archives are made by copying data to magnetic tape for long-term storage.</p>
-</li>
+<li>Tier 1 storage is fast, relatively small, expensive, and optimized for performance.</li>
+<li>Tier 2 storage is slow, big, cheap, and built for keeping large files for longer times.</li>
 </ul>
-<h2 id="storage-locations_1">Storage Locations<a class="headerlink" href="#storage-locations_1" title="Permanent link">&para;</a></h2>
-<p>This section describes the different storage locations and gives an overview of their properties.</p>
-<h3 id="home-directories">Home Directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h3>
+<p>Storage quotas are imposed in these locations to restrict the maximum size of folders.
+Amount and utilization of quotas is communicated via the <a href="https://hpc-access.cubi.bihealth.org/">HPC Access</a> web portal.</p>
+<h3 id="home-directories">Home directories<a class="headerlink" href="#home-directories" title="Permanent link">&para;</a></h3>
+<p>Location: <code>/data/cephfs-1/home/</code></p>
+<p>Only users have home directories on Tier 1 storage.
+This is the starting point when starting a new shell or SSH session.
+Important config files are stored here as well as analysis scripts and small user files.
+Home folders have a strict storage quota of 1 GB.</p>
+<h3 id="work-directories">Work directories<a class="headerlink" href="#work-directories" title="Permanent link">&para;</a></h3>
+<p>Location: <code>/data/cephfs-1/work/</code></p>
+<p>Groups and projects have work directories on Tier 1 storage.
+User home folders contain a symlink to their respective group's work folder.
+Files shared within a group/project are stored here as long as they are in active use.
+Work folders are generally limited to 1 TB per group.
+Project work folders are allocated on an individual basis.</p>
+<h3 id="scratch-space">Scratch space<a class="headerlink" href="#scratch-space" title="Permanent link">&para;</a></h3>
+<p>Location: <code>/data/cephfs-1/scratch/</code></p>
+<p>Groups and projects have scratch space on Tier 1 storage.
+User home folders contain a symlink to their respective group's scratch space.
+Meant for temporary, potentially large data e. g. intermediate unsorted or unmasked BAM files, data downloaded from the internet etc.
+Scratch space is generally limited to 10 TB per group.
+Projects are allocated scratch on an individual basis.
+<strong>Files in scratch will be <a href="../scratch-cleanup/">automatically removed</a> 2 weeks after their creation.</strong></p>
+<h3 id="tier-2-storage">Tier 2 storage<a class="headerlink" href="#tier-2-storage" title="Permanent link">&para;</a></h3>
+<p>Location: <code>/data/cephfs-2/</code></p>
+<p>This is where big files go when they are not in active use.
+Groups are allocated 10 TB of Tier 2 storage by default.
+File quotas here can be significantly larger as space is much cheaper and more abundant than on Tier 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tier 2 storage is currently not accessible from HPC login nodes.</p>
+</div>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tier</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Path</th>
+<th style="text-align: right;">Default Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">User home</td>
+<td style="text-align: left;"><code>/data/cephfs-1/home/users/&lt;user&gt;</code></td>
+<td style="text-align: right;">1 GB</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Group work</td>
+<td style="text-align: left;"><code>/data/cephfs-1/work/groups/&lt;group&gt;</code></td>
+<td style="text-align: right;">1 TB</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Group scratch</td>
+<td style="text-align: left;"><code>/data/cephfs-1/scratch/groups/&lt;group&gt;</code></td>
+<td style="text-align: right;">10 TB</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Project work</td>
+<td style="text-align: left;"><code>/data/cephfs-1/work/projects/&lt;project&gt;</code></td>
+<td style="text-align: right;">On request</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Project scratch</td>
+<td style="text-align: left;"><code>/data/cephfs-1/scratch/projects/&lt;project&gt;</code></td>
+<td style="text-align: right;">On request</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group</td>
+<td style="text-align: left;"><code>/data/cephfs-2/unmirrored/groups/&lt;group&gt;</code></td>
+<td style="text-align: right;">10 TB</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Project</td>
+<td style="text-align: left;"><code>/data/cephfs-2/unmirrored/projects/&lt;project&gt;</code></td>
+<td style="text-align: right;">On request</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Group</td>
+<td style="text-align: left;"><code>/data/cephfs-2/mirrored/groups/&lt;group&gt;</code></td>
+<td style="text-align: right;">On request</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Project</td>
+<td style="text-align: left;"><code>/data/cephfs-2/mirrored/projects/&lt;project&gt;</code></td>
+<td style="text-align: right;">On request</td>
+</tr>
+</tbody>
+</table>
+<h2 id="snapshots-and-mirroring">Snapshots and Mirroring<a class="headerlink" href="#snapshots-and-mirroring" title="Permanent link">&para;</a></h2>
+<p>Snapshots are incremental copies of the state of the data at a particular point in time. 
+They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
+Depending on the location and Tier, CephFS creates snapshots in different frequencies and retention plans.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Location</th>
+<th style="text-align: left;">Path</th>
+<th style="text-align: left;">Retention policy</th>
+<th style="text-align: right;">Mirrored</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">User homes</td>
+<td style="text-align: left;"><code>/data/cephfs-1/home/users/</code></td>
+<td style="text-align: left;">Hourly for 48 h, daily for 14 d</td>
+<td style="text-align: right;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Group/project work</td>
+<td style="text-align: left;"><code>/data/cephfs-1/work/</code></td>
+<td style="text-align: left;">Four times a day, daily for 5 d</td>
+<td style="text-align: right;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Group/project scratch</td>
+<td style="text-align: left;"><code>/data/cephfs-1/scratch/</code></td>
+<td style="text-align: left;">Daily for 3 d</td>
+<td style="text-align: right;">no</td>
+</tr>
+<tr>
+<td style="text-align: left;">Group/project mirrored</td>
+<td style="text-align: left;"><code>/data/cephfs-2/mirrored/</code></td>
+<td style="text-align: left;">Daily for 30 d, weekly for 16 w</td>
+<td style="text-align: right;">yes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Group/project unmirrored</td>
+<td style="text-align: left;"><code>/data/cephfs-2/unmirrored/</code></td>
+<td style="text-align: left;">Daily for 30 d, weekly for 16 w</td>
+<td style="text-align: right;">no</td>
+</tr>
+</tbody>
+</table>
+<p>Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
+This provides an additional layer of security i. e. physical damage to the servers.</p>
+<h3 id="accessing-snapshots">Accessing snapshots<a class="headerlink" href="#accessing-snapshots" title="Permanent link">&para;</a></h3>
+<p>To access snapshots, simply navigate to the <code>.snap/</code> sub-folder of the respective location.
+You will find one sub-folder for every snapshot created and in them a complete replica of the folder respective folder at the time of snapshot creation.</p>
+<p>For example:</p>
 <ul>
-<li><strong>Location</strong> <code>/fast/{users,groups,projects}/&lt;name&gt;</code> (except for <code>work</code> and <code>scratch</code> sub directories)</li>
-<li>the user, group, or project home directory</li>
-<li>meant for documents, scripts, and programs</li>
-<li>default quota for data: default soft quota of 1 GB, hard quota of 1.5 GB, grace period of 7 days</li>
-<li>quota can be increased on request with short reason statement</li>
-<li>default quota for metadata: 10k files soft, 12k files hard</li>
-<li>snapshots are regularly created, see Section \ref{snapshot-details}</li>
-<li>nightly incremental backups are created, the last 5 are kept</li>
-<li><em>Long-term strategy:</em>
-    users are expected to manage data life time independently and use best practice for source code and document management best practice (e.g., use Git).
-    When users/groups leave the organization or projects ends, they are expected to handle data storage and cleanup on their own.
-    Responsibility to enforce this is with the leader of a user's group, the group leader, or the project owner, respectively.</li>
+<li><code>/data/cephfs-1/home/.snap/&lt;some_snapshot&gt;/users/&lt;your_user&gt;/</code></li>
+<li><code>/data/cephfs-1/work/.snap/&lt;some_snapshot&gt;/groups/&lt;your_group&gt;/</code></li>
+<li><code>/data/cephfs-2/unmirrored/.snap/&lt;some_snapshot&gt;/projects/&lt;your_project&gt;/</code></li>
 </ul>
-<h3 id="work-directories">Work Directories<a class="headerlink" href="#work-directories" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Location</strong> <code>/fast/{users,groups,projects}/&lt;name&gt;/work</code></li>
-<li>the user, group, or project work directory</li>
-<li>meant for larger data that is to be used for a longer time, e.g., raw data, final sorted BAM file</li>
-<li>default quota for data: default soft quota of 1 TB, hard quota of 1.1 TB, grace period of 7 days</li>
-<li>quota can be increased on request with short reason statement</li>
-<li>default quota for metadata: 2 Mfile soft, 2.2M files hard</li>
-<li>no snapshots, no backup</li>
-<li><em>Long-term strategy:</em>
-    When users/groups leave the organization or projects ends, they are expected to cleanup unneeded data on their own.
-    HPC IT can provide archival services on request.
-    Responsibility to enforce this is with the leader of a user's group, the group leader, or the project owner, respectively.</li>
-</ul>
-<h3 id="scratch-directories">Scratch Directories<a class="headerlink" href="#scratch-directories" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Location</strong> <code>/fast/{users,groups,projects}/&lt;name&gt;/scratch</code></li>
-<li>the user, group, or project scratch directory</li>
-<li><strong>files will be removed 2 weeks after their creation</strong></li>
-<li>meant for temporary, potentially large data, e.g., intermediate unsorted or unmasked BAM files, data downloaded from the internet for trying out etc.</li>
-<li>default quota for data: default soft quota of 200TB, hard quota of 220TB, grace period of 7 days</li>
-<li>quota can be increased on request with short reason statement</li>
-<li>default quota for metadata: 2M files soft, 2.2M files hard</li>
-<li>no snapshots, no backup</li>
-<li><em>Long-term strategy:</em>
-    as data on this volume is not to be kept for longer than 2 weeks, the long term strategy is to delete all files.</li>
-</ul>
-<h2 id="snapshot-details">Snapshot Details<a class="headerlink" href="#snapshot-details" title="Permanent link">&para;</a></h2>
-<p>Snapshots are made every 24 hours.
-Of these snapshots, the last 7 are kept, then one for each day.</p>
-<h2 id="backup-details">Backup Details<a class="headerlink" href="#backup-details" title="Permanent link">&para;</a></h2>
-<p>Backups of the snapshots is made nightly.
-The backups of the last 7 days are kept.</p>
-<h2 id="archive-details">Archive Details<a class="headerlink" href="#archive-details" title="Permanent link">&para;</a></h2>
-<p>BIH HPC IT has some space allocated on the MDC IT tape archive.
-User data can be put under archive after agreeing with head of HPC IT.
-The process is as describe in Section \ref{sop-data-archival}.</p>
+<p>Here is a simple example of how to restore a file:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/data/cephfs-2/unmirrored/.snap/scheduled-2024-03-11-00_00_00_UTC/
+$<span class="w"> </span>ls<span class="w"> </span>groups/cubi/
+$<span class="w"> </span>cp<span class="w"> </span>groups/cubi/important_file.txt<span class="w"> </span>/data/cephfs-2/unmirrored/groups/cubi/
+</code></pre></div>
 <h2 id="technical-implementation">Technical Implementation<a class="headerlink" href="#technical-implementation" title="Permanent link">&para;</a></h2>
-<p>As a quick (very) technical note:</p>
-<p>There exists a file system <code>fast</code>.
-This file system has three independent file sets <code>home</code>, <code>work</code>, <code>scratch</code>.
-On each of these file sets, there is a dependent file set for each user, group, and project below directories <code>users</code>, <code>groups</code>, and <code>projects</code>.
-<code>home</code> is also mounted as <code>/fast_new/home</code> and for each user, group, and project, the entry <code>work</code> links to the corresponding fileset in <code>work</code>, the same for scratch.
-Automatic file removal from <code>scratch</code> is implemented using GPFS ILM.
-Quotas are implemented on the file-set level.</p>
+<h3 id="tier-1">Tier 1<a class="headerlink" href="#tier-1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fast &amp; expensive</li>
+<li>mounted on <code>/data/cephfs-1</code></li>
+<li>Currently 12 Nodes with 10 × 14 TB NVME SSD each<ul>
+<li>1.68 PB raw storage</li>
+<li>1.45 PB erasure coded (EC 8:2)</li>
+<li>1.23 PB usable (85 %, Ceph performance limit)</li>
+</ul>
+</li>
+<li>For typical CUBI use case 3 to 5 times faster I/O then the old DDN</li>
+<li>Two more nodes in purchasing process</li>
+<li>Example of flexible extension:<ul>
+<li>Chunk size: 45.000 € for one node with 150 TB, i. e. ca. 300 €/TB</li>
+</ul>
+</li>
+</ul>
+<h3 id="tier-2">Tier 2<a class="headerlink" href="#tier-2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Slower but more affordable</li>
+<li>mounted on <code>/data/cephfs-2</code></li>
+<li>Currently 10 nodes with 52 HDDs slots and SSD cache (~40 HDDs per node with 16–18 TB capacity)<ul>
+<li>6.6 PB raw storage</li>
+<li>5.3 PB erasure coded (EC 8:2)</li>
+<li>4.5 PB usable (85 %; Ceph performance limit)</li>
+</ul>
+</li>
+<li>More nodes in purchasing process</li>
+<li>Very Flexible Extension possible:<ul>
+<li>ca. 50 € per TB, 100 € mirrored, starting at small chunk sizes</li>
+</ul>
+</li>
+</ul>
+<h3 id="tier-2-mirror">Tier 2 mirror<a class="headerlink" href="#tier-2-mirror" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Similar in hardware and size (10 nodes, 6+ PB)</li>
+<li>Stored in separate fire compartment.</li>
+</ul>
 
 
 

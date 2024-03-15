@@ -12,13 +12,13 @@
         <meta name="author" content="BIH HPC IT">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/accessing-snapshots/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/migration-faq/">
       
       
-        <link rel="prev" href="../../first-steps/episode-4/">
+        <link rel="prev" href="../storage-migration/">
       
       
-        <link rel="next" href="../querying-storage/">
+        <link rel="next" href="../../slurm/overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Accessing Snapshots - BIH HPC Docs</title>
+        <title>Migration FAQ - BIH HPC Docs</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#accessing-snapshots-and-backups" class="md-skip">
+        <a href="#data-migration-tips-and-tricks" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Accessing Snapshots
+              Migration FAQ
             
           </span>
         </div>
@@ -1253,76 +1253,39 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Accessing Snapshots
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../storage-locations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Accessing Snapshots
+    Storage Locations
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
-    
   
+    <li class="md-nav__item">
+      <a href="../scratch-cleanup/" class="md-nav__link">
+        
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#snapshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snapshot
-    </span>
-  </a>
+  <span class="md-ellipsis">
+    Scratch Cleanup
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backups" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backups
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -1356,11 +1319,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../storage-locations/" class="md-nav__link">
+      <a href="../storage-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Storage Locations
+    Storage Migration
   </span>
   
 
@@ -1374,18 +1337,76 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../scratch-cleanup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Migration FAQ
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Automated Cleanup
+    Migration FAQ
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conda environments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3089,18 +3110,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#snapshot" class="md-nav__link">
+  <a href="#useful-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Snapshot
+      Useful commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backups" class="md-nav__link">
+  <a href="#conda-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      Backups
+      Conda environments
     </span>
   </a>
   
@@ -3124,34 +3145,65 @@
   
 
 
-<h1 id="accessing-snapshots-and-backups">Accessing Snapshots and Backups<a class="headerlink" href="#accessing-snapshots-and-backups" title="Permanent link">&para;</a></h1>
-<p>By now you have probably read that your home directory has strict quotas in place.
-You pay this price in usability by the fact that snapshots and backups exist.</p>
-<h2 id="snapshot">Snapshot<a class="headerlink" href="#snapshot" title="Permanent link">&para;</a></h2>
-<p>Every night, a snapshot is created of all user, group, and project home directories.
-The snapshots are placed in the following locations.</p>
-<ul>
-<li><code>/fast/home/.snapshots/$SNAPSHOT/users/$USER</code></li>
-<li><code>/fast/home/.snapshots/$SNAPSHOT/groups/$GROUP</code></li>
-<li><code>/fast/home/.snapshots/$SNAPSHOT/projects/$PROJECT</code></li>
-</ul>
-<p>The snapshot name <code>$SNAPSHOT</code> simply is the 3-letter abbreviation of the week day (i.e., Mon, Tue, Thu, Fri, Sat, Sun).</p>
-<p>The snapshots contains the state of the home directories at the time that they were made.
-This also includes the permissions.
-That is you can simply retrieve the state of your home directory of last Tuesday (if the directory already existed back then) at:</p>
-<ul>
-<li><code>/fast/home/.snapshots/Tue/users/$USER</code></li>
-</ul>
-<p>e.g.,</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/fast/home/.snapshots/Tue/users/<span class="nv">$USER</span>
-...
+<h1 id="data-migration-tips-and-tricks">Data Migration Tips and tricks<a class="headerlink" href="#data-migration-tips-and-tricks" title="Permanent link">&para;</a></h1>
+<p>Please use <code>hpc-transfer-1</code> and <code>hpc-transfer-2</code> for moving large amounts of files.
+This not only leaves the compute notes available for actual computation, but also has no risk of your jobs being killed by Slurm.
+You should also use <code>tmux</code> to not risk connection loss during long running transfers.</p>
+<h2 id="useful-commands">Useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Define source and target location and copy contents.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/work/projects/my_project/
+$<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-2/unmirrored/projects/my-project/
+$<span class="w"> </span>rsync<span class="w"> </span>-ah<span class="w"> </span>--stats<span class="w"> </span>--progress<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Remove the <code>--dry-run</code> flag to start the actual copying process.</p>
+</li>
+<li>Perform a second <code>rsync</code> to check if all files were successfully transferred.
+   Paranoid users might want to add the <code>--checksums</code> flag to <code>rsync</code> or use <code>hashdeep</code>.
+   Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
+   but leaves empty directories behind.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-ah<span class="w"> </span>--stats<span class="w"> </span>--remove-source-files<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
+</code></pre></div></li>
+<li>Again, remove the <code>--dry-run</code> flag to start the actual deletion.</li>
+<li>Check if all files are gone from the SOURCE folder and remove the empty directories:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span><span class="nv">$SOURCE</span>
+</code></pre></div></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When defining your source location, do not use the <code>*</code> wildcard character.
+It will not match hidden (dot) files and leave them behind.</p>
+</div>
+<h2 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h2>
+<p>Conda environment tend to not react well when the folder they are stored in is moved from its original location.
+There are numerous ways to move the state of your environments, which are described <a href="https://www.anaconda.com/blog/moving-conda-environments">here</a>.</p>
+<p>A simple way we can recommend is this:</p>
+<ol>
+<li>
+<p>Export all environments prior to the move.
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>.miniforge/envs/<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">    </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$env</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$env</span>.yml
+<span class="k">done</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Re-create them after the move:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</code></pre></div></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already moved your home folder, you can still activate your old environments like this:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>/fast/home/users/your-user/path/to/conda/envs/env-name-here
 </code></pre></div>
-<h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h2>
-<p>There are very few cases where backups will help you more than snapshots.
-As with snapshots, there is a 7-day rotation for backups.
-The backups fully reflect the snapshots and thus everything that is in the backups is also in the snapshots.</p>
-<p>The only time that you will need backups is when the GPFS and its snapshots are damaged.
-This protects the files in your home directory against technical errors and other catastrophes such as fire or water damage of the data center.</p>
+</div>
 
 
 

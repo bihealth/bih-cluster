@@ -12,13 +12,13 @@
         <meta name="author" content="BIH HPC IT">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/slurm/commands-sacct/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/storage-migration/">
       
       
-        <link rel="prev" href="../commands-scontrol/">
+        <link rel="prev" href="../querying-storage/">
       
       
-        <link rel="next" href="../format-strings/">
+        <link rel="next" href="../migration-faq/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>sacct - BIH HPC Docs</title>
+        <title>Storage Migration - BIH HPC Docs</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-command-sacct" class="md-skip">
+        <a href="#migration-from-old-gpfs-to-new-cephfs" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              sacct
+              Storage Migration
             
           </span>
         </div>
@@ -1216,17 +1216,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1240,7 +1242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Storage
@@ -1254,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-locations/" class="md-nav__link">
+      <a href="../storage-locations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1275,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
+      <a href="../scratch-cleanup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1296,449 +1298,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/querying-storage/" class="md-nav__link">
+      <a href="../querying-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Querying Quotas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage/storage-migration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage Migration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage/migration-faq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Migration FAQ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Cluster Scheduler
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Cluster Scheduler
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Scheduling Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introduction to Scheduling
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm Quickstart
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../temporary-files/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm and Temporary Files
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cheat-sheet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm Cheat Sheet
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../job-scripts/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm Job Scripts
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../memory-allocation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Memory Allocation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reservations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Reservations / Maintenances
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Slurm Commands
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8_9">
-            <span class="md-nav__icon md-icon"></span>
-            Slurm Commands
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-srun/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    srun
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-sbatch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sbatch
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-sattach/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sattach
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-scancel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    scancel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-sinfo/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sinfo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-squeue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    squeue
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../commands-scontrol/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    scontrol
   </span>
   
 
@@ -1768,7 +1332,7 @@
           
   
   <span class="md-ellipsis">
-    sacct
+    Storage Migration
   </span>
   
 
@@ -1779,7 +1343,7 @@
         
   
   <span class="md-ellipsis">
-    sacct
+    Storage Migration
   </span>
   
 
@@ -1801,18 +1365,186 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
+  <a href="#what-is-going-to-happen" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Arguments
+      What is going to happen?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#why-is-this-happening" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      Why is this happening?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-new-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      The new storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-file-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      New file locations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New file locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data locations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-life-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project life cycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example use cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dna-sequencing-wes-wgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNA sequencing (WES, WGS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-rna-seq" class="md-nav__link">
+    <span class="md-ellipsis">
+      bulk RNA-seq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrna-seq" class="md-nav__link">
+    <span class="md-ellipsis">
+      scRNA-seq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-process-from-old-fast-to-cephfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data migration process from old /fast to CephFS
     </span>
   </a>
   
@@ -1834,7 +1566,441 @@
   
   
     <li class="md-nav__item">
-      <a href="../format-strings/" class="md-nav__link">
+      <a href="../migration-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cluster Scheduler
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Scheduler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scheduling Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Scheduling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/temporary-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm and Temporary Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/job-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Job Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/memory-allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/reservations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reservations / Maintenances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_9">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-srun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    srun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sbatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sattach/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sattach
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scancel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scancel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-squeue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    squeue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scontrol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sacct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sacct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/format-strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1863,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../snakemake/" class="md-nav__link">
+      <a href="../../slurm/snakemake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1884,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../x11/" class="md-nav__link">
+      <a href="../../slurm/x11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,7 +2071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rosetta-stone/" class="md-nav__link">
+      <a href="../../slurm/rosetta-stone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3112,18 +3278,186 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
+  <a href="#what-is-going-to-happen" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Arguments
+      What is going to happen?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#why-is-this-happening" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      Why is this happening?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-new-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      The new storage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-file-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      New file locations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New file locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data locations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-life-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project life cycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example use cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example use cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dna-sequencing-wes-wgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNA sequencing (WES, WGS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-rna-seq" class="md-nav__link">
+    <span class="md-ellipsis">
+      bulk RNA-seq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scrna-seq" class="md-nav__link">
+    <span class="md-ellipsis">
+      scRNA-seq
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Machine learning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-migration-process-from-old-fast-to-cephfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data migration process from old /fast to CephFS
     </span>
   </a>
   
@@ -3147,38 +3481,170 @@
   
 
 
-<h1 id="slurm-command-sacct">Slurm Command: <code>sacct</code><a class="headerlink" href="#slurm-command-sacct" title="Permanent link">&para;</a></h1>
-<p>Perform queries to the Slurm accounting information.</p>
-<div class="admonition info">
-<p class="admonition-title">Representative Example</p>
-<div class="highlight"><pre><span></span><code>med-login:~$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w">  </span><span class="m">1607103</span>
-<span class="w">    </span>JobID<span class="w">    </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode
-------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------
-<span class="m">1607103</span><span class="w">      </span>wgs_sv_an+<span class="w">     </span>medium<span class="w">                     </span><span class="m">1</span><span class="w">    </span>PENDING<span class="w">      </span><span class="m">0</span>:0
-</code></pre></div>
-</div>
-<p>The <code>sacct</code> command displays information from the Slurm accounting service.
-The Slurm scheduler only knows about active or completing (very recently active) jobs.
-The accouting system also knows about currently running jobs so it is the more robust way to query information about jobs.
-However, not all information is available to the accouting system, so <code>scontrol show job</code> and <code>squeue</code> provide more information about current and pending jbos.</p>
-<div class="admonition info">
-<p class="admonition-title">Slurm Documentation: sacct</p>
-<p>Please also see the official <a href="https://slurm.schedmd.com/sacct.html">Slurm documentation on sacct</a>.</p>
-</div>
-<h2 id="important-arguments">Important Arguments<a class="headerlink" href="#important-arguments" title="Permanent link">&para;</a></h2>
-<p>Also see all important arguments of the <a href="../commands-sbatch/"><code>sbatch</code></a> command.</p>
+<h1 id="migration-from-old-gpfs-to-new-cephfs">Migration from old GPFS to new CephFS<a class="headerlink" href="#migration-from-old-gpfs-to-new-cephfs" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-going-to-happen">What is going to happen?<a class="headerlink" href="#what-is-going-to-happen" title="Permanent link">&para;</a></h2>
+<p>Files on the cluster's main storage <code>/data/gpfs-1</code> aka. <code>/fast</code> will move to a new file system.
+That includes users' home directories, work directories, and work-group directories.
+Once files have been moved to their new locations, <code>/fast</code> will be retired.</p>
+<p>Simultaneously we will move towards a more unified naming scheme for project and group folder names.
+From now on, all such folders names shall be in <a href="https://en.wikipedia.org/wiki/Letter_case#Kebab_case">kebab-case</a>.
+This is Berlin after all.</p>
+<p>Detailed communication about the move will be communicated via the cluster mailinglist and the <a href="https://hpc-talk.cubi.bihealth.org/">user forum</a>.
+For technical help, please consult the <a href="../migration-faq/">Data Migration Tips and tricks</a>.</p>
+<h2 id="why-is-this-happening">Why is this happening?<a class="headerlink" href="#why-is-this-happening" title="Permanent link">&para;</a></h2>
+<p><code>/fast</code> is based on a high performance proprietary hardware (DDN) &amp; file system (GPFS).
+The company selling it has terminated support which also means buying replacement parts will become increasingly difficult.</p>
+<h2 id="the-new-storage">The new storage<a class="headerlink" href="#the-new-storage" title="Permanent link">&para;</a></h2>
+<p>There are <em>two</em> file systems set up to replace <code>/fast</code>, named <em>Tier 1</em> and <em>Tier 2</em> after their difference in I/O speed:</p>
 <ul>
-<li><code>--jobs</code>
-  -- The job(s) to query for.</li>
-<li><code>--format</code>
-  -- Define attributes to retrieve.</li>
-<li><code>--long</code>
-  -- Get a lot of information from the database, consider to pipe into <code>| less -S</code>.</li>
+<li><strong>Tier 1</strong> is faster than <code>/fast</code> ever was, but it only has about 75 % of its usable capacity.</li>
+<li><strong>Tier 2</strong> is not as fast, but much larger, almost 3 times the current usable capacity.</li>
 </ul>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<p>The <strong>Hot storage</strong> Tier 1 is reserved for files requiring frequent random access, user homes, and scratch.
+Tier 2 (<strong>Warm storage</strong>) should be used for everything else.
+Both file systems are based on the open-source, software-defined <a href="https://ceph.io/en/">Ceph</a> storage platform and differ in the type of drives used.
+Tier 1 or Cephfs-1 uses NVME SSDs and is optimized for performance, Tier 2 or Cephfs-2 used traditional hard drives and is optimized for cost.</p>
+<p>So these are the three terminologies in use right now:</p>
 <ul>
-<li>If you need to get information about a job regardless of it being in the past, present, or future execution, use <code>sacct</code> over <code>scontrol</code> and <code>squeue</code>.</li>
+<li>Cephfs-1 = Tier 1 = Hot storage = <code>/data/cephfs-1</code></li>
+<li>Cephfs-2 = Tier 2 = Warm storage = <code>/data/cephfs-2</code></li>
 </ul>
+<p>More information about CephFS can be found <a href="http://localhost:8000/bih-cluster/storage/storage-locations/">here</a>.</p>
+<h2 id="new-file-locations">New file locations<a class="headerlink" href="#new-file-locations" title="Permanent link">&para;</a></h2>
+<p>Naturally, paths are going to change after files move to their new location.
+Due to the increase in storage quality options, there will be some more folders to consider.</p>
+<h3 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Home on Tier 1: <code>/data/cephfs-1/home/users/&lt;user&gt;</code></li>
+<li>Work on Tier 1: <code>/data/cephfs-1/work/groups/&lt;ag-doe&gt;/users/&lt;user&gt;</code></li>
+<li>Scratch on Tier 1: <code>/data/cephfs-1/scratch/groups/&lt;ag-doe&gt;/users/&lt;user&gt;</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>User <code>work</code> &amp; <code>scratch</code> spaces are now part of the user's group folder.
+This means, groups need to coordinate internally to distribute their allotted quota according to each user's needs.</p>
+</div>
+<p>The implementation is done <em>via</em> symlinks created by default when the user account is moved to its new destination:</p>
+<ul>
+<li><code>~/work -&gt; /data/cephfs-1/work/groups/&lt;group&gt;/users/&lt;user&gt;</code></li>
+<li><code>~/scratch -&gt; /data/cephfs-1/scratch/groups/&lt;group&gt;/users/&lt;user&gt;</code></li>
+</ul>
+<h3 id="groups">Groups<a class="headerlink" href="#groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Work on Tier 1: <code>/data/cephfs-1/work/groups/&lt;group&gt;</code></li>
+<li>Scratch on Tier 1: <code>/data/cephfs-1/scratch/groups/&lt;group&gt;</code></li>
+<li>Tier 2 storage: <code>/data/cephfs-2/unmirrored/groups/&lt;group&gt;</code></li>
+<li>Mirrored space on Tier 2 is available on request.</li>
+</ul>
+<h3 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Work on Tier 1: <code>/data/cephfs-1/work/projects/&lt;project&gt;</code></li>
+<li>Scratch on Tier 1: <code>/data/cephfs-1/scratch/projects/&lt;project&gt;</code></li>
+<li>Tier 2 storage is available on request.</li>
+</ul>
+<h2 id="recommended-practices">Recommended practices<a class="headerlink" href="#recommended-practices" title="Permanent link">&para;</a></h2>
+<h3 id="data-locations">Data locations<a class="headerlink" href="#data-locations" title="Permanent link">&para;</a></h3>
+<h4 id="tiers">Tiers<a class="headerlink" href="#tiers" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Tier 1: Designed for many I/O operations. Store files here which are actively used by your compute jobs.</li>
+<li>Tier 2: Big, cheap storage. Fill with files not in active use.</li>
+<li>Tier 2 mirrored: Extra layer of security. Longer term storage of invaluable data.</li>
+</ul>
+<h4 id="folders">Folders<a class="headerlink" href="#folders" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Home: Configuration files, templates, generic scripts, &amp; small documents.</li>
+<li>Work: Conda environments, R packages, data actively processed or analyzed.</li>
+<li>Scratch: Non-persistent storage for temporary or intermediate files, caches, etc.</li>
+</ul>
+<h3 id="project-life-cycle">Project life cycle<a class="headerlink" href="#project-life-cycle" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Import raw data on Tier 2 for validation (checksums, …)</li>
+<li>Stage raw data on Tier 1 for QC &amp; processing.</li>
+<li>Save processing results to Tier 2.</li>
+<li>Continue analysis on Tier 1.</li>
+<li>Save analysis results on Tier 2.</li>
+<li>Reports &amp; publications can remain on Tier 2.</li>
+<li>After publication (or the end of the project), files on Tier 1 should be deleted.</li>
+</ol>
+<h2 id="example-use-cases">Example use cases<a class="headerlink" href="#example-use-cases" title="Permanent link">&para;</a></h2>
+<p>Space on Tier 1 is limited.
+Your colleagues, other cluster users, and admins will be very grateful if you use it only for files you actively need to perform read/write operations on.
+This means main project storage should probably always be on Tier 2 with workflows to stage subsets of data onto Tier 1 for analysis.</p>
+<p>These examples are based on our experience of processing diverse NGS datasets.
+Your mileage may vary but there is a basic principle that remains true for all projects.</p>
+<h3 id="dna-sequencing-wes-wgs">DNA sequencing (WES, WGS)<a class="headerlink" href="#dna-sequencing-wes-wgs" title="Permanent link">&para;</a></h3>
+<p>Typical Whole Genome Sequencing data of a human sample at 100x coverage requires about 150  GB of storage, Whole Exome Sequencing files occupy between 6 and 30  GB.
+These large files require considerable I/O resources for processing, in particular for the mapping step.
+A prudent workflow for these kind of analysis would therefore be the following:</p>
+<ol>
+<li>For one sample in the cohort, subsample its raw data files (<code>fastqs</code>) from the Tier 2 location to Tier 1. <a href="https://github.com/lh3/seqtk"><code>seqtk</code></a> is your friend!</li>
+<li>Test, improve &amp; check your processing scripts on those smaller files.</li>
+<li>Once you are happy with the scripts, copy the complete <code>fastq</code> files from Tier 2 to Tier 1. Run the your scripts on the whole dataset, and copy the results (<code>bam</code> or <code>cram</code> files) back to Tier 2.</li>
+<li><strong>Remove raw data &amp; bam/cram files from Tier 1</strong>, unless the downstream processing of mapped files (variant calling, structural variants, ...) can be done immediatly.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don't forget to use your <code>scratch</code> area for transient operations, for example to sort your <code>bam</code> file after mapping.
+More information on how to efficiently set up your temporary directory <a href="../../best-practice/temp-files/">here</a>.</p>
+</div>
+<h3 id="bulk-rna-seq">bulk RNA-seq<a class="headerlink" href="#bulk-rna-seq" title="Permanent link">&para;</a></h3>
+<p>Analysis of RNA expression datasets are typically a long and iterative process, where the data must remain accessible for a significant period.
+However, there is usually no need to keep raw data files and mapping results available once the gene &amp; transcripts counts have been generated.
+The count files are much smaller than the raw data or the mapped data, so they can live longer on Tier 1. </p>
+<p>A typical workflow would be:</p>
+<ol>
+<li>Copy your <code>fastq</code> files from Tier 2 to Tier 1.</li>
+<li>Perform raw data quality control, and store the outcome on Tier 2.</li>
+<li>Get expression levels, for example using <code>salmon</code> or <code>STAR</code>, and store the results on Tier 2.</li>
+<li>Import the expression levels into <code>R</code>, using <code>tximport</code> and <code>DESeq2</code> or <code>featureCounts</code> &amp; <code>edgeR</code>, for example.</li>
+<li>Save expression levels (<code>R</code> objects) and the output of <code>salmon</code>, <code>STAR</code>, or any mapper/aligner of your choice to Tier 2.</li>
+<li><strong>Remove raw data, bam &amp; count files from Tier 1.</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If using <code>STAR</code>, don't forget to use your <code>scratch</code> area for transient operations.
+More information on how to efficiently set up your temporary directory <a href="../../best-practice/temp-files/">here</a></p>
+</div>
+<h3 id="scrna-seq">scRNA-seq<a class="headerlink" href="#scrna-seq" title="Permanent link">&para;</a></h3>
+<p>The analysis workflow of bulk RNA &amp; single cell dataset is conceptually similar:
+Large raw files need to be processed once and only the outcome of the processing (gene counts matrices) are required for downstream analysis.
+Therefore, a typical workflow would be:</p>
+<ol>
+<li>Copy your <code>fastq</code> files from Tier 2 to Tier 1.</li>
+<li>Perform raw data QC, and store the results on Tier 2. </li>
+<li>Get the count matrix, e.&nbsp;g. using <code>Cell Ranger</code> or <code>alevin-fry</code>, perform count matrix QC and store the results on Tier 2.</li>
+<li><strong>Remove raw data, bam &amp; count files from Tier 1.</strong></li>
+<li>Downstream analysis with <code>seurat</code>, <code>scanpy</code>, or <code>Loupe Browser</code>.</li>
+</ol>
+<h3 id="machine-learning">Machine learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h3>
+<p>There is no obvious workflow that covers most used cases for machine learning. 
+However,</p>
+<ul>
+<li>Training might be done on scratch where data access is quick and data size not as constrained as on work space. But files will disappear after 14 days.</li>
+<li>Some models can be updated with new data, without needing to keep the whole dataset on Tier 1.</li>
+</ul>
+<h2 id="data-migration-process-from-old-fast-to-cephfs">Data migration process from old <code>/fast</code> to CephFS<a class="headerlink" href="#data-migration-process-from-old-fast-to-cephfs" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Administrative preparations  <ol>
+<li>HPC-Access registration (PIs will receive in invite mail)</li>
+<li>PIs need to assign a delegate.</li>
+<li>PI/Delegate needs to add group and the projects once.</li>
+<li>New Tier 1 &amp; 2 resources will be allocated.</li>
+</ol>
+</li>
+<li>Users &amp; group home directories are moved by HPC admin (big bang).</li>
+<li>All directories on <code>/fast</code> set to read-only, that is:<ul>
+<li><code>/fast/home/users/&lt;user&gt;</code> &amp; <code>/fast/work/users/&lt;user&gt;</code></li>
+<li><code>/fast/home/groups/&lt;group&gt;</code> &amp; <code>/fast/work/groups/&lt;group&gt;</code></li>
+</ul>
+</li>
+<li>Work data migration is done by the users (Tier 2 is primary target, Tier 1 staging when needed).  </li>
+</ol>
+<p>Best practice and/or tools will be provided.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The users' <code>work</code> space will be moved to the group's <code>work</code> space.</p>
+</div>
 
 
 

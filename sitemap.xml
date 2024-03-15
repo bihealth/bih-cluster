@@ -431,7 +431,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bihealth.github.io/bih-cluster/storage/accessing-snapshots/</loc>
+         <loc>https://bihealth.github.io/bih-cluster/storage/migration-faq/</loc>
          <lastmod>2024-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -447,6 +447,11 @@
     </url>
     <url>
          <loc>https://bihealth.github.io/bih-cluster/storage/storage-locations/</loc>
+         <lastmod>2024-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bihealth.github.io/bih-cluster/storage/storage-migration/</loc>
          <lastmod>2024-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -18,7 +18,7 @@
         <link rel="prev" href="../storage-locations/">
       
       
-        <link rel="next" href="../../slurm/overview/">
+        <link rel="next" href="../querying-storage/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Automated Cleanup - BIH HPC Docs</title>
+        <title>Scratch Cleanup - BIH HPC Docs</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#automated-cleanup-of-scratch-volumes" class="md-skip">
+        <a href="#automated-cleanup-of-scratch" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Automated Cleanup
+              Scratch Cleanup
             
           </span>
         </div>
@@ -1256,48 +1256,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../accessing-snapshots/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Accessing Snapshots
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../querying-storage/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Querying Quotas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../storage-locations/" class="md-nav__link">
         
   
@@ -1332,12 +1290,75 @@
         
   
   <span class="md-ellipsis">
-    Automated Cleanup
+    Scratch Cleanup
   </span>
   
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../querying-storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Querying Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration FAQ
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3050,162 +3071,13 @@
   
 
 
-<h1 id="automated-cleanup-of-scratch-volumes">Automated Cleanup of Scratch Volumes<a class="headerlink" href="#automated-cleanup-of-scratch-volumes" title="Permanent link">&para;</a></h1>
-<p>The <code>scratch</code> volumes are automatically cleaned up nightly with the following mechanism.</p>
-<ul>
-<li>The <code>scratch</code> volume of each user, group, and project is crawled to identifies files that are older than two weeks.</li>
-<li>These files are moved into a directory that is named by the current date <code>YYYY-MM-DD</code> into the same sub folders as it was below <code>scratch</code>.</li>
-<li>These scratch directories are removed after two more weeks.</li>
-</ul>
-<p>The cleanup code is a (probably updated) version of the following code:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">&quot;&quot;&quot;Tool to cleanup the scratch directories on BIH HPC.&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">argparse</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span><span class="p">,</span> <span class="n">dirname</span><span class="p">,</span> <span class="n">normpath</span><span class="p">,</span> <span class="n">islink</span><span class="p">,</span> <span class="n">exists</span><span class="p">,</span> <span class="n">isdir</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="c1">#: The maximum age of files (by mtime) before they are put into the thrash bin.</span>
-<span class="n">MAX_AGE_SCRATCH</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-
-<span class="c1">#: The maximum age of trash cans to keep around.</span>
-<span class="n">MAX_AGE_TRASH</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-
-<span class="c1">#: Name of trash can directory.</span>
-<span class="n">TRASH_DIR_NAME</span> <span class="o">=</span> <span class="s2">&quot;BIH_TRASH&quot;</span>
-
-
-<span class="k">def</span> <span class="nf">setup_trash</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Setup the trash directory.&quot;&quot;&quot;</span>
-    <span class="n">trash_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">,</span> <span class="n">TRASH_DIR_NAME</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">))</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Today&#39;s trash dir is </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  - mkdir -p </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  - chown root:root </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">))</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  - chmod 0755 </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">))</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  - chown root:root </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  - chmod 0755 </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-        <span class="c1"># Ensure that today&#39;s trash dir either does not exist or is a directory.</span>
-        <span class="k">if</span> <span class="n">exists</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">))</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isdir</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">)):</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">exists</span><span class="p">(</span><span class="n">trash_path</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">isdir</span><span class="p">(</span><span class="n">trash_path</span><span class="p">):</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">))</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">trash_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o775</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chown</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">trash_path</span><span class="p">),</span> <span class="mo">0o755</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chown</span><span class="p">(</span><span class="n">trash_path</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">trash_path</span><span class="p">,</span> <span class="mo">0o755</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">trash_path</span>
-
-<span class="k">def</span> <span class="nf">move_files</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Move files into the trash directory.&quot;&quot;&quot;</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  Walking </span><span class="si">%s</span><span class="s2"> recursively&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">):</span>
-        <span class="c1"># Do not go into trash directory itself.</span>
-        <span class="k">if</span> <span class="n">root</span> <span class="o">==</span> <span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">:</span>
-            <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="n">TRASH_DIR_NAME</span><span class="p">]</span>
-        <span class="c1"># Only create output directory once.</span>
-        <span class="n">dir_created</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="c1"># Walk files.</span>
-        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="n">path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;    considering </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-            <span class="n">age</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">lstat</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">st_mtime</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="n">MAX_AGE_SCRATCH</span><span class="p">:</span>
-                <span class="n">local</span> <span class="o">=</span> <span class="n">path</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
-                <span class="n">dest</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">trash_path</span><span class="p">,</span> <span class="n">local</span><span class="p">)</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;    - chown root:root </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;    - chmod 0644 </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">lchown</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">islink</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="mo">0o644</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">dir_created</span><span class="p">:</span>
-                    <span class="n">dir_created</span> <span class="o">=</span> <span class="kc">True</span>
-                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;    - mkdir -p </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">dirname</span><span class="p">(</span><span class="n">dest</span><span class="p">))</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-                        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">dirname</span><span class="p">(</span><span class="n">dest</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="mo">0o775</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;    - </span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-                    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">empty_trash</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Empty the trash cans.&quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">log_error</span><span class="p">(</span><span class="n">_func</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">):</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;could not delete path </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">)</span>
-
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  Emptying the trash cans...&quot;</span><span class="p">)</span>
-    <span class="n">trash_base</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">,</span> <span class="n">TRASH_DIR_NAME</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">trash_base</span><span class="p">):</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">trash_base</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">entries</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\d\d\d\d-\d\d-\d\d&quot;</span><span class="p">,</span> <span class="n">entry</span><span class="p">):</span>
-            <span class="n">path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">,</span> <span class="n">TRASH_DIR_NAME</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    considering </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-            <span class="n">folder_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">now</span> <span class="o">-</span> <span class="n">folder_date</span> <span class="o">&gt;</span> <span class="n">MAX_AGE_TRASH</span><span class="p">:</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;    - rm -rf </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
-                    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">onerror</span><span class="o">=</span><span class="n">log_error</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;  ... done emptying the trash cans.&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Actually execute the scratch directory cleanup.&quot;&quot;&quot;</span>
-    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>  <span class="c1"># use one start time</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting to cleanup </span><span class="si">%s</span><span class="s2">...&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">)</span>
-    <span class="n">trash_path</span> <span class="o">=</span> <span class="n">setup_trash</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
-    <span class="n">move_files</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">,</span> <span class="n">trash_path</span><span class="p">)</span>
-    <span class="n">empty_trash</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;... done with cleanup.&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main entry point into the program.&quot;&quot;&quot;</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;scratch_dir&quot;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;SCRATCH_DIR&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Path to the scratch directory&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">,</span> <span class="s2">&quot;-v&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;verbosity&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--quiet&quot;</span><span class="p">,</span> <span class="s2">&quot;-q&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;quiet&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
-    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
-        <span class="s2">&quot;--dry-run&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;-n&quot;</span><span class="p">,</span>
-        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;dry_run&quot;</span><span class="p">,</span>
-        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
-        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Do not actually perform the actions&quot;</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="o">.</span><span class="n">avoids_symlink_attacks</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot execute with rmtree on unsafe platforms!&quot;</span><span class="p">)</span>
-
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
-    <span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span> <span class="o">=</span> <span class="n">normpath</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">scratch_dir</span><span class="p">)</span>
-
-    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)-15s</span><span class="s2"> </span><span class="si">%(levelname)3.3s</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">verbosity</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">run</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-</code></pre></div>
+<h1 id="automated-cleanup-of-scratch">Automated Cleanup of Scratch<a class="headerlink" href="#automated-cleanup-of-scratch" title="Permanent link">&para;</a></h1>
+<p>The <code>scratch</code> space is automatically cleaned up nightly with the following mechanism.</p>
+<ol>
+<li>Daily snapshots of the <code>scratch</code> folder are created and retained for 3 days.</li>
+<li>Files which were not modified for the last 14 days are removed.</li>
+<li>Erroneously deleted files can be manually retrieved from the snapshots.</li>
+</ol>
 
 
 
