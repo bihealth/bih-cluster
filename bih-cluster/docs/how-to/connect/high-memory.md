@@ -1,11 +1,7 @@
 # How-To: Connect to High-Memory Nodes
 
-## Prequisites
-
-You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access.
-
-Afterwards, you can connect to the High-Memory using the `highmem` SLURM partition (see below).
-Jobs allocating more than 200GB of RAM should be routed automatically to the `highmem` nodes.
+You can connect to high-memory nodes using the `highmem` SLURM partition (see below).
+Jobs allocating more than 200GB of RAM are routed automatically to the `highmem` nodes.
 
 ## How-To
 

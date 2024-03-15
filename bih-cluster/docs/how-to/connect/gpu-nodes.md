@@ -6,33 +6,23 @@ Connecting to a node with GPUs is easy.
 You simply request a GPU using the `--gres=gpu:$CARD:COUNT` (for `CARD=tesla` or `CARD=a40`) argument to `srun` and `batch`.
 This will automatically place your job in the `gpu` partition (which is where the GPU nodes live) and allocate a number of `COUNT` GPUs to your job.
 
-!!! note
+!!! info
+    Fair use rules apply.
+    As GPU nodes are a limited resource, excessive use by single users is prohibited and can lead to mitigating actions.
+    Be nice and cooperative with other users.
+    Tip: `getent passwd USER_NAME` will give you a user's contact details.
 
-    Recently, `--gres=gpu:tesla:COUNT` was often not able to allocate the right partion on it's own.
-    If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with `--partition gpu` (or `#SBATCH --partition gpu` in batch file).
-
-!!! hint
-
-    Make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)".
-
-!!! important "Interactive Use of GPU Nodes is Discouraged"
+!!! warning "Interactive Use of GPU Nodes is Discouraged"
 
     While interactive computation on the GPU nodes is convenient, it makes it very easy to forget a job after your computation is complete and let it run idle.
     While your job is allocated, it blocks the **allocated** GPUs and other users cannot use them although you might not be actually using them.
     Please prefer batch jobs for your GPU jobs over interactive jobs.
 
-    Further, interactive GPU jobs are currently limited to 24 hours.
+    Furthermore, interactive GPU jobs are currently limited to 24 hours.
     We will monitor the situation and adjust that limit to optimize GPU usage and usability.
-    
-!!! important "Allocation of GPUs through Slurm is mandatory"
 
-    In other word: using GPUs from SSH sessions is prohibited.
+    Please also note that allocation of GPUs through Slurm is mandatory, in other words: Using GPUs via SSH sessions is prohibited.
     The scheduler is not aware of manually allocated GPUs and this interferes with other users' jobs.
-
-## Prequisites
-
-You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access.
-Afterwards, you can connect to the GPU nodes as shown below.
 
 ## Preparation
 
@@ -95,6 +85,8 @@ True
 
     Recently, `--gres=gpu:tesla:COUNT` was often not able to allocate the right partion on it's own.
     If scheduling a GPU fails, consider additionally indicating the GPU partion explicitely with `--partition gpu` (or `#SBATCH --partition gpu` in batch file).
+
+    Also make sure to read the FAQ entry "[I have problems connecting to the GPU node! What's wrong?](../../help/faq.md#i-have-problems-connecting-to-the-gpu-node-whats-wrong)" if you encounter problems.   
 
 ## Bonus #1: Who is using the GPUs?
 
