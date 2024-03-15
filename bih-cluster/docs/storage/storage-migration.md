@@ -159,6 +159,3 @@ However,
 4. Work data migration is done by the users (Tier 2 is primary target, Tier 1 staging when needed).  
 
 Best practice and/or tools will be provided.
-
-!!! note
-    The users' `work` space will be moved to the group's `work` space.
