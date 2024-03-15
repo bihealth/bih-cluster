@@ -12,9 +12,16 @@ $ TARGET=/data/cephfs-2/unmirrored/projects/my-project/
 $ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
 ```
 
-2. Remove the `--dry-run` flag to perform the actual copy process.
-3. If you are happy with how things are, add the `--remove-source-files` flag to `rsync`.
-4. Check if all files are gone from the SOURCE folder and delete:
+2. Remove the `--dry-run` flag to start the actual copying process.
+3. Perform a second `rsync` to check if all files were successfully transferred.
+   Paranoid users might want to add the `--checksums` flag to `rsync` or use `hashdeep`.
+   Please note the flag `--remove-source-files` which will do exactly as the name suggests,
+   but leaves empty directories behind.
+```sh
+$ rsync -ah --stats --remove-source-files --dry-run $SOURCE $TARGET
+```
+4. Again, remove the `--dry-run` flag to start the actual deletion.
+5. Check if all files are gone from the SOURCE folder and remove the empty directories:
 ```sh
 $ find $SOURCE -type f | wc -l
 $ rm -r $SOURCE
@@ -22,10 +29,7 @@ $ rm -r $SOURCE
 
 !!! Warning 
     When defining your source location, do not use the `*` wildcard character.
-    This will not match hidden (dot) files and leave them behind.
-
-!!! Note
-	Paranoid users may want to consider using `hashdeep` to ensure that all files were successfully copied.
+    It will not match hidden (dot) files and leave them behind.
 
 ## Conda environments
 Conda environment tend to not react well when the folder they are stored in is moved from its original location.
