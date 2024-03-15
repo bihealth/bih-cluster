@@ -87,7 +87,7 @@ nav:
     - "HPC Helpdesk": help/helpdesk.md
     - "Good Tickets": help/good-tickets.md
     - "Frequently Asked Questions": help/faq.md
-  - "Overview":
+  - "Technical details":
     - "For the Impatient": overview/for-the-impatient.md
     - "Architecture": overview/architecture.md
     - "Job Scheduler": overview/job-scheduler.md

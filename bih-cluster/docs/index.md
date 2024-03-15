@@ -1,35 +1,18 @@
 # Home
 
-This is the documentation of the BIH high-performance compute (HPC), also called HPC 4 Research.
+This is the documentation of the BIH high-performance computing (HPC) cluster, also called HPC 4 Research.
 The BIH HPC cluster is maintained by CUBI (Core Unit Bioinformatics).
 
 This documentation is maintained by BIH CUBI and the user community.
-This is a living document that you can update and add to.
+It is a living document that you can update and add to.
 See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
-:arrow_left: The global table of contents is on the left, it is on the right for the current page :arrow_right:.
-
-!!! tip "Connecting to the Cluster"
-
-    - Web Access: https://hpc-portal.cubi.bihealth.org
-    - SSH-Based Access:
-
-        ```bash
-        # Interactive Login as Charite/MDC user
-        ssh -l user_c hpc-login-1.cubi.bihealth.org  # OR login-2...
-        ssh -l user_m hpc-login-1.cubi.bihealth.org  # OR login-2...
-        # File Transfer as Charite/MDC user
-        sftp user_c@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
-        sftp user_m@hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
-        # Of course, you can also log into the transfer nodes (no Slurm)
-        ssh -l user_c hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
-        ssh -l user_m hpc-transfer-1.cubi.bihealth.org  # OR hpc-transfer-2...
-        ```
+:arrow_left: The global table of contents is on the left, the one of the current page is on the right. :arrow_right:
 
 !!! tip "Additional resources"
 
-    - hpc-talk (user discussion forum): https://hpc-talk.cubi.bihealth.org/
-    - metrics (performance and workload monitoring): https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302
+    - [User discussion forum](https://hpc-talk.cubi.bihealth.org/)
+    - [Performance and workload monitoring](https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302)
 
 
 ## Getting Started
@@ -44,30 +27,19 @@ To get started, the following is a suggested (in order) set of pages to read aft
 Then, continue reading through the manual.
 
 
-!!! cite "Acknowledging BIH HPC Usage"
+!!! note "Acknowledging BIH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
     Please add your publications using the cluster to [this list](misc/publication-list).
 
 ## Maintenance Announcements
-
-!!! attention "Current and Future Maintenances"
-
-    - :warning: 2023, May 09-10: [BIH HPC / CUBI services downtime: maintenance at MDC data center](https://hpc-talk.cubi.bihealth.org/t/bih-hpc-cubi-services-downtime-maintenance-at-mdc-data-center-09-10-05-2023/525).
-    - :nerd: August 30: Replace defect Nvidia V100 and make hpc-gpu-4 available to slurm users again.
-    - :nerd: March 9: [Updated TensorFlow How-To to Slurm and Tensorflow 2.0](how-to/software/tensorflow/)
-    - :warning: March 22-23: Compute and Storage Downtime.
-    - :warning: March: Deprecation of using DRMAA.
-    - :sparkles: March 1: New scheduler settings to address high job per user count.
-    - :warning: February 14: Limiting allocateable memory per user.
-    - :book: February 3: Adding Ganglia documentation.
-    - :adhesive_bandage: February 3: Ganglia monitoring of GPFS and NVIDIA GPU metrics.
-    - :warning: January 31: Enforcing usage of `localtmp` resource above 100MB of node-local storage.
+- :locomotive: Until mid 2024: Migration of all user data from GPFS to CephFS storage.
+- :headstone: Late 2024: Retirement of GPFS/DDN storage.
 
 See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
 
 ## Connecting to the Cluster
 
-You will need to perform some configuration steps after you have been registered with the cluster (via email to hpc-helpdesk@bih-charite.de by a group leader/PI).
+You will need to perform some configuration steps after you have been registered with the cluster.
 Here are the most important points:
 
 1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux) or [Windows](connecting/generate-key/windows).
@@ -77,17 +49,37 @@ Here are the most important points:
 
 There are various other topics covered in the "Connecting" section that might be of interest to you.
 
+!!! tip "tl;dr"
+
+    - Web Access: https://hpc-portal.cubi.bihealth.org
+    - SSH-Based Access:
+
+        ```bash
+        # Interactive login (choose one)
+        ssh username@hpc-login-1.cubi.bihealth.org
+        ssh username@hpc-login-2.cubi.bihealth.org
+
+        # File Transfer (choose one)
+        sftp username@hpc-transfer-1.cubi.bihealth.org
+        sftp username@hpc-transfer-2.cubi.bihealth.org
+
+        # Interactive login into the transfer nodes (choose one)
+        ssh username@hpc-transfer-1.cubi.bihealth.org
+        ssh username@hpc-transfer-2.cubi.bihealth.org
+        ```
+
 ## Documentation Structure
 
 The documentation is structured as follows:
 
 - **Administrative** information about administrative processes such as how to get access, register users, work groups, and projects.
 - **Getting Help** explains how you can obtain help in using the BIH HPC.
-- **Overview** detailed information about the cluster setup.
+- **Technical details** has detailed information about the cluster setup.
   This includes the description of the hardware, network, software, and policies.
 - **Connecting** technical help on connecting to the cluster.
 - **First Steps** information for getting you started quickly.
-- **Slurm Scheduler** technical help on using the Slurm scheduler.
+- **Storage** describes how and where files are stored.
+- **Cluster Scheduler** technical help on using the Slurm scheduler.
 - **Best Practice** guidelines on recommended usage of certain aspects of the system.
 - **Static Data** documentation about the static data (files) collection on the cluster.
 - **How-To** short(ish) solutions for specific technical problems.
