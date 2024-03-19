@@ -118,17 +118,7 @@ Please see the memory part of the answer to [My job terminated before being done
 ## How can I create a new project?
 
 You can create a project if you are either a group leader of an AG or a delegate of an AG.
-
-In this case, please send an email to hpc-admin@bih-charite.de and request a new project.
-
-## I have a problem with my SSH key, help!
-
-Please contact [MDC Helpdesk](mailto:helpdesk@mdc-berlin.de) for help.
-CUBI is also only a user on the BIH cluster and has no access to the user, password, or SSH keys registries.
-
-## I have a problem with logging into the cluster, help!
-
-See ["I have a problem with my SSH key, help!"](#i-have-a-problem-with-my-ssh-key-help)
+If this is the case, please follow [these instructions](../../admin/getting-access/#projects).
 
 ## I cannot create PNGs in R
 
