@@ -20,9 +20,9 @@ Read the following set of pages (in order) to learn how to get access and connec
 
 1. [Getting Access](admin/getting-access).
 2. [Connecting](connecting/connecting)
-3. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
-4. [For the Impatient](overview/for-the-impatient).
-5. [The Cluster Tutorial: First Steps](first-steps/episode-0).
+3. [Storage](storage/storage-locations)
+4. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
+5. [HPC Tutorial](hpc-tutorial/episode-0).
 
 Then, continue reading through the manual.
 

@@ -7,7 +7,7 @@ For more detailed information, you will have to refer to the [Slurm website](htt
 For a quick introduction and hands-on examples, please see the manual sections
 
 - Overview, starting with [For the Impatient](../overview/for-the-impatient.md), and
-- First Steps/Tutorial, starting with [Episode 0](../first-steps/episode-0.md).
+- First Steps/Tutorial, starting with [Episode 0](../hpc-tutorial/episode-0.md).
 
 Also, make sure that you are aware of our [How-To: Debug Software](../how-to/misc/debug-software.md) and [How-To: Debug Software on HPC Systems](../how-to/misc/debug-at-hpc.md) guides in the case that something goes wrong.
 
