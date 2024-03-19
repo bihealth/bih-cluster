@@ -1,8 +1,7 @@
 # Home
 
-This is the documentation of the BIH high-performance computing (HPC) cluster, also called HPC 4 Research.
-The BIH HPC cluster is maintained by CUBI (Core Unit Bioinformatics).
-
+Welcome to the user documentation of the BIH high-performance computing (HPC) cluster, also called HPC 4 Research.
+The BIH HPC cluster is managed by [CUBI](https://cubi.bihealth.org) (Core Unit Bioinformatics).
 This documentation is maintained by BIH CUBI and the user community.
 It is a living document that you can update and add to.
 See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
@@ -17,12 +16,13 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 ## Getting Started
 
-To get started, the following is a suggested (in order) set of pages to read after your first successful connection to the cluster.
+Read the following set of pages (in order) to learn how to get access and connect to the cluster.
 
 1. [Getting Access](admin/getting-access).
-2. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
-3. [For the Impatient](overview/for-the-impatient).
-4. [The Cluster Tutorial: First Steps](first-steps/episode-0).
+2. [Connecting](connecting/connecting)
+3. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
+4. [For the Impatient](overview/for-the-impatient).
+5. [The Cluster Tutorial: First Steps](first-steps/episode-0).
 
 Then, continue reading through the manual.
 

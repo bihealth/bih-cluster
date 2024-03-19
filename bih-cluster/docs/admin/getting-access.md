@@ -1,64 +1,40 @@
 # Getting Access
+Access to the BIH HPC cluster is conceptually based on **user groups** (also known as labs or units) and **projects**.
+Users have a relatively limited storage quota within their private home folder and store big data primarily within their group's work space or in project folders.
+**Projects** are collaborative efforts involving multiple PIs/groups and are allocated separate storage space on the cluster.
 
-!!! tip "Get Access"
+Independent group leaders at BIH/Charité/MDC can request a **group** on the cluster and name group **members**. 
+The work group **leader** (the group PI) bears the responsibility for the group's **members** and ensures that [cluster policies and etiquette](../policies/) are followed.
+In brief: Fair usage rules apply and the cluster ist not to be abused for unethical or illegal purposes.
+Major and/or continued violations may lead to exclusion of the entire group.  
 
-    A Charite or MDC account is required for accessing HPC 4 Research.
+The group leader may also name one **delegate** (typically an IT-savvy Post-Doc) who is thereby allowed to take decision about cluster usage and work group management on behalf of the group leader. 
+The above mentioned responsibilities stay with the group leader.  
 
-    1. **Register Users.** **Group leaders/PIs** register their members via hpc-helpdesk@bih-charite.de using the forms below.
-    2. **Upload Key.** Upload your SSH key through the Charite and MDC infrastructure.
-    3. **Connect.** `ssh -l <user>_<c or m>@hpc-login-1.cubi.bihealth.org` or using `hpc-login-2.cubi.bihealth.org`.
+!!! note
 
-Access to the BIH HPC clusters is based on the **work groups** (also known as labs, units) and **projects** concepts. 
-The work groups [data/folder structure](../../storage/storage-locations/) can only be accessed by the work group members and is not accessible to other cluster users.
-Collaborative projects involving multiple PIs/groups should be realized using the **project** mechanism described below.
-Please note, the **hot** near cluster fast storage is rather expensive and sparse resource which is not intended for long term storage. 
-
-Independent group leaders at BIH/Charité/MDC can request a **work group** on the cluster and name **group members**. 
-The work group **leader** (the group PI) has to take responsibility and undertake the necessary measures to ensure that all **group members** follow the [cluster policies and etiquette](../policies/) for fair usage and do not abuse the cluster resources for unethical or illegal purposes.
-Major and/or continued violations may lead to exclusion of the work group form the cluster.  
-
-The **leader** may also name one **delegate** (typically an IT savvy Post-Doc) who is allowed to take decision about cluster usage and work group on behalf of the leader. 
-The above mentioned responsibilities stay with the work group leader.  
-
-Data can also be managed in **projects** which allow 
-
-1. cross-group collaboration spaces and
-2. substructured access spaces, e.g., data where only selected group members may access data (e.g. not each internship student may get access to all valuable and potentially sensitive data).
-
-Projects are also an excellent way to partition your data into set with different life 
-
-HPC 4 Research is available for Charite, MDC, and BIH networks.
-
-```bash
-# Charite Users
-host:~$ ssh -l user_c hpc-login-1.cubi.bihealth.org
-# MDC Users
-host:~$ ssh -l user_m hpc-login-1.cubi.bihealth.org
-```
-
-!!! important "Accounts and Email Adresses"
-
-    - All users on the cluster must already have an account with either Charite/BIH or MDC.
-    - Please only use email addresses from the institutions Charite, BIH, MDC.
+    - A Charité or MDC user account is required for accessing HPC 4 Research.
+    - Please only use email addresses from the institutions Charite, BIH, or MDC in the forms below.
 
 ## Work Groups
+All cluster users are member of exactly one primary work group.
+This affiliation is usually defined by real life organisational structures within Charité/BIH/MDC.
+Leaders of independent research groups (PIs) can apply for a new cluster work group as follows:
 
-The process to create a new group is as follows.
+1. The group leader sends an email to hpc-helpdesk@bih-charite.de and includes the filled-out form below.
+   Please read the notes box before sending.
+2. The HPC helpdesk decides on the request and creates corresponding objects on the cluster (users, groups, directories).
+3. New users are notified and sent further instructions via email.
 
-1. The group leader sends an email to hpc-helpdesk@bih-charite.de and fills out the form below.
-   Please consider the notes below on this page.
-2. hpc-helpdesk decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
-3. All new users are notified and further instructions are sent to them via email.
+!!! warning "Important"
+    Changes to an existing group (adding new users, changes in resources, etc.) can only be requested by group leaders and delegates.
+    Please re-use the form sans the resources section for adding new group members.
 
-Subsequently, both owner and delegate (but **only owner and delegate**) can initiate changes (new users, resource changes etc.) to the group.
-
-### Form
-
+### Form 
 Example values are given in curly braces.
 
 ```
 # Group "ag-doe"
-
 Cluster: HPC 4 Research
 Group leader/PI: {John Doe}
 Delegate [optional]: {Max Mustermann}
@@ -68,12 +44,9 @@ Required resources:
 - storage in TB: {1 TB}
 - CPU hours per year: {approx. 1000}
 - GPU hours per year: {none}
-- Number of files [if >> 1M]: {less than 1M}
 
 # Users
-
 ## User 1
-
 - cluster: HPC 4 Research
 - first name: John
 - last name: Doe
@@ -85,38 +58,33 @@ Required resources:
     - [ ] Charite
     - [ ] MDC
 - BIH/Charite/MDC user name: doej
-- duration of cluster access (max 1 year): 2020-03-30 to 2021-03-30
 
 [etc.]
 ```
 
-### Notes
-
-- Work groups on the cluster must have an owner (its leader, principal investigator, etc.)
-- Group ownership implies control but also accountability for their work group and members.
-- Through the delegate mechanism, control can be delegated to up to one person (e.g., post-doc in the lab).
-- **Users can be members of one work group only.**
-
-We **strongly** dis-encourage on boarding non lab members into your group. 
-This cause biases in usage accounting, may raise concerns in IT security and data privacy audits and also puts unfair responsibilities on the group leader. 
-Please use the **project** mechanism described below. 
+!!! note "Notes"
+    - All cluster groups must have an owner and may have one delegate.
+    - Group ownership implies control but also accountability for their group files and members.
+    - Users can only be members of one primary work group.
+    - We **strongly** dis-encourage on-boarding non-lab members into your group.
+      This cause biases in usage accounting, may raise concerns in IT security and data privacy audits and also puts unfair responsibilities on the group leader.
 
 ## Projects
 
-Projects are very similar to work groups with the main distinction that
-- users can be a member of multiple projects (no upper limit) 
-- projects can be accessible for member of different groups 
+Projects are secondary user groups to enable:
 
-Please note, project membership does not grant cluster access (a primary group membership is still required).
+- collaboration and data sharing across different work groups and
+- fine-grained allocation of additional storage resources. 
 
-Project creation can be initiated by group leaders and group delegates with the following process.
+Project creation can be initiated by group leaders and group delegates as follows:
 
-1. The initiator sends an email to hpc-helpdesk@bih-charite.de and fills out the following form.
-   Please consider the notes below on this page.
-2. hpc-helpdesk decides on the request and the corresponding objects are created on the cluster (users, groups, directories).
-3. All new users are notified and further instructions are sent to them via email.
+1. Send an email to hpc-helpdesk@bih-charite.de and includes the filled-out form below.
+   Please read the notes box before sending.
+2. The HPC helpdesk decides on the request and creates corresponding objects on the cluster (groups, directories).
 
-Subsequently, both owner and delegate can initiate changes (new users, resource changes etc.) to the project. 
+!!! warning "Important"
+    Changes to an existing project (adding new users, changes in resources, etc.) can only be requested by project owners and delegates.
+    Please send us cluster user names for adding new project members.
 
 ### Form
 
@@ -124,7 +92,6 @@ Example values are given in curly braces.
 
 ```
 # Project "doe-dbgap-rna"
-
 Cluster: HPC 4 Research
 Project owner: {John Doe}, {doej_c}
 Delegate [optional]: {Max Mustermann}, {musterm_c}
@@ -134,36 +101,13 @@ Required resources:
 - storage in TB: {1 TB}
 - CPU hours per year: {approx. 1000}
 - GPU hours per year: {none}
-- Number of files [if >> 1M]: {less than 1M}
 
-Additional members:
-- {Susi Sorglos}, {sorgls_c}
+Additional members (cluster user names):
+- {sorgls_c}
+- ...
 ```
 
-## Users
-
-If you wish to add users to your AG, please use the following form. Note that users you want to add to a project need to be associated with an AG first.
-
-The inquiry has to be send to hpc-helpdesk@bih-charite.de, either by the PI or the delegate.
-
-### Form
-
-```
-# User 1
-
-- cluster: HPC 4 Research
-- first name: John
-- last name: Doe
-- affiliation: Charite, Department of Oncology
-- institute email: john.doe@charite.de
-- institute phone: 030-8445-0
-- user has account with
-    - [ ] BIH
-    - [ ] Charite
-    - [ ] MDC
-- BIH/Charite/MDC user name: doej
-- duration of cluster access (max 1 year): 2020-03-30 to 2021-03-30
-- AG: ag-abcd
-
-[etc]
-```
+!!! note "Notes"
+    - All projects must have one owner and may have one delegate.
+    - Users can be associated with multiple projects.
+    - Project membership does not grant cluster access. A primary group affiliation is still required.
