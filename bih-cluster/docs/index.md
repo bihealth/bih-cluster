@@ -1,5 +1,4 @@
 # Home
-
 Welcome to the user documentation of the BIH high-performance computing (HPC) cluster, also called HPC 4 Research.
 The BIH HPC cluster is managed by [CUBI](https://cubi.bihealth.org) (Core Unit Bioinformatics).
 This documentation is maintained by BIH CUBI and the user community.
@@ -15,7 +14,6 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 
 
 ## Getting Started
-
 Read the following set of pages (in order) to learn how to get access and connect to the cluster.
 
 1. [Getting Access](admin/getting-access.md)
@@ -32,55 +30,26 @@ Then, continue reading through the manual.
     Please add your publications using the cluster to [this list](misc/publication-list.md).
 
 ## Maintenance Announcements
-- :locomotive: Until mid 2024: Migration of all user data from GPFS to CephFS storage.
+- :locomotive: Until mid 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
 - :headstone: Late 2024: Retirement of GPFS/DDN storage.
 
 See [Maintenance](admin/maintenance.md) for a detailed list of current, planned, and previous maintenance and update work.
 
-## Connecting to the Cluster
-
-You will need to perform some configuration steps after you have been registered with the cluster.
-Here are the most important points:
-
-1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux.md) or [Windows](connecting/generate-key/windows.md).
-2. [Submitting the key :arrow_up: to Charite](connecting/submit-key/charite.md) or [to MDC](connecting/submit-key/mdc.md).
-3. [Configuring your SSH client :wrench: on Linux and Mac](connecting/advanced-ssh/linux.md) or [Windows](connecting/advanced-ssh/windows.md).
-4. Bonus: [Connecting from external networks :flying_saucer:](connecting/from-external.md).
-
-There are various other topics covered in the "Connecting" section that might be of interest to you.
-
-!!! tip "tl;dr"
-
-    - Web Access: https://hpc-portal.cubi.bihealth.org
-    - SSH-Based Access:
-
-        ```bash
-        # Interactive login (choose one)
-        ssh username@hpc-login-1.cubi.bihealth.org
-        ssh username@hpc-login-2.cubi.bihealth.org
-
-        # File Transfer (choose one)
-        sftp username@hpc-transfer-1.cubi.bihealth.org
-        sftp username@hpc-transfer-2.cubi.bihealth.org
-
-        # Interactive login into the transfer nodes (choose one)
-        ssh username@hpc-transfer-1.cubi.bihealth.org
-        ssh username@hpc-transfer-2.cubi.bihealth.org
-        ```
+## Technical Details
+If you are interested in how this HPC cluster is set up on a technical level, we got you covered.
+There is [an entire section](./overview/for-the-impatient.md) on this.
 
 ## Documentation Structure
-
 The documentation is structured as follows:
 
 - **Administrative** information about administrative processes such as how to get access, register users, work groups, and projects.
-- **Getting Help** explains how you can obtain help in using the BIH HPC.
-- **Technical details** has detailed information about the cluster setup.
-  This includes the description of the hardware, network, software, and policies.
-- **Connecting** technical help on connecting to the cluster.
-- **First Steps** information for getting you started quickly.
+- **Connecting** technical help for connecting to the cluster.
 - **Storage** describes how and where files are stored.
-- **Cluster Scheduler** technical help on using the Slurm scheduler.
+- **HPC tutorial** a first demo project for getting you started quickly.
+- **Cluster Scheduler** technical help for using the Slurm scheduler.
+- **OnDemand Portal** introduces web HPC access.
 - **Best Practice** guidelines on recommended usage of certain aspects of the system.
-- **Static Data** documentation about the static data (files) collection on the cluster.
+- **Static Data (Cubit)** documentation about the static data (files) collection on the cluster.
 - **How-To** short(ish) solutions for specific technical problems.
+- **Getting Help** explains how you can obtain help in using the BIH HPC.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.
