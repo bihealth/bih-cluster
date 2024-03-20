@@ -30,6 +30,8 @@ theme:
     toggle:
       icon: material/lightbulb-outline
       name: Switch to light mode
+  features:
+    - content.action.edit
 strict: true
 extra_css:
   - css/extra.css
