@@ -2,7 +2,7 @@
 
 !!! info "Temporary Files and Slurm"
 
-    See [Slurm: Temporary Files](../slurm/temporary-files/) for information how Slurm controls access to local temporary storage.
+    See [Slurm: Temporary Files](../slurm/temporary-files.md) for information how Slurm controls access to local temporary storage.
 
 Often, it is necessary to use temporary files, i.e., write something out in the  middle of your program, read it in again later, and then discard these files.
 For example, `samtools sort` has to write out chunks of sorted read alignments for allowing to sort files larger than main memory.

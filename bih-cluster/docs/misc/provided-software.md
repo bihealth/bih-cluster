@@ -36,4 +36,4 @@ $ which gcc
 
 !!! hint "Problems with executing `module`?"
 
-    See the [corresponding FAQ entry](../../help/faq/#environment-modules-dont-work-and-i-get-module-command-not-found) in the case that you get a `-bash: module: command not found` when calling `module`.
+    See the [corresponding FAQ entry](../help/faq.md#environment-modules-dont-work-and-i-get-module-command-not-found) in the case that you get a `-bash: module: command not found` when calling `module`.

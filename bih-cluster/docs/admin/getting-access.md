@@ -4,7 +4,7 @@ Users have a relatively limited storage quota within their private home folder a
 **Projects** are collaborative efforts involving multiple PIs/groups and are allocated separate storage space on the cluster.
 
 Independent group leaders at BIH/Charité/MDC can request a **group** on the cluster and name group **members**. 
-The work group **leader** (the group PI) bears the responsibility for the group's **members** and ensures that [cluster policies and etiquette](../policies/) are followed.
+The work group **leader** (the group PI) bears the responsibility for the group's **members** and ensures that [cluster policies and etiquette](./policies.md) are followed.
 In brief: Fair usage rules apply and the cluster ist not to be abused for unethical or illegal purposes.
 Major and/or continued violations may lead to exclusion of the entire group.  
 

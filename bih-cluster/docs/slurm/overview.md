@@ -32,7 +32,6 @@ Also, make sure that you are aware of our [How-To: Debug Software](../how-to/mis
 - [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
 
 ## A Word on "Elsewhere"
-
 Many other facilities run Slurm clusters and make their documentation available on the internet. We list some that we found useful below.
 However, be aware that Slurm is a highly configurable and extensible system.
 Other sites may have different configurations and plugins enabled than we have (or might even have written custom plugins that are not available at BIH).

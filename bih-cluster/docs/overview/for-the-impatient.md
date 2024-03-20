@@ -110,7 +110,7 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
     host:~$ ln -s ~/work/.local ~/.local
     ```
 
-    Also see the [related FAQ entry](../../help/faq/#help-im-getting-a-quota-warning-email).
+    Also see the [related FAQ entry](../help/faq.md#help-im-getting-a-quota-warning-email).
 
 ### Temporary Directories
 

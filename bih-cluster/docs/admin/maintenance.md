@@ -32,7 +32,7 @@ Issues of today's maintenance:
 ## DRMAA Deprecation, March 2, 2022
 
 - The usage of DRMAA on the HPC is deprecated.
-- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../../slurm/snakemake/#snakemake-and-slurm).
+- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../slurm/snakemake.md#snakemake-and-slurm).
 - We will support DRMAA at least until June 30, 2022 but ask all users to migrate away from it as soon as possible.
 - Background:
     - With DRMAA, the status of each job is queried for using `scontrol show job JOBID` and `sacct -j JOBID`.
@@ -71,7 +71,7 @@ Issues of today's maintenance:
 - Reparing GPFS and NVIDIA GPU monitoring in [Ganglia](https://hpc-ganglia.cubi.bihealth.org)
 - Root cause was that the Python modules in Ganglia were removed from EPEL.
   We now have a local package build of Ganglia, if you are interested, here is the [patch](https://github.com/bihealth/rpms-ganglia) and [Docker based build instructions](https://github.com/bihealth/rpms-ganglia/issues/1).
-- You can find some [documentation about our Ganglia here](../../overview/monitoring).
+- You can find some [documentation about our Ganglia here](../overview/monitoring.md).
 
 ## Misc Changes, January 29, 2022
 
@@ -86,7 +86,7 @@ Issues of today's maintenance:
 ## Enforcing Usage of `localtmp` Resource, January 31, 2022
 
 - We will enforce using `localtmp` resource for local storage above 100MB.
-- See [Slurm: Temporary Files](../../slurm/temporary-files/) for details.
+- See [Slurm: Temporary Files](../slurm/temporary-files.md) for details.
 
 ## Temporary File Handling Changes, December 27, 2021
 
@@ -95,7 +95,7 @@ Issues of today's maintenance:
   (Technically, this is implemented using the Slurm [job_container/tmpfs](https://slurm.schedmd.com/job_container.conf.html)) plugin.
 - We are starting to track available local temporary space with Slurm in the general resource (`Gres`) "localtmp".
   In the future this will become a requirement.
-  Also see [Slurm: Temporary Files](../../slurm/temporary-files/).
+  Also see [Slurm: Temporary Files](../slurm/temporary-files.md).
 
 ## Cluster Node Upgrades, December 22-23, 2021
 
@@ -156,7 +156,7 @@ hpc-cpu-1 #
 
 Note that I'm specifying a maximal running time of 24h so the scheduler will end the job after 24 hours which is before the upcoming maintenance reservation begins.
 By default, the scheduler allocates 28 days to the job which means that the job cannot end before the reservation and will be scheduled to start **after** it.
-See [Reservations / Maintenances](../../slurm/reservations/) for more information about maintenance reservations.
+See [Reservations / Maintenances](../slurm/reservations.md) for more information about maintenance reservations.
 
 ## Reservation / Maintenance Display on Login, August 30, 2021
 

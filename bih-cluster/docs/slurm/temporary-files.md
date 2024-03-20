@@ -4,7 +4,7 @@ This section describes how Slurm handles temporary files on the local disk.
 
 !!! info "Temporary Files Best Practices"
 
-    See [Best Practices: Temporary Files](../best-practices/temp-files/) for information how to use temporary files effectively.
+    See [Best Practices: Temporary Files](../best-practice/temp-files.md) for information how to use temporary files effectively.
 
 ## Slurm Behaviour
 
@@ -55,7 +55,7 @@ NodeName=hpc-cpu-1 Arch=x86_64 CoresPerSocket=24
 Each job is automaticaly granted 100MB of storage on the local disk which is sufficient for most standard programs.
 If your job needs more temporary storage then you should either
 
-- use the `$HOME/scratch` volume (see [Best Practices: Temporary Files](../best-practices/temp-files/))
+- use the `$HOME/scratch` volume (see [Best Practices: Temporary Files](../best-practice/temp-files.md))
 - specify a `localtmp` generic resource (described here)
 
 You can allocate the resource with `--gres=localtmp:SIZE` where `SIZE` is given in MB.

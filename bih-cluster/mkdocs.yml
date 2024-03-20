@@ -86,19 +86,19 @@ nav:
   - "Connecting":
     - "Overview": "connecting/connecting.md"
     - "SSH Basics": connecting/ssh-basics.md
+    - "Windows": "connecting/connecting-windows.md"
     - "Generate Keys":
       - "Linux": connecting/generate-key/linux.md
       - "Windows": connecting/generate-key/windows.md
     - "Submit Keys":
       - "Charite": connecting/submit-key/charite.md
       - "MDC": connecting/submit-key/mdc.md
-    - "Configure Client":
-      - "Pre-Requisites": connecting/configure-ssh/prerequisites.md
-      - "Linux": connecting/configure-ssh/linux.md
-      - "Windows": connecting/configure-ssh/windows.md
-      - "Connection Problems": connecting/configure-ssh/connection-problems.md
+    - "Advanced SSH":
+      - "Overview": connecting/advanced-ssh/overview.md
+      - "Linux": connecting/advanced-ssh/linux.md
+      - "Windows": connecting/advanced-ssh/windows.md
     - "From External": connecting/from-external.md
-    - "Windows SSH Client": connecting/ssh-client-windows.md
+    - "Connection Problems": connecting/connection-problems.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Scratch Cleanup": storage/scratch-cleanup.md

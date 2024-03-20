@@ -7,7 +7,7 @@ Let's say you have an HPC cluster with hundreds of machines somewhere in a remot
 ## Getting Started
 ### Installation
 Simply install your distributions `openssh-client` package. You should be able to find plenty of good tutorials online.
-On Windows you can consider using [MobaXterm (recommended)](../connecting/ssh-client-windows.md) or [Putty](https://www.putty.org/).
+On Windows you can consider using [MobaXterm (recommended)](../connecting/connecting-windows.md#install-ssh-client-for-windows) or [Putty](https://www.putty.org/).
 
 ### Connecting
 Let's call your local machine the client and the remote machine you want to connect to the server.
@@ -40,25 +40,28 @@ Putty also allows to save the connection information in different profiles so yo
 ## SSH-Keys
 When you connect to a remote machine via SSH, you will be prompted for your password.
 This will happen every single time you connect and can feel a bit repetitive at times, especially if you feel that your password is hard to memorize.
-For those who don't want to type in their password every single time they connect, an alternative way of authentication is available.
-Meet SSH-Keys.
+For those who don't want to type in their password every single time they connect, SSH keys are an alternative way of authentication.
 
-It is possible to create an SSH-Key that can be used as a replacement for the password.
 Instead if being prompted for a password, SSH will simply use the key to authenticate.
+As this key file should be device specific, this also increases security of the login process.
 
 You can generate a new key by issuing:
 
 ```bash
-client:~$ ssh-keygen -t rsa -b 4096
+client:~$ ssh-keygen -t ed25519
 
 # 1. Choose file in which to save the key *(leave blank for default)*
 # 2. Choose a passphrase of at least five characters
 ```
 
 ### How do SSH-Keys work?
-An SSH-Key consists of two files, a private-key-file and a public-key-file.
-The public key can then be installed on an arbitrary amount of remote machines.
-If a server with the public key receives a connection from a client with the correct private key, access is granted without having to type a password.
+An SSH key consists of two files, one private and one public key.
+The public key is installed on remote machines and can only be validated with the matching private key, which is stored on client computers.
+During the login process this is achieved via [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+
+Traditionally the algorithm used for this was [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).
+Recently [elliptic curve cryptography](https://en.wikipedia.org/wiki/EdDSA) has been developed as a more secure and more performant alternative.
+We recommend the `ed25519` type of SSH key.
 
 ### Passphrase
 The security problem with SSH keys is that anyone with access to the private key has full access to all machines that have the public key installed.

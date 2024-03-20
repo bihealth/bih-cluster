@@ -15,7 +15,7 @@ The aim is to gather the information for using the cluster efficiently and helpi
 
 ## I cannot connect to the cluster. What's wrong?
 
-Please see the section [Connection Problems](../connecting/configure-ssh/connection-problems.md).
+Please see the section [Connection Problems](../connecting/connection-problems.md).
 
 ## I'd like to learn more about Slurm
 
@@ -206,7 +206,7 @@ JobId=863089 JobName=pipeline_job.sh
    MailUser=(null) MailType=NONE
 ```
 
-If you see a `Reason=ReqNodeNotAvail,_Reserved_for_maintenance` then also see [Reservations / Maintenances](../../slurm/reservations/).
+If you see a `Reason=ReqNodeNotAvail,_Reserved_for_maintenance` then also see [Reservations / Maintenances](../slurm/reservations.md).
 
 For GPU jobs also see "My GPU jobs don't get scheduled".
 
@@ -326,7 +326,6 @@ This is probably answered by the answer to [My jobs don't run in the partition I
 ## How can I mount a network volume from elsewhere on the cluster?
 
 You cannot.
-Also see the [For the Impatient](../overview/for-the-impatient.md) section of the manual.
 
 ## Why can I not mount a network volume from elsewhere on the cluster?
 
@@ -335,7 +334,7 @@ Network volumes are notorious for degrading performance, depending on the used p
 
 ## How can I then access the files from my workstation/server?
 
-You can transfer files to the cluster through Rsync over SSH or through SFTP to the `transfer-1` or `transfer-2` node.
+You can transfer files to the cluster through Rsync over SSH or through SFTP to the `hpc-transfer-1` or `hpc-transfer-2` node.
 
 **Do not transfer files through the login nodes.**
 Large file transfers through the login nodes can cause performance degradation for the users with interactive SSH connections.
@@ -387,8 +386,8 @@ In the example above, user1 has one job with one GPU running on hpc-gpu-3, user2
 
 Also see:
 
-- [Running graphical(X11) applications on Windows](../connecting/configure-ssh/windows.md#x11)
-- [Running graphical(X11) applications on Linux](../connecting/configure-ssh/linux.md#x11)
+- [Running graphical(X11) applications on Windows](../connecting/advanced-ssh/windows.md#x11)
+- [Running graphical(X11) applications on Linux](../connecting/advanced-ssh/linux.md#x11)
 
 ## How can I log into a node outside of the scheduler?
 
@@ -401,7 +400,7 @@ This is sometimes useful, e.g., for monitoring the CPU/GPU usage of your job int
 The answer is simple, just SSH into this node.
 
 ```bash
-res-login-1:~$ ssh med0XXX
+hpc-login-1:~$ ssh hpc-cpu-xxx
 ```
 
 ## Why am I getting multiple nodes to my job?
@@ -676,10 +675,10 @@ The process of submitting keys to Charite and MDC is documented in the "Connecti
 
 ## How do Charite/MDC/Cluster accounts interplay with VPN and the MDC jail node?
 
-Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](/bih-cluster/connecting/from-external/#for-charite-users).
+Charite users have to obtain a VPN account with the appropriate VPN access permissions, i.e., [Zusatzantrag B as documented here](../connecting/from-external.md#for-charite-users).
 For Charite VPN, as for all Charite IT systems, users must use their Charite user name (e.g., `jdoe` and not `jdoe_c`).
 
-MDC users either have to use MDC VPN or the MDC jail node, as [documented here](/bih-cluster/connecting/from-external/#for-mdc-users).
+MDC users either have to use MDC VPN or the MDC jail node, as [documented here](../connecting/from-external.md#for-mdc-users).
 For MDC VPN and jail node, as for all MDC IT systems, users must use their MDC user name (e.g., `jdoe` and not `jdoe_m`).
 
 For help with VPN or jail node, please contact the central Charite or MDC helpdesks as appropriate.

@@ -4,7 +4,7 @@ Welcome to the user documentation of the BIH high-performance computing (HPC) cl
 The BIH HPC cluster is managed by [CUBI](https://cubi.bihealth.org) (Core Unit Bioinformatics).
 This documentation is maintained by BIH CUBI and the user community.
 It is a living document that you can update and add to.
-See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
+See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details.
 
 :arrow_left: The global table of contents is on the left, the one of the current page is on the right. :arrow_right:
 
@@ -18,34 +18,34 @@ See [How-To: Contribute to this Document](how-to/misc/contribute) for details.
 
 Read the following set of pages (in order) to learn how to get access and connect to the cluster.
 
-1. [Getting Access](admin/getting-access).
-2. [Connecting](connecting/connecting)
-3. [Storage](storage/storage-locations)
-4. [Getting Help](help/hpc-talk) ([Writing Good Tickets](help/good-tickets); if no answer found, contact the [HPC Helpdesk](help/helpdesk)).
-5. [HPC Tutorial](hpc-tutorial/episode-0).
+1. [Getting Access](admin/getting-access.md)
+2. [Connecting](connecting/connecting.md)
+3. [Storage](storage/storage-locations.md)
+4. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).
+5. [HPC Tutorial](hpc-tutorial/episode-0.md)
 
 Then, continue reading through the manual.
 
 
 !!! note "Acknowledging BIH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
-    Please add your publications using the cluster to [this list](misc/publication-list).
+    Please add your publications using the cluster to [this list](misc/publication-list.md).
 
 ## Maintenance Announcements
 - :locomotive: Until mid 2024: Migration of all user data from GPFS to CephFS storage.
 - :headstone: Late 2024: Retirement of GPFS/DDN storage.
 
-See [Maintenance](admin/maintenance) for a detailed list of current, planned, and previous maintenance and update work.
+See [Maintenance](admin/maintenance.md) for a detailed list of current, planned, and previous maintenance and update work.
 
 ## Connecting to the Cluster
 
 You will need to perform some configuration steps after you have been registered with the cluster.
 Here are the most important points:
 
-1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux) or [Windows](connecting/generate-key/windows).
-2. [Submitting the key :arrow_up: to Charite](connecting/submit-key/charite) or [to MDC](connecting/submit-key/mdc).
-3. [Configuring your SSH client :wrench: on Linux and Mac](connecting/configure-ssh/linux) or [Windows](connecting/configure-ssh/windows).
-4. Bonus: [Connecting from external networks :flying_saucer:](connecting/from-external).
+1. [Generating SSH Keys :key: in Linux](connecting/generate-key/linux.md) or [Windows](connecting/generate-key/windows.md).
+2. [Submitting the key :arrow_up: to Charite](connecting/submit-key/charite.md) or [to MDC](connecting/submit-key/mdc.md).
+3. [Configuring your SSH client :wrench: on Linux and Mac](connecting/advanced-ssh/linux.md) or [Windows](connecting/advanced-ssh/windows.md).
+4. Bonus: [Connecting from external networks :flying_saucer:](connecting/from-external.md).
 
 There are various other topics covered in the "Connecting" section that might be of interest to you.
 

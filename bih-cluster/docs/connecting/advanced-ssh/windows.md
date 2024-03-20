@@ -1,39 +1,3 @@
-# Connecting via SSH on Windows
-
-!!! hint
-
-    - Please read the [pre-requisites](prerequisites.md). Especially pay attention to the [username](prerequisites.md#what-is-my-username).
-    - Install an [SSH client for Windows](../ssh-client-windows.md).
-
-## Connecting from within MDC/Charite Network
-
-Click on `Session`.
-
-![](figures/mobaxterm_connect1.png)
-
-Click on `SSH`.
-
-![](figures/mobaxterm_connect2.png)
-
-In **Basic SSH settings**, enter a hostname (`hpc-login-X.cubi.bihealth.org`, where `X` is 1 or 2), check **Specify username** and enter your username in the textfield.
-Select the tab **Advanced SSH settings**, check **Use private key** and select your private SSH key file (possible choices described with the next to figures).
-
-![](figures/mobaxterm_connect3.png)
-
-Select the `id_rsa` file generated in Linux OR
-
-![](figures/mobaxterm_connect3a.png)
-
-select the `id_rsa.ppk` file generated in Windows with MobaXterm.
-
-![](figures/mobaxterm_connect3b.png)
-
-Afterwards hit the **OK** button and MobaXterm will connect.
-
-![](figures/mobaxterm_connect4.png)
-
-The session will be stored automatically and you can establish new connections later on, or also multiple ones at the same time, if you like.
-
 ## Mounting the FS from within the MDC/Charite Network
 
 Once WinSshFS is started, an icon will be added to your taskbar:
