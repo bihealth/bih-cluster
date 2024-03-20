@@ -46,13 +46,13 @@ After registration and client configurations, users with typically connect to th
 
 ```bash
 local:~$ ssh -l jdoe_c hpc-login-1.cubi.bihealth.org
-res-login-1:~$
+hpc-login-1:~$
 ```
 
 Subsequently, they might submit batch jobs to the cluster for execution through the Slurm scheduling system or open interactive sessions:
 
 ```bash
-res-login-1:~$ sbatch job_script.sh
-res-login-1:~$ srun --pty bash -i
+hpc-login-1:~$ sbatch job_script.sh
+hpc-login-1:~$ srun --pty bash -i
 med0104:~$
 ```

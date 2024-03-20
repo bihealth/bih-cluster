@@ -5,7 +5,7 @@ The `sinfo` command allows you to query the current cluster status.
 !!! info "Representative Example"
 
     ```bash
-    res-login-1:~$ sinfo
+    hpc-login-1:~$ sinfo
     PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
     [...]
     medium       up 7-00:00:00     10 drain* med[0101-0103,0125-0126,0128-0132]
@@ -14,7 +14,7 @@ The `sinfo` command allows you to query the current cluster status.
     medium       up 7-00:00:00      5  alloc med[0105,0123,0127,0239-0240]
     medium       up 7-00:00:00    193   idle med[0134-0164,0201-0231,0234-0236,0245-0262,0501-0502,0504-0505,0507-0516,0601-0632,0701-0764]
     [...]
-    med-login1:$  sinfo --summarize
+    hpc-login-1:$  sinfo --summarize
     PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
     debug*       up    8:00:00    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
     medium       up 7-00:00:00    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]

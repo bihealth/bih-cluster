@@ -91,7 +91,7 @@ Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11 bash -i` for connect
 ```bash
 client:~$ ssh -X hpc-login-1.cubi.bihealth.org
 [...]
-res-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11 bash -i
+hpc-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11 bash -i
 [...]
 med0203:~$ module load matlab/r2016b-0
 Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
@@ -121,9 +121,9 @@ Get a checkout of our MATLAB example.
 Then, look around at the contents of this repository.
 
 ```console
-res-login-1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
-res-login-1:~$ cd bih-cluster-matlab-example
-res-login-1:~$ cat job_script.sh
+hpc-login-1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
+hpc-login-1:~$ cd bih-cluster-matlab-example
+hpc-login-1:~$ cat job_script.sh
 #!/bin/bash
 
 # Logging goes to directory sge_log
@@ -157,7 +157,7 @@ exit
 For submitting the script, you can do the following
 
 ```console
-res-login-1:~$ sbatch job_script.sh
+hpc-login-1:~$ sbatch job_script.sh
 ```
 
 This will submit a job with one Matlab license requested.

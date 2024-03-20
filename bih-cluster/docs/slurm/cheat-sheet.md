@@ -14,7 +14,7 @@ $ man squeue
 **interactive sessions**
 
 ```bash
-res-login-1:~$ srun --pty bash
+hpc-login-1:~$ srun --pty bash
 med0740:~$ echo "Hello World"
 med0740:~$ exit
 ```
@@ -22,9 +22,9 @@ med0740:~$ exit
 **batch submission**
 
 ```bash
-res-login-1:~$ sbatch script.sh
+hpc-login-1:~$ sbatch script.sh
 Submitted batch job 2
-res-login-1:~$ squeue
+hpc-login-1:~$ squeue
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
                 27     debug script.s holtgrem  R       0:06      1 med0703
 ```
@@ -98,7 +98,7 @@ JobId=225 JobName=bash
    AccrueTime=Unknown
    StartTime=2020-03-23T11:34:26 EndTime=2020-03-23T11:50:53 Deadline=N/A
    SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-03-23T11:34:26
-   Partition=gpu AllocNode:Sid=med-login1:1918
+   Partition=gpu AllocNode:Sid=hpc-login-1:1918
    ReqNodeList=(null) ExcNodeList=(null)
    NodeList=med0301
    BatchHost=med0301

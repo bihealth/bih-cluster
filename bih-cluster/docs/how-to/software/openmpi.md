@@ -10,7 +10,7 @@ We will use a simple Makefile for building the software.
 First, load the OpenMPI package.
 
 ```bash
-res-login-1:~$ srun --pty bash -i
+hpc-login-1:~$ srun --pty bash -i
 med0127:~$ module load openmpi/4.3.0-0
 ```
 

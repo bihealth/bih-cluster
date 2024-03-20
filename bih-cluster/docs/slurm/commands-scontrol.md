@@ -6,18 +6,18 @@ Object manipulation is less important for normal users.
 !!! info "Representative Example"
 
     ```bash
-    med-login:~$ scontrol show job 1607103
+    hpc-login-1:~$ scontrol show job 1607103
     JobId=1607103 JobName=wgs_sv_annotation
         UserId=holtgrem_c(100131) GroupId=hpc-ag-cubi(5272) MCS_label=N/A
         Priority=748 Nice=0 Account=(null) QOS=normal
         [...]
-    med-login:~$ scontrol show node med02[01-32]
+    hpc-login-1:~$ scontrol show node med02[01-32]
     NodeName=med0201 Arch=x86_64 CoresPerSocket=8
         CPUAlloc=0 CPUTot=32 CPULoad=0.01
         AvailableFeatures=ivybridge,infiniband
         ActiveFeatures=ivybridge,infiniband
         [...]
-    med-login:~$ scontrol show partition medium
+    hpc-login-1:~$ scontrol show partition medium
     PartitionName=medium
         AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL
         AllocNodes=ALL Default=NO QoS=medium

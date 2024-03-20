@@ -38,7 +38,7 @@ Note that the files in your `scratch` directory will automatically be removed af
 You can also use your `work` directory here.
 
 ```bash
-res-login-1:~$ srun --pty bash -i
+hpc-login-1:~$ srun --pty bash -i
 med0127:~$ mkdir $HOME/scratch/gromacs-install
 med0127:~$ cd $HOME/scratch/gromacs-install
 med0127:~$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz

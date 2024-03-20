@@ -5,7 +5,7 @@ Perform queries to the Slurm accounting information.
 !!! info "Representative Example"
 
     ```bash
-    med-login:~$ sacct -j  1607103
+    hpc-login-1:~$ sacct -j  1607103
         JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
     ------------ ---------- ---------- ---------- ---------- ---------- --------
     1607103      wgs_sv_an+     medium                     1    PENDING      0:0

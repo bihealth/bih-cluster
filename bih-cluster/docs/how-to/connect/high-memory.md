@@ -15,7 +15,7 @@ Jobs allocating more than 200 GB of RAM are automatically routed to the `highmem
 In the cluster there are four High-memory used which can be used:
 
 ```
-res-login-1:~$ sinfo -p highmem
+hpc-login-1:~$ sinfo -p highmem
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
 highmem      up 14-00:00:0      3   idle med040[1-4] 
 ```
@@ -23,14 +23,14 @@ highmem      up 14-00:00:0      3   idle med040[1-4]
 To connect to one of them, simply allocate more than 200GB of RAM in your job.
 
 ```
-res-login-1:~$ srun --pty --memory=300GB bash -i
+hpc-login-1:~$ srun --pty --memory=300GB bash -i
 med0401:~$
 ```
 
 You can also pick one of the hostnames:
 
 ```
-res-login-1:~$ srun --pty --memory=300GB --nodelist=med0403 bash -i
+hpc-login-1:~$ srun --pty --memory=300GB --nodelist=med0403 bash -i
 med0403:~$
 ```
 

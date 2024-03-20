@@ -188,7 +188,7 @@ JobId=863089 JobName=pipeline_job.sh
    AccrueTime=Unknown
    StartTime=Unknown EndTime=Unknown Deadline=N/A
    SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-05-03T18:57:34
-   Partition=debug AllocNode:Sid=med-login1:28797
+   Partition=debug AllocNode:Sid=hpc-login-1:28797
    ReqNodeList=(null) ExcNodeList=(null)
    NodeList=(null)
    NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
@@ -216,7 +216,7 @@ There are only four GPU machines in the cluster (with four GPUs each, hpc-gpu-1 
 Please inspect first the number of running jobs with GPU resource requests:
 
 ```bash
-res-login-1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep hpc-gpu- | sort -k7,7
+hpc-login-1:~$ squeue -o "%.10i %20j %.2t %.5D %.4C %.10m %.16R %.13b" "$@" | grep hpc-gpu- | sort -k7,7
    1902163 ONT-basecalling       R     1    2         8G          hpc-gpu-1   gpu:tesla:2
    1902167 ONT-basecalling       R     1    2         8G          hpc-gpu-1   gpu:tesla:2
    1902164 ONT-basecalling       R     1    2         8G          hpc-gpu-2   gpu:tesla:2
@@ -231,7 +231,7 @@ This indicates that there are two free GPUs on hpc-gpu-4.
 Second, inspect the node states:
 
 ```bash
-res-login-1:~$ sinfo -n hpc-gpu-[1-4]
+hpc-login-1:~$ sinfo -n hpc-gpu-[1-4]
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 debug*       up    8:00:00      0    n/a
 medium       up 7-00:00:00      0    n/a
@@ -248,7 +248,7 @@ hpc-gpu-4 is shown to be in "draining state".
 Let's look what's going on there.
 
 ```bash hl_lines="10 18"
-res-login-1:~$ scontrol show node hpc-gpu-4
+hpc-login-1:~$ scontrol show node hpc-gpu-4
 NodeName=hpc-gpu-4 Arch=x86_64 CoresPerSocket=16
    CPUAlloc=2 CPUTot=64 CPULoad=1.44
    AvailableFeatures=skylake
@@ -311,7 +311,7 @@ JobId=4225062 JobName=C2371_2
 You can see the partition that your job runs in with `squeue -j JOBID`:
 
 ```bash
-res-login-1:~$ squeue -j 877092
+hpc-login-1:~$ squeue -j 877092
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
             877092    medium snakejob holtgrem  R       0:05      1 med0626
 ```
@@ -440,20 +440,20 @@ Often, users are confused if these dot directories take up all of their `home` q
 Use the following command to list **all** files and directories in your home:
 
 ```bash
-res-login-1:~$ ls -la ~/
+hpc-login-1:~$ ls -la ~/
 ```
 
 You can use the following command to see how space each item takes up, including the hidden directories
 
 ```bash
-res-login-1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
+hpc-login-1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
 ```
 
 In the case that, e.g., the `.cpan` directory is large, you can move it to `work` and create a symlink in its original place.
 
 ```bash
-res-login-1:~$ mv ~/.cpan ~/work/.cpan
-res-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
+hpc-login-1:~$ mv ~/.cpan ~/work/.cpan
+hpc-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
 ```
 
 ## I'm getting a "Disk quota exceeded" error.
@@ -473,7 +473,7 @@ These file names start with a dot `.` and are hidden when you type `ls`, you hav
 You can find the current skelleton in `/etc/skel.bih` and inspect the content of the Bash related files as follows:
 
 ```bash
-res-login-1:~$ head /etc/skel.bih/.bash*
+hpc-login-1:~$ head /etc/skel.bih/.bash*
 ==> /etc/skel.bih/.bash_logout <==
 # ~/.bash_logout
 
@@ -505,7 +505,7 @@ There actually are a couple of more files by default.
 The original copy in `/etc/skel.bih` might slightly change over time during improvements but we will not touch your home directory in an unsolicited way at any time!
 
 ```bash
-res-login-1:~$ tree -a /etc/skel.bih/
+hpc-login-1:~$ tree -a /etc/skel.bih/
 /etc/skel.bih/
 ├── .bash_logout
 ├── .bash_profile
@@ -578,7 +578,7 @@ export LC_ALL=C
 For this, connect to the node you want to query (via SSH but do not perform any computation via SSH!)
 
 ```bash
-res-login-1:~$ ssh hpc-gpu-1
+hpc-login-1:~$ ssh hpc-gpu-1
 hpc-gpu-1:~$ yum list installed 2>/dev/null | grep cuda.x86_64
 cuda.x86_64                               10.2.89-1                  @local-cuda
 nvidia-driver-latest-dkms-cuda.x86_64     3:440.64.00-1.el7          @local-cuda
@@ -622,7 +622,7 @@ This means that the program that you want to execute does not exist.
 Consider the following example:
 
 ```
-[user@res-login-1 ~]$ srun --time 2-0 --nodes=1 --ntasks-per-node=1 \
+[user@hpc-login-1 ~]$ srun --time 2-0 --nodes=1 --ntasks-per-node=1 \
   --cpus-per-task=12 --mem 96G --partition staging --immediate 5 \
   --pty bash -i
 slurmstepd: error: execve(): 5: No such file or directory

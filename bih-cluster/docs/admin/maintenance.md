@@ -281,8 +281,8 @@ Affected servers are:
     - **GPFS access will disappear for some time.**
 - Login & Transfer Node Migration
     - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-    - Further, they will be available as `hpc-login-1.cubi.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
-    - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
+    - Further, they will be available as `hpc-login-1.cubi.bihealth.org` and `login-2...` instead of  `hpc-login-{1,2}`.
+    - The same is true for, `hpc-transfer-{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
     - The aim is to improve stability and make everything easier to manage by administration.
 
 ### Current Status / Result
@@ -347,23 +347,23 @@ SSH Key Management has switched to using Charite and MDC ActiveDirectory servers
 - `May 1, 2020:` Keys are now **only** taken from central MDC/Charite servers.
   **You must upload your keys to central servers by then.**
 
-## Switch update, Location Flip of med-login2 and med-transfer1
+## Switch update, Location Flip of hpc-login-2 and hpc-transfer-1
 
 - Monday, February 23, 9am-15am.
 
 Affected systems:
 
-- `med-transfer1`
-- `med-transfer2`
-- `med-login2`
+- `hpc-transfer-1`
+- `hpc-transfer-2`
+- `hpc-login-2`
 - a few compute nodes
 
 The compute nodes are non-critical as we are taking them out of the queues now.
 
 ## CentOS 7.6 Upgrade, January 29, February 5
 
-- Wednesday, January 29, 2018: **Reboot med-login1, med-transfer1**
-- Wednesday, February 5, 2018: **Reboot med-login2, med-transfer2**
+- Wednesday, January 29, 2018: **Reboot hpc-login-1, hpc-transfer-1**
+- Wednesday, February 5, 2018: **Reboot hpc-login-2, hpc-transfer-2**
 
 ## September 03-30, 2018
 
@@ -377,9 +377,9 @@ At some point we will have to update the transfer, and login nodes. We will do t
 
 Key dates are:
 
-**18.09.2018** - med-login1 & med-transfer1 will not be available, and you should switch to med-login2  & med-transfer2 respectively.
+**18.09.2018** - hpc-login-1 & hpc-transfer-1 will not be available, and you should switch to hpc-login-2  & hpc-transfer-2 respectively.
 
-**25.09.2018** - med-login2 & med-transfer2 will not be available, and you should switch to med-login1  & med-transfer1 respectively.
+**25.09.2018** - hpc-login-2 & hpc-transfer-2 will not be available, and you should switch to hpc-login-1  & hpc-transfer-1 respectively.
 
 Please also be informed that non-invasive maintenance this weekend which we announced has been canceled, so cluster will operate normally.
 
@@ -401,8 +401,8 @@ During maintenance we will perform several actions:
 During maintenance whole cluster will not be usable, this includes:
 
 - you will not be able to run jobs on cluster (SGE queuing system will be shutdown)
-- med-login{1,2} nodes will not work reliably during this time
-- med-transfer{1-2} nodes, and resources shared by them will be not available
+- hpc-login-{1,2} nodes will not work reliably during this time
+- hpc-transfer-{1-2} nodes, and resources shared by them will be not available
 
 Maintenance window is quite long, since we are dependent on external vendor. However, we will recover services as soon as possible.
 
@@ -428,11 +428,11 @@ The second aim of this window is to reboot the file server to mitigate some NFS 
 - [x] reboot med-file1
 - [ ] update to CentOS 7.4
     - [x] front nodes
-        - [x] med-login1
-        - [x] med-login2
-        - [x] med-login3 (admin use only)
-        - [x] med-transfer1
-        - [x] med-transfer2
+        - [x] hpc-login-1
+        - [x] hpc-login-2
+        - [x] hpc-login-3 (admin use only)
+        - [x] hpc-transfer-1
+        - [x] hpc-transfer-2
     - [x] infrastructure nodes
         - [x] qmaster*
         - [ ] ~~install-srv~~

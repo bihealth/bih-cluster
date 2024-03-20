@@ -7,7 +7,7 @@ The `sbatch` command allows you to put a job into the scheduler's queue to be ex
     ```bash
     # Execute job.sh in partition medium with 4 threads and 4GB of RAM total for a
     # running time of up to one day.
-    med-login:~$ sbatch --partition=medium --mem=4G --ntasks 4 --time=1-00 job.sh
+    hpc-login-1:~$ sbatch --partition=medium --mem=4G --ntasks 4 --time=1-00 job.sh
     Submitted batch job JOB_ID
     ```
 

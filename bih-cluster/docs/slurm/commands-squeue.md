@@ -5,7 +5,7 @@ The `squeue` command allows you to view currently running and pending jobs.
 !!! info "Representative Example"
 
     ```bash
-    med-login:~$ squeue
+    hpc-login-1:~$ squeue
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
            1583165   highmem 20200702 usr      PD       0:00      1 (DependencyNeverSatisfied)
            1605901  critical variant_ holtgrem PD       0:00      1 (DependencyNeverSatisfied)
