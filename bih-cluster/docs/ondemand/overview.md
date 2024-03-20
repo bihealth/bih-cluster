@@ -56,8 +56,8 @@ To prevent this, move the `~/ondemand` folder to the `~/work` folder and create
 a symlink for the now dislocated `~/ondemand` folder:
 
 ```
-res-login-1:~$ mv ~/ondemand ~/work/ondemand
-res-login-1:~$ ln -sr ~/work/ondemand ~/ondemand
+hpc-login-1:~$ mv ~/ondemand ~/work/ondemand
+hpc-login-1:~$ ln -sr ~/work/ondemand ~/ondemand
 ```
 
 !!! important

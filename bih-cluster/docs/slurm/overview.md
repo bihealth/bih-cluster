@@ -7,7 +7,7 @@ For more detailed information, you will have to refer to the [Slurm website](htt
 For a quick introduction and hands-on examples, please see the manual sections
 
 - Overview, starting with [For the Impatient](../overview/for-the-impatient.md), and
-- First Steps/Tutorial, starting with [Episode 0](../first-steps/episode-0.md).
+- First Steps/Tutorial, starting with [Episode 0](../hpc-tutorial/episode-0.md).
 
 Also, make sure that you are aware of our [How-To: Debug Software](../how-to/misc/debug-software.md) and [How-To: Debug Software on HPC Systems](../how-to/misc/debug-at-hpc.md) guides in the case that something goes wrong.
 
@@ -32,7 +32,6 @@ Also, make sure that you are aware of our [How-To: Debug Software](../how-to/mis
 - [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
 
 ## A Word on "Elsewhere"
-
 Many other facilities run Slurm clusters and make their documentation available on the internet. We list some that we found useful below.
 However, be aware that Slurm is a highly configurable and extensible system.
 Other sites may have different configurations and plugins enabled than we have (or might even have written custom plugins that are not available at BIH).

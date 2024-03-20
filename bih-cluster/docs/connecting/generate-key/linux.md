@@ -1,52 +1,53 @@
 # Generating an SSH Key in Linux
 
-- You might already have one, check whether the file `~/.ssh/id_rsa.pub` is present.
+- You might already have one, check whether a file `~/.ssh/id_xxx.pub` is present.
 - Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):
   ```shell
-  host:~$ ssh-keygen -t rsa -C "your_email@example.com"
+  $ ssh-keygen -t ed25519 -C "your_email@example.com"
   ```
 - Use the default location for your key
-- Enter the passphrase twice to encrypt your key
+- Enter a passphrase twice to encrypt your key
 
-!!! important "What is your key's passphrase?"
+!!! important "What is a key passphrase?"
 
-    You should set a passphrase when generating your private key.
-    This passphrase is used for encrypting you private key to protect it against the private key file theft/being lost.
-    When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
-    Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
+    You should set a passphrase when generating your key pair.
+    It is used for encrypting your private key in case it is stolen or lost.
+    When using the key for login, you will have to enter the passphrase.
+    Many desktop environments offer ways to automatically unlock your key on login.
 
-    Also see [SSH Basics](../../misc/ssh-basics.md) for more information.
+    Read [SSH Basics](../ssh-basics.md) for more information.
 
 The whole session should look something like this:
 
 ```shell
-host:~$ ssh-keygen -t rsa -C "your_email@example.com"
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/USER/.ssh/id_rsa): 
+host:~$ ssh-keygen -t ed25519 -C "your_email@example.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/USER/.ssh/id_ed25519): 
 Created directory '/home/USER/.ssh'.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again: 
-Your identification has been saved in /home/USER/.ssh/id_rsa.
-Your public key has been saved in /home/USER/.ssh/id_rsa.pub.
+Your identification has been saved in /home/USER/.ssh/id_ed25519.
+Your public key has been saved in /home/USER/.ssh/id_ed25519.pub.
 The key fingerprint is:
-55:dd:8f:88:84:1b:b6:f0:19:d3:fb:19:8e:7a:9e:7d your_email@example.com
+SHA256:Z6InW1OYt3loU7z14Kmgy87iIuYNr1gJAN1tG71D7Jc your_email@example.com
 The key's randomart image is:
-+--[ RSA 2048]----+
-|         o  .. . |
-|      . * o.  . .|
-|       + O.o . ..|
-|        =.o o . .|
-|        S  + o   |
-|          . +    |
-|         .       |
-|        . .o  E  |
-|         oo ..   |
++--[ED25519 256]--+
+|.. . . o         |
+|. . . + +        |
+|.    . = . .     |
+|.     . +oE.     |
+|.       So= o o  |
+| . .   . * = + + |
+|  +   o + B o o .|
+| oo+. .B + + .   |
+|.ooooooo*.  .    |
++----[SHA256]-----+
 ```
 
-The file content of `~/.ssh/id_rsa.pub` should look something like this):
+The file content of `~/.ssh/id_ed25519.pub` should look something like this):
 
 ```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/Rdd5rvf4BT38jsBlRrXpd1KDvjE1iZZlEmkB6809QK7hV6RCG13VcyPTIHSQePycfcUv5q1Jdy28MpacL/nv1UR/o35xPBn2HkgB4OqnKtt86soCGMd9/YzQP5lY7V60kPBJbrXDApeqf+H1GALsFNQM6MCwicdE6zTqE1mzWVdhGymZR28hGJbV9H4snMDDc0tW4i3FHGrDdmb7wHM9THMx6OcCrnNyA9Sh2OyBH4MwItKfuqEg2rc56D7WAQ2JcmPQZTlBAYeFL/dYYKcXmbffEpXTbYh+7O0o9RAJ7T3uOUj/2IbSnsgg6fyw0Kotcg8iHAPvb61bZGPOEWZb your_email@example.com
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFzuiaSVD2j5y6RlFxOfREB/Vbd+47ABlxF7du5160ZH your_email@example.com
 ```
 
 ## Submit Your Key

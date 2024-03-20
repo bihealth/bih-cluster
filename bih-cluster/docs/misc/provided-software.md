@@ -12,9 +12,9 @@ Currently, this includes:
 - LLVM v6.0.0
 - OpenMPI v4.0.3
 
-On the GPU node, this also includes a recent NVIDIA CUDA versions.
+On the GPU node, this also includes a recent NVIDIA CUDA version.
 
-To see the available software, use `module avail` on the compute nodes (this will not work on the login nodes):
+To see which software is available, use `module avail` on a compute node (this will not work on login nodes):
 
 ```terminal
 $ module avail
@@ -36,4 +36,4 @@ $ which gcc
 
 !!! hint "Problems with executing `module`?"
 
-    See the [corresponding FAQ entry](../../help/faq/#environment-modules-dont-work-and-i-get-module-command-not-found) in the case that you get a `-bash: module: command not found` when calling `module`.
+    See the [corresponding FAQ entry](../help/faq.md#environment-modules-dont-work-and-i-get-module-command-not-found) in the case that you get a `-bash: module: command not found` when calling `module`.

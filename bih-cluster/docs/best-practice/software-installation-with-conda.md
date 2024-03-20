@@ -25,7 +25,7 @@ When you logged into the cluster, please make sure that you also executed `srun`
 ## Installing conda
 
 ```bash
-res-login-1:~$ srun --mem=5G --pty bash -i
+hpc-login-1:~$ srun --mem=5G --pty bash -i
 med0127:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 med0127:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
 ```

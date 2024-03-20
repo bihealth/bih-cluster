@@ -1,11 +1,10 @@
 # Generating an SSH Key in Windows
 
-!!! hint Prerequisite: Installing an SSH Client
+!!! hint "Prerequisite: Installing an SSH Client"
 
-    Please install an [SSH client for Windows](../ssh-client-windows.md) first.
+    Please install an [SSH client for Windows](../connecting-windows.md#install-ssh-client-for-windows) first.
 
 ## Generate the Key
-
 Click on `Tools` and `MobaKeyGen (SSH key generator)`
 
 ![](figures/mobaxterm_keygen1.png)
@@ -38,7 +37,7 @@ automatically).
     When using the key for login, you will have to enter it (or the first time you load it into the SSH key agent).
     Note that when being asked for the **passphrase** this does not occur on the cluster (and is thus unrelated to it) but on your local computer.
 
-    Also see [SSH Basics](../../misc/ssh-basics.md) for more information.
+    Also see [SSH Basics](../ssh-basics.md) for more information.
 
 The gibberish in the textbox is your public key in the format how it has to be submitted to the MDC and Charite (links for this step below).
 Thus, copy this text and paste it to the SSH-key-submission-web-service of your institution.
@@ -53,7 +52,6 @@ To be consistent, give the file the same name as your `.ppk` private key file ab
 ![](figures/mobaxterm_keygen5.png)
 
 ## Summary
-
 To summarize, you should end up with three files:
 
 1. `id_rsa.pub`

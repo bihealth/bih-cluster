@@ -5,7 +5,7 @@ The `srun` command allows you to run a command **now**.
 !!! info "Representative Example"
 
     ```bash
-    med-login:~$ srun --pty bash -i
+    hpc-login-1:~$ srun --pty bash -i
     med0201:~$
     ```
 

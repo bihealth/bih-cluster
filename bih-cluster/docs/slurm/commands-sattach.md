@@ -5,10 +5,10 @@ The `sattach` command allows you to connect the standard input, output, and erro
 !!! info "Representative Example"
 
     ```bash
-    med-login:~$ sattach 12345.0
+    hpc-login-1:~$ sattach 12345.0
     [...output of your job...]
     med0211:~$ [Ctrl-C]
-    med-login:~$
+    hpc-login-1:~$
     ```
 
 Press `Ctrl-C` to detach from the current session.

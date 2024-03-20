@@ -30,6 +30,8 @@ theme:
     toggle:
       icon: material/lightbulb-outline
       name: Switch to light mode
+  features:
+    - content.action.edit
 strict: true
 extra_css:
   - css/extra.css
@@ -80,45 +82,35 @@ nav:
   - "Administrative":
     - "Getting Access": admin/getting-access.md
     - "Maintenance etc.": admin/maintenance.md
-    - "Provided Software": admin/provided-software.md
     - "Policies": admin/policies.md
-  - "Getting Help":
-    - "HPC Talk Forum": help/hpc-talk.md
-    - "HPC Helpdesk": help/helpdesk.md
-    - "Good Tickets": help/good-tickets.md
-    - "Frequently Asked Questions": help/faq.md
-  - "Overview":
-    - "For the Impatient": overview/for-the-impatient.md
-    - "Architecture": overview/architecture.md
-    - "Job Scheduler": overview/job-scheduler.md
-    - "Nodes and Volumes": overview/storage.md
-    - "Monitoring": overview/monitoring.md
   - "Connecting":
+    - "Overview": "connecting/connecting.md"
+    - "SSH Basics": connecting/ssh-basics.md
+    - "Windows": "connecting/connecting-windows.md"
     - "Generate Keys":
       - "Linux": connecting/generate-key/linux.md
       - "Windows": connecting/generate-key/windows.md
     - "Submit Keys":
       - "Charite": connecting/submit-key/charite.md
       - "MDC": connecting/submit-key/mdc.md
-    - "Configure Client":
-      - "Pre-Requisites": connecting/configure-ssh/prerequisites.md
-      - "Linux": connecting/configure-ssh/linux.md
-      - "Windows": connecting/configure-ssh/windows.md
-      - "Connection Problems": connecting/configure-ssh/connection-problems.md
+    - "Advanced SSH":
+      - "Overview": connecting/advanced-ssh/overview.md
+      - "Linux": connecting/advanced-ssh/linux.md
+      - "Windows": connecting/advanced-ssh/windows.md
     - "From External": connecting/from-external.md
-    - "Windows SSH Client": connecting/ssh-client-windows.md
-  - "First Steps":
-    - "Episode 0": first-steps/episode-0.md
-    - "Episode 1": first-steps/episode-1.md
-    - "Episode 2": first-steps/episode-2.md
-    - "Episode 3": first-steps/episode-3.md
-    - "Episode 4": first-steps/episode-4.md
+    - "Connection Problems": connecting/connection-problems.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Scratch Cleanup": storage/scratch-cleanup.md
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Migration": storage/storage-migration.md
     - "Migration FAQ": "storage/migration-faq.md"
+  - "HPC tutorial":
+    - "Episode 0": hpc-tutorial/episode-0.md
+    - "Episode 1": hpc-tutorial/episode-1.md
+    - "Episode 2": hpc-tutorial/episode-2.md
+    - "Episode 3": hpc-tutorial/episode-3.md
+    - "Episode 4": hpc-tutorial/episode-4.md
   - "Cluster Scheduler":
     - slurm/overview.md
     - slurm/background.md
@@ -153,7 +145,7 @@ nav:
     - "Temporary Files": best-practice/temp-files.md
     - "Custom Environment Modules": best-practice/env-modules.md
     - "Install with Conda": best-practice/software-installation-with-conda.md
-  - "Static Data":
+  - "Static Data (Cubit)":
     - "Overview": cubit/index.md
     - "Annotations": cubit/annotations.md
     - "Application Support": cubit/app-support.md
@@ -182,8 +174,18 @@ nav:
       - "Debug Software": how-to/misc/debug-software.md
       - "Debug @HPC": how-to/misc/debug-at-hpc.md
       - "Contribute to Docs": how-to/misc/contribute.md
+  - "Getting Help":
+    - "HPC Talk Forum": help/hpc-talk.md
+    - "HPC Helpdesk": help/helpdesk.md
+    - "Good Tickets": help/good-tickets.md
+    - "Frequently Asked Questions": help/faq.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md
-    - "Misc. Tips": misc/tips.md
-    - "SSH Basics": misc/ssh-basics.md
+    - "Provided Software": misc/provided-software.md
+    - "Technical details":
+      - "Overview": overview/for-the-impatient.md
+      - "Architecture": overview/architecture.md
+      - "Job Scheduler": overview/job-scheduler.md
+      - "Nodes and Volumes": overview/storage.md
+      - "Monitoring": overview/monitoring.md

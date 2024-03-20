@@ -1,5 +1,5 @@
-# Installing SSH Client for Windows
-
+# Connecting via SSH on Windows
+## Install SSH Client for Windows
 We recommend to use the program MobaXterm on Windows.
 MobaXterm is a software that allows you to connect to an SSH server, much like PuTTy, but also maintains your SSH key.
 
@@ -14,11 +14,8 @@ MobaXterm is a software that allows you to connect to an SSH server, much like P
     * **Installer edition** (green button righthand-side, **requires admin rights on your computer**).
 * Install or unpack MobaXterm and start the software. As a Charite user, please cancel any firewall warnings that pop up.
 
-
-## Software for transfering data from/to Windows
-
+### Software for transfering data from/to Windows
 For transfering data from/to Windows, we recommand using WinSCP.
-
 Install the latest version from here: https://winscp.net/eng/download.php
 
 On the `Login` screen of WinSCP create a new login by selecting `New Site`.
@@ -40,3 +37,32 @@ It will ask for your private key passphrase, if you set one up.
 If you need to convert your private ssh key file the `.ppk` format,
 on the WinSCP login screen go to `Tools` > `PuTTYgen` and follow the steps here:
 https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/
+
+## Connecting from within MDC/Charite Network
+
+Click on `Session`.
+
+![](figures/mobaxterm_connect1.png)
+
+Click on `SSH`.
+
+![](figures/mobaxterm_connect2.png)
+
+In **Basic SSH settings**, enter a hostname (`hpc-login-X.cubi.bihealth.org`, where `X` is 1 or 2), check **Specify username** and enter your username in the textfield.
+Select the tab **Advanced SSH settings**, check **Use private key** and select your private SSH key file (possible choices described with the next to figures).
+
+![](figures/mobaxterm_connect3.png)
+
+Select the `id_rsa` file generated in Linux OR
+
+![](figures/mobaxterm_connect3a.png)
+
+select the `id_rsa.ppk` file generated in Windows with MobaXterm.
+
+![](figures/mobaxterm_connect3b.png)
+
+Afterwards hit the **OK** button and MobaXterm will connect.
+
+![](figures/mobaxterm_connect4.png)
+
+The session will be stored automatically and you can establish new connections later on, or also multiple ones at the same time, if you like.

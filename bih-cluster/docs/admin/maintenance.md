@@ -32,7 +32,7 @@ Issues of today's maintenance:
 ## DRMAA Deprecation, March 2, 2022
 
 - The usage of DRMAA on the HPC is deprecated.
-- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../../slurm/snakemake/#snakemake-and-slurm).
+- In Snakemake, it has been deprecated in favor of using Snakemake Profiles [as documented](../slurm/snakemake.md#snakemake-and-slurm).
 - We will support DRMAA at least until June 30, 2022 but ask all users to migrate away from it as soon as possible.
 - Background:
     - With DRMAA, the status of each job is queried for using `scontrol show job JOBID` and `sacct -j JOBID`.
@@ -71,7 +71,7 @@ Issues of today's maintenance:
 - Reparing GPFS and NVIDIA GPU monitoring in [Ganglia](https://hpc-ganglia.cubi.bihealth.org)
 - Root cause was that the Python modules in Ganglia were removed from EPEL.
   We now have a local package build of Ganglia, if you are interested, here is the [patch](https://github.com/bihealth/rpms-ganglia) and [Docker based build instructions](https://github.com/bihealth/rpms-ganglia/issues/1).
-- You can find some [documentation about our Ganglia here](../../overview/monitoring).
+- You can find some [documentation about our Ganglia here](../overview/monitoring.md).
 
 ## Misc Changes, January 29, 2022
 
@@ -86,7 +86,7 @@ Issues of today's maintenance:
 ## Enforcing Usage of `localtmp` Resource, January 31, 2022
 
 - We will enforce using `localtmp` resource for local storage above 100MB.
-- See [Slurm: Temporary Files](../../slurm/temporary-files/) for details.
+- See [Slurm: Temporary Files](../slurm/temporary-files.md) for details.
 
 ## Temporary File Handling Changes, December 27, 2021
 
@@ -95,7 +95,7 @@ Issues of today's maintenance:
   (Technically, this is implemented using the Slurm [job_container/tmpfs](https://slurm.schedmd.com/job_container.conf.html)) plugin.
 - We are starting to track available local temporary space with Slurm in the general resource (`Gres`) "localtmp".
   In the future this will become a requirement.
-  Also see [Slurm: Temporary Files](../../slurm/temporary-files/).
+  Also see [Slurm: Temporary Files](../slurm/temporary-files.md).
 
 ## Cluster Node Upgrades, December 22-23, 2021
 
@@ -149,14 +149,14 @@ We do not expect big changes but the nodes might not be as stable as other oness
 Here is how you can reach them.
 
 ```
-login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
+hpc-login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
 [...]
 hpc-cpu-1 #
 ```
 
 Note that I'm specifying a maximal running time of 24h so the scheduler will end the job after 24 hours which is before the upcoming maintenance reservation begins.
 By default, the scheduler allocates 28 days to the job which means that the job cannot end before the reservation and will be scheduled to start **after** it.
-See [Reservations / Maintenances](../../slurm/reservations/) for more information about maintenance reservations.
+See [Reservations / Maintenances](../slurm/reservations.md) for more information about maintenance reservations.
 
 ## Reservation / Maintenance Display on Login, August 30, 2021
 
@@ -236,7 +236,7 @@ Affected servers are:
 
 - Separate HPC 4 Research group GID space from other organization's.
     - **Fully Unavailable**
-- Reboot login nodes to increase RAM on login-2.research
+- Reboot login nodes to increase RAM on hpc-login-2.research
 - Update firmwares of transfer-{1,2}.research
 
 ## CentOS 8 Migration (in planning)
@@ -281,8 +281,8 @@ Affected servers are:
     - **GPFS access will disappear for some time.**
 - Login & Transfer Node Migration
     - The login nodes will be moved from physical machines to virtual machines in high-availability mode.
-    - Further, they will be available as `hpc-login-1.cubi.bihealth.org` and `login-2...` instead of  `med-login{1,2}`.
-    - The same is true for, `med-transfer{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
+    - Further, they will be available as `hpc-login-1.cubi.bihealth.org` and `login-2...` instead of  `hpc-login-{1,2}`.
+    - The same is true for, `hpc-transfer-{1,2}` which will be replaced by `transfer-1.research.hpc.bihealth.org` and `transfer-2...`.
     - The aim is to improve stability and make everything easier to manage by administration.
 
 ### Current Status / Result
@@ -347,23 +347,23 @@ SSH Key Management has switched to using Charite and MDC ActiveDirectory servers
 - `May 1, 2020:` Keys are now **only** taken from central MDC/Charite servers.
   **You must upload your keys to central servers by then.**
 
-## Switch update, Location Flip of med-login2 and med-transfer1
+## Switch update, Location Flip of hpc-login-2 and hpc-transfer-1
 
 - Monday, February 23, 9am-15am.
 
 Affected systems:
 
-- `med-transfer1`
-- `med-transfer2`
-- `med-login2`
+- `hpc-transfer-1`
+- `hpc-transfer-2`
+- `hpc-login-2`
 - a few compute nodes
 
 The compute nodes are non-critical as we are taking them out of the queues now.
 
 ## CentOS 7.6 Upgrade, January 29, February 5
 
-- Wednesday, January 29, 2018: **Reboot med-login1, med-transfer1**
-- Wednesday, February 5, 2018: **Reboot med-login2, med-transfer2**
+- Wednesday, January 29, 2018: **Reboot hpc-login-1, hpc-transfer-1**
+- Wednesday, February 5, 2018: **Reboot hpc-login-2, hpc-transfer-2**
 
 ## September 03-30, 2018
 
@@ -377,9 +377,9 @@ At some point we will have to update the transfer, and login nodes. We will do t
 
 Key dates are:
 
-**18.09.2018** - med-login1 & med-transfer1 will not be available, and you should switch to med-login2  & med-transfer2 respectively.
+**18.09.2018** - hpc-login-1 & hpc-transfer-1 will not be available, and you should switch to hpc-login-2  & hpc-transfer-2 respectively.
 
-**25.09.2018** - med-login2 & med-transfer2 will not be available, and you should switch to med-login1  & med-transfer1 respectively.
+**25.09.2018** - hpc-login-2 & hpc-transfer-2 will not be available, and you should switch to hpc-login-1  & hpc-transfer-1 respectively.
 
 Please also be informed that non-invasive maintenance this weekend which we announced has been canceled, so cluster will operate normally.
 
@@ -401,8 +401,8 @@ During maintenance we will perform several actions:
 During maintenance whole cluster will not be usable, this includes:
 
 - you will not be able to run jobs on cluster (SGE queuing system will be shutdown)
-- med-login{1,2} nodes will not work reliably during this time
-- med-transfer{1-2} nodes, and resources shared by them will be not available
+- hpc-login-{1,2} nodes will not work reliably during this time
+- hpc-transfer-{1-2} nodes, and resources shared by them will be not available
 
 Maintenance window is quite long, since we are dependent on external vendor. However, we will recover services as soon as possible.
 
@@ -428,11 +428,11 @@ The second aim of this window is to reboot the file server to mitigate some NFS 
 - [x] reboot med-file1
 - [ ] update to CentOS 7.4
     - [x] front nodes
-        - [x] med-login1
-        - [x] med-login2
-        - [x] med-login3 (admin use only)
-        - [x] med-transfer1
-        - [x] med-transfer2
+        - [x] hpc-login-1
+        - [x] hpc-login-2
+        - [x] hpc-login-3 (admin use only)
+        - [x] hpc-transfer-1
+        - [x] hpc-transfer-2
     - [x] infrastructure nodes
         - [x] qmaster*
         - [ ] ~~install-srv~~
