@@ -69,7 +69,7 @@ See whether this works via i.e. `ssh med0110`
     The compute nodes themselves are not reachable directly from the outside and use the usual `~/.ssh/authorized_keys` file.
     This means that you will have to append the content of ~/.ssh/id_rsa.pub` from the source host (your workstation/laptop) to `~/.ssh/authorized_keys` on the cluster.
     
-    If you fail to do this then you will be able to login to login-1/login-2 but you will get a password prompt for the compute nodes (i.e., med0XXX).
+    If you fail to do this then you will be able to login to hpc-login-1/login-2 but you will get a password prompt for the compute nodes (i.e., med0XXX).
 
 Now you setup a tunnel
 

@@ -24,7 +24,7 @@ BIH has a license of Matlab R2016b for **16 seats** and various licensed package
 To display the available licenses:
 
 ```bash
-login-1:~$ scontrol show lic
+hpc-login-1:~$ scontrol show lic
 LicenseName=matlab_r2016b
     Total=16 Used=0 Free=16 Remote=no
 ```
@@ -33,7 +33,7 @@ Matlab is installed on all of the compute nodes:
 
 ```console
 # The following is VITAL so the scheduler allocates a license to your session.
-login-1:~$ srun -L matlab_r2016b:1 --pty bash -i
+hpc-login-1:~$ srun -L matlab_r2016b:1 --pty bash -i
 med0127:~$ scontrol show lic
 LicenseName=matlab_r2016b
     Total=16 Used=1 Free=15 Remote=no

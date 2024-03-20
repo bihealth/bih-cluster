@@ -149,7 +149,7 @@ We do not expect big changes but the nodes might not be as stable as other oness
 Here is how you can reach them.
 
 ```
-login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
+hpc-login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
 [...]
 hpc-cpu-1 #
 ```
@@ -236,7 +236,7 @@ Affected servers are:
 
 - Separate HPC 4 Research group GID space from other organization's.
     - **Fully Unavailable**
-- Reboot login nodes to increase RAM on login-2.research
+- Reboot login nodes to increase RAM on hpc-login-2.research
 - Update firmwares of transfer-{1,2}.research
 
 ## CentOS 8 Migration (in planning)
