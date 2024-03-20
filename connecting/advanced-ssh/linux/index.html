@@ -12,28 +12,28 @@
         <meta name="author" content="BIH HPC IT">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/connecting/ssh-client-windows/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/connecting/advanced-ssh/linux/">
       
       
-        <link rel="prev" href="../from-external/">
+        <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../../first-steps/episode-0/">
+        <link rel="next" href="../windows/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Windows SSH Client - BIH HPC Docs</title>
+        <title>Linux - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <!-- Matomo -->
 <script type="text/javascript">
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-ssh-client-for-windows" class="md-skip">
+        <a href="#connecting-via-ssh-on-unix" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+    <a href="../../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows SSH Client
+              Linux
             
           </span>
         </div>
@@ -242,7 +242,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+    <a href="../../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -272,7 +272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/getting-access/" class="md-nav__link">
+      <a href="../../../admin/getting-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/maintenance/" class="md-nav__link">
+      <a href="../../../admin/maintenance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,28 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/provided-software/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Provided Software
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../admin/policies/" class="md-nav__link">
+      <a href="../../../admin/policies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -415,34 +394,36 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Getting Help
+    Connecting
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Getting Help
+            Connecting
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -453,11 +434,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/hpc-talk/" class="md-nav__link">
+      <a href="../../connecting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    HPC Talk Forum
+    Overview
   </span>
   
 
@@ -474,11 +455,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/helpdesk/" class="md-nav__link">
+      <a href="../../ssh-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    HPC Helpdesk
+    SSH Basics
   </span>
   
 
@@ -495,11 +476,67 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/good-tickets/" class="md-nav__link">
+      <a href="../../connecting-windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Good Tickets
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Generate Keys
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Generate Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../generate-key/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
   </span>
   
 
@@ -516,11 +553,369 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/faq/" class="md-nav__link">
+      <a href="../../generate-key/windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Frequently Asked Questions
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Submit Keys
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Submit Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submit-key/charite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Charite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../submit-key/mdc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MDC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced SSH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced SSH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#activating-your-key-in-the-ssh-key-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activating your Key in the SSH Key Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activating your Key in the SSH Key Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ssh-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure SSH Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-with-another-computerlaptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting with another computer/laptop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system-mount-via-sshfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System mount via sshfs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System mount via sshfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x11" class="md-nav__link">
+    <span class="md-ellipsis">
+      X11
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../from-external/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From External
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connection-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Problems
   </span>
   
 
@@ -558,7 +953,7 @@
             
   
   <span class="md-ellipsis">
-    Overview
+    Storage
   </span>
   
 
@@ -568,7 +963,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Overview
+            Storage
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -579,11 +974,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/for-the-impatient/" class="md-nav__link">
+      <a href="../../../storage/storage-locations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    For the Impatient
+    Storage Locations
   </span>
   
 
@@ -600,11 +995,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/" class="md-nav__link">
+      <a href="../../../storage/scratch-cleanup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Architecture
+    Scratch Cleanup
   </span>
   
 
@@ -621,11 +1016,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/job-scheduler/" class="md-nav__link">
+      <a href="../../../storage/querying-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Job Scheduler
+    Querying Quotas
   </span>
   
 
@@ -642,11 +1037,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/storage/" class="md-nav__link">
+      <a href="../../../storage/storage-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nodes and Volumes
+    Storage Migration
   </span>
   
 
@@ -663,11 +1058,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/monitoring/" class="md-nav__link">
+      <a href="../../../storage/migration-faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Monitoring
+    Migration FAQ
   </span>
   
 
@@ -688,71 +1083,34 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    Connecting
+    HPC tutorial
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Connecting
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Generate Keys
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1">
-            <span class="md-nav__icon md-icon"></span>
-            Generate Keys
+            HPC tutorial
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -763,11 +1121,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../generate-key/linux/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Linux
+    Episode 0
   </span>
   
 
@@ -784,75 +1142,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../generate-key/windows/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Windows
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Submit Keys
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Submit Keys
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../submit-key/charite/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Charite
+    Episode 1
   </span>
   
 
@@ -869,75 +1163,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../submit-key/mdc/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    MDC
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Configure Client
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            Configure Client
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../configure-ssh/prerequisites/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Pre-Requisites
+    Episode 2
   </span>
   
 
@@ -954,11 +1184,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure-ssh/linux/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Linux
+    Episode 3
   </span>
   
 
@@ -975,135 +1205,15 @@
   
   
     <li class="md-nav__item">
-      <a href="../configure-ssh/windows/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Windows
+    Episode 4
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../configure-ssh/connection-problems/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Connection Problems
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../from-external/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    From External
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Windows SSH Client
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Windows SSH Client
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#software-for-transfering-data-fromto-windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software for transfering data from/to Windows
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1137,7 +1247,7 @@
             
   
   <span class="md-ellipsis">
-    First Steps
+    Cluster Scheduler
   </span>
   
 
@@ -1147,7 +1257,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            First Steps
+            Cluster Scheduler
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1158,11 +1268,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first-steps/episode-0/" class="md-nav__link">
+      <a href="../../../slurm/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Episode 0
+    Scheduling Overview
   </span>
   
 
@@ -1179,11 +1289,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first-steps/episode-1/" class="md-nav__link">
+      <a href="../../../slurm/background/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Episode 1
+    Introduction to Scheduling
   </span>
   
 
@@ -1200,11 +1310,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first-steps/episode-2/" class="md-nav__link">
+      <a href="../../../slurm/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Episode 2
+    Slurm Quickstart
   </span>
   
 
@@ -1221,11 +1331,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first-steps/episode-3/" class="md-nav__link">
+      <a href="../../../slurm/temporary-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Episode 3
+    Slurm and Temporary Files
   </span>
   
 
@@ -1242,11 +1352,369 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first-steps/episode-4/" class="md-nav__link">
+      <a href="../../../slurm/cheat-sheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Episode 4
+    Slurm Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/job-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Job Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/memory-allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/reservations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reservations / Maintenances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-srun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    srun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-sbatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sbatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-sattach/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sattach
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-scancel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scancel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-sinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-squeue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    squeue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-scontrol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scontrol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/commands-sacct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sacct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/format-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Format Strings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/snakemake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snakemake with Slurm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/x11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    X11 Forwarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../slurm/rosetta-stone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Rosetta Stone
   </span>
   
 
@@ -1284,7 +1752,7 @@
             
   
   <span class="md-ellipsis">
-    Storage
+    OnDemand Portal
   </span>
   
 
@@ -1294,7 +1762,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Storage
+            OnDemand Portal
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1305,11 +1773,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-locations/" class="md-nav__link">
+      <a href="../../../ondemand/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Storage Locations
+    Overview
   </span>
   
 
@@ -1326,11 +1794,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
+      <a href="../../../ondemand/interactive/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scratch Cleanup
+    Interactive Sessions
   </span>
   
 
@@ -1347,53 +1815,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/querying-storage/" class="md-nav__link">
+      <a href="../../../ondemand/quotas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Querying Quotas
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage/storage-migration/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Storage Migration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage/migration-faq/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Migration FAQ
+    Quotas
   </span>
   
 
@@ -1431,7 +1857,7 @@
             
   
   <span class="md-ellipsis">
-    Cluster Scheduler
+    Best Practice
   </span>
   
 
@@ -1441,7 +1867,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Cluster Scheduler
+            Best Practice
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1452,11 +1878,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/overview/" class="md-nav__link">
+      <a href="../../../best-practice/project-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Scheduling Overview
+    Project Structure
   </span>
   
 
@@ -1473,11 +1899,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/background/" class="md-nav__link">
+      <a href="../../../best-practice/software-craftmanship/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Introduction to Scheduling
+    Software Craftmanship
   </span>
   
 
@@ -1494,11 +1920,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/quickstart/" class="md-nav__link">
+      <a href="../../../best-practice/screen-tmux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slurm Quickstart
+    Using Screen/Tmux
   </span>
   
 
@@ -1515,11 +1941,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/temporary-files/" class="md-nav__link">
+      <a href="../../../best-practice/bashrc-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slurm and Temporary Files
+    ~/.bashrc Guide
   </span>
   
 
@@ -1536,11 +1962,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
+      <a href="../../../best-practice/temp-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slurm Cheat Sheet
+    Temporary Files
   </span>
   
 
@@ -1557,11 +1983,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/job-scripts/" class="md-nav__link">
+      <a href="../../../best-practice/env-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Slurm Job Scripts
+    Custom Environment Modules
   </span>
   
 
@@ -1578,327 +2004,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/memory-allocation/" class="md-nav__link">
+      <a href="../../../best-practice/software-installation-with-conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Memory Allocation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/reservations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Reservations / Maintenances
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_8_9" id="__nav_8_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Slurm Commands
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_9">
-            <span class="md-nav__icon md-icon"></span>
-            Slurm Commands
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-srun/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    srun
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sbatch
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-sattach/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sattach
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-scancel/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    scancel
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sinfo
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-squeue/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    squeue
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    scontrol
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/commands-sacct/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    sacct
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/format-strings/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Format Strings
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/snakemake/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Snakemake with Slurm
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/x11/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    X11 Forwarding
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../slurm/rosetta-stone/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Slurm Rosetta Stone
+    Install with Conda
   </span>
   
 
@@ -1936,7 +2046,7 @@
             
   
   <span class="md-ellipsis">
-    OnDemand Portal
+    Static Data (Cubit)
   </span>
   
 
@@ -1946,7 +2056,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            OnDemand Portal
+            Static Data (Cubit)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1957,7 +2067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/overview/" class="md-nav__link">
+      <a href="../../../cubit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1978,11 +2088,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/interactive/" class="md-nav__link">
+      <a href="../../../cubit/annotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Interactive Sessions
+    Annotations
   </span>
   
 
@@ -1999,11 +2109,116 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/quotas/" class="md-nav__link">
+      <a href="../../../cubit/app-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Quotas
+    Application Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cubit/databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cubit/exomes-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exomes and Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cubit/exon-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exon Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cubit/index-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Precomputed Indexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cubit/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Sequences
   </span>
   
 
@@ -2041,7 +2256,7 @@
             
   
   <span class="md-ellipsis">
-    Best Practice
+    How-To
   </span>
   
 
@@ -2050,405 +2265,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            Best Practice
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/project-structure/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Project Structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/software-craftmanship/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Software Craftmanship
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/screen-tmux/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Using Screen/Tmux
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/bashrc-guide/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ~/.bashrc Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/temp-files/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Temporary Files
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/env-modules/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Custom Environment Modules
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../best-practice/software-installation-with-conda/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Install with Conda
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
-        
-          
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Static Data
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
-            <span class="md-nav__icon md-icon"></span>
-            Static Data
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/annotations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Annotations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/app-support/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Application Support
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/databases/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Databases
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/exomes-panels/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exomes and Panels
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/exon-lists/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exon Lists
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/index-files/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Precomputed Indexes
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cubit/references/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Reference Sequences
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    How-To
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             How-To
           </label>
@@ -2468,10 +2284,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
         
           
-          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2482,8 +2298,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
             <span class="md-nav__icon md-icon"></span>
             Connect
           </label>
@@ -2496,7 +2312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/connect/high-memory/" class="md-nav__link">
+      <a href="../../../how-to/connect/high-memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2517,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/connect/gpu-nodes/" class="md-nav__link">
+      <a href="../../../how-to/connect/gpu-nodes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2553,10 +2369,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2567,8 +2383,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             Software
           </label>
@@ -2581,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/openmpi/" class="md-nav__link">
+      <a href="../../../how-to/software/openmpi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2602,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/scientific-software/" class="md-nav__link">
+      <a href="../../../how-to/software/scientific-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2623,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/cell-ranger/" class="md-nav__link">
+      <a href="../../../how-to/software/cell-ranger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2644,7 +2460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/jupyter/" class="md-nav__link">
+      <a href="../../../how-to/software/jupyter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2665,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/keras/" class="md-nav__link">
+      <a href="../../../how-to/software/keras/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2686,7 +2502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/matlab/" class="md-nav__link">
+      <a href="../../../how-to/software/matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2707,7 +2523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/tensorflow/" class="md-nav__link">
+      <a href="../../../how-to/software/tensorflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2728,7 +2544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/apptainer/" class="md-nav__link">
+      <a href="../../../how-to/software/apptainer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2764,10 +2580,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2778,8 +2594,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             Service
           </label>
@@ -2792,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/service/file-exchange/" class="md-nav__link">
+      <a href="../../../how-to/service/file-exchange/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2828,10 +2644,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
         
           
-          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2842,8 +2658,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
             Miscellaneous
           </label>
@@ -2856,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/hpc-talk/" class="md-nav__link">
+      <a href="../../../how-to/misc/hpc-talk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2877,7 +2693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/debug-software/" class="md-nav__link">
+      <a href="../../../how-to/misc/debug-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2898,7 +2714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/debug-at-hpc/" class="md-nav__link">
+      <a href="../../../how-to/misc/debug-at-hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2919,7 +2735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/contribute/" class="md-nav__link">
+      <a href="../../../how-to/misc/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2962,10 +2778,136 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/hpc-talk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Talk Forum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/helpdesk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Helpdesk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/good-tickets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Tickets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../help/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2976,8 +2918,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_13">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Miscellaneous
           </label>
@@ -2990,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/publication-list/" class="md-nav__link">
+      <a href="../../../misc/publication-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3011,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/external-resources/" class="md-nav__link">
+      <a href="../../../misc/external-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3032,11 +2974,67 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/tips/" class="md-nav__link">
+      <a href="../../../misc/provided-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Misc. Tips
+    Provided Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical details
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical details
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/for-the-impatient/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
   </span>
   
 
@@ -3053,15 +3051,86 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/ssh-basics/" class="md-nav__link">
+      <a href="../../../overview/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SSH Basics
+    Architecture
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/job-scheduler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Scheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodes and Volumes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3101,9 +3170,75 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#software-for-transfering-data-fromto-windows" class="md-nav__link">
+  <a href="#activating-your-key-in-the-ssh-key-agent" class="md-nav__link">
     <span class="md-ellipsis">
-      Software for transfering data from/to Windows
+      Activating your Key in the SSH Key Agent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activating your Key in the SSH Key Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ssh-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure SSH Client
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-with-another-computerlaptop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting with another computer/laptop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-system-mount-via-sshfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      File System mount via sshfs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System mount via sshfs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MacOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x11" class="md-nav__link">
+    <span class="md-ellipsis">
+      X11
     </span>
   </a>
   
@@ -3124,47 +3259,115 @@
                   
 
   
+    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/connecting/advanced-ssh/linux.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
   
 
 
-<h1 id="installing-ssh-client-for-windows">Installing SSH Client for Windows<a class="headerlink" href="#installing-ssh-client-for-windows" title="Permanent link">&para;</a></h1>
-<p>We recommend to use the program MobaXterm on Windows.
-MobaXterm is a software that allows you to connect to an SSH server, much like PuTTy, but also maintains your SSH key.</p>
-<div class="admonition hint">
-<p class="admonition-title">Alternative SSH Clients for Windows</p>
-<ul>
-<li>Another popular option is <a href="https://www.putty.org/">PuTTy</a> but many users have problems configuring it correctly with SSH keys.</li>
-<li>On Windows 10, you can also install <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>, e.g., together with <a href="https://github.com/mskyaxl/wsl-terminal">WSL Terminal</a>.
-  This is not for the faint of heart (but great if you're a Unix head).</li>
-</ul>
+<h1 id="connecting-via-ssh-on-unix">Connecting via SSH on Unix<a class="headerlink" href="#connecting-via-ssh-on-unix" title="Permanent link">&para;</a></h1>
+<h2 id="activating-your-key-in-the-ssh-key-agent">Activating your Key in the SSH Key Agent<a class="headerlink" href="#activating-your-key-in-the-ssh-key-agent" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The big Linux distributions automatically manage ssh-agent for you and unlock your keys at login time.
+If this doesn't work for you, read on.</p>
 </div>
+<p><code>ssh-agent</code> caches your SSH keys so that you do not need to type your passphrase every time it is used.
+Activate it by making sure <code>ssh-agent</code> runs in the background and add your key:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ssh-agent<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span>
+$<span class="w"> </span>ssh-add
+</code></pre></div>
+<p>or if you chose a custom key name, specify the file like so:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-add<span class="w"> </span>~/.ssh/mdc_id_rsa
+</code></pre></div>
+<h3 id="macos">MacOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
+<p>If you run into problems that your key is not accepted when connecting from MacOS,
+please use:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh-add<span class="w"> </span>--apple-use-keychain
+</code></pre></div>
+<h2 id="configure-ssh-client">Configure SSH Client<a class="headerlink" href="#configure-ssh-client" title="Permanent link">&para;</a></h2>
+<p>You can define a personal SSH configuration file to make connecting to the cluster more comfortable by reducing the typing necessary by a lot.
+Add the following lines to the file <code>~/.ssh/config</code> file.
+Replace <code>USER_NAME</code> with your cluster user name.
+You can also adapt the Host naming as you like.</p>
+<div class="highlight"><pre><span></span><code>Host bihcluster
+    HostName hpc-login-1.cubi.bihealth.org
+    User USER_NAME
+
+Host bihcluster2
+    HostName hpc-login-1.cubi.bihealth.org
+    User USER_NAME
+</code></pre></div>
+<p>Now, you can do type the following (and you don't have to remember the host name of the login node any more).</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>bihcluster
+</code></pre></div>
+<p>The configuration works if you are inside Charité or MDC.
+If you are located anywhere else, you can use the following <code>~/.ssh/config</code> lines to set up a ProxyJump via the MDC SSH jail.</p>
+<div class="highlight"><pre><span></span><code>Host mdcjail
+    HostName ssh1.mdc-berlin.de
+    User MDC_USER_NAME
+</code></pre></div>
+<p>Now you can run</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-J<span class="w"> </span>mdcjail<span class="w"> </span>bihcluster1
+</code></pre></div>
+<p>If you are always connecting from outside the internal network, you can also add a permanent ProxyJump to the SSH configuration like so:</p>
+<div class="highlight"><pre><span></span><code>Host bihcluster
+    HostName hpc-login-1.cubi.bihealth.org
+    User USER_NAME
+    ProxyJump mdcjail
+</code></pre></div>
+<h2 id="connecting-with-another-computerlaptop">Connecting with another computer/laptop<a class="headerlink" href="#connecting-with-another-computerlaptop" title="Permanent link">&para;</a></h2>
+<p>If you need to connect to the cluster from another computer than the one
+that contains the SSH keys that you submitted for the cluster login, you
+have two possibilities.</p>
+<ol>
+<li>Generate another SSH key pair and submit the public part as described
+   beforehand.</li>
+<li>Copy your <em>private</em> part of the SSH key (<code>~/.ssh/id_rsa</code>) to the second
+   computer into the same location.</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not leave the key on any USB stick. Delete it after file transfer.
+This is a sensible part of data. Make sure that the files are only readable for you.</p>
+</div>
+<div class="highlight"><pre><span></span><code>$ cd ~/.ssh
+$ chmod g-rwx id_rsa*
+$ ssh-add  id_rsa
+</code></pre></div>
+<h2 id="file-system-mount-via-sshfs">File System mount via sshfs<a class="headerlink" href="#file-system-mount-via-sshfs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ sshfs &lt;USERNAME&gt;@hpc-transfer-1.cubi.bihealth.org:/ &lt;MOUNTPOINT&gt;
+</code></pre></div>
 <ul>
-<li>Navigate to <a href="https://mobaxterm.mobatek.net/download-home-edition.html">https://mobaxterm.mobatek.net/download-home-edition.html</a></li>
-<li>Download either the<ul>
-<li><strong>Portable edition</strong> (blue button lefthand-side, <strong>if you have no admin rights</strong>, e.g. on a Charite or MDC workstation), or</li>
-<li><strong>Installer edition</strong> (green button righthand-side, <strong>requires admin rights on your computer</strong>).</li>
+<li><code>hpc-transfer-1:</code> follows the structure <code>&lt;host&gt;:&lt;directory&gt;</code> starting in the user home.</li>
+<li><code>&lt;MOUNTPOINT&gt;</code> must be an empty but existing and readable directory on your local computer</li>
 </ul>
-</li>
-<li>Install or unpack MobaXterm and start the software. As a Charite user, please cancel any firewall warnings that pop up.</li>
-</ul>
-<h2 id="software-for-transfering-data-fromto-windows">Software for transfering data from/to Windows<a class="headerlink" href="#software-for-transfering-data-fromto-windows" title="Permanent link">&para;</a></h2>
-<p>For transfering data from/to Windows, we recommand using WinSCP.</p>
-<p>Install the latest version from here: <a href="https://winscp.net/eng/download.php">https://winscp.net/eng/download.php</a></p>
-<p>On the <code>Login</code> screen of WinSCP create a new login by selecting <code>New Site</code>.</p>
-<p>Fill in the following parameters:</p>
-<ul>
-<li><code>File protocol</code>: <code>SFTP</code></li>
-<li><code>Host name</code>: <code>hpc-transfer-1.cubi.bihealth.org</code> or <code>hpc-transfer-2.cubi.bihealth.org</code></li>
-<li><code>User name</code>: your user name</li>
-</ul>
-<p>Go to <code>Advanced</code> &gt; <code>SSH</code> &gt; <code>Authentication</code> &gt; <code>Authentication parameters</code> &gt; <code>Private key file</code>
-and select your private ssh key file (in <code>.ppk</code> format).</p>
-<p>Press <code>Ok</code> then <code>Save</code>.</p>
-<p>Press <code>Login</code> to connect.
-It will ask for your private key passphrase, if you set one up.</p>
-<p>If you need to convert your private ssh key file the <code>.ppk</code> format,
-on the WinSCP login screen go to <code>Tools</code> &gt; <code>PuTTYgen</code> and follow the steps here:
-<a href="https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/">https://docs.acquia.com/cloud-platform/manage/ssh/sftp-key/</a></p>
+<h3 id="macos_1">MacOS<a class="headerlink" href="#macos_1" title="Permanent link">&para;</a></h3>
+<p>Make sure you have both OSXFUSE and SSHFS installed. You can get both from here: <a href="https://osxfuse.github.io/">https://osxfuse.github.io/</a> or the most recent version via Homebrew:
+<div class="highlight"><pre><span></span><code>$ brew cask install osxfuse; brew install sshfs; brew link --overwrite sshfs
+</code></pre></div>
+The last command is optional and unlinks any pre-existing links to older versions of sshfs.
+Now you can run
+<div class="highlight"><pre><span></span><code>$ sshfs -o follow_symlinks &lt;USERNAME&gt;@hpc-transfer-1&lt;X&gt;.cubi.bihealth.org:&lt;directory_relative_to_Cluster_root&gt; &lt;MOUNTPOINT&gt; -o volname=&lt;BIH-FOLDER&gt; -o allow_other,noapplexattr,noappledouble
+</code></pre></div></p>
+<h2 id="x11">X11<a class="headerlink" href="#x11" title="Permanent link">&para;</a></h2>
+<div class="admonition question">
+<p class="admonition-title">Do you really need to run a graphical application on the cluster?</p>
+<p>Please note that running more complex Java applications, such as IGV may be not very efficient because of the connection speed. In most cases you can run them on your local workstation by <a href="#file-system-mount-via-sshfs">mounting them via SSHFS</a>.</p>
+</div>
+<p>Connect to one of the login nodes using X11 forwarding:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>-X<span class="w"> </span>-C<span class="w"> </span>-t<span class="w"> </span>&lt;USERNAME&gt;@hpc-login-1.bihealth.org
+</code></pre></div>
+<p>Once you get a login prompt, you can use the <code>srun</code> command with the <code>--x11</code> parameter to open a X11 session to a cluster node:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>srun<span class="w"> </span>--pty<span class="w"> </span>--x11<span class="w"> </span>bash
+</code></pre></div>
+<p>And finally you can start your X11 application, e.g.:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>xterm
+</code></pre></div>
+<p>After a while Visual Terminal should start:</p>
+<p><img alt="" src="../figures/xterm_linux.png" /></p>
 
 
 
@@ -3185,7 +3388,7 @@ on the WinSCP login screen go to <code>Tools</code> &gt; <code>PuTTYgen</code> a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
   </span>
 
     
@@ -3236,10 +3439,10 @@ on the WinSCP login screen go to <code>Tools</code> &gt; <code>PuTTYgen</code> a
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
