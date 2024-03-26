@@ -3288,13 +3288,13 @@ Apparently it needs root permissions which you don't have on the cluster.</p>
 </code></pre></div>
 </div>
 <p>Run a bash in a docker image:</p>
-<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>bash<span class="w"> </span>docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>shell<span class="w"> </span>docker://godlovedc/lolcow
 </code></pre></div>
 <p>Run a command in a docker image:</p>
 <div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>docker://godlovedc/lolcow<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello, hello!&quot;</span>
 </code></pre></div>
 <p>Run a bash in a docker image, enable access to the cuda driver (--nv) and mount a path (--bind or -B):</p>
-<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>bash<span class="w"> </span>--nv<span class="w"> </span>--bind<span class="w"> </span>/path_on_host/:/path_inside_container/<span class="w"> </span>docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>shell<span class="w"> </span>--nv<span class="w"> </span>--bind<span class="w"> </span>/path_on_host/:/path_inside_container/<span class="w"> </span>docker://godlovedc/lolcow
 </code></pre></div>
 <h2 id="some-caveats-and-notes">Some Caveats and Notes<a class="headerlink" href="#some-caveats-and-notes" title="Permanent link">&para;</a></h2>
 <p><strong>Caveats</strong></p>
@@ -3305,7 +3305,7 @@ Apparently it needs root permissions which you don't have on the cluster.</p>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Environment variables can be provided by setting them in the bash and adding the prefix <code>APPTAINERENV_</code>:
-    <div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span><span class="nv">APPTAINERENV_HELLO</span><span class="o">=</span><span class="m">123</span><span class="w"> </span>apptainer<span class="w"> </span>bash<span class="w"> </span>docker://godlovedc/lolcow<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$HELLO</span>
+    <div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span><span class="nv">APPTAINERENV_HELLO</span><span class="o">=</span><span class="m">123</span><span class="w"> </span>apptainer<span class="w"> </span>shell<span class="w"> </span>docker://godlovedc/lolcow<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$HELLO</span>
 </code></pre></div></li>
 <li>Calling <code>apptainer shell</code> or <code>apptainer exec</code> uses as cwd the host callers cwd not the one set in the Dockerfile.
   One can change this by setting <code>--pwd</code>.</li>
@@ -3317,7 +3317,7 @@ This causes apptainer to download the image and convert it to a apptainer image:
 <div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>run<span class="w"> </span>docker://godlovedc/lolcow
 </code></pre></div>
 <p>or to open a shell inside the image</p>
-<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>bash<span class="w"> </span>docker://godlovedc/lolcow
+<div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>shell<span class="w"> </span>docker://godlovedc/lolcow
 </code></pre></div>
 <p>Furthermore, similar to docker, one can pull (and convert) remote image with the following call:</p>
 <div class="highlight"><pre><span></span><code>host:~$<span class="w"> </span>apptainer<span class="w"> </span>pull<span class="w"> </span>docker://godlovedc/lolcow
