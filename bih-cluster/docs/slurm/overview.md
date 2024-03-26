@@ -1,13 +1,12 @@
 # Scheduling Overview
-
-The BIH HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system.
-This section of the manual attempts to give an overview of what scheduling is and how you can use the Slurm scheduler.
+The BIH HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system for resource allocation.
+This section of the manual attempts to give an overview of what scheduling is and how to use the Slurm scheduler.
 For more detailed information, you will have to refer to the [Slurm website](https://slurm.schedmd.com/overview.html) and the Slurm man pages (e.g., by entering `man sbatch` or `man srun` on the HPC terminal's command line).
 
 For a quick introduction and hands-on examples, please see the manual sections
 
-- Overview, starting with [For the Impatient](../overview/for-the-impatient.md), and
-- First Steps/Tutorial, starting with [Episode 0](../hpc-tutorial/episode-0.md).
+- Overview, starting with [Slurm Quickstart](./quickstart.md), and
+- HPC Tutorial, starting with [Episode 0](../hpc-tutorial/episode-0.md).
 
 Also, make sure that you are aware of our [How-To: Debug Software](../how-to/misc/debug-software.md) and [How-To: Debug Software on HPC Systems](../how-to/misc/debug-at-hpc.md) guides in the case that something goes wrong.
 

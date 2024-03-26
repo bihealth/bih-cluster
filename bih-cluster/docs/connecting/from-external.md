@@ -48,17 +48,17 @@ $ ssh user_m@hpc-login-1.cubi.bihealth.org
 ```
 
 ## Charité Users
-You will then have to apply for (1) general VPN access and (2) extended VPN access to BIH HPC.
-Finally, you will be able to connect to BIH HPC from VPN.
+Access to BIH HPC from external networks (including Eduroam) requires a Charité VPN connection with special access permissions.
 
-### General Charite VPN Access
-You need to apply for Charite VPN access, if you haven't done so already.
+### General Charité VPN Access
+You need to apply for general Charité VPN access if you haven't done so already.
 The form can be found in the [Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Antrag_Mitarb_Stud.pdf) and contains further instructions.
+[Charité IT Helpdesk](mailto:helpdesk@charite.de) can help you with any questions.
 
-### Zusatzantrag B (Recommended)
-You can find [Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) in the Charite intranet.
-Fill it out and ship it in addition to the general VPN access form from above.
-[Charite Helpdesk](mailto:helpdesk@charite.de) can help you with any questions.
+### Zusatzantrag B
+Special permissions form B is also required for HPC access.
+You can find [Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) in the Charité intranet.
+Fill it out and send it to the same address as the general VPN access form above.
 
 Once you have been granted VPN access, start the client and connect to VPN.
 You will then be able to connect from your client in the VPN just as you do from your workstation.
@@ -67,9 +67,9 @@ You will then be able to connect from your client in the VPN just as you do from
 $ ssh jdoe_c@hpc-login-1.cubi.bihealth.org
 ```
 
-### Charite VDI
-Alternative to using Zusatzantrag B, you can also get access to the Charite VDI (Virtual Desktop Infrastructure).
-Here, you connect to a virtual desktop computer which is in the Charite network.
+### Charité VDI (Not recommended)
+Alternative to using Zusatzantrag B, you can also get access to the Charité VDI (Virtual Desktop Infrastructure).
+Here, you connect to a virtual desktop computer which is in the Charité network.
 From there, you can connect to the BIH HPC system.
 
 You need to apply for extended VPN access to be able to access the BIH VDI.

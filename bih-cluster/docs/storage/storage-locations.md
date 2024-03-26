@@ -14,7 +14,7 @@ There are the following three entities on the cluster:
 
 Each user, group, and project can have storage folders in different locations.
 
-## Data Types and storage Tiers
+## Data Types and Storage Tiers
 Files stored on the HPC fall into one of three categories:
 
 1. **Home** folders store programs, scripts, and user config i.&nbsp;e. long-lived and very important files. 
@@ -38,15 +38,15 @@ In the HPC filesystem they are mounted in `/data/cephfs-1` and `/data/cephfs-2`.
 Storage quotas are imposed in these locations to restrict the maximum size of folders.
 Amount and utilization of quotas is communicated via the [HPC Access](https://hpc-access.cubi.bihealth.org/) web portal.
 
-### Home directories
+### Home Directories
 Location: `/data/cephfs-1/home/`
 
 Only users have home directories on Tier 1 storage.
 This is the starting point when starting a new shell or SSH session.
 Important config files are stored here as well as analysis scripts and small user files.
-Home folders have a strict storage quota of 1 GB.
+Home folders have a [strict storage quota](./home-quota.md) of 1 GB.
 
-### Work directories
+### Work Directories
 Location: `/data/cephfs-1/work/`
 
 Groups and projects have work directories on Tier 1 storage.
@@ -55,7 +55,7 @@ Files shared within a group/project are stored here as long as they are in activ
 Work folders are generally limited to 1 TB per group.
 Project work folders are allocated on an individual basis.
 
-### Scratch space
+### Scratch Space
 Location: `/data/cephfs-1/scratch/`
 
 Groups and projects have scratch space on Tier 1 storage.
@@ -63,9 +63,9 @@ User home folders contain a symlink to their respective group's scratch space.
 Meant for temporary, potentially large data e. g. intermediate unsorted or unmasked BAM files, data downloaded from the internet etc.
 Scratch space is generally limited to 10 TB per group.
 Projects are allocated scratch on an individual basis.
-**Files in scratch will be [automatically removed](scratch-cleanup.md) 2 weeks after their creation.**
+Files in scratch will be [automatically removed](scratch-cleanup.md) 2 weeks after their creation.
 
-### Tier 2 storage
+### Tier 2 Storage
 Location: `/data/cephfs-2/`
 
 This is where big files go when they are not in active use.
@@ -105,7 +105,7 @@ Depending on the location and Tier, CephFS creates snapshots in different freque
 Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
 This provides an additional layer of security i. e. physical damage to the servers.
 
-### Accessing snapshots
+### Accessing Snapshots
 To access snapshots, simply navigate to the `.snap/` sub-folder of the respective location.
 You will find one sub-folder for every snapshot created and in them a complete replica of the folder respective folder at the time of snapshot creation.
 
