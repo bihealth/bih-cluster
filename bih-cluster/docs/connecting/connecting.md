@@ -23,6 +23,7 @@ Follow these steps to connect to BIH HPC via the command line:
     # Charite Users
     $ ssh user_c@hpc-login-1.cubi.bihealth.org
     $ ssh user_c@hpc-login-2.cubi.bihealth.org
+
     # MDC Users
     $ ssh user_m@hpc-login-1.cubi.bihealth.org
     $ ssh user_m@hpc-login-2.cubi.bihealth.org
@@ -37,8 +38,15 @@ Follow these steps to connect to BIH HPC via the command line:
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to BIH HPC.
     If you are using a Windows PC to access BIH HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
 
-5. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
-6. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
+5. Allocate resources on a computation node using [Slurm](../slurm/overview.md). Do not compute on the login node!
+
+    ```bash
+    # Start interactive shell on computation node
+    $ srun --pty bash -i
+    ```
+
+6. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
+7. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
 
 !!! tip "tl;dr"
 
@@ -49,10 +57,11 @@ Follow these steps to connect to BIH HPC via the command line:
         # Interactive login (choose one)
         ssh username@hpc-login-1.cubi.bihealth.org
         ssh username@hpc-login-2.cubi.bihealth.org
+        srun --pty bash -i
 
         # File Transfer (choose one)
-        sftp username@hpc-transfer-1.cubi.bihealth.org
-        sftp username@hpc-transfer-2.cubi.bihealth.org
+        sftp local/file username@hpc-transfer-1.cubi.bihealth.org:remote/file
+        sftp username@hpc-transfer-2.cubi.bihealth.org:remote/file local/file
 
         # Interactive login into the transfer nodes (choose one)
         ssh username@hpc-transfer-1.cubi.bihealth.org

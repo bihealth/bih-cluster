@@ -1,12 +1,6 @@
 # Frequently Asked Questions
 
-## What is this Website?
-
-This is the BIH cluster documentation that was created and is maintained by BIH Core Unit Bioinformatics (CUBI) and BIH HPC IT with contributions by BIH HPC Users.
-The aim is to gather the information for using the cluster efficiently and helping common issues andproblems.
-
 ## Where can I get help?
-
 - Talk to your colleagues!
 - Have a look at our forums at [HPC-talk](https://hpc-talk.cubi.bihealth.org/) to see if someone already solved the same problem.
   If not, create a new topic. Administrators, CUBI, and other users can see and answer your question.
@@ -14,12 +8,20 @@ The aim is to gather the information for using the cluster efficiently and helpi
 - For problems with BIH HPC please contact [hpc-helpdesk@bih-charite.de].
 
 ## I cannot connect to the cluster. What's wrong?
-
 Please see the section [Connection Problems](../connecting/connection-problems.md).
 
-## I'd like to learn more about Slurm
+## Connecting to the cluster takes a long time.
+The most probable cause for this is a conda installation which defaults to loading the _(Base)_ environment on login.
+To disable this behaviour you can run:
 
-- Some documentation is available on this website, e.g., start at [Slurm Quickstart](../slurm/quickstart.md).
+```sh
+$ conda config --set auto_activate_base false
+```
+
+You can also run the bash shell in verbose mode to find out exactly which command is slowing down login:
+```sh
+$ ssh user@hpc-login-1.cubi.bihealth.org bash -iv
+```
 
 ## What is the difference between MAX and BIH cluster? What is their relation?
 
@@ -317,12 +319,7 @@ This is probably answered by the answer to [My jobs don't run in the partition I
 
 You cannot.
 
-## Why can I not mount a network volume from elsewhere on the cluster?
-
-For performance and stability reasons.
-Network volumes are notorious for degrading performance, depending on the used protocol, even stability.
-
-## How can I then access the files from my workstation/server?
+## How can I make workstation/server files available to the HPC?
 
 You can transfer files to the cluster through Rsync over SSH or through SFTP to the `hpc-transfer-1` or `hpc-transfer-2` node.
 
@@ -336,11 +333,6 @@ E.g., use the `-march=sandybridge` argument to the GCC/LLVM compiler executables
 
 If you absolutely need it, there are some boxes with more recent processors in the cluster (e.g., Haswell architecture).
 Look at the `/proc/cpuinfo` files for details.
-
-## Where should my (Mini)conda install go?
-
-As conda installations are big and contain many files, they should go into your `work` directory.
-**E.g., `/fast/users/$USER/work/miniconda` is appropriate.**
 
 ## I have problems connecting to the GPU node! What's wrong?
 
@@ -414,7 +406,6 @@ You can see the assignment of architectures to nodes using the `sinfo -o "%8P %.
 This will also display node partition, availability etc.
 
 ## Help, I'm getting a Quota Warning Email!
-
 No worries!
 
 As documented in the [Storage Locations](../storage/storage-locations.md) section, each user/project/group has three storage volumes:
@@ -433,22 +424,10 @@ Use the following command to list **all** files and directories in your home:
 hpc-login-1:~$ ls -la ~/
 ```
 
-You can use the following command to see how space each item takes up, including the hidden directories
-
-```bash
-hpc-login-1:~$ du -shc ~/.* ~/* --exclude=.. --exclude=.
-```
-
-In the case that, e.g., the `.cpan` directory is large, you can move it to `work` and create a symlink in its original place.
-
-```bash
-hpc-login-1:~$ mv ~/.cpan ~/work/.cpan
-hpc-login-1:~$ ln -sr ~/work/.cpan ~/.cpan
-```
+For more information on how to keep your home directory clean and avoid quota warnings, please read [Home Folder Quota](../storage/home-quota.md).
 
 ## I'm getting a "Disk quota exceeded" error.
-
-Most probably you are running into the same problem as described and solved in the entry [Help, I'm getting a Quota Warning Email!](#help-im-getting-a-quota-warning-email)
+Most probably you are running into the same problem as described above: [Help, I'm getting a Quota Warning Email!](#help-im-getting-a-quota-warning-email)
 
 ## Environment modules don't work and I get "module: command not found"
 
@@ -636,14 +615,6 @@ slurmstepd: error: task[0] unable to set taskset '0x0'
 
 This is a minor failure related to Slurm and cgroups.
 Your job **should** run through successfully despite this error (that is more of a warning for end-users).
-
-## My login stalls / something weird is happening
-
-You can try to run `ssh -l USER hpc-login-1.cubi.bihealth.org bash -iv`.
-This will run `bash -iv` instead of the normal login shell.
-The parameter `-i` is creating an interactive shell (which is what you want) and `-v` to see every command that is executed.
-This way you will see **every command** that is executed.
-You will also be able to identify at which point there is any stalling (e.g., activating conda via `source .../conda` when the fiel system is slow).
 
 ## How can I share files/collaborate with users from another work group?
 

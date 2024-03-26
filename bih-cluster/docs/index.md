@@ -19,11 +19,9 @@ Read the following set of pages (in order) to learn how to get access and connec
 1. [Getting Access](admin/getting-access.md)
 2. [Connecting](connecting/connecting.md)
 3. [Storage](storage/storage-locations.md)
-4. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).
-5. [HPC Tutorial](hpc-tutorial/episode-0.md)
-
-Then, continue reading through the manual.
-
+5. [Slurm](slurm/overview.md)
+6. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).
+7. [HPC Tutorial](hpc-tutorial/episode-0.md)
 
 !!! note "Acknowledging BIH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.

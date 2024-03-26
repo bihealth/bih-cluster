@@ -1,6 +1,7 @@
 # Project File System Structure
 
-This Wiki page dscribes best pratices for managing your Bioinformatics projects on the file system.
+!!! warning "Under Construction"
+    This guide was written for the old GPFS file system is in the process of being updated.
 
 ## General Aims
 

@@ -101,6 +101,7 @@ nav:
     - "Connection Problems": connecting/connection-problems.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
+    - "Home Folder Quota": storage/home-quota.md
     - "Scratch Cleanup": storage/scratch-cleanup.md
     - "Querying Quotas": storage/querying-storage.md
     - "Storage Migration": storage/storage-migration.md
@@ -111,7 +112,7 @@ nav:
     - "Episode 2": hpc-tutorial/episode-2.md
     - "Episode 3": hpc-tutorial/episode-3.md
     - "Episode 4": hpc-tutorial/episode-4.md
-  - "Cluster Scheduler":
+  - "Cluster Scheduler (Slurm)":
     - slurm/overview.md
     - slurm/background.md
     - slurm/quickstart.md
@@ -144,7 +145,7 @@ nav:
     - "~/.bashrc Guide": best-practice/bashrc-guide.md
     - "Temporary Files": best-practice/temp-files.md
     - "Custom Environment Modules": best-practice/env-modules.md
-    - "Install with Conda": best-practice/software-installation-with-conda.md
+    - "Install Software with Conda": best-practice/software-installation-with-conda.md
   - "Static Data (Cubit)":
     - "Overview": cubit/index.md
     - "Annotations": cubit/annotations.md
