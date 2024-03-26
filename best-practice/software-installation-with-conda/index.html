@@ -26,7 +26,7 @@
     
     
       
-        <title>Install with Conda - BIH HPC Docs</title>
+        <title>Install Software with Conda - BIH HPC Docs</title>
       
     
     
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Install with Conda
+              Install Software with Conda
             
           </span>
         </div>
@@ -876,6 +876,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../storage/home-quota/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home Folder Quota
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../storage/scratch-cleanup/" class="md-nav__link">
         
   
@@ -1128,7 +1149,7 @@
             
   
   <span class="md-ellipsis">
-    Cluster Scheduler
+    Cluster Scheduler (Slurm)
   </span>
   
 
@@ -1138,7 +1159,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Cluster Scheduler
+            Cluster Scheduler (Slurm)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1900,7 +1921,7 @@
           
   
   <span class="md-ellipsis">
-    Install with Conda
+    Install Software with Conda
   </span>
   
 
@@ -1911,7 +1932,7 @@
         
   
   <span class="md-ellipsis">
-    Install with Conda
+    Install Software with Conda
   </span>
   
 
@@ -3207,62 +3228,57 @@
 
 <h1 id="software-installation-with-conda">Software Installation with Conda<a class="headerlink" href="#software-installation-with-conda" title="Permanent link">&para;</a></h1>
 <h2 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
-<p>For the management of the bioinformatics software on the BIH cluster we are using conda.
-Conda is a package management system that is based on channels, and one of those
-channels provides a huge selection of bioinformatics software.</p>
-<p>Conda is written in Python and is based on recipes, such that everybody can
-write recipes for missing software (if there is any). In general the packages
-are pre-compiled and conda just downloads the binaries from the conda servers.</p>
+<p>Users do not have the rights to install system packages on the BIH HPC cluster.
+For the management of bioinformatics software we therefore recommend using the conda package manager.
+Conda provides software in different “channels” and one of those channels contains a huge selection of bioinformatics software (bioconda).
+Generally packages are pre-compiled and conda just downloads the binaries from the conda servers.</p>
 <p>You are in charge of managing your own software stack, but conda makes it easy
 to do so. We will provide you with a description on how to install conda and how
 to use it. Of course there are many online resources that you can also use.
 Please find a list at the end of the document.</p>
-<p>Also note that some system-level software is managed through environment modules.
-See <a href="#system-near-software-provided-by-hpc-administration">System-near Software Provided by HPC Administration</a> below.</p>
+<p>Also note that some system-level software is managed through environment modules.</p>
 <h2 id="premise">Premise<a class="headerlink" href="#premise" title="Permanent link">&para;</a></h2>
 <p>When you logged into the cluster, please make sure that you also executed <code>srun</code> to log into a computation node and perform the software installation there.</p>
 <h2 id="installing-conda">Installing conda<a class="headerlink" href="#installing-conda" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>hpc-login-1:~$<span class="w"> </span>srun<span class="w"> </span>--mem<span class="o">=</span>5G<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
-med0127:~$<span class="w"> </span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-med0127:~$<span class="w"> </span>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh<span class="w"> </span>-b<span class="w"> </span>-f<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/work/miniconda
+hpc-cpu-123:~$<span class="w"> </span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+hpc-cpu-123:~$<span class="w"> </span>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh<span class="w"> </span>-b<span class="w"> </span>-f<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/work/miniconda
+hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>init
 </code></pre></div>
 <p>This will install conda to <code>$HOME/work/miniconda</code>.
 This path can be changed to your liking.
-Please note that the <code>$HOME</code> folder has limited space (an exception is the subfolder <code>$HOME/work</code> which has no space limit).</p>
-<p>NB: <code>$HOME/scratch</code> is not appropriate as files placed there will be removed automatically after 2 weeks.</p>
-<p>To make it available upon login, extend and export the <code>$PATH</code> variable with the
-installation path + <code>/bin</code> and add it to your <code>$HOME/.bashrc</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURMD_NODENAME</span><span class="p">-</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
-<span class="w">    </span>login-*<span class="o">)</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">    </span>*<span class="o">)</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/work/miniconda/condabin:<span class="nv">$PATH</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="k">esac</span>
-</code></pre></div>
-<p>The above code makes sure that you don't have conda available on the login nodes,
-where you are not allowed to start any computations.</p>
+Please note that the <code>$HOME</code> folder has limited space, <a href="../../storage/home-quota/">more about that here</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>$HOME/scratch</code> is not appropriate as files placed there will be removed automatically after 2 weeks.</p>
+</div>
 <p>To make bioinformatics software available, we have to add the <code>bioconda</code> and
 some other channels to the conda configuration:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>bioconda
-med0127:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>default
-med0127:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>bioconda
+hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>default
+hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
 </code></pre></div>
-<p>You can also add channels to your liking.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>By default conda will automatically activate the (base) environment for new shell sessions.
+This is can significantly delay your login process and should be turned off:</p>
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
+</div>
 <h2 id="installing-software-with-conda">Installing software with conda<a class="headerlink" href="#installing-software-with-conda" title="Permanent link">&para;</a></h2>
 <p>Installing packages with conda is straight forward:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
-<p>This will install a package into the conda root environment. We will explain
-environments in detail in the next section.</p>
-<p>To search for a package, e.g. to find the correct name in conda or if it exists
+<p>This will install a package into the conda base environment. 
+We will explain environments in detail in the next section.
+To search for a package, e.g. to find the correct name in conda or if it exists
 at all, issue the command:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>search<span class="w"> </span>&lt;string&gt;
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>search<span class="w"> </span>&lt;string&gt;
 </code></pre></div>
 <p>To choose a specific version (conda will install the latest version that is
 compatible with the current installed Python version), you can provide the
 version as follows:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;<span class="o">=</span>&lt;version&gt;
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;<span class="o">=</span>&lt;version&gt;
 </code></pre></div>
 <p>Please note that new conda installs may ship with a recently update Python version and not all packages might have been adapted.
 E.g., if you find out that some packages don't work after starting out/upgrading to Python 3.8, simply try to downgrade Python to 3.7 with <code>conda install python=3.7</code>.</p>
@@ -3274,10 +3290,10 @@ file, an alternative resolver has been presented that you can use to install
 software into your Conda environment. The time savings are immense and an
 installation that took more than an hour can be resolved in seconds.</p>
 <p>Simply run</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>mamba
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>mamba
 </code></pre></div>
 <p>With that, you can install software into your environment using the same syntax as for Conda:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>mamba<span class="w"> </span>install<span class="w"> </span>&lt;package&gt;
 </code></pre></div>
 </div>
 <h2 id="creating-an-environment">Creating an environment<a class="headerlink" href="#creating-an-environment" title="Permanent link">&para;</a></h2>
@@ -3289,15 +3305,15 @@ conflicting packages will mostly struggle with the Python version.</p>
 that software that does not depend on Python and is installed in the root
 environment, is is available in all other environments.</p>
 <p>To create a Python 2.7 environment and activate it, issue the following commands:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py27<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
-med0127:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>py27
-<span class="o">(</span>py27<span class="o">)</span><span class="w"> </span>med0127:~$
+<div class="highlight"><pre><span></span><code>hpc-cpu-123:~$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py27<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7
+hpc-cpu-123:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>py27
+<span class="o">(</span>py27<span class="o">)</span><span class="w"> </span>hpc-cpu-123:~$
 </code></pre></div>
 <p>From now on, conda will install packages into the <code>py27</code> environment when you issue
 the <code>install</code> command. To switch back to the root environment, simply deactivate the
 <code>py27</code> environment:</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>py27<span class="o">)</span><span class="w"> </span>med0127:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate<span class="w"> </span>py27
-med0127:~$
+<div class="highlight"><pre><span></span><code><span class="o">(</span>py27<span class="o">)</span><span class="w"> </span>hpc-cpu-123:~$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate<span class="w"> </span>py27
+hpc-cpu-123:~$
 </code></pre></div>
 <p>But of course, as Python 2.7 is not supported any more by the Python Software Foundation, you should switch over to Python 3 already!</p>
 
@@ -3320,7 +3336,7 @@ med0127:~$
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2024</span>
   </span>
 
     

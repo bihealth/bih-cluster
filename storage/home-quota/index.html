@@ -12,13 +12,13 @@
         <meta name="author" content="BIH HPC IT">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/ondemand/interactive/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/storage/home-quota/">
       
       
-        <link rel="prev" href="../overview/">
+        <link rel="prev" href="../storage-locations/">
       
       
-        <link rel="next" href="../quotas/">
+        <link rel="next" href="../scratch-cleanup/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Interactive Sessions - BIH HPC Docs</title>
+        <title>Home Folder Quota - BIH HPC Docs</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ondemand-interactive-sessions" class="md-skip">
+        <a href="#keeping-your-home-folder-clean" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interactive Sessions
+              Home Folder Quota
             
           </span>
         </div>
@@ -817,17 +817,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -841,7 +843,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Storage
@@ -855,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-locations/" class="md-nav__link">
+      <a href="../storage-locations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,10 +875,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../storage/home-quota/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home Folder Quota
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -885,6 +907,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code-libraries-and-other-big-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code libraries and other big folders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporary Files
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -897,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
+      <a href="../scratch-cleanup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/querying-storage/" class="md-nav__link">
+      <a href="../querying-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-migration/" class="md-nav__link">
+      <a href="../storage-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -960,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/migration-faq/" class="md-nav__link">
+      <a href="../migration-faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,19 +1697,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1663,7 +1721,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             OnDemand Portal
@@ -1677,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../ondemand/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1695,30 +1753,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Interactive Sessions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ondemand/interactive/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1727,53 +1765,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#session-directories" class="md-nav__link">
-    <span class="md-ellipsis">
-      Session Directories
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-1-default-rstudio-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 1: Default RStudio Session
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-2-rstudio-session-with-custom-r-installation-from-conda" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 2: RStudio Session with custom R-installation from conda
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1786,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quotas/" class="md-nav__link">
+      <a href="../../ondemand/quotas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3141,27 +3132,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#session-directories" class="md-nav__link">
+  <a href="#code-libraries-and-other-big-folders" class="md-nav__link">
     <span class="md-ellipsis">
-      Session Directories
+      Code libraries and other big folders
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-1-default-rstudio-session" class="md-nav__link">
+  <a href="#temporary-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 1: Default RStudio Session
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-2-rstudio-session-with-custom-r-installation-from-conda" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 2: RStudio Session with custom R-installation from conda
+      Temporary Files
     </span>
   </a>
   
@@ -3182,7 +3164,7 @@
                   
 
   
-    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/ondemand/interactive.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/storage/home-quota.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3190,145 +3172,44 @@
   
 
 
-<h1 id="ondemand-interactive-sessions">OnDemand: Interactive Sessions<a class="headerlink" href="#ondemand-interactive-sessions" title="Permanent link">&para;</a></h1>
-<p>Interactive sessions allow you to start and manage selected apps. Depending
-on the app they run as servers or GUIs. Selecting <code>My Interactive Sessions</code>
-in the top menu will direct you to the overview of currently running sessions.
-The left-hand panel provides a short cut to start a new session of one of the
-provided apps.</p>
-<p><img alt="" class="center" src="../figures/ondemand-my-sessions.png" style="width:90%;" /></p>
-<p>Each running interactive session is listed. Each card corresponds to one session.
-The title of each card provides the name, allocated resources and the current status.
-Furthermore, detailed information and links are available:</p>
-<ul>
-<li><strong>Host</strong>: Provides the name of the node the session is running on. Click on the host name to open a shell to the given cluster node.</li>
-<li><strong>Time remaining</strong>: Time until session till terminate.</li>
-<li><strong>Session ID</strong>: Click to open the session directory in the interactive file browser (see below).</li>
-<li><strong>Connect to</strong>: This will open the app in your browser (opens a new tab).</li>
-<li><strong>Delete</strong>: Terminate the session.</li>
-</ul>
-<div class="admonition important">
-<p class="admonition-title">Don't hit reload in your apps</p>
-<p>Please note that the portal will use the authentication mechanisms of the apps to ensure that nobody except for you can connect to the session.
-This means that hitting the browsers "reload" button in your app will most likely not work.</p>
-<p>Just go back to the interactive session list and click on the "connect" button.</p>
+<h1 id="keeping-your-home-folder-clean">Keeping your home folder clean<a class="headerlink" href="#keeping-your-home-folder-clean" title="Permanent link">&para;</a></h1>
+<p>We set quite restrictive quotas for user homes, but in exchange you get file system <a href="../storage-locations/#snapshots-and-mirroring">snapshots and mirroring</a>.
+Your home folder should therefore only be used for scripts, your user config, and other small files.
+Everything else should be stored in the <code>work</code> or <code>scratch</code> subdirectories, which effectively link to your group's shared storage space.
+This document describes some common pitfalls and how to circumvent them.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The tilde character (<code>~</code>) is shorthand for your home directory.</p>
 </div>
-<h2 id="session-directories">Session Directories<a class="headerlink" href="#session-directories" title="Permanent link">&para;</a></h2>
-<p>The portal software will create a folder <code>ondemand</code> in your home directory.
-Inside, it will create session directories for each started interactive job.
-For technical reasons, these folders have very long names, for example:</p>
+<h2 id="code-libraries-and-other-big-folders">Code libraries and other big folders<a class="headerlink" href="#code-libraries-and-other-big-folders" title="Permanent link">&para;</a></h2>
+<p>Various programs are used to depositing large folders in a user's home and can quickly use up your allotted storage quota.
+These include:</p>
 <ul>
-<li><code>$HOME/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-server/output/e40e03b3-11ca-458a-855b-98e6f148c99a/</code></li>
+<li>Python: <code>~/.local/lib/python*</code></li>
+<li>*conda: Location chosen by the user.</li>
+<li>R: <code>~/R/x86_64-pc-linux-gnu-library</code></li>
+<li><a href="../../ondemand/overview/">HPC portal</a>: <code>~/ondemand</code></li>
 </ul>
-<p>This follows the pattern:</p>
-<ul>
-<li><code>$HOME/${application name}/output/${job UUID}</code></li>
-</ul>
-<p>The job identifier used is <strong>not</strong> the Slurm job ID but an identifier internal to OnDemand.
-Inside this directory you will find log files and a number of scripts that are used to start your job.</p>
-<p>If you need to debug any interactive job, start here.
-Also, the helpdesk will need the path to this folder to help you with interactive jobs.</p>
-<p>You can find the name of the latest output folder with the following command:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhtr<span class="w"> </span><span class="nv">$HOME</span>/<span class="si">${</span><span class="nv">application</span><span class="p"> name</span><span class="si">}</span>/output<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<p>Please note that directories whose name is starting with a dot are not shown by the normal <code>ls</code> command, but require the <code>ls -a</code> flag. You can search your home folder for large directories like so:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>du<span class="w"> </span>-shc<span class="w"> </span>~/.*<span class="w"> </span>~/*<span class="w"> </span>--exclude<span class="o">=</span>..<span class="w"> </span>--exclude<span class="o">=</span>.
+</code></pre></div></p>
+<p>You should move these locations to your <code>work</code> folder and create symbolic links in their place.
+Conda installations should be installed in <code>work</code> from the very beginning as they do not react well to being moved around.</p>
+<p>Here is an example for the <code>.local</code> folder.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>~/.local<span class="w"> </span>~/work/.local
+$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/work/.local<span class="w"> </span>~/.local
 </code></pre></div>
-<p>For example, for RStudio Server:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-lhtr<span class="w"> </span><span class="nv">$HOME</span>/ondemand/data/sys/dashboard/batch_connect/sys/ood-bih-rstudio-server/output<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<h2 id="temporary-files">Temporary Files<a class="headerlink" href="#temporary-files" title="Permanent link">&para;</a></h2>
+<p>Another usual culprit is the hidden <code>.cache</code> directory which contains temporary files.
+This folder can be moved to the <code>scratch</code> volume in a similar manner as described above.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>~/.cache<span class="w"> </span>~/scratch/.cache
+$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>~/scratch/.cache<span class="w"> </span>~/.cache
 </code></pre></div>
-<div class="admonition important">
-<p class="admonition-title">Prevent Home From Filling Up</p>
-<p>You should probably move <code>~/ondemand</code> to your work volume with the following:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mv<span class="w"> </span>~/ondemand<span class="w"> </span>~/work/ondemand
-$<span class="w"> </span>ln<span class="w"> </span>-sr<span class="w"> </span>~/work/ondemand<span class="w"> </span>~/ondemand
-</code></pre></div>
-<p>Make sure to delete potential interactive sessions and to logout from the
-Ondemand Portal first. Otherwise, the <code>~/ondemand</code> folder is constantly
-recreated and the symlink will be just created within this folder as
-<code>~/ondemand/ondemand</code> and thus not be used as intended.</p>
-<p>Also, clear out <code>~/work/ondemand/*</code> from time to time but take care that you don't remove the directory of any running job.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Files placed in your <code>scratch</code> directory will be <a href="../scratch-cleanup/">automatically removed</a> after 2 weeks.
+Do not place any valuable files in there.</p>
 </div>
-<h2 id="example-1-default-rstudio-session">Example 1: Default RStudio Session<a class="headerlink" href="#example-1-default-rstudio-session" title="Permanent link">&para;</a></h2>
-<p>This description of starting an RStudio session is a showcase for starting other interactive apps as well.</p>
-<p>To start the session, please go to <code>Interactive Apps</code> in the top menu bar and select <code>RStudio Server</code> or click <code>RStudio Server</code> in the left-hand panel.</p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-rstudio-config_new.png" style="width:90%;" /></p>
-<p>Allocate appropriate resources and click <code>Launch</code>.</p>
-<p>An info card for the RStudio Server will be added to <code>My Interactive Sessions</code>, and during start,
-it will change its state from <code>Queued</code> to <code>Starting</code> to <code>Running</code>. Depending on the app, resources allocated and
-current cluster usage, this will take a couple of seconds.</p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-rstudio-queued.png" style="width:90%;" /></p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-rstudio-starting.png" style="width:90%;" /></p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-rstudio-running.png" style="width:90%;" /></p>
-<p>When in the final state (<code>Running</code>), one can directly connect to the RStudio Server
-to get an interactive session by clicking <code>Connect to RStudio Server</code>:</p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-rstudio-session.png" style="width:90%;" /></p>
-<h2 id="example-2-rstudio-session-with-custom-r-installation-from-conda">Example 2: RStudio Session with custom R-installation from conda<a class="headerlink" href="#example-2-rstudio-session-with-custom-r-installation-from-conda" title="Permanent link">&para;</a></h2>
-<p>To use the OnDemand portal with a specific R installation including a stable set of custom packages you can use a conda enviroment from the cluster as a R source.  </p>
-<p>For this you may first need to create this conda environment including your R version of choice and all necessary packages. Specific installations of i.e. python from conda can be used similarly in other interactive apps.</p>
-<ul>
-<li>For reproducibility this environment should clearly define all package versions and include dependencies. This is easiest to achieve by first collecting all packages you need into a primary collection (i.e. a yaml file, potentially including a specific R version for r-base if needed) and creating an environment from there. Exporting this environment will generate a file with all used packages and their version numbers, that can be used to recreate the same environment.</li>
-<li>Example code:</li>
-</ul>
-<details>
-<summary>Click to expand</summary>
-
-* Commands:
-  + `conda env create -n R-example -f R-example.yaml`
-  + `conda activate R-example`
-  + `conda env export -f R-fixed-versions.yaml`
-  + `conda env create -n R-fixed-versions -f R-fixed-versions.yaml`
-* R-example.yaml
-
-<div class="highlight"><pre><span></span><code>channels:
-  - conda-forge
-  - bioconda
-  - defaults
-dependencies:
-  - r-base
-  - r-essentials
-  - r-devtools
-  - bioconductor-deseq2
-  - r-tidyverse
-  - r-rmarkdown
-  - r-knitr
-  - r-dt
-</code></pre></div>
-</details>
-
-<ul>
-<li>R packages only available from github</li>
-</ul>
-<p>Some packages (i.e. several single-cell-RNAseq analysis tools) are only available from github and not on Cran/Bioconductor. There are two ways to install such packages into a conda enviroment.</p>
-<details>
-<summary>Click to expand</summary>
-
-1) Install from inside R \[easier option, but not pure conda\]
-
-* First setup the conda env, ideally including all dependencies for the desired package from github (and do include r-devtools)
-* Then within R run `devtools::install_github('owner/repo', dependencies=F, upgrade=F, lib='/path/to/conda/env-name/lib/R/library')`
-* if you don't have all dependencies already installed you will have to omit dependencies=F and risk a mix of conda & native R installed packages (or just have to redo the conda env).
-* github_install involves a build process and still needs a bit of memory, so this might crash on the default `srun --pty bash -i` shell
-
-2) Build packages into a local conda channel \[takes longer, but pure conda\]\
-   This approach is mostly taken from the answers given [here](https://stackoverflow.com/questions/52061664/install-r-package-from-github-using-conda). These steps must be taken _before_ building the final env used with Rstudio
-
-* use `conda skeleton cran https://github.com/owner/repo [--git-tag vX.Y]` to generate build files
-  * conda skeleton only works for repositories with a release/version tag. If the package you want to install does not have that, you either need to create a fork and add a such a tag, or find a fork that already did that. Downloading the code directly from github and building the package from that is also possible, but you will the need to manually set up the `meta.yaml` and `build.sh` files that conda skeleton would create.
-  * If there is more than one release tag, do specify which one you want, it may not automatically take the most recent one.
-  * If any r-packages from bioconductor are dependencies, conda will not find them during the build process. You will need to change the respective entries in the `meta.yaml` file created by conda skeleton. I.e. change `r-deseq2` to `bioconductor-deseq2`
-* Build the package with `conda build --R=<X.X.X> [--use-local] r-<repo-name>`
-  * You need to specifying the same R-version used in the final conda env
-  * If the github package has additional dependencies from github, build those first and then add `--use-local` so the build process can find them.
-  * The build process definitely needs more memory than the default `srun --pty bash -i` shell. It also takes quite a bit of time (much longer than installing through devtools::install_github)
-* Finally add the packages (+versions) you built to the environment definition (i.e. yaml file) and create the (final) conda environment. Don't forget to tell conda to use locally build packages (either supply `--use-local` or add `- local` to the channel list in the yaml file)
-
-</details>
-
-<p>Starting the Rstudio session via the OnDemand portal works almost as described above (see Example 1). However, you do have to select `miniconda` as R source and provide the path to your miniconda installation and (separated by a colon) the name of the (newly created) conda enviroment you want to use.</p>
-<p><img alt="" class="center" src="../figures/ondemand-interactive-custom-conda.png" style="width:90%;" /></p>
-<p>Additional notes:</p>
-<ul>
-<li>Updating the conda env, that an already running rstudio instance is using, does work but does requires a restart of the R session to take effect</li>
-<li>If you are starting a new interactive Rstudio session but with a different conda environment than before, Rstudio will still start from the same project as before. In this case the 'old' project likely still contains the previous <code>.libPaths()</code> entries and therefore a link to your previous conda installation. Creating a new project cleans <code>.libPaths()</code> to only the env specified in setting up the Rstudio session.</li>
-</ul>
 
 
 
