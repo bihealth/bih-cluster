@@ -39,7 +39,7 @@ The following guide gives a quick dive into using docker images with apptainer.
 Run a bash in a docker image:
 
 ```bash
-host:~$ apptainer bash docker://godlovedc/lolcow
+host:~$ apptainer shell docker://godlovedc/lolcow
 ```
 
 Run a command in a docker image:
@@ -51,7 +51,7 @@ host:~$ apptainer exec docker://godlovedc/lolcow echo "hello, hello!"
 Run a bash in a docker image, enable access to the cuda driver (--nv) and mount a path (--bind or -B):
 
 ```bash
-host:~$ apptainer bash --nv --bind /path_on_host/:/path_inside_container/ docker://godlovedc/lolcow
+host:~$ apptainer shell --nv --bind /path_on_host/:/path_inside_container/ docker://godlovedc/lolcow
 ```
 
 ## Some Caveats and Notes
@@ -65,7 +65,7 @@ host:~$ apptainer bash --nv --bind /path_on_host/:/path_inside_container/ docker
 
 - Environment variables can be provided by setting them in the bash and adding the prefix `APPTAINERENV_`:
     ```bash
-    host:~$ APPTAINERENV_HELLO=123 apptainer bash docker://godlovedc/lolcow echo $HELLO
+    host:~$ APPTAINERENV_HELLO=123 apptainer shell docker://godlovedc/lolcow echo $HELLO
     ```
 - Calling `apptainer shell` or `apptainer exec` uses as cwd the host callers cwd not the one set in the Dockerfile.
   One can change this by setting `--pwd`.
@@ -84,7 +84,7 @@ host:~$ apptainer run docker://godlovedc/lolcow
 or to open a shell inside the image
 
 ```bash
-host:~$ apptainer bash docker://godlovedc/lolcow
+host:~$ apptainer shell docker://godlovedc/lolcow
 ```
 
 Furthermore, similar to docker, one can pull (and convert) remote image with the following call:
