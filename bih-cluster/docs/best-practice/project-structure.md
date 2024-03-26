@@ -1,7 +1,7 @@
 # Project File System Structure
 
 !!! warning "Under Construction"
-    This guide was written for the old GPFS file system is in the process of being updated.
+    This guide was written for the old GPFS file system and is in the process of being updated.
 
 ## General Aims
 
