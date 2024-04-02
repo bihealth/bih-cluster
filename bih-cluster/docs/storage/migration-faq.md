@@ -5,10 +5,17 @@ You should also use `tmux` to not risk connection loss during long running trans
 
 ## Useful commands
 
-1. Define source and target location and copy contents.
+1. Define source and target location and copy contents. The example code below copies a user home folder.
+   Please replace the parts in curly brackets with your actual folder names. 
 ```sh
-$ SOURCE=/data/gpfs-1/work/projects/my_project/
-$ TARGET=/data/cephfs-2/unmirrored/projects/my-project/
+$ SOURCE=/data/gpfs-1/home/users/{username_c}/
+$ TARGET=/data/cephfs-1/home/users/{username_c}/
+$ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
+```
+   This is how it would look like for a project folder:
+```sh
+$ SOURCE=/data/gpfs-1/work/projects/{my_project}/
+$ TARGET=/data/cephfs-2/unmirrored/projects/{my-project}/
 $ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
 ```
 

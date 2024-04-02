@@ -120,7 +120,7 @@ Please see the memory part of the answer to [My job terminated before being done
 ## How can I create a new project?
 
 You can create a project if you are either a group leader of an AG or a delegate of an AG.
-If this is the case, please follow [these instructions](../../admin/getting-access/#projects).
+If this is the case, please follow [these instructions](../admin/getting-access.md#projects).
 
 ## I cannot create PNGs in R
 
