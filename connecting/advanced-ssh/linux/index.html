@@ -801,6 +801,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configure SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mdc-users-jail-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      MDC users: Jail node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3221,6 +3236,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configure SSH Client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mdc-users-jail-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      MDC users: Jail node
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3324,8 +3354,9 @@ Host bihcluster2
 <p>Now, you can do type the following (and you don't have to remember the host name of the login node any more).</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>bihcluster
 </code></pre></div>
-<p>The configuration works if you are inside Charité or MDC.
-If you are located anywhere else, you can use the following <code>~/.ssh/config</code> lines to set up a ProxyJump via the MDC SSH jail.</p>
+<p>This configuration works if you are inside Charité, the Charité VPN, or MDC.</p>
+<h3 id="mdc-users-jail-node">MDC users: Jail node<a class="headerlink" href="#mdc-users-jail-node" title="Permanent link">&para;</a></h3>
+<p>If you have an MDC user account and want to connect from the outside, you can use the following <code>~/.ssh/config</code> lines to set up a ProxyJump via the MDC SSH jail.</p>
 <div class="highlight"><pre><span></span><code>Host mdcjail
     HostName ssh1.mdc-berlin.de
     User MDC_USER_NAME
