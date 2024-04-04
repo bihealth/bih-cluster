@@ -47,8 +47,10 @@ Now, you can do type the following (and you don't have to remember the host name
 $ ssh bihcluster
 ```
 
-The configuration works if you are inside Charité or MDC.
-If you are located anywhere else, you can use the following `~/.ssh/config` lines to set up a ProxyJump via the MDC SSH jail.
+This configuration works if you are inside Charité, the Charité VPN, or MDC.
+
+### MDC users: Jail node
+If you have an MDC user account and want to connect from the outside, you can use the following `~/.ssh/config` lines to set up a ProxyJump via the MDC SSH jail.
 
 ```
 Host mdcjail
