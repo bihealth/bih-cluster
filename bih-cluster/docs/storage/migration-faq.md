@@ -16,7 +16,7 @@ $ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
 ```sh
 $ SOURCE=/data/gpfs-1/work/projects/{my_project}/
 $ TARGET=/data/cephfs-2/unmirrored/projects/{my-project}/
-$ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
+$ rsync -ahX --stats --progress --dry-run $SOURCE $TARGET
 ```
 
 2. Remove the `--dry-run` flag to start the actual copying process.
@@ -25,7 +25,7 @@ $ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
    Please note the flag `--remove-source-files` which will do exactly as the name suggests,
    but leaves empty directories behind.
 ```sh
-$ rsync -ah --stats --remove-source-files --dry-run $SOURCE $TARGET
+$ rsync -ahX --stats --remove-source-files --dry-run $SOURCE $TARGET
 ```
 4. Again, remove the `--dry-run` flag to start the actual deletion.
 5. Check if all files are gone from the SOURCE folder and remove the empty directories:
