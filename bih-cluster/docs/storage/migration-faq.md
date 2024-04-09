@@ -20,8 +20,8 @@ $ rsync -ahX --stats --progress --dry-run $SOURCE $TARGET
 ```
 
 !!! warning "Important"
-   Please note the importance of the -X flag to keep extended file attributes (ACLs) which
-   we might have assigned to you if you are a delegate in charge of moving a project.
+    Please note the importance of the -X flag to keep extended file attributes (ACLs) which
+    we might have assigned to you if you are a delegate in charge of moving a project.
 
 2. Remove the `--dry-run` flag to start the actual copying process.
 3. Perform a second `rsync` to check if all files were successfully transferred.
