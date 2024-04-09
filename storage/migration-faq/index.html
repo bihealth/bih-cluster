@@ -3178,7 +3178,8 @@ This not only leaves the compute notes available for actual computation, but als
 You should also use <code>tmux</code> to not risk connection loss during long running transfers.</p>
 <h2 id="useful-commands">Useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Define source and target location and copy contents. The example code below copies a user home folder.
+<li>
+<p>Define source and target location and copy contents. The example code below copies a user home folder.
    Please replace the parts in curly brackets with your actual folder names. 
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/home/users/<span class="o">{</span>username_c<span class="o">}</span>/
 $<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-1/home/users/<span class="o">{</span>username_c<span class="o">}</span>/
@@ -3188,15 +3189,16 @@ $<span class="w"> </span>rsync<span class="w"> </span>-ah<span class="w"> </span
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/work/projects/<span class="o">{</span>my_project<span class="o">}</span>/
 $<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-2/unmirrored/projects/<span class="o">{</span>my-project<span class="o">}</span>/
 $<span class="w"> </span>rsync<span class="w"> </span>-ahX<span class="w"> </span>--stats<span class="w"> </span>--progress<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
-</code></pre></div></li>
-</ol>
+</code></pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Please note the importance of the -X flag to keep extended file attributes (ACLs) which
 we might have assigned to you if you are a delegate in charge of moving a project.</p>
 </div>
-<ol>
-<li>Remove the <code>--dry-run</code> flag to start the actual copying process.</li>
+</li>
+<li>
+<p>Remove the <code>--dry-run</code> flag to start the actual copying process.</p>
+</li>
 <li>Perform a second <code>rsync</code> to check if all files were successfully transferred.
    Paranoid users might want to add the <code>--checksums</code> flag to <code>rsync</code> or use <code>hashdeep</code>.
    Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
@@ -3211,8 +3213,9 @@ $<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span><sp
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When defining your source location, do not use the <code>*</code> wildcard character.
-It will not match hidden (dot) files and leave them behind.</p>
+<p>When defining your SOURCE location, do not use the <code>*</code> wildcard character.
+It will not match hidden (dot) files and leave them behind.
+Its better to use a trailing slash which matches “All files in this folder”.</p>
 </div>
 <h2 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h2>
 <p>Conda environment tend to not react well when the folder they are stored in is moved from its original location.
