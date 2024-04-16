@@ -10,13 +10,13 @@ You should also use `tmux` to not risk connection loss during long running trans
 ```sh
 $ SOURCE=/data/gpfs-1/home/users/{username_c}/
 $ TARGET=/data/cephfs-1/home/users/{username_c}/
-$ rsync -ah --stats --progress --dry-run $SOURCE $TARGET
+$ rsync -ahP --stats --no-links --dry-run $SOURCE $TARGET
 ```
    This is how it would look like for a project folder:
 ```sh
 $ SOURCE=/data/gpfs-1/work/projects/{my_project}/
 $ TARGET=/data/cephfs-2/unmirrored/projects/{my-project}/
-$ rsync -ahX --stats --progress --dry-run $SOURCE $TARGET
+$ rsync -ahPX --stats --dry-run $SOURCE $TARGET
 ```
 
     !!! warning "Important"
