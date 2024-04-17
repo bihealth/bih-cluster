@@ -58,9 +58,9 @@ $ rsync -ahP --stats --dry-run $SOURCE $TARGET
    Please note the flag `--remove-source-files` which will do exactly as the name suggests,
    but leaves empty directories behind.
    
-   !!! Warning
-       Check thoroughly that files were actually copied as expected before removing the `--dry-run` flag.
-       Use absolute paths to not be confused by symbolic links.
+    !!! Warning
+        Check thoroughly that files were actually copied as expected before removing the `--dry-run` flag.
+        Use absolute paths to not be confused by symbolic links.
  
 ```sh
 $ rsync -ahX --stats --remove-source-files --dry-run $SOURCE $TARGET
