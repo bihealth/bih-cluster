@@ -3246,14 +3246,18 @@ $<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </spa
 $<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-1/work/users/<span class="o">{</span>username_c<span class="o">}</span>/
 $<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
 </code></pre></div></li>
-<li>Perform a second <code>rsync</code> per location to check if all files were successfully transferred.
+<li>
+<p>Perform a second <code>rsync</code> per location to check if all files were successfully transferred.
    Paranoid users might want to add the <code>--checksums</code> flag to <code>rsync</code> or use <code>hashdeep</code>.
    Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
-   but leaves empty directories behind.</li>
+   but leaves empty directories behind.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Check thoroughly that files were actually copied as expected before removing the <code>--dry-run</code> flag.
+Use absolute paths to not be confused by symbolic links.</p>
+</div>
+</li>
 </ol>
-<p>!!! Warning
-       Check thoroughly that files were actually copied as expected before removing the <code>--dry-run</code> flag.
-       Use absolute paths to not be confused by symbolic links.</p>
 <p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-ahX<span class="w"> </span>--stats<span class="w"> </span>--remove-source-files<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
 </code></pre></div>
 4. Check if all files are gone from the SOURCE folder and remove the empty directories:
