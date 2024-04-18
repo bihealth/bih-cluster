@@ -5,7 +5,8 @@ You should also use `tmux` to not risk connection loss during long running trans
 
 ## Moving a project folder
 1. Define source and target location and copy contents.
-   Please replace the parts in curly brackets with your actual folder names. 
+   Please replace the parts in curly brackets with your actual folder names.
+   It is important to end paths with a trailing slash (`/`) as this is interpreted by `sync` as “all files in this folder”.
 ```sh
 $ SOURCE=/data/gpfs-1/work/projects/{my_project}/
 $ TARGET=/data/cephfs-2/unmirrored/projects/{my-project}/
@@ -40,7 +41,8 @@ $ rm -r $SOURCE
 ## Moving user home and work
 1. First copy your home folder while skipping symbolic links.
    This is necessary because the locations of work and scratch changed and we don't want to drag along the outdated links.
-   replace the parts in curly brackets with your actual user name and remove the `--dry-run` flag to perform the actual transfer. 
+   replace the parts in curly brackets with your actual user name and remove the `--dry-run` flag to perform the actual transfer.
+   It is important to end paths with a trailing slash (`/`) as this is interpreted by `sync` as “all files in this folder”.
 ```sh
 $ SOURCE=/data/gpfs-1/home/users/{username_c}/
 $ TARGET=/data/cephfs-1/home/users/{username_c}/
@@ -50,7 +52,7 @@ $ rsync -ahP --stats --no-links --dry-run $SOURCE $TARGET
    We therefore need to copy contents of your work directory separately.
 ```sh
 $ SOURCE=/data/gpfs-1/work/users/{username_c}/
-$ TARGET=/data/cephfs-1/work/users/{username_c}/
+$ TARGET=/data/cephfs-1/home/users/{username_c}/work/
 $ rsync -ahP --stats --dry-run $SOURCE $TARGET
 ```
 3. Perform a second `rsync` per location to check if all files were successfully transferred.
