@@ -133,8 +133,9 @@ $ cp groups/cubi/important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
     - 1.23 PB usable (85 %, Ceph performance limit)
 - For typical CUBI use case 3 to 5 times faster I/O then the old DDN
 - Two more nodes in purchasing process
-- Example of flexible extension:
-    - Chunk size: 45.000 € for one node with 150 TB, i. e. ca. 300 €/TB
+- Hardware costs:
+    - One node/chunk: 45.000 € (150 TB)
+    - ca. 300 €/TB
 
 ### Tier 2
 - Slower but more affordable
@@ -144,8 +145,9 @@ $ cp groups/cubi/important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
     - 5.3 PB erasure coded (EC 8:2)
     - 4.5 PB usable (85 %; Ceph performance limit)
 - More nodes in purchasing process
-- Very Flexible Extension possible:
-    - ca. 50 € per TB, 100 € mirrored, starting at small chunk sizes
+- Hardware costs:
+    - ca. 50 € per TB, 100 € mirrored
+    - small chunk extension possible
     
 ### Tier 2 mirror
 - Similar in hardware and size (10 nodes, 6+ PB)
