@@ -89,10 +89,14 @@ do
 done
 ```
 
-2. Re-create them after the move:
+2. install a new version of conda/mamba in your home (or better in `/data/cephfs-1/work/groups/<group>/users/<user>`) and run `source activate /path/to/new/conda/bin/activate`
+
+3. Re-create them after the move:
 ```sh
 $ conda env create -f environment.yml
 ```
+
+(if you run into errors it might be better to do `conda env export -n $env --no-builds -f $env.yaml`)
 
 !!! Note
     If you already moved your home folder, you can still activate your old environments like this:
