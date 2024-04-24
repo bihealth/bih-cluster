@@ -73,8 +73,8 @@ Required resources:
 
 Projects are secondary user groups to enable:
 
-- collaboration and data sharing across different work groups
-- fine-grained allocation of additional storage resources
+- collaboration and data sharing across different work groups,
+- fine-grained allocation of additional storage resources,
 - organising data in a fine-grained manner for better data lifecycle management. 
 
 Project creation can be initiated by group leaders and group delegates as follows:
