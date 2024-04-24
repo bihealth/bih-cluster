@@ -73,8 +73,9 @@ Required resources:
 
 Projects are secondary user groups to enable:
 
-- collaboration and data sharing across different work groups and
-- fine-grained allocation of additional storage resources. 
+- collaboration and data sharing across different work groups,
+- fine-grained allocation of additional storage resources,
+- organising data in a fine-grained manner for better data lifecycle management. 
 
 Project creation can be initiated by group leaders and group delegates as follows:
 
@@ -110,5 +111,6 @@ Additional members (cluster user names):
 
 !!! note "Notes"
     - All projects must have one owner and may have one delegate.
+    - All projects are granted 10 TB of Tier 1 scratch by default.
     - Users can be associated with multiple projects.
     - Project membership does not grant cluster access. A primary group affiliation is still required.
