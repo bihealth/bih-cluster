@@ -98,7 +98,8 @@ Delegate [optional]: {Max Mustermann}, {musterm_c}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
 
 Required resources:
-- storage in TB: {1 TB}
+- Tier 1 storage: {0 TB}
+- Tier 2 storage: {1 TB}
 - CPU hours per year: {approx. 1000}
 - GPU hours per year: {none}
 
