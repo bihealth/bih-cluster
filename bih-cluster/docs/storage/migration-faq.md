@@ -19,7 +19,7 @@ $ rsync -ahPX --stats --dry-run $SOURCE $TARGET
 
 2. Remove the `--dry-run` flag to start the actual copying process.
 3. Perform a second `rsync` to check if all files were successfully transferred.
-   Paranoid users might want to add the `--checksums` flag to `rsync` or use `hashdeep`.
+   Paranoid users might want to add the `--checksum` flag to `rsync` or use `hashdeep`.
    Please note the flag `--remove-source-files` which will do exactly as the name suggests,
    but leaves empty directories behind.
 ```sh
