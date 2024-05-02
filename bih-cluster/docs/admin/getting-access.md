@@ -111,6 +111,7 @@ Additional members (cluster user names):
 
 !!! note "Notes"
     - All projects must have one owner and may have one delegate.
-    - All projects are granted 10 TB of Tier 1 scratch by default.
+    - Please note that we will enforce [kebab case]([url](https://en.wikipedia.org/wiki/Letter_case#Kebab_case)) for all project names and folders.
+    - Tier 1 project storage will be supplemented with 10 TB of T1 scratch by default.
     - Users can be associated with multiple projects.
     - Project membership does not grant cluster access. A primary group affiliation is still required.
