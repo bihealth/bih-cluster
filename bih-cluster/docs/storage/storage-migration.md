@@ -31,7 +31,7 @@ So these are the three terminologies in use right now:
 - Cephfs-1 = Tier 1 = Hot storage = `/data/cephfs-1`
 - Cephfs-2 = Tier 2 = Warm storage = `/data/cephfs-2`
 
-More information about CephFS can be found [here](http://localhost:8000/bih-cluster/storage/storage-locations/).
+More information about CephFS can be found [here](storage-locations.md).
 
 ## New file locations
 Naturally, paths are going to change after files move to their new location.
