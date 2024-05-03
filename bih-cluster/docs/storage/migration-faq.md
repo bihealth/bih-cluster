@@ -106,15 +106,19 @@ $ conda env create -f environment.yml
     ```
 ## Conda environments - Second option (experimental)
 There is a way of moving conda environments that does not involve re-installing. Follow these steps:
-1) Copy (cp -r) or rsync the miniconda directory from the fast location (``` /fast/work/users/<username>/miniconda ```) to the cephfs-1 (``` /data/cephfs-1/work/groups/<groupname>/users/<username>/miniconda ```, shorter:  ``` ~/work/miniconda ```)
-2) run ``` conda init ```. It will give you a list of all files conda looks at to find the conda path when initializing. Obviously, since you did not yet move conda, the paths of the files will be still pointing to  /data/gpfs-1 or /fast. These files are however now present also in a copy on the cephfs-1. These files could be for example: ``` /data/cephfs-1/work/groups/cubi/users/<username>/miniconda/condabin/conda ``` or ``` /data/cephfs-1/work/groups/cubi/users/<username>/miniconda/etc/profile.d/conda.sh ``` and multiple others (depending on the output of conda init). On each of these files you now run the command:
-```sh
-sed -i 's/\/data\/gpfs-1\/work\/users\/<username>\/miniconda/\/data\/cephfs-1\/work\/groups\/<groupname>\/users\/<username>\/miniconda/g' <file_path/file_name>
-```
-(!)Please be careful here and check again in the above mentioned file with less command  how the old path look like and with what you want to replace them. 
-sed -i 's/<old_path>/<new_path>/g' file (backslash shown above are escape characters)
-(!)Please be careful that new paths are absolute paths and not relative ones (for example use  ``` /data/cephfs-1/home/users/<username>/work ``` instead of  ``` $HOME/work  ```)
-3)Now change your ~/.bashrc file in your home on cephfs-1 ( ``` /data/cephfs-1/home/users/<username>  ```) such that all paths that were pointing to the work dir on fast are now pointing to the work dir on cephfs-1. Also, if not already done, deactivate the automatic activation of the base env. This is how .bashrc should look like:
+
+1. Copy (cp -r) or rsync the miniconda directory from the fast location (``` /fast/work/users/<username>/miniconda ```) to the cephfs-1 (``` /data/cephfs-1/work/groups/<groupname>/users/<username>/miniconda ```, shorter:  ``` ~/work/miniconda ```)
+2. Run ``` conda init ```. It will give you a list of all files conda looks at to find the conda path when initializing. Obviously, since you did not yet move conda, the paths of the files will be still pointing to  /data/gpfs-1 or /fast. These files are however now present also in a copy on the cephfs-1. These files could be for example: ``` /data/cephfs-1/work/groups/cubi/users/<username>/miniconda/condabin/conda ``` or ``` /data/cephfs-1/work/groups/cubi/users/<username>/miniconda/etc/profile.d/conda.sh ``` and multiple others (depending on the output of conda init). On each of these files you now run the command:
+    ```sh
+    sed -i 's/\/data\/gpfs-1\/work\/users\/<username>\/miniconda/\/data\/cephfs-1\/work\/groups\/<groupname>\/users\/<username>\/miniconda/g' <file_path/file_name>
+    ```
+
+    !!! Warning
+        Be careful here and check again in the above mentioned file with less command how the old path look like and with what you want to replace them. 
+        sed -i 's/<old_path>/<new_path>/g' file (backslash shown above are escape characters)
+        Also note that new paths are absolute paths and not relative ones (for example use  ``` /data/cephfs-1/home/users/<username>/work ``` instead of  ``` $HOME/work  ```)
+
+3. Now change your ~/.bashrc file in your home on cephfs-1 ( ``` /data/cephfs-1/home/users/<username>  ```) such that all paths that were pointing to the work dir on fast are now pointing to the work dir on cephfs-1. Also, if not already done, deactivate the automatic activation of the base env. This is how .bashrc should look like:
 ```sh
 case "${SLURMD_NODENAME-${HOSTNAME}}" in
     login-*)
@@ -142,7 +146,7 @@ unset __conda_setup
 export CONDA_AUTO_ACTIVATE_BASE=false
 ```
 
-4) To really make sure that this will work  remove the old path pointing to miniconda on /fast from your $PATH variable (altough this variable should get initialized everytime you connect to the cluster). This can be done by simply printing the $PATH ( ``` echo $PATH ```), copying the content, deleting the path pointing to fast and copying the modifies content to $PATH again by  ``` export PATH=<paste content>  ```
-5) After changing all these files and saving them(!), exit the cluster connection and connect again. As sanity check you can either open the .bashrc and check if all paths are pointing to cephfs-1 or run "echo $PATH" and see if the conda path is now pointing to cephfs-1.
-6) Now you can use conda activate env_name as you did before
+4. To really make sure that this will work  remove the old path pointing to miniconda on /fast from your $PATH variable (altough this variable should get initialized everytime you connect to the cluster). This can be done by simply printing the $PATH ( ``` echo $PATH ```), copying the content, deleting the path pointing to fast and copying the modifies content to $PATH again by  ``` export PATH=<paste content>  ```
+5. After changing all these files and saving them(!), exit the cluster connection and connect again. As sanity check you can either open the .bashrc and check if all paths are pointing to cephfs-1 or run "echo $PATH" and see if the conda path is now pointing to cephfs-1.
+6. Now you can use conda activate env_name as you did before
 
