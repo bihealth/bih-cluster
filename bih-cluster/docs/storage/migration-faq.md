@@ -18,7 +18,7 @@ $ rsync -ahP --stats --dry-run $SOURCE $TARGET
     !!! warning "Important"
         File ownership information will be lost during this process.
         This is due to non-root users
-        [not being allowed]([url](https://serverfault.com/questions/755753/preserve-ownership-with-rsync-without-root))
+        [not being allowed](https://serverfault.com/questions/755753/preserve-ownership-with-rsync-without-root)
         to change ownership of arbitrary files.
         If this is a problem for you, please contact our admins again after completing this step.
 
