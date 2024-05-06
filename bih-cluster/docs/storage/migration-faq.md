@@ -22,7 +22,7 @@ $ rsync -ahP --stats --dry-run $SOURCE $TARGET
         to change ownership of arbitrary files.
         If this is a problem for you, please contact our admins again after completing this step.
 
-4. Perform a second `rsync` to check if all files were successfully transferred.
+3. Perform a second `rsync` to check if all files were successfully transferred.
    Paranoid users might want to add the `--checksum` flag to `rsync` or use `hashdeep`.
    Please note the flag `--remove-source-files` which will do exactly as the name suggests,
    but leaves empty directories behind.
