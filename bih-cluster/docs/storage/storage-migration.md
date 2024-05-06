@@ -7,6 +7,7 @@ Once files have been moved to their new locations, `/fast` will be retired.
 Simultaneously we will move towards a more unified naming scheme for project and group folder names.
 From now on, all such folders names shall be in [kebab-case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case).
 This is Berlin after all.
+Group folders will also be renamed, removing the "ag_" prefix.
 
 Detailed communication about the move will be communicated via the cluster mailinglist and the [user forum](https://hpc-talk.cubi.bihealth.org/).
 For technical help, please consult the [Data Migration Tips and tricks](migration-faq.md).
@@ -39,8 +40,8 @@ Due to the increase in storage quality options, there will be some more folders 
 
 ### Users
 - Home on Tier 1: `/data/cephfs-1/home/users/<user>`
-- Work on Tier 1: `/data/cephfs-1/work/groups/<ag-doe>/users/<user>`
-- Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<ag-doe>/users/<user>`
+- Work on Tier 1: `/data/cephfs-1/work/groups/<doe>/users/<user>`
+- Scratch on Tier 1: `/data/cephfs-1/scratch/groups/<doe>/users/<user>`
 
 !!! warning "Important"
     User `work` & `scratch` spaces are now part of the user's group folder.
@@ -147,15 +148,8 @@ However,
 - Some models can be updated with new data, without needing to keep the whole dataset on Tier 1.
 
 ## Data migration process from old `/fast` to CephFS 
-1. Administrative preparations  
-    1. HPC-Access registration (PIs will receive in invite mail)
-    2. PIs need to assign a delegate.
-    3. PI/Delegate needs to add group and the projects once.
-    4. New Tier 1 & 2 resources will be allocated.
-2. Users & group home directories are moved by HPC admin (big bang).
-3. All directories on `/fast` set to read-only, that is:
-    - `/fast/home/users/<user>` & `/fast/work/users/<user>`
-    - `/fast/home/groups/<group>` & `/fast/work/groups/<group>`
-4. Work data migration is done by the users (Tier 2 is primary target, Tier 1 staging when needed).  
+1. After being contacted by HPC admins, delegates move project folders to Tier 2. Additional Tier 1 storage is granted on request.
+2. User homes and group folders are moved by HPC admins to Tier 1 and 2 as appropriate. This is done on a group-by-group basis.
+3. Users move contents of their work directories into the new shared group work space.
 
-Best practice and/or tools will be provided.
+Best practices and tools will be provided.
