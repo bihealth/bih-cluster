@@ -13,17 +13,14 @@ $ TARGET=/data/cephfs-2/unmirrored/projects/{my-project}/
 $ rsync -ahP --stats --dry-run $SOURCE $TARGET
 ```
 
+2. Remove the `--dry-run` flag to start the actual copying process.
+
     !!! warning "Important"
         File ownership information will be lost during this process.
         This is due to non-root users
         [not being allowed]([url](https://serverfault.com/questions/755753/preserve-ownership-with-rsync-without-root))
         to change ownership of arbitrary files.
         If this is a problem for you, please contact our admins again after completing this step.
-
-2. Remove the `--dry-run` flag to start the actual copying process.
-
-    !!! warning "Important"
-
 
 4. Perform a second `rsync` to check if all files were successfully transferred.
    Paranoid users might want to add the `--checksum` flag to `rsync` or use `hashdeep`.
