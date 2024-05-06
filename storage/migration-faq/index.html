@@ -3202,23 +3202,28 @@ You should also use <code>tmux</code> to not risk connection loss during long ru
    It is important to end paths with a trailing slash (<code>/</code>) as this is interpreted by <code>sync</code> as “all files in this folder”.
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/work/projects/<span class="o">{</span>my_project<span class="o">}</span>/
 $<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-2/unmirrored/projects/<span class="o">{</span>my-project<span class="o">}</span>/
-$<span class="w"> </span>rsync<span class="w"> </span>-ahPX<span class="w"> </span>--stats<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
+$<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
 </code></pre></div></p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>Please note the importance of the -X flag to keep extended file attributes (ACLs) which
-we might have assigned to you if you are a delegate in charge of moving a project.</p>
-</div>
 </li>
 <li>
 <p>Remove the <code>--dry-run</code> flag to start the actual copying process.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>File ownership information will be lost during this process.
+This is due to non-root users
+<a href="[url](https://serverfault.com/questions/755753/preserve-ownership-with-rsync-without-root)">not being allowed</a>
+to change ownership of arbitrary files.
+If this is a problem for you, please contact our admins again after completing this step.</p>
+</div>
 </li>
-<li>Perform a second <code>rsync</code> to check if all files were successfully transferred.
+<li>
+<p>Perform a second <code>rsync</code> to check if all files were successfully transferred.
    Paranoid users might want to add the <code>--checksum</code> flag to <code>rsync</code> or use <code>hashdeep</code>.
    Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
    but leaves empty directories behind.
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-ahX<span class="w"> </span>--stats<span class="w"> </span>--remove-source-files<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 <li>Again, remove the <code>--dry-run</code> flag to start the actual deletion.</li>
 <li>Check if all files are gone from the SOURCE folder and remove the empty directories:
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
