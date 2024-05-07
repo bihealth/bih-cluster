@@ -16,7 +16,7 @@ The above mentioned responsibilities stay with the group leader.
     - A Charité or MDC user account is required for accessing HPC 4 Research.
     - Please only use email addresses from the institutions Charite, BIH, or MDC in the forms below.
 
-## Work Groups
+## Work Groups and users
 All cluster users are member of exactly one primary work group.
 This affiliation is usually defined by real life organisational structures within Charité/BIH/MDC.
 Leaders of independent research groups (PIs) can apply for a new cluster work group as follows:
@@ -28,7 +28,7 @@ Leaders of independent research groups (PIs) can apply for a new cluster work gr
 
 !!! warning "Important"
     Changes to an existing group (adding new users, changes in resources, etc.) can only be requested by group leaders and delegates.
-    Please re-use the form sans the resources section for adding new group members.
+    To add new users to an existing group, please send in the form below without the resources part.
 
 ### Form 
 Example values are given in curly braces.
@@ -41,23 +41,22 @@ Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
 
 Required resources:
-- storage in TB: {1 TB}
+- Tier 1 storage: {1 TB}
+- Tier 2 storage: {0 TB}
 - CPU hours per year: {approx. 1000}
 - GPU hours per year: {none}
 
 # Users
 ## User 1
-- cluster: HPC 4 Research
 - first name: John
 - last name: Doe
-- affiliation: Charite, Department of Oncology
+- affiliation: Charité, Department of Oncology
 - institute email: john.doe@charite.de
-- institute phone: 030-8445-0
 - user has account with
     - [ ] BIH
     - [ ] Charite
     - [ ] MDC
-- BIH/Charite/MDC user name: doej
+- BIH/Charité/MDC user name: doej
 
 [etc.]
 ```
