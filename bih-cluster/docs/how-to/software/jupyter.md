@@ -18,15 +18,15 @@
 Install Jupyter on the cluster (via conda, by creating a custom environment)
 
 ```bash
-med0xxx:~$ conda create -n jupyter jupyter
-med0xxx:~$ conda activate jupyter
+hpc-cpu-x:~$ conda create -n jupyter jupyter
+hpc-cpu-x:~$ conda activate jupyter
 ```
 
 (If you want to work in a language other than python, you can install more Jupyter language kernel, see the [kernel list](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels))
 
 Now you can start the Jupyter server session (you may want to do this in a ```screen``` & ```srun --pty bash -i``` session as jupyter keeps running while you are doing computations)
 ```bash
-med0xxx:~$ jupyter notebook --no-browser
+hpc-cpu-x:~$ jupyter notebook --no-browser
 ```
 
 Check the port number (usually `8888`) in the on output and remember it for later:
@@ -40,17 +40,17 @@ If you are running multiple server on one or more nodes, one can separate them b
 
 ## Connecting to the Running Session
 
-This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your `.ssh/config` to automatically route your connection via the login node (and possibly MDC jail). This is described in our [Advanced SSH config documentation](/connecting/advanced-ssh/linux.md#configure-ssh-client).
+This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your `.ssh/config` to automatically route your connection via the login node (and possibly MDC jail). This is described in our [Advanced SSH config documentation](../../connecting/advanced-ssh/linux.md#configure-ssh-client)
 
 In short,add these lines to `~/.ssh/config` (replace curly parts):
 
 ```
 Host bihcluster
-  user {USERNAME}
+  user {USER_NAME}
   HostName hpc-login-2.cubi.bihealth.org
 
 Host hpc-cpu*
-  user {USERNAME}
+  user {USER_NAME}
   ProxyJump bihcluster
 ```
 
@@ -61,11 +61,11 @@ Host mdcjail
     User {MDC_USER_NAME}
 
 Host bihcluster
-  user {USERNAME}
+  user {USER_NAME}
   HostName hpc-login-2.cubi.bihealth.org
 
 Host hpc-cpu*
-  user {USERNAME}
+  user {USER_NAME}
   ProxyJump bihcluster
 ```
 
@@ -74,7 +74,7 @@ Check that this config is working by connecting like this: `ssh hpc-cpu-1`. Plea
 Now you setup a tunnel for your running Jupyter session:
 
 ```bash
-workstation:~$ ssh -N -f -L 127.0.0.1:8888:localhost:{PORT} hpc-cpu-{x}
+workstation:~$ ssh -N -f -L 127.0.0.1:8888:localhost:{PORT} hpc-cpu-x
 ```
 The port of your Jupyter server is usually `8888`. The cluster node `srun` has sent you to determines the last argument.
 
@@ -98,13 +98,13 @@ There are two independent steps in ending a session:
 - Identify the running SSH process
 
 ```bash
-med0xxx:~$ ps aux | grep "$PORT"
+hpc-cpu-x:~$ ps aux | grep "$PORT"
 ```
 
 This will give you something like this:
 
 ```
-user        54  0.0  0.0  43104   784 ?        Ss   15:06   0:00 ssh -N -f -L 127.0.0.1:8888:localhost:8888 med0213
+user        54  0.0  0.0  43104   784 ?        Ss   15:06   0:00 ssh -N -f -L 127.0.0.1:8888:localhost:8888 hpc-cpu-x
 user        58  0.0  0.0  41116  1024 tty1     S    15:42   0:00 grep --color=auto 8888
 ```
 
@@ -113,7 +113,7 @@ from which you need the process ID (here `54`)
  - Terminate it the process
 
 ```bash
-med0213:~$ kill -9 $PID
+hpc-cpu-x:~$ kill -9 $PID
 ```
 
 **Shutdown the Jupyter server**
