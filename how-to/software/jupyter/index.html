@@ -3259,12 +3259,12 @@ Helpdesk cannot support you in problems with SSH tunnels that are caused by inco
 <p><a href="http://jupyter.org/">Project Jupyter</a> is a networking protocol for interactive computing that allows the user to write and execute code for a high number of different programming languages. The most used client is Jupyter Notebook that can be encountered in various form all over the web. Its basic principle is a document consisting of different cells, each of which contains either code (executed in place) or documentation (written in markdown). This allows one to handily describe the processed workflow.</p>
 <h2 id="setup-and-running-jupyter-on-the-cluster">Setup and running Jupyter on the cluster<a class="headerlink" href="#setup-and-running-jupyter-on-the-cluster" title="Permanent link">&para;</a></h2>
 <p>Install Jupyter on the cluster (via conda, by creating a custom environment)</p>
-<div class="highlight"><pre><span></span><code>med0xxx:~$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>jupyter<span class="w"> </span>jupyter
-med0xxx:~$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>jupyter
+<div class="highlight"><pre><span></span><code>hpc-cpu-x:~$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>jupyter<span class="w"> </span>jupyter
+hpc-cpu-x:~$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>jupyter
 </code></pre></div>
 <p>(If you want to work in a language other than python, you can install more Jupyter language kernel, see the <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">kernel list</a>)</p>
 <p>Now you can start the Jupyter server session (you may want to do this in a <code>screen</code> &amp; <code>srun --pty bash -i</code> session as jupyter keeps running while you are doing computations)
-<div class="highlight"><pre><span></span><code>med0xxx:~$<span class="w"> </span>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser
+<div class="highlight"><pre><span></span><code>hpc-cpu-x:~$<span class="w"> </span>jupyter<span class="w"> </span>notebook<span class="w"> </span>--no-browser
 </code></pre></div></p>
 <p>Check the port number (usually <code>8888</code>) in the on output and remember it for later:
 <div class="highlight"><pre><span></span><code><span class="o">[</span>I<span class="w"> </span><span class="m">23</span>:39:40.860<span class="w"> </span>NotebookApp<span class="o">]</span><span class="w"> </span>The<span class="w"> </span>Jupyter<span class="w"> </span>Notebook<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>at:
@@ -3273,31 +3273,35 @@ med0xxx:~$<span class="w"> </span>conda<span class="w"> </span>activate<span cla
 <p>By default, Jupyter will create an access token (a link stated in the output) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via <code>jupyter notebook password</code>.
 If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding <code>--port=$PORT</code>.</p>
 <h2 id="connecting-to-the-running-session">Connecting to the Running Session<a class="headerlink" href="#connecting-to-the-running-session" title="Permanent link">&para;</a></h2>
-<p>This is slightly trickier as we have to create a SSH connection/tunnel via multiple hubs in between. The easiest is probably to configure your <code>.ssh/config</code> to automatically route your connection via the login-node (and MDC-jail if connecting from outside of the MDC network).</p>
-<p>You have to add (replace with your <code>$CLUSTER_USER</code> and <code>$MDC_USER</code>)</p>
-<div class="highlight"><pre><span></span><code>Host med0*
-  user $CLUSTER_USER
-  ProxyCommand ssh $CLUSTER_USER@hpc-login-2.cubi.bihealth.org -W %h:%p
+<p>This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your <code>.ssh/config</code> to automatically route your connection via the login node (and possibly MDC jail). This is described in our <a href="../../../connecting/advanced-ssh/linux/#configure-ssh-client">Advanced SSH config documentation</a></p>
+<p>In short,add these lines to <code>~/.ssh/config</code> (replace curly parts):</p>
+<div class="highlight"><pre><span></span><code>Host bihcluster
+  user {USER_NAME}
+  HostName hpc-login-2.cubi.bihealth.org
+
+Host hpc-cpu*
+  user {USER_NAME}
+  ProxyJump bihcluster
 </code></pre></div>
-<p>(and if you are outside of the MDC network):</p>
-<div class="highlight"><pre><span></span><code>Host hpc-login-2.cubi.bihealth.org
-  ProxyCommand ssh $MDC_USER@ssh1.mdc-berlin.de -W %h:%p
+<p>For MDC users outside the MDC network:
+<div class="highlight"><pre><span></span><code>Host mdcjail
+    HostName ssh1.mdc-berlin.de
+    User {MDC_USER_NAME}
+
+Host bihcluster
+  user {USER_NAME}
+  HostName hpc-login-2.cubi.bihealth.org
+
+Host hpc-cpu*
+  user {USER_NAME}
+  ProxyJump bihcluster
+</code></pre></div></p>
+<p>Check that this config is working by connecting like this: <code>ssh hpc-cpu-1</code>. Please note that you cannot use any resources on this node without a valid Slurm session.</p>
+<p>Now you setup a tunnel for your running Jupyter session:</p>
+<p><div class="highlight"><pre><span></span><code>workstation:~$<span class="w"> </span>ssh<span class="w"> </span>-N<span class="w"> </span>-f<span class="w"> </span>-L<span class="w"> </span><span class="m">127</span>.0.0.1:8888:localhost:<span class="o">{</span>PORT<span class="o">}</span><span class="w"> </span>hpc-cpu-x
 </code></pre></div>
-<p>to your <code>~/.ssh/config</code></p>
-<p>(If you have a newer version (7.2+) of SSH installed, you can also use <code>ProxyJump $CLUSTER_USER@hpc-login-2.cubi.bihealth.org</code> instead of <code>ProxyCommand ...</code>)</p>
-<p>See whether this works via i.e. <code>ssh med0110</code></p>
-<div class="admonition info">
-<p class="admonition-title">SSH Key Forwarding</p>
-<p>Please note that only the login nodes query the central user databases ("Active Directory Servers") for keys.
-The compute nodes themselves are not reachable directly from the outside and use the usual <code>~/.ssh/authorized_keys</code> file.
-This means that you will have to append the content of <sub>/.ssh/id_rsa.pub<code>from the source host (your workstation/laptop) to</code></sub>/.ssh/authorized_keys` on the cluster.</p>
-<p>If you fail to do this then you will be able to login to hpc-login-1/login-2 but you will get a password prompt for the compute nodes (i.e., med0XXX).</p>
-</div>
-<p>Now you setup a tunnel</p>
-<div class="highlight"><pre><span></span><code>workstation:~$<span class="w"> </span>ssh<span class="w"> </span>-N<span class="w"> </span>-f<span class="w"> </span>-L<span class="w"> </span><span class="m">127</span>.0.0.1:8888:localhost:<span class="si">${</span><span class="nv">PORT</span><span class="si">}</span><span class="w"> </span>med0<span class="si">${</span><span class="nv">NODE</span><span class="si">}</span>
-</code></pre></div>
-<p>with the port of your server (usually <code>8888</code>) and the cluster node <code>srun</code> has send you to.</p>
-<p>You should now be able to connect to the Jupyter server via <code>localhost:8888</code> in your webbrowser (see the note about token and password above) and start using Jupyter.</p>
+The port of your Jupyter server is usually <code>8888</code>. The cluster node <code>srun</code> has sent you to determines the last argument.</p>
+<p>You should now be able to connect to your Jupyter server by typing <code>localhost:8888</code> in your webbrowser (see the note about token and password above).</p>
 <h2 id="losing-connection">Losing connection<a class="headerlink" href="#losing-connection" title="Permanent link">&para;</a></h2>
 <p>It can and will happen that will lose connection, either due to network problems or due to shut-down of your computer.
 This is not a problem at all and you will not lose data, just reconnect to your session.
@@ -3311,17 +3315,17 @@ Copy all unexecuted cells (those are only saved periodically) and reload the bro
 <ul>
 <li>Identify the running SSH process</li>
 </ul>
-<div class="highlight"><pre><span></span><code>med0xxx:~$<span class="w"> </span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PORT</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code>hpc-cpu-x:~$<span class="w"> </span>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$PORT</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>This will give you something like this:</p>
-<div class="highlight"><pre><span></span><code>user        54  0.0  0.0  43104   784 ?        Ss   15:06   0:00 ssh -N -f -L 127.0.0.1:8888:localhost:8888 med0213
+<div class="highlight"><pre><span></span><code>user        54  0.0  0.0  43104   784 ?        Ss   15:06   0:00 ssh -N -f -L 127.0.0.1:8888:localhost:8888 hpc-cpu-x
 user        58  0.0  0.0  41116  1024 tty1     S    15:42   0:00 grep --color=auto 8888
 </code></pre></div>
 <p>from which you need the process ID (here <code>54</code>)</p>
 <ul>
 <li>Terminate it the process</li>
 </ul>
-<div class="highlight"><pre><span></span><code>med0213:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="nv">$PID</span>
+<div class="highlight"><pre><span></span><code>hpc-cpu-x:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="nv">$PID</span>
 </code></pre></div>
 <p><strong>Shutdown the Jupyter server</strong></p>
 <p>Open the Jupyter session, cancel the process with {Ctrl} + {C} and confirm {y}. Make sure you saved your notebooks beforehand (though auto-save catches most things).</p>
@@ -3356,7 +3360,7 @@ user        58  0.0  0.0  41116  1024 tty1     S    15:42   0:00 grep --color=au
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2024</span>
   </span>
 
     
