@@ -40,47 +40,45 @@ If you are running multiple server on one or more nodes, one can separate them b
 
 ## Connecting to the Running Session
 
-This is slightly trickier as we have to create a SSH connection/tunnel via multiple hubs in between. The easiest is probably to configure your `.ssh/config` to automatically route your connection via the login-node (and MDC-jail if connecting from outside of the MDC network).
+This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your `.ssh/config` to automatically route your connection via the login node (and possibly MDC jail). This is described in our [Advanced SSH config documentation](/connecting/advanced-ssh/linux.md#configure-ssh-client).
 
-You have to add (replace with your `$CLUSTER_USER` and `$MDC_USER`)
-
-```
-Host med0*
-  user $CLUSTER_USER
-  ProxyCommand ssh $CLUSTER_USER@hpc-login-2.cubi.bihealth.org -W %h:%p
-```
-
-(and if you are outside of the MDC network):
+In short,add these lines to `~/.ssh/config` (replace curly parts):
 
 ```
-Host hpc-login-2.cubi.bihealth.org
-  ProxyCommand ssh $MDC_USER@ssh1.mdc-berlin.de -W %h:%p
+Host bihcluster
+  user {USERNAME}
+  HostName hpc-login-2.cubi.bihealth.org
+
+Host hpc-cpu*
+  user {USERNAME}
+  ProxyJump bihcluster
 ```
 
-to your ```~/.ssh/config```
+For MDC users outside the MDC network:
+```
+Host mdcjail
+    HostName ssh1.mdc-berlin.de
+    User {MDC_USER_NAME}
 
-(If you have a newer version (7.2+) of SSH installed, you can also use `ProxyJump $CLUSTER_USER@hpc-login-2.cubi.bihealth.org` instead of `ProxyCommand ...`)
+Host bihcluster
+  user {USERNAME}
+  HostName hpc-login-2.cubi.bihealth.org
 
-See whether this works via i.e. `ssh med0110`
+Host hpc-cpu*
+  user {USERNAME}
+  ProxyJump bihcluster
+```
 
-!!! info "SSH Key Forwarding"
+Check that this config is working by connecting like this: `ssh hpc-cpu-1`. Please note that you cannot use any resources on this node without a valid Slurm session.
 
-    Please note that only the login nodes query the central user databases ("Active Directory Servers") for keys.
-    The compute nodes themselves are not reachable directly from the outside and use the usual `~/.ssh/authorized_keys` file.
-    This means that you will have to append the content of ~/.ssh/id_rsa.pub` from the source host (your workstation/laptop) to `~/.ssh/authorized_keys` on the cluster.
-    
-    If you fail to do this then you will be able to login to hpc-login-1/login-2 but you will get a password prompt for the compute nodes (i.e., med0XXX).
-
-Now you setup a tunnel
+Now you setup a tunnel for your running Jupyter session:
 
 ```bash
-workstation:~$ ssh -N -f -L 127.0.0.1:8888:localhost:${PORT} med0${NODE}
+workstation:~$ ssh -N -f -L 127.0.0.1:8888:localhost:{PORT} hpc-cpu-{x}
 ```
+The port of your Jupyter server is usually `8888`. The cluster node `srun` has sent you to determines the last argument.
 
-with the port of your server (usually `8888`) and the cluster node `srun` has send you to.
-
-
-You should now be able to connect to the Jupyter server via `localhost:8888` in your webbrowser (see the note about token and password above) and start using Jupyter.
+You should now be able to connect to your Jupyter server by typing `localhost:8888` in your webbrowser (see the note about token and password above).
 
 ## Losing connection
 
