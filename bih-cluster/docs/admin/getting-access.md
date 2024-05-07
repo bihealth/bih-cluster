@@ -16,7 +16,7 @@ The above mentioned responsibilities stay with the group leader.
     - A Charité or MDC user account is required for accessing HPC 4 Research.
     - Please only use email addresses from the institutions Charite, BIH, or MDC in the forms below.
 
-## Work Groups and users
+## Work Groups and Users
 All cluster users are member of exactly one primary work group.
 This affiliation is usually defined by real life organisational structures within Charité/BIH/MDC.
 Leaders of independent research groups (PIs) can apply for a new cluster work group as follows:
