@@ -45,13 +45,15 @@ $ rm -r $SOURCE
 ## Moving user work
 1. All files within your own work directory can be transferred as follows.
    Please replace to parts in curly braces with your cluster user name.
-   Note the `--dry-run` flag which lets you check that the command is working without actually copying any files.
-   Remove it to start the actual transfer.
 ```sh
 $ SOURCE=/data/gpfs-1/work/users/{username}/
 $ TARGET=/data/cephfs-1/home/users/{username}/work/
 $ rsync -ahP --stats --dry-run $SOURCE $TARGET
 ```
+    !!! Note
+        The `--dry-run` flag lets you check that rsync is working as expected without copying any files.
+        Remove it to start the actual transfer.
+    
 2. Perform a second `rsync` to check if all files were successfully transferred.
    Paranoid users might want to add the `--checksums` flag or use `hashdeep`.
    Please note the flag `--remove-source-files` which will do exactly as the name suggests,
