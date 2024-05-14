@@ -77,7 +77,7 @@ A simple solution we can recommend is this:
 1. Export all environments prior to the move with this bash script:
 ```sh
 #!/bin/bash
-for env in $(ls .miniforge/envs/)
+for env in $(ls $(conda info --base)/envs/)
 do
     conda env export -n $env -f $env.yml
 done
