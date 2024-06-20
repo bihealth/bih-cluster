@@ -28,14 +28,12 @@ Leaders of independent research groups (PIs) can apply for a new cluster work gr
 
 !!! warning "Important"
     Changes to an existing group (adding new users, changes in resources, etc.) can only be requested by group leaders and delegates.
-    To add new users to an existing group, please send in the form below without the resources part.
 
-### Form 
+### Form: New Group
 Example values are given in curly braces.
 
 ```
 # Group "ag-doe"
-Cluster: HPC 4 Research
 Group leader/PI: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
@@ -54,11 +52,27 @@ Required resources:
 - institute email: john.doe@charite.de
 - user has account with
     - [ ] BIH
-    - [ ] Charite
+    - [x] Charite
     - [ ] MDC
 - BIH/Charité/MDC user name: doej
 
 [etc.]
+```
+
+### Form: Add User to Existing Group
+Example values are given in curly braces.
+
+```
+# New user of AG Doe
+- first name: Mia
+- last name: Smith
+- affiliation: Charité, Department of Oncology
+- institute email: mia.smith@charite.de
+- user has account with
+    - [ ] BIH
+    - [x] Charite
+    - [ ] MDC
+- BIH/Charité/MDC user name: smithm
 ```
 
 !!! note "Notes"
@@ -92,7 +106,6 @@ Example values are given in curly braces.
 
 ```
 # Project "doe-dbgap-rna"
-Cluster: HPC 4 Research
 Project owner: {John Doe}, {doej_c}
 Delegate [optional]: {Max Mustermann}, {musterm_c}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
