@@ -3285,7 +3285,7 @@ There are numerous ways around this problem which are described <a href="https:/
 <li>
 <p>Export all environments prior to the move with this bash script:
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>.miniforge/envs/<span class="k">)</span>
+<span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>info<span class="w"> </span>--base<span class="k">)</span>/envs/<span class="k">)</span>
 <span class="k">do</span>
 <span class="w">    </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$env</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$env</span>.yml
 <span class="k">done</span>
