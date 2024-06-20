@@ -59,7 +59,7 @@ Required resources:
 [etc.]
 ```
 
-### Form: Add User to Existing Group
+### Form: Add User to Group
 Example values are given in curly braces.
 
 ```
