@@ -106,21 +106,24 @@ Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire
 This provides an additional layer of security i. e. physical damage to the servers.
 
 ### Accessing Snapshots
-To access snapshots, simply navigate to the `.snap/` sub-folder of the respective location.
-You will find one sub-folder for every snapshot created and in them a complete replica of the folder respective folder at the time of snapshot creation.
+To access snapshots simply navigate to the `.snap/` sub-folder of the respective location.
+This special folder exists on all levels of the CephFS file hierarchy, so even in your user home directory.
+Inside you will find one folder per snapshot created and in those a complete replica of the respective folder at the time of snapshot creation.
 
 For example:
 
-- `/data/cephfs-1/home/.snap/<some_snapshot>/users/<your_user>/`
+- `/data/cephfs-1/home/.snap/<some_snapshot>/users/<your_user>/` same as:
+- `/data/cephfs-1/home/users/<your_user>/.snap/<some_snapshot>`
 - `/data/cephfs-1/work/.snap/<some_snapshot>/groups/<your_group>/`
 - `/data/cephfs-2/unmirrored/.snap/<some_snapshot>/projects/<your_project>/`
 
 Here is a simple example of how to restore a file:
 
 ```sh
-$ cd /data/cephfs-2/unmirrored/.snap/scheduled-2024-03-11-00_00_00_UTC/
-$ ls groups/cubi/
-$ cp groups/cubi/important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
+$ cd /data/cephfs-2/unmirrored/groups/cubi/.snap/scheduled-2024-03-11-00_00_00_UTC/
+$ ls -l
+important_file.txt
+$ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
 ```
 
 ## Technical Implementation
