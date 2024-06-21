@@ -26,10 +26,7 @@ hpc-cpu-123:~$ conda init
 
 This will install conda to `$HOME/work/miniconda`.
 This path can be changed to your liking.
-Please note that the `$HOME` folder has limited space, [more about that here](../storage/home-quota.md).
-
-!!! note
-    `$HOME/scratch` is not appropriate as files placed there will be removed automatically after 2 weeks.
+Please note that the `$HOME` folder has limited space, so be sure to place it in `work`. More about this [here](../storage/home-quota.md).
 
 To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
@@ -42,12 +39,11 @@ hpc-cpu-123:~$ conda config --add channels conda-forge
 
 !!! warning "Important"
     By default conda will automatically activate the (base) environment for new shell sessions.
-    This is can significantly delay your login process and should be turned off:
+    This can significantly delay your login process and should be turned off:
 
     ```sh
     hpc-cpu-123:~$ conda config --set auto_activate_base false
     ```
-
 
 ## Installing software with conda
 Installing packages with conda is straight forward:
