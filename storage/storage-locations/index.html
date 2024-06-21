@@ -3594,18 +3594,21 @@ Depending on the location and Tier, CephFS creates snapshots in different freque
 <p>Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
 This provides an additional layer of security i. e. physical damage to the servers.</p>
 <h3 id="accessing-snapshots">Accessing Snapshots<a class="headerlink" href="#accessing-snapshots" title="Permanent link">&para;</a></h3>
-<p>To access snapshots, simply navigate to the <code>.snap/</code> sub-folder of the respective location.
-You will find one sub-folder for every snapshot created and in them a complete replica of the folder respective folder at the time of snapshot creation.</p>
+<p>To access snapshots simply navigate to the <code>.snap/</code> sub-folder of the respective location.
+This special folder exists on all levels of the CephFS file hierarchy, so even in your user home directory.
+Inside you will find one folder per snapshot created and in those a complete replica of the respective folder at the time of snapshot creation.</p>
 <p>For example:</p>
 <ul>
-<li><code>/data/cephfs-1/home/.snap/&lt;some_snapshot&gt;/users/&lt;your_user&gt;/</code></li>
+<li><code>/data/cephfs-1/home/.snap/&lt;some_snapshot&gt;/users/&lt;your_user&gt;/</code> same as:</li>
+<li><code>/data/cephfs-1/home/users/&lt;your_user&gt;/.snap/&lt;some_snapshot&gt;</code></li>
 <li><code>/data/cephfs-1/work/.snap/&lt;some_snapshot&gt;/groups/&lt;your_group&gt;/</code></li>
 <li><code>/data/cephfs-2/unmirrored/.snap/&lt;some_snapshot&gt;/projects/&lt;your_project&gt;/</code></li>
 </ul>
 <p>Here is a simple example of how to restore a file:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/data/cephfs-2/unmirrored/.snap/scheduled-2024-03-11-00_00_00_UTC/
-$<span class="w"> </span>ls<span class="w"> </span>groups/cubi/
-$<span class="w"> </span>cp<span class="w"> </span>groups/cubi/important_file.txt<span class="w"> </span>/data/cephfs-2/unmirrored/groups/cubi/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/data/cephfs-2/unmirrored/groups/cubi/.snap/scheduled-2024-03-11-00_00_00_UTC/
+$<span class="w"> </span>ls<span class="w"> </span>-l
+important_file.txt
+$<span class="w"> </span>cp<span class="w"> </span>important_file.txt<span class="w"> </span>/data/cephfs-2/unmirrored/groups/cubi/
 </code></pre></div>
 <h2 id="technical-implementation">Technical Implementation<a class="headerlink" href="#technical-implementation" title="Permanent link">&para;</a></h2>
 <h3 id="tier-1">Tier 1<a class="headerlink" href="#tier-1" title="Permanent link">&para;</a></h3>
