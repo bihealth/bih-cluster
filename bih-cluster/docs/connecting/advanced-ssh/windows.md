@@ -1,5 +1,12 @@
 ## Mounting the FS from within the MDC/Charite Network
 
+!!! danger
+
+    Mounting ssh on Windows is currently discouraged since relevant software is outdated
+    (see also [hpc-talk](https://hpc-talk.cubi.bihealth.org/t/connecting-via-sshfs-win-manager/931)).
+    Also, in most cases it is not really necessary to have a constant mount.
+    For normal data transfer please use [WinSCP](../connecting-windows.md/#software-for-transfering-data-fromto-windows) instead.
+
 Once WinSshFS is started, an icon will be added to your taskbar:
 
 ![](figures/winsshfs1.png)
