@@ -33,7 +33,7 @@ Leaders of independent research groups (PIs) can apply for a new cluster work gr
 Example values are given in curly braces.
 
 ```
-# Group "ag-doe"
+# Group "ag-{doe}"
 Group leader/PI: {John Doe}
 Delegate [optional]: {Max Mustermann}
 Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
@@ -41,20 +41,18 @@ Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
 Required resources:
 - Tier 1 storage: {1 TB}
 - Tier 2 storage: {0 TB}
-- CPU hours per year: {approx. 1000}
-- GPU hours per year: {none}
 
 # Users
 ## User 1
-- first name: John
-- last name: Doe
-- affiliation: Charité, Department of Oncology
-- institute email: john.doe@charite.de
+- first name: {John}
+- last name: {Doe}
+- affiliation: {Charité, Department of Oncology}
+- institute email: {john.doe@charite.de}
 - user has account with
     - [ ] BIH
     - [x] Charite
     - [ ] MDC
-- BIH/Charité/MDC user name: doej
+- BIH/Charité/MDC user name: {doej}
 
 [etc.]
 ```
@@ -63,16 +61,16 @@ Required resources:
 Example values are given in curly braces.
 
 ```
-# New user of AG Doe
-- first name: Mia
-- last name: Smith
-- affiliation: Charité, Department of Oncology
-- institute email: mia.smith@charite.de
+# New user of AG {Doe}
+- first name: {Mia}
+- last name: {Smith}
+- affiliation: {Charité, Department of Oncology}
+- institute email: {mia.smith@charite.de}
 - user has account with
     - [ ] BIH
     - [x] Charite
     - [ ] MDC
-- BIH/Charité/MDC user name: smithm
+- BIH/Charité/MDC user name: {smithm}
 ```
 
 !!! note "Notes"
@@ -105,7 +103,7 @@ Project creation can be initiated by group leaders and group delegates as follow
 Example values are given in curly braces.
 
 ```
-# Project "doe-dbgap-rna"
+# Project "{doe-dbgap-rna}"
 Project owner: {John Doe}, {doej_c}
 Delegate [optional]: {Max Mustermann}, {musterm_c}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
@@ -113,8 +111,6 @@ Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
 Required resources:
 - Tier 1 storage: {0 TB}
 - Tier 2 storage: {1 TB}
-- CPU hours per year: {approx. 1000}
-- GPU hours per year: {none}
 
 Additional members (cluster user names):
 - {sorgls_c}
