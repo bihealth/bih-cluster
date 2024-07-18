@@ -27,9 +27,10 @@ Read the following set of pages (in order) to learn how to get access and connec
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
     Please add your publications using the cluster to [this list](misc/publication-list.md).
 
-## Maintenance Announcements
-- :locomotive: Until mid 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
-- :headstone: Late 2024: Retirement of GPFS/DDN storage.
+## News & Maintenance Announcements
+- :locomotive: Until autumn 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
+- :maple_leaf: September 30th 2024: Unmounting of `/fast` on all non-transfer nodes.
+- :headstone: October 31st 2024: Retirement of GPFS/DDN storage.
 
 See [Maintenance](admin/maintenance.md) for a detailed list of current, planned, and previous maintenance and update work.
 
