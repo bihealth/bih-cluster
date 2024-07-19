@@ -40,7 +40,8 @@ Purpose of cluster usage [short]: {RNA-seq analysis in colorectal cancer}
 
 Required resources:
 - Tier 1 storage: {1 TB}
-- Tier 2 storage: {0 TB}
+- Tier 1 scratch: {10 TB}
+- Tier 2 storage: {10 TB}
 
 # Users
 ## User 1
@@ -54,6 +55,7 @@ Required resources:
     - [ ] MDC
 - BIH/Charité/MDC user name: {doej}
 
+## User 2
 [etc.]
 ```
 
