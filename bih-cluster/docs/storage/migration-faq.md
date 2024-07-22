@@ -74,31 +74,30 @@ There are numerous ways around this problem which are described [here](https://w
 
 A simple solution we can recommend is this:
 
-1. Export all environments prior to the move with this bash script:
+1. Before the move, activate your old conda installation like so:
+```sh
+$ source /fast/work/users/$USER/{your_conda_folder}/bin/activate
+```
+
+2. Export all environments with this bash script:
 ```sh
 #!/bin/bash
 for env in $(ls $(conda info --base)/envs/)
 do
     conda env export -n $env -f $env.yml
 done
+
 ```
    If you run into errors it might be better to use `conda env export -n $env --no-builds -f $env.yaml`.
 
-2. Install a fresh version of conda or mamba in your new work folder.
+3. Install a fresh version of conda or mamba in your new work folder.
    Don't forget to turn off automatic base environment activation for less delay during login and reduced strain on the login nodes.
 ```sh
 $ conda init
 $ conda config --set auto_activate_base false
 ```
 
-3. Re-create your old environments from the yaml files:
+4. Re-create your old environments from the yaml files:
 ```sh
 $ conda env create -f {environment.yml}
 ```
-
-!!! Note "Tip"
-    If we already moved your home folder, you can still activate your old environments like this:
-
-    ```sh
-    $ conda activate /fast/home/users/your-user/path/to/conda/envs/{env-name-here}
-    ```
