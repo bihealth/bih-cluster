@@ -74,9 +74,9 @@ There are numerous ways around this problem which are described [here](https://w
 
 A simple solution we can recommend is this:
 
-1. Activate your old conda installation like so:
-```
-$ source /fast/work/users/$USER/conda_folder/bin/activate
+1. Before the move, activate your old conda installation like so:
+```sh
+$ source /fast/work/users/$USER/{your_conda_folder}/bin/activate
 ```
 
 2. Export all environments with this bash script:
