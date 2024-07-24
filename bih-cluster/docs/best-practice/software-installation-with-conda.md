@@ -21,12 +21,14 @@ When you logged into the cluster, please make sure that you also executed `srun`
 hpc-login-1:~$ srun --mem=5G --pty bash -i
 hpc-cpu-123:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 hpc-cpu-123:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
+hpc-cpu-123:~$ eval "$(/$HOME/work/miniconda/bin/conda shell.bash hook)"
 hpc-cpu-123:~$ conda init
+hpc-cpu-123:~$ conda config --set auto_activate_base false
 ```
 
 This will install conda to `$HOME/work/miniconda`.
-This path can be changed to your liking.
-Please note that the `$HOME` folder has limited space, so be sure to place it in `work`. More about this [here](../storage/home-quota.md).
+You can change the path to your liking, but please note that your `$HOME` folder has limited space.
+The `work` subfolder however has a bigger quota. More about this [here](../storage/home-quota.md).
 
 To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
@@ -36,14 +38,6 @@ hpc-cpu-123:~$ conda config --add channels bioconda
 hpc-cpu-123:~$ conda config --add channels default
 hpc-cpu-123:~$ conda config --add channels conda-forge
 ```
-
-!!! warning "Important"
-    By default conda will automatically activate the (base) environment for new shell sessions.
-    This can significantly delay your login process and should be turned off:
-
-    ```sh
-    hpc-cpu-123:~$ conda config --set auto_activate_base false
-    ```
 
 ## Installing software with conda
 Installing packages with conda is straight forward:
