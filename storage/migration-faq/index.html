@@ -1035,6 +1035,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#work-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work data
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3174,6 +3183,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#work-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Work data
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3250,33 +3268,6 @@ It will not match hidden (dot) files and leave them behind.
 Its better to use a trailing slash which matches “All files in this folder”.</p>
 </div>
 <h2 id="moving-user-work-folders">Moving user work folders<a class="headerlink" href="#moving-user-work-folders" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>All files within your own work directory can be transferred as follows.
-   Please replace parts in curly braces with your cluster user name.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/work/users/<span class="o">{</span>username<span class="o">}</span>/
-$<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-1/home/users/<span class="o">{</span>username<span class="o">}</span>/work/
-$<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
-</code></pre></div></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The <code>--dry-run</code> flag lets you check that rsync is working as expected without copying any files.
-Remove it to start the actual transfer.</p>
-</div>
-</li>
-<li>
-<p>Perform a second <code>rsync</code> to check if all files were successfully transferred.
-   Paranoid users might want to add the <code>--checksums</code> flag or use <code>hashdeep</code>.
-   Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
-   but leaves empty directories behind.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--remove-source-files<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
-</code></pre></div></p>
-</li>
-<li>Check if all files are gone from the SOURCE folder:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
-<span class="m">0</span>
-</code></pre></div></li>
-</ol>
 <h3 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h3>
 <p>Conda installations tend not to react well to moving their main folder from its original location.
 There are numerous ways around this problem which are described <a href="https://www.anaconda.com/blog/moving-conda-environments">here</a>.</p>
@@ -3309,6 +3300,34 @@ $<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </s
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>environment.yml<span class="o">}</span>
 </code></pre></div></p>
 </li>
+</ol>
+<h3 id="work-data">Work data<a class="headerlink" href="#work-data" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>All files within your own work directory can be transferred as follows.
+   Please replace parts in curly braces with your cluster user name.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nv">SOURCE</span><span class="o">=</span>/data/gpfs-1/work/users/<span class="o">{</span>username<span class="o">}</span>/
+$<span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span>/data/cephfs-1/home/users/<span class="o">{</span>username<span class="o">}</span>/work/
+$<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>--dry-run</code> flag lets you check that rsync is working as expected without copying any files.
+Remove it to start the actual transfer.</p>
+</div>
+</li>
+<li>
+<p>Perform a second <code>rsync</code> to check if all files were successfully transferred.
+   Paranoid users might want to add the <code>--checksums</code> flag or use <code>hashdeep</code>.
+   Please note the flag <code>--remove-source-files</code> which will do exactly as the name suggests,
+   but leaves empty directories behind.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rsync<span class="w"> </span>-ahP<span class="w"> </span>--stats<span class="w"> </span>--remove-source-files<span class="w"> </span>--dry-run<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span><span class="nv">$TARGET</span>
+</code></pre></div></p>
+</li>
+<li>Check if all files are gone from the SOURCE folder:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span><span class="nv">$SOURCE</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+<span class="m">0</span>
+</code></pre></div></li>
 </ol>
 
 
