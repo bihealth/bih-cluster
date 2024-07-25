@@ -23,14 +23,14 @@ highmem      up 14-00:00:0      3   idle med040[1-4]
 To connect to one of them, simply allocate more than 200GB of RAM in your job.
 
 ```
-hpc-login-1:~$ srun --pty --memory=300GB bash -i
+hpc-login-1:~$ srun --pty --mem=300GB bash -i
 med0401:~$
 ```
 
 You can also pick one of the hostnames:
 
 ```
-hpc-login-1:~$ srun --pty --memory=300GB --nodelist=med0403 bash -i
+hpc-login-1:~$ srun --pty --mem=300GB --nodelist=med0403 bash -i
 med0403:~$
 ```
 

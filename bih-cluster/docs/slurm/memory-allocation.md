@@ -118,13 +118,13 @@ In the BIH HPC context, the following is recommended to:
 
 !!! note "Memory Allocation in Slurm Summary"
 
-    - most user will simply use `--memory=<size>` (e.g., `<size>=3G`) to allocate memory per node
+    - most user will simply use `--mem=<size>` (e.g., `<size>=3G`) to allocate memory per node
     - both interactive `srun` and batch `sbatch` jobs are governed by Slurm memory allocation
     - the sum of all memory of all processes started by your job may not exceed the job reservation.
     - please don't over-allocate memory, see "Memory Accounting in Slurm" below for details
 
 Our Slurm configuration uses Linux cgroups to enforce a maximum amount of resident memory.
-You simply specify it using `--memory=<size>` in your `srun` and `sbatch` command.
+You simply specify it using `--mem=<size>` in your `srun` and `sbatch` command.
 
 In the (rare) case that you provide more flexible number of threads (Slurm tasks) or GPUs, you could also look into `--mem-per-cpu` and `--mem-per-gpu`.
 The [official Slurm sbatch](https://slurm.schedmd.com/sbatch.html) manual is quite helpful, as is `man sbatch` on the cluster command line.
