@@ -43,31 +43,6 @@ $ rm -r $SOURCE
     Its better to use a trailing slash which matches “All files in this folder”.
 
 ## Moving user work folders
-1. All files within your own work directory can be transferred as follows.
-   Please replace parts in curly braces with your cluster user name.
-```sh
-$ SOURCE=/data/gpfs-1/work/users/{username}/
-$ TARGET=/data/cephfs-1/home/users/{username}/work/
-$ rsync -ahP --stats --dry-run $SOURCE $TARGET
-```
-
-    !!! Note
-        The `--dry-run` flag lets you check that rsync is working as expected without copying any files.
-        Remove it to start the actual transfer.
-    
-2. Perform a second `rsync` to check if all files were successfully transferred.
-   Paranoid users might want to add the `--checksums` flag or use `hashdeep`.
-   Please note the flag `--remove-source-files` which will do exactly as the name suggests,
-   but leaves empty directories behind.
-```sh
-$ rsync -ahP --stats --remove-source-files --dry-run $SOURCE $TARGET
-```
-4. Check if all files are gone from the SOURCE folder:
-```sh
-$ find $SOURCE -type f | wc -l
-0
-```
-
 ### Conda environments
 Conda installations tend not to react well to moving their main folder from its original location.
 There are numerous ways around this problem which are described [here](https://www.anaconda.com/blog/moving-conda-environments).
@@ -100,4 +75,30 @@ $ conda config --set auto_activate_base false
 4. Re-create your old environments from the yaml files:
 ```sh
 $ conda env create -f {environment.yml}
+```
+
+### Work data
+1. All files within your own work directory can be transferred as follows.
+   Please replace parts in curly braces with your cluster user name.
+```sh
+$ SOURCE=/data/gpfs-1/work/users/{username}/
+$ TARGET=/data/cephfs-1/home/users/{username}/work/
+$ rsync -ahP --stats --dry-run $SOURCE $TARGET
+```
+
+    !!! Note
+        The `--dry-run` flag lets you check that rsync is working as expected without copying any files.
+        Remove it to start the actual transfer.
+    
+2. Perform a second `rsync` to check if all files were successfully transferred.
+   Paranoid users might want to add the `--checksums` flag or use `hashdeep`.
+   Please note the flag `--remove-source-files` which will do exactly as the name suggests,
+   but leaves empty directories behind.
+```sh
+$ rsync -ahP --stats --remove-source-files --dry-run $SOURCE $TARGET
+```
+4. Check if all files are gone from the SOURCE folder:
+```sh
+$ find $SOURCE -type f | wc -l
+0
 ```
