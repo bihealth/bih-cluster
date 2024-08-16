@@ -1931,9 +1931,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#best-practice-use-fastusersuserscratchtmp" class="md-nav__link">
+  <a href="#best-practice-use-scratchtmp" class="md-nav__link">
     <span class="md-ellipsis">
-      Best Practice:  Use /fast/users/$USER/scratch/tmp
+      Best Practice:  Use scratch/tmp
     </span>
   </a>
   
@@ -3190,9 +3190,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#best-practice-use-fastusersuserscratchtmp" class="md-nav__link">
+  <a href="#best-practice-use-scratchtmp" class="md-nav__link">
     <span class="md-ellipsis">
-      Best Practice:  Use /fast/users/$USER/scratch/tmp
+      Best Practice:  Use scratch/tmp
     </span>
   </a>
   
@@ -3263,16 +3263,16 @@ When undefined, usually <code>/tmp</code> is used.</p>
 <h2 id="temporary-directories-on-the-bih-cluster">Temporary Directories on the BIH Cluster<a class="headerlink" href="#temporary-directories-on-the-bih-cluster" title="Permanent link">&para;</a></h2>
 <p>Generally, there are two locations where you could put temporary files:</p>
 <ul>
-<li><code>/fast/users/$USER/scratch/tmp</code> -- inside your scratch folder on the fast GPFS file system; this location is available from all cluster nodes</li>
+<li><code>/data/cephfs-1/home/users/$USER/scratch/tmp</code> -- inside your scratch folder on the CephFS file system; this location is available from all cluster nodes</li>
 <li><code>/tmp</code> -- on the local node's temporary folder; this location is only available on the node itself.
   The slurm scheduler uses Linux namespaces such that every <strong>job</strong> gets its private <code>/tmp</code> even when run on the same node.</li>
 </ul>
-<h3 id="best-practice-use-fastusersuserscratchtmp">Best Practice:  Use <code>/fast/users/$USER/scratch/tmp</code><a class="headerlink" href="#best-practice-use-fastusersuserscratchtmp" title="Permanent link">&para;</a></h3>
+<h3 id="best-practice-use-scratchtmp">Best Practice:  Use <code>scratch/tmp</code><a class="headerlink" href="#best-practice-use-scratchtmp" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
-<p class="admonition-title">Use GPFS-based TMPDIR</p>
-<p>Generally setup your environment to use <code>/fast/users/$USER/scratch/tmp</code> as filling the local disk of a node with forgotten files can cause a lot of problems.</p>
+<p class="admonition-title">Use CephFS-based TMPDIR</p>
+<p>Generally setup your environment to use <code>/data/cephfs-1/home/users/$USER/scratch/tmp</code> as filling the local disk of a node with forgotten files can cause a lot of problems.</p>
 </div>
-<p>Ideally, you append the following to your <code>~/.bashrc</code> to use <code>/fast/users/$USER/scratch/tmp</code> as the temporary directory.
+<p>Ideally, you append the following to your <code>~/.bashrc</code> to use <code>/data/cephfs-1/home/users/$USER/scratch/tmp</code> as the temporary directory.
 This will also create the directory if it does not exist.
 Further, it will create one directory per host name which prevents too many entries in the temporary directory.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span><span class="nv">$HOME</span>/scratch/tmp/<span class="k">$(</span>hostname<span class="k">)</span>
@@ -3281,7 +3281,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$TMPDIR<
 <p><strong>Prepending this to your job scripts is also recommended as it will ensure that the temporary directory exists.</strong></p>
 <h2 id="tmpdir-and-the-scheduler"><code>TMPDIR</code> and the scheduler<a class="headerlink" href="#tmpdir-and-the-scheduler" title="Permanent link">&para;</a></h2>
 <p>In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
-Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
+Further, the local disk is independent from the CephFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
 Please note that by default, Slurm will not change your environment variables.
 This includes the environment variable <code>TMPDIR</code>.</p>
 <p>Slurm will automatically update temporary files in a job's <code>/tmp</code> on the local file system when the job terminates.
@@ -3315,7 +3315,7 @@ To automatically clean up temporary directories on the shared file system, use t
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
   </span>
 
     

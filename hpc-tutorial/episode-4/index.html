@@ -3137,8 +3137,8 @@ running only the same node.</p>
 <p>The best thing is that we can reuse our <code>Snakefile</code> as it is and just write a wrapper script
 to call Snakemake. We run the script and the magic will start.</p>
 <p>First, create a new folder for this episode:</p>
-<div class="highlight"><pre><span></span><code>(first-steps) $ mkdir -p /fast/users/${USER}/work/tutorial/episode4/logs
-(first-steps) $ pushd /fast/users/${USER}/work/tutorial/episode4
+<div class="highlight"><pre><span></span><code>(first-steps) $ mkdir -p /data/cephfs-1/home/users/${USER}/work/tutorial/episode4/logs
+(first-steps) $ pushd /data/cephfs-1/home/users/${USER}/work/tutorial/episode4
 </code></pre></div>
 <p>And copy the wrapper script to this folder as well as the Snakefile (you can also reuse the one with the adjustments from the previous <a href="../episode-3/">episode</a>):</p>
 <div class="highlight"><pre><span></span><code>(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_snakejob.sh .
@@ -3171,7 +3171,7 @@ to call Snakemake. We run the script and the magic will start.</p>
 <span class="c1">#SBATCH --time=30:00</span>
 
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/fast/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
+<span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/data/cephfs-1/home/users/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/scratch/tmp
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOGDIR</span><span class="o">=</span>logs/<span class="si">${</span><span class="nv">SLURM_JOB_NAME</span><span class="si">}</span>-<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$LOGDIR</span>
 
@@ -3229,7 +3229,7 @@ The profile will take create appropriate calls to <code>sbatch</code> and interp
         <span class="n">time</span><span class="o">=</span><span class="s1">&#39;12:00:00&#39;</span><span class="p">,</span>
     <span class="n">shell</span><span class="p">:</span>
 <span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        export TMPDIR=/fast/users/${{USER}}/scratch/tmp</span>
+<span class="sd">        export TMPDIR=/data/cephfs-1/home/users/${{USER}}/scratch/tmp</span>
 <span class="sd">        mkdir -p ${{TMPDIR}}</span>
 
 <span class="sd">        BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta</span>
@@ -3321,7 +3321,7 @@ The profile will take create appropriate calls to <code>sbatch</code> and interp
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
   </span>
 
     

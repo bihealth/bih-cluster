@@ -3326,18 +3326,18 @@ You can find the data here:</p>
 </ul>
 <h2 id="creating-a-project-directory">Creating a Project Directory<a class="headerlink" href="#creating-a-project-directory" title="Permanent link">&para;</a></h2>
 <p>First, you should create a folder where the output of this tutorial will go.
-It would be good to have it in your <code>work</code> directory in <code>/fast/users/$USER</code>, because it is faster and there is more space available.</p>
-<div class="highlight"><pre><span></span><code>(first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode1
-(first-steps) $ pushd /fast/users/$USER/work/tutorial/episode1
+It would be good to have it in your <code>work</code> directory in <code>/data/cephfs-1/home/users/$USER</code>, because it is faster and there is more space available.</p>
+<div class="highlight"><pre><span></span><code>(first-steps) $ mkdir -p /data/cephfs-1/home/users/$USER/work/tutorial/episode1
+(first-steps) $ pushd /data/cephfs-1/home/users/$USER/work/tutorial/episode1
 </code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Quotas / File System limits</p>
 <ul>
-<li>Note well that you have a quota of 1 GB in your home directory at <code>/fast/users/$USER</code>.
+<li>Note well that you have a quota of 1 GB in your home directory at <code>/data/cephfs-1/home/users/$USER</code>.
   The reason for this is that nightly snapshots and backups are created for this directory which are precious resources.</li>
-<li>This limit does not apply to your work directory at <code>/fast/users/$USER/work</code>.
+<li>This limit does not apply to your work directory at <code>/data/cephfs-1/home/users/$USER/work</code>.
   The limits are much higher here but no snapshots or backups are available.</li>
-<li>There is no limit on your scratch directory at <code>/fast/users/$USER/scratch</code>.
+<li>There is no limit on your scratch directory at <code>/data/cephfs-1/home/users/$USER/scratch</code>.
   However, <strong>files placed here are automatically removed after 2 weeks.</strong>
   This is only appropriate for files during download or temporary files.</li>
 </ul>
@@ -3345,7 +3345,7 @@ It would be good to have it in your <code>work</code> directory in <code>/fast/u
 <h2 id="creating-a-directory-for-temporary-files">Creating a Directory for Temporary Files<a class="headerlink" href="#creating-a-directory-for-temporary-files" title="Permanent link">&para;</a></h2>
 <p>In general it is advisable to have a proper temporary directory available.
 You can create one in your <code>~/scratch</code> folder and make it available to the system.</p>
-<div class="highlight"><pre><span></span><code>(first-steps) $ export TMPDIR=/fast/users/$USER/scratch/tmp
+<div class="highlight"><pre><span></span><code>(first-steps) $ export TMPDIR=/data/cephfs-1/home/users/$USER/scratch/tmp
 (first-steps) $ mkdir -p $TMPDIR
 </code></pre></div>
 <h2 id="using-the-cubit-static-data">Using the Cubit Static Data<a class="headerlink" href="#using-the-cubit-static-data" title="Permanent link">&para;</a></h2>
@@ -3409,7 +3409,7 @@ You can also have a peek via:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
   </span>
 
     

@@ -3982,11 +3982,11 @@ You can find a list of all job reason codes in the <a href="https://slurm.schedm
 <span class="w">   </span><span class="nv">MinCPUsNode</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">MinMemoryNode</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">MinTmpDiskNode</span><span class="o">=</span><span class="m">0</span>
 <span class="w">   </span><span class="nv">Features</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">DelayBoot</span><span class="o">=</span><span class="m">00</span>:00:00
 <span class="w">   </span><span class="nv">OverSubscribe</span><span class="o">=</span>OK<span class="w"> </span><span class="nv">Contiguous</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Licenses</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">Network</span><span class="o">=(</span>null<span class="o">)</span>
-<span class="w">   </span><span class="nv">Command</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
-<span class="w">   </span><span class="nv">WorkDir</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
-<span class="w">   </span><span class="nv">StdErr</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+<span class="w">   </span><span class="nv">Command</span><span class="o">=</span>/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
+<span class="w">   </span><span class="nv">WorkDir</span><span class="o">=</span>/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
+<span class="w">   </span><span class="nv">StdErr</span><span class="o">=</span>/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
 <span class="w">   </span><span class="nv">StdIn</span><span class="o">=</span>/dev/null
-<span class="w">   </span><span class="nv">StdOut</span><span class="o">=</span>/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+<span class="w">   </span><span class="nv">StdOut</span><span class="o">=</span>/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
 <span class="w">   </span><span class="nv">Power</span><span class="o">=</span>
 <span class="w">   </span><span class="nv">MailUser</span><span class="o">=(</span>null<span class="o">)</span><span class="w"> </span><span class="nv">MailType</span><span class="o">=</span>NONE
 </code></pre></div>
@@ -4065,11 +4065,11 @@ JobId=4225062 JobName=C2371_2
    MinCPUsNode=1 MinMemoryNode=150G MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=YES Contiguous=0 Licenses=(null) Network=(null)
-   Command=/fast/work/users/user_c/SCZ_replic/JR_sims/GS_wrapy/wrap_y0_VP_2371_GS_chunk2_C02.sh
-   WorkDir=/fast/work/users/user_c/SCZ_replic/JR_sims
-   StdErr=/fast/work/users/user_c/SCZ_replic/JR_sims/E2371_2.txt
+   Command=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/GS_wrapy/wrap_y0_VP_2371_GS_chunk2_C02.sh
+   WorkDir=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims
+   StdErr=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/E2371_2.txt
    StdIn=/dev/null
-   StdOut=/fast/work/users/user_c/SCZ_replic/JR_sims/slurm-4225062.out
+   StdOut=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/slurm-4225062.out
    Power=
 </code></pre></div>
 <h2 id="my-jobs-dont-run-in-the-partition-i-expect">My jobs don't run in the partition I expect<a class="headerlink" href="#my-jobs-dont-run-in-the-partition-i-expect" title="Permanent link">&para;</a></h2>
@@ -4376,7 +4376,7 @@ Note that the central manual remains the ground truth of information and this FA
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 25, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2024</span>
   </span>
 
     
