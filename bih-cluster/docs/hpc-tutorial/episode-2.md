@@ -62,7 +62,7 @@ The content of the file:
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00
 
-export TMPDIR=/fast/users/${USER}/scratch/tmp
+export TMPDIR=/data/cephfs-1/home/users/${USER}/scratch/tmp
 mkdir -p ${TMPDIR}
 ```
 
@@ -72,13 +72,13 @@ Slurm will create a log file with a file name composed of the job name (`%x`) an
 To start now with our tutorial, create a new tutorial directory with a log directory, e.g.,
 
 ```terminal
-(first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode2/logs
+(first-steps) $ mkdir -p /data/cephfs-1/home/users/$USER/work/tutorial/episode2/logs
 ```
 
 and copy the wrapper script to this directory:
 
 ```terminal
-(first-steps) $ pushd /fast/users/$USER/work/tutorial/episode2
+(first-steps) $ pushd /data/cephfs-1/home/users/$USER/work/tutorial/episode2
 (first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh .
 (first-steps) $ chmod u+w submit_job.sh
 ```
@@ -116,7 +116,7 @@ Your file should look something like this:
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00
 
-export TMPDIR=/fast/users/${USER}/scratch/tmp
+export TMPDIR=/data/cephfs-1/home/users/${USER}/scratch/tmp
 mkdir -p ${TMPDIR}
 
 BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta

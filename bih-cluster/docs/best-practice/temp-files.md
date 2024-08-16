@@ -16,17 +16,17 @@ When undefined, usually `/tmp` is used.
 
 Generally, there are two locations where you could put temporary files:
 
-- `/fast/users/$USER/scratch/tmp` -- inside your scratch folder on the fast GPFS file system; this location is available from all cluster nodes
+- `/data/cephfs-1/home/users/$USER/scratch/tmp` -- inside your scratch folder on the CephFS file system; this location is available from all cluster nodes
 - `/tmp` -- on the local node's temporary folder; this location is only available on the node itself.
   The slurm scheduler uses Linux namespaces such that every **job** gets its private `/tmp` even when run on the same node.
 
-### Best Practice:  Use `/fast/users/$USER/scratch/tmp`
+### Best Practice:  Use `scratch/tmp`
 
-!!! warning "Use GPFS-based TMPDIR"
+!!! warning "Use CephFS-based TMPDIR"
 
-    Generally setup your environment to use `/fast/users/$USER/scratch/tmp` as filling the local disk of a node with forgotten files can cause a lot of problems.
+    Generally setup your environment to use `/data/cephfs-1/home/users/$USER/scratch/tmp` as filling the local disk of a node with forgotten files can cause a lot of problems.
 
-Ideally, you append the following to your `~/.bashrc` to use `/fast/users/$USER/scratch/tmp` as the temporary directory.
+Ideally, you append the following to your `~/.bashrc` to use `/data/cephfs-1/home/users/$USER/scratch/tmp` as the temporary directory.
 This will also create the directory if it does not exist.
 Further, it will create one directory per host name which prevents too many entries in the temporary directory.
 
@@ -40,7 +40,7 @@ mkdir -p $TMPDIR
 ## `TMPDIR` and the scheduler
 
 In the older nodes, the local disk is a relatively slow spinning disk, in the newer nodes, the local disk is a relatively fast SSD.
-Further, the local disk is independent from the GPFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
+Further, the local disk is independent from the CephFS file system, so I/O volume to it does not affect the network or any other job on other nodes.
 Please note that by default, Slurm will not change your environment variables.
 This includes the environment variable `TMPDIR`.
 

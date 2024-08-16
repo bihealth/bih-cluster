@@ -97,7 +97,7 @@ case "${HOSTNAME}" in
 
         # Define path for temporary directories, don't forget to cleanup!
         # Also, this will only work after /fast is available.
-        export TMPDIR=/fast/users/$USER/scratch/tmp
+        export TMPDIR=/data/cephfs-1/home/users/$USER/scratch/tmp
         ;;
 esac
 ```

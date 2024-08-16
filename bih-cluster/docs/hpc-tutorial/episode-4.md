@@ -20,8 +20,8 @@ to call Snakemake. We run the script and the magic will start.
 First, create a new folder for this episode:
 
 ```terminal
-(first-steps) $ mkdir -p /fast/users/${USER}/work/tutorial/episode4/logs
-(first-steps) $ pushd /fast/users/${USER}/work/tutorial/episode4
+(first-steps) $ mkdir -p /data/cephfs-1/home/users/${USER}/work/tutorial/episode4/logs
+(first-steps) $ pushd /data/cephfs-1/home/users/${USER}/work/tutorial/episode4
 ```
 
 And copy the wrapper script to this folder as well as the Snakefile (you can also reuse the one with the adjustments from the previous [episode](episode-3.md)):
@@ -60,7 +60,7 @@ The `Snakefile` is already known to you but let me explain the wrapper script `s
 #SBATCH --time=30:00
 
 
-export TMPDIR=/fast/users/${USER}/scratch/tmp
+export TMPDIR=/data/cephfs-1/home/users/${USER}/scratch/tmp
 export LOGDIR=logs/${SLURM_JOB_NAME}-${SLURM_JOB_ID}
 mkdir -p $LOGDIR
 
@@ -120,7 +120,7 @@ rule alignment:
         time='12:00:00',
     shell:
         r"""
-        export TMPDIR=/fast/users/${{USER}}/scratch/tmp
+        export TMPDIR=/data/cephfs-1/home/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
         BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta

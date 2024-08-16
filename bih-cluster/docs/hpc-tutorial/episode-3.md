@@ -30,8 +30,8 @@ Every Snakemake run requires a `Snakefile` file. Create a new folder inside your
 copy the skeleton:
 
 ```terminal
-(first-steps) $ mkdir -p /fast/users/${USER}/work/tutorial/episode3
-(first-steps) $ pushd /fast/users/${USER}/work/tutorial/episode3
+(first-steps) $ mkdir -p /data/cephfs-1/home/users/${USER}/work/tutorial/episode3
+(first-steps) $ pushd /data/cephfs-1/home/users/${USER}/work/tutorial/episode3
 (first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/Snakefile .
 (first-steps) $ chmod u+w Snakefile
 ```
@@ -53,7 +53,7 @@ rule alignment:
         bai='alignment/test.bam.bai',
     shell:
         r"""
-        export TMPDIR=/fast/users/${{USER}}/scratch/tmp
+        export TMPDIR=/data/cephfs-1/home/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
         BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
@@ -154,7 +154,7 @@ rule alignment:
         bai='alignment/{id}.bam.bai',
     shell:
         r"""
-        export TMPDIR=/fast/users/${{USER}}/scratch/tmp
+        export TMPDIR=/data/cephfs-1/home/users/${{USER}}/scratch/tmp
         mkdir -p ${{TMPDIR}}
 
         BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta

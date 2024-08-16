@@ -1,5 +1,10 @@
 # OnDemand: Quota Inspection
 
+!!! info "Outdated"
+
+    This document is only valid for the old, third-generation file system and will be removed soon.
+    Quotas of our new CephFS storage are communicated via the [HPC Access](https://hpc-access.cubi.bihealth.org/) web portal.
+
 Accessing the quota report by selecting `Files` and then `Quotas` in the top menu
 will provide you with a detailed list of all quotas for directories that you are assigned to.
 
