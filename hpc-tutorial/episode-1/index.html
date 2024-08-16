@@ -3315,7 +3315,7 @@
 Here we will build a small pipeline with alignment and variant calling.
 The premise is that you have the tools installed as described in <a href="../episode-0/">Episode 0</a>. For this episode, please make sure that you
 are on a compute node. As a reminder, the command to access a compute node with the required resources is</p>
-<div class="highlight"><pre><span></span><code>$ srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i
+<div class="highlight"><pre><span></span><code>$ srun --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i
 </code></pre></div>
 <h2 id="tutorial-input-files">Tutorial Input Files<a class="headerlink" href="#tutorial-input-files" title="Permanent link">&para;</a></h2>
 <p>We will provide you with some example FASTQ files, but you can use your own if you like.

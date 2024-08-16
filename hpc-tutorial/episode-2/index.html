@@ -3250,8 +3250,8 @@ A skeleton script can be found at <code>/data/cephfs-1/work/projects/cubit/tutor
 <span class="c1"># Set the file to write the stdout and stderr to (if -e is not set; -o or --output).</span>
 <span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
-<span class="c1"># Set the number of cores (-n or --ntasks).</span>
-<span class="c1">#SBATCH --ntasks=8</span>
+<span class="c1"># Set the number of cores (-c or --cpus-per-task).</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
 
 <span class="c1"># Force allocation of the two cores on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>
@@ -3293,8 +3293,8 @@ Your file should look something like this:</p>
 <span class="c1"># Set the file to write the stdout and stderr to (if -e is not set; -o or --output).</span>
 <span class="c1">#SBATCH --output=logs/%x-%j.log</span>
 
-<span class="c1"># Set the number of cores (-n or --ntasks).</span>
-<span class="c1">#SBATCH --ntasks=8</span>
+<span class="c1"># Set the number of cores (-c or --cpus-per-task).</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
 
 <span class="c1"># Force allocation of the two cores on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>

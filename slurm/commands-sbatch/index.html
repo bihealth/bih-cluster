@@ -3253,8 +3253,8 @@ Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"
     This is only given here as an important argument as the maximum number of nodes allocatable to any partition but <code>mpi</code> is set to one (1).
     This is done as there are few users on the BIH HPC that actually use multi-node paralleilsm.
     Rather, most users will use multi-core parallelism and might forget to limit the number of nodes which causes inefficient allocation of resources.</li>
-<li><code>--ntasks</code>
-    -- This corresponds to the number of threads allocated to each node.</li>
+<li><code>--cpus-per-task</code>
+    -- This corresponds to the number of CPU cores allocated to each task.</li>
 <li><code>--mem</code>
     -- The memory to allocate for the job.
     As you can define minimal and maximal number of tasks/CPUs/cores, you could also specify <code>--mem-per-cpu</code> and get more flexible scheduling of your job.</li>

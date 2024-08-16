@@ -3251,9 +3251,9 @@ introduce the following convention that we use throughout the series:</p>
 <p>While file paths are highlighted like this: <code>/data/cephfs-1/work/projects/cubit/current</code>.</p>
 <h2 id="instant-gratification">Instant Gratification<a class="headerlink" href="#instant-gratification" title="Permanent link">&para;</a></h2>
 <p>After connecting to the cluster, you are located on a login node.
-To get to your first compute node, type <code>srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days, enabling you to use 8 cores and 8 Gb memory. Typing <code>exit</code> will you bring back to the login node.</p>
-<div class="highlight"><pre><span></span><code>$ srun -p long --time 7-00 --mem=8G --ntasks=8 --pty bash -i
-med0107 $ exit
+To get to your first compute node, type <code>srun --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days, enabling you to use 8 cores and 8 Gb memory. Typing <code>exit</code> will you bring back to the login node.</p>
+<div class="highlight"><pre><span></span><code>hpc-login-1$ srun -p long --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i
+hpc-cpu-1$ exit
 $
 </code></pre></div>
 <p>See?
@@ -3263,7 +3263,7 @@ That was easy!</p>
 In general the users on the cluster will manage their own software with the help of conda.
 If you haven't done so so far, please <a href="../../best-practice/software-installation-with-conda/">follow the instructions in installing conda</a> first.
 The only premise is that you are able to <a href="../../connecting/advanced-ssh/linux/">log into the cluster</a>.
-Make also sure that you are logged in to a computation node using <code>srun -p medium --time 1-00 --mem=4G --ntasks=1 --pty bash -i</code>.</p>
+Make also sure that you are logged in to a computation node using <code>srun -p medium --time 1-00 --mem=4G --cpus-per-task=1 --pty bash -i</code>.</p>
 <p>Now we will create a new environment, so as to not interfere
 with your current or planned software stack, and install into it all the
 software that we need during the tutorial. Run the following commands:</p>
