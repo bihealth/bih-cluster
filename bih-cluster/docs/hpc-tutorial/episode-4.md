@@ -43,8 +43,8 @@ The `Snakefile` is already known to you but let me explain the wrapper script `s
 # Set the file to write the stdout and stderr to (if -e is not set; -o or --output).
 #SBATCH --output=logs/%x-%j.log
 
-# Set the number of cores (-n or --ntasks).
-#SBATCH --ntasks=2
+# Set the number of cores (-c or --cpus-per-task).
+#SBATCH --cpus-per-task=2
 
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1

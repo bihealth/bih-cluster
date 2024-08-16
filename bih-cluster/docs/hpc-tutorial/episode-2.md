@@ -46,8 +46,8 @@ The content of the file:
 # Set the file to write the stdout and stderr to (if -e is not set; -o or --output).
 #SBATCH --output=logs/%x-%j.log
 
-# Set the number of cores (-n or --ntasks).
-#SBATCH --ntasks=8
+# Set the number of cores (-c or --cpus-per-task).
+#SBATCH --cpus-per-task=8
 
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1
@@ -100,8 +100,8 @@ Your file should look something like this:
 # Set the file to write the stdout and stderr to (if -e is not set; -o or --output).
 #SBATCH --output=logs/%x-%j.log
 
-# Set the number of cores (-n or --ntasks).
-#SBATCH --ntasks=8
+# Set the number of cores (-c or --cpus-per-task).
+#SBATCH --cpus-per-task=8
 
 # Force allocation of the two cores on ONE node.
 #SBATCH --nodes=1

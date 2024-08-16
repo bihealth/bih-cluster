@@ -27,8 +27,8 @@ The command will create a batch job and add it to the queue to be executed at a 
     This is only given here as an important argument as the maximum number of nodes allocatable to any partition but `mpi` is set to one (1).
     This is done as there are few users on the BIH HPC that actually use multi-node paralleilsm.
     Rather, most users will use multi-core parallelism and might forget to limit the number of nodes which causes inefficient allocation of resources.
-- `--ntasks`
-    -- This corresponds to the number of threads allocated to each node.
+- `--cpus-per-task`
+    -- This corresponds to the number of CPU cores allocated to each task.
 - `--mem`
     -- The memory to allocate for the job.
     As you can define minimal and maximal number of tasks/CPUs/cores, you could also specify `--mem-per-cpu` and get more flexible scheduling of your job.

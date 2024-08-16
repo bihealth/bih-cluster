@@ -14,7 +14,7 @@ The premise is that you have the tools installed as described in [Episode 0](epi
 are on a compute node. As a reminder, the command to access a compute node with the required resources is
 
 ```
-$ srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i
+$ srun --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i
 ```
 
 ## Tutorial Input Files

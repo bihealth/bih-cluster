@@ -28,11 +28,11 @@ While file paths are highlighted like this: `/data/cephfs-1/work/projects/cubit/
 ## Instant Gratification
 
 After connecting to the cluster, you are located on a login node.
-To get to your first compute node, type `srun --time 7-00 --mem=8G --ntasks=8 --pty bash -i` which will launch an interactive Bash session on a free remote node running up to 7 days, enabling you to use 8 cores and 8 Gb memory. Typing `exit` will you bring back to the login node.
+To get to your first compute node, type `srun --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i` which will launch an interactive Bash session on a free remote node running up to 7 days, enabling you to use 8 cores and 8 Gb memory. Typing `exit` will you bring back to the login node.
 
 ```terminal
-$ srun -p long --time 7-00 --mem=8G --ntasks=8 --pty bash -i
-med0107 $ exit
+hpc-login-1$ srun -p long --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i
+hpc-cpu-1$ exit
 $
 ```
 
@@ -45,7 +45,7 @@ In preparation for our first steps tutorial series, we would like you to install
 In general the users on the cluster will manage their own software with the help of conda.
 If you haven't done so so far, please [follow the instructions in installing conda](../best-practice/software-installation-with-conda.md) first.
 The only premise is that you are able to [log into the cluster](../connecting/advanced-ssh/linux.md).
-Make also sure that you are logged in to a computation node using `srun -p medium --time 1-00 --mem=4G --ntasks=1 --pty bash -i`.
+Make also sure that you are logged in to a computation node using `srun -p medium --time 1-00 --mem=4G --cpus-per-task=1 --pty bash -i`.
 
 Now we will create a new environment, so as to not interfere
 with your current or planned software stack, and install into it all the
