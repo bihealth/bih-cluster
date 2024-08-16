@@ -28,20 +28,20 @@ You can find the data here:
 ## Creating a Project Directory
 
 First, you should create a folder where the output of this tutorial will go.
-It would be good to have it in your `work` directory in `/fast/users/$USER`, because it is faster and there is more space available.
+It would be good to have it in your `work` directory in `/data/cephfs-1/home/users/$USER`, because it is faster and there is more space available.
 
 ```terminal
-(first-steps) $ mkdir -p /fast/users/$USER/work/tutorial/episode1
-(first-steps) $ pushd /fast/users/$USER/work/tutorial/episode1
+(first-steps) $ mkdir -p /data/cephfs-1/home/users/$USER/work/tutorial/episode1
+(first-steps) $ pushd /data/cephfs-1/home/users/$USER/work/tutorial/episode1
 ```
 
 !!! important "Quotas / File System limits"
 
-    - Note well that you have a quota of 1 GB in your home directory at `/fast/users/$USER`.
+    - Note well that you have a quota of 1 GB in your home directory at `/data/cephfs-1/home/users/$USER`.
       The reason for this is that nightly snapshots and backups are created for this directory which are precious resources.
-    - This limit does not apply to your work directory at `/fast/users/$USER/work`.
+    - This limit does not apply to your work directory at `/data/cephfs-1/home/users/$USER/work`.
       The limits are much higher here but no snapshots or backups are available.
-    - There is no limit on your scratch directory at `/fast/users/$USER/scratch`.
+    - There is no limit on your scratch directory at `/data/cephfs-1/home/users/$USER/scratch`.
       However, **files placed here are automatically removed after 2 weeks.**
       This is only appropriate for files during download or temporary files.
 
@@ -51,7 +51,7 @@ In general it is advisable to have a proper temporary directory available.
 You can create one in your `~/scratch` folder and make it available to the system.
 
 ```terminal
-(first-steps) $ export TMPDIR=/fast/users/$USER/scratch/tmp
+(first-steps) $ export TMPDIR=/data/cephfs-1/home/users/$USER/scratch/tmp
 (first-steps) $ mkdir -p $TMPDIR
 ```
 

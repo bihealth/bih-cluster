@@ -11,7 +11,7 @@ requires registration before download from [here](https://support.10xgenomics.co
 to unpack Cell Ranger, its dependencies and the `cellranger` script:
 
 ```
-cd /fast/users/$USER/work
+cd /data/cephfs-1/home/users/$USER/work
 mv /path/to/cellranger-3.0.2.tar.gz .
 tar -xzvf cellranger-3.0.2.tar.gz
 ```
@@ -22,7 +22,7 @@ will be provided in `/data/cephfs-1/work/projects/cubit/current/static_data/app_
 
 # cluster support SLURM
 
-add a file `slurm.template` to `/fast/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
+add a file `slurm.template` to `/data/cephfs-1/home/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
 
 ```
 #!/usr/bin/env bash
@@ -61,7 +61,7 @@ add a file `slurm.template` to `/fast/users/$USER/work/cellranger-3.0.2/martian-
 __MRO_CMD__
 ```
 
-**note**: on newer cellranger version, `slurm.template` needs to go to `/fast/users/$USER/work/cellranger-XX/external/martian/jobmanagers/`
+**note**: on newer cellranger version, `slurm.template` needs to go to `/data/cephfs-1/home/users/$USER/work/cellranger-XX/external/martian/jobmanagers/`
 
 # demultiplexing
 
@@ -74,7 +74,7 @@ create a script `run_cellranger.sh` with these contents (consult the [documentat
 ```
 #!/bin/bash
 
-/fast/users/$USER/work/cellranger-3.0.2/cellranger count \
+/data/cephfs-1/home/users/$USER/work/cellranger-3.0.2/cellranger count \
   --id=sample_id \
   --transcriptome=/data/cephfs-1/work/projects/cubit/current/static_data/app_support/cellranger/refdata-cellranger-${species}-3.0.0\
   --fastqs=/path/to/fastqs \
@@ -93,7 +93,7 @@ sbatch --ntasks=1 --mem-per-cpu=4G --time=8:00:00 -p medium -o cellranger.log ru
 
 # cluster support SGE (outdated)
 
-add a file `sge.template` to `/fast/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
+add a file `sge.template` to `/data/cephfs-1/home/users/$USER/work/cellranger-3.0.2/martian-cs/v3.2.0/jobmanagers/sge.template` with the following contents:
 
 ```
 # =============================================================================

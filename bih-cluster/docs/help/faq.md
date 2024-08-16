@@ -189,11 +189,11 @@ JobId=863089 JobName=pipeline_job.sh
    MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-   Command=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
-   WorkDir=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
-   StdErr=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+   Command=/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/pipeline_job.sh
+   WorkDir=/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export
+   StdErr=/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
    StdIn=/dev/null
-   StdOut=/fast/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
+   StdOut=/data/cephfs-1/work/projects/medgen_genomes/2019-06-05_genomes_reboot/GRCh37/wgs_cnv_export/slurm-863089.out
    Power=
    MailUser=(null) MailType=NONE
 ```
@@ -290,11 +290,11 @@ JobId=4225062 JobName=C2371_2
    MinCPUsNode=1 MinMemoryNode=150G MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=YES Contiguous=0 Licenses=(null) Network=(null)
-   Command=/fast/work/users/user_c/SCZ_replic/JR_sims/GS_wrapy/wrap_y0_VP_2371_GS_chunk2_C02.sh
-   WorkDir=/fast/work/users/user_c/SCZ_replic/JR_sims
-   StdErr=/fast/work/users/user_c/SCZ_replic/JR_sims/E2371_2.txt
+   Command=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/GS_wrapy/wrap_y0_VP_2371_GS_chunk2_C02.sh
+   WorkDir=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims
+   StdErr=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/E2371_2.txt
    StdIn=/dev/null
-   StdOut=/fast/work/users/user_c/SCZ_replic/JR_sims/slurm-4225062.out
+   StdOut=/data/cephfs-1/home/users/user_c/work/SCZ_replic/JR_sims/slurm-4225062.out
    Power=
 ```
 

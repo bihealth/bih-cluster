@@ -154,7 +154,7 @@ proc ModulesHelp { } {
 
 module-whatis {Gromacs molecular simulation toolkit (non-MPI)}
 
-set root /fast/users/YOURUSER/work/software/gromacs-mpi/2018.3
+set root /data/cephfs-1/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
 prereq gcc/7.2.0-0
 
@@ -183,7 +183,7 @@ proc ModulesHelp { } {
 
 module-whatis {Gromacs molecular simulation toolkit (MPI)}
 
-set root /fast/users/YOURUSER/work/software/gromacs-mpi/2018.3
+set root /data/cephfs-1/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
 prereq openmpi/4.0.3-0
 prereq gcc/7.2.0-0
@@ -210,7 +210,7 @@ You can verify the result:
 ```bash
 med0127:~$ module avail
 
------------------- /fast/users/YOURUSER/local/modules ------------------
+------------------ /data/cephfs-1/home/users/YOURUSER/local/modules ------------------
 gromacs/2018.3     gromacs-mpi/2018.3
 
 -------------------- /usr/share/Modules/modulefiles --------------------

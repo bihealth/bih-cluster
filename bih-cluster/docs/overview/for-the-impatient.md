@@ -1,6 +1,6 @@
 # Overview
-## HPC 4 Research
-**HPC 4 Research** is located in the BIH data center in Buch and connected via the BIH research network.
+## BIH HPC 4 Research
+**BIH HPC 4 Research** is located in the BIH data center in Buch and connected via the BIH research network.
 Connections can be made from Charite, MDC, and BIH networks.
 The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
@@ -13,9 +13,9 @@ The cluster consists of the following major components:
 - 2 nodes for file transfers `hpc-transfer-1` and `hpc-transfer-2`,
 - a scheduling system using Slurm,
 - 228 general purpose compute nodes `hpc-cpu-{1..228}`
-- a few high memory nodes `hpc-mem-{1..4}`,
+- a few high memory nodes `hpc-mem-{1..5}`,
 - 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}` and 1 node with 10x A40 GPUs (!) `hpc-gpu-8`,
-- a high-performance, parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
+- a legacy parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
 - a next generation high-performance storage system based on Ceph/CephFS
 - a tier 2 (slower) storage system based on Ceph/CephFS
 
@@ -67,7 +67,8 @@ This addresses a lot of suboptimal (yet not dangerous, of course) points we obse
   Despite this, it is your responsibility to keep important files in the snapshot/backup protected home, ideally even in copy (e.g., a git repository) elsewhere.
   Also, keeping safe copies of primary data files, your published results, and the steps in between reproducible is your responsibility.
 - A place to store data indefinitely.
-  The fast GPFS storage is expensive and "sparse" in a way.
+  The fast CephFS Tier 1 storage is expensive and "rare".
+  CephFS Tier 2 is bigger in volume, but still not unlimited.
   The general workflow is: (1) copy data to cluster, (2) process it, creating intermediate and final results, (3) copy data elsewhere and remove it from the cluster
 - Generally suitable for primary software development.
   The I/O system might get overloaded and saving scripts might take some time.
