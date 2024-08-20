@@ -64,6 +64,8 @@ done
 
 ```
    If you run into errors it might be better to use `conda env export -n $env --no-builds -f $env.yaml`.
+   In case your old conda installation cannot be activated anymore, you can also use your new conda to do the export
+   by specifying a full path like so: `conda env export -p /fast/work/user/$USER/miniconda/envs/<env_name> -f <env_name>.yaml`.
 
 3. Install a fresh version of conda or mamba in your new work folder.
    Don't forget to turn off automatic base environment activation for less delay during login and reduced strain on the login nodes.
