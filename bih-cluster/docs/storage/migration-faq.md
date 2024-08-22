@@ -43,42 +43,6 @@ $ rm -r $SOURCE
     Its better to use a trailing slash which matches “All files in this folder”.
 
 ## Moving user work folders
-### Conda environments
-Conda installations tend not to react well to moving their main folder from its original location.
-There are numerous ways around this problem which are described [here](https://www.anaconda.com/blog/moving-conda-environments).
-
-A simple solution we can recommend is this:
-
-1. Before the move, activate your old conda installation like so:
-```sh
-$ source /fast/work/users/$USER/{your_conda_folder}/bin/activate
-```
-
-2. Export all environments with this bash script:
-```sh
-#!/bin/bash
-for env in $(ls $(conda info --base)/envs/)
-do
-    conda env export -n $env -f $env.yml
-done
-
-```
-   If you run into errors it might be better to use `conda env export -n $env --no-builds -f $env.yaml`.
-   In case your old conda installation cannot be activated anymore, you can also use your new conda to do the export
-   by specifying a full path like so: `conda env export -p /fast/work/user/$USER/miniconda/envs/<env_name> -f <env_name>.yaml`.
-
-3. Install a fresh version of conda or mamba in your new work folder.
-   Don't forget to turn off automatic base environment activation for less delay during login and reduced strain on the login nodes.
-```sh
-$ conda init
-$ conda config --set auto_activate_base false
-```
-
-4. Re-create your old environments from the yaml files:
-```sh
-$ conda env create -f {environment.yml}
-```
-
 ### Work data
 1. All files within your own work directory can be transferred as follows.
    Please replace parts in curly braces with your cluster user name.
@@ -103,4 +67,29 @@ $ rsync -ahP --stats --remove-source-files --dry-run $SOURCE $TARGET
 ```sh
 $ find $SOURCE -type f | wc -l
 0
+```
+
+### Conda environments
+Conda installations tend not to react well to moving their main folder from its original location.
+There are numerous ways around this problem which are described [here](https://www.anaconda.com/blog/moving-conda-environments).
+
+A simple solution we can recommend is this:
+
+1. Install a fresh version of conda or mamba in your new work folder.
+   Don't forget to first remove the conda init block in `~/.bashrc`.
+```sh
+$ nano ~/.bashrc
+$ conda init
+$ conda config --set auto_activate_base false
+```
+
+2. You can then use your new conda to export your old environments by specifying a full path like so:
+```sh
+$ conda env export -p /fast/work/user/$USER/miniconda/envs/<env_name> -f <env_name>.yaml
+```
+If you run into errors it might be better to also use the `--no-builds` flag.
+
+3. Finally re-create your old environments from the yaml files:
+```sh
+$ conda env create -f {environment.yml}
 ```
