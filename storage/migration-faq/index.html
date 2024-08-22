@@ -1027,18 +1027,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conda-environments" class="md-nav__link">
+  <a href="#work-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Conda environments
+      Work data
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#work-data" class="md-nav__link">
+  <a href="#conda-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      Work data
+      Conda environments
     </span>
   </a>
   
@@ -3175,18 +3175,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conda-environments" class="md-nav__link">
+  <a href="#work-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Conda environments
+      Work data
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#work-data" class="md-nav__link">
+  <a href="#conda-environments" class="md-nav__link">
     <span class="md-ellipsis">
-      Work data
+      Conda environments
     </span>
   </a>
   
@@ -3268,41 +3268,6 @@ It will not match hidden (dot) files and leave them behind.
 Its better to use a trailing slash which matches “All files in this folder”.</p>
 </div>
 <h2 id="moving-user-work-folders">Moving user work folders<a class="headerlink" href="#moving-user-work-folders" title="Permanent link">&para;</a></h2>
-<h3 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h3>
-<p>Conda installations tend not to react well to moving their main folder from its original location.
-There are numerous ways around this problem which are described <a href="https://www.anaconda.com/blog/moving-conda-environments">here</a>.</p>
-<p>A simple solution we can recommend is this:</p>
-<ol>
-<li>
-<p>Before the move, activate your old conda installation like so:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/fast/work/users/<span class="nv">$USER</span>/<span class="o">{</span>your_conda_folder<span class="o">}</span>/bin/activate
-</code></pre></div></p>
-</li>
-<li>
-<p>Export all environments with this bash script:
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span><span class="k">$(</span>conda<span class="w"> </span>info<span class="w"> </span>--base<span class="k">)</span>/envs/<span class="k">)</span>
-<span class="k">do</span>
-<span class="w">    </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$env</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$env</span>.yml
-<span class="k">done</span>
-</code></pre></div>
-   If you run into errors it might be better to use <code>conda env export -n $env --no-builds -f $env.yaml</code>.
-   In case your old conda installation cannot be activated anymore, you can also use your new conda to do the export
-   by specifying a full path like so: <code>conda env export -p /fast/work/user/$USER/miniconda/envs/&lt;env_name&gt; -f &lt;env_name&gt;.yaml</code>.</p>
-</li>
-<li>
-<p>Install a fresh version of conda or mamba in your new work folder.
-   Don't forget to turn off automatic base environment activation for less delay during login and reduced strain on the login nodes.
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>init
-$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Re-create your old environments from the yaml files:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>environment.yml<span class="o">}</span>
-</code></pre></div></p>
-</li>
-</ol>
 <h3 id="work-data">Work data<a class="headerlink" href="#work-data" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -3331,6 +3296,31 @@ Remove it to start the actual transfer.</p>
 <span class="m">0</span>
 </code></pre></div></li>
 </ol>
+<h3 id="conda-environments">Conda environments<a class="headerlink" href="#conda-environments" title="Permanent link">&para;</a></h3>
+<p>Conda installations tend not to react well to moving their main folder from its original location.
+There are numerous ways around this problem which are described <a href="https://www.anaconda.com/blog/moving-conda-environments">here</a>.</p>
+<p>A simple solution we can recommend is this:</p>
+<ol>
+<li>
+<p>Install a fresh version of conda or mamba in your new work folder.
+   Don't forget to first remove the conda init block in <code>~/.bashrc</code>.
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nano<span class="w"> </span>~/.bashrc
+$<span class="w"> </span>conda<span class="w"> </span>init
+$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>You can then use your new conda to export your old environments by specifying a full path like so:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span><span class="nb">export</span><span class="w"> </span>-p<span class="w"> </span>/fast/work/user/<span class="nv">$USER</span>/miniconda/envs/&lt;env_name&gt;<span class="w"> </span>-f<span class="w"> </span>&lt;env_name&gt;.yaml
+</code></pre></div>
+If you run into errors it might be better to also use the <code>--no-builds</code> flag.</p>
+</li>
+<li>
+<p>Finally re-create your old environments from the yaml files:
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span><span class="o">{</span>environment.yml<span class="o">}</span>
+</code></pre></div></p>
+</li>
+</ol>
 
 
 
@@ -3351,7 +3341,7 @@ Remove it to start the actual transfer.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2024</span>
   </span>
 
     
