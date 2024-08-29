@@ -111,7 +111,8 @@ Delegate [optional]: {Max Mustermann}, {musterm_c}
 Purpose of cluster usage [short]: {RNA-seq data from dbGAP}
 
 Required resources:
-- Tier 1 storage: {0 TB}
+- Tier 1 work: {0 TB}
+- Tier 1 scratch: {0 TB}
 - Tier 2 storage: {1 TB}
 
 Additional members (cluster user names):
