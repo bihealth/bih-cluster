@@ -3264,7 +3264,7 @@
 You request one or more GPU cores by adding a generic resources flag to your Slurm job submission via <code>srun</code> or <code>sbatch</code>.</p>
 <ul>
 <li><code>--gres=gpu:tesla:COUNT</code> will request NVIDIA V100 cores.</li>
-<li><code>--gres=gpu:tesla:COUNT</code> will request NVIDIA A40 cores.</li>
+<li><code>--gres=gpu:a40:COUNT</code> will request NVIDIA A40 cores.</li>
 <li><code>--gres=gpu:COUNT</code> will request any available GPU cores.</li>
 </ul>
 <p>Your job will be automatically placed in the Slurm <code>gpu</code> partition and allocated a number of <code>COUNT</code> GPUs.</p>
