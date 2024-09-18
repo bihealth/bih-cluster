@@ -20,7 +20,7 @@ There are a number of nodes that are invisible to non-admin staff, hosting the q
     - available as `hpc-login-{1,2}.cubi.bihealth.org`
     - do not perform any computation on these nodes!
     - each process may at most use 1 GB of RAM
-- `med0101..0124,0127`
+- `med0101..0124,0127` 
     - 25 standard nodes
     - Intel Xeon E5-2650 v2 @2.60Ghz, 16 cores x2 threading
     - 128 GB RAM

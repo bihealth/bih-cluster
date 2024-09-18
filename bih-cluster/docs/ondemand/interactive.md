@@ -167,7 +167,7 @@ dependencies:
 </details>
 
 
-Starting the Rstudio session via the OnDemand portal works almost as described above (see Example 1). However, you do have to select \`miniconda\` as R source and provide the path to your miniconda installation and (separated by a colon) the name of the (newly created) conda enviroment you want to use.
+Starting the Rstudio session via the OnDemand portal works almost as described above (see Example 1). However, you do have to select \`miniforge\` as R source and provide the path to your miniforge installation and (separated by a colon) the name of the (newly created) conda enviroment you want to use.
   
   ![](figures/ondemand-interactive-custom-conda.png){: style="width:90%;" .center}
   

@@ -10,7 +10,10 @@ to do so. We will provide you with a description on how to install conda and how
 to use it. Of course there are many online resources that you can also use.
 Please find a list at the end of the document.
 
-Also note that some system-level software is managed through environment modules.
+!!! Warning
+    Following a change in their terms of service Anaconda Inc. has started to demand payment from research institutions
+    for using both Anaconda, Miniconda, and the defaults channel. As a consequence, 
+    usage of this software is prohibited and we're recommending the alternative free "miniforge" distribution instead.
 
 ## Premise
 When you logged into the cluster, please make sure that you also executed `srun` to log into a computation node and perform the software installation there.
@@ -19,24 +22,21 @@ When you logged into the cluster, please make sure that you also executed `srun`
 
 ```bash
 hpc-login-1:~$ srun --mem=5G --pty bash -i
-hpc-cpu-123:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-hpc-cpu-123:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
-hpc-cpu-123:~$ eval "$(/$HOME/work/miniconda/bin/conda shell.bash hook)"
+hpc-cpu-123:~$ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+hpc-cpu-123:~$ bash Miniforge3-Linux-x86_64.sh -b -f -p $HOME/work/miniforge
+hpc-cpu-123:~$ eval "$(/$HOME/work/miniforge/bin/conda shell.bash hook)"
 hpc-cpu-123:~$ conda init
 hpc-cpu-123:~$ conda config --set auto_activate_base false
 ```
 
-This will install conda to `$HOME/work/miniconda`.
+This will install conda to `$HOME/work/miniforge`.
 You can change the path to your liking, but please note that your `$HOME` folder has limited space.
 The `work` subfolder however has a bigger quota. More about this [here](../storage/home-quota.md).
 
-To make bioinformatics software available, we have to add the `bioconda` and
-some other channels to the conda configuration:
+To make bioinformatics software available, we have to add the `bioconda` channel to the conda configuration:
 
 ```bash
 hpc-cpu-123:~$ conda config --add channels bioconda
-hpc-cpu-123:~$ conda config --add channels default
-hpc-cpu-123:~$ conda config --add channels conda-forge
 ```
 
 ## Installing software with conda

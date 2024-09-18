@@ -31,14 +31,14 @@ Your job will be automatically placed in the Slurm `gpu` partition and allocated
 
 ## Usage example
 ### Preparation
-We will setup a miniconda installation with `pytorch` testing the GPU.
+We will setup a miniforge installation with `pytorch` testing the GPU.
 If you already have this setup then you can skip this step
 
 ```bash
 hpc-login-1:~$ srun --pty bash
-hpc-cpu-1:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-hpc-cpu-1:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/work/miniconda3
-hpc-cpu-1:~$ source ~/work/miniconda3/bin/activate
+hpc-cpu-1:~$ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+hpc-cpu-1:~$ bash Miniforge3-Linux-x86_64.sh -b -p ~/work/miniforge
+hpc-cpu-1:~$ source ~/work/miniforge/bin/activate
 hpc-cpu-1:~$ conda create -y -n gpu-test pytorch cudatoolkit=10.2 -c pytorch
 hpc-cpu-1:~$ conda activate gpu-test
 hpc-cpu-1:~$ python -c 'import torch; print(torch.cuda.is_available())'
@@ -80,7 +80,7 @@ nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2019 NVIDIA Corporation
 Built on Wed_Oct_23_19:24:38_PDT_2019
 Cuda compilation tools, release 10.2, V10.2.89
-hpc-gpu-1:~$ source ~/work/miniconda3/bin/activate
+hpc-gpu-1:~$ source ~/work/miniforge/bin/activate
 hpc-gpu-1:~$ conda activate gpu-test
 hpc-gpu-1:~$ python -c 'import torch; print(torch.cuda.is_available())'
 True
