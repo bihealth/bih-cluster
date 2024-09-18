@@ -4,8 +4,8 @@ This page describes how to use Snakemake with Slurm.
 
 ## Prerequisites
 
-- This assumes that you have Miniconda properly setup with Bioconda.
-- Also it assumes that you have already activated the Miniconda base environment with `source miniconda/bin/activate`.
+- This assumes that you have Miniforge properly setup with Bioconda.
+- Also it assumes that you have already activated the Miniforge base environment with `source miniforge/bin/activate`.
 
 ## Environment Setup
 

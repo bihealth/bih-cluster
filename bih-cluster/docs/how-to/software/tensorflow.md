@@ -155,7 +155,7 @@ print(tf.nn.softmax(predictions).numpy())
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:tesla:1
 
-source $HOME/work/miniconda3/bin/activate
+source $HOME/work/miniforge/bin/activate
 conda activate python-tf
 
 python tf_script.py &>tf-out.txt
