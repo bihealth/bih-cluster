@@ -84,12 +84,13 @@ In the case of violations marked with a shield (:shield:) administration reserve
 4. SSH connections to the nodes are allowed for monitoring purposes but not meant for computation.
    Administration enforces this by restricting all jobs outside of Slurm to use at most 1 core and 128 MB of RAM.
    This limit is enforced per node per user with Linux cgroups.
+5. Interactive Slurm sessions on scarce resources (GPU/Highmem partitions) are limited to 24 h.
 
 ### GPU Use
 
 1. Interactive sessions block resources to the scheduler.
    Interactive GPU use is discouraged.
-2. Accessing GPUs outside of the Slurm scheduler has been disabled by administration.
+2. Accessing GPU cores outside of the Slurm scheduler has been disabled by administration.
 
 ### Account Policies
 
