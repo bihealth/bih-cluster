@@ -11,12 +11,30 @@
 Please see the section [Connection Problems](../connecting/connection-problems.md).
 
 ## Connecting to the cluster takes a long time.
-The most probable cause for this is a conda installation which defaults to loading the _(Base)_ environment on login.
-To disable this behaviour you can run:
+The most probable cause for this is a conda installation which loads files on login.
+To disable this behaviour we can put the conda intialisation code behind a bash alias to run it manually later:
+
+In your `~/.bashrc` find the conda block:
 
 ```sh
-$ conda config --set auto_activate_base false
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+...
+# <<< conda initialize <<<
 ```
+
+Encapsulate the entire section in a bash function like this:
+
+```sh
+conda_init() {
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  ...
+  # <<< conda initialize <<<
+}
+```
+
+From now on to use conda you must first run `conda_init` which then loads the necessary files.
 
 You can also run the bash shell in verbose mode to find out exactly which command is slowing down login:
 ```sh
@@ -571,11 +589,11 @@ The reverse does not work.
 In other words, you have to log into the MAX cluster and then initiate your file copies to or from the BIH HPC from there.
 E.g., use `rsync -avP some/path user_m@hpc-transfer-1.cubi.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_m@hpc-transfer-1.cubi.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
 
-## How can I copy data between the Charite Network and BIH HPC?
+## How can I copy data between the Charité Network and BIH HPC?
 
-In general, connections can only be initiated from the Charite network to the BIH network.
+In general, connections can only be initiated from the Charité network to the BIH network.
 The reverse does not work.
-In other words, you have to be on a machine inside the Charite network and then initiate your file copies to or from the BIH HPC from there.
+In other words, you have to be on a machine inside the Charité network and then initiate your file copies to or from the BIH HPC from there.
 E.g., use `rsync -avP some/path user_c@hpc-transfer-1.cubi.bihealth.org:/another/path` to copy files from the MAX cluster to BIH HPC and `rsync -avP user_c@hpc-transfer-1.cubi.bihealth.org:/another/path some/path` to copy data from the BIH HPC to the MAX cluster.
 
 ## My jobs are slow/die on the login/transfer node!
