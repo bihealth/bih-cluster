@@ -11,9 +11,10 @@ This page describes how to use Snakemake with Slurm.
 
 We first create a new environment `snakemake-slurm` and activate it.
 We need the `snakemake` package for this.
+For snakemake 8, we additionally need [`snakemake-executor-plugin-slurm`](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html).
 
 ```bash
-host:~$ conda create -y -n snakemake-slurm snakemake
+host:~$ conda create -y -n snakemake-slurm 'snakemake>=8.24.1' snakemake-executor-plugin-slurm
 [...]
 #
 # To activate this environment, use
@@ -40,7 +41,7 @@ rule default:
 
 rule mkresult:
     output: "the-result.txt"
-    shell: r"sleep 1m; touch the-result.txt"
+    shell: r"sleep 2m; touch the-result.txt"
 EOF
 host:snake-slurm$ snakemake --cores=1
 [...]
@@ -51,12 +52,12 @@ host:snake-slurm$ rm the-result.txt
 
 ## Snakemake and :tada: Slurm
 
-You have two options:
+Simply use `snakemake --profile=cubi-v1` and the Snakemake resource configuration as shown below.
+This works for both snakemake version 7 *and* 8.
 
-1. Simply use `snakemake --profile=cubi-v1` and the Snakemake resource configuration as shown below. **STRONGLY PREFERRED**
-2. Use the `snakemake --cluster='sbatch ...'` command.
+(For version 7, you can also use `snakemake --cluster='sbatch ...'` command instead, but this is discouraged.)
 
-Note that we sneaked in a `sleep 1m`? In a second terminal session, we can see that the job has been submitted to SLURM indeed.
+Note that we sneaked in a `sleep 2m`? In a second terminal session, we can see that the job has been submitted to SLURM indeed.
 
 ```bash
 host:~$ squeue  -u holtgrem_c
@@ -78,10 +79,12 @@ The `cubi-v1` profile (stored in `/etc/xdg/snakemake/cubi-v1` on all cluster nod
 
 You will need Snakemake >=7.0.2 for this.
 
+For more information on resources, see [snakemake resources](https://snakemake.readthedocs.io/en/latest/snakefiles/rules.html#standard-resources) and [slurm resources](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#advanced-resource-specifications).
+
 Here is how to call Snakemake:
 
 ```bash
-# snakemake --profile=cubi-v1 -j1
+# snakemake --profile=cubi-v1 --cores 1
 ```
 
 To set rule-specific resources:
