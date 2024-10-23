@@ -2,6 +2,9 @@
 
 We currently provide you only with Ganglia for monitoring the cluster status.
 
+!!! cite "Ganglia Ganglia was shut down in favour of HPC Metrics"
+    [Ganglia](https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302?orgId=1&refresh=1m)
+
 ## Using Ganglia
 
 Go to the following address and login with your home organization (Charite or MDC):
