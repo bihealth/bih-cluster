@@ -3311,8 +3311,9 @@ This works for both snakemake version 7 <em>and</em> 8.</p>
 <p>You will need Snakemake &gt;=7.0.2 for this.</p>
 <p>For more information on resources, see <a href="https://snakemake.readthedocs.io/en/latest/snakefiles/rules.html#standard-resources">snakemake resources</a> and <a href="https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#advanced-resource-specifications">slurm resources</a>.</p>
 <p>Here is how to call Snakemake:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># snakemake --profile=cubi-v1 --cores 1</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># snakemake --profile=cubi-v1 --jobs 1</span>
 </code></pre></div>
+When using conda, additionally use <code>--sdm conda</code> (snakemake 8) or <code>--use-conda</code> (snakemake 7).</p>
 <p>To set rule-specific resources:</p>
 <div class="highlight"><pre><span></span><code><span class="n">rule</span> <span class="n">myrule</span><span class="p">:</span>
     <span class="n">threads</span><span class="p">:</span> <span class="mi">1</span>
