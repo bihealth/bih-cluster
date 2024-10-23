@@ -86,7 +86,7 @@ Here is how to call Snakemake:
 ```bash
 # snakemake --profile=cubi-v1 --jobs 1
 ```
-When using conda, additionally use `--sdm conda` (snakemake 8) or `--with-conda` (snakemake 7).
+When using conda, additionally use `--sdm conda` (snakemake 8) or `--use-conda` (snakemake 7).
 
 To set rule-specific resources:
 
