@@ -1,4 +1,4 @@
-# Connecting via SSH on Unix
+# Connecting via SSH with Unix-like Operating Systems
 ## Activating your Key in the SSH Key Agent
 !!! note
     The big Linux distributions automatically manage ssh-agent for you and unlock your keys at login time.

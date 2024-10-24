@@ -15,7 +15,7 @@ In case you're not familiar with SSH, you should probably start via the web port
 Follow these steps to connect to BIH HPC via the command line:
 
 1. [Register an account](../admin/getting-access.md) via your PI. :memo: 
-2. [Generate a SSH key pair :key: in Linux](generate-key/linux.md) or [Windows](generate-key/windows.md)
+2. [Generate a SSH key pair :key: in Linux](generate-key/unix.md) or [Windows](generate-key/windows.md)
 3. [Submit your public key :arrow_up: to Charite](submit-key/charite.md) or [to MDC](submit-key/mdc.md).
 4. Connect to one of the two login nodes.
     
@@ -45,7 +45,7 @@ Follow these steps to connect to BIH HPC via the command line:
     $ srun --pty bash -i
     ```
 
-6. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
+6. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/unix.md) or [Windows](advanced-ssh/windows.md).
 7. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
 
 !!! tip "tl;dr"

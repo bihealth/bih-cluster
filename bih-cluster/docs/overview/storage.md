@@ -3,7 +3,7 @@
 !!! info "No mounting **on** the cluster itself."
 
     For various technical and security-related reasons it is not possible to mount anything on the cluster nodes by users.
-    For mounting the cluster storage on your computer, please read [Connecting: SSHFS Mounts](../connecting/advanced-ssh/linux.md#file-system-mount-via-sshfs).
+    For mounting the cluster storage on your computer, please read [Connecting: SSHFS Mounts](../connecting/advanced-ssh/unix.md#file-system-mount-via-sshfs).
 
 This document gives an overview of the nodes and volumes on the cluster.
 

@@ -40,7 +40,7 @@ If you are running multiple server on one or more nodes, one can separate them b
 
 ## Connecting to the Running Session
 
-This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your `.ssh/config` to automatically route your connection via the login node (and possibly MDC jail). This is described in our [Advanced SSH config documentation](../../connecting/advanced-ssh/linux.md#configure-ssh-client)
+This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your `.ssh/config` to automatically route your connection via the login node (and possibly MDC jail). This is described in our [Advanced SSH config documentation](../../connecting/advanced-ssh/unix.md#configure-ssh-client)
 
 In short,add these lines to `~/.ssh/config` (replace curly parts):
 

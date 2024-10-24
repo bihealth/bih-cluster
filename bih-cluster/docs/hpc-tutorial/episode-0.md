@@ -44,7 +44,7 @@ That was easy!
 In preparation for our first steps tutorial series, we would like you to install the software for this tutorial.
 In general the users on the cluster will manage their own software with the help of conda.
 If you haven't done so so far, please [follow the instructions in installing conda](../best-practice/software-installation-with-conda.md) first.
-The only premise is that you are able to [log into the cluster](../connecting/advanced-ssh/linux.md).
+The only premise is that you are able to [log into the cluster](../connecting/advanced-ssh/unix.md).
 Make also sure that you are logged in to a computation node using `srun -p medium --time 1-00 --mem=4G --cpus-per-task=1 --pty bash -i`.
 
 Now we will create a new environment, so as to not interfere

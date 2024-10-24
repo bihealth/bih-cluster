@@ -1,4 +1,4 @@
-# Generating an SSH Key in Linux
+# Generating an SSH Key with Unix-like Operating Systems
 
 - You might already have one, check whether a file `~/.ssh/id_xxx.pub` is present.
 - Otherwise, create key using the following command (marking your key with your email address will make it easier to reidentify your key later on):

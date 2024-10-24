@@ -387,7 +387,7 @@ In the example above, user1 has one job with one GPU running on hpc-gpu-3, user2
 Also see:
 
 - [Running graphical(X11) applications on Windows](../connecting/advanced-ssh/windows.md#x11)
-- [Running graphical(X11) applications on Linux](../connecting/advanced-ssh/linux.md#x11)
+- [Running graphical(X11) applications on Linux](../connecting/advanced-ssh/unix.md#x11)
 
 ## How can I log into a node outside of the scheduler?
 
