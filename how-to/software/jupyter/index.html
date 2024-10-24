@@ -530,11 +530,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../connecting/generate-key/linux/" class="md-nav__link">
+      <a href="../../../connecting/generate-key/unix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Linux
+    Linux/macOS
   </span>
   
 
@@ -721,11 +721,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../connecting/advanced-ssh/linux/" class="md-nav__link">
+      <a href="../../../connecting/advanced-ssh/unix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Linux
+    Linux/macOS
   </span>
   
 
@@ -3273,7 +3273,7 @@ hpc-cpu-x:~$<span class="w"> </span>conda<span class="w"> </span>activate<span c
 <p>By default, Jupyter will create an access token (a link stated in the output) to protect your notebook against unauthorized access which you have to save and enter in the accessing browser. You can change this to password base authorization via <code>jupyter notebook password</code>.
 If you are running multiple server on one or more nodes, one can separate them by changing the port number by adding <code>--port=$PORT</code>.</p>
 <h2 id="connecting-to-the-running-session">Connecting to the Running Session<a class="headerlink" href="#connecting-to-the-running-session" title="Permanent link">&para;</a></h2>
-<p>This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your <code>.ssh/config</code> to automatically route your connection via the login node (and possibly MDC jail). This is described in our <a href="../../../connecting/advanced-ssh/linux/#configure-ssh-client">Advanced SSH config documentation</a></p>
+<p>This is slightly trickier as we have to create a SSH connection/tunnel with potentially multiple hops in between. The easiest way is probably to configure your <code>.ssh/config</code> to automatically route your connection via the login node (and possibly MDC jail). This is described in our <a href="../../../connecting/advanced-ssh/unix/#configure-ssh-client">Advanced SSH config documentation</a></p>
 <p>In short,add these lines to <code>~/.ssh/config</code> (replace curly parts):</p>
 <div class="highlight"><pre><span></span><code>Host bihcluster
   user {USER_NAME}
@@ -3360,7 +3360,7 @@ user        58  0.0  0.0  41116  1024 tty1     S    15:42   0:00 grep --color=au
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 23, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 24, 2024</span>
   </span>
 
     
