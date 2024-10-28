@@ -28,6 +28,7 @@ Read the following set of pages (in order) to learn how to get access and connec
     Please add your publications using the cluster to [this list](misc/publication-list.md).
 
 ## News & Maintenance Announcements
+- :jack_o_lantern: October 22nd 2024: Kernel & Slurm upgrades on (almost) all nodes.
 - :ram: July 16th: New high-memory node `hpc-mem-5` with 4 TB of RAM.
 - :locomotive: Until autumn 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
 - :maple_leaf: September 30th 2024: Unmounting of `/fast` on all non-transfer nodes.

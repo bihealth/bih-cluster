@@ -2,6 +2,10 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Login & Compute maintenance, October 22nd, 2024
+
+Kernel and Slurm upgrades. Keep an eye on [our forum](https://hpc-talk.cubi.bihealth.org/t/maintenance-slurm-upgrade-october-22nd/1095) for updates. 
+
 ## Login, Compute and Storage Maintenance, December 13-14, 2022
 
 All informationand updates regarding maintenance will be circulated on our forum https://hpc-talk.cubi.bihealth.org/c/announcements/5.
