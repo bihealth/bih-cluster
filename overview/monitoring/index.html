@@ -3027,17 +3027,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3047,43 +3036,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-ganglia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Ganglia
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aggregate-gpu-utilization-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aggregate GPU Utilization Visualization
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3125,32 +3077,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#using-ganglia" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Ganglia
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aggregate-gpu-utilization-visualization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aggregate GPU Utilization Visualization
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3173,54 +3099,9 @@
 
 
 <h1 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h1>
-<p>We currently provide you only with Ganglia for monitoring the cluster status.</p>
-<h2 id="using-ganglia">Using Ganglia<a class="headerlink" href="#using-ganglia" title="Permanent link">&para;</a></h2>
-<p>Go to the following address and login with your home organization (Charite or MDC):</p>
-<ul>
-<li><a href="https://hpc-ganglia.cubi.bihealth.org">https://hpc-ganglia.cubi.bihealth.org</a></li>
-</ul>
-<div class="admonition cite">
-<p class="admonition-title">Ganglia does not know about Slurm</p>
-<p>Ganglia will not show you anything about the Slurm job schedulign system.
-If a job uses a whole node but uses no CPUs then this will be displayed as unused in Ganglia.
-However, Slurm would not schedule another job on this node.</p>
-</div>
-<p>You will be show a screen as shown below.
-This allows you to get a good idea of what is going on on the HPC.</p>
-<p><img alt="" src="../figures/Ganglia_Example.png" /></p>
-<p>By default you will be shown the cluster usage of the last day.
-You can quickly switch to report for two or four hours as well, etc.</p>
-<p>In the first row of pictures you see the number of total CPUs (actually hardware threads), number of hosts seen as up and down by Ganglia, and cluster load/utilization.
-You will then see the overall cluster load, memory usage, CPU usage, and network utilization across the selected time period.</p>
-<div class="admonition cite">
-<p class="admonition-title">Linux load is not intuitive</p>
-<p>Note that the technical details behind Linux <strong>load</strong> is not very interactive.
-It is incorporating much more than just the CPU usage.
-You can find a quite comprehensive <a href="https://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html">treatement of Linux Load here</a>.</p>
-</div>
-<p>We are using a fast shared storage system and almost no local storage (except in <code>/tmp</code>).
-Also, almost no jobs use MPI or other heavy network communication.
-Thus, the network utilization is a good measure of the I/O on the cluster.</p>
-<p>Below, you can drill down into various metrics and visualize them historically.
-Just try it out and find your way around, you cannot break anything.
-Sadly, there is no good documentation of Ganglia online.</p>
-<h2 id="aggregate-gpu-utilization-visualization">Aggregate GPU Utilization Visualization<a class="headerlink" href="#aggregate-gpu-utilization-visualization" title="Permanent link">&para;</a></h2>
-<p>Ganglia allows you to obtain metrics in several interesting and useful ways.
-If you click on "Aggregate Graphs" then you could enter the following values to get an overview of the live GPU utilization.</p>
-<ul>
-<li>Title: <code>Aggreate GPU Utilization</code></li>
-<li>Host Regular expression: <code>hpc-gpu-.*</code></li>
-<li>Metric Regular Expressions: <code>gpu._util</code></li>
-<li>Graph Type: <code>Stacked</code></li>
-<li>Legend Options: <code>Hide legend</code></li>
-</ul>
-<p>Then click <code>Create Graph</code>.</p>
-<p><img alt="" src="../figures/Ganglia_Aggregate_GPUs.png" /></p>
-<p>If a GPU is fully used, it will contribute 100 points on the vertical axis.
-See above for an example, and here is a direct link:</p>
-<ul>
-<li><a href="https://hpc-ganglia.cubi.bihealth.org/ganglia/graph_all_periods.php?title=Aggregate+GPU+Utilization&amp;cs=&amp;ce=&amp;vl=&amp;x=&amp;n=&amp;hreg%5B%5D=hpc-gpu-.*&amp;mreg%5B%5D=gpu._util&amp;gtype=stack&amp;glegend=hide&amp;aggregate=1">Aggregate GPU Utilization</a></li>
-</ul>
+<p>We currently provide a Grafana dashboard for monitoring various aspects of the cluster's status:</p>
+<p><a href="https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302">https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302</a></p>
+<p><img alt="" src="../figures/metrics_dashboard.png" /></p>
 
 
 
@@ -3241,7 +3122,7 @@ See above for an example, and here is a direct link:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 24, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2024</span>
   </span>
 
     
