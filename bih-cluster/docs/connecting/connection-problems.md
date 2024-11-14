@@ -94,3 +94,7 @@ your SSH key. In this case, please connect with increased verbosity to the
 cluster (`ssh -vvv ...`) and mail the output and a detailed description to
 [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de).
 
+If you're using macOS and run into problems that your key is not accepted when connecting,
+please make sure that you're SSH key is
+[properly unlocked in your SSH agent](./advanced-ssh/unix.md#macos).
+
