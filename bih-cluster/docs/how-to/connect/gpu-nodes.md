@@ -3,7 +3,7 @@
 The cluster has seven nodes with four Tesla V100 GPUs each: `hpc-gpu-{1..7}` and one node with 10 A40 GPUs: `hpc-gpu-8`.
 
 Connecting to a node with GPUs is easy.
-You request one or more GPU cores by adding a generic resources flag to your Slurm job submission via `srun` or `sbatch`.
+You request one or more GPU cores by adding a generic resources flag to your Slurm job submission via `srun` or `sbatch` in addition to the `--partition gpu` flag:
 
 - `--gres=gpu:tesla:COUNT` will request NVIDIA V100 cores.
 - `--gres=gpu:a40:COUNT` will request NVIDIA A40 cores.
