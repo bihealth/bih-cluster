@@ -10,6 +10,10 @@ It has been used to support the publications listed below.
 
 ### 2024
 
+Köhler RM, Binns TS, Merk T, Zhu G, Yin Z, Zhao B, Chikermane M, Vanhoecke J, Busch JL, Habets JGV, Faust K, Schneider GH, Cavallo A, Haufe S, Zhang J, Kühn AA, Haynes JD, Neumann WJ. Dopamine and deep brain stimulation accelerate the neural dynamics of volitional action in Parkinson’s disease. *Brain*. 2024 Oct 1;147(10):3358–69. [doi: 10.1093/brain/awae219](https://doi.org/10.1093/brain/awae219)
+
+Binns TS, Köhler RM, Vanhoecke J, Chikermane M, Gerster M, Merk T, Pellegrini F, Busch JL, Habets JGV, Cavallo A, Beyer JC, Al-Fatly B, Li N, Horn A, Krause P, Faust K, Schneider GH, Haufe S, Kühn AA, Neumann WJ. Shared pathway-specific network mechanisms of dopamine and deep brain stimulation for the treatment of Parkinson’s disease. *bioRxiv*. 2024; p. 2024.04.14.586969. Available from: [doi: 10.1101/2024.04.14.586969v2](https://www.biorxiv.org/content/10.1101/2024.04.14.586969v2)
+
 Hollunder, B., Ostrem, J.L., Sahin, I.A., Rajamani, N., Oxenford, S., Butenko, K., Neudorfer, C., Reinhardt, P., Zvarova, P., Polosan, M., Akram, H., Vissani, M., Zhang, C., Sun, B., Navratil, P., Reich, M.M., Volkmann, J., Yeh, F.-C., Baldermann, J.C., Dembek, T.A., Visser-Vandewalle, V., Alho, E.J.L., Franceschini, P.R., Nanda, P., Finke, C., Kühn, A.A., Dougherty, D.D., Richardson, R.M., Bergman, H., DeLong, M.R., Mazzoni, A., Romito, L.M., Tyagi, H., Zrinzo, L., Joyce, E.M., Chabardes, S., Starr, P.A., Li, N., Horn, A., 2024. Mapping dysfunctional circuits in the frontal cortex using deep brain stimulation. Nat. Neurosci. 1–14. [doi: 10.1038/s41593-024-01570-1](https://doi.org/10.1038/s41593-024-01570-1)
 
 ### 2022
