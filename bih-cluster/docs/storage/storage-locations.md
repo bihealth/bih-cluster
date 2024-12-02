@@ -128,7 +128,7 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
 
 ## Technical Implementation
 ### Tier 1
-- Fast & expensive
+- Fast & sparse
 - mounted on `/data/cephfs-1`
 - Currently 12 Nodes with 10 × 14 TB NVME SSD each
     - 1.68 PB raw storage
@@ -137,16 +137,16 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
 - For typical CUBI use case 3 to 5 times faster I/O then the old DDN
 - Two more nodes in purchasing process
 - Hardware costs:
-    - One node/chunk: 45.000 € (150 TB)
-    - ca. 300 €/TB
+    - One node/chunk: 50.000 € (150 TB)
+    - ca. 350 €/TB
 
 ### Tier 2
-- Slower but more affordable
+- Slower but much more affordable
 - mounted on `/data/cephfs-2`
 - Currently 10 nodes with 52 HDDs slots and SSD cache (~40 HDDs per node with 16–18 TB capacity)
-    - 6.6 PB raw storage
-    - 5.3 PB erasure coded (EC 8:2)
-    - 4.5 PB usable (85 %; Ceph performance limit)
+    - 8.7 PB raw storage
+    - 7.0 PB erasure coded (EC 8:2)
+    - 5.9 PB usable (85 %; Ceph performance limit)
 - More nodes in purchasing process
 - Hardware costs:
     - ca. 50 € per TB, 100 € mirrored
