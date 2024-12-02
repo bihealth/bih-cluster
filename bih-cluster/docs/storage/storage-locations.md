@@ -135,7 +135,6 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
     - 1.45 PB erasure coded (EC 8:2)
     - 1.23 PB usable (85 %, Ceph performance limit)
 - For typical CUBI use case 3 to 5 times faster I/O then the old DDN
-- Two more nodes in purchasing process
 - Hardware costs:
     - One node/chunk: 50.000 € (150 TB)
     - ca. 350 €/TB
