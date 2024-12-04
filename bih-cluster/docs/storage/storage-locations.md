@@ -141,16 +141,12 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
 
 ### Tier 2
 - Slower but much more affordable
-- mounted on `/data/cephfs-2`
-- Currently 10 nodes with 52 HDDs slots and SSD cache (~40 HDDs per node with 16–18 TB capacity)
-    - 8.7 PB raw storage
-    - 7.0 PB erasure coded (EC 8:2)
-    - 5.9 PB usable (85 %; Ceph performance limit)
-- More nodes in purchasing process
+- Mounted on /data/cephfs-2, comes in two flavours
+  - /data/cephfs-2/mirrored
+  - /data/cephfs-2/unmirrored
+- Currently 24 nodes in two clusters in two different fire compartments. Each node with ~40 HDDs each 16–18 TB capacity
+- Current useable capacity 10+ PB (mirrored nad unmirror combined)
 - Hardware costs:
-    - ca. 50 € per TB, 100 € mirrored
-    - small chunk extension possible
-    
-### Tier 2 mirror
-- Similar in hardware and size (10 nodes, 6+ PB)
-- Stored in separate fire compartment.
+  - ca. 50 € per TB unmirrored
+  - ca. 100 € per TB mirrored
+  - small chunk extension possible
