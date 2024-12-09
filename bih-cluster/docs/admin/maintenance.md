@@ -2,6 +2,16 @@
 
 This page documents the current and known upcoming maintenance windows.
 
+## Login node maintenance, December 9th & 12th
+
+We will perform OS upgrades on both login nodes during this week. To keep disruption of service as minimal as possible
+upgrades will be staggered:
+
+- `hpc-login-2` will be offline on Monday 9th
+- `hpc-login-1` will be offline on Thurday 12th
+
+Please plan accordingly.
+
 ## Login & Compute maintenance, October 22nd, 2024
 
 Kernel and Slurm upgrades. Keep an eye on [our forum](https://hpc-talk.cubi.bihealth.org/t/maintenance-slurm-upgrade-october-22nd/1095) for updates. 
