@@ -31,6 +31,7 @@ Leaders of independent research groups (PIs) can apply for a new cluster work gr
 
 ### Form: New Group
 Example values are given in curly braces.
+Please also remove the curly braces when filling out.
 
 ```
 # Group "ag-{doe}"
@@ -61,6 +62,7 @@ Required resources:
 
 ### Form: Add User to Group
 Example values are given in curly braces.
+Please also remove the curly braces when filling out.
 
 ```
 # New user of AG {Doe}
@@ -103,6 +105,7 @@ Project creation can be initiated by group leaders and group delegates as follow
 ### Form
 
 Example values are given in curly braces.
+Please also remove the curly braces when filling out.
 
 ```
 # Project "{doe-dbgap-rna}"
