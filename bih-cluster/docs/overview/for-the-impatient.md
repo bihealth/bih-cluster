@@ -12,12 +12,11 @@ The cluster consists of the following major components:
 - 2 login nodes for users `hpc-login-1` and `hpc-login-2` (for interactive sessions only),
 - 2 nodes for file transfers `hpc-transfer-1` and `hpc-transfer-2`,
 - a scheduling system using Slurm,
-- 228 general purpose compute nodes `hpc-cpu-{1..228}`
-- a few high memory nodes `hpc-mem-{1..5}`,
-- 7 nodes with 4 Tesla V100 GPUs each (!) `hpc-gpu-{1..7}` and 1 node with 10x A40 GPUs (!) `hpc-gpu-8`,
-- a legacy parallel GPFS file system with 2.1 PB, by DDN mounted at `/fast`,
+- 228 general purpose compute nodes `hpc-cpu-[1-228]`
+- a few high memory nodes `hpc-mem-[1-5]`,
+- 7 nodes with 4× NVIDIA V100 GPUs each (`hpc-gpu-[1-7]`), 1 node with 10× NVIDIA A40 GPUs (`hpc-gpu-8`), 3 nodes with 4× NVIDIA L40 GPUs each (`hpc-gpu-[9-11]`), 
 - a next generation high-performance storage system based on Ceph/CephFS
-- a tier 2 (slower) storage system based on Ceph/CephFS
+- a tier 2 (slower) storage system based on Ceph/CephFS.
 
 This is shown by the following picture:
 
