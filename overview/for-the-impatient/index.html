@@ -3222,12 +3222,11 @@ The system has been designed to be suitable for the processing of human genetics
 <li>2 login nodes for users <code>hpc-login-1</code> and <code>hpc-login-2</code> (for interactive sessions only),</li>
 <li>2 nodes for file transfers <code>hpc-transfer-1</code> and <code>hpc-transfer-2</code>,</li>
 <li>a scheduling system using Slurm,</li>
-<li>228 general purpose compute nodes <code>hpc-cpu-{1..228}</code></li>
-<li>a few high memory nodes <code>hpc-mem-{1..5}</code>,</li>
-<li>7 nodes with 4 Tesla V100 GPUs each (!) <code>hpc-gpu-{1..7}</code> and 1 node with 10x A40 GPUs (!) <code>hpc-gpu-8</code>,</li>
-<li>a legacy parallel GPFS file system with 2.1 PB, by DDN mounted at <code>/fast</code>,</li>
+<li>228 general purpose compute nodes <code>hpc-cpu-[1-228]</code></li>
+<li>a few high memory nodes <code>hpc-mem-[1-5]</code>,</li>
+<li>7 nodes with 4× NVIDIA V100 GPUs each (<code>hpc-gpu-[1-7]</code>), 1 node with 10× NVIDIA A40 GPUs (<code>hpc-gpu-8</code>), 3 nodes with 4× NVIDIA L40 GPUs each (<code>hpc-gpu-[9-11]</code>), </li>
 <li>a next generation high-performance storage system based on Ceph/CephFS</li>
-<li>a tier 2 (slower) storage system based on Ceph/CephFS</li>
+<li>a tier 2 (slower) storage system based on Ceph/CephFS.</li>
 </ul>
 <p>This is shown by the following picture:</p>
 <p><img alt="" src="../figures/Cluster_Layout.png" /></p>

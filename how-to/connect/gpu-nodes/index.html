@@ -3259,12 +3259,13 @@
 
 
 <h1 id="how-to-connect-to-gpu-nodes">How-To: Connect to GPU Nodes<a class="headerlink" href="#how-to-connect-to-gpu-nodes" title="Permanent link">&para;</a></h1>
-<p>The cluster has seven nodes with four Tesla V100 GPUs each: <code>hpc-gpu-{1..7}</code> and one node with 10 A40 GPUs: <code>hpc-gpu-8</code>.</p>
-<p>Connecting to a node with GPUs is easy.
+<p>The cluster has 11 GPU nodes available. <code>hpc-gpu-[1-7]</code> contain 4 NVIDIA V100 GPUs each, <code>hpc-gpu-8</code> has 10 NVIDIA A40 GPUs, and <code>hpc-gpu-[0-11]</code> house 4 NVIDIA L40 GPUs each.</p>
+<p>Connecting to a GPU node is easy.
 You request one or more GPU cores by adding a generic resources flag to your Slurm job submission via <code>srun</code> or <code>sbatch</code>.</p>
 <ul>
 <li><code>--gres=gpu:tesla:COUNT</code> will request NVIDIA V100 cores.</li>
 <li><code>--gres=gpu:a40:COUNT</code> will request NVIDIA A40 cores.</li>
+<li><code>--gres=gpu:l40:COUNT</code> will request NVIDIA L40 cores.</li>
 <li><code>--gres=gpu:COUNT</code> will request any available GPU cores.</li>
 </ul>
 <p>Your job will be automatically placed in the Slurm <code>gpu</code> partition and allocated a number of <code>COUNT</code> GPUs.</p>
