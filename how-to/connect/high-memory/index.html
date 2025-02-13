@@ -3157,7 +3157,7 @@
 
 
 <h1 id="how-to-connect-to-high-memory-nodes">How-To: Connect to High-Memory Nodes<a class="headerlink" href="#how-to-connect-to-high-memory-nodes" title="Permanent link">&para;</a></h1>
-<p>The cluster has 4 high-memory nodes with 1.5 TB of RAM.
+<p>The cluster has 4 high-memory nodes with 0.75 (2x), 1.5 (2x), and 1x4 (1x) TB of RAM.
 You can connect to these nodes using the <code>highmem</code> SLURM partition (see below).
 Jobs allocating more than 200 GB of RAM are automatically routed to the <code>highmem</code> nodes.</p>
 <div class="admonition info">
@@ -3171,21 +3171,21 @@ Tip: <code>getent passwd USER_NAME</code> will give you a user's contact details
 <p>In the cluster there are four High-memory used which can be used:</p>
 <div class="highlight"><pre><span></span><code>hpc-login-1:~$ sinfo -p highmem
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
-highmem      up 14-00:00:0      3   idle med040[1-4] 
+highmem      up 14-00:00:0      5   idle hpc-mem-[1-5] 
 </code></pre></div>
 <p>To connect to one of them, simply allocate more than 200GB of RAM in your job.</p>
 <div class="highlight"><pre><span></span><code>hpc-login-1:~$ srun --pty --mem=300GB bash -i
-med0401:~$
+hpc-mem-1:~$
 </code></pre></div>
 <p>You can also pick one of the hostnames:</p>
-<div class="highlight"><pre><span></span><code>hpc-login-1:~$ srun --pty --mem=300GB --nodelist=med0403 bash -i
-med0403:~$
+<div class="highlight"><pre><span></span><code>hpc-login-1:~$ srun --pty --mem=300GB --nodelist=hpc-mem-2 bash -i
+hpc-mem-2:~$
 </code></pre></div>
 <p>After successfull login, you can see that you are in "highmem" queue:</p>
 <div class="highlight"><pre><span></span><code>med0403:~$ squeue
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
 [...]
-               270   highmem     bash holtgrem  R       1:25      1 med0403 
+               270   highmem     bash holtgrem  R       1:25      1 hpc-mem-2 
 </code></pre></div>
 
 
@@ -3207,7 +3207,7 @@ med0403:~$
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2025</span>
   </span>
 
     
