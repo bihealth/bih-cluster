@@ -17,7 +17,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 Read the following set of pages (in order) to learn how to get access and connect to the cluster.
 
 1. [Getting Access](admin/getting-access.md)
-2. [Connecting](connecting/connecting.md)
+2. [Connecting](connecting/overview.md)
 3. [Storage](storage/storage-locations.md)
 5. [Slurm](slurm/overview.md)
 6. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).

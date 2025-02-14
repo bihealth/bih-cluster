@@ -84,7 +84,7 @@ nav:
     - "Maintenance etc.": admin/maintenance.md
     - "Policies": admin/policies.md
   - "Connecting":
-    - "Overview": "connecting/connecting.md"
+    - "Overview": "connecting/overview.md"
     - "SSH Basics": connecting/ssh-basics.md
     - "Windows": "connecting/connecting-windows.md"
     - "Generate Keys":

@@ -49,7 +49,7 @@ user@login-1's password:
 
 !!! hint
 
-    **This is the most common error**, and the main cause for this is a wrong username. Please take a couple of minutes to read the [What is my username?](connecting.md#what-is-my-username)!
+    **This is the most common error**, and the main cause for this is a wrong username. Please take a couple of minutes to read the [What is my username?](overview.md#what-is-my-username)!
 
 If you encounter this message **although we told you that you have access and you checked the username as mentioned above**,
 please write to [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de),
