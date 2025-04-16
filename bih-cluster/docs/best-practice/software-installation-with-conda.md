@@ -33,11 +33,36 @@ This will install conda to `$HOME/work/miniforge`.
 You can change the path to your liking, but please note that your `$HOME` folder has limited space.
 The `work` subfolder however has a bigger quota. More about this [here](../storage/home-quota.md).
 
-To make bioinformatics software available, we have to add the `bioconda` channel to the conda configuration:
+miniforge uses `conda-forge` as primary channel.
+
+To make bioinformatics software available, we have to add the `bioconda` channel to the conda configuration.
+
+Note, that adding a channel put's it on top of the channel list.
+So we suggest to re-order/-prioritize channels by adding `conda-forge` again and set a strict channel priority
+(as suggested by [bioconda](https://bioconda.github.io/#usage)).
 
 ```bash
 hpc-cpu-123:~$ conda config --add channels bioconda
+hpc-cpu-123:~$ conda config --add channels conda-forge
+hpc-cpu-123:~$ conda config --set channel_priority strict
 ```
+
+We could also edit `~/.condarc` manually.
+
+Either way, the recommended initial `~/.condarc` should look like this (in that order!):
+
+```
+hpc-cpu-123:~$ cat ~/.condarc
+channels:
+  - conda-forge
+  - bioconda
+channel_priority: strict
+```
+
+!!! Warning
+    If you are just looking to re-configure a previous miniconda installation,
+    make sure to remove the Anaconda Inc. channels `defaults` and `r` from your `~/.condarc`
+    to prevent SSL errors due the licencing issues mentiond above.
 
 ## Installing software with conda
 Installing packages with conda is straight forward:
