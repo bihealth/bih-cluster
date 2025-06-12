@@ -2,7 +2,7 @@
 ## BIH HPC 4 Research
 **BIH HPC 4 Research** is located in the BIH data center in Buch and connected via the BIH research network.
 Connections can be made from Charite, MDC, and BIH networks.
-The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
+The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper process](../admin/getting-access.md).
 The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
 
 ## Cluster Hardware and Scheduling
