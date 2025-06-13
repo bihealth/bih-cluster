@@ -2417,17 +2417,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Matlab
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2437,70 +2426,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pre-requisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How-To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-matlab-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running MATLAB UI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-available-matlab-licenses" class="md-nav__link">
-    <span class="md-ellipsis">
-      See Available Matlab Licenses
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-working-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Working Example
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3154,59 +3079,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-requisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pre-requisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      How-To Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-matlab-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running MATLAB UI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-available-matlab-licenses" class="md-nav__link">
-    <span class="md-ellipsis">
-      See Available Matlab Licenses
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-working-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      A Working Example
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3229,151 +3101,9 @@
 
 
 <h1 id="how-to-use-matlab">How-To: Use Matlab<a class="headerlink" href="#how-to-use-matlab" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This information is outdated and will soon be removed. </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">GNU Octave as Matlab alternative</p>
-<p>Note that <a href="https://www.gnu.org/software/octave/">GNU Octave</a> is an Open Source alternative to Matlab.
-While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-Further, you can <a href="../../../best-practice/software-installation-with-conda/">easily install it yourself using Conda</a>.</p>
-</div>
-<div class="admonition question">
-<p class="admonition-title">Want to use the Matlab GUI?</p>
-<p>Make sure you understand X forwarding as outline <a href="../../../help/faq/#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">in this FAQ entry</a>.</p>
-<p>You can also use <a href="../../../ondemand/overview/">Open OnDemand Portal</a> to run Matlab.</p>
-</div>
-<h2 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h2>
-<p>You have to register with <a href="mailto:hpc-helpdesk@bih-charite.de">hpc-helpdesk@bih-charite.de</a> for requesting access to the Matlab licenses.
-Afterwards, you can connect to the High-Memory using the <code>license_matlab_r2016b</code> resource (see below).</p>
-<h2 id="how-to-use">How-To Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
-<p>BIH has a license of Matlab R2016b for <strong>16 seats</strong> and various licensed packages (see below).
-To display the available licenses:</p>
-<div class="highlight"><pre><span></span><code>hpc-login-1:~$<span class="w"> </span>scontrol<span class="w"> </span>show<span class="w"> </span>lic
-<span class="nv">LicenseName</span><span class="o">=</span>matlab_r2016b
-<span class="w">    </span><span class="nv">Total</span><span class="o">=</span><span class="m">16</span><span class="w"> </span><span class="nv">Used</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">Free</span><span class="o">=</span><span class="m">16</span><span class="w"> </span><span class="nv">Remote</span><span class="o">=</span>no
-</code></pre></div>
-<p>Matlab is installed on all of the compute nodes:</p>
-<div class="highlight"><pre><span></span><code><span class="gp"># </span>The<span class="w"> </span>following<span class="w"> </span>is<span class="w"> </span>VITAL<span class="w"> </span>so<span class="w"> </span>the<span class="w"> </span>scheduler<span class="w"> </span>allocates<span class="w"> </span>a<span class="w"> </span>license<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>session.
-<span class="gp">hpc-login-1:~$ </span>srun<span class="w"> </span>-L<span class="w"> </span>matlab_r2016b:1<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
-<span class="gp">med0127:~$ </span>scontrol<span class="w"> </span>show<span class="w"> </span>lic
-<span class="go">LicenseName=matlab_r2016b</span>
-<span class="go">    Total=16 Used=1 Free=15 Remote=no</span>
-<span class="gp">med0127:~$ </span>module<span class="w"> </span>avail
-<span class="go">----------------- /usr/share/Modules/modulefiles -----------------</span>
-<span class="go">dot         module-info null</span>
-<span class="go">module-git  modules     use.own</span>
-
-<span class="go">----------------------- /opt/local/modules -----------------------</span>
-<span class="go">cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0</span>
-<span class="go">gcc/7.2.0-0     matlab/r2016b-0</span>
-<span class="gp">med0127:~$ </span>module<span class="w"> </span>load<span class="w"> </span>matlab/r2016b-0
-<span class="go">Start matlab without GUI: matlab -nosplash -nodisplay -nojvm</span>
-<span class="go">    Start matlab with GUI (requires X forwarding (ssh -X)): matlab</span>
-<span class="gp">med0127:~$ </span>matlab<span class="w"> </span>-nosplash<span class="w"> </span>-nodisplay<span class="w"> </span>-nojvm
-<span class="go">                                               &lt; M A T L A B (R) &gt;</span>
-<span class="go">                                     Copyright 1984-2016 The MathWorks, Inc.</span>
-<span class="go">                                     R2016b (9.1.0.441655) 64-bit (glnxa64)</span>
-<span class="go">                                                September 7, 2016</span>
-
-
-<span class="go">For online documentation, see http://www.mathworks.com/support</span>
-<span class="go">For product information, visit www.mathworks.com.</span>
-
-
-<span class="go">    Non-Degree Granting Education License -- for use at non-degree granting, nonprofit,</span>
-<span class="go">    educational organizations only.  Not for government, commercial, or other organizational use.</span>
-
-<span class="go">&gt;&gt; ver</span>
-<span class="go">--------------------------------------------------------------------------------------------</span>
-<span class="go">MATLAB Version: 9.1.0.441655 (R2016b)</span>
-<span class="go">MATLAB License Number: 1108905</span>
-<span class="go">Operating System: Linux 3.10.0-862.3.2.el7.x86_64 #1 SMP Mon May 21 23:36:36 UTC 2018 x86_64</span>
-<span class="go">Java Version: Java is not enabled</span>
-<span class="go">--------------------------------------------------------------------------------------------</span>
-<span class="go">MATLAB                                                Version 9.1         (R2016b)</span>
-<span class="go">Bioinformatics Toolbox                                Version 4.7         (R2016b)</span>
-<span class="go">Global Optimization Toolbox                           Version 3.4.1       (R2016b)</span>
-<span class="go">Image Processing Toolbox                              Version 9.5         (R2016b)</span>
-<span class="go">Optimization Toolbox                                  Version 7.5         (R2016b)</span>
-<span class="go">Parallel Computing Toolbox                            Version 6.9         (R2016b)</span>
-<span class="go">Partial Differential Equation Toolbox                 Version 2.3         (R2016b)</span>
-<span class="go">Signal Processing Toolbox                             Version 7.3         (R2016b)</span>
-<span class="go">SimBiology                                            Version 5.5         (R2016b)</span>
-<span class="go">Statistics and Machine Learning Toolbox               Version 11.0        (R2016b)</span>
-<span class="go">Wavelet Toolbox                                       Version 4.17        (R2016b)</span>
-<span class="go">&gt;&gt; exit</span>
-</code></pre></div>
-<h2 id="running-matlab-ui">Running MATLAB UI<a class="headerlink" href="#running-matlab-ui" title="Permanent link">&para;</a></h2>
-<p>For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., <code>ssh -X hpc-login-1.cubi.bihealth.org</code> from the Linux command line).
-Then, make sure to use <code>srun -L matlab_r2016b:1 --pty --x11 bash -i</code> for connecting to a node with X11 forwarding enabled.</p>
-<div class="highlight"><pre><span></span><code>client:~$<span class="w"> </span>ssh<span class="w"> </span>-X<span class="w"> </span>hpc-login-1.cubi.bihealth.org
-<span class="o">[</span>...<span class="o">]</span>
-hpc-login-1:~<span class="w"> </span>$<span class="w"> </span>srun<span class="w"> </span>-L<span class="w"> </span>matlab_r2016b:1<span class="w"> </span>--pty<span class="w"> </span>--x11<span class="w"> </span>bash<span class="w"> </span>-i
-<span class="o">[</span>...<span class="o">]</span>
-med0203:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>matlab/r2016b-0
-Start<span class="w"> </span>matlab<span class="w"> </span>without<span class="w"> </span>GUI:<span class="w"> </span>matlab<span class="w"> </span>-nosplash<span class="w"> </span>-nodisplay<span class="w"> </span>-nojvm
-<span class="w">    </span>Start<span class="w"> </span>matlab<span class="w"> </span>with<span class="w"> </span>GUI<span class="w"> </span><span class="o">(</span>requires<span class="w"> </span>X<span class="w"> </span>forwarding<span class="w"> </span><span class="o">(</span>ssh<span class="w"> </span>-X<span class="o">))</span>:<span class="w"> </span>matlab
-med0203:~$<span class="w"> </span>matlab
-<span class="o">[</span>UI<span class="w"> </span>will<span class="w"> </span>start<span class="o">]</span>
-</code></pre></div>
-<p>For forcing starting in text mode can be done (as said after <code>module load</code>): <code>matlab -nosplash -nodisplay -nojvm</code>.</p>
-<p>Also see <a href="../../../help/faq/#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster">this FAQ entry</a>.</p>
-<h2 id="see-available-matlab-licenses">See Available Matlab Licenses<a class="headerlink" href="#see-available-matlab-licenses" title="Permanent link">&para;</a></h2>
-<p>You can use <code>scontrol show lic</code> to see the currently available MATLAB license.
-E.g., here I am running an interactive shell in which I have requested 1 of the 16 MATLAB licenses, so 15 more remain.</p>
-<div class="highlight"><pre><span></span><code>$ scontrol show lic
-LicenseName=matlab_r2016b
-    Total=16 Used=1 Free=15 Remote=no
-</code></pre></div>
-<h2 id="a-working-example">A Working Example<a class="headerlink" href="#a-working-example" title="Permanent link">&para;</a></h2>
-<p>Get a checkout of our MATLAB example.
-Then, look around at the contents of this repository.</p>
-<div class="highlight"><pre><span></span><code><span class="gp">hpc-login-1:~$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bihealth/bih-cluster-matlab-example.git
-<span class="gp">hpc-login-1:~$ </span><span class="nb">cd</span><span class="w"> </span>bih-cluster-matlab-example
-<span class="gp">hpc-login-1:~$ </span>cat<span class="w"> </span>job_script.sh
-<span class="gp">#</span>!/bin/bash
-
-<span class="gp"># </span>Logging<span class="w"> </span>goes<span class="w"> </span>to<span class="w"> </span>directory<span class="w"> </span>sge_log
-<span class="gp">#</span>SBATCH<span class="w"> </span>-o<span class="w"> </span>slurm_log/%x-%J.log
-<span class="gp"># </span>Keep<span class="w"> </span>current<span class="w"> </span>environment<span class="w"> </span>variables
-<span class="gp">#</span>SBATCH<span class="w"> </span>--export<span class="o">=</span>ALL
-<span class="gp"># </span>Name<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>script
-<span class="gp">#</span>SBATCH<span class="w"> </span>--job-name<span class="w"> </span>MATLAB-example
-<span class="gp"># </span>Allocate<span class="w"> </span>4GB<span class="w"> </span>of<span class="w"> </span>RAM<span class="w"> </span>per<span class="w"> </span>core
-<span class="gp">#</span>SBATCH<span class="w"> </span>--mem<span class="w"> </span>4G
-<span class="gp"># </span>Maximal<span class="w"> </span>running<span class="w"> </span><span class="nb">time</span><span class="w"> </span>of<span class="w"> </span><span class="m">2</span><span class="w"> </span>hours
-<span class="gp">#</span>SBATCH<span class="w"> </span>--time<span class="w"> </span><span class="m">02</span>:00:00
-<span class="gp"># </span>Allocate<span class="w"> </span>one<span class="w"> </span>Matlab<span class="w"> </span>license
-<span class="gp">#</span>SBATCH<span class="w"> </span>-L<span class="w"> </span>matlab_r2016b:1
-
-<span class="go">module load matlab/r2016b-0</span>
-
-<span class="go">matlab -r example</span>
-<span class="gp">$ </span>cat<span class="w"> </span>example.m
-<span class="gp">% </span>Example<span class="w"> </span>Hello<span class="w"> </span>World<span class="w"> </span>script<span class="w"> </span><span class="k">for</span><span class="w"> </span>Matlab.
-
-<span class="go">disp(&#39;Hello world!&#39;)</span>
-<span class="go">disp(&#39;Thinking...&#39;)</span>
-
-<span class="go">pause(10)</span>
-
-<span class="go">disp(sprintf(&#39;The square root of 2 is = %f&#39;, sqrt(2)))</span>
-<span class="go">exit</span>
-</code></pre></div>
-<p>For submitting the script, you can do the following</p>
-<div class="highlight"><pre><span></span><code><span class="gp">hpc-login-1:~$ </span>sbatch<span class="w"> </span>job_script.sh
-</code></pre></div>
-<p>This will submit a job with one Matlab license requested.
-If you were to submit 17 of these jobs, then at least one of them would have to wait until all licenses are free.</p>
-<div class="admonition warning">
-<p class="admonition-title">Matlab License Server</p>
-<p>Note that there is a Matlab license server running on the server that will check whether 16 or less Matlab sessions are currently running.
-If a Matlab session is running but this is not made known to the scheduler via <code>-L matlab_r2016b</code> then this can lead to scripts crashing as not enough licenses are available.
-If this happens to you, double-check that you have specified the license requirements correctly and notify <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a> in case of any problems.
-We will try to sort out the situation then.</p>
-</div>
+<p>We currently do not support running Matlab on the BIH HPC cluster.
+Our recommendation for users dependent on running Matlab scripts is to use <a href="https://www.gnu.org/software/octave/">GNU Octave</a> as an Open Source alternative.
+While both packages are not 100% compatible, Octave does not require any license management and can be <a href="../../../best-practice/software-installation-with-conda/">easily install using Conda</a>.</p>
 
 
 
@@ -3394,7 +3124,7 @@ We will try to sort out the situation then.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 12, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
   </span>
 
     
