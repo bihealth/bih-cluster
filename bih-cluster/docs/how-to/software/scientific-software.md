@@ -219,7 +219,7 @@ module-git  modules     use.own
 
 -------------------------- /opt/local/modules --------------------------
 cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0
-gcc/7.2.0-0     matlab/r2016b-0 openmpi/4.0.3-0
+gcc/7.2.0-0     openmpi/4.0.3-0
 ```
 
 ### Interlude: Convenient `module use`

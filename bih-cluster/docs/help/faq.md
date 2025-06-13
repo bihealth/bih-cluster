@@ -374,7 +374,7 @@ squeue -o "%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b" -p gpu
 
 In the example above, user1 has one job with one GPU running on hpc-gpu-3, user2 has one job running with 4 GPUs on hpc-gpu-4 and user3 has 7 jobs in total running of different machines with one GPU each.
 
-## How can I access graphical user interfaces (such as for Matlab) on the cluster?
+## How can I access graphical user interfaces on the cluster?
 
 1. First of all, you will need an X(11) server on your local machine (see [Wikipedia: X Window System](https://en.wikipedia.org/wiki/X_Window_System).
   This server offers a "graphical surface" that the programs on the cluster can then paint on.

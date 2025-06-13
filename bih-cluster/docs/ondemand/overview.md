@@ -14,7 +14,7 @@ You can find the OnDemand Portal for HPC 4 Research at:
 ## Background
 
 OOD allows you to access cluster resources using a web-based graphical interface in addition to traditional SSH connections.
-You can then connect to jobs running graphical applications either to virtual desktops (such as Matlab) or to web apps (such as Jupyter and RStudio Server).
+You can then connect to jobs running graphical applications either to virtual desktops or to web apps (such as Jupyter and RStudio Server).
 
 The following figure illustrates this.
 
@@ -98,8 +98,6 @@ We will not go into detail of all of them and expect them to be self-explanatory
     - **Shell Access** - Shell access in your browser.
 - [**Interactive Apps**](interactive.md)
     - **Mate and Xfce Desktops** - Start virtual desktops on the HPC.
-    - **Matlab** - Run a virtual desktop that has Matlab installed.
-    - **MaxQuant** - Run a virtual desktop that has MaxQuant installed.
     - **Jupyter** - Run Jupyter on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
     - **RStudio Server** - Run RStudio Server on the HPC and easily connect to it from your browser without setting up any SSH tunnels.
 - [**My Interactive Sessions**](interactive.md) - See details of your currently running interactive sessions.

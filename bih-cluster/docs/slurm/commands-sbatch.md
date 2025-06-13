@@ -36,7 +36,7 @@ The command will create a batch job and add it to the queue to be executed at a 
     -- Generic resource allocation.
     On the BIH HPC, this is only used for allocating GPUS, e.g., with `--gres=gpu:tesla:2`, a user could allocate two NVIDIA Tesla GPUs on the same host (use `a40` instead of `tesla` for the A40 GPUs).
 - `--licenses`
-    -- On the BIH HPC, this is used for the allocation of MATLAB 2016b licenses only.
+    -- On the BIH HPC, this was only used for the allocation of MATLAB 2016b licenses.
 - `--partition`
     -- The partition to run in.
     Also see the [Job Scheduler](../overview/job-scheduler.md) section.

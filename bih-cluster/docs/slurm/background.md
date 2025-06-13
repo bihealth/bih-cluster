@@ -65,10 +65,6 @@ Generally, once a resource has been allocated to one job, it is not available to
 This means if you allocating more resources to your job that you actually need (*overallocation*) then those resources are not available to other jobs (whether they are your jobs or those of other users).
 This will be explained further below.
 
-Another example of resource allocation are *licenses*.
-The BIH HPC has a few Matlab 2016b licenses that users can request.
-As long as a license is allocated to one job, it is unavailable to another.
-
 ## Nodes, Sockets, Processors, Cores, Threads
 
 Regarding compute resources, Slurm differentiates between:
