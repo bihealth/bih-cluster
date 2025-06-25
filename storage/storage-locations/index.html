@@ -3391,10 +3391,6 @@
 <h1 id="storage-and-volumes-locations">Storage and Volumes: Locations<a class="headerlink" href="#storage-and-volumes-locations" title="Permanent link">&para;</a></h1>
 <p>This document describes the forth iteration of the file system structure on the BIH HPC cluster.
 It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed <a href="https://ceph.io/en/">Ceph</a> storage.</p>
-<div class="admonition warning">
-<p class="admonition-title">Important</p>
-<p>For now, the old, third-generation file system is still mounted at <code>/fast</code>. <strong>It will be decommissioned soon, please consult <a href="../storage-migration/">this document describing the migration process</a>!</strong></p>
-</div>
 <h2 id="organizational-entities">Organizational Entities<a class="headerlink" href="#organizational-entities" title="Permanent link">&para;</a></h2>
 <p>There are the following three entities on the cluster:</p>
 <ol>
@@ -3534,42 +3530,41 @@ Depending on the location and Tier, CephFS creates snapshots in different freque
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Location</th>
-<th style="text-align: left;">Path</th>
-<th style="text-align: left;">Retention policy</th>
-<th style="text-align: right;">Mirrored</th>
+<th>Location</th>
+<th>Path</th>
+<th>Retention policy</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">User homes</td>
-<td style="text-align: left;"><code>/data/cephfs-1/home/users/</code></td>
-<td style="text-align: left;">Hourly for 48 h, daily for 14 d</td>
-<td style="text-align: right;">yes</td>
+<td>User homes</td>
+<td>/data/cephfs-1/home/users/</td>
+<td>Hourly for 24 h, daily for 14 d</td>
 </tr>
 <tr>
-<td style="text-align: left;">Group/project work</td>
-<td style="text-align: left;"><code>/data/cephfs-1/work/</code></td>
-<td style="text-align: left;">Four times a day, daily for 5 d</td>
-<td style="text-align: right;">no</td>
+<td>Group/project work</td>
+<td>/data/cephfs-1/work/</td>
+<td>Daily for 5 d</td>
 </tr>
 <tr>
-<td style="text-align: left;">Group/project scratch</td>
-<td style="text-align: left;"><code>/data/cephfs-1/scratch/</code></td>
-<td style="text-align: left;">Daily for 3 d</td>
-<td style="text-align: right;">no</td>
+<td>Group/project scratch</td>
+<td>/data/cephfs-1/scratch/</td>
+<td>Daily for 3 d</td>
 </tr>
 <tr>
-<td style="text-align: left;">Group/project mirrored</td>
-<td style="text-align: left;"><code>/data/cephfs-2/mirrored/</code></td>
-<td style="text-align: left;">Daily for 30 d, weekly for 16 w</td>
-<td style="text-align: right;">yes</td>
+<td>Group/project mirrored</td>
+<td>/data/cephfs-2/mirrored/</td>
+<td>Daily for 7 d, weekly for 8 w</td>
 </tr>
 <tr>
-<td style="text-align: left;">Group/project unmirrored</td>
-<td style="text-align: left;"><code>/data/cephfs-2/unmirrored/</code></td>
-<td style="text-align: left;">Daily for 30 d, weekly for 16 w</td>
-<td style="text-align: right;">no</td>
+<td>Group/project unmirrored</td>
+<td>/data/cephfs-2/unmirrored/</td>
+<td>Daily for 7 d, weekly for 8 w</td>
+</tr>
+<tr>
+<td>SODAR</td>
+<td></td>
+<td>Daily for 7 d</td>
 </tr>
 </tbody>
 </table>
@@ -3643,7 +3638,7 @@ $<span class="w"> </span>cp<span class="w"> </span>important_file.txt<span class
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2025</span>
   </span>
 
     

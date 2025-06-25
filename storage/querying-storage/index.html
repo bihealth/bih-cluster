@@ -929,17 +929,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Querying Quotas
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -949,52 +938,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-user-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for User Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-group-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for Group Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-project-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for Project Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3134,41 +3077,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-user-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for User Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-group-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for Group Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-for-project-data-and-file-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query for Project Data and File Usage
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3191,63 +3099,7 @@
 
 
 <h1 id="querying-storage-quotas">Querying Storage Quotas<a class="headerlink" href="#querying-storage-quotas" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Outdated</p>
-<p>This document is only valid for the old, third-generation file system and will be removed soon.
-Quotas of our new CephFS storage are communicated via the <a href="https://hpc-access.cubi.bihealth.org/">HPC Access</a> web portal.</p>
-</div>
-<p>As described elsewhere, all data in your user, group, and project volumes is subject to quotas.
-This page quickly shows how to query for the current usage of data volume and file counts for your user, group, and projects.</p>
-<h2 id="query-for-user-data-and-file-usage">Query for User Data and File Usage<a class="headerlink" href="#query-for-user-data-and-file-usage" title="Permanent link">&para;</a></h2>
-<p>The file <code>/etc/bashrc.gpfs-quota</code> contains some Bash functions that you can use for querying the quota usage.
-This file is automatically sourced in all of your Bash sessions.</p>
-<p>For querying your user's data and file usage, enter the following command:</p>
-<div class="highlight"><pre><span></span><code># bih-gpfs-quota-user holtgrem_c
-</code></pre></div>
-<p>You will get a report as follows.
-As soon as usage reaches 90%, the data/file usage will be highlighted in yellow.
-If you pass 99%, the data/file usage will be highlighted in red.</p>
-<div class="highlight"><pre><span></span><code>=================================
-Quota Report for: user holtgrem_c
-=================================
-
-                           DATA       quota       GR- FILES      quota       GR-
-ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
-------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
-users   holtgrem_c home     103M  10%  1.0G  1.5G   -  2.5k  25%   10k   12k   -
-users   holtgrem_c work     639G  62%  1.0T  1.1T   -  1.0M  52%  2.0M  2.2M   -
-users   holtgrem_c scratch   42G   0%  200T  220T   -  207k 0.1%  200M  220M   -
-[...]
-</code></pre></div>
-<h2 id="query-for-group-data-and-file-usage">Query for Group Data and File Usage<a class="headerlink" href="#query-for-group-data-and-file-usage" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code># bih-gpfs-report-quota group ag_someag
-=================================
-Quota Report for: group ag_someag
-=================================
-
-                           DATA       quota       GR- FILES      quota       GR-
-ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
-------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
-groups  ag_someag  home        0   0%  1.0G  1.5G   -     4   0%   10k   12k   -
-groups  ag_someag  work     349G  34%  1.0T  1.5T   -   302   0%  2.0M  2.2M   -
-groups  ag_someag  scratch     0   0%  200T  220T   -     1   0%  200M  220M   -
-
-[...]
-</code></pre></div>
-<h2 id="query-for-project-data-and-file-usage">Query for Project Data and File Usage<a class="headerlink" href="#query-for-project-data-and-file-usage" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code># bih-gpfs-report-quota project someproj
-==================================
-Quota Report for: project someproj
-==================================
-
-                           DATA       quota       GR- FILES      quota       GR-
-ENTITY  NAME       FSET    USED       SOFT  HARD  ACE USED       SOFT  HARD  ACE
-------- ---------- ------- ----- ---- ----- ----- --- ----- ---- ----- ----- ---
-groups  someproj   home        0   0%  1.0G  1.5G   -     4   0%   10k   12k   -
-groups  someproj   work     349G  34%  1.0T  1.5T   -   302   0%  2.0M  2.2M   -
-groups  someproj   scratch     0   0%  200T  220T   -     1   0%  200M  220M   -
-
-[...]
+<div class="codehilite"><pre><span></span><code>Quotas of our new CephFS storage are communicated via the [HPC Access](https://hpc-access.cubi.bihealth.org/) web portal.
 </code></pre></div>
 
 
@@ -3269,7 +3121,7 @@ groups  someproj   scratch     0   0%  200T  220T   -     1   0%  200M  220M   -
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2025</span>
   </span>
 
     
