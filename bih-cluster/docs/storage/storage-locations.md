@@ -2,9 +2,6 @@
 This document describes the forth iteration of the file system structure on the BIH HPC cluster.
 It was made necessary because the previous file system was no longer supported by the manufacturer and we since switched to distributed [Ceph](https://ceph.io/en/) storage.
 
-!!! warning "Important"
-    For now, the old, third-generation file system is still mounted at `/fast`. **It will be decommissioned soon, please consult [this document describing the migration process](storage-migration.md)!**
-
 ## Organizational Entities
 There are the following three entities on the cluster:
 
@@ -94,13 +91,14 @@ Snapshots are incremental copies of the state of the data at a particular point 
 They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
 Depending on the location and Tier, CephFS creates snapshots in different frequencies and retention plans.
 
-| Location                 | Path                         | Retention policy                | Mirrored |
-|:-------------------------|:-----------------------------|:--------------------------------|---------:|
-| User homes               | `/data/cephfs-1/home/users/` | Hourly for 48 h, daily for 14 d | yes      |
-| Group/project work       | `/data/cephfs-1/work/`       | Four times a day, daily for 5 d | no       |
-| Group/project scratch    | `/data/cephfs-1/scratch/`    | Daily for 3 d                   | no       |
-| Group/project mirrored   | `/data/cephfs-2/mirrored/`   | Daily for 30 d, weekly for 16 w | yes      |
-| Group/project unmirrored | `/data/cephfs-2/unmirrored/` | Daily for 30 d, weekly for 16 w | no       |
+| Location  | Path  | Retention policy  |
+|-----------|-------|-------------------|
+| User homes                | /data/cephfs-1/home/users/  | Daily for 14 d |
+| Group/project work        | /data/cephfs-1/work/        | Daily for 5 d  |
+| Group/project scratch     | /data/cephfs-1/scratch/     | Daily for 3 d  |
+| Group/project mirrored    | /data/cephfs-2/mirrored/    | Daily for 7 d, weekly for 8 w  |
+| Group/project unmirrored  | /data/cephfs-2/unmirrored/  | Daily for 7 d, weekly for 8 w  |
+| SODAR                     | | Daily for 7 d |
 
 Some parts of Tier 1 and Tier 2 snapshots are also mirrored into a separate fire compartment within the data center.
 This provides an additional layer of security i. e. physical damage to the servers.

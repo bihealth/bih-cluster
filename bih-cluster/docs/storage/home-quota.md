@@ -12,7 +12,7 @@ Various programs are used to depositing large folders in a user's home and can q
 These include:
 
 - Python: `~/.local/lib/python*`
-- *conda: Location chosen by the user.
+- conda: Location chosen by the user, but also `~/.conda`
 - R: `~/R/x86_64-pc-linux-gnu-library`
 - [HPC portal](../ondemand/overview.md): `~/ondemand`
 
