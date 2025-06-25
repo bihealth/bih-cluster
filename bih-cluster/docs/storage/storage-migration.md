@@ -1,6 +1,8 @@
 # Migration from old GPFS to new CephFS
 !!! warning "Important"
-    We will remove access to `/fast` on most cluster nodes following September 30th.
+    Access to `/fast` was removed September 30th 2024.
+    The following is kept for documenting the process for the curious reader,
+    but no action needs to be taken.
 
 ## What is going to happen?
 Files on the cluster's main storage `/data/gpfs-1` aka. `/fast` will move to a new file system.
