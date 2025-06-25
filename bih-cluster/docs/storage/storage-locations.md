@@ -93,7 +93,7 @@ Depending on the location and Tier, CephFS creates snapshots in different freque
 
 | Location  | Path  | Retention policy  |
 |-----------|-------|-------------------|
-| User homes                | /data/cephfs-1/home/users/  | Daily for 14 d |
+| User homes                | /data/cephfs-1/home/users/  | Hourly for 24 h, daily for 14 d|
 | Group/project work        | /data/cephfs-1/work/        | Daily for 5 d  |
 | Group/project scratch     | /data/cephfs-1/scratch/     | Daily for 3 d  |
 | Group/project mirrored    | /data/cephfs-2/mirrored/    | Daily for 7 d, weekly for 8 w  |
