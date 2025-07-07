@@ -29,11 +29,16 @@ Follow these steps to connect to BIH HPC via the command line:
     $ ssh user_m@hpc-login-2.cubi.bihealth.org
     ```
 
-    !!! hint
-        There are two login nodes, `hpc-login-1` and `hpc-login-2`. There are two for
-        redundancy reasons. Please do not perform big file transfers or an `sshfs`
-        mount via the login nodes. For this purpose, we have `hpc-transfer-1` and
-        `hpc-transfer-2`.
+    !!! hint "Notes"
+        Please do not perform big file transfers or an `sshfs` mount via the login nodes.
+        For this purpose we provide `hpc-transfer-1` and `hpc-transfer-2`.
+
+        When first connecting, your SSH client will ask you to confirm our server's host key fingerprint.
+        These are the current ones for the login and transfer nodes:
+
+        - RSA: SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4
+        - ED25519: SHA256:FjsmTkyDssB5E/OK/1dkflhgkk8gi5R75DJRdcrLdrI 
+        - ECDSA: SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0
 
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to BIH HPC.
     If you are using a Windows PC to access BIH HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
