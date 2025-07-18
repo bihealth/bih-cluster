@@ -40,7 +40,7 @@ hpc-login-1:~$ srun --pty bash
 hpc-cpu-1:~$ wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
 hpc-cpu-1:~$ bash Miniforge3-Linux-x86_64.sh -b -p ~/work/miniforge
 hpc-cpu-1:~$ source ~/work/miniforge/bin/activate
-hpc-cpu-1:~$ conda create -y -n gpu-test pytorch cudatoolkit=10.2 -c pytorch
+hpc-cpu-1:~$ conda create -y -n gpu-test pytorch-gpu
 hpc-cpu-1:~$ conda activate gpu-test
 hpc-cpu-1:~$ python -c 'import torch; print(torch.cuda.is_available())'
 False
@@ -72,16 +72,10 @@ As you see, you can also reserve multiple GPUs.
 If we were to open two concurrent connections (e. g. in a `screen`) to the same node when allocating one GPU each, the allocated GPUs would be non-overlapping.
 Note that any two jobs are isolated using Linux cgroups ("container" technology) so you cannot accidentally use a GPU of another job.
 
-Now to the somewhat boring part where we show that CUDA actually works.
+Now to the part where we show that CUDA actually works.
 
 ```bash
 hpc-login-1:~$ srun --gres=gpu:tesla:1 --pty bash
-hpc-gpu-1:~$ nvcc --version
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2019 NVIDIA Corporation
-Built on Wed_Oct_23_19:24:38_PDT_2019
-Cuda compilation tools, release 10.2, V10.2.89
-hpc-gpu-1:~$ source ~/work/miniforge/bin/activate
 hpc-gpu-1:~$ conda activate gpu-test
 hpc-gpu-1:~$ python -c 'import torch; print(torch.cuda.is_available())'
 True
