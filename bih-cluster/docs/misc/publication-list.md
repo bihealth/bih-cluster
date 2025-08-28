@@ -10,7 +10,6 @@ It has been used to support the publications listed below.
 
 ### Preprints
 
-
 Chopra A, Song J, Weiner J, Beule D, Schaefer AS (2024). “Genetic analysis of cis-enhancers associated with bone mineral density and periodontitis in
 the gene SOST.” _ResearchSquare_.  [☞ Link](https://www.researchsquare.com/article/rs-4409923/v1)
 
@@ -34,9 +33,15 @@ Winkler W, Díaz C, Blanc E, Napieczynska H (2021). “Preclinical models of hum
 Göppel T, Obermayer B, Chen I, Gerland U (2021). “A kinetic error filtering mechanism for enzyme-free copying of nucleic acid sequences.” _bioRxiv_.
 doi:10.1101/2021.08.06.455386  [☞ Link](https://www.biorxiv.org/content/10.1101/2021.08.06.455386.abstract)
 
+### 2025
 
+Sebastian Röner, Lea Burkard, Michael R Speicher, Martin Kircher, cfDNA UniFlow: a unified preprocessing pipeline for cell-free DNA data from liquid biopsies, GigaScience, Volume 13, 2024, giae102, [doi: 10.1093/gigascience/giae102](https://doi.org/10.1093/gigascience/giae102)
+
+P. Keukeleire, J.D. Rosen, A. Göbel-Knapp, K. Salomon, M. Schubach, M. Kircher. Using individual barcodes to increase quantification power of massively parallel reporter assays. *BMC Bioinformatics* 2025 26, 52. [doi: 10.1186/s12859-025-06065-9](https://doi.org/10.1186/s12859-025-06065-9)
 
 ### 2024
+
+Max Schubach, Thorben Maass, Lusiné Nazaretyan, Sebastian Röner, Martin Kircher, CADD v1.7: using protein language models, regulatory CNNs and other nucleotide-level scores to improve genome-wide variant predictions, Nucleic Acids Research, Volume 52, Issue D1, 5 January 2024, Pages D1143–D1154, [doi: 10.1093/nar/gkad989](https://doi.org/10.1093/nar/gkad989)
 
 Köhler RM, Binns TS, Merk T, Zhu G, Yin Z, Zhao B, Chikermane M, Vanhoecke J, Busch JL, Habets JGV, Faust K, Schneider GH, Cavallo A, Haufe S, Zhang J, Kühn AA, Haynes JD, Neumann WJ. Dopamine and deep brain stimulation accelerate the neural dynamics of volitional action in Parkinson’s disease. *Brain*. 2024 Oct 1;147(10):3358–69. [doi: 10.1093/brain/awae219](https://doi.org/10.1093/brain/awae219)
 
@@ -189,6 +194,7 @@ doi:10.1126/scitranslmed.adk9129  [☞ Link](https://www.science.org/doi/10.1126
 
 ### 2023
 
+Max Schubach, Lusiné Nazaretyan, Martin Kircher, The Regulatory Mendelian Mutation score for GRCh38, GigaScience, Volume 12, 2023, giad024, [doi: 10.1093/gigascience/giad024](https://doi.org/10.1093/gigascience/giad024)
 
 Monsorno K, Ginggen K, Ivanov A, Buckinx A, Lalive AL, Tchenio A, Benson S, Vendrell M, D’Alessandro A, Beule D, others (2023). “Loss of microglial MCT4
 leads to defective synaptic pruning and anxiety-like behavior in mice.” _Nature Communications_, 14(1), 5749. doi:10.1038/s41467-023-41502-4
