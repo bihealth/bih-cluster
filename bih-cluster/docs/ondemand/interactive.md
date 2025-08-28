@@ -124,7 +124,7 @@ For this you may first need to create this conda environment including your R ve
 channels:
   - conda-forge
   - bioconda
-  - defaults
+  - nodefaults
 dependencies:
   - r-base
   - r-essentials
