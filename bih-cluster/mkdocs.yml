@@ -168,8 +168,6 @@ nav:
       - "Matlab": how-to/software/matlab.md
       - "Tensorflow": how-to/software/tensorflow.md
       - "Apptainer": how-to/software/apptainer.md
-    - "Service":
-      - "File Exchange": how-to/service/file-exchange.md
     - "Miscellaneous":
       - "Access HPC Talk": how-to/misc/hpc-talk.md
       - "Debug Software": how-to/misc/debug-software.md
