@@ -12,28 +12,24 @@
         <meta name="author" content="BIH HPC IT">
       
       
-        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/hpc-tutorial/episode-0/">
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/how-to/software/alphafold3/">
       
       
-        <link rel="prev" href="../../storage/migration-faq/">
       
       
-        <link rel="next" href="../episode-1/">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
     
     
       
-        <title>Episode 0 - BIH HPC Docs</title>
+        <title>AlphaFold3 - BIH HPC Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <!-- Matomo -->
 <script type="text/javascript">
@@ -93,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#first-steps-episode-0" class="md-skip">
+        <a href="#alphafold3" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +105,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+    <a href="../../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -129,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Episode 0
+              AlphaFold3
             
           </span>
         </div>
@@ -242,7 +238,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+    <a href="../../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -272,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/getting-access/" class="md-nav__link">
+      <a href="../../../admin/getting-access/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/maintenance/" class="md-nav__link">
+      <a href="../../../admin/maintenance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../admin/policies/" class="md-nav__link">
+      <a href="../../../admin/policies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -432,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/overview/" class="md-nav__link">
+      <a href="../../../connecting/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -453,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/ssh-basics/" class="md-nav__link">
+      <a href="../../../connecting/ssh-basics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -474,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/connecting-windows/" class="md-nav__link">
+      <a href="../../../connecting/connecting-windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -530,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/generate-key/unix/" class="md-nav__link">
+      <a href="../../../connecting/generate-key/unix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/generate-key/windows/" class="md-nav__link">
+      <a href="../../../connecting/generate-key/windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/submit-key/charite/" class="md-nav__link">
+      <a href="../../../connecting/submit-key/charite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -636,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/submit-key/mdc/" class="md-nav__link">
+      <a href="../../../connecting/submit-key/mdc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/advanced-ssh/overview/" class="md-nav__link">
+      <a href="../../../connecting/advanced-ssh/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -721,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/advanced-ssh/unix/" class="md-nav__link">
+      <a href="../../../connecting/advanced-ssh/unix/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/advanced-ssh/windows/" class="md-nav__link">
+      <a href="../../../connecting/advanced-ssh/windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/from-external/" class="md-nav__link">
+      <a href="../../../connecting/from-external/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -792,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connecting/connection-problems/" class="md-nav__link">
+      <a href="../../../connecting/connection-problems/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -855,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-locations/" class="md-nav__link">
+      <a href="../../../storage/storage-locations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -876,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/home-quota/" class="md-nav__link">
+      <a href="../../../storage/home-quota/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
+      <a href="../../../storage/scratch-cleanup/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/querying-storage/" class="md-nav__link">
+      <a href="../../../storage/querying-storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/storage-migration/" class="md-nav__link">
+      <a href="../../../storage/storage-migration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -960,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/migration-faq/" class="md-nav__link">
+      <a href="../../../storage/migration-faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,19 +981,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -1011,7 +1005,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             HPC tutorial
@@ -1022,30 +1016,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Episode 0
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../hpc-tutorial/episode-0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1054,62 +1028,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legend
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instant-gratification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instant Gratification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Preparation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1122,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../episode-1/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1143,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../episode-2/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../episode-3/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1185,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../episode-4/" class="md-nav__link">
+      <a href="../../../hpc-tutorial/episode-4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1248,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/overview/" class="md-nav__link">
+      <a href="../../../slurm/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1269,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/background/" class="md-nav__link">
+      <a href="../../../slurm/background/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/quickstart/" class="md-nav__link">
+      <a href="../../../slurm/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/temporary-files/" class="md-nav__link">
+      <a href="../../../slurm/temporary-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
+      <a href="../../../slurm/cheat-sheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/job-scripts/" class="md-nav__link">
+      <a href="../../../slurm/job-scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/memory-allocation/" class="md-nav__link">
+      <a href="../../../slurm/memory-allocation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/reservations/" class="md-nav__link">
+      <a href="../../../slurm/reservations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1451,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-srun/" class="md-nav__link">
+      <a href="../../../slurm/commands-srun/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1472,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
+      <a href="../../../slurm/commands-sbatch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1493,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-sattach/" class="md-nav__link">
+      <a href="../../../slurm/commands-sattach/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1514,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-scancel/" class="md-nav__link">
+      <a href="../../../slurm/commands-scancel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1535,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
+      <a href="../../../slurm/commands-sinfo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1556,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-squeue/" class="md-nav__link">
+      <a href="../../../slurm/commands-squeue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1577,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
+      <a href="../../../slurm/commands-scontrol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/commands-sacct/" class="md-nav__link">
+      <a href="../../../slurm/commands-sacct/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/format-strings/" class="md-nav__link">
+      <a href="../../../slurm/format-strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1648,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/snakemake/" class="md-nav__link">
+      <a href="../../../slurm/snakemake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1669,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/x11/" class="md-nav__link">
+      <a href="../../../slurm/x11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1690,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/rosetta-stone/" class="md-nav__link">
+      <a href="../../../slurm/rosetta-stone/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1753,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/overview/" class="md-nav__link">
+      <a href="../../../ondemand/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1774,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/interactive/" class="md-nav__link">
+      <a href="../../../ondemand/interactive/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1795,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ondemand/quotas/" class="md-nav__link">
+      <a href="../../../ondemand/quotas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1858,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/project-structure/" class="md-nav__link">
+      <a href="../../../best-practice/project-structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1879,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/software-craftmanship/" class="md-nav__link">
+      <a href="../../../best-practice/software-craftmanship/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1900,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/screen-tmux/" class="md-nav__link">
+      <a href="../../../best-practice/screen-tmux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1921,7 +1839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/bashrc-guide/" class="md-nav__link">
+      <a href="../../../best-practice/bashrc-guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1942,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/temp-files/" class="md-nav__link">
+      <a href="../../../best-practice/temp-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1963,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/env-modules/" class="md-nav__link">
+      <a href="../../../best-practice/env-modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1984,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../best-practice/software-installation-with-conda/" class="md-nav__link">
+      <a href="../../../best-practice/software-installation-with-conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2047,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/" class="md-nav__link">
+      <a href="../../../cubit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2068,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/annotations/" class="md-nav__link">
+      <a href="../../../cubit/annotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2089,7 +2007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/app-support/" class="md-nav__link">
+      <a href="../../../cubit/app-support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2110,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/databases/" class="md-nav__link">
+      <a href="../../../cubit/databases/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2131,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/exomes-panels/" class="md-nav__link">
+      <a href="../../../cubit/exomes-panels/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2152,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/exon-lists/" class="md-nav__link">
+      <a href="../../../cubit/exon-lists/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2173,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/index-files/" class="md-nav__link">
+      <a href="../../../cubit/index-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2194,7 +2112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cubit/references/" class="md-nav__link">
+      <a href="../../../cubit/references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2292,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/connect/high-memory/" class="md-nav__link">
+      <a href="../../connect/high-memory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2313,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/connect/gpu-nodes/" class="md-nav__link">
+      <a href="../../connect/gpu-nodes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2377,7 +2295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/openmpi/" class="md-nav__link">
+      <a href="../openmpi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2398,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/scientific-software/" class="md-nav__link">
+      <a href="../scientific-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2419,7 +2337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/cell-ranger/" class="md-nav__link">
+      <a href="../cell-ranger/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2440,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/jupyter/" class="md-nav__link">
+      <a href="../jupyter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2461,7 +2379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/keras/" class="md-nav__link">
+      <a href="../keras/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2482,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/matlab/" class="md-nav__link">
+      <a href="../matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2503,7 +2421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/tensorflow/" class="md-nav__link">
+      <a href="../tensorflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2524,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/software/apptainer/" class="md-nav__link">
+      <a href="../apptainer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2588,7 +2506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/hpc-talk/" class="md-nav__link">
+      <a href="../../misc/hpc-talk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2609,7 +2527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/debug-software/" class="md-nav__link">
+      <a href="../../misc/debug-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2630,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/debug-at-hpc/" class="md-nav__link">
+      <a href="../../misc/debug-at-hpc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2651,7 +2569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../how-to/misc/contribute/" class="md-nav__link">
+      <a href="../../misc/contribute/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2722,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/hpc-talk/" class="md-nav__link">
+      <a href="../../../help/hpc-talk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2743,7 +2661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/helpdesk/" class="md-nav__link">
+      <a href="../../../help/helpdesk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2764,7 +2682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/good-tickets/" class="md-nav__link">
+      <a href="../../../help/good-tickets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2785,7 +2703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/faq/" class="md-nav__link">
+      <a href="../../../help/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2848,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/publication-list/" class="md-nav__link">
+      <a href="../../../misc/publication-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2869,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/external-resources/" class="md-nav__link">
+      <a href="../../../misc/external-resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2890,7 +2808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/provided-software/" class="md-nav__link">
+      <a href="../../../misc/provided-software/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2946,7 +2864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/for-the-impatient/" class="md-nav__link">
+      <a href="../../../overview/for-the-impatient/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2967,7 +2885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/architecture/" class="md-nav__link">
+      <a href="../../../overview/architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2988,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/job-scheduler/" class="md-nav__link">
+      <a href="../../../overview/job-scheduler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3009,7 +2927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/storage/" class="md-nav__link">
+      <a href="../../../overview/storage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3030,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/monitoring/" class="md-nav__link">
+      <a href="../../../overview/monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3079,50 +2997,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legend" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legend
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instant-gratification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Instant Gratification
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Preparation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3136,7 +3010,7 @@
                   
 
   
-    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/hpc-tutorial/episode-0.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/how-to/software/alphafold3.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3144,69 +3018,22 @@
   
 
 
-<h1 id="first-steps-episode-0">First Steps: Episode 0<a class="headerlink" href="#first-steps-episode-0" title="Permanent link">&para;</a></h1>
-<table>
-<thead>
-<tr>
-<th>Episode</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>0</strong></td>
-<td><strong>How can I install the tools?</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="../episode-1/">How can I use the static data?</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="../episode-2/">How can I distribute my jobs on the cluster (Slurm)?</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="../episode-3/">How can I organize my jobs with Snakemake?</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="../episode-4/">How can I combine Snakemake and Slurm?</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>This tutorial assumes familiarity with Linux/Unix operating systems.
-It also assumes that you have already connected to the cluster.
-We have collected some links to <a href="../../misc/external-resources/">tutorials and manuals on the internet</a>.</p>
-<h2 id="legend">Legend<a class="headerlink" href="#legend" title="Permanent link">&para;</a></h2>
-<p>Before we start with our first steps tutorial, we would like to
-introduce the following convention that we use throughout the series:</p>
-<div class="highlight"><pre><span></span><code>$ Commands are prefixed with a little dollar sign
+<h1 id="alphafold3">AlphaFold3<a class="headerlink" href="#alphafold3" title="Permanent link">&para;</a></h1>
+<p>the public databases are centrally stored at <code>/data/cephfs-1/work/projects/alphafold3/public-databases</code>. </p>
+<p>CUBI does not provide active maintenance, use at your own risk. 
+to get access to the project space, write an email to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>.</p>
+<p>please apply for your own license <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWZAgo1aYk0O4MuAXZj8xRQ8DafeFJnldNOnh_13qAx2ceZw/viewform">here</a>  to get the model parameters / weights (~1 GB file)</p>
+<p>a singularity image with a working AlphaFold3 installation is available under <code>apptainer</code>, 
+and there’s a shell script (written mostly by chatGPT) that emulates the <code>run_alphafold3.py</code>behavior 
+but executes the container under the hood and mounts all directories into it.</p>
+<p>so for instance:</p>
+<div class="highlight"><pre><span></span><code>bash run_alphafold3.sh \
+   --json_path path/to/input/input.json \ 
+   --model_dir /path/to/alphafold_parameters \ 
+   --db_dir /data/cephfs-1/work/projects/alphafold3/public-databases \ 
+   --output_dir af_output      
 </code></pre></div>
-<p>While file paths are highlighted like this: <code>/data/cephfs-1/work/projects/cubit/current</code>.</p>
-<h2 id="instant-gratification">Instant Gratification<a class="headerlink" href="#instant-gratification" title="Permanent link">&para;</a></h2>
-<p>After connecting to the cluster, you are located on a login node.
-To get to your first compute node, type <code>srun --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i</code> which will launch an interactive Bash session on a free remote node running up to 7 days, enabling you to use 8 cores and 8 Gb memory. Typing <code>exit</code> will you bring back to the login node.</p>
-<div class="highlight"><pre><span></span><code>hpc-login-1$ srun -p long --time 7-00 --mem=8G --cpus-per-task=8 --pty bash -i
-hpc-cpu-1$ exit
-$
-</code></pre></div>
-<p>See?
-That was easy!</p>
-<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">&para;</a></h2>
-<p>In preparation for our first steps tutorial series, we would like you to install the software for this tutorial.
-In general the users on the cluster will manage their own software with the help of conda.
-If you haven't done so so far, please <a href="../../best-practice/software-installation-with-conda/">follow the instructions in installing conda</a> first.
-The only premise is that you are able to <a href="../../connecting/advanced-ssh/unix/">log into the cluster</a>.
-Make also sure that you are logged in to a computation node using <code>srun -p medium --time 1-00 --mem=4G --cpus-per-task=1 --pty bash -i</code>.</p>
-<p>Now we will create a new environment, so as to not interfere
-with your current or planned software stack, and install into it all the
-software that we need during the tutorial. Run the following commands:</p>
-<div class="highlight"><pre><span></span><code>$ conda create -n first-steps python=3 snakemake bwa delly samtools gatk4
-$ conda activate first-steps
-(first-steps) $
-</code></pre></div>
+<p>note that the V100 compute nodes (<code>hpc-gpu-[1-8]</code>) require the extra flag <code>--flash_attention_implementation=xla</code></p>
 
 
 
@@ -3278,10 +3105,10 @@ $ conda activate first-steps
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
