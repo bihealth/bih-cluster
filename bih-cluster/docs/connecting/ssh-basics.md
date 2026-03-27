@@ -12,8 +12,7 @@ On Windows you can consider using [MobaXterm (recommended)](../connecting/connec
 ### Connecting
 Let's call your local machine the client and the remote machine you want to connect to the server.
 
-You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also have received your user-account information stating your user-name, your password, etc.
-
+You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also know your user-account name.
 Follow the instructions below to establish a remote terminal-session.
 
 ----
@@ -38,12 +37,14 @@ Putty also allows to save the connection information in different profiles so yo
 ----
 
 ## SSH-Keys
-When you connect to a remote machine via SSH, you will be prompted for your password.
+When you connect to a remote machine via SSH, you will normally be prompted for your password.
 This will happen every single time you connect and can feel a bit repetitive at times, especially if you feel that your password is hard to memorize.
 For those who don't want to type in their password every single time they connect, SSH keys are an alternative way of authentication.
-
-Instead if being prompted for a password, SSH will simply use the key to authenticate.
 As this key file should be device specific, this also increases security of the login process.
+
+!!! note
+    Password authentication is disabled on the BIH HPC cluster.
+    If your SSH key is set up correctly, you should never be asked for a password by our servers.
 
 You can generate a new key by issuing:
 
@@ -105,7 +106,7 @@ client:~$ ssh-add -l
 
 Since all home-directories are shared across the entire cluster and you created your key-pair inside your home-directory, you public-key (which is also in your home-directory) is automatically installed on all other cluster nodes, immediately.
 Try connecting to any cluster node.
-It should not prompt your for a password.
+It should not prompt you for a password.
 
 There is nothing you have to do to "unload" or "lock" the key-file.
 Simply disconnect.
