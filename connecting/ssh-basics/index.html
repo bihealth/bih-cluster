@@ -3250,8 +3250,8 @@
 On Windows you can consider using <a href="../connecting-windows/#install-ssh-client-for-windows">MobaXterm (recommended)</a> or <a href="https://www.putty.org/">Putty</a>.</p>
 <h3 id="connecting">Connecting<a class="headerlink" href="#connecting" title="Permanent link">&para;</a></h3>
 <p>Let's call your local machine the client and the remote machine you want to connect to the server.</p>
-<p>You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also have received your user-account information stating your user-name, your password, etc.</p>
-<p>Follow the instructions below to establish a remote terminal-session.</p>
+<p>You will usually have some kind of connection information, like a hostname, IP address and perhaps a port number. Additionally, you should also know your user-account name.
+Follow the instructions below to establish a remote terminal-session.</p>
 <hr />
 <p><strong>If your are on Linux</strong></p>
 <p>Open a terminal and issue the following command while replacing all the <code>&lt;...&gt;</code> fields with the actual data:</p>
@@ -3266,11 +3266,15 @@ ssh &lt;username&gt;@&lt;hostname-or-ip-address&gt; -p &lt;port-number&gt;
 Putty also allows to save the connection information in different profiles so you don't have to memorize and retype all fields every time you want to connect.</p>
 <hr />
 <h2 id="ssh-keys">SSH-Keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h2>
-<p>When you connect to a remote machine via SSH, you will be prompted for your password.
+<p>When you connect to a remote machine via SSH, you will normally be prompted for your password.
 This will happen every single time you connect and can feel a bit repetitive at times, especially if you feel that your password is hard to memorize.
-For those who don't want to type in their password every single time they connect, SSH keys are an alternative way of authentication.</p>
-<p>Instead if being prompted for a password, SSH will simply use the key to authenticate.
+For those who don't want to type in their password every single time they connect, SSH keys are an alternative way of authentication.
 As this key file should be device specific, this also increases security of the login process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Password authentication is disabled on the BIH HPC cluster.
+If your SSH key is set up correctly, you should never be asked for a password by our servers.</p>
+</div>
 <p>You can generate a new key by issuing:</p>
 <div class="highlight"><pre><span></span><code>client:~$<span class="w"> </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519
 
@@ -3309,7 +3313,7 @@ This passphrase is needed to unlock and use the private key.</p>
 <p><em>(The command should print at least one key, showing the key-size, the hash of the key-fingerprint and the location of the file in the file-system.)</em></p>
 <p>Since all home-directories are shared across the entire cluster and you created your key-pair inside your home-directory, you public-key (which is also in your home-directory) is automatically installed on all other cluster nodes, immediately.
 Try connecting to any cluster node.
-It should not prompt your for a password.</p>
+It should not prompt you for a password.</p>
 <p>There is nothing you have to do to "unload" or "lock" the key-file.
 Simply disconnect.</p>
 
@@ -3332,7 +3336,7 @@ Simply disconnect.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2026</span>
   </span>
 
     
