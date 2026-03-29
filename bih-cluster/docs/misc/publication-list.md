@@ -10,6 +10,8 @@ It has been used to support the publications listed below.
 
 ### Preprints
 
+Merk T, Salehi S, Koehler RM, Cui Q, Olaru M, Hahn A, Provenza NR, Little S, Abbasi-Asl R, Starr PA, Neumann WJ (2025). “Pre-trained Transformer-models using chronic invasive electrophysiology for symptom decoding without patient-individual training.” arXiv preprint arXiv:2508.10160. [☞ Link](https://arxiv.org/abs/2508.10160)
+
 Chopra A, Song J, Weiner J, Beule D, Schaefer AS (2024). “Genetic analysis of cis-enhancers associated with bone mineral density and periodontitis in
 the gene SOST.” _ResearchSquare_.  [☞ Link](https://www.researchsquare.com/article/rs-4409923/v1)
 
@@ -34,6 +36,8 @@ Göppel T, Obermayer B, Chen I, Gerland U (2021). “A kinetic error filtering m
 doi:10.1101/2021.08.06.455386  [☞ Link](https://www.biorxiv.org/content/10.1101/2021.08.06.455386.abstract)
 
 ### 2025
+
+Merk T, Köhler RM, Brotons TM, Vossberg SR, Peterson V, Lyra LF, Vanhoecke J, Chikermane M, Binns TS, Li N, Walton A, Neudorfer C, Bush A, Sisterson N, Busch J, Lofredi R, Habets J, Huebl J, Zhu G, Yin Z, Zhao B, Merkl A, Bajbouj M, Krause P, Faust K, Schneider GH, Horn A, Zhang J, Kühn AA, Richardson RM, Neumann WJ (2025). “Invasive neurophysiology and whole brain connectomics for neural decoding in patients with brain implants.” Nature Biomedical Engineering, 1–18. Nature Publishing Group. [doi: 10.1038/s41551-025-01467-9](https://doi.org/10.1038/s41551-025-01467-9)
 
 Sebastian Röner, Lea Burkard, Michael R Speicher, Martin Kircher, cfDNA UniFlow: a unified preprocessing pipeline for cell-free DNA data from liquid biopsies, GigaScience, Volume 13, 2024, giae102, [doi: 10.1093/gigascience/giae102](https://doi.org/10.1093/gigascience/giae102)
 
@@ -988,3 +992,4 @@ White T., Kehr B. (2017).
 "Improving long-read mapping with simple lossy sequence transforms"
 *ISMB/ECCB 2017.*
 Poster.
+
