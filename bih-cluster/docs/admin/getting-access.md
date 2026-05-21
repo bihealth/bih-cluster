@@ -125,6 +125,7 @@ Additional members (cluster user names):
 
 !!! note "Notes"
     - All projects must have one owner and may have one delegate.
+    - All project owners must also own a group on the cluster, i.e. be PI.
     - Please note that we will enforce [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case) for all project names and folders.
     - Tier 1 project storage will be supplemented with 10 TB of T1 scratch by default.
     - Users can be associated with multiple projects.
