@@ -30,15 +30,19 @@ Follow these steps to connect to BIH HPC via the command line:
     ```
 
     !!! hint "Notes"
-        Please do not perform big file transfers or an `sshfs` mount via the login nodes.
-        For this purpose we provide `hpc-transfer-1` and `hpc-transfer-2`.
-
         When first connecting, your SSH client will ask you to confirm our server's host key fingerprint.
         These are the current ones for the login and transfer nodes:
 
-        - RSA: SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4
-        - ED25519: SHA256:FjsmTkyDssB5E/OK/1dkflhgkk8gi5R75DJRdcrLdrI 
-        - ECDSA: SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0
+        - RSA: `SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4`
+        - ED25519: `SHA256:ywFRet/LU22l0Kom9f7epvgH8RJL8PcOdaEPV88S46w`
+        - ECDSA: `SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0`
+
+        We also sign all of our host keys. You can verify their authenticity without comparing fingerprints
+        by adding this string to your `known_hosts` file:
+
+        ```
+        @cert-authority *.cubi.bihealth.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHph2mnql6r+FZ1yl2mZsvS7jqEkLQk/nvQB9TFxtxzJ
+        ```
 
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to BIH HPC.
     If you are using a Windows PC to access BIH HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
