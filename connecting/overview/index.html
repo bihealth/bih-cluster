@@ -3176,13 +3176,14 @@ $<span class="w"> </span>ssh<span class="w"> </span>user_m@hpc-login-2.cubi.bihe
 <p>When first connecting, your SSH client will ask you to confirm our server's host key fingerprint.
 These are the current ones for the login and transfer nodes:</p>
 <ul>
-<li>RSA: SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4</li>
-<li>ED25519: SHA256:ywFRet/LU22l0Kom9f7epvgH8RJL8PcOdaEPV88S46w</li>
-<li>ECDSA: SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0</li>
+<li>RSA: <code>SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4</code></li>
+<li>ED25519: <code>SHA256:ywFRet/LU22l0Kom9f7epvgH8RJL8PcOdaEPV88S46w</code></li>
+<li>ECDSA: <code>SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0</code></li>
 </ul>
 <p>We also sign all of our host keys. You can verify their authenticity without comparing fingerprints
 by adding this string to your <code>known_hosts</code> file:</p>
-<p><code>@cert-authority *.cubi.bihealth.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHph2mnql6r+FZ1yl2mZsvS7jqEkLQk/nvQB9TFxtxzJ</code></p>
+<div class="highlight"><pre><span></span><code>@cert-authority *.cubi.bihealth.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHph2mnql6r+FZ1yl2mZsvS7jqEkLQk/nvQB9TFxtxzJ`
+</code></pre></div>
 </div>
 <p>Please also read <a href="../advanced-ssh/overview/">Advanced SSH</a> for more custom scenarios how to connect to BIH HPC.
 If you are using a Windows PC to access BIH HPC, please read <a href="../connecting-windows/">Connecting via SSH on Windows</a></p>
