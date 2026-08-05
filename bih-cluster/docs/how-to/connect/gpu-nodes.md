@@ -1,6 +1,6 @@
 # How-To: Connect to GPU Nodes
 
-The cluster has 11 GPU nodes available. `hpc-gpu-[1-7]` contain 4 NVIDIA V100 GPUs each, `hpc-gpu-8` has 10 NVIDIA A40 GPUs, and `hpc-gpu-[0-11]` house 4 NVIDIA L40 GPUs each.
+The cluster has 11 GPU nodes available. `hpc-gpu-[1-7]` contain 4 NVIDIA V100 GPUs each, `hpc-gpu-8` has 10 NVIDIA A40 GPUs, `hpc-gpu-[0-11]` house 4 NVIDIA L40 GPUs each. `hpc-gpu-[12,13]` host two NVIDIA H200 each.
 
 Connecting to a GPU node is easy.
 You request one or more GPU cores by adding a generic resources flag to your Slurm job submission via `srun` or `sbatch`.
@@ -8,6 +8,7 @@ You request one or more GPU cores by adding a generic resources flag to your Slu
 - `--gres=gpu:tesla:COUNT` will request NVIDIA V100 cores.
 - `--gres=gpu:a40:COUNT` will request NVIDIA A40 cores.
 - `--gres=gpu:l40:COUNT` will request NVIDIA L40 cores.
+- `--gres=gpu:h200:COUNT` will request NVIDIA L40 cores.
 - `--gres=gpu:COUNT` will request any available GPU cores.
 
 Your job will be automatically placed in the Slurm `gpu` partition and allocated a number of `COUNT` GPUs.
