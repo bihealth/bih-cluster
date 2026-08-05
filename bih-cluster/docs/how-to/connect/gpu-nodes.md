@@ -8,7 +8,7 @@ You request one or more GPU cores by adding a generic resources flag to your Slu
 - `--gres=gpu:tesla:COUNT` will request NVIDIA V100 cores.
 - `--gres=gpu:a40:COUNT` will request NVIDIA A40 cores.
 - `--gres=gpu:l40:COUNT` will request NVIDIA L40 cores.
-- `--gres=gpu:h200:COUNT` will request NVIDIA L40 cores.
+- `--gres=gpu:h200:COUNT` will request NVIDIA H200 cores.
 - `--gres=gpu:COUNT` will request any available GPU cores.
 
 Your job will be automatically placed in the Slurm `gpu` partition and allocated a number of `COUNT` GPUs.
