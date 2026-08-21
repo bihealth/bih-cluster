@@ -13,6 +13,10 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
     - [Performance and workload monitoring](https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302)
 
 
+## News & Maintenance Announcements
+
+See the [Announcements](https://hpc-talk.cubi.bihealth.org/c/announcements/5) category on hpc-talk for information on maintenance windows and general updates.
+
 ## Getting Started
 Read the following set of pages (in order) to learn how to get access and connect to the cluster.
 
@@ -26,17 +30,6 @@ Read the following set of pages (in order) to learn how to get access and connec
 !!! note "Acknowledging BIH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
     Please add your publications using the cluster to [this list](misc/publication-list.md).
-
-## News & Maintenance Announcements
-- :woman_technologist: February 10th 2025: New GPU nodes `hpc-gpu-[9-11]` with 4× NVIDIA L40 each.
-- :snowflake: January 2025: Rolling upgrade to Rocky Linux 9 of all cluster nodes & VMs.
-- :jack_o_lantern: October 22nd 2024: Kernel & SLURM upgrades on (almost) all nodes.
-- :ram: July 16th: New high-memory node `hpc-mem-5` with 4 TB of RAM.
-- :locomotive: Until autumn 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
-- :maple_leaf: September 30th 2024: Unmounting of `/fast` on all non-transfer nodes.
-- :headstone: October 31st 2024: Retirement of GPFS/DDN storage.
-
-See [Maintenance](admin/maintenance.md) for a detailed list of current, planned, and previous maintenance and update work.
 
 ## Technical Details
 If you are interested in how this HPC cluster is set up on a technical level, we got you covered.
