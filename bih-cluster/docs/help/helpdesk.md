@@ -36,7 +36,7 @@ and discussions may benefit from other user's experience as well as contribute t
   Please contact the authors/communities of these software for help (also known as "upstream").
 - Problems/questions with using the cluster scheduler or operating system (try [HPC Talk](../how-to/misc/hpc-talk.md)).
 - Problems with running your software that works in other environments (try [HPC Talk](../how-to/misc/hpc-talk.md)).
-- Requests for the installation of common software (prefer using [Conda](../best-practice/software-installation-with-conda/)).
+- Requests for the installation of common software (prefer using [Conda](../best-practice/software-installation-with-conda.md)).
 - You need a generic dependency that you cannot install via conda or on your own.
   Please read the section [Administration-Provided Software](../misc/provided-software.md) to learn about the kinds of software that we will install and the kinds that we will not.
 - Something that breaks from one week to another without you changing anything and you assume a change on the cluster (try [HPC Talk](../how-to/misc/hpc-talk.md) first).
