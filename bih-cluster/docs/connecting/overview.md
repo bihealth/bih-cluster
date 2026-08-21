@@ -30,28 +30,42 @@ Follow these steps to connect to BIH HPC via the command line:
     ```
 
     !!! hint "Notes"
-        Please do not perform big file transfers or an `sshfs` mount via the login nodes.
-        For this purpose we provide `hpc-transfer-1` and `hpc-transfer-2`.
-
         When first connecting, your SSH client will ask you to confirm our server's host key fingerprint.
         These are the current ones for the login and transfer nodes:
 
-        - RSA: SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4
-        - ED25519: SHA256:FjsmTkyDssB5E/OK/1dkflhgkk8gi5R75DJRdcrLdrI 
-        - ECDSA: SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0
+        - RSA: `SHA256:ckRCAF9delYrOPGpVYrhDRlo2Wyc3wUzIsMqiiXMfM4`
+        - ED25519: `SHA256:ywFRet/LU22l0Kom9f7epvgH8RJL8PcOdaEPV88S46w`
+        - ECDSA: `SHA256:3jKk8QXOVAs94SSS/uMh+Vd/x/AFUEAoWMdFNrLOsI0`
+
+        To be able to compare fingerprints at first connection in MobaXterm on Windows,
+        please enable `Validate host identity at first connection`
+        (`Settings` > `Configuration` > `SSH` > `SSH settings`).
+
+        We also sign all of our host keys. You can verify their authenticity without comparing fingerprints
+        by adding this string to your `known_hosts` file:
+
+        ```
+        @cert-authority *.cubi.bihealth.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHph2mnql6r+FZ1yl2mZsvS7jqEkLQk/nvQB9TFxtxzJ
+        ```
+
+        To use the certificate for MobaXterm, open a new session (`Sessions` > `New session`)
+        or edit a saved session (star botton aka `Sessions` > right click on your saved session > `Edit session`).
+        Then add ONLY the certificate string as follows:
+        `SSH` > `Advanded SSH settings` > `Expert SSH settings` > `Host certificate`:
+        `AAAAC3NzaC1lZDI1NTE5AAAAIHph2mnql6r+FZ1yl2mZsvS7jqEkLQk/nvQB9TFxtxzJ`
 
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to BIH HPC.
     If you are using a Windows PC to access BIH HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
 
-5. Allocate resources on a computation node using [Slurm](../slurm/overview.md). Do not compute on the login node!
+6. Allocate resources on a computation node using [Slurm](../slurm/overview.md). Do not compute on the login node!
 
     ```bash
     # Start interactive shell on computation node
     $ srun --pty bash -i
     ```
 
-6. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/unix.md) or [Windows](advanced-ssh/windows.md).
-7. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
+7. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/unix.md) or [Windows](advanced-ssh/windows.md).
+8. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
 
 !!! tip "tl;dr"
 

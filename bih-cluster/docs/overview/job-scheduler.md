@@ -18,7 +18,7 @@ From the, the scheduler will route the jobs to their actual partition using the 
 You can override this routing by explicitely assigning a partition (but this is discouraged).
 
 1. Jobs requesting a GPU resources are routed to the `gpu` queue.
-2. Else, jobs requesting more than 200 GB of RAM are routed to the `highmem` queue.
+2. Else, jobs requesting more than 350 GB of RAM are routed to the `highmem` queue.
 3. Else, jobs are assigned to the partitions `debug`, `short`, `medium`, and `long` long depending on their configured maximal running time.
    The partitions are evaluated in the order given above and the first fitting partition will be used.
 
@@ -82,7 +82,7 @@ Contact [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) if you
 
 ### `highmem`
 
-Jobs requesting more than 200 GB of RAM are automatically routed to the `highmem` partition.
+Jobs requesting more than 350 GB of RAM are automatically routed to the `highmem` partition.
 
 The high memory nodes are only part of the `highmem` partition so they are not blocked by normal compute jobs.
 Maximum run time is relatively high (14 days) to allow for longer jobs.
