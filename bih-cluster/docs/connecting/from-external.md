@@ -55,10 +55,11 @@ You need to apply for general Charité VPN access if you haven't done so already
 The form can be found in the [Charite Intranet](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Antrag_Mitarb_Stud.pdf) and contains further instructions.
 [Charité IT Helpdesk](mailto:helpdesk@charite.de) can help you with any questions.
 
-### Zusatzantrag B
-Special permissions form B is also required for HPC access.
-You can find [Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) in the Charité intranet.
-Fill it out and send it to the same address as the general VPN access form above.
+### Additional Permissions
+To access the BIH HPC via Charité VPN, please request access to VPN group `bih-hpc` via [Charité's VPN portal]([url](https://itip-antraege.charite.de/vpn/)).
+This does not need approval from your PI or department.
+[Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) is now deprecated,
+but still accepted if the VPN portal cannot be used.
 
 Once you have been granted VPN access, start the client and connect to VPN.
 You will then be able to connect from your client in the VPN just as you do from your workstation.
