@@ -90,7 +90,7 @@ We will not go into detail of all of them and expect them to be self-explanatory
 
 - **Files**
     - **Home Directory** - Access a file browser.
-    - [**Quotas**](quotas.md) - Display quota information (only available on HPC 4 Research).
+    - **Upload/Download** - Transfer files to/from BIH HPC.
 - **Jobs**
     - **Active Jobs** - List your jobs.
     - **Job Composer** - Start a new job.
