@@ -133,9 +133,9 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
     - 1.45 PB erasure coded (EC 8:2)
     - 1.23 PB usable (85 %, Ceph performance limit)
 - For typical CUBI use case 3 to 5 times faster I/O then the old DDN
-- Hardware costs:
-    - One node/chunk: 50.000 € (150 TB)
-    - ca. 350 €/TB
+# - Hardware costs:
+#     - One node/chunk: 50.000 € (150 TB)
+#     - ca. 350 €/TB
 
 ### Tier 2
 - Slower but much more affordable
@@ -144,7 +144,7 @@ $ cp important_file.txt /data/cephfs-2/unmirrored/groups/cubi/
   - /data/cephfs-2/unmirrored
 - Currently 24 nodes in two clusters in two different fire compartments. Each node with ~40 HDDs each 16–18 TB capacity
 - Current useable capacity 10+ PB (mirrored nad unmirror combined)
-- Hardware costs:
-  - ca. 50 € per TB unmirrored
-  - ca. 100 € per TB mirrored
-  - small chunk extension possible
+# - Hardware costs:
+#   - ca. 50 € per TB unmirrored
+#   - ca. 100 € per TB mirrored
+#   - small chunk extension possible
