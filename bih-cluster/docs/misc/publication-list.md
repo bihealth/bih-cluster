@@ -10,6 +10,11 @@ It has been used to support the publications listed below.
 
 ### Preprints
 
+
+Kilian Salomon, Chengyu Deng, Pyaree Mohan Dash, Theofilos Chalkiadakis, Qinrui Li, Ziwei Chen, Nicholas F. Page, 
+Mustafa Helal, Sebastian Röner, Anshul Kundaje, Claudia Langenberg, Maik Pietzner, Jay Shendure, Max Schubach, Nadav Ahituv, Martin Kircher (2026).
+"Massively parallel characterization and predictive modelling of neuronal regulatory variation." _bioRxiv_. doi: 10.64898/2026.07.16.73876 [☞ Link](https://doi.org/10.64898/2026.07.16.73876)
+
 Merk T, Salehi S, Koehler RM, Cui Q, Olaru M, Hahn A, Provenza NR, Little S, Abbasi-Asl R, Starr PA, Neumann WJ (2025). “Pre-trained Transformer-models using chronic invasive electrophysiology for symptom decoding without patient-individual training.” arXiv preprint arXiv:2508.10160. [☞ Link](https://arxiv.org/abs/2508.10160)
 
 Chopra A, Song J, Weiner J, Beule D, Schaefer AS (2024). “Genetic analysis of cis-enhancers associated with bone mineral density and periodontitis in
@@ -34,6 +39,13 @@ Winkler W, Díaz C, Blanc E, Napieczynska H (2021). “Preclinical models of hum
 
 Göppel T, Obermayer B, Chen I, Gerland U (2021). “A kinetic error filtering mechanism for enzyme-free copying of nucleic acid sequences.” _bioRxiv_.
 doi:10.1101/2021.08.06.455386  [☞ Link](https://www.biorxiv.org/content/10.1101/2021.08.06.455386.abstract)
+
+### 2026
+
+Leifheit, C., Kircher, M. & Schubach, M. CADD-ThresholdApp: an interactive web application for calibrating CADD scores using ClinVar. *BMC Bioinformatics*. 2026. 27, 224. [doi: 10.1186/s12859-026-06675-x](https://doi.org/10.1186/s12859-026-06675-x)
+
+Jonathan D. Rosen, Arjun Devadas Vasanthakumari, Kilian Salomon, Nikola de Lange, Pyaree Mohan Dash, Pia Keukeleire, Ali Hassan, Alejandro Barrera, Beniamin Krupkin, Grace Oualline, Martin Kircher, Michael I. Love, and Max Schubach. Uniform processing and analysis of IGVF massively parallel reporter assay data with MPRAsnakeflow.  *Genome Research*. 2026. 36(9):1940-51. [doi: 10.1101/gr.281462.125](https://doi.org/10.1101/gr.281462.125)
+
 
 ### 2025
 
