@@ -137,7 +137,6 @@ nav:
   - "OnDemand Portal":
     - "Overview": ondemand/overview.md
     - "Interactive Sessions": ondemand/interactive.md
-    - "Quotas": ondemand/quotas.md
   - "Best Practice":
     - "Project Structure": best-practice/project-structure.md
     - "Software Craftmanship": best-practice/software-craftmanship.md

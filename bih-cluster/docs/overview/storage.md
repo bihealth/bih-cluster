@@ -76,4 +76,4 @@ Each user, group, and project has one or more of these sections each, e. g. for 
 - `/data/cephfs-1/home/users/$USER/scratch`
 
 
-See [Storage and Volumes: Locations](../storage/storage-locations.md) for more informatin.
+See [Storage and Volumes: Locations](../storage/storage-locations.md) for more information.
