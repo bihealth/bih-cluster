@@ -56,7 +56,7 @@ The form can be found in the [Charite Intranet](https://intranet.charite.de/file
 [Charité IT Helpdesk](mailto:helpdesk@charite.de) can help you with any questions.
 
 ### Additional Permissions
-To access the BIH HPC via Charité VPN, please request access to VPN group `bih-hpc` via [Charité's VPN portal](https://itip-antraege.charite.de/vpn/)).
+To access the BIH HPC via Charité VPN, please request access to VPN group `bih-hpc` via [Charité's VPN portal](https://itip-antraege.charite.de/vpn/).
 This does not need approval from your PI or department.
 [Zusatzantrag B](https://intranet.charite.de/fileadmin/user_upload/portal/service/service_06_geschaeftsbereiche/service_06_14_it/VPN-Zusatzantrag_B.pdf) is now deprecated,
 but still accepted if the VPN portal cannot be used.
